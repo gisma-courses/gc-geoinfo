@@ -1,0 +1,41 @@
+---
+title: "Objekte im Raum"
+title-block-banner: ..//assets/images/splash_L01_1.png
+title-block-banner-color: black
+bibliography: unit01.bib
+lang: de
+comments: false
+
+
+---
+
+Wie können wir in der Geographie die Abstraktion unserer Interpretation der Welt am einfachsten und effizientesten umsetzen? Grundsätzlich kann die geographische Darstellung des Raumes mit Hilfe von zwei unterschiedlichen Konzepten erfolgen: Zum einen können eindeutige Objekte, sogenannte diskrete Geoobjekte, identifiziert werden, dem gegenüber steht das Konzept kontinuierlicher Räume oder Felder. Grundsätzlich sind diskrete (Geo-)Objekte alles, was in irgendeiner Weise abgegrenzt und gezählt werden kann. Also z.B. Autos, Häuser, Fußgänger, Blumen, Bären, Fußballplätze und so weiter. Felder hingegen beschreiben kontinuierliche, raum-zeitlich veränderliche Attributwerte oder Merkmalsausprägungen von Räumen (z.B. Lufttemperatur, Einwohner / Hektar).
+
+![Abbildung 01-03: Blick auf die Fränkische Schweiz von Westen. In der Bildmitte ist der Zeugenberg Walberla zu sehen (Quelle:  @arnold)](http://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Fr%C3%A4nkische-Schweiz-westliche-Kante-16-05-2005.jpeg/640px-Fr%C3%A4nkische-Schweiz-westliche-Kante-16-05-2005.jpeg?uselang=de)
+
+
+Beginnen wir mit einem geographischen Raumbegriff, der uns aus dem Alltagswissen vertraut ist. So kennen viele die Region Fränkische Schweiz. Mit solchen *Raumentitäten* verbinden wir eine mehr oder weniger diffuse, aber abgegrenzte räumliche Ausdehnung (Region) oder die Vorstellung einer Landschaft (vgl. Abb. 01-03). Häufig werden solchen als Einheit wahrgenommenen Räumen auch Attribute wie kulinarische, kulturelle oder freizeitorientierte Aspekte zugeordnet. So ist die Fränkische Schweiz nicht nur für ihre Weine und Biere bekannt, sondern beispielsweise auch für ihre Osterbrunnen (vgl. Abb. 01-04) oder ihr touristisches Potenzial.
+
+Ein weiteres sehr anschauliches Beispiel für solche räumlichen Übergänge ist das Relief (vgl. Abb. 01-05), da die Erdoberfläche nahezu kontinuierlich unterschiedliche Höhen aufweist. Die räumliche Verteilung dieses Merkmals variiert ständig. Versucht man vor diesem Hintergrund eine räumliche Abgrenzung der Fränkischen Schweiz, so können nicht nur die religiösen oder kulinarischen Vorlieben der Bevölkerung, sondern z.B. auch die morphologischen oder edaphischen Eigenschaften der von ihr besiedelten Erdoberfläche räumlich inhomogen verteilt sein. Die Karte der Fränkischen Schweiz (vgl. Abb. 01-06) versucht dies durch ein radiales Verblassen der Farben im Randbereich zu symbolisieren, ohne jedoch zu verdeutlichen, wie diese Abgrenzung zustande kommt.
+
+![Abbildung 01-04: Der Marktplatz von Ebermannstadt mit dem geschmückten Marienbrunnen und Osterbäumen. Beispielhaft für den typischen Osterschmuck der fränkischen Schweiz [@behrendesb]](../images/eierbrunnen.jpg){width="75%"}
+
+![Abbildung 01-05: Digitales Geländemodell der Fränkischen Schweiz und angrenzender Regionen. Datengrundlage SRTM Daten 90 Meter räumliche Auflösung (@gisma)](../assets/images/unit01/DEM_franken.png){width="75%"}
+
+![Abbildung 01-06: Karte der Fränkischen Schweiz (Quelle: @mikmaq](http://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Fraenkische_Schweiz.png/800px-Fraenkische_Schweiz.png){width="75%"}
+
+## Diskrete und kontinuierliche Objekte in GI-Systemen
+
+Diskrete Objekte zeichnen sich durch eine eindeutige räumliche Abgrenzbarkeit aus, während räumlich kontinuierliche Ausprägungen zunächst keine eindeutige objektbezogene räumliche Abgrenzbarkeit aufweisen. Diese Regel hängt von der Betrachtungs- bzw. Interessenskala ab. Hinzu kommt, dass die binäre Logik der EDV-gerechten Datenverarbeitung eine Abgrenzung der Informationen notwendig macht. In der Praxis der Geoinformationssysteme werden daher auch kontinuierliche Felder als räumlich abgegrenzte Objekte behandelt, d.h. sie werden - unter Berücksichtigung eines für die Fragestellung geeigneten Maßstabs - in diskrete Raumeinheiten zerlegt. Der wesentliche Unterschied zum Konzept der diskreten Objekte im leeren Raum besteht darin, dass diese mit bekannter Lage in einem ansonsten leeren Raum existieren, während die in diskrete Objekte zerlegten Kontinua diesen Raum lückenlos und überschneidungsfrei mit ihren Eigenschaften abbilden und beschreiben.
+
+## Übung
+
+::: {.callout-tip icon="false" appearance="simple"}
+Betrachten Sie das folgende Luftbild (Abb. 01-07) und überlegen Sie, wie Sie diesen Raum darstellen würden. Notieren Sie die folgenden Merkmale:
+
+* Landnutzung in Form von Landnutzungstypen
+* Straßennetz
+* Bebaute Fläche
+
+![Abbildung 01-07: Luftbild des Felsengarten Sanspareil (Fränkische Schweiz) als Beispiel eines zu repäsentierenden Wirklichkeitsauschnitts. Es wird vernachlässigt, dass ein Luftbild selbst bereits eine Repräsentation der Wahrnehmung des Fotografen ist. (Quelle: @presse03)](../assets/images/unit01/Sanspareil_Luftbild_West.jpg)
+:::

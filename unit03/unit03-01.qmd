@@ -1,0 +1,93 @@
+---
+title: Fragen und Antworten
+title-block-banner: ../assets/images/splash_L02.png
+title-block-banner-color: black
+
+bibliography: unit03.bib
+
+lang: de
+comments: false
+---
+
+Die Datenbankstruktur der meisten GIS-Systeme basiert auf einem relationalen Modell, das eine logische, konsistente und strukturierte Speicherung und Verwaltung von Daten ermöglicht. Dabei werden die Daten in Form von Relationen oder Tabellen organisiert, in denen sowohl geometrische als auch semantische (thematische) Informationen tabellarisch vorliegen.
+
+Im Zusammenhang mit GIS ist die Datenanalyse ein zentraler Aspekt, der die gezielte Abfrage und Auswertung der räumlichen und inhaltlichen Daten in diesen Tabellen umfasst. Durch die Verwendung einer Abfragesprache wie SQL werden Analysen auf den Grundelementen der Beziehungen wie Tabellen, Feldern, Datensätzen, Werten und Assoziationen durchgeführt.
+
+Ein Beispiel für eine solche Abfrage könnte lauten: "Wie hoch ist der Anteil der Einwohner der Stadt Marburg, die weiter als 200 m von einer Haltestelle des öffentlichen Personennahverkehrs entfernt wohnen?
+
+Diese Abfrage bezieht sich auf die Vektor-GIS-Daten und die Beziehungen zwischen ihnen. Die räumlichen Informationen über die Stadtbevölkerung und die Lage der ÖPNV-Haltestellen sind in Relationen gespeichert. Die Abfrage ermöglicht die gezielte Suche nach Bevölkerungsgruppen, die weiter als 200 m von einer Haltestelle entfernt wohnen. Durch die Verwendung von Vektordaten und relationalen Datenbankstrukturen können solche komplexen räumlichen Analysen effizient durchgeführt werden.
+
+## Die Lernziele des Readers sind:
+
+-   Verständnis räumlicher Datenmodelle:
+    -   Verständnis der Modellierung räumlicher Daten in einem GIS (Geographisches Informationssystem), einschließlich der Konzepte von Vektordaten und Attributdatenbanken.
+-   Verschiedene Abfragetypen und -techniken kennen lernen:
+    -   Sie lernen die verschiedenen Arten von Abfragen kennen und können thematische, geometrische und topologische Abfragen formulieren und ausführen.
+-   Vergleichs- und logische Operatoren anwenden:
+    -   Sie werden in der Lage sein, vergleichende und logische Operatoren zu verwenden, um komplexe Abfragen zu formulieren, um bestimmte räumliche Objekte aufgrund ihrer Eigenschaften oder ihrer Beziehungen zu anderen Objekten zu identifizieren.
+-   Praktische Anwendung von GIS-Abfragen:
+    -   Sie werden praktische Erfahrung im Umgang mit GIS-Software sammeln, um Abfragen durchzuführen, Daten zu analysieren und Ergebnisse zu interpretieren. Dazu gehört auch die Fähigkeit, Abfrageergebnisse visuell darzustellen und zu kommunizieren.
+
+## Abfragen in Relationen - eine Einführung
+
+Im Rahmen der Datenanalyse sind grundsätzlich drei Vorgehensweisen möglich (vgl. Abbildung 03-01):
+
+-   *Thematische Abfragen:* Wählt die Objekte aus, deren Eigenschaften (Attribute) die vorgegebenen Bedingungen erfüllen - z.B.: „Selektiere alle Bäume der Art Fichte.“
+-   *Geometrische Abfragen:* Wählt die Objekte aus, die die räumlichen Bedingungen erfüllen, z.B.: „Selektiere alle Häuser, die weniger als 250 m vom Fluss entfernt sind.“
+-   *Topologische Abfragen:* Wählt die Objekte aus, die die gegebenen Bedingungen bezüglich der räumlichen Beziehungen zwischen den Objekten erfüllen, z.B.: "Selektiere alle Gebäude, die vollständig in der Wohnzone II (WII) liegen.
+
+![Abbildung 03-01: Struktur der nicht-manipulativen GI-Abfragen (GITTA 2005)](../assets/images/unit03/abfrage2.jpg)
+
+## Auswahloperatoren
+
+Zentrales Werkzeug von Abfragen in GI-Systemen sind die so genannten Auswahloperatoren, auch algebraische Operatoren genannt. Sie gliedern sich in:
+
+-   *Vergleichsoperatoren:* Zur Formulierung von Fragen können neben dem Gleichheitszeichen auch Vergleichsoperatoren verwendet werden.
+-   *Arithmetische Operatoren:* Diese Operatoren werden bei numerischen Attributen verwendet, z.B. können Mittelwerte eines Attributs, Summen von Attributwerten usw. aus einer Menge ausgewählter Objekte berechnet werden.
+-   *Logische Operatoren:* Logische Operatoren werden verwendet, um Bedingungen zu formulieren.
+
+### Vergleichsoperatoren
+
+Die Vergleichsoperatoren können für unterschiedlich skalierte Attribute (Zahlen, Text) verwendet werden. Bei nicht-numerischen Attributen beziehen sich die Vergleiche „größer als“, „kleiner als“ usw. auf die Position in einer internen „alphabetischen“ Ordnung des Computers (z.B. ASCII-Code-Tabelle).
+
+| Vergleichsoperator | Bedeutung           |
+|:------------------:|---------------------|
+|         =          | EQ (gleich)         |
+|         \>         | GT (größer)         |
+|        \>=         | GE (größer gleich)  |
+|         \<         | LT (kleiner)        |
+|        \< =        | LE (kleiner gleich) |
+|        \<\>        | NE (ungleich)       |
+
+: Tabelle 03-01: Vergleichsoperatoren
+
+### Arithmetische Operatoren
+
+Die arithmetischen Operatoren werden für numerische Attribute verwendet, z.B. können Mittelwerte eines Attributs, Summen von Attributwerten usw. aus einer Reihe ausgewählter Objekte berechnet werden. Als arithmetische Operatoren können die Multiplikation `*`, die Division `/`, die Addition `+` und die Subtraktion `-`, der Exponent `exp` und der Modulo-Operator `%` verwendet werden. Der Modulo-Operator liefert den Rest einer ganzzahligen Division (z.B. `5 % 2 = 1`).
+
+### Logische Operatoren
+
+Logische Operatoren verknüpfen Attribute oder Teilabfragen als logische Ausdrücke (mit den beiden möglichen Werten „wahr“ oder „falsch“). Sie eignen sich daher zur effizienten Gestaltung komplexer Abfragen. Logische Operatoren werden auch als Boolesche Algebra bezeichnet. Sie basiert auf der binären Struktur der Werte 1 (wahr) und 0 (falsch). Sie bietet eine Reihe verschiedener Verknüpfungen, die entweder „wahr“ oder „falsch“ sein können, aber niemals beides. Die booleschen (oder logischen) Operatoren, die in GIS verwendet werden, um zwei räumliche Auswahlkriterien miteinander zu verknüpfen, sind 'AND', 'OR', 'XOR' und 'NOT': Die folgende Tabelle listet die 4 logischen Grundoperatoren und ihre Wirkungsweise auf:
+
+Zur Veranschaulichung sind in der rechten Spalte die *Venn-Diagramme* der Booleschen Operatoren dargestellt. Die Darstellung wird verständlicher, wenn man sich vorstellt, dass die Kreise 1 und 2 jeweils zwei Bedingungen (oder Teilmengen der Relation) grafisch darstellen. Konkret: Kreis 1: GEBIET = „bewaldet“ und Kreis 2: GEBIET = steil. Die schraffierte Fläche stellt jeweils die wahre Aussage dar. In dieser Grundform entspricht der Teil außerhalb der Kreise keinem Abfrageergebnis.
+
+![Die vier Booleschen Operatoren (GITTA 2005)](../assets/images/unit03/combination.jpg)
+
+In vielen GIS-Programmen entsprechen die Booleschen Operatoren direkt aufrufbaren Funktionen und tragen oft ähnliche Namen. So entspricht in vielen GIS-Programmpaketen die Funktion `INTERSECT` dem Operanden `AND`, `UNION` dem Operanden `OR` und `ERASE` dem Operanden `NOT`. Die letztgenannte Funktion wird auch sehr anschaulich „Cookie-Cutting“ genannt, da die Form des zweiten Kriteriums wie beim Plätzchenbacken aus dem ausgerollten Teig des ersten „ausgestochen“ wird.
+
+### Kombination von Operatoren
+
+Durch die Kombination von Operatoren ist es möglich, mehrere Bedingungen miteinander zu verknüpfen. Boolesche Operatoren sind jedoch **nicht** kommutativ, d.h. das Ergebnis ihrer Anwendung in komplexen Ausdrücken hängt von der definierten Reihenfolge der Teilausdrücke ab. Schauen Sie sich die folgenden Beispiele an und versuchen Sie, die Abfragen mit ihren Komponenten mit Hilfe Ihrer bisherigen Kenntnisse nachzuvollziehen.
+
+::: {layout-ncol="2"}
+![Abbildung 07-03: Beispiele für THEM = thematische und GEOM + THEM = kombinierte geometrische und thematische Abfragen (GITTA 2005](https://farm3.staticflickr.com/2922/14161471688_12d9ff0432_o.png)
+
+![Abbildung 07-04: Beispiele für GEOM = Geometrische und TOPO = Topologische Abfragen (GITTA 2005)](https://farm3.staticflickr.com/2913/14348127685_0ed1e5b815_o.png)
+:::
+
+::: {.callout-tip icon="false" appearance="simple"}
+## Übung
+
+-   Können Sie den Unterschied zwischen vergleichenden und logischen Operatoren in eigenen Worten erläutern?
+-   Können Sie spontan den Unterschied zwischen “ist gleich” ( = ) und logischem UND erklären?
+:::

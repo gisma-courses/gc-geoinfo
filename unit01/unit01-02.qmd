@@ -1,0 +1,74 @@
+---
+title: "Geographie - räumliche Interpretation der Welt"
+title-block-banner: ..//assets/images/splash_L01_1.png
+title-block-banner-color: black
+bibliography: unit01.bib
+lang: de
+comments: false
+---
+
+Die Annäherung an die Thematik der Geographischen Informationssysteme (GIS) erscheint dem Einsteiger vor dem Hintergrund der vielfältigen Verwendung des Begriffs und vor allem vor dem Hintergrund der vielfältigen und unterschiedlich komplexen Anwendungen unübersichtlich. Dies beginnt bereits bei den Begriffen “Geographie” und “geographisch”, die mit der Wahrnehmung, dem Verständnis und der Beschreibung der Erde bzw. der Erdoberfläche verbunden sind. Damit rückt -vielleicht unerwartet- die fachliche Beschreibung der Erde, also eine abstrahierte kognitive Welterfahrung, in den Mittelpunkt einer ersten Beschäftigung mit GIS. Für den Umgang mit Informationssystemen in der Geographie sollten Sie zunächst einige Grundkonzepte der Wahrnehmung und Abstraktion sowie der Kommunikation geographischer Welterfahrung kennen und verstehen.
+
+## Kartographie als Abbild der Erde
+
+Nach allgemeinem Verständnis ist die Karte ein orientiertes, verkleinertes, geebnetes Grundrissbild eines Ausschnitts der Erdoberfläche, das die Gesamtheit oder eine begrenzte Auswahl der für diesen Ausschnitt bedeutsamen Erscheinungen wiedergibt (Bartelme 2005). Lehmann spricht die dieser Definition zugrunde liegende Problematik folgendermaßen an: “*Karten geben kein Abbild der Wirklichkeit, sondern nur die Möglichkeit, sich die Wirklichkeit vorzustellen [...]. Sie sprechen eine eigene Sprache, die übersetzt werden will*” [@lehmann1952, 73]. Integriert man diese Auffassung in eine geographische Definition der Karte, so ist sie
+
+* ein *Bild* der Erde
+* eine Darstellung der als *wesentlich empfundenen Phänomene
+* ein Produkt der Kartographie, das je nach Zielsetzung und den als wesentlich erkannten Erscheinungen adäquate *Darstellungsverfahren* anwendet
+
+## Intention von Karten
+
+Um diesen Zusammenhang an einem Beispiel zu verdeutlichen, betrachten wir die berühmte “Kosmographie” des Ptolemäus (vgl. Abb. 01-01), erstmals gedruckt um 1410 in Italien, hier die Ulmer “Druckausgabe” von @lienhart.
+
+![Abbildung 01-01: Weltkarte des Ptolemäus. Die hier gezeigte Weltkarte ist mit den zwölf Winden illustriert und eine der 32 Karten aus der „Cosmographia“ die von Lienhart Holle aus Ulm am 6. Juli 1482 herausgegeben wurde. Dies war die erste gedruckte Kartenausgabe nördlich der Alpen . (Quelle: @lienhart2020)](http://upload.wikimedia.org/wikipedia/commons/b/b9/Johannes_Schnitzer_Weltkarte.jpg ) 
+
+Sie kann als ein frühes, idealtypisches Beispiel für die oben definierten Eigenschaften einer Karte angesehen werden. Dargestellt ist das zu dieser Zeit gültige europäische Weltbild. Wenige Jahre später wurde dieses Weltbild durch Kolumbus und seine Entdeckungsreisen revolutioniert und grundlegend korrigiert.
+
+Monmonier sagt in diesem Zusammenhang: "*that maps, like speeches and paintings, are authored collections of information and also subject to distortions arising from ignorance, greed, ideological blindness, or malice* [...]". [@monmonier1991]. Hier wird deutlich, wie sehr die Abstraktion von (räumlicher) Realität von der Intention des Senders und der Kodierung bzw. Rekodierung durch den Empfänger abhängt.
+
+## Geographische Abstraktion
+
+Schauen wir uns in unserer Alltagswelt um, so stellen wir fest, dass - über welchen Medienkanal auch immer - ein zunehmender Teil unserer Information, unserer Kommunikation und unseres Wissens auf digitalen, medial aufbereiteten Daten basiert. Die allgegenwärtigen Schlagworte der Informationsgesellschaft und des Informationszeitalters bringen diese Wahrnehmung eindrucksvoll auf den Punkt.
+
+Trotz einer durchaus kontroversen und uneinheitlichen Diskussion dieser Begriffe kann davon ausgegangen werden, dass der Umgang mit globalen Daten-, Informations- und Wissensnetzwerken gerade für eine Disziplin wie die Geographie von elementarer Bedeutung ist. Die stetige Zunahme neuer Sensoren in Raum und Zeit, die hochaufgelöste und weltweit verfügbare Daten liefern, erzwingt einen organisierten und strukturierten Umgang mit diesen Daten. Gleichzeitig ergibt sich aus der Existenz der Daten die Notwendigkeit, diese möglichst zeitnah zu filtern, zu analysieren und zu interpretieren, d.h. in Information umzuwandeln.
+Vor diesem Hintergrund erhält der Informationsbegriff eine neue Dimension. Um zu Informationen zu gelangen, reicht es nicht aus, in Daten zu ertrinken. Wir benötigen Interpretationsregeln und Analysewerkzeuge, um aus Daten Informationen oder Wissen zu generieren.
+
+Geographische oder räumliche Darstellungen sind die Grundlage für die wissenschaftliche Interpretation raum-zeitlicher Aspekte der realen Welt. In der Wissenschaft ist es üblich, hierfür als gesichert geltende Regeln (Axiome) zu verwenden. Eines der wohl bekanntesten wurde von Waldo Tobler formuliert: “Alles ist mit allem verbunden, aber nahe Dinge sind mehr verbunden als ferne Dinge” [@tobler1970]. Es wird oft als "erstes geographisches Gesetz" zitiert. Wie sehr es auch andere Auffassungen geben kann, zeigt z.B. Benno Werlen in seinem handlungszentrierten Ansatz, der darauf hinweist, dass nicht nur reale Nachbarschaftsbeziehungen von Objekten oder Merkmalsausprägungen Raumkonstruktionen ermöglichen, sondern dass Räume z.B. auch durch handelnde Menschen, die nicht notwendigerweise in räumlicher Nachbarschaft agieren, sozial konstruiert werden können (vgl. z.B. @werlen1993).
+
+![Abbildung 01-02: Die Interpretation der perzipierten „realen Welt“ sowie die Entwicklung geeigneter Strategien für den praxistauglichen Umgang (=Abstraktion) mit dieser Welt, findet mit dem Hilfsmittel der Modellbildung statt. (@gisma)](https://farm8.staticflickr.com/7425/13911225673_23cd595e1d_n.jpg)
+
+
+
+Nicht nur in der naturwissenschaftlich-quantitativ orientierten Darstellung der Welt gilt der Nachbarschaftsbegriff nach Tobler nur für bestimmte Zusammenhänge. So ist z.B. die Stickstoffkonzentration in der Atmosphäre relativ homogen und kontinuierlich (und entspricht damit dem Toblerschen Axiom), während z.B. geologisch kontinuierliche Einheiten auf Kontinentalplatten oder Störungen von einem Meter zum nächsten Nachbarschaftsbeziehungen geradezu konterkarieren. Ähnliches gilt für andere Zusammenhänge, wie z.B. die Verteilung von Währungen innerhalb der EU oder auch die Regelung von Steuerangelegenheiten, die in der Regel an administrative Grenzen gebunden ist, obwohl auf beiden Seiten Menschen leben, die Steuern zahlen.  
+
+## Geographische Modellierung
+
+Die Zusammenhänge der realen Welt sind in der Regel so komplex, dass sie nur in generalisierter Form verständlich dargestellt oder analysiert werden können. Schon im Alltag konstruieren wir ständig kognitive Modelle, um unsere Wahrnehmung der Welt zu vereinfachen [@rasch2006]. Auch in den Wissenschaften ist diese Erfahrung bekannt. So notiert der Physiker Bridgman bereits 1927: “I believe that the model is a useful and indeed unescapable tool of thought, in that it enables us to think about the unfamiliar in terms of the familiar” (Bridgman 1927), während der Modellierer Rivet 1972 schlicht behauptet: “*The history of mankind is the history of model building*” [@rivett1972].
+
+Die Wahrnehmung und Interpretation der „realen Welt“ sowie die Entwicklung geeigneter Strategien für den praktischen Umgang mit dieser Welt erfolgt mit den Mitteln der Abstraktion und Kommunikation (= Modellbildung) (vgl. Abb. 01-02). Die angewandten Abstraktionsstrategien sind widersprüchlich und vielfältig, da Kontextabhängigkeit und Zielsetzung des Abstrahierenden einen wesentlichen Einfluss auf die Ergebnisse ausüben (“Methode Götterblick”, vgl. auch @eckmuellner2007).
+
+Das heißt, die gewählte Abstraktion der räumlichen Welt ist aus wissenschaftlicher Sicht bestenfalls nachvollziehbar und transparent, aber niemals wahr. Die logische Gültigkeit der Abstraktion garantiert auch nicht die Gültigkeit der abgeleiteten oder allgemeinen Aussagen. Es kann also nicht bewiesen werden, ob das konstruierte Modell der Realität entspricht. Allenfalls kann die Gültigkeit für den definierten Zweck nachgewiesen werden, niemals aber die Wahrheit [@bossel2004].
+
+Trotz dieser enormen Einschränkungen werden Darstellungen des Raumes ständig und dringend benötigt, um raumbezogene Informationen nachvollziehbar zu dokumentieren, zu analysieren und zu kommunizieren. Oft sind mehrere oder variable Repräsentationen notwendig, um die Realität hinreichend genau abzubilden.
+
+Wer Raumkompetenz erwerben will, muss alle genannten Aspekte berücksichtigen, keineswegs nur die softwarespezifischen. Wissenschaftstheoretisch betrachtet sind GIS in der Geographie ein Methodenverbund, um raum-zeitliche Zusammenhänge nachvollziehbar und reproduzierbar zu konstruieren.
+
+
+## GI in der universitären Geographie
+
+Wenn wir also GI-Systeme als Werkzeuge definieren, die nach den Regeln der Informationsverarbeitung zu bedienen und zu nutzen sind, dann müssen wir einen Weg finden, geographisch so widersprüchliche Raumvorstellungen nachvollziehbar und reproduzierbar zu definieren und zu integrieren.
+
+## Übung
+
+
+::: {.callout-tip icon="false" appearance="simple"}
+Versuchen Sie, die Relevanz von GI in der universitären Lehre und Forschung in der Geographie einzuordnen. Besuchen Sie dazu eine Auswahl geographischer Institute im Internet.
+
+* Versuchen Sie, die Bedeutung von GI im Rahmen der o.g. Vorüberlegungen konkret für Ihren Studiengang und die angebotenen Lehrveranstaltungen einzuordnen.
+* Schauen Sie sich stichprobenartig an, wie Raum und Zeit in den Publikationen von Wissenschaftlerinnen (Berufsgeographinnen) aufgefasst wird. Welche GI-relevanten Inhalte können Sie identifizieren?
+* Wie sehen Sie die Integration von GI-Methodik in Ihrem Fachgebiet?
+* Nennen Sie einige geographische Fragestellungen, die ohne GI-Methoden auskommen.
+
+:::
+

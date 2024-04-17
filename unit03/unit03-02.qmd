@@ -1,0 +1,64 @@
+---
+title: Thematische Abfragen
+title-block-banner: ../assets/images/splash_L02.png
+title-block-banner-color: black
+
+bibliography: unit03.bib
+
+lang: de
+comments: false
+---
+
+Eine thematische Abfrage führt zu einer den Bedingungen entsprechenden Auswahl der abgefragten Attributwerte. Thematische Abfragen sind somit konventionelle (= nicht raumbezogene) Abfragen relationaler Datenbestände. In GIS werden thematische Abfragen entweder mit `SQL` (Structured Query Language) oder mit systeminternen Abfragesprachen durchgeführt. In beiden Fällen werden die einzelnen Befehle in der Regel mit Hilfe eines grafischen Dialogsystems ausgewählt und zusammengestellt.
+
+### Eingabedaten für die Operatorbeispiele
+
+Die folgenden Beispiele gehen von folgenden Eingabedaten (Geometrie und Relation) aus. Für die logischen Operatoren sind die Venn-Diagramme wie bisher zu interpretieren.
+
+![Abbildung 03-04: Eingabedaten für die folgenden Abfragen , @gitta2005](../assets/images/unit03/0304_input.jpg)
+
+Machen Sie sich mit der Funktionsweise der Operatoren vertraut. Nachfolgend finden Sie eine Reihe von SQL-Abfragen. Die Ergebnisse werden sowohl als Relation als auch als Geometrie dargestellt.
+
+## Vergleichsoperatoren
+
+![Abbildung 03-05: Vergleichsoperatoren , @gitta2005](../assets/images/unit03/0305_vop.jpg)
+
+## Logische Operatoren
+
+### Die logische Verknüpfung AND
+
+![Abbildung 03-07: Die logische Verknüpfung AND , @gitta2005](../assets/images/unit03/and_ex.jpg)
+
+### Die logische Verknüpfung OR
+
+![Abbildung 03-08: Die logische Verknüpfung OR , @gitta2005](../assets/images/unit03/or_ex.jpg)
+
+### Die logische Verknüpfung XOR
+
+![Abbildung 03-08: Die logische Verknüpfung XOR , @gitta2005](..assets/images/unit03/xor_ex.jpg%22)
+
+### Die logische Verknüpfung NOT
+
+![Abbildung 03-08: Die logische Verknüpfung NOT , @gitta2005](../assets/images/unit03/not_ex.jpg)
+
+### Verschachtelte logische Operatoren
+
+Für die im Folgenden dargestellten verschachtelten logischen Operatoren gelten die folgenden Angaben:
+
+-   Kreis 1: Baumart = "Lärche
+-   Kreis 2: Vorrat \> 110 m<sup>3</sup>/ha
+-   Kreis 3: Überschirmung \> 80%.
+
+![Abbildung 03-09: Verschachtelte logische Operatoren , @gitta2005](../assets/images/unit03/nestedoperators.png)
+
+## Übung
+
+::: {.callout-tip icon="false" appearance="simple"}
+Betrachten Sie die folgende SQL-Abfrage:
+
+`Select * from Parzelle where (Dichte > 80% and Vorrat > AVER(Parzelle.Vorrat)) or Baumart = „Lärche“`
+
+-   Wie viele Operatoren können Sie identifizieren?
+-   Formulieren Sie die Abfrage in einen normalen Fragetext um.
+-   Ist es möglich, die Abfrage anders zu formulieren, um dasselbe Ergebnis zu erhalten?
+:::

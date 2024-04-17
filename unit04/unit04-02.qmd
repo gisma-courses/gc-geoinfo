@@ -1,0 +1,55 @@
+---
+title:  Voronoi Polygone
+title-block-banner: ../assets/images/splash_L03.png
+title-block-banner-color: black
+
+bibliography: unit04.bib
+
+lang: de
+comments: false
+---
+
+
+
+Als Einstieg in die Thematik der Raumanalyse wurde die Integration des einfachsten Raumkonzeptes, der Voronoi-Polygonisierung, gewählt. Sie steht exemplarisch für die Generierung geometrisch fundierter raumkontinuierlicher Interpolationskonzepte. Diese Betrachtung wird um einige komplexere Interpolationsverfahren erweitert.
+
+
+## Abstandsbeziehungen: Voronoi-Polygone als Ableitung von Abstand und Nachbarschaft	
+
+Wir erweitern nun unsere Kenntnisse über die Analyse von Entfernungen zwischen räumlichen Objekten. Oft ist es sinnvoll, in einer ersten Analyse ohne räumlich einschränkende Bedingungen zu arbeiten, z.B. wenn diese Information fehlt. Der Begriff „Nähe“ weist auf eine gewisse Unschärfe hin. Als qualitative Begriffe können „nah“, „fern“ oder „in der Nähe von“ verwendet werden. Für GI-Systeme müssen diese Begriffe objektiviert und operationalisiert werden. Es muss also ein Abstandsbegriff zugrunde gelegt werden, z.B. die euklidische Distanz oder Reisezeiten. In einem zweiten interpretativen Schritt muss dann entschieden werden, welche Einheiten diese Art von Nähe definieren. Im Sinne der Zielsetzung einer Fragestellung gibt es nur geeignete und weniger geeignete Maße, aber keine richtigen oder falschen. Daher ist es von zentraler Bedeutung, für die Untersuchungsobjekte eine sinnvolle Nachbarschaftsbeziehung zu definieren.
+
+Bei Nachbarschaftsanalysen geht es häufig um Einfluss- oder Einzugsgebiete, also um räumliche Wirkungs- oder Prozessmuster. Einige Fragen sind Ihnen bereits bekannt, andere sind neu oder komplexer:
+
+  * Welche oder wie viele Diskotheken befinden sich im Umkreis von 300 m um einen bestimmten Standort (Outdoor-Camp)?
+  * Wie viele Täler kann man von einem Aussichtspunkt aus überblicken?
+  * Liegt ein bestimmter Standort in der Lärmzone eines Fun-Parks?
+
+Im Folgenden werden einige Methoden zur Berechnung von Entfernungen zwischen Raumobjekten etwas ausführlicher als bisher diskutiert. Aufgrund der unterschiedlichen Art der Diskretisierung des Raumes muss dabei - wie bereits gewohnt - zwischen Vektor- und Rastermodellen unterschieden werden.
+
+### Voronoi-Polygone 
+
+[Voronoi-Polygone](https://de.wikipedia.org/wiki/Voronoi-Diagramm) (oder auch Thiessen-Polygone) entsprechen einem in der Natur (z.B. Pflanzenzellen) und in den Raumwissenschaften häufig beobachteten Ordnungsprinzip, daher sind die Anwendungsmöglichkeiten vielfältig. Beispielsweise können Voronoi-Polygone in erster Näherung zur Erstellung von Bodenkarten aus unregelmäßig und isoliert entnommenen Bodenproben verwendet werden. Dabei muss angenommen werden, dass über den Raum zwischen den beprobten Stellen nichts weiter bekannt ist und dass die Grenzlinie zwischen zwei Proben unterschiedlicher Bodenart willkürlich in der Mitte zwischen ihnen liegt (siehe z. B. @jones1997, 48). Voronoi-Polygone können auch zur Abgrenzung von Einzugsgebieten von Handels- oder Dienstleistungseinrichtungen verwendet werden, wenn keine weiteren Informationen über raumwirksame Strukturen vorliegen.
+
+Voronoi-Polygone sind somit eine elementare Methode, um auch aus 0-dimensionalen Daten *Nähe* (Proximität) bzw. *Nachbarschaft* geometrisch zu bestimmen. Voronoi-Polygone können verwendet werden, wenn in einer Menge von unregelmäßig verteilten Punkten die Regionen gesucht werden, die einem Punkt am nächsten liegen. Im zweidimensionalen Fall definiert ein Voronoi-Polygon eine Fläche um einen Punkt, in der jeder Punkt im Raum näher an diesem Punkt liegt als an jedem anderen Punkt. Solche Konstruktionen können auch in höheren Dimensionen gebildet werden, wobei Voronoi-Polyeder entstehen.
+
+![Die blauen Kreisflächen sind ein lehrbuchhaftes Beispiel für unregelmäßig verteilte Meßpunkte im Raum - in diesem Fall offizielle Regenmessstationen in der Schweiz. Die unterschiedlichen Kreisflächen visualisieren die mittlere langjährige Niederschlagsmenge an der Messstation (nicht in der Legende abgebildet). Die überlagerten und entsprechend der Niederschlagmenge der enthaltenen Messtation eingefärbten Polygone sind die Voronoi- oder Voronoi-Polygone genannten Flächen **nächster Distanz** zu den Punkten @gisma2021](../assets/images/unit04/suisse1.html){width="100%" height="500px"}
+
+Man kann Voronoi-Diagramme auch um eindimensionale Objekte (Linien) bilden, was zu komplexeren Formen führt (siehe Abbildung unten). In dieser Einheit beschränken wir uns jedoch auf den einfachsten und am häufigsten verwendeten Fall von Voronoi-Polygonen für Punkte. Eine ausführlichere Diskussion findet sich in @okabe2000.
+
+
+## Übung
+
+Die Berechnung von Voronoi-Polygonen ist auch auf Rasterdaten möglich. Im Raster spricht man dann nicht mehr von Polygonen, sondern von *Näherungszonen*. Aus einer Anzahl von Punkten, die als einzelne Zellen in einem Raster gegeben sind, kann mit Hilfe einer Distanztransformation die Zugehörigkeit der Zelle zur Zentralzelle bestimmt werden. Die Berechnung im Raster hat den enormen Vorteil, dass neben der euklidischen Distanzmetrik weitere Faktoren wie z.B. Oberflächenreibung oder Kosten als Gewichtungsfaktoren etc. berücksichtigt werden können.  
+
+::: {.callout-tip icon="false" appearance="simple"}
+
+Experimentieren Sie: 
+
+-  Mit dem Slider können Sie die Anzahl der Punkte bestimmen 
+-  Setup startet die zellenbasierte Berechnung der Proximitätszonen. 
+-  Wenn Sie den Go Button aktivieren, können sie interaktiv die Punkte verschieben und die Neuberechnung verfolgen
+
+
+![](../assets/images/unit04/Voronoi.html){width="100%" height="700px"}
+
+:::

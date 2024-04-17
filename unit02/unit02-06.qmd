@@ -1,0 +1,21 @@
+
+---
+title: Zusammenfassung GI Raumkonzepte
+title-block-banner: ../assets/images/01-splash.jpg
+title-block-banner-color: black
+format:
+  html:
+    other-links:
+      - text: "Splash Source: Snow (1855):"
+        href: https://w.wiki/QtV
+bibliography: unit02.bib
+
+lang: de
+comments: false
+---
+
+Die grundlegenden Konzepte und Prinzipien der Raum-Zeit-Kodierung in Geoinformationssystemen (GIS) werden erläutert. Er beginnt mit der Bedeutung der Zeit als strukturierendes Ordnungssystem und der exakten Lokalisierung von Orten als zentrale Aufgaben eines GIS. Verschiedene Methoden der räumlichen Referenzierung werden diskutiert, wie z.B. die Verwendung von Ortsnamen, lineare Referenzierungssysteme und Katastersysteme.
+
+Darüber hinaus wird die Bedeutung von geographischen Koordinaten für die genaue Lokalisierung von Punkten auf der Erdoberfläche erläutert. Herausforderungen wie die Abflachung der Erde und die Auswahl geeigneter Referenzellipsoide für Koordinatensysteme werden diskutiert.
+
+Schließlich wird auf die Bedeutung der Kartenprojektion eingegangen, die als Transformation von sphärischen Längen- und Breitenkoordinaten in kartesische Koordinaten verstanden wird. Dabei werden verschiedene Projektionsverfahren und deren Abbildungseigenschaften diskutiert, um je nach Zielsetzung und Fragestellung bei der Darstellung von GIS-Daten die Auswahl eines geeigneten Projektionsverfahrens zu ermöglichen.

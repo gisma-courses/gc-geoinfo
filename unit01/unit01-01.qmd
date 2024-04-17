@@ -1,0 +1,41 @@
+---
+title: "Raum braucht einen Geltungsbereich"
+title-block-banner: ..//assets/images/splash_L01_1.png
+title-block-banner-color: black
+bibliography: unit01.bib
+lang: de
+comments: false
+---
+
+Es klingt banal: Wenn man morgens zur Universität geht, bewegt man sich im Raum. Wenn Sie zu Hause vom Schreibtisch aufstehen und in die Küche gehen, bewegen Sie sich im Raum. Aber auch wenn wir Sie fragen, wo Sie gestern waren, bewegen Sie sich höchstwahrscheinlich in Gedanken durch den von Ihnen wahrgenommenen Raum. <Kurzum: Wir alle leben im Raum, alle unsere Aktivitäten finden im Raum statt und auch unsere Wahrnehmung der Welt ist stark räumlich geprägt und, wenn wir es genau nehmen, entlang einer Zeitlinie organisiert. Es ist daher nicht verwunderlich, dass nicht nur in der Geographie das Verständnis räumlich und zeitlich wirksamer Prozesse eine wichtige Rolle spielt.
+
+## Raum ist relevant
+Raum ist also etwas sehr Reales und raumrelevante Probleme müssen daher von jedem (all)täglich gelöst werden. Viele dieser Lösungen sind so alltäglich, dass man sie kaum noch wahrnimmt. So ist z.B. die Frage, welchen Weg wir mit welchem Fahrzeug wählen, um optimal zur Arbeit, zum Sport oder nach Hause zu kommen, ein typisches, komplexes Problem, dessen Lösung wir (scheinbar) intuitiv finden. Dass diese Intuition meist eine andere ist als die freundliche Stimme des Navigationssystems, zeigt nur, wie subjektiv diese Lösung sein kann.
+
+Fragen, die räumliche Aspekte beinhalten, werden oft *geographisch* zugeordnet. Hier einige Beispiele:
+
+
+- Die Planung der räumlichen Verteilung von Infrastruktur ist ein geographisches Problem, bei dem viele Interessen im Raum aufeinander abgestimmt werden müssen: *Wo baue ich für eine Region (eine bestimmte Anzahl von Menschen) eine Einrichtung (Supermarkt, Schwimmbad...)?*
+
+- Geographische Fragestellungen werden bei der Analyse oder Prognose von wirtschaftlichen oder soziodemographischen Zusammenhängen bearbeitet: *Welche sozioökonomischen Parameter sind räumlich geclustert? Gibt es einen räumlichen oder zeitlichen Zusammenhang zwischen Strukturschwäche und ungünstiger wirtschaftlicher Entwicklung?*
+
+
+- Die Organisation und Planung von Logistik ist eine Frage der räumlichen Problemlösung: *Auf welchem Weg erreiche ich als Auslieferungsfahrer meine Kunden am effizientesten?*
+
+
+- Das Management von Liegenschaften in der Verwaltung (Kataster), in der Landwirtschaft (Precision Farming) und in der Forstwirtschaft ist eng mit vielfältigen geographischen Fragestellungen verbunden.
+
+- Konventionelle und moderne Informationssysteme bieten Lösungen für typische geographische Fragestellungen: *Wie komme ich als Tourist zu meinem Hotel, zum Strand oder zum Kletterfelsen?*
+
+## Geographische Kompetenzen
+Viele unserer alltäglichen Handlungen hängen offensichtlich von Problemlösungsstrategien ab, die geographische Kompetenzen erfordern. Natürlich sind nicht alle Problemstellungen so anwendungsorientiert, wie die Beispiele vermuten lassen, aber eine Unterscheidung zwischen Grundlagenforschung und angewandter Forschung ist im Hinblick auf die Technologie der Geographischen Informationssysteme in der Regel nicht sinnvoll, da beiden die gleichen informationstechnischen Konzepte zugrunde liegen und lediglich unterschiedliche Ziele verfolgt werden.
+
+## Lernziele
+
+Die Lernziele des ersten Readers sind
+
+  * Reflexion des alltäglichen Umgangs mit Geographischen Informationssystemen (GIS)
+  * Einführung in Begriffe und Definitionen
+  * Einführung in die Kommunikationskonzepte von GI in der Geographie
+## Referenzen
+
