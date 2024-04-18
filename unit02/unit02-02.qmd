@@ -8,7 +8,7 @@ format:
     other-links:
       - text: "Splash Source: Snow (1855):"
         href: https://w.wiki/QtV
-bibliography: unit02.bib
+bibliography: ../assets/geoinfo.bib
 
 lang: de
 comments: false

@@ -11,6 +11,3 @@ Die kurze Einführung sollte Sie für die erkenntnis- und wissenschaftstheoretis
 Jenseits aller konkurrierenden Begriffe und Definitionen können GI-Methoden als Werkzeuge zur Umsetzung eines zeitgemäßen raum-zeitlich strukturierten, abstrahierenden und reproduzierenden Denkens in der Geographie bezeichnet werden. GI beantwortet also nicht nur Fragen im Sinne eines “einfachen” Auskunftssystems, sondern vielmehr wird räumliche Wirklichkeit für Planung, für Analysen, für Erkenntnisgewinn im GIS generiert/gedacht. Die dafür notwendigen Abstraktionskonzepte stammen aus der Informatik und der Erkenntnistheorie. Sie sind transparent und nachvollziehbar und damit überprüfbar. Geoinformationssysteme in ihrer ganzen Vielfalt bestimmen zunehmend unsere alltägliche Wahrnehmung und Interpretation der Welt. Die Geographie betrachtet dies seit Beginn ihrer akademischen Existenz als ihre Kernkompetenz.
 
 Ohne den Einsatz von GI-Techniken und -Wissen wird eine gesellschaftsrelevante und zeitgemäße Geographie in Zukunft kaum sinnvoll betrieben werden können.
-::: {.callout-tip icon="false" appearance="simple"}
-
-:::

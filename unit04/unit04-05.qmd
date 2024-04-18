@@ -3,7 +3,7 @@ title:  Modelle der Erdoberfläche – Sichtweite und Sichtfeld
 title-block-banner: ../assets/images/splash_L03.png
 title-block-banner-color: black
 
-bibliography: unit04.bib
+bibliography: ../assets/geoinfo.bib
 
 lang: de
 comments: false

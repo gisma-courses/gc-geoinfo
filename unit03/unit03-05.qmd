@@ -2,7 +2,7 @@
 title: Geometrische Abfragen - Zusammenfassung
 title-block-banner: ../assets/images/splash_L02.png
 title-block-banner-color: black
-bibliography: unit03.bib
+bibliography: ../assets/geoinfo.bib
 
 lang: de
 comments: false
