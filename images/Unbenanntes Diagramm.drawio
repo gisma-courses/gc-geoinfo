@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-04-21T17:30:20.866Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="wZa4FiX9uPtr-mw3juZ9" version="24.2.7" type="github">
+<mxfile host="app.diagrams.net" modified="2024-04-21T17:38:06.833Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="PYithgOHkrwVhWZXjDoj" version="24.2.7" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="993" dy="1210" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -176,8 +176,8 @@
         <mxCell id="LmbCgK1vUzO_-XYj1HLt-63" value="&lt;font color=&quot;#ff0000&quot;&gt;Schritt 4&lt;/font&gt;: Anwendung von Einschränkungen" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="80" y="567" width="310" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="LmbCgK1vUzO_-XYj1HLt-64" value="&lt;font color=&quot;#009900&quot;&gt;Schritt 5&lt;/font&gt;:&amp;nbsp;&lt;span style=&quot;background-color: initial; font-size: 15px;&quot;&gt;Multiplikation von Eignungs- und Einscränkungskarte&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="80" y="589" width="440" height="30" as="geometry" />
+        <mxCell id="LmbCgK1vUzO_-XYj1HLt-64" value="&lt;font color=&quot;#009900&quot;&gt;Schritt 5&lt;/font&gt;:&amp;nbsp;&lt;span style=&quot;background-color: initial; font-size: 15px;&quot;&gt;Multiplikation von Eignungs- und Einschränkungskarte&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="80" y="589" width="450" height="30" as="geometry" />
         </mxCell>
         <mxCell id="LmbCgK1vUzO_-XYj1HLt-66" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;i&gt;Wildkatzen bevorzugen mittlere Höhen, steilere Hänge die W-S-O exponiert, &lt;br&gt;Waldgebiete, Nähe zu Wasserstellen, Autobahnen werden kategorisch gemieden&lt;/i&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="80" y="30" width="600" height="50" as="geometry" />
