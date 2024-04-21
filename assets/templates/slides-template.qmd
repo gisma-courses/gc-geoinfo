@@ -28,7 +28,7 @@ format:
 
 filters:
   - roughnotation
-  - reveal-header
+
 
 revealjs-plugins:
   - spotlight

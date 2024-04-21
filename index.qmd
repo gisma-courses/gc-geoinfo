@@ -1,13 +1,16 @@
 ---
-title: ""
+title: "Willkommen zum <br> Grundlagen Kurs GI-Methoden"
 open-graph:
   description: "Geoinformatik (QGIS)"
   image: assets/images/splash-geoinformatik.jpg
 twitter-card:
   description: "Geoinformatik (QGIS)"
   image: assets/images/splash-geoinformatik.jpg
+  
+title-block-banner: assets/images/splash-geoinformatik.jpg
+title-block-banner-color: "#1E1E62"
 ---
-![](assets/images/splash-geoinformatik.jpg)
+
 ```{=html}
 <style>
   body {

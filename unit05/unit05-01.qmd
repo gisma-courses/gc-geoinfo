@@ -1,0 +1,30 @@
+---
+title: Räumliche Entscheidungsfindung 
+title-block-banner: ../assets/images/splash_L04.png
+title-block-banner-color: black
+
+bibliography: ../assets/geoinfo.bib
+
+lang: de
+comments: false
+---
+
+
+Viele der Probleme, mit denen wir heute konfrontiert sind, sind kompliziert und es gibt viele gegensätzliche Interessen und Lösungen. Gesellschaftliche Gruppen, Interessenverbände und Behörden müssen jedoch in der Lage sein, zusammenzuarbeiten und Kompromisse zu schließen, um eine möglichst praktikable Lösung zu finden. Viele dieser Interessenskonflikte sind räumlich oder haben räumliche Auswirkungen. Diese Probleme haben oft einen räumlichen oder geografischen Bezug, so dass der Einsatz von GIS in Verbindung mit verschiedenen Rahmenwerken oder Analysen den Entscheidungsprozess unterstützen kann.
+
+
+Die in der Regel unvollständigen Informationen erschweren es, eindeutige und belastbare Entscheidungen oder Aussagen zu treffen. Auch eine im wissenschaftlichen Sinne dokumentierte Visualisierung von Daten, z.B. zur qualitativen Interpretation von kontinuierlichen Rauminformationen, ist vor diesem Hintergrund von zweifelhaftem Wert. Um belastbare Aussagen zu entwickeln, benötigen wir Hypothesen und nachvollziehbare Argumentationslinien. 
+
+Meist sind zur Beantwortung scheinbar einfacher Fragen wie "Wo ist ein geeigneter Standort für ein Wasserkraftwerk?" oder "Welcher Flussabschnitt eignet sich für Rafting?" neben zahlreichen rechtlichen Rahmenbedingungen mehrere, oft widersprüchliche Kriterien zu berücksichtigen, die in einer bestimmten Reihenfolge miteinander verknüpft werden müssen, um zu Entscheidungsoptionen zu gelangen. 
+
+So müssen z.B. bei der Suche nach konfliktarmen und gleichzeitig geeigneten Lebensräumen für Wölfe Kriterien wie Gelände, Störungen, Wasserverfügbarkeit, Landnutzung durch Land-/Forstwirtschaft, Menschenlebensräume und Freizeitverhalten, Sicherheitsempfinden ... etc. berücksichtigt und gegeneinander abgewogen werden. 
+
+Oft müssen auch die Ansprüche verschiedener Interessengruppen in den Entscheidungsprozess integriert werden. Dabei sind häufig Zielkonflikte zu beachten. 
+
+Zur Beantwortung solcher Fragen gibt es eine Vielzahl von Entscheidungsunterstützungstechniken und methodischen Ansätzen unterschiedlicher Komplexität. In unserem Fall betrachten wir ganz allgemein Entscheidungskonzepte, die bei mehreren räumlich wirksamen Merkmalsausprägungen und/oder Zielen zu bewertbaren Ergebnissen führen.
+
+## Lernziele
+
+-  Sie verstehen die grundlegenden Konzepte zur Generierung alternativer Szenarien durch Kombination und Gewichtung von Kriterien in einer Multikriterienanalyse.
+
+-  Darauf aufbauend lernen Sie Kriterien für ein einfaches GIS-basiertes Entscheidungsunterstützungsmodell abzuleiten und zu operationalisieren.

@@ -1,0 +1,39 @@
+---
+title: Eignungsanalysen
+title-block-banner: ../assets/images/splash_L04.png
+title-block-banner-color: black
+
+bibliography: ../assets/geoinfo.bib
+
+lang: de
+comments: false
+---
+  
+  Die Anforderungen an kombinierte Kriterien zur Findung von räumlichen Merkmalskombinationen lassen sich am besten anhand von Fallbeispielen erarbeiten. So häufen sich die Beispiele konkurrierender Interessensgruppen und auch gesetzlich garantierter Schutzzustände von Windkraftanlagen über Wildschweinschäden bis hin zur potenziellen Ausbreitung von Wolf, Luchs oder Wildkatze. 
+
+So liefert Google Scholar mit ["*GIS suitability assessment analysis case study*"](https://scholar.google.de/scholar?as_ylo=2023&q=GIS+suitability+assessment+analysis+case+study&hl=de&as_sdt=0,5&as_vis=1) seit dem Jahr 2023 über 17k Treffer - von Nature Veröffentlichungen bis hin zur Projektwebseite ist alles verteten.
+
+Grundlage solcher Analysen sind räumliche Suchtechniken nach verschiedenen Kriterien. Diese bestehen aus mehreren einfachen Suchanfragen mit z.B. nur einem Suchkriterium *"Welche Flächen sind mit Wald bedeckt? Wo leben Menschen? Welche Gebiete werden landwirtschaftlich genutzt?* Erst die Kombination mehrerer Suchkriterien führt zu Lösungsvorschlägen, die dann *bewertet* werden müssen. Ein GIS ermöglicht solche Kombinationen durch die Verschneidung mehrerer Informationsebenen. Erst die Überlagerung von Informationen z.B. zur Bodenart, zur Vegetation und zur Topographie ermöglicht die Beantwortung der Fragestellung. Der Begriff *Eignungsanalyse* bezeichnet die Suche nach Standorten oder Räumen, die sich durch eine Kombination bestimmter Eigenschaften auszeichnen. 
+
+
+Das Ergebnis einer Eignungsanalyse ist häufig eine *Eignungskarte*. Sie zeigt in Form einer thematischen Karte, welche Standorte oder Räume für eine bestimmte Nutzung besonders geeignet sind (z.B. landwirtschaftliche Eignungskarte). 
+
+![Analyse der Landeignung für die potenzielle Ausweitung des Weinanbaus in Afghanistan auf regionaler Ebene unter Verwendung von Fernerkundungsdatensätzen, @arab2022](https://pub.mdpi-res.com/remotesensing/remotesensing-14-04450/article_deploy/html/images/remotesensing-14-04450-ag-550.jpg?1663043213)
+
+Die umgekehrte Variante der Eignungskarte ist die *Vulnerabilitäts*- oder *Gefahrenkarte*. Sie identifiziert Gebiete, die aufgrund vorgegebener Kriterien einer bestimmten Gefahr besonders ausgesetzt sind (z.B. Lawinengefahrenkarte).
+
+![Bewertung von Schneelawinen in massenbewegungsgefährdeten Gebieten: Ergebnisse der Klimaextremisierung in Verbindung mit der Verringerung des Umweltrisikos im Prati di Tivo-Gebiet (Gran Sasso-Massiv, Mittelitalien) Schematisches Flussdiagramm mit den wichtigsten methodischen Schritten, @Fazzini2021](https://www.mdpi.com/land/land-10-01176/article_deploy/html/images/land-10-01176-g003.png)
+
+Die Eignungsanalyse wird häufig als *Entscheidungshilfe* in *Planungsprozessen* eingesetzt, z.B. in der Umweltplanung. Dabei geht es oft um die Frage, wo sich der geeignetste Standort für ein bestimmtes Objekt befindet (z.B. für ein Kraftwerk, eine Seilbahn, ein Naturschutzgebiet).
+
+
+![Bewertung der Bodeneignung zur Verbesserung der Bodenfaktoren und der landwirtschaftlichen Bewirtschaftung, @abd2019 ](https://pub.mdpi-res.com/sustainability/sustainability-11-01588/article_deploy/html/images/sustainability-11-01588-ag.png?1571234877)
+
+
+Wie wird das ganz pragmatisch umgesetzt? Für den ersten Einblick können Sie die [QGIS Fallstudien-Webseite](https://www.qgis.org/de/site/about/case_studies/index.html) nutzen. 
+
+-  QGIS and [Forest Fire Risk Mapping in Portugal](https://www.qgis.org/de/site/about/case_studies/portugal_pinhel.html)  by Pedro Venâncio.
+- [Lynx habitat analysis in the Southern Carpathians ](https://www.qgis.org/de/site/about/case_studies/europe_lynx.html) by Angela Dichte, Luca Ehrminger, Silvana Garcia Travesi Reyes, Tobias Hoppe and David Winger
+- [QGIS and GRASS for modelling ecological corridors for wolves in North Portugal](https://www.qgis.org/de/site/about/case_studies/portugal_ribeira.html) by Monica Almeida
+
+Auch die Use Cases zeigen bereits sehr anschaulich die konkreten Anforderungen. Bereits in einer einfachen Analyse wird die Komplexität von Eignungsanalysen deutlich. Vor dem Hintergrund der Relevanz für die abgeleiteten Entscheidungen bzw. Handlungsempfehlungen wird die Notwendigkeit nachvollziehbarer und wissenschaftlich belastbarer Entscheidungen sehr offensichtlich. 

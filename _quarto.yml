@@ -1,12 +1,16 @@
 project: 
   type: website
   output-dir: docs/
+  render:
+  - "*.qmd"
+
+  
 website:
   favicon: /images/logo.png
   bread-crumbs: false
   open-graph: true
   page-navigation: true  
-  title: "Geoinformatik Basiskurs (QGIS)"
+  title: "Grundlagenkurs GI-S (QGIS)"
   site-url: https://gisma-courses.github.io/gc-geoinfo
   repo-url: https://github.com/gisma-courses/gc-geoinfo
   search: 
@@ -38,7 +42,6 @@ website:
         contents:
           - index.qmd
           - unit00/unit00-01-formales.qmd
-          
       - text: "---"   
       - section: Reader Geographische Raumkonzepte
         contents: 
@@ -83,28 +86,36 @@ website:
       - text: "---"   
       - section: "Reader Quantitative räumliche Datenanalyse"
         contents: 
-          - href: unit99/coming-soon.qmd
-            text: "Reader Quantitative räumliche Datenanalyse" 
+          # - href: unit99/coming-soon.qmd
+          #   text: "Reader Quantitative räumliche Datenanalyse" 
+          - href: unit04/unit04-01.qmd
+            text: Räumliche Analysemethoden
+          - href: unit04/unit04-02.qmd
+            text: Voronoi Polygone
+          - href: unit04/unit04-03.qmd
+            text: Informationsloser Raum
+          - href: unit04/unit04-04.qmd
+            text: Digitale Geländemodelle
+          - href: unit04/unit04-05.qmd
+            text: Sichtweite und Sichtfeld
+          - href: unit04/unit04-06.qmd
+            text:  Prozeßbasierte Ableitungen
           # - href: unit04/unit04-01.qmd
-          #   text: Räumliche Analysemethoden 
-          # - href: unit04/unit04-02.qmd
-          #   text: Voronoi Polygone   
-          # - href: unit04/unit04-03.qmd
-          #   text: Informationsloser Raum
-          # - href: unit04/unit04-04.qmd
-          #   text: Digitale Geländemodelle    
-          # - href: unit04/unit04-05.qmd
-          #   text: Sichtweite und Sichtfeld   
-          # - href: unit04/unit04-06.qmd
-          #   text:  Prozeßbasierte Ableitungen    
+          #   text: "Räumliche Analysemethoden"
           # - href: unit04/unit04-01.qmd
-          #   text: "Räumliche Analysemethoden"  
-          # - href: unit04/unit04-01.qmd
-          #   text: "Räumliche Analysemethoden"   
+          #   text: "Räumliche Analysemethoden"
                                                 
-      # - text: "---"   
-      # - section: "Reader Kostenanalyse"
-      #   contents: 
+      - text: "---"   
+      - section: "Reader Kostenanalyse"
+        contents:
+          - href: unit05/unit05-01.qmd
+            text: Multikriterien-Analysen
+          - href: unit05/unit05-02.qmd
+            text: Eignungsanalysen
+          - href: unit05/unit05-03.qmd
+            text: Kombination unterschiedlicher Kriterien  
+          - href: unit05/unit05-04.qmd
+            text: Multikriterien-Multiziel-Analyse              
       #     - href: unit99/coming-soon.qmd
       #       text: "Folien Blocktag 1"    
       # - text: "---"   
@@ -120,8 +131,8 @@ website:
       - text: "---"   
       - section: "Reader Projektarbeit "
         contents: 
-          - href: unit99/coming-soon.qmd
-            text: "coming soon"    
+          - href: unit06/unit06-01.qmd
+            text: Die Projektarbeit    
 
       #- text: "---"
       #- section: "Machine Learning"
@@ -132,12 +143,12 @@ website:
           # - href: https://gisma-courses.github.io/LV-uav-workflow/modules/module-fieldwork/
           #   text: uav/Flight Planning
       - text: "---"
-##format: dokuwiki
-react:
-    components: _components
-    resources: _components
 execute:
   freeze: auto
+  echo: false
+  message: false
+  warning: false
+  cache: false  
 format: 
   html: 
       include-after-body: css/banner-footer.html
