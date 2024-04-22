@@ -1,0 +1,77 @@
+---
+title: Arbeitsblatt 6 - Projektarbeit
+title-block-banner: ../assets/images/06-splash.jpg
+title-block-banner-color: black
+
+bibliography: ../assets/geoinfo.bib
+
+lang: de
+comments: false
+---
+
+
+In dieser Übung sollen Sie eine abschließende Projektarbeit Ihrer Wahl durchführen.
+
+
+
+## Worum geht es in dieses Arbeitsblatt?
+
+Im Rahmen der Projektarbeit werden Sie eine typische kleine Studie mit Hilfe von GIS durchführen und die Ergebnisse Ihrer Studie angemessen präsentieren. 
+
+
+## Lernziele 
+
+Nach dieser Übung können Sie
+
+  * eine Fragestellung aus einer Motivation heraus entwickeln
+  * die Fragestellung mit Hilfe eines Exposés operationalisieren
+  * die Analyse in einem wissenschaftlich strukturierten Bericht kommunizieren.
+
+
+## Übung 06
+
+## Benötigte Materialien
+
+* MOF Geländemodell 1 Meter Auflösung
+* Corine Landnutzung MOF
+* [Einführende Literatur Wildkatze](https://ilias.uni-marburg.de/ilias.php?ref_id=2043555&cmdClass=ilrepositorygui&cmdNode=u0&baseClass=ilrepositorygui) 
+* Weitere Daten nach Wahl
+* Literatur Ihrer Wahl
+
+Die Daten befinden sich in der Archivdatei [Daten-Aufgabe-L04.zip](../assets/data/Daten-Aufgabe-L04.zip)
+
+
+
+Es geht um die Nutzung des Uniwaldes als Lebensraum für die Wildkatze. Entwickeln und bearbeiten Sie ein Projekt, das durch den folgenden Titel und Untertitel skizziert wird. Sie können den Titel und den Untertitel an Ihre Fragestellung anpassen. Die Ausarbeitung hat im Kern eine GI-Analyse als Hauptarbeitspaket. Die Feinabstimmung ist Ihnen überlassen. Unter den Materialien finden Sie einen Link zu ausgewählter Literatur zum Thema.
+::: {.callout-tip icon="false" appearance="simple"}
+Der Marburger Universitätswald - Lebensraum für die Wildkatze?
+
+Eine räumliche Analyse ausgewählter naturräumlicher Parameter zur Bestimmung des Lebensraumpotenzials der Wildkatze in Nordhessen.
+:::
+
+
+## Alternative Aufgabe 06
+Alternativ zu Aufgabe 06 können Sie auch selbstständig ein Projekt Ihrer Wahl bearbeiten.
+
+## Benötigte Materialien
+
+* Daten nach Wahl
+* Literatur Ihrer Wahl
+
+
+
+## Hinweise zur Bearbeitung
+
+Die Ausarbeitung sollte nicht mehr als **2500 Wörter** umfassen. Sie ist als PDF-Datei mit den für wichtig erachteten Abbildungen zu erstellen. Benennen Sie die PDF-Datei wie folgt
+
+```P05_<Name>_<Vorname>.pdf``` (z.B. P05\_Reudenbach\_Chris.pdf_). 
+
+Fügen Sie Ihren Namen und Ihre Matrikelnummer nach folgendem Schema an geeigneter Stelle in die Datei ein:
+
+```Vorname Nachname, Matrikelnummer``` (z.B. Chris Reudenbach, 1234567).
+
+Als Orientierungshilfe finden Sie im Reader *Projektarbeit* den beispielhaften Aufbau einer solchen Ausarbeitung.
+
+## Bewertungskriterien
+
+<iframe src="https://drive.google.com/file/d/1OFLIm8IEBQKYhaFDggTUswrBG_N58jeh/preview" width="800" height="1024" allow="autoplay"></iframe>

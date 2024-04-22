@@ -1,6 +1,6 @@
 ---
 title: Kodierung der Welt durch Geodatensätze
-title-block-banner: ..//assets/images/splash_L01_1.png
+title-block-banner: ../assets/images/splash_L01_1.png
 title-block-banner-color: black
 bibliography: ../assets/geoinfo.bib
 lang: de

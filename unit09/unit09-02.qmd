@@ -1,0 +1,118 @@
+---
+title: Arbeitsblatt 2 - Geometrien und Attribute
+title-block-banner: ../assets/images/01-splash.jpg
+title-block-banner-color: black
+
+bibliography: ../assets/geoinfo.bib
+
+lang: de
+comments: false
+---
+
+Die systematische Abfrage von Datenbankinhalten ist Ihnen aus dem Alltag vertraut. Sei es die Abfrage von Zugverbindungen, die Online-Bestellung von Kinokarten oder die Google-Suche. 
+Auch die Integration von räumlichen Attributen in Abfragen ist für Sie alltäglich. Wenn Sie z.B. die *Location based Services* bei Google aktiviert haben, werden Sie regelmäßig mit lokalisierter Werbung oder Abstimmungsanfragen bombardiert. Aber wie kann man solche Abfragen selbst gestalten und was ist die grundsätzliche Funktionsweise?
+
+## Worum geht es in dieses Arbeitsblatt?
+In diesem Arbeitsblatt lernen Sie die grundlegenden Konzepte von Datenbankabfragen kennen. Weniger formell werden Sie sich mit der Extraktion von Daten aus Datentabellen beschäftigen. Die Verknüpfung von thematischen und räumlichen Abfragen auf Vektordaten ist eine zentrale Analysemethode in den Raumwissenschaften und auch im Alltag weit verbreitet. 
+
+## Lernziele 
+
+Nach dieser Übung können Sie
+
+  * beliebige thematische und räumliche Abfragen auf Vektordatenattributen durchzuführen 
+  * geometrische und topologische Abfragen unterscheiden
+  * Abfragen verknüpfen
+
+
+## Benötigte Materialien
+
+### Daten
+  * [Marburg digitales Luftbild](https://raw.githubusercontent.com/gisma-courses/geoinfo-basis-qgis/master/docs/assets/data/marburg_RE.tif)
+  * [Marburg POIs](https://raw.githubusercontent.com/gisma-courses/geoinfo-basis-qgis/master/docs/assets/data/mr_pois.zip)
+  * [Marburg ÖPNV POI](https://raw.githubusercontent.com/gisma-courses/geoinfo-basis-qgis/master/docs/assets/data/mr_transport_poi.zip)
+  * [Marburg Verkehr POI](https://raw.githubusercontent.com/gisma-courses/geoinfo-basis-qgis/master/docs/assets/data/mr_traffic_poi.zip)
+  * [Marburg Sonstige POI](https://raw.githubusercontent.com/gisma-courses/geoinfo-basis-qgis/master/docs/assets/data/mr_other_poi.zip)
+  * [Marburg Waldflächen](https://raw.githubusercontent.com/gisma-courses/geoinfo-basis-qgis/master/docs/assets/data/mr_nat.zip)
+  * [Marburg Straßen](https://raw.githubusercontent.com/gisma-courses/geoinfo-basis-qgis/master/docs/assets/data/mr_roads.zip)
+
+::: {.callout-warning icon="false" appearance="simple"}
+Bitte beachten Sie, dass es sich bei den Downloads um Archivdateien handelt, die entsprechend entpackt werden müssen. Gegebenenfalls sind alle Datensätze an die Ausdehnung des Marburger Luftbildes aus Aufgabe 1 anzupassen. Alle Daten sind dem [geofabrik OSM Datenbestand](http://download.geofabrik.de/) entnommen. 
+:::
+
+## Aufgaben Arbeitsblatt 2
+
+Im ersten Teil der Aufgabe geht es darum, die benannten Geoobjekte aus den verschiedenen Datenbeständen zu identifizieren und zur einfachen Erfolgskontrolle zu zählen. Weder müssen alle Datensätze verwendet werden (eine Vorauswahl wurde getroffen, aber nur um eine gewisse Übersichtlichkeit für die Übung zu schaffen), noch müssen alle Attribute in einer Attributtabelle vorhanden sein.
+
+### Aufgabe 02-01
+
+
+In Aufgabe 02-01 werden Attributwerte abgefragt. Daher werden die Merkmale und ihre Ausprägungen ohne Raumbezug aus den Tabellen extrahiert.
+
+::: {.callout-tip icon="false" appearance="simple"}
+* Wie viele Ampeln ("traffic_signals") gibt es in Marburg?
+* Wie viele Objekte haben die Merkmalsausprägung "Café" und "Bar"?
+* Wie viele Objekte haben **nicht** die Merkmalsausprägung "Universität"?
+* Wie viele Objekte enthalten das Wort "cafe" in ihrem Namen (Attribut name)? 
+* Welche Objekte enthalten das Wort "cafe" in ihrem Namen, aber nicht die Merkmalsausprägung "cafe" des Attributs flcass?
+* Suche alle Objekte mit dem exakten Namen "REWE" **und** vom Typ "Supermarkt".
+* Findet alle Objekte, die genau den Namen "REWE" haben **oder** vom Typ "Supermarkt" sind.
+:::
+
+
+### Aufgabe 02-02
+
+
+In Aufgabe 02-02 beschäftigen wir uns mit topologischen und geometrischen Abfragen. Dazu werden die Attributabfragen um die räumlichen Komponenten Lage und Entfernung zueinander erweitert.
+
+::: {.callout-tip icon="false" appearance="simple"}
+  - Wie viele Marburg POI liegen in Waldflächen?
+  - Wie viele Marburg POI sind maximal 150 Meter von Waldflächen entfernt?
+  - Wie viele "Restaurants" oder "Bars" sind max. 150 m von Waldflächen entfernt?
+  - Wie viele Straßen führen durch Waldgebiete?
+  - Wie viele Marburg POI sind max. 500 Meter vom Marburger Bahnhof entfernt?
+  - Wie viele Kneipen sind max. 500 Meter von der nächsten Bushaltestelle entfernt?
+  - Wie viele Marburg POI befinden sich im Umkreis von maximal 250 Metern um Parkhäuser?
+  - Von wie vielen Marburg POI-Punkten aus ist ein Arzt/Krankenhaus in weniger als 500 Metern zu erreichen?
+  - Wie viele Punkte der Kategorie Gastronomie (Essen/Trinken) liegen weiter als 1 Kilometer vom Bahnhof und gleichzeitig weniger als 1 Kilometer vom nächsten Briefkasten entfernt?
+:::
+
+### Gewichtung der Aufgaben in Arbeitsblatt 2
+
+| Aufgabenteil | Gewichtung Teilaufgabe | Gewichtung  Gesamt| 
+|:-------------|:----------------------:|:-----------------:|
+|Aufgabe 02-01 | 0.25  | 0.05  | 
+|Aufgabe 02-02 | 0.75  | 0.2  | 
+|**Aufgabe 02**|**1.0**| **0.25**  | 
+
+
+## Unterstützung 
+
+### Der Ausdruckseditor
+Für allgemeine Abfragen auf relational strukturierten Datensätzen (Attributtabellen, Datenbanken) ist der [QGIS Expression Editor](https://docs.qgis.org/3.28/de/docs/user_manual/expressions/expression.html) das Werkzeug der Wahl. Unter diesem Link finden Sie eine Einführung in die QGIS Dokumentation. Der Ausdruckseditor ist ein vielseitig einsetzbares Werkzeug und kann daher aus verschiedenen Menükontexten aufgerufen werden.
+
+### Arbeiten mit Attributen
+
+Das folgende YouTube Video macht Sie in ca. 13 Minuten mit dem Abfrageeditor vertraut. Beachten Sie auch die verschiedenen Anwendungsfälle, die im Video angesprochen werden.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eFoBztZSIaM?si=ZZQ871YExH5mqaXI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+In diesem YouTube Video werden Sie in in ca 2 Stunden **umfassend** über die praktischen Anwendungsmöglichkeiten der Arbeit mit Attributen informiert. Es ist zwar lang, bringt aber viele wichtige Kombinationsmöglichkeiten und Aspekte und erschließt so ungeahnte Potentiale.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/h-mpUkwDdOQ?si=BOV7dr4aVr3uBC3F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### Vertiefende Erläuterungen
+
+Unter [Beziehungen und Datenbanken - Grundlagen räumlicher Informationssysteme](http://minibsc.gis-ma.org/GISBScL2/de/html/index.html){:target="_blank"} finden Sie eine vertiefende Lerneinheit. Bitte beachten Sie, dass die Übungen dort für ArcGis konzipiert sind.  
+
+
+
+
+### Übung 02-01
+
+Bitte beachten Sie in jedem Fall, dass Ihre Suchbegriffe von den Datenerfasser:innen sowohl groß als auch klein, mit oder ohne Leerzeichen, nur teilweise oder auch mit oder ohne Umlaute erfasst worden sind. Auch typische Rechtschreibfehler sind möglich.  Diese unterschiedlichen Eintragungen ein und derselben Kategorie sollten, soweit sinnvoll und möglich, bei thematischen Abfragen berücksichtigt werden. 
+
+
+### Aufgabe 02-02
+
+ Sie können mehrere Abfragen nacheinander ausführen. Dazu müssen Sie ggf. das Abfrageergebnis als neuen Layer speichern (rechter Mausklick auf den ausgewählten Layer, dann Auswahl, dann Layer aus ausgewählten Features erstellen). Bitte beachten Sie, dass die so erzeugten Layer nur virtuell sind. Sie können diese aber natürlich z.B. als Geopackage-Datensatz exportieren.
+

@@ -91,8 +91,5 @@ Das letzte Beispiel zeigt einseitige Abstandspuffer, die aufgrund eines Gesetzes
 
 ![Abbildung 03-15: Einseitiger Abstandspuffer um ein Schutzgebiet, @gitta2005](../assets/images/unit03/distpuff_polygone.gif)
 
-## Übung
 
-::: {.callout-tip icon="false" appearance="simple"}
 
-:::

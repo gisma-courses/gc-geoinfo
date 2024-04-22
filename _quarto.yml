@@ -127,7 +127,22 @@ website:
       - section: "Reader Automatisierung von Arbeitsabläufen in QGIS "
         contents: 
           - href: unit99/coming-soon.qmd
-            text: "coming soon"    
+            text: "coming soon" 
+      - text: "---"   
+      - section: "Arbeitsblätter"
+        contents: 
+          - href: unit09/unit09-01.qmd
+            text: Arbeitsblatt 1 - Warm Up QGIS   
+          - href: unit09/unit09-02.qmd
+            text: Arbeitsblatt 2 - Geometrien und Attribute 
+          - href: unit09/unit09-03.qmd
+            text: Arbeitsblatt 3 -  Analysen und Ableitungen
+          - href: unit09/unit09-04.qmd
+            text: Arbeitsblatt 4 -  Kosten und Kriterien
+          - href: unit09/unit09-05.qmd
+            text: Arbeitsblatt 5 -  Reproduzierbarkeit und Workflows
+          - href: unit99/coming-soon.qmd
+            text: Arbeitsblatt 6 - Die Projektarbeit           
       - text: "---"   
       - section: "Reader Projektarbeit "
         contents: 

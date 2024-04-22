@@ -1,0 +1,119 @@
+---
+title: Arbeitsblatt 4 - Kosten und Kriterien
+title-block-banner: ../assets/images/splash_L04.png
+title-block-banner-color: black
+
+bibliography: ../assets/geoinfo.bib
+
+lang: de
+comments: false
+---
+
+
+In dieser Aufgabe sollen Sie anhand vorgegebener Kriterien oder Merkmalsausprägungen verschiedene Analysen durchführen. Das heißt, Sie sollen die *Eignung* von Rasterzellen (Raumeinheiten) für eine bestimmte Nutzung bewerten. Sie können die Werte der so bewerteten Rasterzellen auch dazu verwenden, die *Überwindung* von räumlichen *Widerständen* oder auch *Kosten* zu kumulieren, um für eine bestimmte Nutzung geeignete Trassen oder Korridore zu identifizieren.
+
+
+
+Nimmt man eine Position A und eine Position B auf einem solchen Raster als Start und Ziel, so kann die kostengünstigste Route als Bewegung durch einen Raum mit unterschiedlichen *Widerständen* interpretiert werden, d.h. man kann die Werte eines Pixels als Kosten für das Betreten/Nutzen/Überwinden dieses Pixels interpretieren. Diese Kosten können durchaus mit kategorialen Merkmalsausprägungen wie *leicht* oder *schwer*, *günstig* oder *teuer*, *attraktiv* oder *unattraktiv* usw. beschrieben werden. Vor diesem Hintergrund sind die Kriterien, die z.B. für die Planung einer *günstigen Route* herangezogen werden, immer in Bezug auf die Fragestellung bzw. Zielsetzung zu bewerten. 
+
+## Worum geht es in dieses Arbeitsblatt?
+Im Rahmen der Übung werden Sie eine einfache Eignungsanalyse und eine Kostenpfadanalyse durchführen. Dies beinhaltet die vollständige Datenaufbereitung sowie die Interpretation der verwendeten Kriterien und der Ergebnisse.
+
+
+## Lernziele 
+
+Nach dieser Übung können Sie
+
+  * unterschiedliche Datenebenen zielgerichtet aufbereiten und kombinieren
+  * die Bedeutung verschiedener Kriterien erkennen und einschätzen
+  * eine Eignungsanalyse durchführen, indem Sie geeignete Datenebenen miteinander verrechnen
+  * eine Kostenanalyse planen und durchführen
+
+## Benötigte Materialien
+
+* Marburg Open Forest (MOF) Geländemodell in 1 m Auflösung
+* Corine Landnutzungsdaten für das MOF 
+* Open Street Map (OSM) Wegedaten für das MOF
+* Koordinaten (ETRS89, UTM32 EPSG:25832) Position *Parkplatz* (478188,5632178), Position Grillhütte (476170,5631657)
+
+
+::: {.callout-tip icon="false" appearance="simple"}
+Die Daten finden Sie im Zip-Archiv [Daten-Aufgabe-L04](../assets/data/Daten-Aufgabe-L04.zip)
+:::
+
+## Aufgaben Lerneinheit 4
+
+### Aufgabe 04-01
+
+Sie sollen eine Entscheidung anhand mehrerer Kriterien treffen. Konkret soll die Eignung des Uniwaldes als Wildkatzenlebensraum untersucht werden. 
+
+Dabei sollen folgende Aussagen gelten:
+
+::: {.callout-note icon="false" appearance="simple"}
+*  Wildkatzen bevorzugen Waldgebiete
+*  Wildkatzen bevorzugen mittlere und steile Hanglagen
+*  Waldgebiete werden gegenüber Hanglagen bevorzugt
+:::
+
+::: {.callout-tip icon="false" appearance="simple"}
+* Daten herunterladen (wie gewohnt überprüfen)
+* Berechnung der Hangneigung 
+* Extrahieren Sie alle Waldflächen aus den [Corine Landnutzungsdaten](https://land.copernicus.eu/pan-european/corine-land-cover/clc2018?tab=mapview), so dass Sie ein Raster mit den Werten 1 für *Waldflächen* und 0 für *keine Waldflächen* erhalten. (Bereits zugeschnittene Corine-Daten finden Sie im heruntergeladenen Archiv unter dem Dateinamen `clc2018_1m_MOF_25832.tif`). Tipp Dieser Vorgang wird auch als Datenreklassifizierung bezeichnet. 
+* Zur Vorbereitung der Multikriterienbewertung sollen die kontinuierlichen Hangneigungswerte in *ganzzahlige* kategoriale Klassen überführt (reklassifiziert) werden. D.h. durch die Reklassifizierung der Hangneigung in drei Klassen 0-15 Grad = Klasse mit Wert 1, 15-30 Grad = Klasse mit Wert 2 und > 30 Grad = Klasse mit Wert 3 (1=flach, 2=mittlere Neigung und 3=steile Neigung) werden kategoriale Zielvariablen generiert.
+* Legen Sie für **jede Datenebene** eine Gewichtung gemäß der von Ihnen festgelegten Bedeutung in Bezug auf ihre Eignung fest (z. B. Wald/Nichtwald = Faktor 0,5, Hangneigung = Faktor 0,3). Bitte beachten Sie, dass Werkzeuge wie die `WMCA Weighted Multicriteria Analysis` eine Gewichtungssumme von genau 1.0 erwarten. Daher müssen die Gewichte entsprechend verteilt werden.
+* Legen Sie für **jede Klasse** in diesem Layer eine Bewertung zwischen 0 und 10 fest (z. B. Wald = 10, Nichtwald = 1, Hangneigung Klasse 1 = 5 usw.) Beachten Sie, dass die Festlegung der Bewertung die Bedeutung der Kriterien für die Fragestellung berücksichtigen muss. 
+* Erläutern Sie die Ergebnisse in max. 2 Sätzen.
+:::
+
+
+## Aufgabe 04-02
+
+Sie sollen einen Trimm-Dich-Pfad durch den Uniwald (Marburger Offener Wald, MOF) bei Caldern planen. Der Trail beginnt am Parkplatz in der Nähe des Kreisverkehrs am südöstlichen Rand und endet am Grillplatz am nordwestlichen Ende. Machen Sie sich zunächst mit dem Konzept der Kostenanalyse vertraut (siehe Hilfen und Reader).
+
+Die Vorgaben für die Streckenplanung sind:
+
+::: {.callout-note icon="false" appearance="simple"}
+
+*  die Strecke soll möglichst durch Wald führen
+*  die Strecke soll möglichst weit von Wegen entfernt sein
+*  die Route soll möglichst steil sein 
+:::
+
+::: {.callout-tip icon="false" appearance="simple"}
+* Herunterladen und Überprüfen der bereitgestellten Daten
+* Hangneigung berechnen 
+* Verwendung der reklassifizierten Corine-Daten aus Aufgabe 04-01 (*Wald*, *Kein Wald*).
+* Berechnen Sie ein Entfernungsraster, das die Entfernungen zu den Straßen enthält (`OSM_roads_MOF_25832.gpkg`) (räumliche Auflösung wie das Hangneigungsraster).
+* Für jede Rasterklasse (z.B. Wald Nicht-Wald) sind Werte zu definieren, die die *Kosten* bzw. den *Reibungswert* für das Überqueren/Nutzen der Zelle darstellen. Es ist daher sinnvoll (im Sinne der obigen Vorgaben), unattraktive Zellen mit hohen Werten und attraktive Zellen mit niedrigen Werten umzuklassifizieren. 
+* Verrechnen Sie die einzelnen Raster zu einem Gesamtkostenraster. Überlegen Sie dabei, ob alle drei Kriterien gleich gewichtet werden sollen oder ob Sie z.B. der Hangneigung ein höheres Gewicht geben wollen (z.B. wegen des höheren Trainingseffektes).
+* Berechnen Sie auf dieser Grundlage die im Sinne der Vorgaben attraktivste (=*"kostengünstigste"*) Strecke zwischen Start- und Zielpunkt.
+Beschreiben Sie das Ergebnis, fügen Sie aussagekräftige Grafik(en) ein und begründen Sie stichpunktartig die einzelnen Arbeitsschritte.
+:::
+
+### Gewichtung der Aufgaben in Lerneinheit 4
+
+| Aufgabenteil | Gewichtung Teilaufgabe | Gewichtung  Gesamt| 
+|:-------------|:----------------------:|:-----------------:|
+|Aufgabe 04-01 | 0.4  | 0.15  | 
+|Aufgabe 04-02 | 0.6  | 0.25  | 
+|**Aufgabe 04** | **1.0**  | **0.3**  | 
+
+## Unterstützung
+
+
+- Bei Verwendung des Plugins `WMCA Weighted Multicriteria Analysis` (WMCA) müssen die kontinuierlichen Werte für Hangneigung und Entfernung von der Straße in diskrete Klassen umgewandelt werden. Das WMCA-Tool kann jedoch maximal 100 Klassen verarbeiten, so dass bei der Verwendung dieses Tools die kontinuierlichen Werte neu klassifiziert werden müssen (z.B. je 25 Meter Entfernung eine Klasse und alles > 200 Meter Entfernung in eine Klasse, bzw. je 5 Grad Hangneigung von 0 Grad bis 30 Grad je eine Klasse und > 30 Grad in eine Klasse). Außerdem entfällt die separate Normierung und Gewichtung.
+- Wenn Sie den `Raster-Rechner` verwenden, ist diese Neuklassifizierung nicht notwendig, Sie müssen dann aber Gewichtung und Normalisierung in die Berechnung integrieren. 
+{: .hinweis--info}
+
+
+* Das Plugin `WMCA Weighted Multicriteria Analysis` (WMCA) ist sehr komfortabel für die gewichtete Multikriterienanalyse. Es erscheint nach der Installation unter dem Hauptmenü `Raster` oder in der `Erweiterungen-Werkzeugleiste` (für die normale Installation muss *"Auch experimentelle Erweiterungen anzeigen"* in den Einstellungen aktiviert sein). **Achtung:** Zur Zeit (seit 2021) kann es je nach QGIS-Version zu einer Python-Fehlermeldung nach der Installation des Plugins kommen. Bitte verwenden Sie dann den alternativen [Kurs-Repo-Download](https://github.com/gisma/Weighted-Multi-Criteria-Analysis---WMCA/archive/refs/heads/master.zip) des Plugins. Weitere Informationen finden Sie unter [WMCA Course Repository](https://github.com/gisma/Weighted-Multi-Criteria-Analysis---WMCA). Installieren Sie das gezippte Plugin über das QGIS-Menü 'Erweiterungen -> Erweiterungen verwalten und installieren -> Aus Zip installieren'. Sollte es beim Ausführen des Plugins zu Fehlermeldungen oder Warnungen kommen, müssen in der Regel negative Werte im Ergebnisdatensatz neu klassifiziert werden. Achten Sie darauf, dass Sie diesen möglichst hohe neue Werte zuweisen, da es sich hierbei um fehlerhafte und somit für die Least Cost Path Analyse irrelevante Daten handelt.  
+* Eine wesentlich detailliertere Hilfe für den gesamten Arbeitsablauf finden Sie QGIS-spezifisch unter [Multi Criteria Overlay Analysis (QGIS3)](https://www.qgistutorials.com/en/docs/3/multi_criteria_overlay.html). 
+* Da es sich um ein weit verbreitetes Raster-GIS-Konzept handelt, werden Sie ähnliche Werkzeuge in allen GI-Softwarepaketen finden. So ist z.B. das [MCE Tutorial for SAGA GIS](https://sourceforge.net/projects/saga-gis/files/SAGA%20-%20Documentation/Tutorials/Multi_Criteria_Evaluation_Tutorial/MultiTutorial2.pdf/download) eine hilfreiche Ressource, um den Prozess zu verstehen.
+* Typische Rechenoperationen auf Rasterdaten, u.a. auch die Reklassifizierung von Daten, können mit dem [Raster-Rechner](https://docs.qgis.org/3.22/en/docs/) durchgeführt werden. Der `Raster-Rechner` ist als Raster-Taschenrechner ein sehr wichtiges und mächtiges Werkzeug für viele Operationen. Alternativ und einfacher für eine einfache Reklassifizierung ist das QGIS-Werkzeug `Reklassifizieren nach Tabelle`. Einen Überblick über die verfügbaren Daten(re)klassifikations-Tools erhalten Sie, wenn Sie in der Toolbar `klassifizieren` oder `reklassifizieren` eingeben. Darüber hinaus finden Sie im Internet zahlreiche Anleitungen zum Thema Reklassifizierung, z.B. im Blogbeitrag [How to reclassify a raster layer in QGIS](https://fivequestionz.home.blog/2020/02/08/how-to-reclassify-a-raster-layer-in-qgis/) oder auch auf YouTube [Slope Analysis/Reclassify from a DEM in QGIS 3](https://www.youtube.com/watch?v=7eIFvZ4fU6k). Zusätzlich finden Sie auf den Hilfeseiten von [GRASS GIS](https://grass.osgeo.org/grass76/manuals/r.reclass.html) und [SAGA GIS](http://www.saga-gis.org/saga_tool_doc/2.2.5/grid_tools_15.html) eine detaillierte Beschreibung des technischen Vorgehens. 
+* Die Normalisierung von Rasterdatenwerten kann sehr einfach mit dem SAGA-Modul `Grid Normalisation` durchgeführt werden. Alternativ kann sie auch mit dem [Raster-Rechner](https://docs.qgis.org/3.22/de/docs/user_manual/working_with_raster/raster_analysis.html#raster-calculator) nach der Formel `xnorm = (x-min(x))/(max(x)-min(x))` berechnet werden (wobei x das Raster, min(x) und max(x) das Minimum bzw. Maximum aller Werte des jeweiligen Rasters sind). 
+* Die Gewichtung kann dann durch einfache Multiplikation (`Rasterrechner`) des jeweiligen Rasters mit dem Gewichtungswert erreicht werden. Z.B. Gleichgewichtung `Raster1*Raster2*Raster3/3` Gewichtung Raster1 Faktor 0.5 Raster2 und Raster3 Faktor 0.25 `0.5*Raster1 + 0.3*Raster2 + 0.2*Raster3`. Wird mit Proportionalwerten von 1 (Prozent) gewichtet, so ist darauf zu achten, dass die Summe aller Gewichtungsfaktoren 1 ergibt.
+* Für das exakte Digitalisieren von Punkten ist die Erweiterung `Numerical Digitize` sehr hilfreich. Sie wird nach der Installation in die Digitalisierungsleiste eingehängt. Sollte die Extension nicht mit Ihrer QGIS Version kompatibel sein, finden Sie auf [Stackoverflow] (https://gis.stackexchange.com/questions/34204/creating-point-features-with-exact-coordinates-in-qgis) weitere Hilfe zu diesem Problem. 
+* Für die Kostenanalyse sollte das Plugin `Least Cost Path` installiert werden. Es erscheint unter den Bearbeitungswerkzeugen als eigener Menüeintrag `Cost Distance Analysis`. Auch hierzu gibt es sowohl für QGIS als auch für die verwandten GRASS- und SAGA-Werkzeuge zahlreiche Videos und Tutorials (z.B. [Least Cost Path](https://www.youtube.com/watch?v=6dodHcHm7ws)). Achten Sie bei der Google-Suche darauf, dass Sie nur aktuelle und für Ihre QGIS-Hauptversion - also für QGIS 3.x - gültige Tutorials verwenden. Bei Interesse an den Konzepten und dem Anwendungsbezug (insbesondere für Fragestellungen auf der Landschaftsskala) lohnt sich ein Blick in [Least-Cost Modelling and Landscape Ecology: Concepts, Applications, and Opportunities](https://link.springer.com/article/10.1007/s40823-016-0006-9). 
+* Für Entfernungsberechnungen kann das `Nearness/Proximity Tool` verwendet werden. Bitte beachten Sie, dass Vektordaten zunächst in Rasterdaten umgewandelt werden müssen (`Raster->Conversion->Raster`). 
+* Weitere Unterstützung finden Sie unter [QGIS Materials](https://gisma-courses.github.io/geoinfo-basis-qgis//unit08/unit08-01_reader_QGIS_01.html)
+

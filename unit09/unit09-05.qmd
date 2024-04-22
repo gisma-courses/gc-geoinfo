@@ -1,0 +1,22 @@
+---
+title: Lerneinheit 6 - Projektarbeit
+title-block-banner: ../assets/06-splash.jpg
+title-block-banner-color: black
+
+bibliography: ../assets/geoinfo.bib
+
+lang: de
+comments: false
+---
+
+
+::: {.callout-tip icon="false" appearance="simple"}
+
+:::
+
+
+
+::: {.callout-warning icon="false" appearance="simple"}
+
+:::
+
