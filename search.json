@@ -18,7 +18,7 @@
     "text": "Digitale Geländemodelle liegen in der Regel als Rasterdaten vor und werden häufig in GIS-Analysen verwendet. Dabei tragen sie sowohl direkt zur Höheninformation als auch indirekt, z.B. als morphometrische oder hydrologische Basisdatensätze, zum prozessorientierten Erkenntnisgewinn bei.\nDer Themenkomplex der digitalen Geländemodelle einschließlich ihrer Erstellung auf der Basis unterschiedlicher Fernerkundungssensoren ist vielfältig. Die Materialien des Readers skizzieren verschiedene häufig verwendete Ableitungen und räumliche Filter. Diese Konzepte können auf fast alle Rasterdaten angewendet werden.",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 3 -  Analysen und Ableitungen"
+      "A3 -  Analysen und Ableitungen"
     ]
   },
   {
@@ -29,7 +29,7 @@
     "text": "Worum geht es in dieses Arbeitsblatt?\nIn der Übung werden Sie Informationen aus digitalen Geländemodellen ableiten und sich unter anderem mit räumlichen Filtermethoden beschäftigen. Darüber hinaus werden komplexere Werkzeuge wie die Berechnung eines topographischen Indexes oder des Oberflächenabflusses exemplarisch geübt.",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 3 -  Analysen und Ableitungen"
+      "A3 -  Analysen und Ableitungen"
     ]
   },
   {
@@ -40,7 +40,7 @@
     "text": "Lernziele\nNach dieser Übung können Sie\n\nDigitale Geländemodelle in ihrer Vielfalt und Bedeutung einschätzen können\nAbgeleitete Rasterdaten mit typischen Werkzeugen (Algorithmen) erzeugen\ndiese abgeleiteten Informationen gezielt in Fragestellungen einsetzen\nDirekte und statistisch aggregierte Informationen extrahieren",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 3 -  Analysen und Ableitungen"
+      "A3 -  Analysen und Ableitungen"
     ]
   },
   {
@@ -51,7 +51,7 @@
     "text": "Benötigte Materialien\n\nDaten\n\nCopernicus EU-DEM v1.1 Das EU DEM ist das beste und am höchsten aufgelöste homogene DEM für ganz Europa. Es wird aus verschiedenen Datenquellen erzeugt und ist daher räumlich besser aufgelöst als reine SRTM-basierte Höhenmodelle.\nCGIAR-CSI SRTM V4 Der CGIAR-CSI SRTM V4 ist vermutlich der weltweit beste homogen nachprozessierte SRTM-Datensatz. Zur neuen Version 4 sagt CGIAR-CSI: “envisaged that CGIAR-CSI SRTM Version 4 is our definitive and final release […]”, siehe CGIAR FAQ.\nSRTM Geländemodell TileDownloader. ACHTUNG: (Erfordert Registrierung bei NASA Earthdata) Der Infolink der Oberfläche ist korrupt, daher siehe für die notwendigen Metadaten die NASA JPL Seite. ACHTUNG: Diese Datei muss als ZIP-Datei geladen werden, da es sich um ein SRTMHGT-Format handelt. Format handelt.\nOpenDEM Deutschland ACHTUNG: Bitte unbedingt die Info Seite beachten, da eine umfangreiche Reanalyse der SRTM Daten stattgefunden hat.\nOpenDEM Europa ACHTUNG: Bitte unbedingt die Info Seite beachten, da eine umfangreiche Re-Analyse der SRTM Daten stattgefunden hat. .\nPolygon Marburg Stadtgebiet",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 3 -  Analysen und Ableitungen"
+      "A3 -  Analysen und Ableitungen"
     ]
   },
   {
@@ -62,7 +62,7 @@
     "text": "Aufgaben Arbeitsblatt 3\nDie Ableitung und Analyse von Rasterdaten ist ein sehr weites Feld. Es umfasst über die Bildverarbeitung und Fernerkundung auch die direkte Interpretation und Analyse von z.B. Geländemodelldaten, die als Basisdaten für räumliche Analysen der realen Welt eine besonders prominente Rolle spielen. Aufgrund der langen Historie und Bedeutung gibt es eine nahezu unüberschaubare Anzahl unterschiedlichster Geländemodelldaten. Insbesondere die bekannten SRTM-Daten liegen in unzähligen Varianten vor. Darüber hinaus gibt es Daten in besserer Qualität. Die obige Datenauswahl soll Ihnen einen Eindruck vermitteln, wo Sie überall fündig werden können, wenn Sie z.B. nach SRTM DEM Deutschland Europa googeln. Natürlich finden Sie zu allen Daten auch die notwendigen Informationen und können dann beurteilen, ob Sie diese für geeignet halten. Deshalb sollten Sie in den folgenden Aufgaben mindestens zwei verschiedene Datensätze verwenden (gerne auch alle).",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 3 -  Analysen und Ableitungen"
+      "A3 -  Analysen und Ableitungen"
     ]
   },
   {
@@ -73,7 +73,7 @@
     "text": "Aufgabe 03\n\n\n\n\n\n\n\nLaden Sie sich mindestestens zwei der oben genannten Geländemodell Datensätze herunter. Sie müssen diese Daten evtl. projizieren und auf die Bezugsgröße des Marburg-Luftbildes zuschneiden.\nWas repräsentiert der Datensatz? Schauen Sie sich die Metadaten an. Verschaffen Sie sich einen Überblick über die Projektion, räumliche Auflösung und Fehlerwerte.\nProjizieren Sie die heruntergeladenen Geländemodelldatensätze in ETRS89 UTM32 und schneiden es auf den Ausschnitt des Marburger Luftbildes zu.\nBerechnen Sie für die zugeschnittenen und projizierten Datensätze die Hangneigung, Exposition/Aspect (SAGA Werkzeug Slope, Aspect, Curvature) und Topographischen Index (GDAL TPI).\nExtrahieren Sie die Datensätze Slope, Aspect und TPI an der Position des Brunnens am Marburger Oberstadt-Marktplatz (Nutzen Sie die Brunen-Signatur der Openstreetmap Webkarte).\nWenden Sie einen 5*5 Mittelwertsfilter auf die Geländehöhe an und ermitteln Sie erneut für die Position des Makrtplatzbrunnen die Werte von Hangneigung, Aspect und TPI.\nBerechnen Sie unter Benutzung des Datensatzes (Marburg Stadtgebiet) und unter Verwendung der auf dem ungefilterten Geländemodell erhobenen Hangneigungswerte die minimale, maximale und mittlere Hangneigung.\nBerechnen Sie unter Benutzung des Datensatzes (Marburg Stadtgebiet) und unter Verwendung der 5x5 gefilterten Mittwelwert-Geländemodelle erhobenen Expositionswerte die minimale, maximale und mittlere Exposition.\nZeigen Sie die Werte in einer Tabelle\nBenennen und Begründen Sie die möglichen Ursachen für etwaige Unterschiede der Resultate der von Ihnen verwendeten Datensätzen. (Stichpunktliste).\n\n\n\n\n\nGewichtung der Aufgaben in Arbeitsblatt 3\n\n\n\nAufgabenteil\nGewichtung Teilaufgabe\nGewichtung Gesamt\n\n\n\n\nAufgabe 03-01\n0.5\n0.11\n\n\nAufgabe 03-02\n0.5\n0.11\n\n\nAufgabe 03\n1.0\n0.2",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 3 -  Analysen und Ableitungen"
+      "A3 -  Analysen und Ableitungen"
     ]
   },
   {
@@ -84,7 +84,7 @@
     "text": "Unterstützung\n\nAufgabe 03-01\nWichtige Meta-Informationen zu den SRTM-Daten finden Sie auf den jeweiligen Seiten der Datenanbieter (z.B. CGIAR FAQ{:target=“_blank”} oder EU-DEM Meta{:target=“_blank”}). Bitte beachten Sie, dass sich die Geländemodelle zum Teil erheblich unterscheiden. Dies gilt nicht nur für das Copernicus-Modell im Vergleich zu den SRTM-Modellen, sondern auch für die SRTM-Modelle, die sich trotz gleicher Datengrundlage erheblich unterscheiden. Besonders wichtig für die erfolgreiche Bearbeitung der letzten Teilaufgabe 03-01 ist die Auseinandersetzung mit den Metadaten.\nBenutzen Sie einen der Marburg-Layer aus den vorherigen Sitzungen als Vorlage, um das Raster auszuschneiden.\nDas Stichwort für die QGIS-Hilfe zum Mittelwertfilter ist “Nachbarn” oder auch “Filter” in der Werkzeugleiste. Als Ergebnis wird z.B. r.neighbors aus der GRASS GIS Funktionssammlung angezeigt, bei “filter” gibt es eine Reihe von Treffern. Hier ist Simple Filter aus der SAGA GIS Funktionssammlung ein guter Einstieg.\nMit Zonenstatistik können Sie sich die Minimum-/Maximum-/Mittelwerte eines definierten Gebietes als Tabelle ausgeben lassen. Für Marburg können Sie entweder das Stadtgebiet als Polygon digitalisieren oder z.B. nach Verwaltungsgrenzen suchen. Hier wäre z.B. der Bundesamt für Kartographie und Geodäsie Open Data Server{:target=“_blank”} eine gute Einstiegsmöglichkeit. Wenn Ihnen das zu umständlich ist, können Sie auch die Datei Marburg Stadtgebiet) aus dem Download verwenden. Bitte beachten Sie, dass dies natürlich zu unterschiedlichen Ergebnissen führt, wenn Sie unterschiedliche Polygone als Flächenreferenz verwenden.",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 3 -  Analysen und Ableitungen"
+      "A3 -  Analysen und Ableitungen"
     ]
   },
   {
@@ -95,7 +95,7 @@
     "text": "Die Einarbeitung in komplexe Software ist mühsam und erfordert eine gewisse Frustrationstoleranz. Aufgrund der Ähnlichkeit von Softwarewerkzeugen und Konzepten ist es sinnvoll, analoges Wissen aufzubauen und sich den Zugang zu den Arbeitsabläufen logisch strukturiert und nicht durch auswendig lernen der einzelnen Arbeitsschritte zu erarbeiten. Dies wird nicht geschenkt, zumal GIS-Softwarepakete wie ArcGIS oder QGIS sehr komplexe Softwarearchitekturen darstellen.",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 1 - Warm Up QGIS"
+      "A1 - Warm Up QGIS"
     ]
   },
   {
@@ -106,7 +106,7 @@
     "text": "Worum geht es in diesem Arbeitsblatt?\nNeben der Einarbeitung in neue konzeptionelle und technische Problemfelder kommt die Auseinandersetzung mit einer Softwarearchitektur mit einer ungewohnten grafischen Benutzeroberfläche (GUI) hinzu. Um diese Einstiegshürde etwas abzufedern, fangen Sie Schritt für Schritt an und beginnen in dieser ersten Einheit mit einigen grundlegenden und typischen Aufgaben, die im Wesentlichen dazu dienen, sich an die neue Software und die Datenformate zu gewöhnen.",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 1 - Warm Up QGIS"
+      "A1 - Warm Up QGIS"
     ]
   },
   {
@@ -117,7 +117,7 @@
     "text": "Lernziele\nNach dieser Übung können Sie * QGIS installieren * eine QGIS Projektdatei erstellen * Datenformate und Datenmodelle unterscheiden * Raster- und Vektordatensätze in QGIS öffnen * Eigenschaften von Datenebenen überprüfen * Geometrien erzeugen (digitalisieren)",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 1 - Warm Up QGIS"
+      "A1 - Warm Up QGIS"
     ]
   },
   {
@@ -128,7 +128,7 @@
     "text": "Benötigte Materialien\n\nDaten\n\nDigitales Luftbild von Marburg und Umgebung (Beispiel RGB-Bild als Rasterdatensatz)\nOSM Wald Objekte Ausschnitt aus dem aktuellen (11/2020) Open Streetmap (OSM) Datensatz\nOSM Strassenobjekte Auszug aus dem aktuellen Open Streetmap (OSM) Datensatz\nOSM POIs OSM points of interest (POI) als Excel Tabelle.\n\n\n\nSoftware\n\nQGIS. Die aktuelle Langzeit Release ist Versin 3.22. Es emfiehlt sich sehr bei der Installation dieser Release die folgenden Installationshinweise zu berücksichtigen:\nWindows osgeo4W Installers.\nmacOS Mac Installationsseite.\nLinux Linux Installationsseite.\n\n\n\nEinführende Materialien\n\nEine sanfte Einführung in GIS: bietet einen gelungenen QGIS zentrierten Überblick der GI-Konzepte. Sehr zu empfehlende Zusatz-Lehrmaterialien\n\nQGIS Benutzerhandbuch 3.28 DE: Die aktuelle deutschsprachige Version. Es ist die Referenz für Nutzer.",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 1 - Warm Up QGIS"
+      "A1 - Warm Up QGIS"
     ]
   },
   {
@@ -139,7 +139,7 @@
     "text": "Aufgaben Arbeitsblatt 1\n\nAufgabe 01-01\nDieses Arbeitsblatt dient der Einführung in die verschiedenen Datenmodelle im GIS. Darüber hinaus erfahren Sie, wie Sie eigene raumbezogene Daten in das GIS importieren oder selbst im GIS z.B. durch Digitalisierung erzeugen können.\n\n\n\n\n\n\n\nLegen Sie bitte ein Verzeichnis an, das ohne Sonderzeichen und Leerzeichen (im gesamten Pfad/Verzeichnisbaum) benannt ist.\nErstellen Sie ein QGIS-Projekt\nLaden Sie die Datei marburg_RE.tif herunter.\nInformieren Sie sich über die Eigenschaften des Datensatzes. (Projektion, Datenmodell, Wertebereich)\nLegen Sie ein Unterverzeichnis mit dem Namen data in Ihrem Projektverzeichnis an. Laden Sie von der Downloadseite der [geofabrik] (http://download.geofabrik.de/) den Datensatz Hessen herunter. Entpacken Sie dieses Archiv in das Unterverzeichnis data.\nNachdem Sie das Archiv entpackt haben, laden Sie die Datei gis_osm_pois_free_1.shp in Ihr QGIS-Projekt.\nInformieren Sie sich über die Eigenschaften dieses Datensatzes. (Projektion, Datenmodell, Wertebereich).\nSchneiden Sie den Datensatz gis_osm_pois_free_1 auf die Ausdehnung des Luftbildes marburg_RE.tif zu.\nExportieren der Punktdaten im geopackage Datenformat unter dem Namen mr_points.\nImportieren Sie die Tabelle mr_objects.xls (Datensatz Räumliche Objekte) als räumlichen Layer in Ihr QGIS-Projekt.\nErzeugen Sie aus dem Luftbild marburg_RE.tif mit dem Koordinatensystem EPSG:4326 WGS84:\n\nDrei beliebige Flächen (Dateiname mr_poly),\ndrei beliebige Linienzüge (Dateiname mr_line)\nzum Schluss noch 3 beliebige Positionen (Punkte) in den Layer mr_points einfügen.\n\n\n\n\n\n\n\nAufgabe 01-02\nLeider können wir Ihnen das Thema der korrekten Verortung von Geodatensätzen - also der geeigneten Projektion - nicht ganz ersparen. In Aufgabe 01-01 haben Sie Raster- und Vektordaten in QGIS importiert und eigene Vektordaten erstellt. Die räumliche Information der Daten lag jeweils in geographischen Koordinaten vor. Die von Ihnen verwendete Software QGIS führt immer eine Echtzeitprojektion durch, mit dem Ziel, diese Kugelkoordinaten auf den flachen Monitor zu projizieren. Dies hat jedoch nichts mit einer kartographisch korrekten Projektion im eigentlichen Sinne zu tun. Als Faustregel gilt jedoch, dass fast alle räumlichen Analysemethoden und geometrischen Berechnungen nur auf korrekt projizierten Daten durchgeführt werden können.\n\n\n\n\n\n\n\nErstellen Sie ein neues QGIS Projekt. Laden Sie zuerst die Rasterdatei marburg_RE.tif und dann die Vektordatensätze mr_roads und mr_nat.\n\nIn welchen Projektionen liegen die einzelnen Datensätze vor?\nIn welcher Projektion werden die Daten dargestellt?\nWo kann die Projektion für die Darstellung der Daten definiert werden?\nWelche Probleme können bei der Projektion on-the-fly oder in-Echtzeit auftreten?\n\n\n\n\n\n\n\n\n\n\n\nFür den Anfang können wir Ihnen nur dringend empfehlen, das CRS (Coordinate Reference System) bzw. KBS (Koordinatenbezugssystem) Ihres Projektes und jeder Datenebene identisch zu halten. Für Deutschland ist das offizielle System ETRS89 UTM 32. Durch diese Sorgfalt können Positionierungsfehler und damit einer der häufigsten Alltagsfehler in der GIS-Welt vermieden werden.\n\n\n\n\n\nGewichtung der Aufgaben in Arbeitsblatt 1\n\n\n\nAufgabenteil\nGewichtung Teilaufgabe\nGewichtung Gesamt\n\n\n\n\nAufgabe 01-01\n0.5\n0.05\n\n\nAufgabe 01-02\n0.5\n0.05\n\n\nAufgabe 01\n1.0\n0.1",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 1 - Warm Up QGIS"
+      "A1 - Warm Up QGIS"
     ]
   },
   {
@@ -150,7 +150,7 @@
     "text": "Unterstützung\nAls konkreten Einstieg in die Bearbeitung von Aufgabe 1 möchten wir Ihnen einige Einstiegshilfen für QGIS anbieten. QGIS ist ein komplexes Softwareprodukt, das nicht nur in verschiedenen Versionen auf allen gängigen Betriebssystemplattformen verfügbar ist, sondern darüber hinaus auch vollständig anpassbar ist. Aus diesem Grund kursiert eine Vielzahl von Hilfestellungen, Handbüchern und Tutorials im Netz - bei weitem nicht jeder Google-Treffer ist geeignet und nicht jedes Tutorial passt zu der von Ihnen verwendeten Version.\nEine erste Anlaufstelle für konkrete Informationen ist die integrierte Hilfe des Softwarepakets. Darüber hinaus steht eine umfangreiche Dokumentation zur Verfügung. Die jeweils aktuelle [QGIS Landing Page] (https://www.qgis.org/de/site/forusers/index.html) ist der zentrale Zugang zu allen offiziell vom Projekt zur Verfügung gestellten Dokumentationen.\nFür alle Hilfeseiten gilt: Stellen Sie unbedingt sicher, dass Sie die Hilfe für die entsprechende QGIS Version aufrufen. Falls diese (noch) nicht verfügbar ist, versuchen Sie es mit der nächsten Vorgängerversion und am besten mit der englischen Hilfe, da diese die Referenz für alle Übersetzungen darstellt.\n\n\n\n\n\n\nAchtung Der Übergang von QGIS2.x zu QGIS3.x hat grundlegende Änderungen mit sich gebracht. Die Tutorials und Hilfen von QGIS 2.x sind für die aktuelle Version praktisch unbrauchbar.\n\n\n\n\nEinrichten eines QGIS Projektes\nBei Rechnern mit einem Home-Verzeichnis in der Cloud/im Netzwerk (z.B. im Uni-Pool) empfehlen wir dringend, die Daten auf einer lokalen Festplatte zu speichern. Dazu müssen Sie zunächst eine Ordnerstruktur für Ihr Projekt anlegen. Hilfe zur Projektdatei finden Sie unter [Arbeiten mit Projektdateien] (https://docs.qgis.org/3.28/de/docs/user_manual/introduction/project_files.html).\n\n\n\n\n\n\nBitte achten Sie unbedingt darauf, keine Sonderzeichen, Umlaute oder Leerzeichen zu verwenden.\n\n\n\n\n\nDigitalisierung von Geometriedaten\nDie manuelle Erzeugung von Vektordaten wird allgemein als Digitalisieren bezeichnet. Dabei erzeugen Sie eigene vektorbasierte Datensätze aus z.B. Rasterbilddateien wie Satellitenbildern, Luftbildern, thematischen und topographischen Karten, einfachen Screenshots oder anderen Vorlagen. Siehe dazu die QGIS Hilfe zur [Digitalisierung] (https://docs.qgis.org/3.28/de/docs/user_manual/working_with_vector/editing_geometry_attributes.html). Ein ausführliches Anwendungsbeispiel finden Sie unter Digitizing Forest Stands.\n\n\nVektordaten beschneiden\nDiese Aufgabe ist ein gutes Beispiel dafür, wie knifflig die Suche nach Hilfe sein kann. Natürlich kann man immer im Internet suchen. Versuchen Sie es zum Beispiel mit “vektordaten zuschneiden qgis”. Sie werden viele Treffer erhalten, aber wenn Sie genau hinsehen, werden Sie nichts über das Zuschneiden von Vektordaten mit Hilfe einer Rasterdatei finden. Was passiert beim Beschneiden? Offensichtlich müssen Sie einem Werkzeug mitteilen, was die gewünschte Ausdehnung ist. Fangen Sie mit diesem Wissen noch einmal an. Nur diesmal benutzen Sie die Werkzeugleiste und geben “cut” oder “clip” ein. Einige Ergebnisse werden angezeigt. Unter anderem auch Vektor auf Ausdehnung schneiden. Wenn man diesen auswählt, kann man drei Optionen für die Ausdehnung wählen…\n\n\nTabellen in QGIS importieren\nDas Importieren von Tabellen birgt einige Fallstricke. Generell können Tabellendaten in QGIS nur verwendet werden, wenn sie entweder selbst Koordinaten (d.h. geographische Informationen) enthalten oder wenn sie einen Schlüssel wie z.B. eine ID enthalten, der bereits vorhandenen Geometriedaten zugeordnet werden kann. Generell können sie aber dem folgenden Schema folgen: Import von Tabellenkalkulationen oder CSV-Dateien.\n\n\nArbeiten mit Projektionen\nDas Kapitel Arbeiten mit Projektionen ist für Anfänger:innen nicht ganz leicht zu erarbeiten. Wichtig ist hier vor allem die richtige Zuordnung von Projektionen. Für die Umprojektion von Vektordaten lohnt sich ein Blick auf Reprojecting and Transforming Data.",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 1 - Warm Up QGIS"
+      "A1 - Warm Up QGIS"
     ]
   },
   {
@@ -1324,7 +1324,7 @@
     "text": "Die systematische Abfrage von Datenbankinhalten ist Ihnen aus dem Alltag vertraut. Sei es die Abfrage von Zugverbindungen, die Online-Bestellung von Kinokarten oder die Google-Suche. Auch die Integration von räumlichen Attributen in Abfragen ist für Sie alltäglich. Wenn Sie z.B. die Location based Services bei Google aktiviert haben, werden Sie regelmäßig mit lokalisierter Werbung oder Abstimmungsanfragen bombardiert. Aber wie kann man solche Abfragen selbst gestalten und was ist die grundsätzliche Funktionsweise?",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 2 - Geometrien und Attribute"
+      "A2 - Geometrien und Attribute"
     ]
   },
   {
@@ -1335,7 +1335,7 @@
     "text": "Worum geht es in dieses Arbeitsblatt?\nIn diesem Arbeitsblatt lernen Sie die grundlegenden Konzepte von Datenbankabfragen kennen. Weniger formell werden Sie sich mit der Extraktion von Daten aus Datentabellen beschäftigen. Die Verknüpfung von thematischen und räumlichen Abfragen auf Vektordaten ist eine zentrale Analysemethode in den Raumwissenschaften und auch im Alltag weit verbreitet.",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 2 - Geometrien und Attribute"
+      "A2 - Geometrien und Attribute"
     ]
   },
   {
@@ -1346,7 +1346,7 @@
     "text": "Lernziele\nNach dieser Übung können Sie\n\nbeliebige thematische und räumliche Abfragen auf Vektordatenattributen durchzuführen\ngeometrische und topologische Abfragen unterscheiden\nAbfragen verknüpfen",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 2 - Geometrien und Attribute"
+      "A2 - Geometrien und Attribute"
     ]
   },
   {
@@ -1357,7 +1357,7 @@
     "text": "Benötigte Materialien\n\nDaten\n\nMarburg digitales Luftbild\nMarburg POIs\nMarburg ÖPNV POI\nMarburg Verkehr POI\nMarburg Sonstige POI\nMarburg Waldflächen\nMarburg Straßen\n\n\n\n\n\n\n\nBitte beachten Sie, dass es sich bei den Downloads um Archivdateien handelt, die entsprechend entpackt werden müssen. Gegebenenfalls sind alle Datensätze an die Ausdehnung des Marburger Luftbildes aus Aufgabe 1 anzupassen. Alle Daten sind dem geofabrik OSM Datenbestand entnommen.",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 2 - Geometrien und Attribute"
+      "A2 - Geometrien und Attribute"
     ]
   },
   {
@@ -1368,7 +1368,7 @@
     "text": "Aufgaben Arbeitsblatt 2\nIm ersten Teil der Aufgabe geht es darum, die benannten Geoobjekte aus den verschiedenen Datenbeständen zu identifizieren und zur einfachen Erfolgskontrolle zu zählen. Weder müssen alle Datensätze verwendet werden (eine Vorauswahl wurde getroffen, aber nur um eine gewisse Übersichtlichkeit für die Übung zu schaffen), noch müssen alle Attribute in einer Attributtabelle vorhanden sein.\n\nAufgabe 02-01\nIn Aufgabe 02-01 werden Attributwerte abgefragt. Daher werden die Merkmale und ihre Ausprägungen ohne Raumbezug aus den Tabellen extrahiert.\n\n\n\n\n\n\n\nWie viele Ampeln (“traffic_signals”) gibt es in Marburg?\nWie viele Objekte haben die Merkmalsausprägung “Café” und “Bar”?\nWie viele Objekte haben nicht die Merkmalsausprägung “Universität”?\nWie viele Objekte enthalten das Wort “cafe” in ihrem Namen (Attribut name)?\nWelche Objekte enthalten das Wort “cafe” in ihrem Namen, aber nicht die Merkmalsausprägung “cafe” des Attributs flcass?\nSuche alle Objekte mit dem exakten Namen “REWE” und vom Typ “Supermarkt”.\nFindet alle Objekte, die genau den Namen “REWE” haben oder vom Typ “Supermarkt” sind.\n\n\n\n\n\n\nAufgabe 02-02\nIn Aufgabe 02-02 beschäftigen wir uns mit topologischen und geometrischen Abfragen. Dazu werden die Attributabfragen um die räumlichen Komponenten Lage und Entfernung zueinander erweitert.\n\n\n\n\n\n\n\nWie viele Marburg POI liegen in Waldflächen?\nWie viele Marburg POI sind maximal 150 Meter von Waldflächen entfernt?\nWie viele “Restaurants” oder “Bars” sind max. 150 m von Waldflächen entfernt?\nWie viele Straßen führen durch Waldgebiete?\nWie viele Marburg POI sind max. 500 Meter vom Marburger Bahnhof entfernt?\nWie viele Kneipen sind max. 500 Meter von der nächsten Bushaltestelle entfernt?\nWie viele Marburg POI befinden sich im Umkreis von maximal 250 Metern um Parkhäuser?\nVon wie vielen Marburg POI-Punkten aus ist ein Arzt/Krankenhaus in weniger als 500 Metern zu erreichen?\nWie viele Punkte der Kategorie Gastronomie (Essen/Trinken) liegen weiter als 1 Kilometer vom Bahnhof und gleichzeitig weniger als 1 Kilometer vom nächsten Briefkasten entfernt?\n\n\n\n\n\n\nGewichtung der Aufgaben in Arbeitsblatt 2\n\n\n\nAufgabenteil\nGewichtung Teilaufgabe\nGewichtung Gesamt\n\n\n\n\nAufgabe 02-01\n0.25\n0.05\n\n\nAufgabe 02-02\n0.75\n0.2\n\n\nAufgabe 02\n1.0\n0.25",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 2 - Geometrien und Attribute"
+      "A2 - Geometrien und Attribute"
     ]
   },
   {
@@ -1379,7 +1379,7 @@
     "text": "Unterstützung\n\nDer Ausdruckseditor\nFür allgemeine Abfragen auf relational strukturierten Datensätzen (Attributtabellen, Datenbanken) ist der QGIS Expression Editor das Werkzeug der Wahl. Unter diesem Link finden Sie eine Einführung in die QGIS Dokumentation. Der Ausdruckseditor ist ein vielseitig einsetzbares Werkzeug und kann daher aus verschiedenen Menükontexten aufgerufen werden.\n\n\nArbeiten mit Attributen\nDas folgende YouTube Video macht Sie in ca. 13 Minuten mit dem Abfrageeditor vertraut. Beachten Sie auch die verschiedenen Anwendungsfälle, die im Video angesprochen werden.\n\n\nIn diesem YouTube Video werden Sie in in ca 2 Stunden umfassend über die praktischen Anwendungsmöglichkeiten der Arbeit mit Attributen informiert. Es ist zwar lang, bringt aber viele wichtige Kombinationsmöglichkeiten und Aspekte und erschließt so ungeahnte Potentiale.\n\n\n\n\nVertiefende Erläuterungen\nUnter Beziehungen und Datenbanken - Grundlagen räumlicher Informationssysteme{:target=“_blank”} finden Sie eine vertiefende Lerneinheit. Bitte beachten Sie, dass die Übungen dort für ArcGis konzipiert sind.\n\n\nÜbung 02-01\nBitte beachten Sie in jedem Fall, dass Ihre Suchbegriffe von den Datenerfasser:innen sowohl groß als auch klein, mit oder ohne Leerzeichen, nur teilweise oder auch mit oder ohne Umlaute erfasst worden sind. Auch typische Rechtschreibfehler sind möglich. Diese unterschiedlichen Eintragungen ein und derselben Kategorie sollten, soweit sinnvoll und möglich, bei thematischen Abfragen berücksichtigt werden.\n\n\nAufgabe 02-02\nSie können mehrere Abfragen nacheinander ausführen. Dazu müssen Sie ggf. das Abfrageergebnis als neuen Layer speichern (rechter Mausklick auf den ausgewählten Layer, dann Auswahl, dann Layer aus ausgewählten Features erstellen). Bitte beachten Sie, dass die so erzeugten Layer nur virtuell sind. Sie können diese aber natürlich z.B. als Geopackage-Datensatz exportieren.",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 2 - Geometrien und Attribute"
+      "A2 - Geometrien und Attribute"
     ]
   },
   {
@@ -1390,7 +1390,7 @@
     "text": "In dieser Aufgabe sollen Sie anhand vorgegebener Kriterien oder Merkmalsausprägungen verschiedene Analysen durchführen. Das heißt, Sie sollen die Eignung von Rasterzellen (Raumeinheiten) für eine bestimmte Nutzung bewerten. Sie können die Werte der so bewerteten Rasterzellen auch dazu verwenden, die Überwindung von räumlichen Widerständen oder auch Kosten zu kumulieren, um für eine bestimmte Nutzung geeignete Trassen oder Korridore zu identifizieren.\nNimmt man eine Position A und eine Position B auf einem solchen Raster als Start und Ziel, so kann die kostengünstigste Route als Bewegung durch einen Raum mit unterschiedlichen Widerständen interpretiert werden, d.h. man kann die Werte eines Pixels als Kosten für das Betreten/Nutzen/Überwinden dieses Pixels interpretieren. Diese Kosten können durchaus mit kategorialen Merkmalsausprägungen wie leicht oder schwer, günstig oder teuer, attraktiv oder unattraktiv usw. beschrieben werden. Vor diesem Hintergrund sind die Kriterien, die z.B. für die Planung einer günstigen Route herangezogen werden, immer in Bezug auf die Fragestellung bzw. Zielsetzung zu bewerten.",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 4 -  Kosten und Kriterien"
+      "A4 -  Kosten und Kriterien"
     ]
   },
   {
@@ -1401,7 +1401,7 @@
     "text": "Worum geht es in dieses Arbeitsblatt?\nIm Rahmen der Übung werden Sie eine einfache Eignungsanalyse und eine Kostenpfadanalyse durchführen. Dies beinhaltet die vollständige Datenaufbereitung sowie die Interpretation der verwendeten Kriterien und der Ergebnisse.",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 4 -  Kosten und Kriterien"
+      "A4 -  Kosten und Kriterien"
     ]
   },
   {
@@ -1412,7 +1412,7 @@
     "text": "Lernziele\nNach dieser Übung können Sie\n\nunterschiedliche Datenebenen zielgerichtet aufbereiten und kombinieren\ndie Bedeutung verschiedener Kriterien erkennen und einschätzen\neine Eignungsanalyse durchführen, indem Sie geeignete Datenebenen miteinander verrechnen\neine Kostenanalyse planen und durchführen",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 4 -  Kosten und Kriterien"
+      "A4 -  Kosten und Kriterien"
     ]
   },
   {
@@ -1423,7 +1423,7 @@
     "text": "Benötigte Materialien\n\nMarburg Open Forest (MOF) Geländemodell in 1 m Auflösung\nCorine Landnutzungsdaten für das MOF\nOpen Street Map (OSM) Wegedaten für das MOF\nKoordinaten (ETRS89, UTM32 EPSG:25832) Position Parkplatz (478188,5632178), Position Grillhütte (476170,5631657)\n\n\n\n\n\n\n\nDie Daten finden Sie im Zip-Archiv Daten-Aufgabe-L04",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 4 -  Kosten und Kriterien"
+      "A4 -  Kosten und Kriterien"
     ]
   },
   {
@@ -1434,7 +1434,7 @@
     "text": "Aufgaben Lerneinheit 4\n\nAufgabe 04-01\nSie sollen eine Entscheidung anhand mehrerer Kriterien treffen. Konkret soll die Eignung des Uniwaldes als Wildkatzenlebensraum untersucht werden.\nDabei sollen folgende Aussagen gelten:\n\n\n\n\n\n\n\nWildkatzen bevorzugen Waldgebiete\nWildkatzen bevorzugen mittlere und steile Hanglagen\nWaldgebiete werden gegenüber Hanglagen bevorzugt\n\n\n\n\n\n\n\n\n\n\n\nDaten herunterladen (wie gewohnt überprüfen)\nBerechnung der Hangneigung\nExtrahieren Sie alle Waldflächen aus den Corine Landnutzungsdaten, so dass Sie ein Raster mit den Werten 1 für Waldflächen und 0 für keine Waldflächen erhalten. (Bereits zugeschnittene Corine-Daten finden Sie im heruntergeladenen Archiv unter dem Dateinamen clc2018_1m_MOF_25832.tif). Tipp Dieser Vorgang wird auch als Datenreklassifizierung bezeichnet.\nZur Vorbereitung der Multikriterienbewertung sollen die kontinuierlichen Hangneigungswerte in ganzzahlige kategoriale Klassen überführt (reklassifiziert) werden. D.h. durch die Reklassifizierung der Hangneigung in drei Klassen 0-15 Grad = Klasse mit Wert 1, 15-30 Grad = Klasse mit Wert 2 und &gt; 30 Grad = Klasse mit Wert 3 (1=flach, 2=mittlere Neigung und 3=steile Neigung) werden kategoriale Zielvariablen generiert.\nLegen Sie für jede Datenebene eine Gewichtung gemäß der von Ihnen festgelegten Bedeutung in Bezug auf ihre Eignung fest (z. B. Wald/Nichtwald = Faktor 0,5, Hangneigung = Faktor 0,3). Bitte beachten Sie, dass Werkzeuge wie die WMCA Weighted Multicriteria Analysis eine Gewichtungssumme von genau 1.0 erwarten. Daher müssen die Gewichte entsprechend verteilt werden.\nLegen Sie für jede Klasse in diesem Layer eine Bewertung zwischen 0 und 10 fest (z. B. Wald = 10, Nichtwald = 1, Hangneigung Klasse 1 = 5 usw.) Beachten Sie, dass die Festlegung der Bewertung die Bedeutung der Kriterien für die Fragestellung berücksichtigen muss.\nErläutern Sie die Ergebnisse in max. 2 Sätzen.",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 4 -  Kosten und Kriterien"
+      "A4 -  Kosten und Kriterien"
     ]
   },
   {
@@ -1445,7 +1445,7 @@
     "text": "Aufgabe 04-02\nSie sollen einen Trimm-Dich-Pfad durch den Uniwald (Marburger Offener Wald, MOF) bei Caldern planen. Der Trail beginnt am Parkplatz in der Nähe des Kreisverkehrs am südöstlichen Rand und endet am Grillplatz am nordwestlichen Ende. Machen Sie sich zunächst mit dem Konzept der Kostenanalyse vertraut (siehe Hilfen und Reader).\nDie Vorgaben für die Streckenplanung sind:\n\n\n\n\n\n\n\ndie Strecke soll möglichst durch Wald führen\ndie Strecke soll möglichst weit von Wegen entfernt sein\ndie Route soll möglichst steil sein\n\n\n\n\n\n\n\n\n\n\n\nHerunterladen und Überprüfen der bereitgestellten Daten\nHangneigung berechnen\nVerwendung der reklassifizierten Corine-Daten aus Aufgabe 04-01 (Wald, Kein Wald).\nBerechnen Sie ein Entfernungsraster, das die Entfernungen zu den Straßen enthält (OSM_roads_MOF_25832.gpkg) (räumliche Auflösung wie das Hangneigungsraster).\nFür jede Rasterklasse (z.B. Wald Nicht-Wald) sind Werte zu definieren, die die Kosten bzw. den Reibungswert für das Überqueren/Nutzen der Zelle darstellen. Es ist daher sinnvoll (im Sinne der obigen Vorgaben), unattraktive Zellen mit hohen Werten und attraktive Zellen mit niedrigen Werten umzuklassifizieren.\nVerrechnen Sie die einzelnen Raster zu einem Gesamtkostenraster. Überlegen Sie dabei, ob alle drei Kriterien gleich gewichtet werden sollen oder ob Sie z.B. der Hangneigung ein höheres Gewicht geben wollen (z.B. wegen des höheren Trainingseffektes).\nBerechnen Sie auf dieser Grundlage die im Sinne der Vorgaben attraktivste (=“kostengünstigste”) Strecke zwischen Start- und Zielpunkt. Beschreiben Sie das Ergebnis, fügen Sie aussagekräftige Grafik(en) ein und begründen Sie stichpunktartig die einzelnen Arbeitsschritte.\n\n\n\n\n\nGewichtung der Aufgaben in Lerneinheit 4\n\n\n\nAufgabenteil\nGewichtung Teilaufgabe\nGewichtung Gesamt\n\n\n\n\nAufgabe 04-01\n0.4\n0.15\n\n\nAufgabe 04-02\n0.6\n0.25\n\n\nAufgabe 04\n1.0\n0.3",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 4 -  Kosten und Kriterien"
+      "A4 -  Kosten und Kriterien"
     ]
   },
   {
@@ -1456,7 +1456,7 @@
     "text": "Unterstützung\n\nBei Verwendung des Plugins WMCA Weighted Multicriteria Analysis (WMCA) müssen die kontinuierlichen Werte für Hangneigung und Entfernung von der Straße in diskrete Klassen umgewandelt werden. Das WMCA-Tool kann jedoch maximal 100 Klassen verarbeiten, so dass bei der Verwendung dieses Tools die kontinuierlichen Werte neu klassifiziert werden müssen (z.B. je 25 Meter Entfernung eine Klasse und alles &gt; 200 Meter Entfernung in eine Klasse, bzw. je 5 Grad Hangneigung von 0 Grad bis 30 Grad je eine Klasse und &gt; 30 Grad in eine Klasse). Außerdem entfällt die separate Normierung und Gewichtung.\nWenn Sie den Raster-Rechner verwenden, ist diese Neuklassifizierung nicht notwendig, Sie müssen dann aber Gewichtung und Normalisierung in die Berechnung integrieren. {: .hinweis–info}\nDas Plugin WMCA Weighted Multicriteria Analysis (WMCA) ist sehr komfortabel für die gewichtete Multikriterienanalyse. Es erscheint nach der Installation unter dem Hauptmenü Raster oder in der Erweiterungen-Werkzeugleiste (für die normale Installation muss “Auch experimentelle Erweiterungen anzeigen” in den Einstellungen aktiviert sein). Achtung: Zur Zeit (seit 2021) kann es je nach QGIS-Version zu einer Python-Fehlermeldung nach der Installation des Plugins kommen. Bitte verwenden Sie dann den alternativen Kurs-Repo-Download des Plugins. Weitere Informationen finden Sie unter WMCA Course Repository. Installieren Sie das gezippte Plugin über das QGIS-Menü ‘Erweiterungen -&gt; Erweiterungen verwalten und installieren -&gt; Aus Zip installieren’. Sollte es beim Ausführen des Plugins zu Fehlermeldungen oder Warnungen kommen, müssen in der Regel negative Werte im Ergebnisdatensatz neu klassifiziert werden. Achten Sie darauf, dass Sie diesen möglichst hohe neue Werte zuweisen, da es sich hierbei um fehlerhafte und somit für die Least Cost Path Analyse irrelevante Daten handelt.\n\nEine wesentlich detailliertere Hilfe für den gesamten Arbeitsablauf finden Sie QGIS-spezifisch unter Multi Criteria Overlay Analysis (QGIS3).\nDa es sich um ein weit verbreitetes Raster-GIS-Konzept handelt, werden Sie ähnliche Werkzeuge in allen GI-Softwarepaketen finden. So ist z.B. das MCE Tutorial for SAGA GIS eine hilfreiche Ressource, um den Prozess zu verstehen.\nTypische Rechenoperationen auf Rasterdaten, u.a. auch die Reklassifizierung von Daten, können mit dem Raster-Rechner durchgeführt werden. Der Raster-Rechner ist als Raster-Taschenrechner ein sehr wichtiges und mächtiges Werkzeug für viele Operationen. Alternativ und einfacher für eine einfache Reklassifizierung ist das QGIS-Werkzeug Reklassifizieren nach Tabelle. Einen Überblick über die verfügbaren Daten(re)klassifikations-Tools erhalten Sie, wenn Sie in der Toolbar klassifizieren oder reklassifizieren eingeben. Darüber hinaus finden Sie im Internet zahlreiche Anleitungen zum Thema Reklassifizierung, z.B. im Blogbeitrag How to reclassify a raster layer in QGIS oder auch auf YouTube Slope Analysis/Reclassify from a DEM in QGIS 3. Zusätzlich finden Sie auf den Hilfeseiten von GRASS GIS und SAGA GIS eine detaillierte Beschreibung des technischen Vorgehens.\nDie Normalisierung von Rasterdatenwerten kann sehr einfach mit dem SAGA-Modul Grid Normalisation durchgeführt werden. Alternativ kann sie auch mit dem Raster-Rechner nach der Formel xnorm = (x-min(x))/(max(x)-min(x)) berechnet werden (wobei x das Raster, min(x) und max(x) das Minimum bzw. Maximum aller Werte des jeweiligen Rasters sind).\nDie Gewichtung kann dann durch einfache Multiplikation (Rasterrechner) des jeweiligen Rasters mit dem Gewichtungswert erreicht werden. Z.B. Gleichgewichtung Raster1*Raster2*Raster3/3 Gewichtung Raster1 Faktor 0.5 Raster2 und Raster3 Faktor 0.25 0.5*Raster1 + 0.3*Raster2 + 0.2*Raster3. Wird mit Proportionalwerten von 1 (Prozent) gewichtet, so ist darauf zu achten, dass die Summe aller Gewichtungsfaktoren 1 ergibt.\nFür das exakte Digitalisieren von Punkten ist die Erweiterung Numerical Digitize sehr hilfreich. Sie wird nach der Installation in die Digitalisierungsleiste eingehängt. Sollte die Extension nicht mit Ihrer QGIS Version kompatibel sein, finden Sie auf [Stackoverflow] (https://gis.stackexchange.com/questions/34204/creating-point-features-with-exact-coordinates-in-qgis) weitere Hilfe zu diesem Problem.\nFür die Kostenanalyse sollte das Plugin Least Cost Path installiert werden. Es erscheint unter den Bearbeitungswerkzeugen als eigener Menüeintrag Cost Distance Analysis. Auch hierzu gibt es sowohl für QGIS als auch für die verwandten GRASS- und SAGA-Werkzeuge zahlreiche Videos und Tutorials (z.B. Least Cost Path). Achten Sie bei der Google-Suche darauf, dass Sie nur aktuelle und für Ihre QGIS-Hauptversion - also für QGIS 3.x - gültige Tutorials verwenden. Bei Interesse an den Konzepten und dem Anwendungsbezug (insbesondere für Fragestellungen auf der Landschaftsskala) lohnt sich ein Blick in Least-Cost Modelling and Landscape Ecology: Concepts, Applications, and Opportunities.\nFür Entfernungsberechnungen kann das Nearness/Proximity Tool verwendet werden. Bitte beachten Sie, dass Vektordaten zunächst in Rasterdaten umgewandelt werden müssen (Raster-&gt;Conversion-&gt;Raster).\nWeitere Unterstützung finden Sie unter QGIS Materials",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 4 -  Kosten und Kriterien"
+      "A4 -  Kosten und Kriterien"
     ]
   },
   {
@@ -1467,7 +1467,7 @@
     "text": "In dieser Übung sollen Sie eine abschließende Projektarbeit Ihrer Wahl durchführen.",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 6 - Die Projektarbeit"
+      "A6 - Die Projektarbeit"
     ]
   },
   {
@@ -1478,7 +1478,7 @@
     "text": "Worum geht es in dieses Arbeitsblatt?\nIm Rahmen der Projektarbeit werden Sie eine typische kleine Studie mit Hilfe von GIS durchführen und die Ergebnisse Ihrer Studie angemessen präsentieren.",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 6 - Die Projektarbeit"
+      "A6 - Die Projektarbeit"
     ]
   },
   {
@@ -1489,7 +1489,7 @@
     "text": "Lernziele\nNach dieser Übung können Sie\n\neine Fragestellung aus einer Motivation heraus entwickeln\ndie Fragestellung mit Hilfe eines Exposés operationalisieren\ndie Analyse in einem wissenschaftlich strukturierten Bericht kommunizieren.",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 6 - Die Projektarbeit"
+      "A6 - Die Projektarbeit"
     ]
   },
   {
@@ -1500,7 +1500,7 @@
     "text": "Übung 06",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 6 - Die Projektarbeit"
+      "A6 - Die Projektarbeit"
     ]
   },
   {
@@ -1511,7 +1511,7 @@
     "text": "Benötigte Materialien\n\nMOF Geländemodell 1 Meter Auflösung\nCorine Landnutzung MOF\nEinführende Literatur Wildkatze\nWeitere Daten nach Wahl\nLiteratur Ihrer Wahl\n\nDie Daten befinden sich in der Archivdatei Daten-Aufgabe-L04.zip\nEs geht um die Nutzung des Uniwaldes als Lebensraum für die Wildkatze. Entwickeln und bearbeiten Sie ein Projekt, das durch den folgenden Titel und Untertitel skizziert wird. Sie können den Titel und den Untertitel an Ihre Fragestellung anpassen. Die Ausarbeitung hat im Kern eine GI-Analyse als Hauptarbeitspaket. Die Feinabstimmung ist Ihnen überlassen. Unter den Materialien finden Sie einen Link zu ausgewählter Literatur zum Thema. ::: {.callout-tip icon=“false” appearance=“simple”} Der Marburger Universitätswald - Lebensraum für die Wildkatze?\nEine räumliche Analyse ausgewählter naturräumlicher Parameter zur Bestimmung des Lebensraumpotenzials der Wildkatze in Nordhessen. :::",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 6 - Die Projektarbeit"
+      "A6 - Die Projektarbeit"
     ]
   },
   {
@@ -1522,7 +1522,7 @@
     "text": "Alternative Aufgabe 06\nAlternativ zu Aufgabe 06 können Sie auch selbstständig ein Projekt Ihrer Wahl bearbeiten.",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 6 - Die Projektarbeit"
+      "A6 - Die Projektarbeit"
     ]
   },
   {
@@ -1533,7 +1533,7 @@
     "text": "Benötigte Materialien\n\nDaten nach Wahl\nLiteratur Ihrer Wahl",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 6 - Die Projektarbeit"
+      "A6 - Die Projektarbeit"
     ]
   },
   {
@@ -1544,7 +1544,7 @@
     "text": "Hinweise zur Bearbeitung\nDie Ausarbeitung sollte nicht mehr als 2500 Wörter umfassen. Sie ist als PDF-Datei mit den für wichtig erachteten Abbildungen zu erstellen. Benennen Sie die PDF-Datei wie folgt\nP05_&lt;Name&gt;_&lt;Vorname&gt;.pdf (z.B. P05_Reudenbach_Chris.pdf_).\nFügen Sie Ihren Namen und Ihre Matrikelnummer nach folgendem Schema an geeigneter Stelle in die Datei ein:\nVorname Nachname, Matrikelnummer (z.B. Chris Reudenbach, 1234567).\nAls Orientierungshilfe finden Sie im Reader Projektarbeit den beispielhaften Aufbau einer solchen Ausarbeitung.",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 6 - Die Projektarbeit"
+      "A6 - Die Projektarbeit"
     ]
   },
   {
@@ -1555,7 +1555,7 @@
     "text": "Bewertungskriterien",
     "crumbs": [
       "Arbeitsblätter",
-      "Arbeitsblatt 6 - Die Projektarbeit"
+      "A6 - Die Projektarbeit"
     ]
   }
 ]
