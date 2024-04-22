@@ -1,0 +1,42 @@
+---
+title: Wie entwickle ich ein Projekt?
+title-block-banner: ../assets/images/06-splash.jpg
+title-block-banner-color: black
+
+bibliography: ../assets/geoinfo.bib
+
+lang: de
+comments: false
+---
+
+
+## Die Geschichte vom fehlenden Fragezeichen oder wie entwickle ich ein Projekt?
+
+Am Anfang eines Projektes steht immer die Entwicklung einer Fragestellung und am Anfang dieses Prozesses muss eine Frage oder ein Problem stehen. Um zu einer Fragestellung oder einem Projektthema zu gelangen, gibt es neben der grundsätzlichen Neugier natürlich viele Möglichkeiten. Die wichtigsten sind vielleicht
+
+* Ein vorgegebenes Thema wählen
+* ein eigenes Thema zu entwickeln
+* eine Mischung aus beiden Möglichkeiten
+
+Natürlich gibt es für alle drei Varianten Vor- und Nachteile (Bänsch 1999). Es ist durchaus gerechtfertigt und sinnvoll, die eigenen Interessen und Fähigkeiten in die Themenwahl einfließen zu lassen. Nach (Backhaus et al. 2008) z.B.:
+
+* Was kann ich besonders gut?
+* Habe ich eher praktische oder theoretische Interessen?
+* Möchte ich eher wissenschaftlich oder anwendungsorientiert arbeiten?
+* Welches Berufsfeld interessiert mich?
+* Brauche ich viel Betreuung oder bin ich lieber auf mich allein gestellt?
+
+Wählen Sie ein Thema, für das Sie Interessen und Stärken entwickeln und das Sie nach realistischer Einschätzung in der vorgegebenen Zeit erfolgreich bearbeiten können. Sobald Sie sich für ein Thema entschieden haben, sollten Sie sich um die Entwicklung einer Problem- oder Fragestellung kümmern. Projekte können der Problemlösung dienen oder rein erkenntnisorientiert sein. Im Rahmen dieses Kurses soll die Fragestellung jedoch auf die GIS-gestützte Generierung von Wissen oder Erkenntnissen ausgerichtet sein.
+
+Denken Sie daran, dass die Entwicklung einer robusten Fragestellung eine der **anspruchsvollsten** Aufgaben ist, die Sie während Ihrer Ausbildung lernen werden. Ohne eine klare und begrenzte Fragestellung besteht die Gefahr der völligen Beliebigkeit und Orientierungslosigkeit während Ihres kreativen Prozesses. Nehmen Sie sich die Zeit, allein und in der Gruppe iterativ eine nachvollziehbare Fragestellung zu entwickeln, die von allen getragen und **verstanden** wird. Dieser Prozess ist eng mit der Analyse der verfügbaren Daten und Methoden verbunden. Gute Fragestellungen lassen sich fast immer erst nach längerer Beschäftigung mit dem Thema und häufiger Überarbeitung formulieren. Die Entwicklung eines Themas zu einer belastbaren Fragestellung kann in folgenden Schritten erfolgen:
+
+* Formulierung einer Problemstellung/Motivation - Sie soll deutlich machen, dass sich die Arbeit einer interessanten Fragestellung oder Problematik widmet, die eine wissenschaftliche Bearbeitung sinnvoll, wünschenswert und vor allem interessant erscheinen lässt.
+* Entwicklung der Leitfrage bzw. des konzeptionellen Rahmens - Was soll mit der Studie untersucht werden? Diese Leitfrage muss in der Regel in Unterfragen oder Thesen ausdifferenziert werden. Sie sollte strukturiert und nicht zu breit oder allgemein gewählt werden.
+* Erarbeitung und Formulierung des Ziels der Arbeit bzw. der Arbeitshypothesen: Das Ziel der Arbeit kann nach der Aufarbeitung des Wissensstandes genauer eingegrenzt werden. Die Formulierung von Arbeitshypothesen (was ist zu erwarten, was ist nachzuweisen?) ist ein wesentliches Ergebnis dieses Prozesses.
+
+::: callout-info
+Ohne eine klare Fragestellung und Zielsetzung kann keine gültige Antwort und kein belastbares Ergebnis erzielt werden.
+:::
+
+Es gibt auch weniger wissenschaftlich orientierte Inhalte, die bei der Entwicklung einer Fragestellung berücksichtigt werden müssen. Nicht nur der Zweck und das Ziel, sondern auch die Adressaten können für die Entwicklung der Fragestellung von erheblicher Bedeutung sein. Es muss bereits in der Fragestellung differenziert werden, ob Sie ein “Produkt” für z.B. Bildung, Information, Edutainment, Erkenntnisgewinn oder Verkauf auf einem bestehenden oder zu sensibilisierenden Markt entwickeln wollen.
+

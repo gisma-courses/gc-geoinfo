@@ -1,0 +1,34 @@
+---
+title: Die Projektarbeit
+title-block-banner: ../assets/images/06-splash.jpg
+title-block-banner-color: black
+
+bibliography: ../assets/geoinfo.bib
+
+lang: de
+comments: false
+---
+
+
+Die Bearbeitung komplexer Aufgabenstellungen wird in fast allen Lernfeldern sowie in der beruflichen Praxis in Projekten organisiert und durchgeführt. 
+
+
+Projekte zeichnen sich durch spezifische Kriterien aus:
+
+* definierte Problemstellungen
+* definierte Ziele und Erwartungen
+* definierter Zeitrahmen und Aufwand
+* begrenzte Ressourcen (personell, materiell, technisch)
+* Teamarbeit
+
+Projekte werden in der Regel realisiert, indem die aus den Zielen abgeleiteten Problemstellungen im Team bewältigt werden. Die Umsetzung erfordert ein definiertes Ziel, _**ohne**_ vorher genau definierte Tätigkeiten und Problemlösungen zu kennen oder zu beherrschen.
+
+Die meisten Methoden, die bei der Bearbeitung von Projektarbeiten zum Einsatz kommen, stellen akademische und berufliche **Kernkompetenzen** dar: Wie z.B. das Konzipieren und Umsetzen wissenschaftlicher Fragestellungen, das Entwickeln anwendungsorientierter Fragestellungen oder das selbständige Durchführen und Organisieren kreativer und strukturierter Tätigkeiten im Team. Darüber hinaus erfordern Projektarbeiten die Anwendung und Optimierung übergeordneter Kompetenzen im kommunikativen und sozialen Bereich.
+
+## Lernziele
+
+* Sie verstehen die Bedeutung der Entwicklung einer klaren Zielsetzung und Fragestellung in einer Projektarbeit/Studie.
+* Sie sind in der Lage, aus Ihrer Motivation ein klar umrissenes Ziel abzuleiten.
+* Sie sind in der Lage, konzeptionelle Lösungsansätze für Ihre Zielsetzung zu formulieren.
+* Sie sind in der Lage, teamorientiert zu arbeiten und Ihr Projekt eigenverantwortlich zu strukturieren, durchzuführen und adäquat zu kommunizieren.
+

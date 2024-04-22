@@ -1,0 +1,67 @@
+---
+title: Das Exposé
+title-block-banner: ../assets/images/06-splash.jpg
+title-block-banner-color: black
+
+bibliography: ../assets/geoinfo.bib
+
+lang: de
+comments: false
+---
+
+## Das Exposé als Instrument der Projektentwicklung
+
+Im Mittelpunkt der Startphase eines jeden Projekts steht die Erstellung eines schriftlichen Exposés (auch Projekthandbuch, Pflichtenheft, Förderantrag usw.). In diesem Dokument wird die Projektidee konkretisiert, indem neben dem Motivationsrahmen die Fragestellung und Zielsetzung formuliert und auf der Basis des vorhandenen Wissens (Stand der Forschung, verfügbare Methoden) der geplante Lösungsweg formuliert wird.
+
+
+Im Rahmen kreativer Prozesse, die einer bestimmten Struktur folgen, ist die Erstellung eines sogenannten Exposés ein bewährtes Mittel. In einem Exposé wird die Problemstellung entwickelt und in eine verständliche Form gebracht. Es dient einer Gruppe als Diskussionsgrundlage und als Leitfaden für die weitere Bearbeitung des Projektes. Die folgende Gliederung soll als Leitfaden für die Erstellung eines maximal zweiseitigen Exposés dienen. Ein solches Exposé kann, in einzelne Arbeitspakete zerlegt, als Projektplan verstanden werden, der wiederum als komprimierter Leitfaden für die Konzeption und Vorgehensweise bei der Entwicklung wissenschaftlicher/planerischer Fragestellungen gedacht ist.
+
+### Schrittweise Entwicklung eines Exposés
+
+Die Entwicklung der Fragestellung beinhaltet eine konzentrierte und intensive Auseinandersetzung mit den bereits unter Zielsetzung genannten Inhalten:
+
+* Entwicklung einer Fragestellung
+* Ableitung einer Leitfrage bzw. eines konzeptionellen Rahmens
+* Formulierung des Ziels der Arbeit bzw. der Arbeitshypothesen
+* Die Bearbeitung und Entwicklung des Themas ist eng verknüpft mit der Aufarbeitung der Quellenlage bzw. des Forschungsstandes und der Berücksichtigung bzw. Integration der theoretischen / rechtlichen / technischen Grundlagen. Es ist wichtig, sowohl auf die Paradigmen als auch auf den theoretischen Kontext hinzuweisen, die der Arbeit zugrunde liegen. Im Rahmen einer praktischen Arbeit wird dies in der Regel durch Verordnungen, Gesetze, Merkblätter bzw. Ausschreibungstexte und Leistungsverzeichnisse geregelt. Diese haben verbindlichen Charakter und sind zu berücksichtigen (= kennen und zitieren). Dies dient sowohl als Grundlage für die Ableitung der Hypothese als auch zur Dokumentation und Offenlegung der Quellen. Weiters ist es notwendig, neben den Grundlagen auch den aktuellen Stand der Forschung/Anwendung zu erfassen, um zu einem adäquaten (=aktuellen und validen) Ergebnis zu gelangen.
+* Arbeitskonzept, methodisches Vorgehen: Basierend auf den unter Punkt 1 definierten Arbeitszielen und den unter Punkt 2 identifizierten Rahmenbedingungen ist ein Arbeitskonzept zu entwickeln. Der (potentielle) Arbeitsablauf und das methodische Vorgehen sind kurz zu beschreiben und zur Orientierung möglichst grafisch (Flussdiagramm) darzustellen.
+* Methodisches Vorgehen: Der gewählte methodische Ansatz ist zu erläutern. Die Durchführung der Berechnungen, statistische Ansätze, Auswertungen etc. sind kurz darzustellen.
+* Zusammenfassung der erwarteten Ergebnisse - Ergebnisse werden erst am Ende der Bearbeitung erwartet, dennoch ist es sehr hilfreich, kurz zu artikulieren, was der Bearbeiter als Ergebnis erwartet.
+* Überprüfung der Machbarkeit und Aufstellung eines Zeitplans - Die zur Verfügung stehende Zeit ist ein knappes Gut. Daher ist die Erstellung eines „Projektplans“ sehr hilfreich, um den Zeitbedarf und den Fortschritt der einzelnen Arbeitsschritte abschätzen zu können. In jedem Fall sollte aus dem Exposé hervorgehen, dass die geplanten Arbeitsschritte mit den zur Verfügung stehenden Ressourcen realisierbar sind. Dieser Plan ist nicht Teil der Ausarbeitung der Endergebnisse.
+
+Das Exposé soll einen klar entwickelten und kommunizierten Gedankengang zu den Zielen und Vorgehensweisen sowie den erwarteten Ergebnissen des geplanten Projekts für Dritte nachvollziehbar machen. 
+
+Zum besseren Verständnis (nicht als Vorlage) empfehlen wir für wissenschaftliche Fragestellungen insbesondere die Seiten drei bis fünf der [Vorlage](http://www.dfg.de/formulare/54_01/54_01_de.pdf) zur Beantragung von Forschungsförderung bei der Deutschen Forschungsgemeinschaft (DFG).
+
+## Beispiel Exposé
+
+### Der Marburger Universitätswald - Lebensraum für die Wildkatze?
+**Eine räumliche Analyse ausgewählter naturräumlicher Parameter zur Bestimmung des Lebensraumpotenzials der Wildkatze in Nordhessen**.
+
+*Name Matrikelnummer
+
+### Einleitung
+Die ursprüngliche Verbreitung der Wildkatze in Mitteleuropa lässt vermuten, dass sie prinzipiell überall einen geeigneten Lebensraum finden könnte. Es gibt jedoch einige ökologische Faktoren wie Schnee, Zerschneidung des Naturraumes etc., die zu einer Einschränkung der Verbreitung führen können (Hinz und Kunz 2099, Brehms Tiermärchen 2011). Eine wichtige Voraussetzung für die Ausbreitung sind Wanderkorridore zwischen bereits besiedelten und unbesiedelten Gebieten. Vor allem entlang von Bäumen, Sträuchern und Hecken erschließt sich die Wildkatze neue Lebensräume (Peterchen Mondfahrt 2088).
+Zielsetzung
+Vor diesem Hintergrund stellt sich die Frage, ob es in Nordhessen geeignete potenzielle Wanderwege und Lebensräume für die Wildkatze gibt.  Zur Untersuchung dieser Frage werden folgende Arbeitsthesen aufgestellt:
+1. Es gibt ausreichend große und attraktive
+Lebensräume für die Wildkatze
+2. Es können geeignete Korridore und weniger problematische Bereiche für die Wanderung
+Wanderstrategie identifiziert werden 
+3. Im Bereich des Uniwaldes sind eine positive
+naturräumliche Ausstattung und geeignete Wanderkorridore zu erwarten.
+
+### Daten und Methoden
+Als Datengrundlage werden CORINE (mydatenquelle 2018) für die Landnutzungsstrukturen und folgende weitere Datensätze für X Y (Quelle1 2018, ...) verwendet.  Die Auswertung der Daten erfolgt in QGIS 3.x.
+Beschreibung der Vorgehensweise und Methoden ( Hinz und Kunz 2099, Brehms Tiermärchen Band 2 2011 )
+
+### Ergebnisse
+In Abbildung 1 ist gut zu erkennen...
+Es ist ersichtlich, dass ...
+
+### Diskussion
+Die Arbeitsthese 1 konnte, wie in Abbildung 1 ersichtlich, positiv verifiziert werden. ....
+
+### Literatur
+Hinz und Kunz (2099): Die Katze und der Rest der Welt. In: Weaver, D.B., Backman, K.F., Cater, E. (3000): The encyclopedia of wildcats. CABI Publishing, Wallingford, UK.
+...

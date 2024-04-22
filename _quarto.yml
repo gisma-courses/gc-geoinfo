@@ -133,6 +133,10 @@ website:
         contents: 
           - href: unit06/unit06-01.qmd
             text: Die Projektarbeit    
+          - href: unit06/unit06-02.qmd
+            text: Wie entwickle ich ein Projekt?  
+          - href: unit06/unit06-03.qmd
+            text: Das Exposé 
 
       #- text: "---"
       #- section: "Machine Learning"
