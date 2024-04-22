@@ -26,7 +26,7 @@ website:
   navbar:
     logo: /images/logo.png
     left:
-      - icon: question-square-fill
+      - icon: compass
         text: Kursformalia
         href: unit00/unit00-01-formales.qmd
       - icon: question-square-fill
