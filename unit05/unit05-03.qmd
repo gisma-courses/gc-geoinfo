@@ -15,17 +15,11 @@ Die Eignungskarte stellt räumliche Bereiche dar, die auf der Eignung bestimmter
 
 
 
-![Prinzip der boolschen Verschneidung ohne Gewichtung. Links Multiplikation zur Erzeugung einer binären Karte, Rechts Addition zurErzeugung einer Ranglistenkarte](../assets/images/unit05/suit1.png)
-
-
+![Prinzip der boolschen Verschneidung ohne Gewichtung. Links Multiplikation zur Erzeugung einer binären Karte, Rechts Addition zurErzeugung einer Ranglistenkarte, @gisma2024](../assets/images/unit05/suit1.svg)
 
 Angenommen, die in den Marburger Uniwald eingewanderte Wildkatze besiedelt nur Laubwälder und nur steile Bereiche > 20 Grad Hangneigung, so reicht eine logische Operation aus, um geeignete Lebensräume für die Katze zu ermitteln. Jedes dieser beiden Kriterien kann mit einer binären Informationsebene (Wald/Nichtwald und Steil/Nicht-Steil) kodiert werden. Potenzielle Habitate sind nun genau die Gebiete, für die **beide** Kriterien zutreffen. Mit anderen Worten: Flächen, die *wahr* für Wald **und** für Hangneigung > 20 Grad sind. Natürlich lässt sich das Beipiel einer Ranglistenkarte ebenfalls auf dieser Grundlage erzeugen.  Dur eine Addition der kodierten Datensätze bekommen wir 0 ungeeignet, 1 teilweise geeignet und 2 geeignet.  
 
 Die Boolesche Verschneidung eignet sich vor allem für Eignungsanalysen mit randscharfen und klar ausschließenden Kriterien. Können z.B. Siedlungsgebiete und industrielle landwirtschaftliche Nutzflächen bereits zu Beginn der Analyse als Katzenlebensraum ausgeschlossen werden, ist das potenzielle Eignungsgebiet mit einer einfachen Booleschen Verschneidung schnell ermittelt. 
-
-
-
-
 
 ### Die gewichtete Schnittmenge
 
@@ -34,10 +28,6 @@ Für viele Fragestellungen stellt die Einteilung der Realität in die binären K
 So können für den Käufer eines neuen Mobiltelefons Marke und Funktion wichtiger sein als Displaygröße, Preis oder Robustheit. Dieses allgemeine Prinzip der Gewichtung von Einflussfaktoren wird auch bei der Eignungsanalyse mit GIS angewendet. Der entsprechende Ansatz wird als *gewichtete Verschneidung* bezeichnet.
 
 In vielen räumlichen Analysen sind bestimmte Kriterien in Bezug auf das Ziel n-mal wichtiger als andere. Oft ist es gerade eine Anforderung an die Standortsuche, mehrere geeignete Standorte dahingehend zu vergleichen, ob und wie stark sie eine Reihe unterschiedlich wichtiger Kriterien erfüllen. Durch das Ebenenprinzip der GI-Systeme kann die Verschneidung sehr einfach um die Idee unterschiedlich wichtiger Kriterien erweitert werden. Jeder thematischen Ebene wird ein numerischer Gewichtungsfaktor zugeordnet, der ihrer relativen Bedeutung gegenüber den anderen Ebenen entspricht. Die so gewichteten Informationsebenen werden dann wie bisher verschnitten. Wie das Boole'sche Verschneiden ist auch das gewichtete Verschneiden prinzipiell sowohl im Raster- als auch im Vektormodell möglich. So könnten z.B. Tourismusexperten einer Urlaubsinsel die negativen Auswirkungen von Hotels und Bars für ein alternatives Tourismuskonzept mit dem Faktor 0,1 gewichten und Quad-Trek-Routen durch das Binnenland mit dem Faktor 1. In der Regel sollten die Wertebereiche der Eingangsinformationsebenen normiert (d.h. zwischen z.B. 0 und 1 skaliert) werden. In der resultierenden Eignungsstufe sind die geeigneten Räume bzw. Standorte durch besonders hohe Werte erkennbar.
-
-
-
-
 
 ### Katzen im Lahntal
 
