@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Geoinformatik Basiskurs (QGIS) - Rasterbasierte räumliche Analysemethoden</title>
+<title>Grundlagenkurs GI-S (QGIS) - Rasterbasierte räumliche Analysemethoden</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -49,6 +49,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../unit04/unit04-02.html" rel="next">
 <link href="..//images/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -136,10 +137,10 @@ background-size: cover;
 
 
 <link rel="stylesheet" href="../css/styles.css">
-<meta property="og:title" content="Geoinformatik Basiskurs (QGIS) - Rasterbasierte räumliche Analysemethoden">
+<meta property="og:title" content="Grundlagenkurs GI-S (QGIS) - Rasterbasierte räumliche Analysemethoden">
 <meta property="og:description" content="">
-<meta property="og:site_name" content="Geoinformatik Basiskurs (QGIS)">
-<meta name="twitter:title" content="Geoinformatik Basiskurs (QGIS) - Rasterbasierte räumliche Analysemethoden">
+<meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
+<meta name="twitter:title" content="Grundlagenkurs GI-S (QGIS) - Rasterbasierte räumliche Analysemethoden">
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@gisma">
 <meta name="twitter:card" content="summary">
@@ -156,7 +157,7 @@ background-size: cover;
     <img src="../images/logo.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Geoinformatik Basiskurs (QGIS)</span>
+    <span class="navbar-title">Grundlagenkurs GI-S (QGIS)</span>
     </a>
   </div>
         <div class="quarto-navbar-tools tools-end">
@@ -210,7 +211,7 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Einleitung</span></a>
+ <span class="menu-text">Willkommen zum <br> Grundlagen Kurs GI-Methoden</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -356,17 +357,47 @@ background-size: cover;
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
  <span class="menu-text">Reader Quantitative räumliche Datenanalyse</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../unit99/coming-soon.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reader Quantitative räumliche Datenanalyse</span></a>
+  <a href="../unit04/unit04-01.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Räumliche Analysemethoden</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Voronoi Polygone</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Informationsloser Raum</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-04.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Digitale Geländemodelle</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sichtweite und Sichtfeld</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prozeßbasierte Ableitungen</span></a>
   </div>
 </li>
       </ul>
@@ -375,7 +406,7 @@ background-size: cover;
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
- <span class="menu-text">Reader Automatisierung von Arbeitsabläufen in QGIS</span></a>
+ <span class="menu-text">Reader Kostenanalyse</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -383,8 +414,26 @@ background-size: cover;
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../unit99/coming-soon.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">coming soon</span></a>
+  <a href="../unit05/unit05-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multikriterien-Analysen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit05/unit05-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Eignungsanalysen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit05/unit05-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kombination unterschiedlicher Kriterien</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit05/unit05-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multikriterien-Multiziel-Analyse</span></a>
   </div>
 </li>
       </ul>
@@ -393,7 +442,7 @@ background-size: cover;
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
- <span class="menu-text">Reader Projektarbeit</span></a>
+ <span class="menu-text">Reader Automatisierung von Arbeitsabläufen in QGIS</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -403,6 +452,24 @@ background-size: cover;
   <div class="sidebar-item-container"> 
   <a href="../unit99/coming-soon.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">coming soon</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">Reader Projektarbeit</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit06/unit06-01.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Die Projektarbeit</span></a>
   </div>
 </li>
       </ul>
@@ -440,7 +507,7 @@ background-size: cover;
 <section id="räumliche-analysen-in-der-geographie" class="level3">
 <h3 class="anchored" data-anchor-id="räumliche-analysen-in-der-geographie">Räumliche Analysen in der Geographie</h3>
 <p>Die Wurzeln der räumlichen Analyse reichen weit zurück. Der Reader von <span class="citation" data-cites="berry1968">Berry und Marble (<a href="#ref-berry1968" role="doc-biblioref">1968</a>)</span> enthält eine Auswahl früher Artikel, die sich mit Anwendungen der räumlichen Statistik und der quantitativen räumlichen Analyse beschäftigen. Die Ansätze reichen teilweise bis in die 1930er Jahre zurück, konzentrieren sich aber vor allem auf eine erste fruchtbare Periode in den 1950er und 1960er Jahren. Die Bereitschaft, statistische und andere quantitative Methoden zur Analyse räumlicher Muster und Prozesse einzusetzen, war vor allem in den Raumwissenschaften ausgeprägt, die die Beschreibung und Erklärung räumlicher Muster und Prozesse als zentralen wissenschaftlichen Gegenstand haben wie etwa der Landschaftsökologie <span class="citation" data-cites="turner2003">(vgl. z.B. <a href="#ref-turner2003" role="doc-biblioref">Turner, Gardner, und O’Neill 2003</a>)</span>.</p>
-<p>In der deutschsprachigen Geographie ist die quantitative Analyse räumlicher Phänomene eng mit dem durch studentische Initiativen forcierten Paradigmenwechsel des “Kieler Geographentages” 1969 verbunden <span class="citation" data-cites="monheim1999">(<a href="#ref-monheim1999" role="doc-biblioref">Monheim und Schwarte 1999</a>)</span>. Die zentralen Publikationen von <span class="citation" data-cites="bartels1968">(<a href="#ref-bartels1968" role="doc-biblioref"><strong>bartels1968?</strong></a>)</span> und <span class="citation" data-cites="hard1970a">(<a href="#ref-hard1970a" role="doc-biblioref"><strong>hard1970a?</strong></a>)</span> stehen stellvertretend für diese entscheidende und bis heute wirksame Zäsur in der Geographie. Während in der allgemeinen Lehre bis heute von <strong><em>Landschaften</em></strong> gesprochen wird, ist seit den 1980er Jahren im Zuge der Durchsetzung von GI-Science als integrativer Arbeitsplattform eine zunehmende Konvergenz der verwendeten raumanalytischen Methoden in den an der Entwicklung der GIS-Technologie beteiligten Wissenschaften zu beobachten. Dies lässt sich z.B. an dem allgemein als Grundlage anerkannten Lehrbuch von <span class="citation" data-cites="bill2008">Bill (<a href="#ref-bill2008" role="doc-biblioref">2008</a>)</span> nachvollziehen.</p>
+<p>In der deutschsprachigen Geographie ist die quantitative Analyse räumlicher Phänomene eng mit dem durch studentische Initiativen forcierten Paradigmenwechsel des “Kieler Geographentages” 1969 verbunden <span class="citation" data-cites="monheim1999">(<a href="#ref-monheim1999" role="doc-biblioref">Monheim und Schwarte 1999</a>)</span>. Die zentralen Publikationen von <span class="citation" data-cites="bartels1968">Bartels (<a href="#ref-bartels1968" role="doc-biblioref">1968</a>)</span> und <span class="citation" data-cites="hard1970a">Gerhard Hard (<a href="#ref-hard1970a" role="doc-biblioref">1970</a>)</span> stehen stellvertretend für diese entscheidende und bis heute wirksame Zäsur in der Geographie. Während in der allgemeinen Lehre bis heute von <strong><em>Landschaften</em></strong> gesprochen wird, ist seit den 1980er Jahren im Zuge der Durchsetzung von GI-Science als integrativer Arbeitsplattform eine zunehmende Konvergenz der verwendeten raumanalytischen Methoden in den an der Entwicklung der GIS-Technologie beteiligten Wissenschaften zu beobachten. Dies lässt sich z.B. an dem allgemein als Grundlage anerkannten Lehrbuch von <span class="citation" data-cites="bill2008">Bill (<a href="#ref-bill2008" role="doc-biblioref">2008</a>)</span> nachvollziehen.</p>
 </section>
 <section id="lernziele" class="level3">
 <h3 class="anchored" data-anchor-id="lernziele">Lernziele</h3>
@@ -458,11 +525,17 @@ background-size: cover;
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-bartels1968" class="csl-entry" role="listitem">
+Bartels, D. 1968. <span>„Zur wissenschaftstheoretischen <span>Grundlegung</span> einer <span>Geographie</span> des <span>Menschen</span>“</span>. <em>(Erdkundliches Wissen – Geographische Zeitschrift, Beihefte Nr</em>.
+</div>
 <div id="ref-berry1968" class="csl-entry" role="listitem">
 Berry, Brian Joe Lobley, und Duane Francis Marble. 1968. <em>Spatial analysis: a reader in statistical geography</em>.
 </div>
 <div id="ref-bill2008" class="csl-entry" role="listitem">
 Bill, Ralf. 2008. <span>„Grundlagen der Geo-Informationssysteme: Band 2 Analysen, Anwendungen und neue Entwicklungen“</span> 2.
+</div>
+<div id="ref-hard1970a" class="csl-entry" role="listitem">
+Gerhard Hard. 1970. <em>Die "Landschaft" der Sprache und die "Landschaft" der Geographen : semantische und forschungslogische Studien zu einigen zentralen Denkfiguren in der deutschen geographischen Literatur</em>. Bd. 11. Colloquium Geographicum. Dümmler Verlag. <a href="https://hdl.handle.net/20.500.11811/8473">https://hdl.handle.net/20.500.11811/8473</a>.
 </div>
 <div id="ref-monheim1999" class="csl-entry" role="listitem">
 Monheim, H., und M. Schwarte. 1999. <span>„Die deutsche Geographie dreißig Jahre nach Kiel. Stadt-Land-Fluß oder ernstzunehmende Raumwissenschaft?“</span> <em>Standort - Zeitschrift für Angewandte Geographie</em> 3.
@@ -1036,6 +1109,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../unit04/unit04-02.html" class="pagination-link" aria-label="Voronoi Polygone">
+        <span class="nav-page-text">Voronoi Polygone</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

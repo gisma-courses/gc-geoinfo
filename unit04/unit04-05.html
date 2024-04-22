@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Geoinformatik Basiskurs (QGIS) - Modelle der Erdoberfläche – Sichtweite und Sichtfeld</title>
+<title>Grundlagenkurs GI-S (QGIS) - Modelle der Erdoberfläche – Sichtweite und Sichtfeld</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -49,6 +49,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../unit04/unit04-06.html" rel="next">
+<link href="../unit04/unit04-04.qmd" rel="prev">
 <link href="..//images/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -136,10 +138,10 @@ background-size: cover;
 
 
 <link rel="stylesheet" href="../css/styles.css">
-<meta property="og:title" content="Geoinformatik Basiskurs (QGIS) - Modelle der Erdoberfläche – Sichtweite und Sichtfeld">
+<meta property="og:title" content="Grundlagenkurs GI-S (QGIS) - Modelle der Erdoberfläche – Sichtweite und Sichtfeld">
 <meta property="og:description" content="">
-<meta property="og:site_name" content="Geoinformatik Basiskurs (QGIS)">
-<meta name="twitter:title" content="Geoinformatik Basiskurs (QGIS) - Modelle der Erdoberfläche – Sichtweite und Sichtfeld">
+<meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
+<meta name="twitter:title" content="Grundlagenkurs GI-S (QGIS) - Modelle der Erdoberfläche – Sichtweite und Sichtfeld">
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@gisma">
 <meta name="twitter:card" content="summary">
@@ -156,7 +158,7 @@ background-size: cover;
     <img src="../images/logo.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Geoinformatik Basiskurs (QGIS)</span>
+    <span class="navbar-title">Grundlagenkurs GI-S (QGIS)</span>
     </a>
   </div>
         <div class="quarto-navbar-tools tools-end">
@@ -210,7 +212,7 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Einleitung</span></a>
+ <span class="menu-text">Willkommen zum <br> Grundlagen Kurs GI-Methoden</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -356,17 +358,47 @@ background-size: cover;
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
  <span class="menu-text">Reader Quantitative räumliche Datenanalyse</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../unit99/coming-soon.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reader Quantitative räumliche Datenanalyse</span></a>
+  <a href="../unit04/unit04-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Räumliche Analysemethoden</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Voronoi Polygone</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Informationsloser Raum</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-04.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Digitale Geländemodelle</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-05.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Sichtweite und Sichtfeld</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prozeßbasierte Ableitungen</span></a>
   </div>
 </li>
       </ul>
@@ -375,7 +407,7 @@ background-size: cover;
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
- <span class="menu-text">Reader Automatisierung von Arbeitsabläufen in QGIS</span></a>
+ <span class="menu-text">Reader Kostenanalyse</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -383,8 +415,26 @@ background-size: cover;
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../unit99/coming-soon.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">coming soon</span></a>
+  <a href="../unit05/unit05-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multikriterien-Analysen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit05/unit05-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Eignungsanalysen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit05/unit05-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kombination unterschiedlicher Kriterien</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit05/unit05-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multikriterien-Multiziel-Analyse</span></a>
   </div>
 </li>
       </ul>
@@ -393,7 +443,7 @@ background-size: cover;
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
- <span class="menu-text">Reader Projektarbeit</span></a>
+ <span class="menu-text">Reader Automatisierung von Arbeitsabläufen in QGIS</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -403,6 +453,24 @@ background-size: cover;
   <div class="sidebar-item-container"> 
   <a href="../unit99/coming-soon.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">coming soon</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">Reader Projektarbeit</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit06/unit06-01.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Die Projektarbeit</span></a>
   </div>
 </li>
       </ul>
@@ -1058,6 +1126,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../unit04/unit04-04.qmd" class="pagination-link" aria-label="Digitale Geländemodelle">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Digitale Geländemodelle</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../unit04/unit04-06.html" class="pagination-link" aria-label="Prozeßbasierte Ableitungen">
+        <span class="nav-page-text">Prozeßbasierte Ableitungen</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

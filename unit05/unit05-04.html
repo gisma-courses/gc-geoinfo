@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Grundlagenkurs GI-S (QGIS) - Geometrische Abfragen - Zusammenfassung</title>
+<title>Grundlagenkurs GI-S (QGIS) - Multikriterien-Multiziel-Analyse</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -29,7 +49,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../unit03/unit03-04.html" rel="prev">
+<link href="../unit05/unit05-03.html" rel="prev">
 <link href="..//images/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
 
       .quarto-title-block .quarto-title-banner {
         color: black;
-background-image: url(../assets/images/splash_L02.png);
+background-image: url(../assets/images/splash_L04.png);
 background-size: cover;
       }
 </style>
@@ -117,10 +137,10 @@ background-size: cover;
 
 
 <link rel="stylesheet" href="../css/styles.css">
-<meta property="og:title" content="Grundlagenkurs GI-S (QGIS) - Geometrische Abfragen - Zusammenfassung">
+<meta property="og:title" content="Grundlagenkurs GI-S (QGIS) - Multikriterien-Multiziel-Analyse">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
-<meta name="twitter:title" content="Grundlagenkurs GI-S (QGIS) - Geometrische Abfragen - Zusammenfassung">
+<meta name="twitter:title" content="Grundlagenkurs GI-S (QGIS) - Multikriterien-Multiziel-Analyse">
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@gisma">
 <meta name="twitter:card" content="summary">
@@ -152,7 +172,7 @@ background-size: cover;
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Geometrische Abfragen - Zusammenfassung</h1>
+          <h1 class="quarto-secondary-nav-title">Multikriterien-Multiziel-Analyse</h1>
         </a>     
     </div>
   </nav>
@@ -161,7 +181,7 @@ background-size: cover;
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">Geometrische Abfragen - Zusammenfassung</h1>
+      <h1 class="title d-none d-lg-block">Multikriterien-Multiziel-Analyse</h1>
                       </div>
   </div>
     
@@ -295,13 +315,13 @@ background-size: cover;
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
  <span class="menu-text">Reader Vektordaten &amp; Attributtabellen</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit03/unit03-01.html" class="sidebar-item-text sidebar-link">
@@ -328,7 +348,7 @@ background-size: cover;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../unit03/unit03-05.html" class="sidebar-item-text sidebar-link active">
+  <a href="../unit03/unit03-05.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Zusammnfassung Fragen und Antworten</span></a>
   </div>
 </li>
@@ -385,13 +405,13 @@ background-size: cover;
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
  <span class="menu-text">Reader Kostenanalyse</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit05/unit05-01.html" class="sidebar-item-text sidebar-link">
@@ -412,7 +432,7 @@ background-size: cover;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../unit05/unit05-04.html" class="sidebar-item-text sidebar-link">
+  <a href="../unit05/unit05-04.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Multikriterien-Multiziel-Analyse</span></a>
   </div>
 </li>
@@ -461,7 +481,14 @@ background-size: cover;
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhalt</h2>
+   
+  <ul>
+  <li><a href="#schema-einer-multikriterienanalyse-mka" id="toc-schema-einer-multikriterienanalyse-mka" class="nav-link active" data-scroll-target="#schema-einer-multikriterienanalyse-mka">Schema einer Multikriterienanalyse (MKA)</a></li>
+  <li><a href="#multi-ziel-analyse-multi-objective-evaluation-moe" id="toc-multi-ziel-analyse-multi-objective-evaluation-moe" class="nav-link" data-scroll-target="#multi-ziel-analyse-multi-objective-evaluation-moe">Multi-Ziel-Analyse (Multi Objective Evaluation, MOE)</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -470,13 +497,52 @@ background-size: cover;
 
 
 
-<p>Die Lerneinheit Fragen und Antworten bietet eine kurze Einführung in die Grundlagen und Anwendungen von Geographischen Informationssystemen (GIS) mit besonderem Schwerpunkt auf der Datenanalyse durch Abfragen. Im Mittelpunkt steht das relationale Datenmodell, das eine strukturierte Organisation geometrischer und thematischer Daten in Tabellen ermöglicht. Diese Struktur erlaubt den Einsatz von SQL und anderen Abfragesprachen, um sowohl inhaltliche als auch komplexe räumliche Analysen durchzuführen, wie z.B. die Ermittlung der Entfernung von Einwohnern zu Haltestellen des öffentlichen Verkehrs oder die Analyse von Flächennutzungen.</p>
-<p>Verschiedene Abfragetypen wie thematische, geometrische und topologische Abfragen werden detailliert beschrieben. Diese Abfragen verwenden eine Kombination aus vergleichenden, arithmetischen und logischen Operatoren, um bestimmte Datensätze basierend auf Attributen oder räumlichen Beziehungen zu filtern. Die Erläuterungen umfassen auch spezielle GIS-Funktionen wie Distanzpuffer und topologische Operatoren, die Interaktionen und Beziehungen zwischen verschiedenen geographischen Objekten und Flächen definieren.</p>
-<p>Die methodischen Grundlagen der GIS-Analyse werden durch praktische Beispiele ergänzt, die das Verständnis für den Aufbau und die Anwendung räumlicher Abfragen in realen Szenarien fördern. Dabei werden nicht nur die technischen Aspekte, sondern auch die praktischen Anwendungen und der Nutzen solcher Systeme für die Planung und das Management von Geodaten aufgezeigt.</p>
+<section id="schema-einer-multikriterienanalyse-mka" class="level2">
+<h2 class="anchored" data-anchor-id="schema-einer-multikriterienanalyse-mka">Schema einer Multikriterienanalyse (MKA)</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7OoKJHvsUbo?si=pAusi02ApADdz3nz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+<p>Im einfachsten Fall der Entscheidungsunterstützung mit GIS geht es darum, Räume oder Standorte zu finden, die für ein Ziel mehrere Kriterien erfüllen oder optimieren. Im Fallbeispiel der Gemeinde LAhntal besteht das Ziel in einem ersten Ansatz darin, die besten Lebensräume für die Wildkatze im Gemeindegebiet zu identifizieren. Unter der Annahme, dass die Wildkatze siedlungsferne und bewaldete Gebiete bevorzugt, lassen sich zwei Suchkriterien formulieren. Gibt es, wie in diesem Fall, mehrere Kriterien, aber nur ein Ziel, spricht man von einer Multi Criteria Evaluation (MCE).</p>
+<ol type="1">
+<li><p><em>Problemdefinition:</em> Der erste Schritt einer MCE ist die Definition des Problems. Im Fallbeispiel der Gemeinde St.&nbsp;Gittal könnte die Problemdefinition lauten: „Welche Teile des Gemeindegebietes sind als Lebensraum für den Wolf geeignet“.</p></li>
+<li><p><em>Kriterienauswahl:</em> Der nächste Schritt ist die Auswahl der Kriterien. Die ausgewählten Kriterien sollten die Eigenschaften des gesuchten Gebietes oder Raumes möglichst gut widerspiegeln. Kriterien können sowohl räumlicher (Geometrie, Topologie) als auch sachlicher (Eigenschaften) Natur sein. Ein räumliches Kriterium ist z.B. die Entfernung des potenziellen Wolfslebensraumes zur nächsten Siedlung. Die Beschränkung auf die Landnutzungsklasse „Wald“ ist hingegen ein sachliches Kriterium. Darüber hinaus gibt es harte Kriterien, die unbedingt erfüllt sein müssen („must have“)</p></li>
+<li><p><em>Operationalisierung der Kriterien:</em>. Sind die Kriterien definiert, müssen sie in präzise, messbare Parameter übersetzt werden. Dieser Prozess wird als Operationalisierung bezeichnet. Beispielsweise könnte das Kriterium „nicht zu nahe an Siedlungsgebieten“ in die Angabe eines Mindestabstands zur Bauzone in Metern übersetzt werden. Man spricht von der Operationalisierung der Kriterien in quantifizierbare Größen. In den meisten Fällen entsprechen die einzelnen Kriterien jeweils einem Datenlayer im GIS (Siedlungsnähe-Layer, Wald-Layer).</p></li>
+<li><p><em>Schaffen eines gemeinsamen Bezugs - Datenintegration:</em>. Die Datenintegration schafft Vergleichbarkeit durch gemeinsame Maßstäbe, gleiche Datentypen (Raster/Vektor) sowie gleiche Auflösungen und gleiche Bezugssysteme.</p></li>
+<li><p><em>Verschneidung:</em> Identifikation der geeignetsten Räume: Nun werden die verschiedenen Kriterien miteinander verschnitten, um die gesuchten Standorte oder Räume zu identifizieren. Dazu gibt es verschiedene Möglichkeiten:</p></li>
+</ol>
+<ul>
+<li>Logische (boolesche) Verschneidung: In jeder Datenschicht gibt es nur binäre wahr/falsch-Informationen (true/false, Wald/Nicht-Wald), aus deren logischer Verschneidung die gesuchten Standorte und Räume ermittelt werden. Die Boolesche Verschneidung wird in der Einheit „Boolesche Verschneidung“ behandelt.</li>
+<li>Gewichtete Verschneidung: Die einfache Unterscheidung zwischen wahr und falsch wird der komplexen Realität fast nie gerecht. Eine wesentliche Verbesserung der Ergebnisse kann erreicht werden, wenn die einzelnen Datenschichten gewichtet werden. Im Fallbeispiel könnte z.B. die Entfernung zur Siedlung viel weniger wichtig sein als das Rückzugsgebiet Wald. Um dies zu erreichen, könnte die Ebene der Siedlungsentfernung mit einem Gewichtungsfaktor von z.B. 5 multipliziert werden. Diese Themen werden separat behandelt (Einheiten „Gewichtete Verschneidung“ und „Bestimmung der Gewichte“).</li>
+<li>Fuzzy Overlay: Erhebungsfehler bei den Eingangsdaten und falsch gewählte Kriterien bergen die Gefahr von Bewertungsfehlern. Bei einer Multikriterienbewertung können geeignete Gebiete verkannt und ungeeignete fälschlicherweise als geeignet eingestuft werden. Eine Lösung dieses Problems besteht darin, scharfe Grenzen aufzulösen. Für räumliche Daten bedeutet dies, dass Grenzen nicht als scharfe Linien, sondern als Übergangszonen dargestellt werden. Bei den Attributen ersetzen unscharfe Wertebereiche die scharfen Klassengrenzen. Dieses Konzept basiert auf der Idee der Fuzzy Set Theory („fuzzy“ im Sinne von „unscharf“). Auf diese Ansätze wird erst im Intermediate Level näher eingegangen.</li>
+</ul>
+<ol start="6" type="1">
+<li><em>Überprüfung/Bewertung:</em> Im letzten Schritt sollten die Ergebnisse mit einer Referenz verglichen werden. Dies ist möglich, wenn im Feld erhobene Referenzdaten („ground truth“) herangezogen werden können. Dieser letzte Schritt wird häufig vernachlässigt. Aber Achtung: Eine Eignungskarte ohne Abschätzung ihrer Qualität und Zuverlässigkeit ist oft das Papier nicht wert, auf dem sie gedruckt wurde!</li>
+</ol>
+</section>
+<section id="multi-ziel-analyse-multi-objective-evaluation-moe" class="level2">
+<h2 class="anchored" data-anchor-id="multi-ziel-analyse-multi-objective-evaluation-moe">Multi-Ziel-Analyse (Multi Objective Evaluation, MOE)</h2>
+<p>Wenn die Gemeinde Lahntal den Dorffrieden in Caldern erhalten will, muss sie versuchen, die Wünsche der Naturfreunde, der Landwirte und der Erholungssuchenden unter einen Hut zu bringen. Es ist leicht zu erkennen, dass die Ziele der verschiedenen Interessengruppen sehr unterschiedlich sind.</p>
+<ul>
+<li>Es gibt Fälle, in denen verschiedene Nutzungsansprüche auf der gleichen Parzelle realisiert werden können. Wanderwege können durchaus durch einen Wolfslebensraum führen, wenn bestimmte Regeln eingehalten werden.</li>
+<li>Landnutzungsansprüche können sich auch gegenseitig ausschließen. Eine Parzelle kann nicht gleichzeitig Wolfshabitat, Lehrpfad und Golfplatz sein. In solchen Fällen gilt es, verschiedene Planungsvarianten gegeneinander abzuwägen und schließlich den Raum entsprechend seiner Eignung auf die verschiedenen Nutzungen aufzuteilen.</li>
+</ul>
+<p>Im Gegensatz zur MCE liegen hier also mehrere Ziele vor, man spricht daher von einer Multi Objective Evaluation (MOE).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit05/MOE_thumb.gif" class="img-fluid figure-img"></p>
+<figcaption>Eignungsanalyse mit zwei sich ausschließenden Nutzungsansprüchen für den Marburger Open Forest (MOF) bei Caldern, <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005</a>)</span></figcaption>
+</figure>
+</div>
+<p>Die Abbildung zeigt das Ergebnis einer Eignungsanalyse mit zwei sich ausschließenden Nutzungsansprüchen für den Marburg Open Forest (MOF) bei Caldern: Die beiden Ziele heißen „geeignet als Wildkatzenlebensraum“ (Ziel A) und „geeignet für Erholungsnutzung“ (Ziel B). Ganz links sieht man eine Reihe von Input-Layern der Eignungsanalyse, darunter die Layer „Landnutzung” (oben) und „Hangneigung“ (Mitte). Die Karte daneben zeigt die räumliche Zuordnung der Waldfläche zu den beiden Nutzungsarten. Weiß ist weder für (A) noch für (B) geeignet. Dunkelgrau wurde (A) und hellgrau (B) zugeordnet. Wo sich hell- und dunkelgrau überlagern, besteht ein Nutzungskonflikt (rot). Im Diagramm rechts kann jeder Punkt des Raumes entsprechend seiner Eignung für (A) und (B) eingetragen werden. Je mehr ein Punkt einem Kriterium entspricht, desto höher ist der entsprechende Prozentwert. Sowohl für (A) als auch für (B) kann ein Grenzwert angegeben werden, ab dem ein Punkt der entsprechenden Nutzung zugeordnet wird. Im roten Rechteck oben rechts befinden sich alle Punkte mit einem Nutzungskonflikt. Für sie muss nun im Einzelfall entschieden werden, welcher Nutzungsklasse sie zugeordnet werden sollen. Im einfachsten Fall wird ein Konfliktpixel der Nutzung zugeordnet, für die es besser geeignet ist: Liegt das Konfliktpixel im Entscheidungsplot oberhalb der roten Linie, erhält es die Nutzung (B), andernfalls (A).</p>
 
 
 
-</main> <!-- /main -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-gitta2005" class="csl-entry" role="listitem">
+GITTA. 2005. <span>„Einführung in Datenbanksysteme [online]“</span>. 2005. <a href="http://www.gitta.info/website/en/html/modules_overview.html">http://www.gitta.info/website/en/html/modules_overview.html</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <div class="footer-banner">
 
     <a href="https://github.com/gisma-courses/gc" target="_blank">GISMA (2024)</a> |
@@ -1044,8 +1110,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../unit03/unit03-04.html" class="pagination-link" aria-label="Topologische Abfragen">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Topologische Abfragen</span>
+      <a href="../unit05/unit05-03.html" class="pagination-link" aria-label="Kombination unterschiedlicher Kriterien">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Kombination unterschiedlicher Kriterien</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
