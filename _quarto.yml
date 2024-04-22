@@ -13,6 +13,7 @@ website:
   title: "Grundlagenkurs GI-S (QGIS)"
   site-url: https://gisma-courses.github.io/gc-geoinfo
   repo-url: https://github.com/gisma-courses/gc-geoinfo
+  repo-actions: [edit, issue]
   search: 
     location: navbar
     type: textbox
@@ -25,51 +26,99 @@ website:
    #   repo: gisma-courses/gc-geoinfo
   navbar:
     logo: /images/logo.png
-    left:
+    right:
       - icon: compass
-        text: Kursformalia
+        text: Formales
         href: unit00/unit00-01-formales.qmd
       - icon: question-square-fill
-
+      # - text: "Raumkonzepte"   
+      #   menu: 
+      #     - unit01/unit01-01.qmd
+      #     - unit01/unit01-02.qmd
+      #     - unit01/unit01-03.qmd
+      #     - unit01/unit01-04.qmd
+      #     - unit01/unit01-05.qmd
+      # - text: "GIS Konzepte"        
+      #   menu: 
+      #     - unit02/unit02-01.qmd
+      #     - unit02/unit02-02.qmd
+      #     - unit02/unit02-03.qmd
+      #     - unit02/unit02-04.qmd
+      #     - unit02/unit02-05.qmd          
+      #     - unit02/unit02-06.qmd   
+      # - text: "Relationen"        
+      #   menu: 
+      #     - unit03/unit03-01.qmd
+      #     - unit03/unit03-02.qmd
+      #     - unit03/unit03-03.qmd
+      #     - unit03/unit03-04.qmd
+      #     - unit03/unit03-05.qmd          
+      #     - unit03/unit03-06.qmd   
+      # - text: "Analysen"        
+      #   menu: 
+      #     - unit04/unit04-01.qmd
+      #     - unit04/unit04-02.qmd
+      #     - unit04/unit04-03.qmd
+      #     - unit04/unit04-04.qmd
+      #     - unit04/unit04-05.qmd          
+      #     - unit04/unit04-06.qmd
+      # - text: "MCE"        
+      #   menu:           
+      #     - unit05/unit05-01.qmd
+      #     - unit05/unit05-02.qmd
+      #     - unit05/unit05-03.qmd
+      #     - unit05/unit05-04.qmd
+          
   sidebar:
-    # logo: /images/logo.jpg
-    pinned: true
-    align: center
-    style: "docked"
-    collapse-level: 1
-    contents:
-      - index.qmd
-      - text: "---"   
-      - section: Reader Geographische Raumkonzepte
-        contents: 
-          - href: unit01/unit01-01.qmd
-            text: Raum braucht einen Geltungsbereich      
-          - href: unit01/unit01-02.qmd
-            text: Geographie - räumliche Interpretation der Welt    
-          - href: unit01/unit01-03.qmd
-            text: Objekte im Raum           
-          - href: unit01/unit01-04.qmd
-            text: Kodierung der Welt durch Geodatensätze
-          - href: unit01/unit01-05.qmd
-            text: Zusammenfassung – Geographischer Raum           
-      - text: "---"   
-      - section: Reader GI Raumkonzepte
-        contents: 
+    - title: "Willkommen"
+      style: "docked"
+      collapse-level: 1
+      pinned: true      
+      contents:
+        - href: index.qmd
+        - section: Arbeitsblätter
+          contents:
+          - href: unit09/unit09-01.qmd
+            text: Arbeitsblatt 1 - Warm Up QGIS   
+          - href: unit09/unit09-02.qmd
+            text: Arbeitsblatt 2 - Geometrien und Attribute 
+          - href: unit09/unit09-03.qmd
+            text: Arbeitsblatt 3 -  Analysen und Ableitungen
+          - href: unit09/unit09-04.qmd
+            text: Arbeitsblatt 4 -  Kosten und Kriterien
+          - href: unit09/unit09-05.qmd
+            text: Arbeitsblatt 5 -  Reproduzierbarkeit und Workflows
+          - href: unit09/unit09-06.qmd
+            text: Arbeitsblatt 6 - Die Projektarbeit           
+        - section: Reader Geographische Raumkonzept 
+          contents:
+          - text: "---"       
+          - text: Reader Geographische Raumkonzept
+          - text: "---"
+          - text: "---"                   
+          - unit01/unit01-01.qmd
+          - unit01/unit01-02.qmd
+          - unit01/unit01-03.qmd
+          - unit01/unit01-04.qmd
+          - unit01/unit01-05.qmd
+        - section: Reader GI Raumkonzepte
+          contents: 
+          - text: "---"      
+          - text: Reader GIS Raumkonzepte
+          - text: "---"
+          - text: "---"                    
           - href: unit02/unit02-01.qmd
-            text: Raumrepräsentation in der Geoinformatik 
           - href: unit02/unit02-02.qmd
-            text: Koordinaten, Topologie und Dimension   
           - href: unit02/unit02-03.qmd
-            text: Datenmodelle für Raumdaten    
           - href: unit02/unit02-04.qmd
-            text: Die Vermessung der Welt - Orte  
           - href: unit02/unit02-05.qmd
-            text: Die Vermessung der Welt - Koordinaten  
           - href: unit02/unit02-06.qmd
-            text: Zusammenfassung GI Raumkonzepte             
-      - text: "---"   
-      - section: "Reader Vektordaten & Attributtabellen"
-        contents: 
+        - section: "Reader Vektordaten & Attributtabellen"
+          contents:
+          - text: "---"
+          - text: Reader Vektordaten & Attributtabellen
+          - text: "---"          
+          - text: "---"                    
           - href: unit03/unit03-01.qmd
             text: Fragen und Antworten   
           - href: unit03/unit03-02.qmd
@@ -80,11 +129,12 @@ website:
             text: Topologische Abfragen 
           - href: unit03/unit03-05.qmd
             text: Zusammnfassung Fragen und Antworten           
-      - text: "---"   
-      - section: "Reader Quantitative räumliche Datenanalyse"
-        contents: 
-          # - href: unit99/coming-soon.qmd
-          #   text: "Reader Quantitative räumliche Datenanalyse" 
+        - section: "Reader Räumliche Datenanalyse"
+          contents: 
+          - text: "---"
+          - text: Reader Räumliche Datenanalyse
+          - text: "---"          
+          - text: "---"                    
           - href: unit04/unit04-01.qmd
             text: Räumliche Analysemethoden
           - href: unit04/unit04-02.qmd
@@ -97,14 +147,12 @@ website:
             text: Sichtweite und Sichtfeld
           - href: unit04/unit04-06.qmd
             text:  Prozeßbasierte Ableitungen
-          # - href: unit04/unit04-01.qmd
-          #   text: "Räumliche Analysemethoden"
-          # - href: unit04/unit04-01.qmd
-          #   text: "Räumliche Analysemethoden"
-                                                
-      - text: "---"   
-      - section: "Reader Kostenanalyse"
-        contents:
+        - section: "Reader Räumliche Datenanalyse"
+          contents: 
+          - text: "---"
+          - text: Reader Multikriterien und Kostenanalyse
+          - text: "---"          
+          - text: "---"                    
           - href: unit05/unit05-01.qmd
             text: Multikriterien-Analysen
           - href: unit05/unit05-02.qmd
@@ -120,47 +168,18 @@ website:
       #   contents: 
       #     - href: unit99/coming-soon.qmd
       #       text: "Folien Blocktag 1"    
-      - text: "---"   
-      - section: "Reader Automatisierung von Arbeitsabläufen in QGIS "
-        contents: 
+        - section: "Reader Automatisierung von Arbeitsabläufen in QGIS "
+          contents: 
           - href: unit99/coming-soon.qmd
             text: "coming soon" 
-      - text: "---"   
-      - section: "Reader Projektarbeit "
-        contents: 
+        - section: "Reader Projektarbeit "
+          contents: 
           - href: unit06/unit06-01.qmd
             text: Die Projektarbeit    
           - href: unit06/unit06-02.qmd
             text: Wie entwickle ich ein Projekt?  
           - href: unit06/unit06-03.qmd
             text: Das Exposé 
-      - text: "---"   
-      - section: "Arbeitsblätter"
-        contents: 
-          - href: unit09/unit09-01.qmd
-            text: Arbeitsblatt 1 - Warm Up QGIS   
-          - href: unit09/unit09-02.qmd
-            text: Arbeitsblatt 2 - Geometrien und Attribute 
-          - href: unit09/unit09-03.qmd
-            text: Arbeitsblatt 3 -  Analysen und Ableitungen
-          - href: unit09/unit09-04.qmd
-            text: Arbeitsblatt 4 -  Kosten und Kriterien
-          - href: unit09/unit09-05.qmd
-            text: Arbeitsblatt 5 -  Reproduzierbarkeit und Workflows
-          - href: unit09/unit09-06.qmd
-            text: Arbeitsblatt 6 - Die Projektarbeit           
-
- 
-
-      #- text: "---"
-      #- section: "Machine Learning"
-      #  contents:
-      #    - Machine_Learning_Session/ML_AOA.qmd
-          # - href: https://gisma-courses.github.io/LV-uav-workflow/modules/module-introduction/
-          #   text: Basic Readings        
-          # - href: https://gisma-courses.github.io/LV-uav-workflow/modules/module-fieldwork/
-          #   text: uav/Flight Planning
-      - text: "---"
 execute:
   freeze: auto
   echo: false
