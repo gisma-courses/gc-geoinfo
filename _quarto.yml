@@ -25,11 +25,11 @@ website:
    #   repo: gisma-courses/gc-geoinfo
   navbar:
     logo: /images/logo.png
-    # left:
-    #   - icon: question-square-fill
-    #     text: FAQ
-    #     href: unit00/unit00-faq.qmd
-    #   - icon: check2-square
+    left:
+      - icon: question-square-fill
+        text: Kursformalia
+        href: unit00/unit00-01-formales.qmd
+      - icon: question-square-fill
 
   sidebar:
     # logo: /images/logo.jpg
@@ -38,10 +38,7 @@ website:
     style: "docked"
     collapse-level: 1
     contents:
-      - section: "Formale Rahmenbedingungen"
-        contents:
-          - index.qmd
-          - unit00/unit00-01-formales.qmd
+      - index.qmd
       - text: "---"   
       - section: Reader Geographische Raumkonzepte
         contents: 
@@ -129,6 +126,15 @@ website:
           - href: unit99/coming-soon.qmd
             text: "coming soon" 
       - text: "---"   
+      - section: "Reader Projektarbeit "
+        contents: 
+          - href: unit06/unit06-01.qmd
+            text: Die Projektarbeit    
+          - href: unit06/unit06-02.qmd
+            text: Wie entwickle ich ein Projekt?  
+          - href: unit06/unit06-03.qmd
+            text: Das Exposé 
+      - text: "---"   
       - section: "Arbeitsblätter"
         contents: 
           - href: unit09/unit09-01.qmd
@@ -141,17 +147,10 @@ website:
             text: Arbeitsblatt 4 -  Kosten und Kriterien
           - href: unit09/unit09-05.qmd
             text: Arbeitsblatt 5 -  Reproduzierbarkeit und Workflows
-          - href: unit99/coming-soon.qmd
+          - href: unit09/unit09-06.qmd
             text: Arbeitsblatt 6 - Die Projektarbeit           
-      - text: "---"   
-      - section: "Reader Projektarbeit "
-        contents: 
-          - href: unit06/unit06-01.qmd
-            text: Die Projektarbeit    
-          - href: unit06/unit06-02.qmd
-            text: Wie entwickle ich ein Projekt?  
-          - href: unit06/unit06-03.qmd
-            text: Das Exposé 
+
+ 
 
       #- text: "---"
       #- section: "Machine Learning"
