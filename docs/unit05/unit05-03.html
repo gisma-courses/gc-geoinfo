@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Grundlagenkurs GI-S (QGIS) - Verschneidung unterschiedlicher Kriterien</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../unit05/unit05-04.html" rel="next">
+<link href="../unit05/unit05-02.html" rel="prev">
+<link href="..//images/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: black;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: black;
+background-image: url(../assets/images/splash_L04.png);
+background-size: cover;
+      }
+</style>
+<style>
+  .footer-wrapper {
+    position: relative;
+  }
+  .footer-banner {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 75px;
+    text-align: center;
+    line-height: 75px; /* Vertically centers text within the height */
+    color: darkred;
+    font-size: 12px; /* Smaller font size */
+    z-index: 1000;
+    overflow: hidden;
+    background: url('../images/banner3.png') repeat-x; 
+    opacity: 0.5;  /* Makes the image 50% fainter */
+    
+  }
+    
+  
+  .footer-banner a {
+    color: rgba(139, 0, 0, 1.0); /* Dark red with 80% opacity */
+    text-decoration: none;
+    padding: 0 10px;
+  }
+
+</style>
+
+
+<link rel="stylesheet" href="../css/styles.css">
+<meta property="og:title" content="Grundlagenkurs GI-S (QGIS) - Verschneidung unterschiedlicher Kriterien">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
+<meta name="twitter:title" content="Grundlagenkurs GI-S (QGIS) - Verschneidung unterschiedlicher Kriterien">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@gisma">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Grundlagenkurs GI-S (QGIS)</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Dunkelmodus umschalten"><i class="bi"></i></a>
+</div>
+          <div id="quarto-search" class="" title="Suchen"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Verschneidung unterschiedlicher Kriterien</h1>
+        </a>     
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title d-none d-lg-block">Verschneidung unterschiedlicher Kriterien</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Formale Rahmenbedingungen</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Willkommen zum <br> Grundlagen Kurs GI-Methoden</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit00/unit00-01-formales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Formales</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Reader Geographische Raumkonzepte</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit01/unit01-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Raum braucht einen Geltungsbereich</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit01/unit01-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geographie - räumliche Interpretation der Welt</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit01/unit01-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Objekte im Raum</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit01/unit01-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kodierung der Welt durch Geodatensätze</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit01/unit01-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zusammenfassung – Geographischer Raum</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Reader GI Raumkonzepte</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit02/unit02-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Raumrepräsentation in der Geoinformatik</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit02/unit02-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Koordinaten, Topologie und Dimension</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit02/unit02-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datenmodelle für Raumdaten</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit02/unit02-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Die Vermessung der Welt - Orte</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit02/unit02-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Die Vermessung der Welt - Koordinaten</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit02/unit02-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zusammenfassung GI Raumkonzepte</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Reader Vektordaten &amp; Attributtabellen</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit03/unit03-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fragen und Antworten</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit03/unit03-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Thematische Abfragen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit03/unit03-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geometrische Abfragen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit03/unit03-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Topologische Abfragen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit03/unit03-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zusammnfassung Fragen und Antworten</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Reader Quantitative räumliche Datenanalyse</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Räumliche Analysemethoden</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Voronoi Polygone</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Informationsloser Raum</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Digitale Geländemodelle</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sichtweite und Sichtfeld</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prozeßbasierte Ableitungen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+ <span class="menu-text">Reader Kostenanalyse</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit05/unit05-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multikriterien-Analysen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit05/unit05-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Eignungsanalysen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit05/unit05-03.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Kombination unterschiedlicher Kriterien</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit05/unit05-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multikriterien-Multiziel-Analyse</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+ <span class="menu-text">Reader Automatisierung von Arbeitsabläufen in QGIS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit99/coming-soon.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">coming soon</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">Reader Projektarbeit</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit06/unit06-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Die Projektarbeit</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhalt</h2>
+   
+  <ul>
+  <li><a href="#boolesche-verschneidung" id="toc-boolesche-verschneidung" class="nav-link active" data-scroll-target="#boolesche-verschneidung">Boolesche Verschneidung</a>
+  <ul class="collapse">
+  <li><a href="#die-gewichtete-schnittmenge" id="toc-die-gewichtete-schnittmenge" class="nav-link" data-scroll-target="#die-gewichtete-schnittmenge">Die gewichtete Schnittmenge</a></li>
+  <li><a href="#katzen-im-lahntal" id="toc-katzen-im-lahntal" class="nav-link" data-scroll-target="#katzen-im-lahntal">Katzen im Lahntal</a></li>
+  </ul></li>
+  <li><a href="#ablauf-einer-gewichteten-eignungsschätzung" id="toc-ablauf-einer-gewichteten-eignungsschätzung" class="nav-link" data-scroll-target="#ablauf-einer-gewichteten-eignungsschätzung">Ablauf einer gewichteten Eignungsschätzung</a>
+  <ul class="collapse">
+  <li><a href="#bestimmung-der-gewichte" id="toc-bestimmung-der-gewichte" class="nav-link" data-scroll-target="#bestimmung-der-gewichte">Bestimmung der Gewichte</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="boolesche-verschneidung" class="level2">
+<h2 class="anchored" data-anchor-id="boolesche-verschneidung">Boolesche Verschneidung</h2>
+<p>Die Eignungskarte stellt räumliche Bereiche dar, die auf der Eignung bestimmter Kriterien in Bezug auf die Fragestellung basieren. Sie werden als gut (1) oder schlecht (0) eingestuft. Jedes Kriterium wird einzeln in Form einer binären Präferenzkarte dargestellt. Diese Karten werden dann durch eine Multiplikationsoperation kombiniert, bei der der Wert jeder Zelle durch Multiplikation der Werte der räumlich korrespondierenden Zellen in den einzelnen Karten bestimmt wird. So wird z. B. die Kombination 0 x 0 x 0 x 0 x 0 in der Zielkarte ebenso wie die Kombination 1 x 1 x 1 x 1 x 0 dem Wert Null zugeordnet. In der resultierenden Karte werden die Gebiete hervorgehoben, die alle Kriterien gleichzeitig erfüllen. Durch Aufsummierung dieser Werte kann eine Rangskala - Eignungskarte erstellt werden, die den Grad der Eignung auf Basis der kumulierten Werte aus der Kombination der Kriterien angibt und somit eine differenzierte Bewertung der räumlichen Eignung ermöglicht.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit05/suit1.svg" class="img-fluid figure-img"></p>
+<figcaption>Prinzip der boolschen Verschneidung ohne Gewichtung. Links Multiplikation zur Erzeugung einer binären Karte, Rechts Addition zurErzeugung einer Ranglistenkarte, <span class="citation" data-cites="gisma2024">GISMA (<a href="#ref-gisma2024" role="doc-biblioref">2024</a>)</span></figcaption>
+</figure>
+</div>
+<p>Angenommen, die in den Marburger Uniwald eingewanderte Wildkatze besiedelt nur Laubwälder und nur steile Bereiche &gt; 20 Grad Hangneigung, so reicht eine logische Operation aus, um geeignete Lebensräume für die Katze zu ermitteln. Jedes dieser beiden Kriterien kann mit einer binären Informationsebene (Wald/Nichtwald und Steil/Nicht-Steil) kodiert werden. Potenzielle Habitate sind nun genau die Gebiete, für die <strong>beide</strong> Kriterien zutreffen. Mit anderen Worten: Flächen, die <em>wahr</em> für Wald <strong>und</strong> für Hangneigung &gt; 20 Grad sind. Natürlich lässt sich das Beipiel einer Ranglistenkarte ebenfalls auf dieser Grundlage erzeugen. Dur eine Addition der kodierten Datensätze bekommen wir 0 ungeeignet, 1 teilweise geeignet und 2 geeignet.</p>
+<p>Die Boolesche Verschneidung eignet sich vor allem für Eignungsanalysen mit randscharfen und klar ausschließenden Kriterien. Können z.B. Siedlungsgebiete und industrielle landwirtschaftliche Nutzflächen bereits zu Beginn der Analyse als Katzenlebensraum ausgeschlossen werden, ist das potenzielle Eignungsgebiet mit einer einfachen Booleschen Verschneidung schnell ermittelt.</p>
+<section id="die-gewichtete-schnittmenge" class="level3">
+<h3 class="anchored" data-anchor-id="die-gewichtete-schnittmenge">Die gewichtete Schnittmenge</h3>
+<p>Für viele Fragestellungen stellt die Einteilung der Realität in die binären Kategorien <em>wahr</em> oder <em>falsch</em> eine unzureichende Abbildung der Realität dar. Die gleichgewichtete Ausschlusswirkung von Einflussfaktoren spiegelt in der Regel nicht die tatsächliche Gewichtung von Entscheidungen wider.</p>
+<p>So können für den Käufer eines neuen Mobiltelefons Marke und Funktion wichtiger sein als Displaygröße, Preis oder Robustheit. Dieses allgemeine Prinzip der Gewichtung von Einflussfaktoren wird auch bei der Eignungsanalyse mit GIS angewendet. Der entsprechende Ansatz wird als <em>gewichtete Verschneidung</em> bezeichnet.</p>
+<p>In vielen räumlichen Analysen sind bestimmte Kriterien in Bezug auf das Ziel n-mal wichtiger als andere. Oft ist es gerade eine Anforderung an die Standortsuche, mehrere geeignete Standorte dahingehend zu vergleichen, ob und wie stark sie eine Reihe unterschiedlich wichtiger Kriterien erfüllen. Durch das Ebenenprinzip der GI-Systeme kann die Verschneidung sehr einfach um die Idee unterschiedlich wichtiger Kriterien erweitert werden. Jeder thematischen Ebene wird ein numerischer Gewichtungsfaktor zugeordnet, der ihrer relativen Bedeutung gegenüber den anderen Ebenen entspricht. Die so gewichteten Informationsebenen werden dann wie bisher verschnitten. Wie das Boole’sche Verschneiden ist auch das gewichtete Verschneiden prinzipiell sowohl im Raster- als auch im Vektormodell möglich. So könnten z.B. Tourismusexperten einer Urlaubsinsel die negativen Auswirkungen von Hotels und Bars für ein alternatives Tourismuskonzept mit dem Faktor 0,1 gewichten und Quad-Trek-Routen durch das Binnenland mit dem Faktor 1. In der Regel sollten die Wertebereiche der Eingangsinformationsebenen normiert (d.h. zwischen z.B. 0 und 1 skaliert) werden. In der resultierenden Eignungsstufe sind die geeigneten Räume bzw. Standorte durch besonders hohe Werte erkennbar.</p>
+</section>
+<section id="katzen-im-lahntal" class="level3">
+<h3 class="anchored" data-anchor-id="katzen-im-lahntal">Katzen im Lahntal</h3>
+<p>Betrachten Sie das folgende Beispiel. Hier wird die gewichtete Verschneidung am Beispiel des Wildkatzenhabitats im Marburger Uniwald eingeführt. Um eine realistischere Modellierung geeigneter Lebensräume zu ermöglichen, werden im folgenden Beispiel nicht mehr ausschließlich binäre Eingangsdaten wie die Boolesche Verschneidung verwendet, sondern sogenannte Ratiodaten. Es werden KAtegorien oder Klassen von Eignung erstellt und gleichläufig skaliert.</p>
+<ul>
+<li>Vegetationsdichte statt “Wald/Nichtwald</li>
+<li>Hangneigung statt “steil/nicht steil</li>
+<li>Nähe zu Siedlungen statt “besiedelt/nicht besiedelt</li>
+<li>Exposition in Grad</li>
+<li>Als Einschränkung versiegelte Flächen</li>
+</ul>
+<div id="fig-flow1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-flow1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" width="801px" viewbox="-0.5 -0.5 801 589" style="max-width:100%;max-height:589px;">
+<defs>
+<style type="text/css">@import url(https://fonts.googleapis.com/css2?family=Architects+Daughter:wght@400;500);
+</style>
+</defs><g><g><path d="M 220 170 L 253.63 170" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 258.88 170 L 251.88 173.5 L 253.63 170 L 251.88 166.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><path d="M 220 220 L 253.63 220" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 258.88 220 L 251.88 223.5 L 253.63 220 L 251.88 216.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><path d="M 150 290 L 253.63 290" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 258.88 290 L 251.88 293.5 L 253.63 290 L 251.88 286.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><path d="M 150 340 L 253.63 340" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 258.88 340 L 251.88 343.5 L 253.63 340 L 251.88 336.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><path d="M 380 170 L 423.63 170" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 428.88 170 L 421.88 173.5 L 423.63 170 L 421.88 166.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 171px; margin-left: 402px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 13px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; background-color: rgb(255, 255, 255); white-space: nowrap;">
+x
+</div>
+</div>
+</div>
+</foreignobject><text x="402" y="175" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="13px" text-anchor="middle" font-weight="bold">x</text>
+</switch>
+</g></g><g><rect x="260" y="150" width="120" height="40" fill="#e1d5e7" stroke="#9673a6" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 170px; margin-left: 261px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+Zuweisung Kategorien 1, 2, 3
+</div>
+</div>
+</div>
+</foreignobject><text x="320" y="174" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Zuweisung Kategorien…</text>
+</switch>
+</g></g><g><rect x="260" y="200" width="120" height="40" fill="#e1d5e7" stroke="#9673a6" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 220px; margin-left: 261px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+Zuweisung Kategorien 1, 2, 3
+</div>
+</div>
+</div>
+</foreignobject><text x="320" y="224" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Zuweisung Kategorien…</text>
+</switch>
+</g></g><g><rect x="260" y="270" width="120" height="40" fill="#e1d5e7" stroke="#9673a6" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 290px; margin-left: 261px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+Zuweisung Kategorien 1, 2, 3
+</div>
+</div>
+</div>
+</foreignobject><text x="320" y="294" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Zuweisung Kategorien…</text>
+</switch>
+</g></g><g><rect x="260" y="320" width="120" height="40" fill="#e1d5e7" stroke="#9673a6" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 340px; margin-left: 261px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+Zuweisung Kategorien 1, 2, 3
+</div>
+</div>
+</div>
+</foreignobject><text x="320" y="344" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Zuweisung Kategorien…</text>
+</switch>
+</g></g><g><path d="M 510 170 L 550 170 L 550 255 L 583.63 255" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 588.88 255 L 581.88 258.5 L 583.63 255 L 581.88 251.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><g transform="translate(-0.5 -0.5)rotate(-90 526.875 170.37499999999977)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 170px; margin-left: 527px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 15px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; background-color: rgb(255, 255, 255); white-space: nowrap;">
++
+</div>
+</div>
+</div>
+</foreignobject><text x="527" y="175" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px" text-anchor="middle" font-weight="bold">+</text>
+</switch>
+</g></g><g><rect x="430" y="150" width="80" height="40" fill="#fff2cc" stroke="#d6b656" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 78px; height: 1px; padding-top: 170px; margin-left: 431px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+Gewichtung&nbsp;<br>&nbsp;0 - 1
+</div>
+</div>
+</div>
+</foreignobject><text x="470" y="174" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Gewichtung…</text>
+</switch>
+</g></g><g><path d="M 510 220 L 550 220 L 550 255 L 583.63 255" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 588.88 255 L 581.88 258.5 L 583.63 255 L 581.88 251.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><g transform="translate(-0.5 -0.5)rotate(-90 530.625 222.375)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 222px; margin-left: 531px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 15px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; background-color: rgb(255, 255, 255); white-space: nowrap;">
++
+</div>
+</div>
+</div>
+</foreignobject><text x="531" y="227" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px" text-anchor="middle" font-weight="bold">+</text>
+</switch>
+</g></g><g><rect x="430" y="200" width="80" height="40" fill="#fff2cc" stroke="#d6b656" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 78px; height: 1px; padding-top: 220px; margin-left: 431px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+Gewichtung&nbsp;<br>&nbsp;0 - 1
+</div>
+</div>
+</div>
+</foreignobject><text x="470" y="224" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Gewichtung…</text>
+</switch>
+</g></g><g><path d="M 510 290 L 550 290 L 550 255 L 583.63 255" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 588.88 255 L 581.88 258.5 L 583.63 255 L 581.88 251.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><g transform="translate(-0.5 -0.5)rotate(-90 531.875 290.3749999999998)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 290px; margin-left: 532px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 15px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; background-color: rgb(255, 255, 255); white-space: nowrap;">
++
+</div>
+</div>
+</div>
+</foreignobject><text x="532" y="295" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px" text-anchor="middle" font-weight="bold">+</text>
+</switch>
+</g></g><g><rect x="430" y="270" width="80" height="40" fill="#fff2cc" stroke="#d6b656" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 78px; height: 1px; padding-top: 290px; margin-left: 431px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+Gewichtung&nbsp;<br>&nbsp;0 - 1
+</div>
+</div>
+</div>
+</foreignobject><text x="470" y="294" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Gewichtung…</text>
+</switch>
+</g></g><g><path d="M 510 340 L 550 340 L 550 255 L 583.63 255" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 588.88 255 L 581.88 258.5 L 583.63 255 L 581.88 251.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><g transform="translate(-0.5 -0.5)rotate(-90 533.125 340.3749999999998)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 340px; margin-left: 533px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 15px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
+<font style="font-size: 15px;"><b style="font-size: 15px;">+</b></font>
+</div>
+</div>
+</div>
+</foreignobject><text x="533" y="345" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px" text-anchor="middle">+</text>
+</switch>
+</g></g><g><rect x="430" y="320" width="80" height="40" fill="#fff2cc" stroke="#d6b656" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 78px; height: 1px; padding-top: 340px; margin-left: 431px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+Gewichtung&nbsp;<br>&nbsp;0 - 1
+</div>
+</div>
+</div>
+</foreignobject><text x="470" y="344" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Gewichtung…</text>
+</switch>
+</g></g><g><path d="M 640 275 L 640 310 L 683.63 310" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 688.88 310 L 681.88 313.5 L 683.63 310 L 681.88 306.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><path d="M 175 415 L 543.63 415" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 548.88 415 L 541.88 418.5 L 543.63 415 L 541.88 411.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><path d="M 600 395 L 600 310 L 683.63 310" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 688.88 310 L 681.88 313.5 L 683.63 310 L 681.88 306.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 312px; margin-left: 644px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
+x
+</div>
+</div>
+</div>
+</foreignobject><text x="644" y="315" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="11px" text-anchor="middle">x</text>
+</switch>
+</g></g><g><rect x="550" y="395" width="100" height="40" fill="#f8cecc" stroke="#b85450" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 98px; height: 1px; padding-top: 415px; margin-left: 551px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+Einschränkung
+</div>
+</div>
+</div>
+</foreignobject><text x="600" y="419" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Einschränkung</text>
+</switch>
+</g></g><g><rect x="690" y="290" width="100" height="40" fill="#60a917" stroke="#2d7600" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 98px; height: 1px; padding-top: 310px; margin-left: 691px;">
+<div data-drawio-colors="color: #ffffff; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+Potenzielle Eignung
+</div>
+</div>
+</div>
+</foreignobject><text x="740" y="314" fill="#ffffff" font-family="Helvetica" font-size="12px" text-anchor="middle">Potenzielle Eign…</text>
+</switch>
+</g></g><g><rect x="0" y="470" width="560" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 485px; margin-left: 2px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+<div style="display: inline-block; font-size: 15px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">
+<font color="#999999">Schritt 1</font>: Ableiten der Hangneigung und der Exposition aus dem Höhendatensatz
+</div>
+</div>
+</div>
+</foreignobject><text x="2" y="490" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px">Schritt 1: Ableiten der Hangneigung und der Exposition aus dem Höhendatensa…</text>
+</switch>
+</g></g><g><rect x="0" y="492" width="600" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 507px; margin-left: 2px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+<div style="display: inline-block; font-size: 15px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">
+<font color="#ff8000">Schritt 2</font>: Erstellen von Eignungskategorien auf der Grundlage der Eingangsdatensätze
+</div>
+</div>
+</div>
+</foreignobject><text x="2" y="512" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px">Schritt 2: Erstellen von Eignungskategorien auf der Grundlage der Eingangsdatens…</text>
+</switch>
+</g></g><g><rect x="0" y="515" width="620" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 530px; margin-left: 2px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+<div style="display: inline-block; font-size: 15px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">
+<font color="#0000ff">Schritt 3</font>: Multiplikation aller kategorisierten Datensätze mit ihren Gewichten (Summe = 1)
+</div>
+</div>
+</div>
+</foreignobject><text x="2" y="535" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px">Schritt 3: Multiplikation aller kategorisierten Datensätze mit ihren Gewichten (Sum…</text>
+</switch>
+</g></g><g><rect x="0" y="537" width="310" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 552px; margin-left: 2px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+<div style="display: inline-block; font-size: 15px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">
+<font color="#ff0000">Schritt 4</font>: Anwendung von Einschränkungen
+</div>
+</div>
+</div>
+</foreignobject><text x="2" y="557" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px">Schritt 4: Anwendung von Einschränkungen</text>
+</switch>
+</g></g><g><rect x="0" y="559" width="450" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 574px; margin-left: 2px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+<div style="display: inline-block; font-size: 15px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">
+<font color="#009900">Schritt 5</font>:&nbsp;<span style="background-color: initial; font-size: 15px;">Multiplikation von Eignungs- und Einschränkungskarte</span>
+</div>
+</div>
+</div>
+</foreignobject><text x="2" y="579" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px">Schritt 5:&nbsp;Multiplikation von Eignungs- und Einschränkungska…</text>
+</switch>
+</g></g><g><rect x="0" y="0" width="600" height="50" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 25px; margin-left: 2px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left;">
+<div style="display: inline-block; font-size: 15px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">
+<font style="font-size: 16px;"><i>Wildkatzen bevorzugen mittlere Höhen, steilere Hänge die W-S-O exponiert, <br>Waldgebiete, Nähe zu Wasserstellen, Autobahnen werden kategorisch gemieden</i></font>
+</div>
+</div>
+</div>
+</foreignobject><text x="2" y="30" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px">Wildkatzen bevorzugen mittlere Höhen, steilere Hänge die W-S-O exponiert,…</text>
+</switch>
+</g></g><g><path d="M 20 70 L 20 70 L 540 70 L 540 70" fill="#ff0000" stroke="#0000ff" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all"></path><path d="M 20 70 L 20 380 L 540 380 L 540 70" fill="none" stroke="#0000ff" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="none"></path></g><g><path d="M 20 390 L 20 390 L 660 390 L 660 390" fill="#ff0000" stroke="#ff0000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all"></path><path d="M 20 390 L 20 440 L 660 440 L 660 390" fill="none" stroke="#ff0000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="none"></path></g><g><path d="M 10 60 L 10 60 L 800 60 L 800 60" fill="#ff0000" stroke="#009900" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all"></path><path d="M 10 60 L 10 450 L 800 450 L 800 60" fill="none" stroke="#009900" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="none"></path></g><g><rect x="75" y="100" width="80" height="40" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 78px; height: 1px; padding-top: 120px; margin-left: 76px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+Höhe
+</div>
+</div>
+</div>
+</foreignobject><text x="115" y="124" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Höhe</text>
+</switch>
+</g></g><g><rect x="80" y="270" width="70" height="40" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 68px; height: 1px; padding-top: 290px; margin-left: 81px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+Walddichte
+</div>
+</div>
+</div>
+</foreignobject><text x="115" y="294" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Walddichte</text>
+</switch>
+</g></g><g><rect x="80" y="320" width="70" height="40" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 68px; height: 1px; padding-top: 340px; margin-left: 81px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+Siedlungs-
+<div>
+näche
+</div>
+</div>
+</div>
+</div>
+</foreignobject><text x="115" y="344" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Siedlungs-…</text>
+</switch>
+</g></g><g><rect x="55" y="395" width="120" height="40" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 415px; margin-left: 56px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+Versiegelte Flächen
+</div>
+</div>
+</div>
+</foreignobject><text x="115" y="419" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Versiegelte Flächen</text>
+</switch>
+</g></g><g><rect x="590" y="235" width="100" height="40" fill="#d5e8d4" stroke="#82b366" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 98px; height: 1px; padding-top: 255px; margin-left: 591px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+Potenzielle Eignung
+</div>
+</div>
+</div>
+</foreignobject><text x="640" y="259" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Potenzielle Eign…</text>
+</switch>
+</g></g><g><path d="M 380 220 L 405 220 L 423.63 220" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 428.88 220 L 421.88 223.5 L 423.63 220 L 421.88 216.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 221px; margin-left: 402px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 13px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; background-color: rgb(255, 255, 255); white-space: nowrap;">
+x
+</div>
+</div>
+</div>
+</foreignobject><text x="402" y="225" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="13px" text-anchor="middle" font-weight="bold">x</text>
+</switch>
+</g></g><g><path d="M 380 290 L 423.63 290" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 428.88 290 L 421.88 293.5 L 423.63 290 L 421.88 286.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 291px; margin-left: 402px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 13px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; background-color: rgb(255, 255, 255); white-space: nowrap;">
+x
+</div>
+</div>
+</div>
+</foreignobject><text x="402" y="295" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="13px" text-anchor="middle" font-weight="bold">x</text>
+</switch>
+</g></g><g><path d="M 380 340 L 423.63 340" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 428.88 340 L 421.88 343.5 L 423.63 340 L 421.88 336.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 341px; margin-left: 402px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 13px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; background-color: rgb(255, 255, 255); white-space: nowrap;">
+x
+</div>
+</div>
+</div>
+</foreignobject><text x="402" y="345" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="13px" text-anchor="middle" font-weight="bold">x</text>
+</switch>
+</g></g><g></g><g><path d="M 115 140 L 115 170 L 110 170 L 110 220 L 123.63 220" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 128.88 220 L 121.88 223.5 L 123.63 220 L 121.88 216.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><rect x="130" y="150" width="90" height="40" fill="#ffe6cc" stroke="#d79b00" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 88px; height: 1px; padding-top: 170px; margin-left: 131px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+Hangneigung
+</div>
+</div>
+</div>
+</foreignobject><text x="175" y="174" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Hangneigung</text>
+</switch>
+</g></g><g><rect x="130" y="200" width="90" height="40" fill="#ffe6cc" stroke="#d79b00" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<switch>
+<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 88px; height: 1px; padding-top: 220px; margin-left: 131px;">
+<div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+<div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+Exposition
+</div>
+</div>
+</div>
+</foreignobject><text x="175" y="224" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Exposition</text>
+</switch>
+</g></g><g><path d="M 40 90 L 40 90 L 240 90 L 240 90" fill="#e3c800" stroke="#999999" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all"></path><path d="M 40 90 L 40 250 L 240 250 L 240 90" fill="none" stroke="#999999" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="none"></path></g><g><path d="M 30 80 L 30 80 L 410 80 L 410 80" fill="#ff8000" stroke="#ff8000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all"></path><path d="M 30 80 L 30 370 L 410 370 L 410 80" fill="none" stroke="#ff8000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="none"></path></g><g><path d="M 115 140 L 115 160 L 110 160 L 110 180 L 123.63 180" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 128.88 180 L 121.88 183.5 L 123.63 180 L 121.88 176.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g></g>
+<switch>
+<g requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"></g><a transform="translate(0,-5)" href="https://www.drawio.com/doc/faq/svg-export-text-problems" target="_blank"><text text-anchor="middle" font-size="10px" x="50%" y="100%">Text is not SVG - cannot display</text></a>
+</switch>
+</svg>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flow1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;1: Ablauf einer einfachen gewichteten Verschneidung einer Multikriterien Eignungsanalyse, <span class="citation" data-cites="gisma2024">GISMA (<a href="#ref-gisma2024" role="doc-biblioref">2024</a>)</span>
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="ablauf-einer-gewichteten-eignungsschätzung" class="level2">
+<h2 class="anchored" data-anchor-id="ablauf-einer-gewichteten-eignungsschätzung">Ablauf einer gewichteten Eignungsschätzung</h2>
+<p>Betrachten wir die Schritte im Einzeln:</p>
+<ol type="1">
+<li>Kriterienauswahl: Der erste Schritt besteht in der Auswahl der Kriterien, die den gesuchten Raum im Hinblick auf die Wildkatze als geeignete Prädiktoren charakterisieren (blaue und orange unterlegte Kästen).</li>
+<li>Standardisierung: Nun müssen die unterschiedlichen Maßstäbe der Eingangsdatensätze aufeinander abgestimmt werden. Es macht wenig Sinn, eine prozentuale Hangneigung direkt mit einer Bevölkerungsdichte zu verrechnen. Deshalb werden den Eingangsdaten völlig unterschiedliche Einheiten einer standardisierten numerischen Indexskala (z.B. 0-1, 0-100, 0-255) zugeordnet/kategorisiert. Daraus folgt, dass die Werte der resultierenden Eignungsstufen keine Einheiten mehr tragen, sondern nur noch einen numerischen Eignungsindex. Die Zuordnung der Eingangswerte zur Indexskala kann auf verschiedene Weise erfolgen, wobei eine lineare Zuordnung die einfachste ist.</li>
+<li>Jeder kategorisierte Datensatz erhält einen Multiplikator bzw. ein Gewicht. Die Gewichte spiegeln die relative Bedeutung der Informationsebenen zueinander wider. Die wichtigste Ebene erhält das höchste Gewicht. Gibt es kein Wissen über Präferenzen werde die Datensätze gleich gewichtet. Wichtig ist das die Summer der Gewichte 1 ergibt.</li>
+<li>Ablauf: Jede Informationsebene wird mit ihrem Gewicht multipliziert und die Ebenen anschließend addiert. In der resultierenden Eignungsstufe haben die besser geeigneten Rasterzellen hohe Werte und die ungeeigneten Rasterzellen niedrige Werte.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit05/Raster_thumb.gif" class="img-fluid figure-img"></p>
+<figcaption>Gewichtetes Kriterienaddition am Beispiel von 2 binären Datansätzen, <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005</a>)</span></figcaption>
+</figure>
+</div>
+<p>In dieser Darstellung wurden exemplarisch die beiden Eignungskriterien für den Katzenlebensraum im Lahntal entsprechend ihrer relativen Bedeutung gewichtet. Die Informationsebene „bewaldet“ wird mit dem Faktor 3 gewichtet, die des Kriteriums „steiles Gelände“ mit dem Faktor 2. Nach der Gewichtung werden die beiden Ebenen addiert. Der Eignungswert der resultierenden Informationsebene reicht von 0 (nicht geeignet) bis 5 (sehr geeignet).</p>
+<section id="bestimmung-der-gewichte" class="level3">
+<h3 class="anchored" data-anchor-id="bestimmung-der-gewichte">Bestimmung der Gewichte</h3>
+<p>Im Entscheidungsprozess werden, wie bereits erwähnt, die einzelnen Kriterien von verschiedenen Interessengruppen unterschiedlich bewertet und gewichtet. Wie können solche Bewertungen vergleichbar gemacht werden? Genau die gleiche Frage stellt sich bei der Suche nach einem Lebensraum für den Wolf in St.&nbsp;Gallen. Angenommen, die Expertinnen und Experten haben sich darauf geeinigt, eine gewichtete Schnittmenge für ihre Eignungsanalyse zu verwenden. Wie gewichten sie dann die einzelnen Kriterien? Wie kommen die Experten und Expertinnen z.B. darauf, dass das Kriterium „Rückzugsraum Wald“ 1,5 mal so wichtig ist wie „steiles und felsiges Gelände“? Die Verteilung der Gewichte ist bei einer Eignungsanalyse mit gewichteter Verschneidung ebenso wichtig wie schwierig.</p>
+<p>Der einfachste Weg, eine Gewichtung vorzunehmen, besteht darin, die Kriterien in eine Rangfolge zu bringen. Dabei kann aufsteigend oder absteigend gereiht werden. Aufsteigend bedeutet, dass das wichtigste Kriterium den Rang 1 erhält, das zweitwichtigste den Rang 2 usw. Bei einer absteigenden Rangfolge erhält das unwichtigste Kriterium den Rang 1, das zweitwichtigste den Rang 2 usw. Sobald die Ränge verteilt sind, können die numerischen Gewichte, die den Rängen entsprechen, auf verschiedene Weise abgeleitet werden. Im obigen Beiepiel wurde absteigend gewicht.</p>
+
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-gisma2024" class="csl-entry" role="listitem">
+GISMA. 2024. <em>Eigene Darstellung</em>. Marburg: Working Group GIS; Environmental Modeling <span>GISMA</span>.
+</div>
+<div id="ref-gitta2005" class="csl-entry" role="listitem">
+GITTA. 2005. <span>„Einführung in Datenbanksysteme [online]“</span>. 2005. <a href="http://www.gitta.info/website/en/html/modules_overview.html">http://www.gitta.info/website/en/html/modules_overview.html</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<div class="footer-banner">
+
+    <a href="https://github.com/gisma-courses/gc" target="_blank">GISMA (2024)</a> |
+    <a href="../unit00/impressum.html" target="_blank">Impressum</a>
+
+</div>
+
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Kopiert");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Kopiert");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("^(?:http:|https:)\/\/www\.quarto\.org\/custom");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../unit05/unit05-02.html" class="pagination-link" aria-label="Eignungsanalysen">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Eignungsanalysen</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../unit05/unit05-04.html" class="pagination-link" aria-label="Multikriterien-Multiziel-Analyse">
+        <span class="nav-page-text">Multikriterien-Multiziel-Analyse</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

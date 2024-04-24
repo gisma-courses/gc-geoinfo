@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Geoinformatik Basiskurs (QGIS) - Die Vermessung der Welt - Namen - Orte - Lage</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../unit02/unit02-05.html" rel="next">
+<link href="../unit02/unit02-03.html" rel="prev">
+<link href="..//images/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: black;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: black;
+background-image: url(../assets/images/01-splash.jpg);
+background-size: cover;
+      }
+</style>
+<style>
+  .footer-wrapper {
+    position: relative;
+  }
+  .footer-banner {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 75px;
+    text-align: center;
+    line-height: 75px; /* Vertically centers text within the height */
+    color: darkred;
+    font-size: 12px; /* Smaller font size */
+    z-index: 1000;
+    overflow: hidden;
+    background: url('../images/banner3.png') repeat-x; 
+    opacity: 0.5;  /* Makes the image 50% fainter */
+    
+  }
+    
+  
+  .footer-banner a {
+    color: rgba(139, 0, 0, 1.0); /* Dark red with 80% opacity */
+    text-decoration: none;
+    padding: 0 10px;
+  }
+
+</style>
+
+
+<link rel="stylesheet" href="../css/styles.css">
+<meta property="og:title" content="Geoinformatik Basiskurs (QGIS) - Die Vermessung der Welt - Namen - Orte - Lage">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="Geoinformatik Basiskurs (QGIS)">
+<meta name="twitter:title" content="Geoinformatik Basiskurs (QGIS) - Die Vermessung der Welt - Namen - Orte - Lage">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@gisma">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Geoinformatik Basiskurs (QGIS)</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Dunkelmodus umschalten"><i class="bi"></i></a>
+</div>
+          <div id="quarto-search" class="" title="Suchen"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Die Vermessung der Welt - Namen - Orte - Lage</h1>
+        </a>     
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title d-none d-lg-block">Die Vermessung der Welt - Namen - Orte - Lage</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Formale Rahmenbedingungen</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Allgemeines</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit00/unit00-01-formales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Formales</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Reader Geographische Raumkonzepte</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit01/unit01-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Raum braucht einen Geltungsbereich</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit01/unit01-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geographie - räumliche Interpretation der Welt</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit01/unit01-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Objekte im Raum</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit01/unit01-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kodierung der Welt durch Geodatensätze</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit01/unit01-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zusammenfassung – Geographischer Raum</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Reader GI Raumkonzepte</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit02/unit02-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Raumrepräsentation in der Geoinformatik</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit02/unit02-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Koordinaten, Topologie und Dimension</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit02/unit02-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datenmodelle für Raumdaten</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit02/unit02-04.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Die Vermessung der Welt - Orte</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit02/unit02-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Die Vermessung der Welt - Koordinaten</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit02/unit02-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zusammenfassung GI Raumkonzepte</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Reader Vektordaten &amp; Attributtabellen</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit03/unit03-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fragen und Antworten</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit03/unit03-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Thematische Abfragen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit03/unit03-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geometrische Abfragen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit03/unit03-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Topologische Abfragen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit03/unit03-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zusammnfassung Fragen und Antworten</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Reader Quantitative räumliche Datenanalyse</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit99/coming-soon.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reader Quantitative räumliche Datenanalyse</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">Reader Automatisierung von Arbeitsabläufen in QGIS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit99/coming-soon.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">coming soon</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+ <span class="menu-text">Reader Projektarbeit</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit99/coming-soon.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">coming soon</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhalt</h2>
+   
+  <ul>
+  <li><a href="#raum-und-zeit-als-grundbegriffe" id="toc-raum-und-zeit-als-grundbegriffe" class="nav-link active" data-scroll-target="#raum-und-zeit-als-grundbegriffe">Raum und Zeit als Grundbegriffe</a>
+  <ul class="collapse">
+  <li><a href="#zeit" id="toc-zeit" class="nav-link" data-scroll-target="#zeit">Zeit</a></li>
+  </ul></li>
+  <li><a href="#prinzipien-der-raum-zeit-kodierung" id="toc-prinzipien-der-raum-zeit-kodierung" class="nav-link" data-scroll-target="#prinzipien-der-raum-zeit-kodierung">Prinzipien der Raum-Zeit-Kodierung</a>
+  <ul class="collapse">
+  <li><a href="#namen-und-adressen" id="toc-namen-und-adressen" class="nav-link" data-scroll-target="#namen-und-adressen">Namen und Adressen</a></li>
+  <li><a href="#lineare-metrische-lokalisierung" id="toc-lineare-metrische-lokalisierung" class="nav-link" data-scroll-target="#lineare-metrische-lokalisierung">Lineare metrische Lokalisierung</a></li>
+  <li><a href="#katasterpläne---geometrisch-exakte-maßstäbliche-darstellung-des-raumes" id="toc-katasterpläne---geometrisch-exakte-maßstäbliche-darstellung-des-raumes" class="nav-link" data-scroll-target="#katasterpläne---geometrisch-exakte-maßstäbliche-darstellung-des-raumes">Katasterpläne - Geometrisch exakte maßstäbliche Darstellung des Raumes</a></li>
+  <li><a href="#übung" id="toc-übung" class="nav-link" data-scroll-target="#übung">Übung</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-other-links"><h2>Weitere Links</h2><ul><li><a href="https://w.wiki/QtV"><i class="bi bi-link-45deg"></i>Splash Source: Snow (1855):</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p>Die zentrale Aufgabe eines Koordinatensystems in Geoinformationssystemen ist die räumlich reproduzierbare Verortung diskreter und/oder kontinuierlicher Geoinformationselemente.</p>
+<p>Über die unmittelbare räumliche Dimension hinausgehende Eigenschaften können den Geoobjekten als Attribute zugeordnet werden. Um die reale Welt abstrahieren zu können, muss unsere GIS-Software grundlegende Methoden zur Verfügung stellen, die das geographische Datentripel <strong>Zeit, Ort und Attribut</strong> konsistent nutzbar machen.</p>
+<p>Die aktuelle Sitzung ist in mehrere Abschnitte gegliedert, um diese komplexe Materie schrittweise zu erarbeiten. Zunächst werden die Prinzipien der räumlichen Referenzierung (Georeferenzierung) anhand von Ortsnamen, der linearen Referenzierung und der exakten zweidimensionalen Verortung in einem Katastersystem besprochen. Anschließend werden die wichtigsten geodätischen bzw. kartographischen Methoden der räumlichen Zuordnung und Darstellung wiederholt und in den Kontext von GIS gestellt.</p>
+<section id="raum-und-zeit-als-grundbegriffe" class="level1">
+<h1>Raum und Zeit als Grundbegriffe</h1>
+<section id="zeit" class="level2">
+<h2 class="anchored" data-anchor-id="zeit">Zeit</h2>
+<p>Wir beginnen mit der Zeit. Sie stellt in weiten Teilen der Welt ein einheitlich strukturiertes Ordnungssystem dar. Konkret heißt das: Wir haben ein System von Zeitzonen und eine Konvention für die Datumsgrenze. Innerhalb der Zeitzonen wird die Zeit als lineares Kontinuum aufgefasst (vgl. Abb. 02-01). Auch die Verwendung anderer Kalender, die möglicherweise anders benannt und gezählt werden, kann linear auf die uns vertrauten Weltzeitzonen umgerechnet werden. Dies liegt in der physikalischen Auffassung begründet, dass die Zeit (mit Ausnahme archaischer/mythischer Zeitvorstellungen) ein lineares Bezugssystem darstellt. Auf einen Zeitpunkt folgt kontinuierlich der nächste. Es bedarf schon Einsteins Theorien, um die Linearität der Zeit aufzulösen. Für die mit Hilfe von GI-Systemen möglichen Beobachtungsskalen ist die Verwendung eines linearen Zeitverständnisses unproblematisch, jedoch im Gegensatz zur Raumdarstellung meist implizit bzw. optional implementiert.</p>
+<p><img src="https://farm3.staticflickr.com/2903/13985251344_d8ee208f73.jpg" class="img-fluid" alt="Abbildung 03-01: Der Zeitstrahl als Repräsentation einer linearen Zeitauffassung hier am Beispiel der jeweiligen Schaffensperiode einiger für die Geographie wichtigen Wissenschaftler, GIS (2011)"> ## Der Ort</p>
+<p>Ohne die exakte Verortung beliebiger Orte ist ein GIS ziemlich nutzlos, da wir nicht in der Lage sind, räumlich zu messen, Eigenschaften räumlich zu vergleichen oder auch nur die Eigenschaften bestimmter Objekte geographisch darzustellen (Abb. 03-02). Für den sinnvollen Einsatz von GI-Systemen ist die korrekte Verortung von Geoobjekten - oder anders ausgedrückt - die Georeferenzierung eine zentrale Technik. Für diesen Vorgang gibt es eine Reihe ähnlicher Begriffe. Man spricht von Georeferenzierung, Geolokalisierung, Verortung oder moderner von Geotagging. Allen Begriffen ist gemeinsam, dass Merkmalsausprägungen mit geographisch identifizierbaren und kartographisch darstellbaren Positionen verknüpft werden.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit02/hier.2.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 03-02: Wo bin ich – genau hier. In GI-Systemen benötigen Orte im Raum, einen externen Bezug und benötigt hierzu Koordinaten, <span class="citation" data-cites="gisma">GIS (<a href="#ref-gisma" role="doc-biblioref">2011</a>)</span></figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="prinzipien-der-raum-zeit-kodierung" class="level1">
+<h1>Prinzipien der Raum-Zeit-Kodierung</h1>
+<section id="namen-und-adressen" class="level2">
+<h2 class="anchored" data-anchor-id="namen-und-adressen">Namen und Adressen</h2>
+<p>Orte durch Benennung und Beschreibung identifizieren und lokalisieren zu können, gehört zu den ältesten Kulturtechniken der Menschheit. Wir haben gelernt, dass sich Geoinformationen von anderen Informationstypen dadurch unterscheiden, dass sie eine räumliche Komponente enthalten (Abb. 03-03).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit02/Segnaleladino.jpg" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 03-03: Orte haben eine absolute Lage im Raum. Die Verortung mit Namen nutzt kognitive Fähigkeiten, Wissen und Interpretation der Betrachtenden. Unterschiedliche Ortsnamen zeigen die Wandelbarkeit nicht nur in geschichtlicher Hinsicht sondern auch aktuell. Dreisprachige Straßenbeschilderung im Grödnertal (Südtirol) in Ladinisch, Deutsch und Italienisch. <span class="citation" data-cites="behrendesa">(<a href="#ref-behrendesa" role="doc-biblioref"><strong>behrendesa?</strong></a>)</span></figcaption>
+</figure>
+</div>
+<p>Die Kombination aus Namen und Zahlen, Deutschhaustrasse 10 in 35032 Marburg, ist die postalische Codierung für das Gebäude des Fachbereichs Geographie in Marburg. Auch wenn nicht jeder in der Lage ist, eine so verschlüsselte räumliche Position zu entschlüsseln, so gibt es doch ein weltweites Netz von Experten, die mit Hilfe dieser Codierung einen Brief vom Reisebüro Maluti Travel &amp; Tours in Maseru, Lesotho zum Deutschen Haus in Marburg transportieren können. Umgekehrt gibt die Codierung Maluti Travel &amp; Tours, POB 14889, 0100 LNDL Building, Kingsway, Maseru Lesotho die räumliche Position dieses Reisebüros an. Vielleicht kennen Sie aus Interesse oder Zufall die geographisch codierte Position des Deutschhauses in Marburg, aber die Position des LNDL Building in Maseru kennen Sie mit an Sicherheit grenzender Wahrscheinlichkeit nicht. Auch der Postbote kennt mit Sicherheit nicht die geographischen Koordinaten der Empfängerorte, die er täglich anfährt - und doch kommt die Post (meistens) zuverlässig an.</p>
+<p>Das räumliche Bezugssystem hierfür funktioniert anders als über geographische Koordinaten, nämlich über Namen. Es ist eine Kette von Namenskodierungen vom Nationalstaat über die Region bis hin zum Gebäude. Wenn sich dieser Name ändert, z.B. von Karl-Marx-Stadt zu Chemnitz, bleibt der geographische Raumbezug natürlich erhalten. Natürlich gibt es auch Ortsnamen, die mehrfach vorkommen, z.B. London oder Neunkirchen. Eine eindeutige Referenzierung nach dem vorgestellten System ist nur dann möglich, wenn der Ortsname durch ein übergeordnetes Ordnungssystem eindeutig identifiziert werden konnte. Die wichtigste Schlussfolgerung ist, dass in GI-Systemen zur Vermeidung von Redundanzen, Fehlern und Unsicherheiten für die Referenzierung unbedingt ein möglichst allgemeingültiges und aussagekräftiges System verwendet werden sollte (so hat die Thurn und Taxis Post 1853 in Deutschland Ortsnamen mit einem Zahlenschlüssel kodiert, der eine abstrakte und nachvollziehbare Identifikation der räumlichen Lage dieser Orte ermöglicht).</p>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Allen geographischen Informationen liegt eine eindeutige räumliche Zuordnung zugrunde</p>
+</div>
+</div>
+</div>
+</section>
+<section id="lineare-metrische-lokalisierung" class="level2">
+<h2 class="anchored" data-anchor-id="lineare-metrische-lokalisierung">Lineare metrische Lokalisierung</h2>
+<p>Mit den Postleitzahlen haben wir bereits ein System zur systematischen Kennzeichnung geographischer Orte kennen gelernt. Stellen wir uns nun folgende Situation vor (Abb. 03-04):</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://farm8.staticflickr.com/7325/13981635311_ae1b12e0cf.jpg" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 03-04: Pannenort nördlich von Holtau, <span class="citation" data-cites="gisma">GIS (<a href="#ref-gisma" role="doc-biblioref">2011</a>)</span></figcaption>
+</figure>
+</div>
+<p>Während der Zustellung des Briefes in Flensburg bleibt der Post-LKW auf der Bundesautobahn 7 liegen. Der Fahrer ist mit seinem Handy im Funkloch und muss (natürlich nach Absicherung der Pannenstelle) zu Fuß zu einer Meldestelle gehen. Auf seinem Weg kommt er an einem kleinen blauen Schild mit der Aufschrift 64.0 vorbei. An der Meldesäule angekommen, meldet er seine Panne und teilt mit, dass sich das Pannenfahrzeug kurz hinter km 64,0 in Fahrtrichtung Norden hinter der Anschlussstelle Soltau befindet und den rechten Fahrstreifen blockiert. Wenig später hören Sie im Verkehrsfunk:</p>
+<p><em>“1,5 km Stau zwischen der Anschlussstelle Soltau und der Anschlussstelle Bispingen wegen eines defekten LKW. Der rechte Fahrstreifen ist blockiert. Bitte vorsichtig fahren”</em>.</p>
+<p>Dieses alltägliche Beispiel verdeutlicht die Kombination von Namen und metrischen eindimensionalen Positionsangaben als geographisches Ortungssystem. Da Sie die Autobahn während der Fahrt nicht verlassen können, orientieren Sie sich von Ausfahrt zu Ausfahrt (Name oder Nummer der Ausfahrt). Die Informationen aus dem Verkehrsfunk reichen daher aus, um den Stau hinreichend genau zu lokalisieren.</p>
+<p>Der Polizei oder dem Pannendienst reicht diese Angabe nicht aus. Sie möchten z.B. für die Organisation der Bergung oder für die Gefahrenabschätzung die <strong>exakte</strong> Kilometerangabe haben. Die Kilometrierung ist eine metrische Ortsangabe, die nur eine <em>Dimension</em> benötigt, da sie sich auf einer eindeutig definierten Strecke befindet. Eine solche Ortsangabe ist metrisch, also quantitativ. Es misst die Entfernung von einem definierten Startpunkt/Startort zu einem Zielpunkt/Zielort. Diese sogenannte lineare Referenzierung kann nur auf eindimensionale Geoobjekte angewendet werden. Davon gibt es in unserem Alltag eine Vielzahl. Angefangen von Autobahnen oder Eisenbahnlinien bis hin zu Rohr- und Versorgungsleitungen sind alle linearen Strukturen, die sich als Netze darstellen, linear referenzierbar.</p>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Lineare Referenzen sind immer topologisch korrekt und können immer in geometrisch eindimensional messbaren Abständen angegeben werden.</p>
+</div>
+</div>
+</div>
+<p>Versuchen Sie diesen Zusammenhang zu rekapitulieren und verschaffen Sie sich einen Überblick über die Störungssituation bzw. die Örtlichkeit. Navigieren Sie mit Google Earth zur <a href="https://goo.gl/maps/nr68hwksgp7w1yDY9">Örtlichkeit nahe Soltau</a>.</p>
+<p>Betrachten Sie nun die folgende Abbildung der Streckenkarte der BAB 7, die genau den gleichen Raum zeigt.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://farm8.staticflickr.com/7106/13961701856_cdcfe3a779.jpg" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 03-05: Auszug der Linienkarte der BAB 7 im Bereich der Anschlussstelle Soltau, <span class="citation" data-cites="scholl">Scholl (<a href="#ref-scholl" role="doc-biblioref">2009</a>)</span></figcaption>
+</figure>
+</div>
+<p>Navigieren Sie nun zur [Linienkarte A7] (http://www.autobahnatlas-online.de/A7.htm) der BAB 7 und analysieren Sie die Art der metrischen Verortung. Nutzen Sie die Legende, um die Fülle der räumlich verorteten Informationen zu verstehen.</p>
+</section>
+<section id="katasterpläne---geometrisch-exakte-maßstäbliche-darstellung-des-raumes" class="level2">
+<h2 class="anchored" data-anchor-id="katasterpläne---geometrisch-exakte-maßstäbliche-darstellung-des-raumes">Katasterpläne - Geometrisch exakte maßstäbliche Darstellung des Raumes</h2>
+<p>Im vorangegangenen Kapitel haben wir die eindimensionale metrische Referenzierung kennen gelernt. Als zweidimensionale Erweiterung gibt es weltweit sogenannte Kataster. Es ist üblich, Kataster in Katasterplan und Katasterbuch zu unterteilen (Abb. 03-06). In Deutschland (wie in den meisten Ländern) ist die Führung und Pflege hoheitlich durch die Vermessungsämter geregelt.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Bukowsko_-_mapa_katastralna_%281906%29.jpg" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 03-06: Historischer Katasterplan von Bukowsko 1906. <span class="citation" data-cites="silas">Silarski (<a href="#ref-silas" role="doc-biblioref">2009</a>)</span></figcaption>
+</figure>
+</div>
+<p>Der Grund dafür liegt in der Notwendigkeit eines rechtsgültigen Nachweises von Eigentumsrechten (bekanntlich ein heikles Thema). Kataster existieren seit dem Altertum für den persönlichen Nachweis der Steuerpflicht auf den Besitz von Immobilien. In den Kopfsteuerregistern wird die Steuerpflicht für Vermögen oder Grundstücke namentlich an eine Person gebunden.</p>
+<p>Seit der Erfindung und Durchführung der exakten Vermessung der Welt durch Carl Friedrich Gauß (1777 - 1855) werden Kataster als flächendeckende Beschreibungen aller Grundstücke eines Landes geführt. Für Deutschland wurde dies durch den Code Civil Napoleons rechtlich eingeführt und vom preußischen Staat vorbildlich umgesetzt. Das Liegenschaftskataster gliedert sich in einen beschreibenden Teil, das so genannte Liegenschaftsbuch, und einen graphischen Kartenteil, die Liegenschaftskarte. Beide beschreiben die geometrische Lage, die Bebauung, die Grundstücke und deren Nutzungsart und Größe sowie die Eigentumsverhältnisse und Rechtslasten. Die Abbildung des Katasterplans stellt beispielhaft einen solchen grafischen Plan dar. Betrachtet man diese Abbildung genauer, wird das Wort Plan verständlich. Die Flurstücke sind zwar geometrisch exakt dargestellt, es fehlt jedoch jedes geographische Bezugssystem. Stattdessen kann man für jede dargestellte Fläche eine Reihe von Zahlen erkennen. Diese Zahlen verweisen auf die entsprechenden Eintragungen im Grundbuch. Analog zur linearen Referenzierung, die eindimensionale Geoobjekte metrisch referenziert, wird bei Katasterplänen eine zweidimensionale metrische Referenzierung vorgenommen.</p>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Katasterpläne sind immer topologisch korrekt und stellen immer geometrisch zweidimensional maßstäbliche Entfernungen und Flächen dar.</p>
+</div>
+</div>
+</div>
+<p>Verdeutlichen Sie sich diesen Zusammenhang noch einmal, indem Sie sich das Karten- bzw. Satellitenbild des heutigen <a href="https://goo.gl/maps/SpPZcv9dx6PRCitD8">Bukowsko in Google Maps</a> ansehen. Vergleichen Sie dazu den Katasterplan von 1906.</p>
+</section>
+<section id="übung" class="level2">
+<h2 class="anchored" data-anchor-id="übung">Übung</h2>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Bearbeiten Sie bitte folgende Aufgaben:</p>
+<ul>
+<li><p>Wählen Sie mit Hilfe von Google Maps einen Ort (z.B. Ihren Geburtsort) auf der Weltkarte aus und versuchen Sie, ihn mit Hilfe von GIS-Werkzeugen genau zu georeferenzieren. Verwenden Sie verschiedene Methoden wie die Eingabe von Koordinaten, die Suche nach Ortsnamen oder das Setzen von Markierungen auf der Karte. Vergleiche die Ergebnisse. Welche Unterschiede fallen Ihnen auf?</p></li>
+<li><p>Verwenden Sie Google Earth, um zeitliche Daten zu analysieren, z.B. die Veränderung von Landnutzungsmustern im Laufe der Zeit. Verwenden Sie Zeitreihendaten und erstellen Sie Visualisierungen, die zeitliche Trends und Muster aufzeigen. Wie bewerten Sie die zeitliche Entwicklung räumlicher Informationen?</p></li>
+</ul>
+<div id="cite" style="color: transparent;">
+<p><span class="citation" data-cites="snow">Snow (<a href="#ref-snow" role="doc-biblioref">1854</a>)</span></p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-gisma" class="csl-entry" role="listitem">
+GIS. 2011. <span>„Eigene Darstellung“</span>. Marburg: GISMA. 2011. <a href="http://minibsc.gis-ma.org/">http://minibsc.gis-ma.org/</a>.
+</div>
+<div id="ref-scholl" class="csl-entry" role="listitem">
+Scholl, P. 2009. <span>„A7 FLENSBURG - HAMBURG - HANNOVER - KASSEL - FULDA - WÜRZBURG - ULM - KEMPTEN - FÜSSEN“</span>. 2009. <a href="http://www.autobahnatlas-online.de/A7">http://www.autobahnatlas-online.de/A7</a>.
+</div>
+<div id="ref-silas" class="csl-entry" role="listitem">
+Silarski, M. 2009. <span>„Historischer Katasterplan von Bukowsko, Galizien“</span>. 2009. <a href="http://de.wikipedia.org/w/index.php?title=Datei:Bukowsko1906.jpg&amp;filetimestamp=20051004055744">http://de.wikipedia.org/w/index.php?title=Datei:Bukowsko1906.jpg&amp;filetimestamp=20051004055744</a>.
+</div>
+<div id="ref-snow" class="csl-entry" role="listitem">
+Snow, John. 1854. <span>„A map taken from a report by Dr. John Snow: p. [97]-120 of the ’Report on the cholera outbreak in the Parish of St. James, Westminster, during the autumn of 1854’, presented to the vestry by the Cholera Inquiry Committee, July 1855“</span>. 1854. <a href="https://w.wiki/QtV">https://w.wiki/QtV</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<div class="footer-banner">
+
+    <a href="https://github.com/gisma-courses/gc" target="_blank">GISMA (2024)</a> |
+    <a href="../unit00/impressum.html" target="_blank">Impressum</a>
+
+</div>
+
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Kopiert");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Kopiert");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("^(?:http:|https:)\/\/www\.quarto\.org\/custom");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../unit02/unit02-03.html" class="pagination-link" aria-label="Datenmodelle für Raumdaten">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Datenmodelle für Raumdaten</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../unit02/unit02-05.html" class="pagination-link" aria-label="Die Vermessung der Welt - Koordinaten">
+        <span class="nav-page-text">Die Vermessung der Welt - Koordinaten</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
