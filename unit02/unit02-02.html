@@ -532,6 +532,24 @@ background-size: cover;
 </li>
       </ul>
   </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+ <span class="menu-text">Folien</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/w-unit01/lesson-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Raumkonzepte</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -544,7 +562,7 @@ background-size: cover;
   <ul>
   <li><a href="#raum-im-gis" id="toc-raum-im-gis" class="nav-link active" data-scroll-target="#raum-im-gis">Raum im GIS</a></li>
   <li><a href="#die-raumrichtungen" id="toc-die-raumrichtungen" class="nav-link" data-scroll-target="#die-raumrichtungen">Die Raumrichtungen</a></li>
-  <li><a href="#die-lage-im-raum" id="toc-die-lage-im-raum" class="nav-link" data-scroll-target="#die-lage-im-raum">Die Lage im Raum</a></li>
+  <li><a href="#die-lage-im-raum-topologie" id="toc-die-lage-im-raum-topologie" class="nav-link" data-scroll-target="#die-lage-im-raum-topologie">Die Lage im Raum (Topologie)</a></li>
   <li><a href="#geometrie-dimensionen-und-topologie" id="toc-geometrie-dimensionen-und-topologie" class="nav-link" data-scroll-target="#geometrie-dimensionen-und-topologie">Geometrie, Dimensionen und Topologie</a></li>
   <li><a href="#übung" id="toc-übung" class="nav-link" data-scroll-target="#übung">Übung</a></li>
   </ul>
@@ -586,8 +604,8 @@ background-size: cover;
 </div>
 <p>Neben den räumlichen Merkmalen sind Geoobjekte durch weitere Eigenschaften charakterisiert (z.B. kann einem Fluss ein Name zugeordnet sein, einer Stadt die Einwohnerzahl usw.). Diese Eigenschaften eines Geoobjekts, die nicht die räumliche Geometrie betreffen, werden als Attribute bezeichnet und bilden die thematische Dimension. Die zeitliche Veränderung von Geoobjekten oder Systemen wird in der Regel als vierte Dimension bezeichnet.</p>
 </section>
-<section id="die-lage-im-raum" class="level2">
-<h2 class="anchored" data-anchor-id="die-lage-im-raum">Die Lage im Raum</h2>
+<section id="die-lage-im-raum-topologie" class="level2">
+<h2 class="anchored" data-anchor-id="die-lage-im-raum-topologie">Die Lage im Raum (Topologie)</h2>
 <p>Für eine vollständige und korrekte Darstellung von Geoobjekten benötigen wir neben der Lage (Geometrie) und der thematischen Dimension auch die relative Lage der Objekte zueinander. Die relative Lage der Geoobjekte zueinander wird als Topologie bezeichnet. Sie zu bestimmen scheint zunächst einfach. Man kann sie aus der geometrischen Lage berechnen. Schwieriger wird es, wenn diese Punkte exakt die gleichen Raumkoordinaten haben und sich nur in der Höhenangabe (Dimensionalität) unterscheiden, wie z.B. in einem Gebäudeplan die Ausgänge eines Aufzuges, oder wenn es nicht auf die exakte Lage zueinander ankommt, sondern auf die Information, was benachbart ist. Ein bekanntes Praxisbeispiel für eine topologische Sichtweise ist ein Liniennetzplan, der in Abbildung 02-4 die Buslinien und Haltestellen für Marburg darstellt.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
