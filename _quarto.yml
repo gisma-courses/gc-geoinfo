@@ -171,6 +171,12 @@ website:
             text: Wie entwickle ich ein Projekt?  
           - href: unit06/unit06-03.qmd
             text: Das Exposé 
+        - text: "---"                          
+        - section: Folien
+          contents:
+          - href: slides/w-unit01/lesson-02.qmd
+            text: Raumkonzepte
+            
 execute:
   freeze: auto
   echo: false
