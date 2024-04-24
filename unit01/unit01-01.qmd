@@ -37,5 +37,6 @@ Die Lernziele des ersten Readers sind
   * Reflexion des alltäglichen Umgangs mit Geographischen Informationssystemen (GIS)
   * Einführung in Begriffe und Definitionen
   * Einführung in die Kommunikationskonzepte von GI in der Geographie
-## Referenzen
+
+
 

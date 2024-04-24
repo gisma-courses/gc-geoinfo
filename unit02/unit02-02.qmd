@@ -39,7 +39,7 @@ Wird ein Geoobjekt durch einen Punkt repräsentiert, so genügt ein Punkt (x, y,
 
 Neben den räumlichen Merkmalen sind Geoobjekte durch weitere Eigenschaften charakterisiert (z.B. kann einem Fluss ein Name zugeordnet sein, einer Stadt die Einwohnerzahl usw.). Diese Eigenschaften eines Geoobjekts, die nicht die räumliche Geometrie betreffen, werden als Attribute bezeichnet und bilden die thematische Dimension. Die zeitliche Veränderung von Geoobjekten oder Systemen wird in der Regel als vierte Dimension bezeichnet.
 
-## Die Lage im Raum
+## Die Lage im Raum (Topologie)
 
 Für eine vollständige und korrekte Darstellung von Geoobjekten benötigen wir neben der Lage (Geometrie) und der thematischen Dimension auch die relative Lage der Objekte zueinander. Die relative Lage der Geoobjekte zueinander wird als Topologie bezeichnet. Sie zu bestimmen scheint zunächst einfach. Man kann sie aus der geometrischen Lage berechnen. Schwieriger wird es, wenn diese Punkte exakt die gleichen Raumkoordinaten haben und sich nur in der Höhenangabe (Dimensionalität) unterscheiden, wie z.B. in einem Gebäudeplan die Ausgänge eines Aufzuges, oder wenn es nicht auf die exakte Lage zueinander ankommt, sondern auf die Information, was benachbart ist. Ein bekanntes Praxisbeispiel für eine topologische Sichtweise ist ein Liniennetzplan, der in Abbildung 02-4 die Buslinien und Haltestellen für Marburg darstellt.
 

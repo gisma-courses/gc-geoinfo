@@ -1,0 +1,105 @@
+---
+title: "Raumkonzepte"
+subtitle: "Abstraktion und ihre technische Umsetzung"
+author:  Chris Reudenbach
+#title-slide-attributes: 
+#  data-background-image: ../images/title-uni2.png
+ # data-background-size: contain
+  #data-background-opacity: "0.7"
+ # center-title-slide: true
+format:
+  revealjs:
+    theme: [../metropolis.scss]
+    toc: false
+    toc-depth: 2
+    chalkboard: true
+    menu: false
+lightbox: true
+---
+
+## Lernziele Raumkonzepte
+
+-   den alltäglichen Umgang mit geographischer Abstraktion reflektieren
+-   verstehen, dass die reale Welt durch Daten repräsentiert wird
+-   verstehen, dass der kontinuierliche und mehrskalige reale Raum durch diskrete Objekte im Raum repräsentiert wird
+-   Verständnis für die Kodierung von Geodaten durch technische Datenkonzepte und digitale Datenformate.
+-   Begriffe und Definitionen
+
+## Koordinatensysteme
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![~2D\ kartesisches\ Koordinatensystem~ ~(@bolino)~](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/354px-Cartesian-coordinate-system.svg.png)
+
+![~3D\ kartesisches\ Koordinatensystem\ (@sakurambo)~](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/3D_coordinate_system.svg/768px-3D_coordinate_system.svg.png){width="70%" height="70%"}
+
+:::
+
+## Raumdimensionen
+
+![Dimensionalität von Geoobjekten (verändert nach @bartelme2006](https://farm8.staticflickr.com/7087/13970512442_289d700fb6.jpg){width="150%"}
+
+## Die Topologie oder Lage im Raum
+
+![~Tagesliniennetzplan\ der\ Stadtwerke\ Marburg,\ (@swm)~](../../assets/images/unit02/mr_biko_net.png){width="70%"}
+
+## Datenmodelle
+
+![~Ausschnitt\ der\ realen\ Welt\ und\ die\ schematische\ Repräsentation\ als\ Raster-\ bzw.\ Vektordatenmodell,\ (@gisma)~](https://farm6.staticflickr.com/5471/13950604266_962c830058.jpg)
+
+## Raster- und Vektordatenmodell
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+
+![@gisma](https://farm6.staticflickr.com/5224/13973697615_88db5c67e1.jpg){width="150%"}
+
+
+![@gisma](https://farm8.staticflickr.com/7369/13993690753_173e09e3fb.jpg){width="80%"}
+
+:::
+
+## Explizite Raumkoordinaten im Rasterdatenmodell
+
+![~Das\ implizite\ Raumkonzept\ der\ Zeilen-\ und\ Spaltenzählung\ (Laufvariablen)\ und\ das\ explizite\ Zuweisen\ mit\ Hilfe\ des\ Kartesischen\ Koordinatensystems\ für\ einen\ Rasterdatensatz,\ @gisma~](https://farm3.staticflickr.com/2905/13993690463_419e1da5a0.jpg)
+
+
+
+## Die Zeit
+
+
+
+::: {layout-valign="center"}
+
+![@gisma](https://farm3.staticflickr.com/2903/13985251344_d8ee208f73.jpg){width="150%"}
+
+:::
+
+
+## Der Ort
+
+![@gisma](../../assets/images/unit02/hier.2.png){width="60%"}
+
+
+## Raum-Zeit-Kodierung - Orte und Namen
+
+![](../../assets/images/unit02/Segnaleladino.jpg){ width="80%"}
+
+## Raum-Zeit-Kodierung - Lineare metrische Lokalisierung
+
+![Pannenort nördlich von Holtau, @gisma](https://farm8.staticflickr.com/7325/13981635311_ae1b12e0cf.jpg){width="150%"}
+
+## Raum-Zeit-Kodierung -Geometrisch exakte maßstäbliche Darstellung
+
+![Historischer Katasterplan von Bukowsko 1906. @silas](https://upload.wikimedia.org/wikipedia/commons/8/84/Bukowsko_-_mapa_katastralna_%281906%29.jpg){width="60%"}
+
+
+## Raum-Zeit-Kodierung - Geographische Koordinaten
+
+::: {layout-ncol="2" layout-valign="bottom"}
+
+![Darstellung eines Rotationsellipsoid, @gisma verändert nach  @augpi](../../images/halbachsenellipsoid.png)
+
+![Bestimmung geographischer Koordinaten auf einem Rotationsellipsoid, @enix](https://upload.wikimedia.org/wikipedia/commons/3/36/Geographic_coordinates_sphere.png){width="50%"}
+
+:::

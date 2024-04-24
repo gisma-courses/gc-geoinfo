@@ -13,7 +13,7 @@ $presentation-line-height: 1.5em;
 $presentation-heading-font-weight: 400;
 
 // colors
-$body-bg: #fafafa !default;
+$body-bg: #fff !default;
 $body-color: #000 !default;
 // $link-color: #EB811B !default;
 $selection-bg: #26351c;
@@ -56,7 +56,7 @@ $selection-bg: #26351c;
 }
 
 h1.title {
-	color: #1a292c;
+	color: #fafafa;
 	font-size: 45px;
 	text-shadow: none;
 	font-weight: 400;
@@ -178,10 +178,10 @@ h2::after.title {
 }
 
 .reveal h2 {
-	background-color: #23373b;
+	background-color: #F8BD28;
 	padding: 5px 0px 5px 10px;
-	color: #fafafa;
-	border-radius: 12px;
+	color: #000;
+	border-radius: 6px;
 }
 
 .small-font {
