@@ -1679,10 +1679,11 @@
   {
     "objectID": "unit03/unit03-05.html",
     "href": "unit03/unit03-05.html",
-    "title": "Geometrische Abfragen - Zusammenfassung",
+    "title": "Zusammenfassung",
     "section": "",
     "text": "Die Lerneinheit Fragen und Antworten bietet eine kurze Einführung in die Grundlagen und Anwendungen von Geographischen Informationssystemen (GIS) mit besonderem Schwerpunkt auf der Datenanalyse durch Abfragen. Im Mittelpunkt steht das relationale Datenmodell, das eine strukturierte Organisation geometrischer und thematischer Daten in Tabellen ermöglicht. Diese Struktur erlaubt den Einsatz von SQL und anderen Abfragesprachen, um sowohl inhaltliche als auch komplexe räumliche Analysen durchzuführen, wie z.B. die Ermittlung der Entfernung von Einwohnern zu Haltestellen des öffentlichen Verkehrs oder die Analyse von Flächennutzungen.\nVerschiedene Abfragetypen wie thematische, geometrische und topologische Abfragen werden detailliert beschrieben. Diese Abfragen verwenden eine Kombination aus vergleichenden, arithmetischen und logischen Operatoren, um bestimmte Datensätze basierend auf Attributen oder räumlichen Beziehungen zu filtern. Die Erläuterungen umfassen auch spezielle GIS-Funktionen wie Distanzpuffer und topologische Operatoren, die Interaktionen und Beziehungen zwischen verschiedenen geographischen Objekten und Flächen definieren.\nDie methodischen Grundlagen der GIS-Analyse werden durch praktische Beispiele ergänzt, die das Verständnis für den Aufbau und die Anwendung räumlicher Abfragen in realen Szenarien fördern. Dabei werden nicht nur die technischen Aspekte, sondern auch die praktischen Anwendungen und der Nutzen solcher Systeme für die Planung und das Management von Geodaten aufgezeigt.",
     "crumbs": [
+      "Reader Vektordaten & Attributtabellen",
       "Zusammnfassung Fragen und Antworten"
     ]
   },

@@ -73,7 +73,7 @@ Die arithmetischen Operatoren werden für numerische Attribute verwendet. Gängi
 ::: {layout-ncol="1" layout-valign="bottom"}
 
 
-![Die vier Booleschen Operatoren (GITTA 2005)](../assets/images/unit03/combination.jpg){width="50%"}
+![Die vier Booleschen Operatoren (GITTA 2005)](../assets/images/unit03/combination.jpg){width="40%"}
 
 :::
 
