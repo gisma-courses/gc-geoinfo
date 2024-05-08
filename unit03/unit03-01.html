@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Grundlagenkurs GI-S (QGIS) - Fragen und Antworten</title>
+<title>Grundlagenkurs GI-S (QGIS) - Abfragen in Relationen - eine Einführung</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,10 +117,10 @@ background-size: cover;
 
 
 <link rel="stylesheet" href="../css/styles.css">
-<meta property="og:title" content="Grundlagenkurs GI-S (QGIS) - Fragen und Antworten">
+<meta property="og:title" content="Grundlagenkurs GI-S (QGIS) - Abfragen in Relationen - eine Einführung">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
-<meta name="twitter:title" content="Grundlagenkurs GI-S (QGIS) - Fragen und Antworten">
+<meta name="twitter:title" content="Grundlagenkurs GI-S (QGIS) - Abfragen in Relationen - eine Einführung">
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@gisma">
 <meta name="twitter:card" content="summary">
@@ -164,7 +164,7 @@ background-size: cover;
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Fragen und Antworten</h1>
+          <h1 class="quarto-secondary-nav-title">Abfragen in Relationen - eine Einführung</h1>
         </a>     
     </div>
   </nav>
@@ -173,7 +173,7 @@ background-size: cover;
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">Fragen und Antworten</h1>
+      <h1 class="title d-none d-lg-block">Abfragen in Relationen - eine Einführung</h1>
                       </div>
   </div>
     
@@ -523,8 +523,14 @@ background-size: cover;
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../slides/w-unit01/lesson-02.html" class="sidebar-item-text sidebar-link">
+  <a href="../slides/w-01-slides.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Raumkonzepte</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/w-02-slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Relationen und Abfragen</span></a>
   </div>
 </li>
       </ul>
@@ -539,9 +545,7 @@ background-size: cover;
     <h2 id="toc-title">Inhalt</h2>
    
   <ul>
-  <li><a href="#die-lernziele-des-readers-sind" id="toc-die-lernziele-des-readers-sind" class="nav-link active" data-scroll-target="#die-lernziele-des-readers-sind">Die Lernziele des Readers sind:</a></li>
-  <li><a href="#abfragen-in-relationen---eine-einführung" id="toc-abfragen-in-relationen---eine-einführung" class="nav-link" data-scroll-target="#abfragen-in-relationen---eine-einführung">Abfragen in Relationen - eine Einführung</a></li>
-  <li><a href="#auswahloperatoren" id="toc-auswahloperatoren" class="nav-link" data-scroll-target="#auswahloperatoren">Auswahloperatoren</a>
+  <li><a href="#auswahloperatoren" id="toc-auswahloperatoren" class="nav-link active" data-scroll-target="#auswahloperatoren">Auswahloperatoren</a>
   <ul class="collapse">
   <li><a href="#vergleichsoperatoren" id="toc-vergleichsoperatoren" class="nav-link" data-scroll-target="#vergleichsoperatoren">Vergleichsoperatoren</a></li>
   <li><a href="#arithmetische-operatoren" id="toc-arithmetische-operatoren" class="nav-link" data-scroll-target="#arithmetische-operatoren">Arithmetische Operatoren</a></li>
@@ -558,33 +562,6 @@ background-size: cover;
 
 
 
-<p>Die Datenbankstruktur der meisten GIS-Systeme basiert auf einem relationalen Modell, das eine logische, konsistente und strukturierte Speicherung und Verwaltung von Daten ermöglicht. Dabei werden die Daten in Form von Relationen oder Tabellen organisiert, in denen sowohl geometrische als auch semantische (thematische) Informationen tabellarisch vorliegen.</p>
-<p>Im Zusammenhang mit GIS ist die Datenanalyse ein zentraler Aspekt, der die gezielte Abfrage und Auswertung der räumlichen und inhaltlichen Daten in diesen Tabellen umfasst. Durch die Verwendung einer Abfragesprache wie SQL werden Analysen auf den Grundelementen der Beziehungen wie Tabellen, Feldern, Datensätzen, Werten und Assoziationen durchgeführt.</p>
-<p>Ein Beispiel für eine solche Abfrage könnte lauten: “Wie hoch ist der Anteil der Einwohner der Stadt Marburg, die weiter als 200 m von einer Haltestelle des öffentlichen Personennahverkehrs entfernt wohnen?</p>
-<p>Diese Abfrage bezieht sich auf die Vektor-GIS-Daten und die Beziehungen zwischen ihnen. Die räumlichen Informationen über die Stadtbevölkerung und die Lage der ÖPNV-Haltestellen sind in Relationen gespeichert. Die Abfrage ermöglicht die gezielte Suche nach Bevölkerungsgruppen, die weiter als 200 m von einer Haltestelle entfernt wohnen. Durch die Verwendung von Vektordaten und relationalen Datenbankstrukturen können solche komplexen räumlichen Analysen effizient durchgeführt werden.</p>
-<section id="die-lernziele-des-readers-sind" class="level2">
-<h2 class="anchored" data-anchor-id="die-lernziele-des-readers-sind">Die Lernziele des Readers sind:</h2>
-<ul>
-<li>Verständnis räumlicher Datenmodelle:
-<ul>
-<li>Verständnis der Modellierung räumlicher Daten in einem GIS (Geographisches Informationssystem), einschließlich der Konzepte von Vektordaten und Attributdatenbanken.</li>
-</ul></li>
-<li>Verschiedene Abfragetypen und -techniken kennen lernen:
-<ul>
-<li>Sie lernen die verschiedenen Arten von Abfragen kennen und können thematische, geometrische und topologische Abfragen formulieren und ausführen.</li>
-</ul></li>
-<li>Vergleichs- und logische Operatoren anwenden:
-<ul>
-<li>Sie werden in der Lage sein, vergleichende und logische Operatoren zu verwenden, um komplexe Abfragen zu formulieren, um bestimmte räumliche Objekte aufgrund ihrer Eigenschaften oder ihrer Beziehungen zu anderen Objekten zu identifizieren.</li>
-</ul></li>
-<li>Praktische Anwendung von GIS-Abfragen:
-<ul>
-<li>Sie werden praktische Erfahrung im Umgang mit GIS-Software sammeln, um Abfragen durchzuführen, Daten zu analysieren und Ergebnisse zu interpretieren. Dazu gehört auch die Fähigkeit, Abfrageergebnisse visuell darzustellen und zu kommunizieren.</li>
-</ul></li>
-</ul>
-</section>
-<section id="abfragen-in-relationen---eine-einführung" class="level2">
-<h2 class="anchored" data-anchor-id="abfragen-in-relationen---eine-einführung">Abfragen in Relationen - eine Einführung</h2>
 <p>Im Rahmen der Datenanalyse sind grundsätzlich drei Vorgehensweisen möglich (vgl. Abbildung 03-01):</p>
 <ul>
 <li><em>Thematische Abfragen:</em> Wählt die Objekte aus, deren Eigenschaften (Attribute) die vorgegebenen Bedingungen erfüllen - z.B.: „Selektiere alle Bäume der Art Fichte.“</li>
@@ -597,7 +574,6 @@ background-size: cover;
 <figcaption>Abbildung 03-01: Struktur der nicht-manipulativen GI-Abfragen (GITTA 2005)</figcaption>
 </figure>
 </div>
-</section>
 <section id="auswahloperatoren" class="level2">
 <h2 class="anchored" data-anchor-id="auswahloperatoren">Auswahloperatoren</h2>
 <p>Zentrales Werkzeug von Abfragen in GI-Systemen sind die so genannten Auswahloperatoren, auch algebraische Operatoren genannt. Sie gliedern sich in:</p>

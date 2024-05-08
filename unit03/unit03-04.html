@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -544,8 +544,14 @@ background-size: cover;
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../slides/w-unit01/lesson-02.html" class="sidebar-item-text sidebar-link">
+  <a href="../slides/w-01-slides.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Raumkonzepte</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/w-02-slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Relationen und Abfragen</span></a>
   </div>
 </li>
       </ul>
@@ -560,8 +566,7 @@ background-size: cover;
     <h2 id="toc-title">Inhalt</h2>
    
   <ul>
-  <li><a href="#typisierung-topologischer-beziehungen" id="toc-typisierung-topologischer-beziehungen" class="nav-link active" data-scroll-target="#typisierung-topologischer-beziehungen">Typisierung topologischer Beziehungen</a></li>
-  <li><a href="#topologische-beziehungen-kompakt" id="toc-topologische-beziehungen-kompakt" class="nav-link" data-scroll-target="#topologische-beziehungen-kompakt">Topologische Beziehungen kompakt</a></li>
+  <li><a href="#topologische-beziehungen-kompakt" id="toc-topologische-beziehungen-kompakt" class="nav-link active" data-scroll-target="#topologische-beziehungen-kompakt">Topologische Beziehungen kompakt</a></li>
   <li><a href="#topologische-operatoren" id="toc-topologische-operatoren" class="nav-link" data-scroll-target="#topologische-operatoren">Topologische Operatoren</a></li>
   <li><a href="#häufig-vorkommende-topologische-beziehungen" id="toc-häufig-vorkommende-topologische-beziehungen" class="nav-link" data-scroll-target="#häufig-vorkommende-topologische-beziehungen">Häufig vorkommende topologische Beziehungen</a></li>
   <li><a href="#übung" id="toc-übung" class="nav-link" data-scroll-target="#übung">Übung</a></li>
@@ -578,23 +583,6 @@ background-size: cover;
 <p>Während geometrische Selektionskriterien Geoobjekte anhand ihrer Lage und thematische Abfragen Elemente anhand ihrer Eigenschaften identifizieren, basieren topologische Suchkriterien auf der relativen Anordnung von Geoobjekten im Raum. Ein typisches Merkmal der relativen Verortung ist der Vergleich mit anderen Geoobjekten, z.B. „am nächsten“, „Teil von“ oder „innerhalb“. Die räumlichen Lagebeziehungen werden in GI-Systemen als Topologie bezeichnet. Topologische Beziehungen werden aus geometrischen Primitiven konstruiert: Punkte (einfachstes Element), Linien (Folge verbundener Punkte), Flächen (Folge verbundener Linien). Aufgrund dieser geordneten Struktur ist das GI-System in der Lage, topologische Beziehungen zu erkennen und entsprechende Analysen durchzuführen.</p>
 <p>Die Topologie befasst sich also mit den räumlichen und strukturellen Eigenschaften geometrischer Objekte, unabhängig von deren Ausdehnung und geometrischer Form. Zu den topologischen Eigenschaften gehören die Anzahl der Dimensionen eines Objekts und die möglichen Beziehungen zwischen den Dimensionen. Die Topologie ermöglicht Analysefunktionen, wie z. B. die Verfolgung eines Flusses entlang verbundener Linien in einem Netzwerk, die Vereinigung benachbarter Flächen mit ähnlichen Eigenschaften usw.</p>
 <p>Es ist jedoch wichtig, zwischen den beiden üblichen Datenformaten zu unterscheiden: Topologische Operationen auf Vektordaten sind völlig anders als topologische Operationen auf Rasterdaten. Daher sind die für Vektordaten gültigen Algorithmen nicht ohne weiteres auf Rasterdaten anwendbar. Im Folgenden beschränken wir uns auf topologische Operationen auf Vektordaten.</p>
-<section id="typisierung-topologischer-beziehungen" class="level3">
-<h3 class="anchored" data-anchor-id="typisierung-topologischer-beziehungen">Typisierung topologischer Beziehungen</h3>
-<p>Eine einfache Methode zur Typisierung topologischer Beziehungen wurde von (<a href="http://www.spatial.maine.edu/~max/4Vs9.pdf">Egenhofer et al.&nbsp;1993</a> vorgeschlagen. Sie wird als 9-Intersection-Schema bezeichnet. Das 9-Intersection-Schema ist ein elegantes Konzept zur Klassifikation topologischer Konfigurationen. Die Grundidee basiert auf dem Konzept, dass jedes Element aus einem Rand (b), einem Inneren (i) und einem Komplement (e) besteht. Die Begriffe Innen, Rand und Komplement (Außen) sind in der allgemeinen Topologie definiert.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/images/unit03/i9schema.jpg" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-16: Topologische Beziehungen nach Egenhofer , <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005</a>)</span></figcaption>
-</figure>
-</div>
-<p>Lässt man die Zeile und Spalte der äußeren Umgebung (Komplement) aus der Matrix weg, so erhält man das 4-Intersection-Schema, das häufig als vereinfachte Grundlage für die Untersuchung topologischer Beziehungen verwendet wird, aber nicht so mächtig ist wie das 9-Intersection-Schema.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/images/unit03/i4schema.jpg" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-17: Topologische Beziehungennac, <span class="citation" data-cites="egenhofer1993">Egenhofer, Sharma, und Mark (<a href="#ref-egenhofer1993" role="doc-biblioref">1993</a>)</span> , <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005</a>)</span></figcaption>
-</figure>
-</div>
-</section>
 <section id="topologische-beziehungen-kompakt" class="level3">
 <h3 class="anchored" data-anchor-id="topologische-beziehungen-kompakt">Topologische Beziehungen kompakt</h3>
 <p>Versuchen Sie anhand der folgenden Tabelle das 9-I-Schema und das 4-I-Schema (<a href="http://www.spatial.maine.edu/~max/4Vs9.pdf%5D">Egenhofer et al.&nbsp;1993</a> für einige typische topologische Beziehungen zwischen zwei Flächen nachzuvollziehen. Die Beziehungen sind durch die Werte 0 oder 1 gegeben. Jedes Paar hat eine leere (0) oder eine belegte (1) Schnittmenge.</p>
