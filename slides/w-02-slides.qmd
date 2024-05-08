@@ -79,12 +79,16 @@ Die arithmetischen Operatoren werden für numerische Attribute verwendet. Gängi
 
 ## Beliebige Kombination von Operatoren
 
-::: {layout-ncol="2" layout-valign="bottom"}
-![](https://farm3.staticflickr.com/2922/14161471688_12d9ff0432_o.png)
+::: {layout-nrow="2" layout-valign="bottom"}
 
-![GITTA 2005](https://farm3.staticflickr.com/2913/14348127685_0ed1e5b815_o.png)
+![](../assets/images/unit03/0304_input.jpg)
+
+![GITTA 2005](../assets/images/unit03/0305_vop.jpg){width="82%"}
+
 :::
 
+
+[Weitere Beipiele](../unit03/unit03-02.qmd)
 
 ## Geometrische Abfragen
 
