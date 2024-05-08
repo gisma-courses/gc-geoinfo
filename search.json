@@ -775,7 +775,7 @@
     "href": "slides/w-02-slides.html#koordinatensysteme",
     "title": "RRelationen und Abfragen",
     "section": "Koordinatensysteme",
-    "text": "Koordinatensysteme\n\n\n\n\n\n\nNicht-manipulativen GI-Abfragen (GITTA 2005)",
+    "text": "Koordinatensysteme\n\n\n\n\n\n\nNicht-manipulativen GI-Abfragen, GITTA 2005",
     "crumbs": [
       "Folien",
       "Relationen und Abfragen"
@@ -819,7 +819,7 @@
     "href": "slides/w-02-slides.html#logische-operatoren",
     "title": "RRelationen und Abfragen",
     "section": "Logische Operatoren",
-    "text": "Logische Operatoren\n\n\n\n\n\n\nDie vier Booleschen Operatoren (GITTA 2005)",
+    "text": "Logische Operatoren\n\n\n\n\n\n\nDie vier Booleschen Operatoren, GITTA 2005",
     "crumbs": [
       "Folien",
       "Relationen und Abfragen"
@@ -830,7 +830,7 @@
     "href": "slides/w-02-slides.html#beliebige-kombination-von-operatoren",
     "title": "RRelationen und Abfragen",
     "section": "Beliebige Kombination von Operatoren",
-    "text": "Beliebige Kombination von Operatoren\n\n\n\n\n\n\n(GITTA 2005\n\n\n\n\n\n\n\n(GITTA 2005)",
+    "text": "Beliebige Kombination von Operatoren\n\n\n\n\n\n\n\n\n\nGITTA 2005",
     "crumbs": [
       "Folien",
       "Relationen und Abfragen"
@@ -841,7 +841,7 @@
     "href": "slides/w-02-slides.html#geometrische-abfragen",
     "title": "RRelationen und Abfragen",
     "section": "Geometrische Abfragen",
-    "text": "Geometrische Abfragen\n\n\n\n\n\n\nEuklidische Distanz Vektordatenmodell , @gitta2005\n\n\n\n\n\n\n\nEuklidische Distanz Rasterdatenmodells. @gitta2005",
+    "text": "Geometrische Abfragen\n\n\n\n\n\n\nEuklidische Distanz Vektordatenmodell\n\n\n\n\n\n\n\nEuklidische Distanz Rasterdatenmodells, GITTA 2005",
     "crumbs": [
       "Folien",
       "Relationen und Abfragen"
@@ -874,7 +874,7 @@
     "href": "slides/w-02-slides.html#topologische-abfragen-beispiel-2d",
     "title": "RRelationen und Abfragen",
     "section": "Topologische Abfragen Beispiel 2D",
-    "text": "Topologische Abfragen Beispiel 2D\n\n\n\nTopologische Abfragen von Vektordaten unterschiedlicher Dimension, @gitta2005",
+    "text": "Topologische Abfragen Beispiel 2D\n\n\n\nTopologische Abfragen von Vektordaten unterschiedlicher Dimension, GITTA 2005",
     "crumbs": [
       "Folien",
       "Relationen und Abfragen"
@@ -885,7 +885,7 @@
     "href": "slides/w-02-slides.html#zusammenfassung",
     "title": "RRelationen und Abfragen",
     "section": "Zusammenfassung",
-    "text": "Zusammenfassung\n\nNutzung des relationalen Datenmodells für strukturierte Datenspeicherung.\nEinsatz von formalen Abfragesprachen für inhaltliche und räumliche Analysen.\nVerwendung von Operatoren und speziellen abgeleiteten Operatoren wie Distanzpuffer.\n\n\n\n\n\n\n\n\nNicht-manipulativen GI-Abfragen (GITTA 2005)\nDie vier Booleschen Operatoren (GITTA 2005)\n(GITTA 2005\n(GITTA 2005)\nEuklidische Distanz Vektordatenmodell , @gitta2005\nEuklidische Distanz Rasterdatenmodells. @gitta2005\nPufferkonzept @gitta2005\nAbbildung 03-19: Topologische Beziehungen von Vektordaten unterschiedlicher Dimension , @gitta2005\nTopologische Abfragen von Vektordaten unterschiedlicher Dimension, @gitta2005",
+    "text": "Zusammenfassung\n\nNutzung des relationalen Datenmodells für strukturierte Datenspeicherung.\nEinsatz von formalen Abfragesprachen für inhaltliche und räumliche Analysen.\nVerwendung von Operatoren und speziellen abgeleiteten Operatoren wie Distanzpuffer.\n\n\n\n\n\n\n\n\nNicht-manipulativen GI-Abfragen, GITTA 2005\nDie vier Booleschen Operatoren, GITTA 2005\nGITTA 2005\nEuklidische Distanz Vektordatenmodell\nEuklidische Distanz Rasterdatenmodells, GITTA 2005\nPufferkonzept @gitta2005\nAbbildung 03-19: Topologische Beziehungen von Vektordaten unterschiedlicher Dimension , @gitta2005\nTopologische Abfragen von Vektordaten unterschiedlicher Dimension, GITTA 2005",
     "crumbs": [
       "Folien",
       "Relationen und Abfragen"
