@@ -9,7 +9,7 @@ author:  Chris Reudenbach
  # center-title-slide: true
 format:
   revealjs:
-    theme: [../metropolis.scss]
+    theme: [metropolis.scss]
     toc: false
     toc-depth: 2
     chalkboard: true

@@ -1637,10 +1637,11 @@
   {
     "objectID": "unit03/unit03-01.html",
     "href": "unit03/unit03-01.html",
-    "title": "Fragen und Antworten",
+    "title": "Abfragen in Relationen - eine Einführung",
     "section": "",
-    "text": "Die Datenbankstruktur der meisten GIS-Systeme basiert auf einem relationalen Modell, das eine logische, konsistente und strukturierte Speicherung und Verwaltung von Daten ermöglicht. Dabei werden die Daten in Form von Relationen oder Tabellen organisiert, in denen sowohl geometrische als auch semantische (thematische) Informationen tabellarisch vorliegen.\nIm Zusammenhang mit GIS ist die Datenanalyse ein zentraler Aspekt, der die gezielte Abfrage und Auswertung der räumlichen und inhaltlichen Daten in diesen Tabellen umfasst. Durch die Verwendung einer Abfragesprache wie SQL werden Analysen auf den Grundelementen der Beziehungen wie Tabellen, Feldern, Datensätzen, Werten und Assoziationen durchgeführt.\nEin Beispiel für eine solche Abfrage könnte lauten: “Wie hoch ist der Anteil der Einwohner der Stadt Marburg, die weiter als 200 m von einer Haltestelle des öffentlichen Personennahverkehrs entfernt wohnen?\nDiese Abfrage bezieht sich auf die Vektor-GIS-Daten und die Beziehungen zwischen ihnen. Die räumlichen Informationen über die Stadtbevölkerung und die Lage der ÖPNV-Haltestellen sind in Relationen gespeichert. Die Abfrage ermöglicht die gezielte Suche nach Bevölkerungsgruppen, die weiter als 200 m von einer Haltestelle entfernt wohnen. Durch die Verwendung von Vektordaten und relationalen Datenbankstrukturen können solche komplexen räumlichen Analysen effizient durchgeführt werden.",
+    "text": "Im Rahmen der Datenanalyse sind grundsätzlich drei Vorgehensweisen möglich (vgl. Abbildung 03-01):",
     "crumbs": [
+      "Reader Vektordaten & Attributtabellen",
       "Fragen und Antworten"
     ]
   },
@@ -1667,10 +1668,11 @@
   {
     "objectID": "unit03/unit03-01.html#auswahloperatoren",
     "href": "unit03/unit03-01.html#auswahloperatoren",
-    "title": "Fragen und Antworten",
+    "title": "Abfragen in Relationen - eine Einführung",
     "section": "Auswahloperatoren",
     "text": "Auswahloperatoren\nZentrales Werkzeug von Abfragen in GI-Systemen sind die so genannten Auswahloperatoren, auch algebraische Operatoren genannt. Sie gliedern sich in:\n\nVergleichsoperatoren: Zur Formulierung von Fragen können neben dem Gleichheitszeichen auch Vergleichsoperatoren verwendet werden.\nArithmetische Operatoren: Diese Operatoren werden bei numerischen Attributen verwendet, z.B. können Mittelwerte eines Attributs, Summen von Attributwerten usw. aus einer Menge ausgewählter Objekte berechnet werden.\nLogische Operatoren: Logische Operatoren werden verwendet, um Bedingungen zu formulieren.\n\n\nVergleichsoperatoren\nDie Vergleichsoperatoren können für unterschiedlich skalierte Attribute (Zahlen, Text) verwendet werden. Bei nicht-numerischen Attributen beziehen sich die Vergleiche „größer als“, „kleiner als“ usw. auf die Position in einer internen „alphabetischen“ Ordnung des Computers (z.B. ASCII-Code-Tabelle).\n\nTabelle 03-01: Vergleichsoperatoren\n\n\nVergleichsoperator\nBedeutung\n\n\n\n\n=\nEQ (gleich)\n\n\n&gt;\nGT (größer)\n\n\n&gt;=\nGE (größer gleich)\n\n\n&lt;\nLT (kleiner)\n\n\n&lt; =\nLE (kleiner gleich)\n\n\n&lt;&gt;\nNE (ungleich)\n\n\n\n\n\nArithmetische Operatoren\nDie arithmetischen Operatoren werden für numerische Attribute verwendet, z.B. können Mittelwerte eines Attributs, Summen von Attributwerten usw. aus einer Reihe ausgewählter Objekte berechnet werden. Als arithmetische Operatoren können die Multiplikation *, die Division /, die Addition + und die Subtraktion -, der Exponent exp und der Modulo-Operator % verwendet werden. Der Modulo-Operator liefert den Rest einer ganzzahligen Division (z.B. 5 % 2 = 1).\n\n\nLogische Operatoren\nLogische Operatoren verknüpfen Attribute oder Teilabfragen als logische Ausdrücke (mit den beiden möglichen Werten „wahr“ oder „falsch“). Sie eignen sich daher zur effizienten Gestaltung komplexer Abfragen. Logische Operatoren werden auch als Boolesche Algebra bezeichnet. Sie basiert auf der binären Struktur der Werte 1 (wahr) und 0 (falsch). Sie bietet eine Reihe verschiedener Verknüpfungen, die entweder „wahr“ oder „falsch“ sein können, aber niemals beides. Die booleschen (oder logischen) Operatoren, die in GIS verwendet werden, um zwei räumliche Auswahlkriterien miteinander zu verknüpfen, sind ‘AND’, ‘OR’, ‘XOR’ und ‘NOT’: Die folgende Tabelle listet die 4 logischen Grundoperatoren und ihre Wirkungsweise auf:\nZur Veranschaulichung sind in der rechten Spalte die Venn-Diagramme der Booleschen Operatoren dargestellt. Die Darstellung wird verständlicher, wenn man sich vorstellt, dass die Kreise 1 und 2 jeweils zwei Bedingungen (oder Teilmengen der Relation) grafisch darstellen. Konkret: Kreis 1: GEBIET = „bewaldet“ und Kreis 2: GEBIET = steil. Die schraffierte Fläche stellt jeweils die wahre Aussage dar. In dieser Grundform entspricht der Teil außerhalb der Kreise keinem Abfrageergebnis.\n\n\n\nDie vier Booleschen Operatoren (GITTA 2005)\n\n\nIn vielen GIS-Programmen entsprechen die Booleschen Operatoren direkt aufrufbaren Funktionen und tragen oft ähnliche Namen. So entspricht in vielen GIS-Programmpaketen die Funktion INTERSECT dem Operanden AND, UNION dem Operanden OR und ERASE dem Operanden NOT. Die letztgenannte Funktion wird auch sehr anschaulich „Cookie-Cutting“ genannt, da die Form des zweiten Kriteriums wie beim Plätzchenbacken aus dem ausgerollten Teig des ersten „ausgestochen“ wird.\n\n\nKombination von Operatoren\nDurch die Kombination von Operatoren ist es möglich, mehrere Bedingungen miteinander zu verknüpfen. Boolesche Operatoren sind jedoch nicht kommutativ, d.h. das Ergebnis ihrer Anwendung in komplexen Ausdrücken hängt von der definierten Reihenfolge der Teilausdrücke ab. Schauen Sie sich die folgenden Beispiele an und versuchen Sie, die Abfragen mit ihren Komponenten mit Hilfe Ihrer bisherigen Kenntnisse nachzuvollziehen.\n\n\n\n\n\n\n\n\n\nAbbildung 07-03: Beispiele für THEM = thematische und GEOM + THEM = kombinierte geometrische und thematische Abfragen (GITTA 2005\n\n\n\n\n\n\n\nAbbildung 07-04: Beispiele für GEOM = Geometrische und TOPO = Topologische Abfragen (GITTA 2005)\n\n\n\n\n\n\n\n\n\n\n\nÜbung\n\n\n\n\nKönnen Sie den Unterschied zwischen vergleichenden und logischen Operatoren in eigenen Worten erläutern?\nKönnen Sie spontan den Unterschied zwischen “ist gleich” ( = ) und logischem UND erklären?",
     "crumbs": [
+      "Reader Vektordaten & Attributtabellen",
       "Fragen und Antworten"
     ]
   },
@@ -2364,5 +2366,561 @@
     "title": "Außerschulische Lernorte",
     "section": "",
     "text": "Barnett, J., & O’Neill, S. J. (2013). Minimising the risk of maladaptation: a framework for analysis. Climate adaptation futures, 87-93.\nDeeb, A. Et al. 2011. Climate Change Starter’s Guidebook: An Issues Guide for Education Planners and Practitioners. UNEP.\nIPCC, 2023: Summary for Policymakers. In: Climate Change 2023: Synthesis Report. Contribution of Working Groups I, II and III to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change [Core Writing Team, H. Lee and J. Romero (eds.)]. IPCC, Geneva, Switzerland, pp. 1-34, doi: 10.59327/IPCC/AR6-9789291691647.001\nPike,G . & Selby,D . (2011). In the Global Classroom.\nSelby, D., & Kagawa, F. (2013). Climate change in the classroom: UNESCO course for secondary teachers on climate change education for sustainable development.\nUNEP & UNFCCC, (2002). Information Kit zum Klimawandel,Informationsblatt zum Klimawandel 9.\nWilliamson, J. & Robinson, M. (2006). Psychosocial programs or programs aimed at general well-being.\n\n\n\nSource: www.ipcc.ch AR6 Synthesis Report\nSource: www.ipcc.ch AR6 Synthesis Report\nSource: www.ipcc.ch AR6 Synthesis Report\nSource: www.ipcc.ch AR6 Synthesis Report\nKlimawandelbilung. Nach: UNEP, UNESCO 2011\nResilienzbildung"
+  },
+  {
+    "objectID": "unit02/unit02-02.html#lidar-data-and-las-data-format",
+    "href": "unit02/unit02-02.html#lidar-data-and-las-data-format",
+    "title": "Koordinaten, Topologie und Dimension",
+    "section": "",
+    "text": "Technically spoken the LiDAR data comes in the LAS file format (for a format definition i.e. have a look at the American Society for Photogrammetry & Remote Sensing LAS documentation file). One LAS data set typically but not necessarily covers an area of 1 km by 1 km. Since the point clouds in the LAS data sets are large, a spatial index file (LAX) considerably reduces search and select operations in the data.",
+    "crumbs": [
+      "Reader GI Raumkonzepte",
+      "Koordinaten, Topologie und Dimension"
+    ]
+  },
+  {
+    "objectID": "unit02/unit02-02.html#brief-overview-of-lidar-software-tools",
+    "href": "unit02/unit02-02.html#brief-overview-of-lidar-software-tools",
+    "title": "Koordinaten, Topologie und Dimension",
+    "section": "Brief Overview of LiDAR Software Tools",
+    "text": "Brief Overview of LiDAR Software Tools\nThe development of the software is rapid. A few years ago, it was only possible to manipulate, manage and analyze LiDAR data with complex special tools. Especially the (partly (commercial) LAStools software was unrivaled for many years. Many remote sensing and remote sensing software tools have acquired licenses on this basis or developed components independently. Examples are GRASS GIS and ArcGIS. Beside the GIS packages there are a number of powerful specialists. Two important and typical representatives are 3D forest and FUSION.\nHowever all solution can be linked to R (we did it over the years) the lidr package has revolutionized the processing of LiDAR data in the R ecotop and is definitely by far the best choice (and even faster an more reliable than commercial tools). Extensive documentation and workflow examples can be found in the Wiki of the respective GitHub repository. A very recent publication is avaiblable at Remote Sensing of Environment idR: An R package for analysis of Airborne Laser Scanning (ALS) data.",
+    "crumbs": [
+      "Reader GI Raumkonzepte",
+      "Koordinaten, Topologie und Dimension"
+    ]
+  },
+  {
+    "objectID": "unit02/unit02-02.html#start-up-test",
+    "href": "unit02/unit02-02.html#start-up-test",
+    "title": "Koordinaten, Topologie und Dimension",
+    "section": "Start up test",
+    "text": "Start up test\nFor the following, make sure these libraries are part of your setup (should be the case if you follow project oriented workflow post).\nWe make a short general check that we can start over with the real processing, i.e. we check if everything is ready to use. first set up your project environment:\n\n# 0 - specific setup\n#-----------------------------\n\nrequire(envimaR)\n\n# MANDANTORY: defining the root folder DO NOT change this line\nroot_folder = \"~/edu/agis/\"\n# define  additional packages comment if not needed\nappendpackagesToLoad = c(\"lidR\",\"future\")\n# define additional subfolders comment if not needed\nappendProjectDirList =  c(\"data/lidar/\",\"data/lidar/l_raster\",\"data/lidar/l_raw\",\"data/lidar/l_norm\")\n\n## define current projection (It is not magic you need to check the meta data or ask your instructor) \n## ETRS89 / UTM zone 32N deprecated\nproj4 = \"+proj=utm +zone=32 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0\"\nepsg_number = 25832\n\n# MANDANTORY: calling the setup script also DO NOT change this line\nsource(paste0(root_folder,\"src/000-rspatial-setup.R\"), echo = FALSE, verbose = FALSE)\n\n# NOTE file size is about 12MB\nutils::download.file(url=\"https://github.com/gisma/gismaData/raw/master/uavRst/data/lidR_data.zip\",\n                     destfile=paste0(envrmt$path_tmp,\"/chm.zip\"))\nunzip(paste0(envrmt$path_tmp,\"/chm.zip\"),\n      exdir = envrmt$path_tmp,  \n      overwrite = TRUE)\n\nlas_files = list.files(envrmt$path_tmp,\n                       pattern = glob2rx(\"*.las\"),\n                       full.names = TRUE)\nIf you want to read a single (not to big) LAS file, you can use the readLAS function. Plotting the data set results in a 3D interactive screen which opens from within R.\nlibrary(rgl)\nknitr::knit_hooks$set(webgl = hook_webgl)\nlidar_file = readLAS(las_files[1])\nplot(lidar_file, bg = \"green\", color = \"Z\",colorPalette = mvTop(256))\n\n\nExample forest LiDAR data set.\n\nIf this works, you’re good to go for LiDAR data analysis.",
+    "crumbs": [
+      "Reader GI Raumkonzepte",
+      "Koordinaten, Topologie und Dimension"
+    ]
+  },
+  {
+    "objectID": "unit02/unit02-02.html#comments-suggestions",
+    "href": "unit02/unit02-02.html#comments-suggestions",
+    "title": "Koordinaten, Topologie und Dimension",
+    "section": "Comments & Suggestions",
+    "text": "Comments & Suggestions",
+    "crumbs": [
+      "Reader GI Raumkonzepte",
+      "Koordinaten, Topologie und Dimension"
+    ]
+  },
+  {
+    "objectID": "slides/lesson-02.html#lernziele-raumkonzepte",
+    "href": "slides/lesson-02.html#lernziele-raumkonzepte",
+    "title": "Raumkonzepte",
+    "section": "Lernziele Raumkonzepte",
+    "text": "Lernziele Raumkonzepte\n\nden alltäglichen Umgang mit geographischer Abstraktion reflektieren\nverstehen, dass die reale Welt durch Daten repräsentiert wird\nverstehen, dass der kontinuierliche und mehrskalige reale Raum durch diskrete Objekte im Raum repräsentiert wird\nVerständnis für die Kodierung von Geodaten durch technische Datenkonzepte und digitale Datenformate.\nBegriffe und Definitionen"
+  },
+  {
+    "objectID": "slides/lesson-02.html#koordinatensysteme",
+    "href": "slides/lesson-02.html#koordinatensysteme",
+    "title": "Raumkonzepte",
+    "section": "Koordinatensysteme",
+    "text": "Koordinatensysteme\n\n\n\n\n\n\n2D kartesisches Koordinatensystem (@bolino)\n\n\n\n\n\n\n\n3D kartesisches Koordinatensystem (@sakurambo)"
+  },
+  {
+    "objectID": "slides/lesson-02.html#raumdimensionen",
+    "href": "slides/lesson-02.html#raumdimensionen",
+    "title": "Raumkonzepte",
+    "section": "Raumdimensionen",
+    "text": "Raumdimensionen\n\n\n\nDimensionalität von Geoobjekten (verändert nach @bartelme2006"
+  },
+  {
+    "objectID": "slides/lesson-02.html#die-topologie-oder-lage-im-raum",
+    "href": "slides/lesson-02.html#die-topologie-oder-lage-im-raum",
+    "title": "Raumkonzepte",
+    "section": "Die Topologie oder Lage im Raum",
+    "text": "Die Topologie oder Lage im Raum\n\n\n\nTagesliniennetzplan der Stadtwerke Marburg, (@swm)"
+  },
+  {
+    "objectID": "slides/lesson-02.html#datenmodelle",
+    "href": "slides/lesson-02.html#datenmodelle",
+    "title": "Raumkonzepte",
+    "section": "Datenmodelle",
+    "text": "Datenmodelle\n\n\n\nAusschnitt der realen Welt und die schematische Repräsentation als Raster- bzw. Vektordatenmodell, (@gisma)"
+  },
+  {
+    "objectID": "slides/lesson-02.html#raster--und-vektordatenmodell",
+    "href": "slides/lesson-02.html#raster--und-vektordatenmodell",
+    "title": "Raumkonzepte",
+    "section": "Raster- und Vektordatenmodell",
+    "text": "Raster- und Vektordatenmodell\n\n\n\n\n\n\n@gisma\n\n\n\n\n\n\n\n@gisma"
+  },
+  {
+    "objectID": "slides/lesson-02.html#explizite-raumkoordinaten-im-rasterdatenmodell",
+    "href": "slides/lesson-02.html#explizite-raumkoordinaten-im-rasterdatenmodell",
+    "title": "Raumkonzepte",
+    "section": "Explizite Raumkoordinaten im Rasterdatenmodell",
+    "text": "Explizite Raumkoordinaten im Rasterdatenmodell\n\n\n\nDas implizite Raumkonzept der Zeilen- und Spaltenzählung (Laufvariablen) und das explizite Zuweisen mit Hilfe des Kartesischen Koordinatensystems für einen Rasterdatensatz, @gisma"
+  },
+  {
+    "objectID": "slides/lesson-02.html#die-zeit",
+    "href": "slides/lesson-02.html#die-zeit",
+    "title": "Raumkonzepte",
+    "section": "Die Zeit",
+    "text": "Die Zeit\n\n\n\n\n@gisma"
+  },
+  {
+    "objectID": "slides/lesson-02.html#der-ort",
+    "href": "slides/lesson-02.html#der-ort",
+    "title": "Raumkonzepte",
+    "section": "Der Ort",
+    "text": "Der Ort\n\n\n\n@gisma"
+  },
+  {
+    "objectID": "slides/lesson-02.html#raum-zeit-kodierung---orte-und-namen",
+    "href": "slides/lesson-02.html#raum-zeit-kodierung---orte-und-namen",
+    "title": "Raumkonzepte",
+    "section": "Raum-Zeit-Kodierung - Orte und Namen",
+    "text": "Raum-Zeit-Kodierung - Orte und Namen"
+  },
+  {
+    "objectID": "slides/lesson-02.html#raum-zeit-kodierung---lineare-metrische-lokalisierung",
+    "href": "slides/lesson-02.html#raum-zeit-kodierung---lineare-metrische-lokalisierung",
+    "title": "Raumkonzepte",
+    "section": "Raum-Zeit-Kodierung - Lineare metrische Lokalisierung",
+    "text": "Raum-Zeit-Kodierung - Lineare metrische Lokalisierung\n\n\n\nPannenort nördlich von Holtau, @gisma"
+  },
+  {
+    "objectID": "slides/lesson-02.html#raum-zeit-kodierung--geometrisch-exakte-maßstäbliche-darstellung",
+    "href": "slides/lesson-02.html#raum-zeit-kodierung--geometrisch-exakte-maßstäbliche-darstellung",
+    "title": "Raumkonzepte",
+    "section": "Raum-Zeit-Kodierung -Geometrisch exakte maßstäbliche Darstellung",
+    "text": "Raum-Zeit-Kodierung -Geometrisch exakte maßstäbliche Darstellung\n\n\n\nHistorischer Katasterplan von Bukowsko 1906. @silas"
+  },
+  {
+    "objectID": "slides/lesson-02.html#raum-zeit-kodierung---geographische-koordinaten",
+    "href": "slides/lesson-02.html#raum-zeit-kodierung---geographische-koordinaten",
+    "title": "Raumkonzepte",
+    "section": "Raum-Zeit-Kodierung - Geographische Koordinaten",
+    "text": "Raum-Zeit-Kodierung - Geographische Koordinaten\n\n\n\n\n\n\nDarstellung eines Rotationsellipsoid, @gisma verändert nach @augpi\n\n\n\n\n\n\n\nBestimmung geographischer Koordinaten auf einem Rotationsellipsoid, @enix\n\n\n\n\n\n\n\n\n\n\n\n\n2D kartesisches Koordinatensystem (@bolino)\n3D kartesisches Koordinatensystem (@sakurambo)\nDimensionalität von Geoobjekten (verändert nach @bartelme2006\nTagesliniennetzplan der Stadtwerke Marburg, (@swm)\nAusschnitt der realen Welt und die schematische Repräsentation als Raster- bzw. Vektordatenmodell, (@gisma)\n@gisma\n@gisma\nDas implizite Raumkonzept der Zeilen- und Spaltenzählung (Laufvariablen) und das explizite Zuweisen mit Hilfe des Kartesischen Koordinatensystems für einen Rasterdatensatz, @gisma\n@gisma\n@gisma\nPannenort nördlich von Holtau, @gisma\nHistorischer Katasterplan von Bukowsko 1906. @silas\nDarstellung eines Rotationsellipsoid, @gisma verändert nach @augpi\nBestimmung geographischer Koordinaten auf einem Rotationsellipsoid, @enix"
+  },
+  {
+    "objectID": "slides/w-01-slides.html#lernziele-raumkonzepte",
+    "href": "slides/w-01-slides.html#lernziele-raumkonzepte",
+    "title": "Raumkonzepte",
+    "section": "Lernziele Raumkonzepte",
+    "text": "Lernziele Raumkonzepte\n\nden alltäglichen Umgang mit geographischer Abstraktion reflektieren\nverstehen, dass die reale Welt durch Daten repräsentiert wird\nverstehen, dass der kontinuierliche und mehrskalige reale Raum durch diskrete Objekte im Raum repräsentiert wird\nVerständnis für die Kodierung von Geodaten durch technische Datenkonzepte und digitale Datenformate.\nBegriffe und Definitionen",
+    "crumbs": [
+      "Folien",
+      "Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/w-01-slides.html#koordinatensysteme",
+    "href": "slides/w-01-slides.html#koordinatensysteme",
+    "title": "Raumkonzepte",
+    "section": "Koordinatensysteme",
+    "text": "Koordinatensysteme\n\n\n\n\n\n\n2D kartesisches Koordinatensystem (@bolino)\n\n\n\n\n\n\n\n3D kartesisches Koordinatensystem (@sakurambo)",
+    "crumbs": [
+      "Folien",
+      "Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/w-01-slides.html#raumdimensionen",
+    "href": "slides/w-01-slides.html#raumdimensionen",
+    "title": "Raumkonzepte",
+    "section": "Raumdimensionen",
+    "text": "Raumdimensionen\n\n\n\nDimensionalität von Geoobjekten (verändert nach @bartelme2006",
+    "crumbs": [
+      "Folien",
+      "Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/w-01-slides.html#die-topologie-oder-lage-im-raum",
+    "href": "slides/w-01-slides.html#die-topologie-oder-lage-im-raum",
+    "title": "Raumkonzepte",
+    "section": "Die Topologie oder Lage im Raum",
+    "text": "Die Topologie oder Lage im Raum\n\n\n\nTagesliniennetzplan der Stadtwerke Marburg, (@swm)",
+    "crumbs": [
+      "Folien",
+      "Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/w-01-slides.html#datenmodelle",
+    "href": "slides/w-01-slides.html#datenmodelle",
+    "title": "Raumkonzepte",
+    "section": "Datenmodelle",
+    "text": "Datenmodelle\n\n\n\nAusschnitt der realen Welt und die schematische Repräsentation als Raster- bzw. Vektordatenmodell, (@gisma)",
+    "crumbs": [
+      "Folien",
+      "Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/w-01-slides.html#raster--und-vektordatenmodell",
+    "href": "slides/w-01-slides.html#raster--und-vektordatenmodell",
+    "title": "Raumkonzepte",
+    "section": "Raster- und Vektordatenmodell",
+    "text": "Raster- und Vektordatenmodell\n\n\n\n\n\n\n@gisma\n\n\n\n\n\n\n\n@gisma",
+    "crumbs": [
+      "Folien",
+      "Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/w-01-slides.html#explizite-raumkoordinaten-im-rasterdatenmodell",
+    "href": "slides/w-01-slides.html#explizite-raumkoordinaten-im-rasterdatenmodell",
+    "title": "Raumkonzepte",
+    "section": "Explizite Raumkoordinaten im Rasterdatenmodell",
+    "text": "Explizite Raumkoordinaten im Rasterdatenmodell\n\n\n\nDas implizite Raumkonzept der Zeilen- und Spaltenzählung (Laufvariablen) und das explizite Zuweisen mit Hilfe des Kartesischen Koordinatensystems für einen Rasterdatensatz, @gisma",
+    "crumbs": [
+      "Folien",
+      "Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/w-01-slides.html#die-zeit",
+    "href": "slides/w-01-slides.html#die-zeit",
+    "title": "Raumkonzepte",
+    "section": "Die Zeit",
+    "text": "Die Zeit\n\n\n\n\n@gisma",
+    "crumbs": [
+      "Folien",
+      "Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/w-01-slides.html#der-ort",
+    "href": "slides/w-01-slides.html#der-ort",
+    "title": "Raumkonzepte",
+    "section": "Der Ort",
+    "text": "Der Ort\n\n\n\n@gisma",
+    "crumbs": [
+      "Folien",
+      "Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/w-01-slides.html#raum-zeit-kodierung---orte-und-namen",
+    "href": "slides/w-01-slides.html#raum-zeit-kodierung---orte-und-namen",
+    "title": "Raumkonzepte",
+    "section": "Raum-Zeit-Kodierung - Orte und Namen",
+    "text": "Raum-Zeit-Kodierung - Orte und Namen",
+    "crumbs": [
+      "Folien",
+      "Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/w-01-slides.html#raum-zeit-kodierung---lineare-metrische-lokalisierung",
+    "href": "slides/w-01-slides.html#raum-zeit-kodierung---lineare-metrische-lokalisierung",
+    "title": "Raumkonzepte",
+    "section": "Raum-Zeit-Kodierung - Lineare metrische Lokalisierung",
+    "text": "Raum-Zeit-Kodierung - Lineare metrische Lokalisierung\n\n\n\nPannenort nördlich von Holtau, @gisma",
+    "crumbs": [
+      "Folien",
+      "Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/w-01-slides.html#raum-zeit-kodierung--geometrisch-exakte-maßstäbliche-darstellung",
+    "href": "slides/w-01-slides.html#raum-zeit-kodierung--geometrisch-exakte-maßstäbliche-darstellung",
+    "title": "Raumkonzepte",
+    "section": "Raum-Zeit-Kodierung -Geometrisch exakte maßstäbliche Darstellung",
+    "text": "Raum-Zeit-Kodierung -Geometrisch exakte maßstäbliche Darstellung\n\n\n\nHistorischer Katasterplan von Bukowsko 1906. @silas",
+    "crumbs": [
+      "Folien",
+      "Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/w-01-slides.html#raum-zeit-kodierung---geographische-koordinaten",
+    "href": "slides/w-01-slides.html#raum-zeit-kodierung---geographische-koordinaten",
+    "title": "Raumkonzepte",
+    "section": "Raum-Zeit-Kodierung - Geographische Koordinaten",
+    "text": "Raum-Zeit-Kodierung - Geographische Koordinaten\n\n\n\n\n\n\nDarstellung eines Rotationsellipsoid, @gisma verändert nach @augpi\n\n\n\n\n\n\n\nBestimmung geographischer Koordinaten auf einem Rotationsellipsoid, @enix\n\n\n\n\n\n\n\n\n\n\n\n\n2D kartesisches Koordinatensystem (@bolino)\n3D kartesisches Koordinatensystem (@sakurambo)\nDimensionalität von Geoobjekten (verändert nach @bartelme2006\nTagesliniennetzplan der Stadtwerke Marburg, (@swm)\nAusschnitt der realen Welt und die schematische Repräsentation als Raster- bzw. Vektordatenmodell, (@gisma)\n@gisma\n@gisma\nDas implizite Raumkonzept der Zeilen- und Spaltenzählung (Laufvariablen) und das explizite Zuweisen mit Hilfe des Kartesischen Koordinatensystems für einen Rasterdatensatz, @gisma\n@gisma\n@gisma\nPannenort nördlich von Holtau, @gisma\nHistorischer Katasterplan von Bukowsko 1906. @silas\nDarstellung eines Rotationsellipsoid, @gisma verändert nach @augpi\nBestimmung geographischer Koordinaten auf einem Rotationsellipsoid, @enix",
+    "crumbs": [
+      "Folien",
+      "Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#lernziele-fragen-und-antworten",
+    "href": "slides/w-02-slides.html#lernziele-fragen-und-antworten",
+    "title": "RRelationen und Abfragen",
+    "section": "Lernziele Fragen und Antworten",
+    "text": "Lernziele Fragen und Antworten\n\nVerständnis räumlicher Datenmodelle in GIS: Modellieren von Vektordaten und Attributen.\nAbfragetypen und -techniken: Erlernen von thematischen, geometrischen und topologischen Abfragen.\nVergleichs- und logische Operatoren: Formulierung komplexer Abfragen zur Identifizierung spezifischer Objekte.\nPraktische GIS-Anwendung: Durchführung von Abfragen, Datenanalyse und visuelle Darstellung der Ergebnisse.",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#koordinatensysteme",
+    "href": "slides/w-02-slides.html#koordinatensysteme",
+    "title": "RRelationen und Abfragen",
+    "section": "Koordinatensysteme",
+    "text": "Koordinatensysteme\n\n\n\n\n\n\nNicht-manipulativen GI-Abfragen (GITTA 2005)",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#raumdimensionen",
+    "href": "slides/w-02-slides.html#raumdimensionen",
+    "title": "RRelationen und Abfragen",
+    "section": "Raumdimensionen",
+    "text": "Raumdimensionen\n\n\n\nDimensionalität von Geoobjekten (verändert nach @bartelme2006",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#die-topologie-oder-lage-im-raum",
+    "href": "slides/w-02-slides.html#die-topologie-oder-lage-im-raum",
+    "title": "RRelationen und Abfragen",
+    "section": "Die Topologie oder Lage im Raum",
+    "text": "Die Topologie oder Lage im Raum\n\n\n\nTagesliniennetzplan der Stadtwerke Marburg, (@swm)",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#datenmodelle",
+    "href": "slides/w-02-slides.html#datenmodelle",
+    "title": "RRelationen und Abfragen",
+    "section": "Datenmodelle",
+    "text": "Datenmodelle\n\n\n\nAusschnitt der realen Welt und die schematische Repräsentation als Raster- bzw. Vektordatenmodell, (@gisma)",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#raster--und-vektordatenmodell",
+    "href": "slides/w-02-slides.html#raster--und-vektordatenmodell",
+    "title": "RRelationen und Abfragen",
+    "section": "Raster- und Vektordatenmodell",
+    "text": "Raster- und Vektordatenmodell\n\n\n\n\n\n\n@gisma\n\n\n\n\n\n\n\n@gisma",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#explizite-raumkoordinaten-im-rasterdatenmodell",
+    "href": "slides/w-02-slides.html#explizite-raumkoordinaten-im-rasterdatenmodell",
+    "title": "RRelationen und Abfragen",
+    "section": "Explizite Raumkoordinaten im Rasterdatenmodell",
+    "text": "Explizite Raumkoordinaten im Rasterdatenmodell\n\n\n\nDas implizite Raumkonzept der Zeilen- und Spaltenzählung (Laufvariablen) und das explizite Zuweisen mit Hilfe des Kartesischen Koordinatensystems für einen Rasterdatensatz, @gisma",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#die-zeit",
+    "href": "slides/w-02-slides.html#die-zeit",
+    "title": "RRelationen und Abfragen",
+    "section": "Die Zeit",
+    "text": "Die Zeit\n\n\n\n\n@gisma",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#der-ort",
+    "href": "slides/w-02-slides.html#der-ort",
+    "title": "RRelationen und Abfragen",
+    "section": "Der Ort",
+    "text": "Der Ort\n\n\n\n@gisma",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#raum-zeit-kodierung---orte-und-namen",
+    "href": "slides/w-02-slides.html#raum-zeit-kodierung---orte-und-namen",
+    "title": "RRelationen und Abfragen",
+    "section": "Raum-Zeit-Kodierung - Orte und Namen",
+    "text": "Raum-Zeit-Kodierung - Orte und Namen",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#raum-zeit-kodierung---lineare-metrische-lokalisierung",
+    "href": "slides/w-02-slides.html#raum-zeit-kodierung---lineare-metrische-lokalisierung",
+    "title": "RRelationen und Abfragen",
+    "section": "Raum-Zeit-Kodierung - Lineare metrische Lokalisierung",
+    "text": "Raum-Zeit-Kodierung - Lineare metrische Lokalisierung\n\n\n\nPannenort nördlich von Holtau, @gisma",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#raum-zeit-kodierung--geometrisch-exakte-maßstäbliche-darstellung",
+    "href": "slides/w-02-slides.html#raum-zeit-kodierung--geometrisch-exakte-maßstäbliche-darstellung",
+    "title": "RRelationen und Abfragen",
+    "section": "Raum-Zeit-Kodierung -Geometrisch exakte maßstäbliche Darstellung",
+    "text": "Raum-Zeit-Kodierung -Geometrisch exakte maßstäbliche Darstellung\n\n\n\nHistorischer Katasterplan von Bukowsko 1906. @silas",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#raum-zeit-kodierung---geographische-koordinaten",
+    "href": "slides/w-02-slides.html#raum-zeit-kodierung---geographische-koordinaten",
+    "title": "RRelationen und Abfragen",
+    "section": "Raum-Zeit-Kodierung - Geographische Koordinaten",
+    "text": "Raum-Zeit-Kodierung - Geographische Koordinaten\n\n\n\n\n\n\nDarstellung eines Rotationsellipsoid, @gisma verändert nach @augpi\n\n\n\n\n\n\n\nBestimmung geographischer Koordinaten auf einem Rotationsellipsoid, @enix\n\n\n\n\n\n\n\n\n\n\n\n\nNicht-manipulativen GI-Abfragen (GITTA 2005)\nDie vier Booleschen Operatoren (GITTA 2005)\n(GITTA 2005\n(GITTA 2005)\nEuklidische Distanz Vektordatenmodell , @gitta2005\nEuklidische Distanz Rasterdatenmodells. @gitta2005\nPufferkonzept @gitta2005\nPannenort nördlich von Holtau, @gisma\nHistorischer Katasterplan von Bukowsko 1906. @silas\nDarstellung eines Rotationsellipsoid, @gisma verändert nach @augpi\nBestimmung geographischer Koordinaten auf einem Rotationsellipsoid, @enix",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#operatoren",
+    "href": "slides/w-02-slides.html#operatoren",
+    "title": "RRelationen und Abfragen",
+    "section": "Operatoren",
+    "text": "Operatoren\n\nVergleichsoperatoren\nArithmetische Operatoren\nLogische Operatoren",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#vergleichsoperator",
+    "href": "slides/w-02-slides.html#vergleichsoperator",
+    "title": "RRelationen und Abfragen",
+    "section": "Vergleichsoperator",
+    "text": "Vergleichsoperator\n\n\n\nVergleichsoperator\nBedeutung\n\n\n\n\n=\nEQ (gleich)\n\n\n&gt;\nGT (größer)\n\n\n&gt;=\nGE (größer gleich)\n\n\n&lt;\nLT (kleiner)\n\n\n&lt; =\nLE (kleiner gleich)\n\n\n&lt;&gt;\nNE (ungleich)",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#arithmetische-operatorendatenmodelle",
+    "href": "slides/w-02-slides.html#arithmetische-operatorendatenmodelle",
+    "title": "RRelationen und Abfragen",
+    "section": "Arithmetische OperatorenDatenmodelle",
+    "text": "Arithmetische OperatorenDatenmodelle\nDie arithmetischen Operatoren werden für numerische Attribute verwendet. Gängige sind:\n\nMultiplikation *\nDivision /\nAddition +\nSubtraktion -,\nExponent exp\nModulo-Operator %",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#logische-operatoren",
+    "href": "slides/w-02-slides.html#logische-operatoren",
+    "title": "RRelationen und Abfragen",
+    "section": "Logische Operatoren",
+    "text": "Logische Operatoren\n\n\n\n\n\n\nDie vier Booleschen Operatoren (GITTA 2005)",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#beliebige-kombination-von-operatoren",
+    "href": "slides/w-02-slides.html#beliebige-kombination-von-operatoren",
+    "title": "RRelationen und Abfragen",
+    "section": "Beliebige Kombination von Operatoren",
+    "text": "Beliebige Kombination von Operatoren\n\n\n\n\n\n\n(GITTA 2005\n\n\n\n\n\n\n\n(GITTA 2005)",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "unit03/unit03-00.html",
+    "href": "unit03/unit03-00.html",
+    "title": "Lernziele - Fragen und Antworten",
+    "section": "",
+    "text": "Die Datenbankstruktur der meisten GIS-Systeme basiert auf einem relationalen Modell, das eine logische, konsistente und strukturierte Speicherung und Verwaltung von Daten ermöglicht. Dabei werden die Daten in Form von Relationen oder Tabellen organisiert, in denen sowohl geometrische als auch semantische (thematische) Informationen tabellarisch vorliegen.\nIm Zusammenhang mit GIS ist die Datenanalyse ein zentraler Aspekt, der die gezielte Abfrage und Auswertung der räumlichen und inhaltlichen Daten in diesen Tabellen umfasst. Durch die Verwendung einer Abfragesprache wie SQL werden Analysen auf den Grundelementen der Beziehungen wie Tabellen, Feldern, Datensätzen, Werten und Assoziationen durchgeführt.\nEin Beispiel für eine solche Abfrage könnte lauten: “Wie hoch ist der Anteil der Einwohner der Stadt Marburg, die weiter als 200 m von einer Haltestelle des öffentlichen Personennahverkehrs entfernt wohnen?\nDiese Abfrage bezieht sich auf die Vektor-GIS-Daten und die Beziehungen zwischen ihnen. Die räumlichen Informationen über die Stadtbevölkerung und die Lage der ÖPNV-Haltestellen sind in Relationen gespeichert. Die Abfrage ermöglicht die gezielte Suche nach Bevölkerungsgruppen, die weiter als 200 m von einer Haltestelle entfernt wohnen. Durch die Verwendung von Vektordaten und relationalen Datenbankstrukturen können solche komplexen räumlichen Analysen effizient durchgeführt werden."
+  },
+  {
+    "objectID": "unit03/unit03-00.html#die-lernziele-des-readers-sind",
+    "href": "unit03/unit03-00.html#die-lernziele-des-readers-sind",
+    "title": "Lernziele - Fragen und Antworten",
+    "section": "Die Lernziele des Readers sind:",
+    "text": "Die Lernziele des Readers sind:\n\nVerständnis räumlicher Datenmodelle:\n\nVerständnis der Modellierung räumlicher Daten in einem GIS (Geographisches Informationssystem), einschließlich der Konzepte von Vektordaten und Attributdatenbanken.\n\nAbfragetypen und -techniken:\n\nSie lernen die verschiedenen Arten von Abfragen kennen und können thematische, geometrische und topologische Abfragen formulieren und ausführen.\n\nVergleichs- und logische Operatoren anwenden:\n\nSie werden in der Lage sein, vergleichende und logische Operatoren zu verwenden, um komplexere Abfragen zu formulieren, um bestimmte räumliche Objekte aufgrund ihrer Eigenschaften oder ihrer Beziehungen zu anderen Objekten zu identifizieren.\n\nPraktische Anwendung von GIS-Abfragen:\n\nSie werden praktische Erfahrung im Umgang mit GIS-Software sammeln, um Abfragen durchzuführen, Daten zu analysieren und Ergebnisse zu interpretieren. Dazu gehört auch die Fähigkeit, Abfrageergebnisse visuell darzustellen und zu kommunizieren."
+  },
+  {
+    "objectID": "slides/w-02-slides.html#geometrische-abfragen",
+    "href": "slides/w-02-slides.html#geometrische-abfragen",
+    "title": "RRelationen und Abfragen",
+    "section": "Geometrische Abfragen",
+    "text": "Geometrische Abfragen\n\n\n\n\n\n\nEuklidische Distanz Vektordatenmodell , @gitta2005\n\n\n\n\n\n\n\nEuklidische Distanz Rasterdatenmodells. @gitta2005",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#distanzzonen-distanzpuffer-und-distanztransformation",
+    "href": "slides/w-02-slides.html#distanzzonen-distanzpuffer-und-distanztransformation",
+    "title": "RRelationen und Abfragen",
+    "section": "Distanzzonen: Distanzpuffer und Distanztransformation",
+    "text": "Distanzzonen: Distanzpuffer und Distanztransformation\n\n\n\nPufferkonzept @gitta2005",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#topologische-abfragen",
+    "href": "slides/w-02-slides.html#topologische-abfragen",
+    "title": "RRelationen und Abfragen",
+    "section": "Topologische Abfragen",
+    "text": "Topologische Abfragen\n\n\n\nAbbildung 03-19: Topologische Beziehungen von Vektordaten unterschiedlicher Dimension , @gitta2005",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#topologische-abfrage-und-dimensionalität",
+    "href": "slides/w-02-slides.html#topologische-abfrage-und-dimensionalität",
+    "title": "RRelationen und Abfragen",
+    "section": "Topologische Abfrage und Dimensionalität",
+    "text": "Topologische Abfrage und Dimensionalität\n\n\n\nTopologische Abfragen von Vektordaten unterschiedlicher Dimension, @gitta2005\n\n\n\n\n\n\n\n\n\nNicht-manipulativen GI-Abfragen (GITTA 2005)\nDie vier Booleschen Operatoren (GITTA 2005)\n(GITTA 2005\n(GITTA 2005)\nEuklidische Distanz Vektordatenmodell , @gitta2005\nEuklidische Distanz Rasterdatenmodells. @gitta2005\nPufferkonzept @gitta2005\nAbbildung 03-19: Topologische Beziehungen von Vektordaten unterschiedlicher Dimension , @gitta2005\nTopologische Abfragen von Vektordaten unterschiedlicher Dimension, @gitta2005",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#topologische-abfragen-beispiel-2d",
+    "href": "slides/w-02-slides.html#topologische-abfragen-beispiel-2d",
+    "title": "RRelationen und Abfragen",
+    "section": "Topologische Abfragen Beispiel 2D",
+    "text": "Topologische Abfragen Beispiel 2D\n\n\n\nTopologische Abfragen von Vektordaten unterschiedlicher Dimension, @gitta2005",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#zusammenfassung",
+    "href": "slides/w-02-slides.html#zusammenfassung",
+    "title": "RRelationen und Abfragen",
+    "section": "Zusammenfassung",
+    "text": "Zusammenfassung\n\nNutzung des relationalen Datenmodells für strukturierte Datenspeicherung.\nEinsatz von formalen Abfragesprachen für inhaltliche und räumliche Analysen.\nVerwendung von Operatoren und speziellen abgeleiteten Operatoren wie Distanzpuffer.\n\n\n\n\n\n\n\n\nNicht-manipulativen GI-Abfragen (GITTA 2005)\nDie vier Booleschen Operatoren (GITTA 2005)\n(GITTA 2005\n(GITTA 2005)\nEuklidische Distanz Vektordatenmodell , @gitta2005\nEuklidische Distanz Rasterdatenmodells. @gitta2005\nPufferkonzept @gitta2005\nAbbildung 03-19: Topologische Beziehungen von Vektordaten unterschiedlicher Dimension , @gitta2005\nTopologische Abfragen von Vektordaten unterschiedlicher Dimension, @gitta2005",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
   }
 ]

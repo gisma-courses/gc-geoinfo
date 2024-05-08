@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Grundlagenkurs GI-S (QGIS) - Fragen und Antworten</title>
+<title>Grundlagenkurs GI-S (QGIS) - Abfragen in Relationen - eine Einführung</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,10 +117,10 @@ background-size: cover;
 
 
 <link rel="stylesheet" href="../css/styles.css">
-<meta property="og:title" content="Grundlagenkurs GI-S (QGIS) - Fragen und Antworten">
+<meta property="og:title" content="Grundlagenkurs GI-S (QGIS) - Abfragen in Relationen - eine Einführung">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
-<meta name="twitter:title" content="Grundlagenkurs GI-S (QGIS) - Fragen und Antworten">
+<meta name="twitter:title" content="Grundlagenkurs GI-S (QGIS) - Abfragen in Relationen - eine Einführung">
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@gisma">
 <meta name="twitter:card" content="summary">
@@ -145,152 +145,12 @@ background-size: cover;
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="../unit00/unit00-01-formales.html"> <i class="bi bi-compass" role="img">
 </i> 
 <span class="menu-text">Formales</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-raumkonzepte" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Raumkonzepte</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-raumkonzepte">    
-        <li>
-    <a class="dropdown-item" href="../unit01/unit01-01.html">
- <span class="dropdown-text">Raum braucht einen Geltungsbereich</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../unit01/unit01-02.html">
- <span class="dropdown-text">Geographie - räumliche Interpretation der Welt</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../unit01/unit01-03.html">
- <span class="dropdown-text">Objekte im Raum</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../unit01/unit01-04.html">
- <span class="dropdown-text">Kodierung der Welt durch Geodatensätze</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../unit01/unit01-05.html">
- <span class="dropdown-text">Zusammenfassung – Geographischer Raum</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-gis-konzepte" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">GIS Konzepte</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-gis-konzepte">    
-        <li>
-    <a class="dropdown-item" href="../unit02/unit02-01.html">
- <span class="dropdown-text">Raumrepräsentation in der Geoinformatik</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../unit02/unit02-02.html">
- <span class="dropdown-text">Koordinaten, Topologie und Dimension</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../unit02/unit02-03.html">
- <span class="dropdown-text">Datenmodelle für Raumdaten</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../unit02/unit02-04.html">
- <span class="dropdown-text">Die Vermessung der Welt - Namen - Orte - Lage</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../unit02/unit02-05.html">
- <span class="dropdown-text">Die Vermessung der Welt - Geographische Koordinaten und Projektionen</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../unit02/unit02-06.html">
- <span class="dropdown-text">Zusammenfassung GI Raumkonzepte</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-relationen" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Relationen</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-relationen">    
-        <li>
-    <a class="dropdown-item" href="../unit03/unit03-01.html">
- <span class="dropdown-text">Fragen und Antworten</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../unit03/unit03-02.html">
- <span class="dropdown-text">Thematische Abfragen</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../unit03/unit03-03.html">
- <span class="dropdown-text">Geometrische Abfragen</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../unit03/unit03-04.html">
- <span class="dropdown-text">Topologische Abfragen</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../unit03/unit03-05.html">
- <span class="dropdown-text">Geometrische Abfragen - Zusammenfassung</span></a>
-  </li>  
-        <li class="dropdown-header">unit03/unit03-06.qmd</li>
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-analysen" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Analysen</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-analysen">    
-        <li>
-    <a class="dropdown-item" href="../unit04/unit04-01.html">
- <span class="dropdown-text">Rasterbasierte räumliche Analysemethoden</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../unit04/unit04-02.html">
- <span class="dropdown-text">Voronoi Polygone</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../unit04/unit04-03.html">
- <span class="dropdown-text">Informationsloser Raum – Distanz-basierte Interpolation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../unit04/unit04-04.html">
- <span class="dropdown-text">Modelle der Erdoberfläche – Funktionale Ableitungen</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../unit04/unit04-05.html">
- <span class="dropdown-text">Modelle der Erdoberfläche – Sichtweite und Sichtfeld</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../unit04/unit04-06.html">
- <span class="dropdown-text">Prozeßbasierte Ableitungen</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-mce" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">MCE</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-mce">    
-        <li>
-    <a class="dropdown-item" href="../unit05/unit05-01.html">
- <span class="dropdown-text">Räumliche Entscheidungsfindung</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../unit05/unit05-02.html">
- <span class="dropdown-text">Eignungsanalysen</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../unit05/unit05-03.html">
- <span class="dropdown-text">Verschneidung unterschiedlicher Kriterien</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../unit05/unit05-04.html">
- <span class="dropdown-text">Multikriterien-Multiziel-Analyse</span></a>
-  </li>  
-    </ul>
-  </li>
 </ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
@@ -304,7 +164,7 @@ background-size: cover;
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Fragen und Antworten</h1>
+          <h1 class="quarto-secondary-nav-title">Abfragen in Relationen - eine Einführung</h1>
         </a>     
     </div>
   </nav>
@@ -313,7 +173,7 @@ background-size: cover;
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">Fragen und Antworten</h1>
+      <h1 class="title d-none d-lg-block">Abfragen in Relationen - eine Einführung</h1>
                       </div>
   </div>
     
@@ -331,42 +191,350 @@ background-size: cover;
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item">
- <span class="menu-text">Reader Vektordaten &amp; Attributtabellen</span>
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Willkommen zum <br> Grundlagen Kurs GI-Methoden</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Arbeitsblätter</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit09/unit09-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A1 - Warm Up QGIS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit09/unit09-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A2 - Geometrien und Attribute</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit09/unit09-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A3 - Analysen und Ableitungen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit09/unit09-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A4 - Kosten und Kriterien</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit09/unit09-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A5 - Reproduzierbarkeit und Workflows</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit09/unit09-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A6 - Die Projektarbeit</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Reader Geographische Raumkonzept</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit01/unit01-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Raum braucht einen Geltungsbereich</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit01/unit01-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geographie - räumliche Interpretation der Welt</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit01/unit01-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Objekte im Raum</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit01/unit01-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kodierung der Welt durch Geodatensätze</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit01/unit01-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zusammenfassung – Geographischer Raum</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Reader GI Raumkonzepte</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit02/unit02-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Raumrepräsentation in der Geoinformatik</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit02/unit02-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Koordinaten, Topologie und Dimension</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit02/unit02-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datenmodelle für Raumdaten</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit02/unit02-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Die Vermessung der Welt - Namen - Orte - Lage</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit02/unit02-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Die Vermessung der Welt - Geographische Koordinaten und Projektionen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit02/unit02-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zusammenfassung GI Raumkonzepte</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Reader Vektordaten &amp; Attributtabellen</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit03/unit03-01.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Fragen und Antworten</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit03/unit03-02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Thematische Abfragen</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit03/unit03-03.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Geometrische Abfragen</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit03/unit03-04.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Topologische Abfragen</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit03/unit03-05.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Zusammnfassung Fragen und Antworten</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Reader Räumliche Datenanalyse</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Räumliche Analysemethoden</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Voronoi Polygone</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Informationsloser Raum</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Digitale Geländemodelle</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sichtweite und Sichtfeld</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit04/unit04-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prozeßbasierte Ableitungen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">Reader Räumliche Datenanalyse</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit05/unit05-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multikriterien-Analysen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit05/unit05-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Eignungsanalysen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit05/unit05-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kombination unterschiedlicher Kriterien</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit05/unit05-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multikriterien-Multiziel-Analyse</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+ <span class="menu-text">Reader Automatisierung von Arbeitsabläufen in QGIS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit99/coming-soon.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">coming soon</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">Reader Projektarbeit</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit06/unit06-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Die Projektarbeit</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit06/unit06-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wie entwickle ich ein Projekt?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unit06/unit06-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Das Exposé</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+ <span class="menu-text">Folien</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/w-01-slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Raumkonzepte</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/w-02-slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Relationen und Abfragen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -377,9 +545,7 @@ background-size: cover;
     <h2 id="toc-title">Inhalt</h2>
    
   <ul>
-  <li><a href="#die-lernziele-des-readers-sind" id="toc-die-lernziele-des-readers-sind" class="nav-link active" data-scroll-target="#die-lernziele-des-readers-sind">Die Lernziele des Readers sind:</a></li>
-  <li><a href="#abfragen-in-relationen---eine-einführung" id="toc-abfragen-in-relationen---eine-einführung" class="nav-link" data-scroll-target="#abfragen-in-relationen---eine-einführung">Abfragen in Relationen - eine Einführung</a></li>
-  <li><a href="#auswahloperatoren" id="toc-auswahloperatoren" class="nav-link" data-scroll-target="#auswahloperatoren">Auswahloperatoren</a>
+  <li><a href="#auswahloperatoren" id="toc-auswahloperatoren" class="nav-link active" data-scroll-target="#auswahloperatoren">Auswahloperatoren</a>
   <ul class="collapse">
   <li><a href="#vergleichsoperatoren" id="toc-vergleichsoperatoren" class="nav-link" data-scroll-target="#vergleichsoperatoren">Vergleichsoperatoren</a></li>
   <li><a href="#arithmetische-operatoren" id="toc-arithmetische-operatoren" class="nav-link" data-scroll-target="#arithmetische-operatoren">Arithmetische Operatoren</a></li>
@@ -387,7 +553,7 @@ background-size: cover;
   <li><a href="#kombination-von-operatoren" id="toc-kombination-von-operatoren" class="nav-link" data-scroll-target="#kombination-von-operatoren">Kombination von Operatoren</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit03/unit03-01.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -396,33 +562,6 @@ background-size: cover;
 
 
 
-<p>Die Datenbankstruktur der meisten GIS-Systeme basiert auf einem relationalen Modell, das eine logische, konsistente und strukturierte Speicherung und Verwaltung von Daten ermöglicht. Dabei werden die Daten in Form von Relationen oder Tabellen organisiert, in denen sowohl geometrische als auch semantische (thematische) Informationen tabellarisch vorliegen.</p>
-<p>Im Zusammenhang mit GIS ist die Datenanalyse ein zentraler Aspekt, der die gezielte Abfrage und Auswertung der räumlichen und inhaltlichen Daten in diesen Tabellen umfasst. Durch die Verwendung einer Abfragesprache wie SQL werden Analysen auf den Grundelementen der Beziehungen wie Tabellen, Feldern, Datensätzen, Werten und Assoziationen durchgeführt.</p>
-<p>Ein Beispiel für eine solche Abfrage könnte lauten: “Wie hoch ist der Anteil der Einwohner der Stadt Marburg, die weiter als 200 m von einer Haltestelle des öffentlichen Personennahverkehrs entfernt wohnen?</p>
-<p>Diese Abfrage bezieht sich auf die Vektor-GIS-Daten und die Beziehungen zwischen ihnen. Die räumlichen Informationen über die Stadtbevölkerung und die Lage der ÖPNV-Haltestellen sind in Relationen gespeichert. Die Abfrage ermöglicht die gezielte Suche nach Bevölkerungsgruppen, die weiter als 200 m von einer Haltestelle entfernt wohnen. Durch die Verwendung von Vektordaten und relationalen Datenbankstrukturen können solche komplexen räumlichen Analysen effizient durchgeführt werden.</p>
-<section id="die-lernziele-des-readers-sind" class="level2">
-<h2 class="anchored" data-anchor-id="die-lernziele-des-readers-sind">Die Lernziele des Readers sind:</h2>
-<ul>
-<li>Verständnis räumlicher Datenmodelle:
-<ul>
-<li>Verständnis der Modellierung räumlicher Daten in einem GIS (Geographisches Informationssystem), einschließlich der Konzepte von Vektordaten und Attributdatenbanken.</li>
-</ul></li>
-<li>Verschiedene Abfragetypen und -techniken kennen lernen:
-<ul>
-<li>Sie lernen die verschiedenen Arten von Abfragen kennen und können thematische, geometrische und topologische Abfragen formulieren und ausführen.</li>
-</ul></li>
-<li>Vergleichs- und logische Operatoren anwenden:
-<ul>
-<li>Sie werden in der Lage sein, vergleichende und logische Operatoren zu verwenden, um komplexe Abfragen zu formulieren, um bestimmte räumliche Objekte aufgrund ihrer Eigenschaften oder ihrer Beziehungen zu anderen Objekten zu identifizieren.</li>
-</ul></li>
-<li>Praktische Anwendung von GIS-Abfragen:
-<ul>
-<li>Sie werden praktische Erfahrung im Umgang mit GIS-Software sammeln, um Abfragen durchzuführen, Daten zu analysieren und Ergebnisse zu interpretieren. Dazu gehört auch die Fähigkeit, Abfrageergebnisse visuell darzustellen und zu kommunizieren.</li>
-</ul></li>
-</ul>
-</section>
-<section id="abfragen-in-relationen---eine-einführung" class="level2">
-<h2 class="anchored" data-anchor-id="abfragen-in-relationen---eine-einführung">Abfragen in Relationen - eine Einführung</h2>
 <p>Im Rahmen der Datenanalyse sind grundsätzlich drei Vorgehensweisen möglich (vgl. Abbildung 03-01):</p>
 <ul>
 <li><em>Thematische Abfragen:</em> Wählt die Objekte aus, deren Eigenschaften (Attribute) die vorgegebenen Bedingungen erfüllen - z.B.: „Selektiere alle Bäume der Art Fichte.“</li>
@@ -435,7 +574,6 @@ background-size: cover;
 <figcaption>Abbildung 03-01: Struktur der nicht-manipulativen GI-Abfragen (GITTA 2005)</figcaption>
 </figure>
 </div>
-</section>
 <section id="auswahloperatoren" class="level2">
 <h2 class="anchored" data-anchor-id="auswahloperatoren">Auswahloperatoren</h2>
 <p>Zentrales Werkzeug von Abfragen in GI-Systemen sind die so genannten Auswahloperatoren, auch algebraische Operatoren genannt. Sie gliedern sich in:</p>
@@ -1126,4 +1264,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit03/unit03-01.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></div></div></footer></body></html>

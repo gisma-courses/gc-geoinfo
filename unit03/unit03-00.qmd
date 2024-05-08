@@ -1,0 +1,30 @@
+---
+title: Lernziele - Fragen und Antworten
+title-block-banner: ../assets/images/splash_L02.png
+title-block-banner-color: black
+
+bibliography: ../assets/geoinfo.bib
+
+lang: de
+comments: false
+---
+
+Die Datenbankstruktur der meisten GIS-Systeme basiert auf einem relationalen Modell, das eine logische, konsistente und strukturierte Speicherung und Verwaltung von Daten ermöglicht. Dabei werden die Daten in Form von Relationen oder Tabellen organisiert, in denen sowohl geometrische als auch semantische (thematische) Informationen tabellarisch vorliegen.
+
+Im Zusammenhang mit GIS ist die Datenanalyse ein zentraler Aspekt, der die gezielte Abfrage und Auswertung der räumlichen und inhaltlichen Daten in diesen Tabellen umfasst. Durch die Verwendung einer Abfragesprache wie SQL werden Analysen auf den Grundelementen der Beziehungen wie Tabellen, Feldern, Datensätzen, Werten und Assoziationen durchgeführt.
+
+Ein Beispiel für eine solche Abfrage könnte lauten: "Wie hoch ist der Anteil der Einwohner der Stadt Marburg, die weiter als 200 m von einer Haltestelle des öffentlichen Personennahverkehrs entfernt wohnen?
+
+Diese Abfrage bezieht sich auf die Vektor-GIS-Daten und die Beziehungen zwischen ihnen. Die räumlichen Informationen über die Stadtbevölkerung und die Lage der ÖPNV-Haltestellen sind in Relationen gespeichert. Die Abfrage ermöglicht die gezielte Suche nach Bevölkerungsgruppen, die weiter als 200 m von einer Haltestelle entfernt wohnen. Durch die Verwendung von Vektordaten und relationalen Datenbankstrukturen können solche komplexen räumlichen Analysen effizient durchgeführt werden.
+
+## Die Lernziele des Readers sind:
+
+-   Verständnis räumlicher Datenmodelle:
+    -   Verständnis der Modellierung räumlicher Daten in einem GIS (Geographisches Informationssystem), einschließlich der Konzepte von Vektordaten und Attributdatenbanken.
+-   Abfragetypen und -techniken:
+    -   Sie lernen die verschiedenen Arten von Abfragen kennen und können thematische, geometrische und topologische Abfragen formulieren und ausführen.
+-   Vergleichs- und logische Operatoren anwenden:
+    -   Sie werden in der Lage sein, vergleichende und logische Operatoren zu verwenden, um komplexere Abfragen zu formulieren, um bestimmte räumliche Objekte aufgrund ihrer Eigenschaften oder ihrer Beziehungen zu anderen Objekten zu identifizieren.
+-   Praktische Anwendung von GIS-Abfragen:
+    -   Sie werden praktische Erfahrung im Umgang mit GIS-Software sammeln, um Abfragen durchzuführen, Daten zu analysieren und Ergebnisse zu interpretieren. Dazu gehört auch die Fähigkeit, Abfrageergebnisse visuell darzustellen und zu kommunizieren.
+

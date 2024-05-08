@@ -174,8 +174,10 @@ website:
         - text: "---"                          
         - section: Folien
           contents:
-          - href: slides/w-unit01/lesson-02.qmd
+          - href: slides/w-01-slides.qmd
             text: Raumkonzepte
+          - href: slides/w-02-slides.qmd
+            text: Relationen und Abfragen            
             
 execute:
   freeze: auto

@@ -1,0 +1,125 @@
+---
+title: "RRelationen und Abfragen"
+subtitle: "Fragen und Antworten auf Vekdordatensätzen"
+author:  Chris Reudenbach
+#title-slide-attributes: 
+#  data-background-image: ../images/title-uni2.png
+ # data-background-size: contain
+  #data-background-opacity: "0.7"
+ # center-title-slide: true
+format:
+  revealjs:
+    theme: [metropolis.scss]
+    toc: false
+    toc-depth: 2
+    chalkboard: true
+    menu: false
+lightbox: true
+---
+
+## Lernziele Fragen und Antworten
+
+-  **Verständnis räumlicher Datenmodelle in GIS**: Modellieren von Vektordaten und Attributen.
+-  **Abfragetypen und -techniken**: Erlernen von thematischen, geometrischen und topologischen Abfragen.
+-  **Vergleichs- und logische Operatoren**: Formulierung komplexer Abfragen zur Identifizierung spezifischer Objekte.
+-  **Praktische GIS-Anwendung**: Durchführung von Abfragen, Datenanalyse und visuelle Darstellung der Ergebnisse.
+
+
+## Koordinatensysteme
+
+::: {layout-ncol="1" layout-valign="bottom"}
+
+![Nicht-manipulativen GI-Abfragen (GITTA 2005)](../assets/images/unit03/abfrage2.jpg)
+
+
+:::
+
+## Operatoren
+
+-   Vergleichsoperatoren
+-   Arithmetische Operatoren
+-   Logische Operatoren 
+
+
+
+## Vergleichsoperator
+
+| Vergleichsoperator | Bedeutung           |
+|:------------------:|---------------------|
+|         =          | EQ (gleich)         |
+|         \>         | GT (größer)         |
+|        \>=         | GE (größer gleich)  |
+|         \<         | LT (kleiner)        |
+|        \< =        | LE (kleiner gleich) |
+|        \<\>        | NE (ungleich)       |
+
+## Arithmetische OperatorenDatenmodelle
+
+Die arithmetischen Operatoren werden für numerische Attribute verwendet. Gängige sind:
+
+-  Multiplikation `*`
+-  Division `/`
+-  Addition `+` 
+-  Subtraktion `-`, 
+-  Exponent `exp` 
+-  Modulo-Operator `%` 
+
+## Logische Operatoren
+
+
+
+
+
+::: {layout-ncol="1" layout-valign="bottom"}
+
+
+![Die vier Booleschen Operatoren (GITTA 2005)](../assets/images/unit03/combination.jpg){width="50%"}
+
+:::
+
+## Beliebige Kombination von Operatoren
+
+::: {layout-ncol="2" layout-valign="bottom"}
+![(GITTA 2005](https://farm3.staticflickr.com/2922/14161471688_12d9ff0432_o.png)
+
+![(GITTA 2005)](https://farm3.staticflickr.com/2913/14348127685_0ed1e5b815_o.png)
+:::
+
+
+## Geometrische Abfragen
+
+
+
+::: {layout-ncol="2" layout-valign="center"}
+
+
+![Euklidische Distanz Vektordatenmodell , @gitta2005](../assets/images/unit03/euklid_dist_1.png)
+
+![Euklidische Distanz Rasterdatenmodells. @gitta2005](../assets/images/unit03/euklid_dist_2.png)
+
+
+:::
+
+
+## Distanzzonen: Distanzpuffer und Distanztransformation
+
+
+![Pufferkonzept @gitta2005](../assets/images/unit03/distpuff_polygone.gif){ width="2000%"}
+
+
+
+## Topologische Abfragen
+
+![Abbildung 03-19: Topologische Beziehungen von Vektordaten unterschiedlicher Dimension , @gitta2005](../assets/images/unit03/topo_3.png){width="10%}
+
+## Topologische Abfragen Beispiel 2D
+
+![Topologische Abfragen von Vektordaten unterschiedlicher Dimension, @gitta2005](../assets/images/unit03/topo_4.png)
+
+
+## Zusammenfassung
+
+- Nutzung des relationalen Datenmodells für strukturierte Datenspeicherung.
+- Einsatz von formalen Abfragesprachen für inhaltliche und räumliche Analysen.
+- Verwendung von Operatoren und speziellen abgeleiteten Operatoren wie Distanzpuffer.
+
