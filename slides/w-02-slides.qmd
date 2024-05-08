@@ -29,7 +29,7 @@ lightbox: true
 
 ::: {layout-ncol="1" layout-valign="bottom"}
 
-![Nicht-manipulativen GI-Abfragen (GITTA 2005)](../assets/images/unit03/abfrage2.jpg)
+![Nicht-manipulativen GI-Abfragen, GITTA 2005](../assets/images/unit03/abfrage2.jpg)
 
 
 :::
@@ -73,16 +73,16 @@ Die arithmetischen Operatoren werden für numerische Attribute verwendet. Gängi
 ::: {layout-ncol="1" layout-valign="bottom"}
 
 
-![Die vier Booleschen Operatoren (GITTA 2005)](../assets/images/unit03/combination.jpg){width="40%"}
+![Die vier Booleschen Operatoren, GITTA 2005](../assets/images/unit03/combination.jpg){width="40%"}
 
 :::
 
 ## Beliebige Kombination von Operatoren
 
 ::: {layout-ncol="2" layout-valign="bottom"}
-![(GITTA 2005](https://farm3.staticflickr.com/2922/14161471688_12d9ff0432_o.png)
+![](https://farm3.staticflickr.com/2922/14161471688_12d9ff0432_o.png)
 
-![(GITTA 2005)](https://farm3.staticflickr.com/2913/14348127685_0ed1e5b815_o.png)
+![GITTA 2005](https://farm3.staticflickr.com/2913/14348127685_0ed1e5b815_o.png)
 :::
 
 
@@ -93,9 +93,9 @@ Die arithmetischen Operatoren werden für numerische Attribute verwendet. Gängi
 ::: {layout-ncol="2" layout-valign="center"}
 
 
-![Euklidische Distanz Vektordatenmodell , @gitta2005](../assets/images/unit03/euklid_dist_1.png)
+![Euklidische Distanz Vektordatenmodell](../assets/images/unit03/euklid_dist_1.png)
 
-![Euklidische Distanz Rasterdatenmodells. @gitta2005](../assets/images/unit03/euklid_dist_2.png)
+![Euklidische Distanz Rasterdatenmodells, GITTA 2005](../assets/images/unit03/euklid_dist_2.png)
 
 
 :::
@@ -114,7 +114,7 @@ Die arithmetischen Operatoren werden für numerische Attribute verwendet. Gängi
 
 ## Topologische Abfragen Beispiel 2D
 
-![Topologische Abfragen von Vektordaten unterschiedlicher Dimension, @gitta2005](../assets/images/unit03/topo_4.png)
+![Topologische Abfragen von Vektordaten unterschiedlicher Dimension, GITTA 2005](../assets/images/unit03/topo_4.png)
 
 
 ## Zusammenfassung
