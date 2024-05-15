@@ -2649,7 +2649,7 @@
   {
     "objectID": "slides/w-02-slides.html#lernziele-fragen-und-antworten",
     "href": "slides/w-02-slides.html#lernziele-fragen-und-antworten",
-    "title": "RRelationen und Abfragen",
+    "title": "Relationen und Abfragen",
     "section": "Lernziele Fragen und Antworten",
     "text": "Lernziele Fragen und Antworten\n\nVerständnis räumlicher Datenmodelle in GIS: Modellieren von Vektordaten und Attributen.\nAbfragetypen und -techniken: Erlernen von thematischen, geometrischen und topologischen Abfragen.\nVergleichs- und logische Operatoren: Formulierung komplexer Abfragen zur Identifizierung spezifischer Objekte.\nPraktische GIS-Anwendung: Durchführung von Abfragen, Datenanalyse und visuelle Darstellung der Ergebnisse.",
     "crumbs": [
@@ -2660,7 +2660,7 @@
   {
     "objectID": "slides/w-02-slides.html#koordinatensysteme",
     "href": "slides/w-02-slides.html#koordinatensysteme",
-    "title": "RRelationen und Abfragen",
+    "title": "Relationen und Abfragen",
     "section": "Koordinatensysteme",
     "text": "Koordinatensysteme\n\n\n\n\n\n\nNicht-manipulativen GI-Abfragen, GITTA 2005",
     "crumbs": [
@@ -2792,7 +2792,7 @@
   {
     "objectID": "slides/w-02-slides.html#operatoren",
     "href": "slides/w-02-slides.html#operatoren",
-    "title": "RRelationen und Abfragen",
+    "title": "Relationen und Abfragen",
     "section": "Operatoren",
     "text": "Operatoren\n\nVergleichsoperatoren\nArithmetische Operatoren\nLogische Operatoren",
     "crumbs": [
@@ -2803,7 +2803,7 @@
   {
     "objectID": "slides/w-02-slides.html#vergleichsoperator",
     "href": "slides/w-02-slides.html#vergleichsoperator",
-    "title": "RRelationen und Abfragen",
+    "title": "Relationen und Abfragen",
     "section": "Vergleichsoperator",
     "text": "Vergleichsoperator\n\n\n\nVergleichsoperator\nBedeutung\n\n\n\n\n=\nEQ (gleich)\n\n\n&gt;\nGT (größer)\n\n\n&gt;=\nGE (größer gleich)\n\n\n&lt;\nLT (kleiner)\n\n\n&lt; =\nLE (kleiner gleich)\n\n\n&lt;&gt;\nNE (ungleich)",
     "crumbs": [
@@ -2814,7 +2814,7 @@
   {
     "objectID": "slides/w-02-slides.html#arithmetische-operatorendatenmodelle",
     "href": "slides/w-02-slides.html#arithmetische-operatorendatenmodelle",
-    "title": "RRelationen und Abfragen",
+    "title": "Relationen und Abfragen",
     "section": "Arithmetische OperatorenDatenmodelle",
     "text": "Arithmetische OperatorenDatenmodelle\nDie arithmetischen Operatoren werden für numerische Attribute verwendet. Gängige sind:\n\nMultiplikation *\nDivision /\nAddition +\nSubtraktion -,\nExponent exp\nModulo-Operator %",
     "crumbs": [
@@ -2825,7 +2825,7 @@
   {
     "objectID": "slides/w-02-slides.html#logische-operatoren",
     "href": "slides/w-02-slides.html#logische-operatoren",
-    "title": "RRelationen und Abfragen",
+    "title": "Relationen und Abfragen",
     "section": "Logische Operatoren",
     "text": "Logische Operatoren\n\n\n\n\n\n\nDie vier Booleschen Operatoren, GITTA 2005",
     "crumbs": [
@@ -2836,9 +2836,9 @@
   {
     "objectID": "slides/w-02-slides.html#beliebige-kombination-von-operatoren",
     "href": "slides/w-02-slides.html#beliebige-kombination-von-operatoren",
-    "title": "RRelationen und Abfragen",
+    "title": "Relationen und Abfragen",
     "section": "Beliebige Kombination von Operatoren",
-    "text": "Beliebige Kombination von Operatoren\n\n\n\n\n\n\n\n\n\n\n\nGITTA 2005\n\n\n\n\n\nWeitere Beipiele",
+    "text": "Beliebige Kombination von Operatoren\n\n\n\n\n\n\n\n\n\n\n\nGITTA 2005",
     "crumbs": [
       "Folien",
       "Relationen und Abfragen"
@@ -2861,7 +2861,7 @@
   {
     "objectID": "slides/w-02-slides.html#geometrische-abfragen",
     "href": "slides/w-02-slides.html#geometrische-abfragen",
-    "title": "RRelationen und Abfragen",
+    "title": "Relationen und Abfragen",
     "section": "Geometrische Abfragen",
     "text": "Geometrische Abfragen\n\n\n\n\n\n\nEuklidische Distanz Vektordatenmodell\n\n\n\n\n\n\n\nEuklidische Distanz Rasterdatenmodells, GITTA 2005",
     "crumbs": [
@@ -2872,7 +2872,7 @@
   {
     "objectID": "slides/w-02-slides.html#distanzzonen-distanzpuffer-und-distanztransformation",
     "href": "slides/w-02-slides.html#distanzzonen-distanzpuffer-und-distanztransformation",
-    "title": "RRelationen und Abfragen",
+    "title": "Relationen und Abfragen",
     "section": "Distanzzonen: Distanzpuffer und Distanztransformation",
     "text": "Distanzzonen: Distanzpuffer und Distanztransformation\n\n\n\nPufferkonzept @gitta2005",
     "crumbs": [
@@ -2883,7 +2883,7 @@
   {
     "objectID": "slides/w-02-slides.html#topologische-abfragen",
     "href": "slides/w-02-slides.html#topologische-abfragen",
-    "title": "RRelationen und Abfragen",
+    "title": "Relationen und Abfragen",
     "section": "Topologische Abfragen",
     "text": "Topologische Abfragen\n\n\n\nAbbildung 03-19: Topologische Beziehungen von Vektordaten unterschiedlicher Dimension , @gitta2005",
     "crumbs": [
@@ -2905,7 +2905,7 @@
   {
     "objectID": "slides/w-02-slides.html#topologische-abfragen-beispiel-2d",
     "href": "slides/w-02-slides.html#topologische-abfragen-beispiel-2d",
-    "title": "RRelationen und Abfragen",
+    "title": "Relationen und Abfragen",
     "section": "Topologische Abfragen Beispiel 2D",
     "text": "Topologische Abfragen Beispiel 2D\n\n\n\nTopologische Abfragen von Vektordaten unterschiedlicher Dimension, GITTA 2005",
     "crumbs": [
@@ -2916,9 +2916,31 @@
   {
     "objectID": "slides/w-02-slides.html#zusammenfassung",
     "href": "slides/w-02-slides.html#zusammenfassung",
-    "title": "RRelationen und Abfragen",
+    "title": "Relationen und Abfragen",
     "section": "Zusammenfassung",
     "text": "Zusammenfassung\n\nNutzung des relationalen Datenmodells für strukturierte Datenspeicherung.\nEinsatz von formalen Abfragesprachen für inhaltliche und räumliche Analysen.\nVerwendung von Operatoren und speziellen abgeleiteten Operatoren wie Distanzpuffer.\n\n\n\n\n\n\n\n\nNicht-manipulativen GI-Abfragen, GITTA 2005\nDie vier Booleschen Operatoren, GITTA 2005\nGITTA 2005\nEuklidische Distanz Vektordatenmodell\nEuklidische Distanz Rasterdatenmodells, GITTA 2005\nPufferkonzept @gitta2005\nAbbildung 03-19: Topologische Beziehungen von Vektordaten unterschiedlicher Dimension , @gitta2005\nTopologische Abfragen von Vektordaten unterschiedlicher Dimension, GITTA 2005",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#verschachtelte-abfragen",
+    "href": "slides/w-02-slides.html#verschachtelte-abfragen",
+    "title": "Relationen und Abfragen",
+    "section": "Verschachtelte Abfragen",
+    "text": "Verschachtelte Abfragen\n\n\n\n\nKreis 1: Baumart = “Lärche\nKreis 2: Vorrat &gt; 110 m3/ha\nKreis 3: Überschirmung &gt; 80%.\n\n\n\n\n\n\n\nWeitere Beipiele",
+    "crumbs": [
+      "Folien",
+      "Relationen und Abfragen"
+    ]
+  },
+  {
+    "objectID": "slides/w-02-slides.html#verschachtelte-logische-abfragen",
+    "href": "slides/w-02-slides.html#verschachtelte-logische-abfragen",
+    "title": "Relationen und Abfragen",
+    "section": "Verschachtelte logische Abfragen",
+    "text": "Verschachtelte logische Abfragen\n\n\n\n\nKreis 1: Baumart = “Lärche\nKreis 2: Vorrat &gt; 110 m3/ha\nKreis 3: Überschirmung &gt; 80%.\n\n\n\n\n\n\n\nWeitere Beipiele",
     "crumbs": [
       "Folien",
       "Relationen und Abfragen"

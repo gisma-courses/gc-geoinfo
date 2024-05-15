@@ -1,5 +1,5 @@
 ---
-title: "RRelationen und Abfragen"
+title: "Relationen und Abfragen"
 subtitle: "Fragen und Antworten auf Vekdordatensätzen"
 author:  Chris Reudenbach
 #title-slide-attributes: 
@@ -87,6 +87,18 @@ Die arithmetischen Operatoren werden für numerische Attribute verwendet. Gängi
 
 :::
 
+## Verschachtelte logische Abfragen
+
+
+::: {layout-ncol="2" layout-valign="center"}
+
+-   Kreis 1: Baumart = "Lärche
+-   Kreis 2: Vorrat \> 110 m<sup>3</sup>/ha
+-   Kreis 3: Überschirmung \> 80%.
+
+
+![](../assets/images/unit03/nestedoperators.png){width="100%"}
+:::
 
 [Weitere Beipiele](../unit03/unit03-02.qmd)
 

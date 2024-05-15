@@ -15,7 +15,7 @@
   <meta name="generator" content="quarto-1.4.553">
 
   <meta name="author" content="Chris Reudenbach">
-  <title>Grundlagenkurs GI-S (QGIS) - RRelationen und Abfragen</title>
+  <title>Grundlagenkurs GI-S (QGIS) - Relationen und Abfragen</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -326,10 +326,10 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Grundlagenkurs GI-S (QGIS) - RRelationen und Abfragen">
+<meta property="og:title" content="Grundlagenkurs GI-S (QGIS) - Relationen und Abfragen">
 <meta property="og:description" content="Fragen und Antworten auf Vekdordatensätzen">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
-<meta name="twitter:title" content="Grundlagenkurs GI-S (QGIS) - RRelationen und Abfragen">
+<meta name="twitter:title" content="Grundlagenkurs GI-S (QGIS) - Relationen und Abfragen">
 <meta name="twitter:description" content="Fragen und Antworten auf Vekdordatensätzen">
 <meta name="twitter:creator" content="@gisma">
 <meta name="twitter:card" content="summary">
@@ -339,7 +339,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">RRelationen und Abfragen</h1>
+  <h1 class="title">Relationen und Abfragen</h1>
   <p class="subtitle">Fragen und Antworten auf Vekdordatensätzen</p>
 
 <div class="quarto-title-authors">
@@ -466,6 +466,23 @@ Chris Reudenbach
 </div>
 </div>
 </div>
+</section>
+<section id="verschachtelte-logische-abfragen" class="slide level2">
+<h2>Verschachtelte logische Abfragen</h2>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row quarto-layout-valign-center">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ul>
+<li>Kreis 1: Baumart = “Lärche</li>
+<li>Kreis 2: Vorrat &gt; 110 m<sup>3</sup>/ha</li>
+<li>Kreis 3: Überschirmung &gt; 80%.</li>
+</ul>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="../assets/images/unit03/nestedoperators.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img data-src="../assets/images/unit03/nestedoperators.png" style="width:100.0%"></a></p>
+</div>
+</div>
+</div>
 <p><a href="../unit03/unit03-02.html">Weitere Beipiele</a></p>
 </section>
 <section id="geometrische-abfragen" class="slide level2">
@@ -475,7 +492,7 @@ Chris Reudenbach
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="../assets/images/unit03/euklid_dist_1.png" class="lightbox" data-glightbox="description: .lightbox-desc-5" data-gallery="quarto-lightbox-gallery-5" title="Euklidische Distanz Vektordatenmodell"><img data-src="../assets/images/unit03/euklid_dist_1.png" alt="Euklidische Distanz Vektordatenmodell"></a></p>
+<p><a href="../assets/images/unit03/euklid_dist_1.png" class="lightbox" data-glightbox="description: .lightbox-desc-6" data-gallery="quarto-lightbox-gallery-6" title="Euklidische Distanz Vektordatenmodell"><img data-src="../assets/images/unit03/euklid_dist_1.png" alt="Euklidische Distanz Vektordatenmodell"></a></p>
 <figcaption>Euklidische Distanz Vektordatenmodell</figcaption>
 </figure>
 </div>
@@ -483,7 +500,7 @@ Chris Reudenbach
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="../assets/images/unit03/euklid_dist_2.png" class="lightbox" data-glightbox="description: .lightbox-desc-6" data-gallery="quarto-lightbox-gallery-6" title="Euklidische Distanz Rasterdatenmodells, GITTA 2005"><img data-src="../assets/images/unit03/euklid_dist_2.png" alt="Euklidische Distanz Rasterdatenmodells, GITTA 2005"></a></p>
+<p><a href="../assets/images/unit03/euklid_dist_2.png" class="lightbox" data-glightbox="description: .lightbox-desc-7" data-gallery="quarto-lightbox-gallery-7" title="Euklidische Distanz Rasterdatenmodells, GITTA 2005"><img data-src="../assets/images/unit03/euklid_dist_2.png" alt="Euklidische Distanz Rasterdatenmodells, GITTA 2005"></a></p>
 <figcaption>Euklidische Distanz Rasterdatenmodells, GITTA 2005</figcaption>
 </figure>
 </div>
@@ -495,7 +512,7 @@ Chris Reudenbach
 <h2>Distanzzonen: Distanzpuffer und Distanztransformation</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="../assets/images/unit03/distpuff_polygone.gif" class="lightbox" data-glightbox="description: .lightbox-desc-7" data-gallery="quarto-lightbox-gallery-7" title="Pufferkonzept @gitta2005"><img data-src="../assets/images/unit03/distpuff_polygone.gif" style="width:2000.0%" alt="Pufferkonzept @gitta2005"></a></p>
+<p><a href="../assets/images/unit03/distpuff_polygone.gif" class="lightbox" data-glightbox="description: .lightbox-desc-8" data-gallery="quarto-lightbox-gallery-8" title="Pufferkonzept @gitta2005"><img data-src="../assets/images/unit03/distpuff_polygone.gif" style="width:2000.0%" alt="Pufferkonzept @gitta2005"></a></p>
 <figcaption>Pufferkonzept <span class="citation" data-cites="gitta2005">@gitta2005</span></figcaption>
 </figure>
 </div>
@@ -504,7 +521,7 @@ Chris Reudenbach
 <h2>Topologische Abfragen</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="../assets/images/unit03/topo_3.png" class="lightbox" data-glightbox="description: .lightbox-desc-8" data-gallery="quarto-lightbox-gallery-8" title="Abbildung 03-19: Topologische Beziehungen von Vektordaten unterschiedlicher Dimension , @gitta2005"><img data-src="../assets/images/unit03/topo_3.png" alt="Abbildung 03-19: Topologische Beziehungen von Vektordaten unterschiedlicher Dimension , @gitta2005"></a></p>
+<p><a href="../assets/images/unit03/topo_3.png" class="lightbox" data-glightbox="description: .lightbox-desc-9" data-gallery="quarto-lightbox-gallery-9" title="Abbildung 03-19: Topologische Beziehungen von Vektordaten unterschiedlicher Dimension , @gitta2005"><img data-src="../assets/images/unit03/topo_3.png" alt="Abbildung 03-19: Topologische Beziehungen von Vektordaten unterschiedlicher Dimension , @gitta2005"></a></p>
 <figcaption>Abbildung 03-19: Topologische Beziehungen von Vektordaten unterschiedlicher Dimension , <span class="citation" data-cites="gitta2005">@gitta2005</span></figcaption>
 </figure>
 </div>
@@ -513,7 +530,7 @@ Chris Reudenbach
 <h2>Topologische Abfragen Beispiel 2D</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="../assets/images/unit03/topo_4.png" class="lightbox" data-glightbox="description: .lightbox-desc-9" data-gallery="quarto-lightbox-gallery-9" title="Topologische Abfragen von Vektordaten unterschiedlicher Dimension, GITTA 2005"><img data-src="../assets/images/unit03/topo_4.png" alt="Topologische Abfragen von Vektordaten unterschiedlicher Dimension, GITTA 2005"></a></p>
+<p><a href="../assets/images/unit03/topo_4.png" class="lightbox" data-glightbox="description: .lightbox-desc-10" data-gallery="quarto-lightbox-gallery-10" title="Topologische Abfragen von Vektordaten unterschiedlicher Dimension, GITTA 2005"><img data-src="../assets/images/unit03/topo_4.png" alt="Topologische Abfragen von Vektordaten unterschiedlicher Dimension, GITTA 2005"></a></p>
 <figcaption>Topologische Abfragen von Vektordaten unterschiedlicher Dimension, GITTA 2005</figcaption>
 </figure>
 </div>
@@ -535,11 +552,11 @@ Chris Reudenbach
 <span class="glightbox-desc lightbox-desc-1">Nicht-manipulativen GI-Abfragen, GITTA 2005</span>
 <span class="glightbox-desc lightbox-desc-2">Die vier Booleschen Operatoren, GITTA 2005</span>
 <span class="glightbox-desc lightbox-desc-4">GITTA 2005</span>
-<span class="glightbox-desc lightbox-desc-5">Euklidische Distanz Vektordatenmodell</span>
-<span class="glightbox-desc lightbox-desc-6">Euklidische Distanz Rasterdatenmodells, GITTA 2005</span>
-<span class="glightbox-desc lightbox-desc-7">Pufferkonzept <span class="citation" data-cites="gitta2005">@gitta2005</span></span>
-<span class="glightbox-desc lightbox-desc-8">Abbildung 03-19: Topologische Beziehungen von Vektordaten unterschiedlicher Dimension , <span class="citation" data-cites="gitta2005">@gitta2005</span></span>
-<span class="glightbox-desc lightbox-desc-9">Topologische Abfragen von Vektordaten unterschiedlicher Dimension, GITTA 2005</span>
+<span class="glightbox-desc lightbox-desc-6">Euklidische Distanz Vektordatenmodell</span>
+<span class="glightbox-desc lightbox-desc-7">Euklidische Distanz Rasterdatenmodells, GITTA 2005</span>
+<span class="glightbox-desc lightbox-desc-8">Pufferkonzept <span class="citation" data-cites="gitta2005">@gitta2005</span></span>
+<span class="glightbox-desc lightbox-desc-9">Abbildung 03-19: Topologische Beziehungen von Vektordaten unterschiedlicher Dimension , <span class="citation" data-cites="gitta2005">@gitta2005</span></span>
+<span class="glightbox-desc lightbox-desc-10">Topologische Abfragen von Vektordaten unterschiedlicher Dimension, GITTA 2005</span>
 </div>
 </section>
     </div>
@@ -930,7 +947,7 @@ Chris Reudenbach
       }
     });
     </script>
-    <script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","openEffect":"zoom"});
+    <script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"descPosition":"bottom","openEffect":"zoom"});
     window.onload = () => {
       lightboxQuarto.on('slide_before_load', (data) => {
         const { slideIndex, slideNode, slideConfig, player, trigger } = data;
