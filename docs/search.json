@@ -2945,5 +2945,159 @@
       "Folien",
       "Relationen und Abfragen"
     ]
+  },
+  {
+    "objectID": "slides/w-05-slides.html#motivation-fragestellung",
+    "href": "slides/w-05-slides.html#motivation-fragestellung",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Motivation Fragestellung",
+    "text": "Motivation Fragestellung"
+  },
+  {
+    "objectID": "slides/w-05-slides.html#modellbildung-und-abstraktion",
+    "href": "slides/w-05-slides.html#modellbildung-und-abstraktion",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Modellbildung und Abstraktion",
+    "text": "Modellbildung und Abstraktion\n\n\n\n\n\n\n\nGipfel\nHöhenlage\nDominanz\nProminenz\nSchartenhöhe\nEigenständigkeit"
+  },
+  {
+    "objectID": "slides/w-05-slides.html#formale-abstraktion",
+    "href": "slides/w-05-slides.html#formale-abstraktion",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Formale Abstraktion",
+    "text": "Formale Abstraktion\n\nSource: thehighrisepages"
+  },
+  {
+    "objectID": "slides/w-05-slides.html#operatoren",
+    "href": "slides/w-05-slides.html#operatoren",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Operatoren",
+    "text": "Operatoren\n\nVergleichsoperatoren\nArithmetische Operatoren\nLogische Operatoren"
+  },
+  {
+    "objectID": "slides/w-05-slides.html#vergleichsoperator",
+    "href": "slides/w-05-slides.html#vergleichsoperator",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Vergleichsoperator",
+    "text": "Vergleichsoperator\n\n\n\nVergleichsoperator\nBedeutung\n\n\n\n\n=\nEQ (gleich)\n\n\n&gt;\nGT (größer)\n\n\n&gt;=\nGE (größer gleich)\n\n\n&lt;\nLT (kleiner)\n\n\n&lt; =\nLE (kleiner gleich)\n\n\n&lt;&gt;\nNE (ungleich)"
+  },
+  {
+    "objectID": "slides/w-05-slides.html#arithmetische-operatorendatenmodelle",
+    "href": "slides/w-05-slides.html#arithmetische-operatorendatenmodelle",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Arithmetische OperatorenDatenmodelle",
+    "text": "Arithmetische OperatorenDatenmodelle\nDie arithmetischen Operatoren werden für numerische Attribute verwendet. Gängige sind:\n\nMultiplikation *\nDivision /\nAddition +\nSubtraktion -,\nExponent exp\nModulo-Operator %"
+  },
+  {
+    "objectID": "slides/w-05-slides.html#logische-operatoren",
+    "href": "slides/w-05-slides.html#logische-operatoren",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Logische Operatoren",
+    "text": "Logische Operatoren\n\n\n\n\n\n\nDie vier Booleschen Operatoren, GITTA 2005"
+  },
+  {
+    "objectID": "slides/w-05-slides.html#beliebige-kombination-von-operatoren",
+    "href": "slides/w-05-slides.html#beliebige-kombination-von-operatoren",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Beliebige Kombination von Operatoren",
+    "text": "Beliebige Kombination von Operatoren\n\n\n\n\n\n\n\n\n\n\n\nGITTA 2005"
+  },
+  {
+    "objectID": "slides/w-05-slides.html#verschachtelte-logische-abfragen",
+    "href": "slides/w-05-slides.html#verschachtelte-logische-abfragen",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Verschachtelte logische Abfragen",
+    "text": "Verschachtelte logische Abfragen\n\n\n\n\nKreis 1: Baumart = “Lärche\nKreis 2: Vorrat &gt; 110 m3/ha\nKreis 3: Überschirmung &gt; 80%.\n\n\n\n\n\n\n\nWeitere Beipiele"
+  },
+  {
+    "objectID": "slides/w-05-slides.html#geometrische-abfragen",
+    "href": "slides/w-05-slides.html#geometrische-abfragen",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Geometrische Abfragen",
+    "text": "Geometrische Abfragen\n\n\n\n\n\n\nEuklidische Distanz Vektordatenmodell\n\n\n\n\n\n\n\nEuklidische Distanz Rasterdatenmodells, GITTA 2005"
+  },
+  {
+    "objectID": "slides/w-05-slides.html#distanzzonen-distanzpuffer-und-distanztransformation",
+    "href": "slides/w-05-slides.html#distanzzonen-distanzpuffer-und-distanztransformation",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Distanzzonen: Distanzpuffer und Distanztransformation",
+    "text": "Distanzzonen: Distanzpuffer und Distanztransformation\n\n\n\nPufferkonzept @gitta2005"
+  },
+  {
+    "objectID": "slides/w-05-slides.html#topologische-abfragen",
+    "href": "slides/w-05-slides.html#topologische-abfragen",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Topologische Abfragen",
+    "text": "Topologische Abfragen\n\n\n\nAbbildung 03-19: Topologische Beziehungen von Vektordaten unterschiedlicher Dimension , @gitta2005"
+  },
+  {
+    "objectID": "slides/w-05-slides.html#topologische-abfragen-beispiel-2d",
+    "href": "slides/w-05-slides.html#topologische-abfragen-beispiel-2d",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Topologische Abfragen Beispiel 2D",
+    "text": "Topologische Abfragen Beispiel 2D\n\n\n\nTopologische Abfragen von Vektordaten unterschiedlicher Dimension, GITTA 2005"
+  },
+  {
+    "objectID": "slides/w-05-slides.html#zusammenfassung",
+    "href": "slides/w-05-slides.html#zusammenfassung",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Zusammenfassung",
+    "text": "Zusammenfassung\n\nNutzung des relationalen Datenmodells für strukturierte Datenspeicherung.\nEinsatz von formalen Abfragesprachen für inhaltliche und räumliche Analysen.\nVerwendung von Operatoren und speziellen abgeleiteten Operatoren wie Distanzpuffer.\n\n\n\n\n\n\n\n\nDie vier Booleschen Operatoren, GITTA 2005\nGITTA 2005\nEuklidische Distanz Vektordatenmodell\nEuklidische Distanz Rasterdatenmodells, GITTA 2005\nPufferkonzept @gitta2005\nAbbildung 03-19: Topologische Beziehungen von Vektordaten unterschiedlicher Dimension , @gitta2005\nTopologische Abfragen von Vektordaten unterschiedlicher Dimension, GITTA 2005"
+  },
+  {
+    "objectID": "slides/w-05-slides.html#motivation-fragestellung-1",
+    "href": "slides/w-05-slides.html#motivation-fragestellung-1",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Motivation Fragestellung",
+    "text": "Motivation Fragestellung"
+  },
+  {
+    "objectID": "slides/w-05-slides.html#problemlösungs-fähigkeit",
+    "href": "slides/w-05-slides.html#problemlösungs-fähigkeit",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Problemlösungs-Fähigkeit",
+    "text": "Problemlösungs-Fähigkeit"
+  },
+  {
+    "objectID": "slides/w-05-slides.html#komanndozeilen-gi-handwerk",
+    "href": "slides/w-05-slides.html#komanndozeilen-gi-handwerk",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Komanndozeilen GI-Handwerk",
+    "text": "Komanndozeilen GI-Handwerk"
+  },
+  {
+    "objectID": "slides/w-05-slides.html#das-problemlösungs-handwerk",
+    "href": "slides/w-05-slides.html#das-problemlösungs-handwerk",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Das Problemlösungs-Handwerk",
+    "text": "Das Problemlösungs-Handwerk"
+  },
+  {
+    "objectID": "slides/w-05-slides.html#interaktives-gi-handwerk",
+    "href": "slides/w-05-slides.html#interaktives-gi-handwerk",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Interaktives GI-Handwerk",
+    "text": "Interaktives GI-Handwerk"
+  },
+  {
+    "objectID": "slides/w-05-slides.html#programmierung-für-nicht-proammiererinnen",
+    "href": "slides/w-05-slides.html#programmierung-für-nicht-proammiererinnen",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Programmierung für Nicht-Proammierer*innen",
+    "text": "Programmierung für Nicht-Proammierer*innen"
+  },
+  {
+    "objectID": "slides/w-05-slides.html#übersetzung-in-die-technischen-gi-erfordernisse",
+    "href": "slides/w-05-slides.html#übersetzung-in-die-technischen-gi-erfordernisse",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Übersetzung in die technischen GI-Erfordernisse",
+    "text": "Übersetzung in die technischen GI-Erfordernisse"
+  },
+  {
+    "objectID": "slides/w-05-slides.html#wie-soll-das-gehen",
+    "href": "slides/w-05-slides.html#wie-soll-das-gehen",
+    "title": "Wissenschaftlicher Workflow",
+    "section": "Wie soll das gehen?",
+    "text": "Wie soll das gehen?"
   }
 ]
