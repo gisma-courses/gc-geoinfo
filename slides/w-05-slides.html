@@ -377,8 +377,7 @@ Chris Reudenbach
 <ul>
 <li><p>Gipfel (Höhe/Position)</p></li>
 <li><p>Dominanz</p></li>
-<li><p>Prominenz</p></li>
-<li><p>Schartenhöhe</p></li>
+<li><p>Prominenz/Schartenhöhe</p></li>
 <li><p>Eigenständigkeit</p>
 <p><a href="../assets/images/pp/agis-concept2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="../assets/images/pp/agis-concept2.png" style="width:120.0%"></a></p></li>
 </ul>
@@ -836,7 +835,7 @@ Chris Reudenbach
       }
     });
     </script>
-    <script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","loop":false,"openEffect":"zoom"});
+    <script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom"});
     window.onload = () => {
       lightboxQuarto.on('slide_before_load', (data) => {
         const { slideIndex, slideNode, slideConfig, player, trigger } = data;
