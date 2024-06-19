@@ -375,8 +375,7 @@ Chris Reudenbach
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <ul>
-<li><p>Gipfel</p></li>
-<li><p>Höhenlage</p></li>
+<li><p>Gipfel (Höhe/Position)</p></li>
 <li><p>Dominanz</p></li>
 <li><p>Prominenz</p></li>
 <li><p>Schartenhöhe</p></li>
@@ -837,7 +836,7 @@ Chris Reudenbach
       }
     });
     </script>
-    <script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","loop":false});
+    <script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","loop":false,"openEffect":"zoom"});
     window.onload = () => {
       lightboxQuarto.on('slide_before_load', (data) => {
         const { slideIndex, slideNode, slideConfig, player, trigger } = data;
