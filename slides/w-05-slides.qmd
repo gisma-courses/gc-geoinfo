@@ -43,8 +43,7 @@ Source:  [thehighrisepages](https://www.thehighrisepages.de/bergtouren/na_orogr.
 
 -   Gipfel (Höhe/Position)
 -   Dominanz
--   Prominenz
--   Schartenhöhe
+-   Prominenz/Schartenhöhe
 -   Eigenständigkeit
 
     ![](../assets/images/pp/agis-concept2.png){width="120%"}
