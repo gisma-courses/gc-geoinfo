@@ -178,7 +178,8 @@ website:
             text: Raumkonzepte
           - href: slides/w-02-slides.qmd
             text: Relationen und Abfragen            
-            
+          - href: slides/w-05-slides.qmd
+            text: Dekonstruktion von Fragestellungen              
 execute:
   freeze: auto
   echo: false
