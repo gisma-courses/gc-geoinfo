@@ -41,16 +41,10 @@ Source:  [thehighrisepages](https://www.thehighrisepages.de/bergtouren/na_orogr.
 ::: {layout-ncol="2" layout-valign="center"}
 ![](../assets/images/pp/agis-concept1.png){width="50%"}
 
--   Gipfel
-
--   Höhenlage
-
+-   Gipfel (Höhe/Position)
 -   Dominanz
-
 -   Prominenz
-
 -   Schartenhöhe
-
 -   Eigenständigkeit
 
     ![](../assets/images/pp/agis-concept2.png){width="120%"}
