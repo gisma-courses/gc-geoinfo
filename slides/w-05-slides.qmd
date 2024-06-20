@@ -17,24 +17,17 @@ format:
 lightbox: true
 ---
 
-
-
 ## Motivation Fragestellung
 
-::: { layout-align="center"}
+::: {layout-align="center"}
 [![](../assets/images/pp/agis-workflow1.png){valign="center" width="60%" fig-align="center"}](../assets/pdf/DAV_Panorama_2_2012.pdf)
-
-
 :::
-
 
 ## Formale Abstraktion
 
 ![](../assets/images/pp/formel.png)
 
-Source:  [thehighrisepages](https://www.thehighrisepages.de/bergtouren/na_orogr.htm#BK)
-
-
+Source: [thehighrisepages](https://www.thehighrisepages.de/bergtouren/na_orogr.htm#BK)
 
 ## Modellbildung und Abstraktion
 
@@ -42,8 +35,11 @@ Source:  [thehighrisepages](https://www.thehighrisepages.de/bergtouren/na_orogr.
 ![](../assets/images/pp/agis-concept1.png){width="50%"}
 
 -   Gipfel (Höhe/Position)
+
 -   Dominanz
+
 -   Prominenz/Schartenhöhe
+
 -   Eigenständigkeit
 
     ![](../assets/images/pp/agis-concept2.png){width="120%"}
@@ -61,12 +57,11 @@ Source:  [thehighrisepages](https://www.thehighrisepages.de/bergtouren/na_orogr.
 
 ![](../assets/images/pp/slide3.png){width="90%" fig-align="center"}
 
-
 ## Komanndozeilen GI-Handwerk
 
 ![](../assets/images/pp/slide4.png){width="90%" fig-align="center"}
 
-## Programmierung für Nicht-Proammierer*innen
+## Programmierung für Nicht-Proammierer\*innen
 
 ![](../assets/images/pp/slide5.png){width="90%" fig-align="center"}
 
@@ -78,6 +73,15 @@ Source:  [thehighrisepages](https://www.thehighrisepages.de/bergtouren/na_orogr.
 
 ![](../assets/images/pp/slide7.png){width="90%" fig-align="center"}
 
+## Beispiel Fluten zur Ermittlung der Prominenz
+
+![](../assets/images/pp/flood0.png)
+
+## Wie geht das schneller - Binäre Suche
+
+![](../assets/images/pp/flood1.png)
 
 
+## Wie geht das schneller - Binäre Suche Abbruchkriterium
 
+![](/assets/images/pp/flood2.png)
