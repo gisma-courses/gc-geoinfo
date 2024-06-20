@@ -81,7 +81,6 @@ Source: [thehighrisepages](https://www.thehighrisepages.de/bergtouren/na_orogr.h
 
 ![](../assets/images/pp/flood1.png)
 
-
 ## Wie geht das schneller - Binäre Suche Abbruchkriterium
 
-![](/assets/images/pp/flood2.png)
+![](../assets/images/pp/flood2.png)
