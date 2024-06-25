@@ -1,6 +1,6 @@
 ---
 title: "Der Perfekte Gipfel"
-subtitle: "Von der Idee zum reproduzierbaren Produktion"
+subtitle: "Dekonstruiere ich ein Problem?"
 author:  Chris Reudenbach
 #title-slide-attributes: 
 #  data-background-image: ../images/title-uni2.png
