@@ -1,6 +1,6 @@
 ---
-title: "Wissenschaftlicher Workflow"
-subtitle: "Wie können Artikel dekonstruiert werden?"
+title: "Der Perfekte Gipfel"
+subtitle: "Von der Idee zum reproduzierbaren Produktion"
 author:  Chris Reudenbach
 #title-slide-attributes: 
 #  data-background-image: ../images/title-uni2.png
