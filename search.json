@@ -786,7 +786,7 @@
     "href": "slides/w-05-slides.html#modellbildung-und-abstraktion",
     "title": "Der Perfekte Gipfel",
     "section": "Modellbildung und Abstraktion",
-    "text": "Modellbildung und Abstraktion\n\n\n\n\n\n\n\nGipfel (Höhe/Position)\nDominanz\nProminenz/Schartenhöhe\nEigenständigkeit",
+    "text": "Modellbildung und Abstraktion\n\n\n\n\n\n\n\n\n\n\nGipfel (Höhe/Position)\nDominanz\nProminenz/Schartenhöhe\nEigenständigkeit",
     "crumbs": [
       "Folien",
       "Dekonstruktion von Fragestellungen"
@@ -918,7 +918,7 @@
     "href": "slides/w-01-slides.html#koordinatensysteme",
     "title": "Raumkonzepte",
     "section": "Koordinatensysteme",
-    "text": "Koordinatensysteme\n\n\n\n\n\n\n2D kartesisches Koordinatensystem (@bolino)\n\n\n\n\n\n\n\n3D kartesisches Koordinatensystem (@sakurambo)",
+    "text": "Koordinatensysteme\n\n\n\n\n\n\n\n\n\n2D kartesisches Koordinatensystem (@bolino)\n\n\n\n\n\n\n\n3D kartesisches Koordinatensystem (@sakurambo)",
     "crumbs": [
       "Folien",
       "Raumkonzepte"
@@ -962,7 +962,7 @@
     "href": "slides/w-01-slides.html#raster--und-vektordatenmodell",
     "title": "Raumkonzepte",
     "section": "Raster- und Vektordatenmodell",
-    "text": "Raster- und Vektordatenmodell\n\n\n\n\n\n\n@gisma\n\n\n\n\n\n\n\n@gisma",
+    "text": "Raster- und Vektordatenmodell\n\n\n\n\n\n\n\n\n\n@gisma\n\n\n\n\n\n\n\n@gisma",
     "crumbs": [
       "Folien",
       "Raumkonzepte"
@@ -1039,7 +1039,7 @@
     "href": "slides/w-01-slides.html#raum-zeit-kodierung---geographische-koordinaten",
     "title": "Raumkonzepte",
     "section": "Raum-Zeit-Kodierung - Geographische Koordinaten",
-    "text": "Raum-Zeit-Kodierung - Geographische Koordinaten\n\n\n\n\n\n\nDarstellung eines Rotationsellipsoid, @gisma verändert nach @augpi\n\n\n\n\n\n\n\nBestimmung geographischer Koordinaten auf einem Rotationsellipsoid, @enix\n\n\n\n\n\n\n\n\n\n\n\n\n2D kartesisches Koordinatensystem (@bolino)\n3D kartesisches Koordinatensystem (@sakurambo)\nDimensionalität von Geoobjekten (verändert nach @bartelme2006\nTagesliniennetzplan der Stadtwerke Marburg, (@swm)\nAusschnitt der realen Welt und die schematische Repräsentation als Raster- bzw. Vektordatenmodell, (@gisma)\n@gisma\n@gisma\nDas implizite Raumkonzept der Zeilen- und Spaltenzählung (Laufvariablen) und das explizite Zuweisen mit Hilfe des Kartesischen Koordinatensystems für einen Rasterdatensatz, @gisma\n@gisma\n@gisma\nPannenort nördlich von Holtau, @gisma\nHistorischer Katasterplan von Bukowsko 1906. @silas\nDarstellung eines Rotationsellipsoid, @gisma verändert nach @augpi\nBestimmung geographischer Koordinaten auf einem Rotationsellipsoid, @enix",
+    "text": "Raum-Zeit-Kodierung - Geographische Koordinaten\n\n\n\n\n\n\n\n\n\nDarstellung eines Rotationsellipsoid, @gisma verändert nach @augpi\n\n\n\n\n\n\n\nBestimmung geographischer Koordinaten auf einem Rotationsellipsoid, @enix",
     "crumbs": [
       "Folien",
       "Raumkonzepte"
@@ -1122,7 +1122,7 @@
     "href": "slides/w-02-slides.html#koordinatensysteme",
     "title": "Relationen und Abfragen",
     "section": "Koordinatensysteme",
-    "text": "Koordinatensysteme\n\n\n\n\n\n\nNicht-manipulativen GI-Abfragen, GITTA 2005",
+    "text": "Koordinatensysteme\n\n\n\n\n\n\n\n\n\nNicht-manipulativen GI-Abfragen, GITTA 2005",
     "crumbs": [
       "Folien",
       "Relationen und Abfragen"
@@ -1166,7 +1166,7 @@
     "href": "slides/w-02-slides.html#logische-operatoren",
     "title": "Relationen und Abfragen",
     "section": "Logische Operatoren",
-    "text": "Logische Operatoren\n\n\n\n\n\n\nDie vier Booleschen Operatoren, GITTA 2005",
+    "text": "Logische Operatoren\n\n\n\n\n\n\n\n\n\nDie vier Booleschen Operatoren, GITTA 2005",
     "crumbs": [
       "Folien",
       "Relationen und Abfragen"
@@ -1177,7 +1177,7 @@
     "href": "slides/w-02-slides.html#beliebige-kombination-von-operatoren",
     "title": "Relationen und Abfragen",
     "section": "Beliebige Kombination von Operatoren",
-    "text": "Beliebige Kombination von Operatoren\n\n\n\n\n\n\n\n\n\n\n\nGITTA 2005",
+    "text": "Beliebige Kombination von Operatoren\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGITTA 2005",
     "crumbs": [
       "Folien",
       "Relationen und Abfragen"
@@ -1188,7 +1188,7 @@
     "href": "slides/w-02-slides.html#verschachtelte-logische-abfragen",
     "title": "Relationen und Abfragen",
     "section": "Verschachtelte logische Abfragen",
-    "text": "Verschachtelte logische Abfragen\n\n\n\n\nKreis 1: Baumart = “Lärche\nKreis 2: Vorrat &gt; 110 m3/ha\nKreis 3: Überschirmung &gt; 80%.\n\n\n\n\n\n\n\nWeitere Beipiele",
+    "text": "Verschachtelte logische Abfragen\n\n\n\n\n\n\n\nKreis 1: Baumart = “Lärche\nKreis 2: Vorrat &gt; 110 m3/ha\nKreis 3: Überschirmung &gt; 80%.\n\n\n\n\n\n\n\nWeitere Beipiele",
     "crumbs": [
       "Folien",
       "Relationen und Abfragen"
@@ -1199,7 +1199,7 @@
     "href": "slides/w-02-slides.html#geometrische-abfragen",
     "title": "Relationen und Abfragen",
     "section": "Geometrische Abfragen",
-    "text": "Geometrische Abfragen\n\n\n\n\n\n\nEuklidische Distanz Vektordatenmodell\n\n\n\n\n\n\n\nEuklidische Distanz Rasterdatenmodells, GITTA 2005",
+    "text": "Geometrische Abfragen\n\n\n\n\n\n\n\n\n\nEuklidische Distanz Vektordatenmodell\n\n\n\n\n\n\n\nEuklidische Distanz Rasterdatenmodells, GITTA 2005",
     "crumbs": [
       "Folien",
       "Relationen und Abfragen"
@@ -1243,7 +1243,7 @@
     "href": "slides/w-02-slides.html#zusammenfassung",
     "title": "Relationen und Abfragen",
     "section": "Zusammenfassung",
-    "text": "Zusammenfassung\n\nNutzung des relationalen Datenmodells für strukturierte Datenspeicherung.\nEinsatz von formalen Abfragesprachen für inhaltliche und räumliche Analysen.\nVerwendung von Operatoren und speziellen abgeleiteten Operatoren wie Distanzpuffer.\n\n\n\n\n\n\n\n\nNicht-manipulativen GI-Abfragen, GITTA 2005\nDie vier Booleschen Operatoren, GITTA 2005\nGITTA 2005\nEuklidische Distanz Vektordatenmodell\nEuklidische Distanz Rasterdatenmodells, GITTA 2005\nPufferkonzept @gitta2005\nAbbildung 03-19: Topologische Beziehungen von Vektordaten unterschiedlicher Dimension , @gitta2005\nTopologische Abfragen von Vektordaten unterschiedlicher Dimension, GITTA 2005",
+    "text": "Zusammenfassung\n\nNutzung des relationalen Datenmodells für strukturierte Datenspeicherung.\nEinsatz von formalen Abfragesprachen für inhaltliche und räumliche Analysen.\nVerwendung von Operatoren und speziellen abgeleiteten Operatoren wie Distanzpuffer.",
     "crumbs": [
       "Folien",
       "Relationen und Abfragen"
