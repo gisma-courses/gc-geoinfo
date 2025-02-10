@@ -1,6 +1,6 @@
 ---
 title: "Der Perfekte Gipfel"
-subtitle: "Dekonstruiere ich ein Problem?"
+subtitle: "Wie dekonstruiere ich ein Problem?"
 author:  Chris Reudenbach
 #title-slide-attributes: 
 #  data-background-image: ../images/title-uni2.png
