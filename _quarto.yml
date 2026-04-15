@@ -35,7 +35,7 @@ website:
         text: Projektarbeit
         href: unit00/unit00-02-formales.qmd
       - icon: clipboard-check
-        text: Sitzugnsgestaltung
+        text: Sitzungsgestaltung
         href: unit00/unit00-03-formales.qmd
       
       
