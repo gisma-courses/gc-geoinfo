@@ -91,7 +91,7 @@ Jedes Thema enthält eine konkrete Projektidee, eine knappe konzeptionelle Rahmu
   * Copernicus DEM
   * optionale Umweltindikatoren aus offenen Quellen
 
-## 7. Vorher–Nachher ohne Pathos
+## 7. Vorher–Nachher ein Klassiker
 
 * **Konkrete Idee:** Was hat sich zwischen zwei Zeitständen räumlich tatsächlich verändert, etwa vor und nach Umgestaltung, Neubau oder Flächennutzungsänderung?
 * **Konzeptidee:** Ziel ist eine **nüchterne Differenzanalyse**, nicht eine vorgefertigte Aufwertungs- oder Fortschrittserzählung.
@@ -119,7 +119,7 @@ Jedes Thema enthält eine konkrete Projektidee, eine knappe konzeptionelle Rahmu
   * Urban Atlas für Nutzungs- und Ausschlussflächen
   * GRASS / QGIS-Processing für kostenbasierte Raster-Workflows
 
-## 9. Rangfolgen unter Knappheit
+## 9. Rangfolgen unter Ressourcenknappheit
 
 * **Konkrete Idee:** Wenn nur drei Flächen entsiegelt, begrünt, beschattet oder aufgewertet werden können: Welche sollten zuerst gewählt werden?
 * **Konzeptidee:** Das Projekt behandelt **Priorisierung unter Ressourcenknappheit**. Es geht nicht nur um Eignung, sondern um echte Auswahlentscheidungen.
@@ -133,7 +133,7 @@ Jedes Thema enthält eine konkrete Projektidee, eine knappe konzeptionelle Rahmu
   * Copernicus DEM
   * methodische Orientierung über Suitability- und Priorisierungsworkflows in QGIS
 
-## 10. Interpolation mit Misstrauen
+## 10. Interpolation und Unsicherheit
 
 * **Konkrete Idee:** Wie verändert sich ein interpoliertes Temperatur-, Luftqualitäts- oder Lärmfeld, wenn Verfahren, Parameter oder Punktdichte variiert werden?
 * **Konzeptidee:** Flächenwerte werden hier als **Schätzung unter Unsicherheit** verstanden, nicht als objektive Wahrheit.
@@ -196,14 +196,14 @@ Jedes Thema enthält eine konkrete Projektidee, eine knappe konzeptionelle Rahmu
 * [Urban Atlas](https://land.copernicus.eu/en/products/urban-atlas)
 * [Geofabrik / OpenStreetMap](https://download.geofabrik.de/)
 
-### 6. Rangfolgen unter Knappheit
+### 6. Rangfolgen unter Ressourcenknappheit
 
 * [Urban Atlas](https://land.copernicus.eu/en/products/urban-atlas)
 * [Copernicus DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM)
 * [Geofabrik / OpenStreetMap](https://download.geofabrik.de/)
 * [QGIS Documentation – Processing Framework](https://docs.qgis.org/latest/en/docs/user_manual/processing/index.html)
 
-### 7. Interpolation mit Misstrauen
+### 7. Interpolation und Unsicherheit
 
 * [QGIS Documentation – Interpolation](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/interpolation.html)
 * [OpenAQ](https://openaq.org/)
@@ -221,7 +221,7 @@ Jedes Thema enthält eine konkrete Projektidee, eine knappe konzeptionelle Rahmu
 * [Copernicus DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM)
 * [Geofabrik / OpenStreetMap](https://download.geofabrik.de/)
 
-### 10. Vorher–Nachher ohne Pathos
+### 10. Vorher–Nachher ein Klassiker
 
 * [Urban Atlas](https://land.copernicus.eu/en/products/urban-atlas)
 * [Geofabrik / OpenStreetMap](https://download.geofabrik.de/)
