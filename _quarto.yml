@@ -28,9 +28,9 @@ website:
   navbar:
     logo: /images/logo.png
     right:
-      - icon: compass
-        text: Formales
-        href: unit00/unit00-01-formales.qmd
+#      - icon: compass
+#        text: Formales
+#        href: unit00/unit00-01-formales.qmd
       - icon: question-square-fill
         text: Projektarbeit
         href: unit00/unit00-02-formales.qmd
