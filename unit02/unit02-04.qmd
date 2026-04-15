@@ -14,6 +14,10 @@ lang: de
 comments: false
 ---
 
+::: {.banner-credit}
+Titelbild: Quelle nach [@snow].
+:::
+
 Die zentrale Aufgabe eines Koordinatensystems in Geoinformationssystemen ist die räumlich reproduzierbare Verortung diskreter und/oder kontinuierlicher Geoinformationselemente.
 
 Über die unmittelbare räumliche Dimension hinausgehende Eigenschaften können den Geoobjekten als Attribute zugeordnet werden. Um die reale Welt abstrahieren zu können, muss unsere GIS-Software grundlegende Methoden zur Verfügung stellen, die das geographische Datentripel **Zeit, Ort und Attribut** konsistent nutzbar machen.
@@ -111,8 +115,6 @@ Bearbeiten Sie bitte folgende Aufgaben:
 - Verwenden Sie Google Earth, um zeitliche Daten zu analysieren, z.B. die Veränderung von Landnutzungsmustern im Laufe der Zeit. Verwenden Sie Zeitreihendaten und erstellen Sie Visualisierungen, die zeitliche Trends und Muster aufzeigen. Wie bewerten Sie die zeitliche Entwicklung räumlicher Informationen?
 
 
-::: {#cite  style="color: transparent;"}
-@snow
-:::
+
 
 :::

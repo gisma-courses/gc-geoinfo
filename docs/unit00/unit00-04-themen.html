@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Formales – Grundlagenkurs GI-S (QGIS)</title>
+<title>Projekt-Themen – Grundlagenkurs GI-S (QGIS)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,11 +80,11 @@ ul.task-list li input[type="checkbox"] {
       .quarto-title-block .quarto-title-banner h5,
       .quarto-title-block .quarto-title-banner h6
       {
-        color: Black;
+        color: black;
       }
 
       .quarto-title-block .quarto-title-banner {
-        color: Black;
+        color: black;
 background-image: url(../assets/images/splash-geoinformatik.jpg);
 background-size: cover;
       }
@@ -120,10 +120,10 @@ background-size: cover;
 
 
 <link rel="stylesheet" href="../css/styles.css">
-<meta property="og:title" content="Formales – Grundlagenkurs GI-S (QGIS)">
+<meta property="og:title" content="Projekt-Themen – Grundlagenkurs GI-S (QGIS)">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
-<meta name="twitter:title" content="Formales – Grundlagenkurs GI-S (QGIS)">
+<meta name="twitter:title" content="Projekt-Themen – Grundlagenkurs GI-S (QGIS)">
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@gisma">
 <meta name="twitter:card" content="summary">
@@ -312,16 +312,28 @@ background-size: cover;
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../unit00/unit00-02-formales.html"> <i class="bi bi-question-square-fill" role="img">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-formales" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Formales</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-formales">    
+        <li>
+    <a class="dropdown-item" href="../unit00/unit00-02-formales.html"><i class="bi bi-exclamation-square-fill" role="img">
 </i> 
-<span class="menu-text">Projektarbeit</span></a>
+ <span class="dropdown-text">Formalia</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../unit00/unit00-03-formales.html"> <i class="bi bi-clipboard-check" role="img">
+        <li>
+    <a class="dropdown-item" href="../unit00/unit00-03-formales.html"><i class="bi bi-clipboard-check" role="img">
 </i> 
-<span class="menu-text">Sitzungsgestaltung</span></a>
+ <span class="dropdown-text">Gestaltung der studentischen Übungssitzungen</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../unit00/unit00-04-themen.html"><i class="bi bi-map" role="img">
+</i> 
+ <span class="dropdown-text">Projekt-Themen</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -334,7 +346,7 @@ background-size: cover;
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Formales</h1>
+      <h1 class="title">Projekt-Themen</h1>
                       </div>
   </div>
     
@@ -355,29 +367,37 @@ background-size: cover;
     <h2 id="toc-title">Inhalt</h2>
    
   <ul>
-  <li><a href="#anwesenheit" id="toc-anwesenheit" class="nav-link active" data-scroll-target="#anwesenheit">Anwesenheit</a></li>
-  <li><a href="#übersicht-der-kommunikationsformen" id="toc-übersicht-der-kommunikationsformen" class="nav-link" data-scroll-target="#übersicht-der-kommunikationsformen">Übersicht der Kommunikationsformen</a>
+  <li><a href="#hotspots-ohne-erklärung" id="toc-hotspots-ohne-erklärung" class="nav-link active" data-scroll-target="#hotspots-ohne-erklärung">1. Hotspots ohne Erklärung</a></li>
+  <li><a href="#sichtachsen-und-tote-winkel" id="toc-sichtachsen-und-tote-winkel" class="nav-link" data-scroll-target="#sichtachsen-und-tote-winkel">2. Sichtachsen und tote Winkel</a></li>
+  <li><a href="#verlorene-mitte" id="toc-verlorene-mitte" class="nav-link" data-scroll-target="#verlorene-mitte">3. Verlorene Mitte</a></li>
+  <li><a href="#räume-der-überlagerung" id="toc-räume-der-überlagerung" class="nav-link" data-scroll-target="#räume-der-überlagerung">4. Räume der Überlagerung</a></li>
+  <li><a href="#maßstab-als-problem" id="toc-maßstab-als-problem" class="nav-link" data-scroll-target="#maßstab-als-problem">5. Maßstab als Problem</a></li>
+  <li><a href="#räume-die-sich-widersprechen" id="toc-räume-die-sich-widersprechen" class="nav-link" data-scroll-target="#räume-die-sich-widersprechen">6. Räume, die sich widersprechen</a></li>
+  <li><a href="#vorhernachher-ohne-pathos" id="toc-vorhernachher-ohne-pathos" class="nav-link" data-scroll-target="#vorhernachher-ohne-pathos">7. Vorher–Nachher ohne Pathos</a></li>
+  <li><a href="#korridore-statt-punkte" id="toc-korridore-statt-punkte" class="nav-link" data-scroll-target="#korridore-statt-punkte">8. Korridore statt Punkte</a></li>
+  <li><a href="#rangfolgen-unter-knappheit" id="toc-rangfolgen-unter-knappheit" class="nav-link" data-scroll-target="#rangfolgen-unter-knappheit">9. Rangfolgen unter Knappheit</a></li>
+  <li><a href="#interpolation-mit-misstrauen" id="toc-interpolation-mit-misstrauen" class="nav-link" data-scroll-target="#interpolation-mit-misstrauen">10. Interpolation mit Misstrauen</a></li>
+  <li><a href="#gemeinsame-basisquellen" id="toc-gemeinsame-basisquellen" class="nav-link" data-scroll-target="#gemeinsame-basisquellen">Gemeinsame Basisquellen</a>
   <ul class="collapse">
-  <li><a href="#diese-website" id="toc-diese-website" class="nav-link" data-scroll-target="#diese-website">Diese Website</a></li>
-  <li><a href="#kursbereich-in-ilias" id="toc-kursbereich-in-ilias" class="nav-link" data-scroll-target="#kursbereich-in-ilias">Kursbereich in Ilias</a></li>
-  <li><a href="#fragen" id="toc-fragen" class="nav-link" data-scroll-target="#fragen">Fragen</a></li>
+  <li><a href="#methodische-quellen" id="toc-methodische-quellen" class="nav-link" data-scroll-target="#methodische-quellen">Methodische Quellen</a></li>
+  <li><a href="#datensätze" id="toc-datensätze" class="nav-link" data-scroll-target="#datensätze">Datensätze</a></li>
   </ul></li>
-  <li><a href="#zeitaufwand-und-ablauf" id="toc-zeitaufwand-und-ablauf" class="nav-link" data-scroll-target="#zeitaufwand-und-ablauf">Zeitaufwand und Ablauf</a>
+  <li><a href="#quellenlinks-nach-themen" id="toc-quellenlinks-nach-themen" class="nav-link" data-scroll-target="#quellenlinks-nach-themen">Quellenlinks nach Themen</a>
   <ul class="collapse">
-  <li><a href="#kursverlauf-sose-2024" id="toc-kursverlauf-sose-2024" class="nav-link" data-scroll-target="#kursverlauf-sose-2024">Kursverlauf SoSe 2024</a></li>
-  <li><a href="#anforderungen-und-zeitaufwand" id="toc-anforderungen-und-zeitaufwand" class="nav-link" data-scroll-target="#anforderungen-und-zeitaufwand">Anforderungen und Zeitaufwand</a></li>
-  <li><a href="#exemplarischer-stundenplan-der-lehrveranstaltung" id="toc-exemplarischer-stundenplan-der-lehrveranstaltung" class="nav-link" data-scroll-target="#exemplarischer-stundenplan-der-lehrveranstaltung">Exemplarischer Stundenplan der Lehrveranstaltung</a></li>
+  <li><a href="#hotspots-ohne-erklärung-1" id="toc-hotspots-ohne-erklärung-1" class="nav-link" data-scroll-target="#hotspots-ohne-erklärung-1">1. Hotspots ohne Erklärung</a></li>
+  <li><a href="#sichtachsen-und-tote-winkel-1" id="toc-sichtachsen-und-tote-winkel-1" class="nav-link" data-scroll-target="#sichtachsen-und-tote-winkel-1">2. Sichtachsen und tote Winkel</a></li>
+  <li><a href="#verlorene-mitte-1" id="toc-verlorene-mitte-1" class="nav-link" data-scroll-target="#verlorene-mitte-1">3. Verlorene Mitte</a></li>
+  <li><a href="#räume-der-überlagerung-1" id="toc-räume-der-überlagerung-1" class="nav-link" data-scroll-target="#räume-der-überlagerung-1">4. Räume der Überlagerung</a></li>
+  <li><a href="#korridore-statt-punkte-1" id="toc-korridore-statt-punkte-1" class="nav-link" data-scroll-target="#korridore-statt-punkte-1">5. Korridore statt Punkte</a></li>
+  <li><a href="#rangfolgen-unter-knappheit-1" id="toc-rangfolgen-unter-knappheit-1" class="nav-link" data-scroll-target="#rangfolgen-unter-knappheit-1">6. Rangfolgen unter Knappheit</a></li>
+  <li><a href="#interpolation-mit-misstrauen-1" id="toc-interpolation-mit-misstrauen-1" class="nav-link" data-scroll-target="#interpolation-mit-misstrauen-1">7. Interpolation mit Misstrauen</a></li>
+  <li><a href="#maßstab-als-problem-1" id="toc-maßstab-als-problem-1" class="nav-link" data-scroll-target="#maßstab-als-problem-1">8. Maßstab als Problem</a></li>
+  <li><a href="#räume-die-sich-widersprechen-1" id="toc-räume-die-sich-widersprechen-1" class="nav-link" data-scroll-target="#räume-die-sich-widersprechen-1">9. Räume, die sich widersprechen</a></li>
+  <li><a href="#vorhernachher-ohne-pathos-1" id="toc-vorhernachher-ohne-pathos-1" class="nav-link" data-scroll-target="#vorhernachher-ohne-pathos-1">10. Vorher–Nachher ohne Pathos</a></li>
   </ul></li>
-  <li><a href="#studienleistung" id="toc-studienleistung" class="nav-link" data-scroll-target="#studienleistung">Studienleistung</a></li>
-  <li><a href="#prüfungsleistung" id="toc-prüfungsleistung" class="nav-link" data-scroll-target="#prüfungsleistung">Prüfungsleistung</a>
-  <ul class="collapse">
-  <li><a href="#gewichtung-der-übungen" id="toc-gewichtung-der-übungen" class="nav-link" data-scroll-target="#gewichtung-der-übungen">Gewichtung der Übungen</a></li>
-  <li><a href="#bewertungskriterien-projektarbeit" id="toc-bewertungskriterien-projektarbeit" class="nav-link" data-scroll-target="#bewertungskriterien-projektarbeit">Bewertungskriterien Projektarbeit</a></li>
-  <li><a href="#einreichungen" id="toc-einreichungen" class="nav-link" data-scroll-target="#einreichungen">Einreichungen</a></li>
-  </ul></li>
-  <li><a href="#kurszeiten" id="toc-kurszeiten" class="nav-link" data-scroll-target="#kurszeiten">Kurszeiten</a></li>
+  <li><a href="#hinweise-zur-themenwahl" id="toc-hinweise-zur-themenwahl" class="nav-link" data-scroll-target="#hinweise-zur-themenwahl">Hinweise zur Themenwahl</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit00/unit00-01-formales.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit00/unit00-04-themen.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -387,237 +407,293 @@ background-size: cover;
 
 
 
-<p>Die Aufgaben im Reader und die Übungsblätter auf den Kursseiten bilden die Grundlage für die Studien- und Prüfungsleistungen.</p>
-<section id="anwesenheit" class="level2">
-<h2 class="anchored" data-anchor-id="anwesenheit">Anwesenheit</h2>
-<p>Die Übungen zu diesem Kurs finden grundsätzlich als <strong>Präsenzveranstaltung</strong> statt. Obwohl bekanntlich keine rechtlich verbindliche Anwesenheitspflicht besteht, ist Ihre Anwesenheit erwünscht und erforderlich, da der Kursverlauf maßgeblich durch Ihre Frage- und Diskussionsbeiträge bestimmt wird. In begründeten Ausnahmefällen können einzelne Sitzungen online oder per Streaming durchgeführt werden.</p>
-</section>
-<section id="übersicht-der-kommunikationsformen" class="level2">
-<h2 class="anchored" data-anchor-id="übersicht-der-kommunikationsformen">Übersicht der Kommunikationsformen</h2>
-<section id="diese-website" class="level3">
-<h3 class="anchored" data-anchor-id="diese-website">Diese Website</h3>
-<p>Diese Webseite dient der einseitigen und überwiegend asynchronen Kommunikation und der Bereitstellung von Lern-/Lehrmaterialien.</p>
-</section>
-<section id="kursbereich-in-ilias" class="level3">
-<h3 class="anchored" data-anchor-id="kursbereich-in-ilias">Kursbereich in Ilias</h3>
-<p>Der [Kursbereich der Lernplattform PUM Ilias] (https://ilias.uni-marburg.de/login.php?target=&amp;client_id=UNIMR&amp;auth_stat=) dient der Organisation des Kurses, der Bereitstellung der urheberrechtlich geschützten Materialien, der Bereitstellung weiterer Kommunikationsformate, den obligatorischen Self-Assessments und der Abgabe der Projektarbeit.</p>
-</section>
-<section id="fragen" class="level3">
-<h3 class="anchored" data-anchor-id="fragen">Fragen</h3>
-<p>Wenn Sie Fragen haben, nutzen Sie bitte in erster Linie die Präsenzzeiten des Seminars. Prüfen Sie zunächst, ob Ihre Fragen bereits in Form von Screencasts und FAQ-Einträgen vorhanden sind. Sollten Sie darüber hinaus Fragen haben, senden Sie diese bitte per E-Mail mit dem Betreff [Geoinfo SoSe<jahr>] oder [Geoinfo WiSe<jahr>] (im Platzhalter Jahr tragen Sie bitte das aktuelle Semesterjahr ein).</jahr></jahr></p>
-</section>
-</section>
-<section id="zeitaufwand-und-ablauf" class="level2">
-<h2 class="anchored" data-anchor-id="zeitaufwand-und-ablauf">Zeitaufwand und Ablauf</h2>
-<p>Jede Kurseinheit dauert eine Woche und besteht aus einem Lern- und einem Übungsteil. Die Übungsblätter werden bei Bedarf oder Rückfragen in der folgenden Kurseinheit besprochen.</p>
-<section id="kursverlauf-sose-2024" class="level3">
-<h3 class="anchored" data-anchor-id="kursverlauf-sose-2024">Kursverlauf SoSe 2024</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 35%">
-<col style="width: 31%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Sitzung</th>
-<th>Datum</th>
-<th>Thema</th>
-<th style="text-align: left;">Ergebnissicherung</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td>17.04.</td>
-<td>Orga/ Einführung in geographische und GI Raumkonzepte</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2</td>
-<td>24.04.</td>
-<td>Vektordaten &amp; Attributtabellen</td>
-<td style="text-align: left;">Einführung in geographische und GI Raumkonzepte</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td>29.04.</td>
-<td>Rasterdatenanalyse</td>
-<td style="text-align: left;">Vektordaten &amp; Attributtabellen</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
-<td>08.05</td>
-<td>Kostenanalyse</td>
-<td style="text-align: left;">Rasterdatenanalyse</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-<td>15.05.</td>
-<td>Interpolation</td>
-<td style="text-align: left;">Kostenanalyse</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td></td>
-<td>WrapUp</td>
-<td style="text-align: left;">Unabhängige Wiederholung des methodischen Inputs</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">6</td>
-<td>05.06.</td>
-<td></td>
-<td style="text-align: left;">F&amp;A Alle Themen</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">7</td>
-<td>12.06</td>
-<td>Automatisierung von Arbeitsabläufen in QGIS</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">8</td>
-<td>19.06</td>
-<td>Projektarbeit</td>
-<td style="text-align: left;">Automatisierung von Arbeitsabläufen in QGIS</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">9</td>
-<td>26.06.</td>
-<td>Präsentation der Projektarbeitkonzepte mit Feedback</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">10</td>
-<td>03.07.</td>
-<td>Projektarbeit</td>
-<td style="text-align: left;">Beratung</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">11</td>
-<td>10.07.</td>
-<td>Projektarbeit</td>
-<td style="text-align: left;">Beratung</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">12</td>
-<td>17.07.</td>
-<td>Projektarbeit</td>
-<td style="text-align: left;">Beratung</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"></td>
-<td>31.07.</td>
-<td>Abgabe Projektarbeit</td>
-<td style="text-align: left;">Beratung</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="anforderungen-und-zeitaufwand" class="level3">
-<h3 class="anchored" data-anchor-id="anforderungen-und-zeitaufwand">Anforderungen und Zeitaufwand</h3>
-<p>Der Kurs ist standardmäßig auf 6 Leistungspunkte (LP/ECTS) gemäß der Zeiteinteilung nach den Bologna-Kriterien ausgelegt. Umgerechnet in Zeit entspricht dies 180 Stunden/Person. Dies ist die Zeit, die ein durchschnittlicher Studierender nach den Bologna-Kriterien benötigt, um ein zufriedenstellendes Ergebnis zu erzielen. Da diese Leistung mit 5 Lehrveranstaltungen/Semester zu erbringen ist, müssten 60 Arbeitsstunden pro Woche erbracht werden. Dieses Bologna-Standardszenario halten wir für realitätsfern. Zieht man davon die vorlesungsfreie Zeit ab, verbleiben ca. 90 Stunden, um die geforderten Kenntnisse und Kompetenzen von 180 Stunden zu erwerben - ebenfalls realitätsfern. Ein gangbarer Kompromiss besteht darin, etwa die Hälfte der vorlesungsfreien Zeit in den Lehrbetrieb zu integrieren, so dass 135 Stunden für 6 ECTS, also 9 Stunden pro Woche, verbleiben. Dies ist anspruchsvoll, aber machbar. Die Aufwandskalkulation gilt trotz Halbierung der Stundenzahl auch für die 3 LP/ECTS-Variante, da der Kurs in der Mitte des Semesters mit einer Klausur abgeschlossen wird.</p>
-</section>
-<section id="exemplarischer-stundenplan-der-lehrveranstaltung" class="level3">
-<h3 class="anchored" data-anchor-id="exemplarischer-stundenplan-der-lehrveranstaltung">Exemplarischer Stundenplan der Lehrveranstaltung</h3>
+<p>Die folgenden Themen sind als eigenständige Mini-Projekte für studentische QGIS-Sitzungen gedacht. Sie unterscheiden sich nicht nur im Gegenstand, sondern vor allem in der zugrunde liegenden Konzeptualsierung: Mustererkennung, Sichtbarkeit, Zentralität, Überlagerung, Korridorbildung, Priorisierung, Interpolation, Maßstabsreflexion, Widerspruchsanalyse und Zeitvergleich.</p>
+<p>Jedes Thema enthält eine konkrete Projektidee, eine knappe konzeptionelle Rahmung, eine möglichst realistische Einschätzung der Schwierigkeit sowie Hinweise auf verfügbare Datensätze und methodische Quellen.</p>
+<section id="hotspots-ohne-erklärung" class="level2">
+<h2 class="anchored" data-anchor-id="hotspots-ohne-erklärung">1. Hotspots ohne Erklärung</h2>
 <ul>
-<li>Präsenz: 2 Stunden pro Woche
+<li><p><strong>Konkrete Idee:</strong> Wo häufen sich Fahrraddiebstähle, Müllablagerungen, Schäden oder andere punktförmige Vorfälle in einem Stadtteil oder auf einem Campus?</p></li>
+<li><p><strong>Konzeptidee:</strong> Das Projekt dient der <strong>deskriptiven Mustererkennung</strong>. Ziel ist nicht, Ursachen zu behaupten, sondern Cluster, Dichtezonen und räumliche Auffälligkeiten sichtbar zu machen.</p></li>
+<li><p><strong>Methoden:</strong> Punktdaten, Heatmap/KDE, Vergleich mit Wegen, Gebäuden, Haltestellen oder Nutzungsflächen.</p></li>
+<li><p><strong>Schwierigkeit:</strong> <em>leicht</em></p></li>
+<li><p><strong>Warum:</strong> Technisch gut beherrschbar. Die eigentliche Schwierigkeit liegt in der disziplinierten Interpretation.</p></li>
+<li><p><strong>Datensätze / Quellen:</strong></p>
 <ul>
-<li>Der Kurs besteht für jede Gruppe aus einer Input-Sitzung und einem zugehörigen Seminar (Zeiten siehe Ilias).</li>
-</ul></li>
-<li>Selbststudium: 7 Stunden pro Woche
-<ul>
-<li>Wöchentliche Arbeitszeiten</li>
-<li>Wöchentliche Treffen mit Kommiliton:innen</li>
-<li>Wöchentliche Hausarbeit</li>
-<li>Bearbeitung der Abschlussarbeit</li>
+<li>eigene Erhebung oder kommunale Open-Data-Punktdaten</li>
+<li>OSM / Geofabrik für Wege, Gebäude, Haltestellen und POIs</li>
+<li>QGIS-Dokumentation: Heatmap / Interpolation</li>
 </ul></li>
 </ul>
-<p>Die folgende Abbildung zeigt beispielhaft eine <strong>mögliche</strong> Verteilung dieser notwendigen/verfügbaren Arbeitszeiten. Diese Zeiten sind aus didaktischen Gründen exemplarisch über die Woche verteilt und beinhalten sowohl Zeiten in der Lerngruppe als auch Zeiten des Selbststudiums. Natürlich können Sie sich auch anders organisieren.</p>
-<iframe width="100%" height="800px" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSTEUhTD7NO-_kW9QUvdfbby2KOWUBDNMBN6InTs4u0bqhNRwxESLe7nvxn_VbSEwpjgj7S5SeJ2_wZ/pubhtml?widget=true&amp;headers=false">
-</iframe>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Beispielhafter Stundenplan für die Lehrveranstaltung Geoinformatik. Der Gesamtaufwand ist mit 11 Stunden pro Woche inklusive Präsenzzeit kalkuliert. Die Planung, Blockung und Aufteilung in Selbststudium und Lerngruppen ist wünschenswert, muss aber selbstredend den eigenen Bedürfnissen angepasst werden.</p>
-</div>
-</div>
-</div>
+</section>
+<section id="sichtachsen-und-tote-winkel" class="level2">
+<h2 class="anchored" data-anchor-id="sichtachsen-und-tote-winkel">2. Sichtachsen und tote Winkel</h2>
+<ul>
+<li><p><strong>Konkrete Idee:</strong> Welche Bereiche eines Schulhofs, Parks oder Aussichtspunkts sind von ausgewählten Beobachtungspunkten aus sichtbar und welche systematisch abgeschirmt?</p></li>
+<li><p><strong>Konzeptidee:</strong> Sichtbarkeit wird hier als <strong>räumliche Ressource und Begrenzung</strong> verstanden. Das Thema eignet sich für Orientierung, Überblick, Kontrolle oder Abschirmung.</p></li>
+<li><p><strong>Methoden:</strong> DGM, Viewshed, Auswahl mehrerer Beobachtungspunkte, Überlagerung der Sichtfelder.</p></li>
+<li><p><strong>Schwierigkeit:</strong> <em>mittel</em></p></li>
+<li><p><strong>Warum:</strong> Die Methode ist klar, aber nur dann überzeugend, wenn Beobachtungspunkte sinnvoll gewählt und die Grenzen der Höhendaten benannt werden.</p></li>
+<li><p><strong>Datensätze / Quellen:</strong></p>
+<ul>
+<li>Copernicus DEM</li>
+<li>OSM / Geofabrik für Wege, Gebäude, Aussichtspunkte</li>
+<li>QGIS / GDAL Viewshed-Dokumentation</li>
+</ul></li>
+</ul>
+</section>
+<section id="verlorene-mitte" class="level2">
+<h2 class="anchored" data-anchor-id="verlorene-mitte">3. Verlorene Mitte</h2>
+<ul>
+<li><p><strong>Konkrete Idee:</strong> Welche Flächen auf einem Campus oder in einem Quartier liegen geometrisch zentral, bleiben funktional aber randständig?</p></li>
+<li><p><strong>Konzeptidee:</strong> Das Projekt untersucht die Differenz zwischen <strong>geometrischer Zentralität</strong> und <strong>tatsächlicher funktionaler Einbindung</strong>.</p></li>
+<li><p><strong>Methoden:</strong> Distanzanalyse, Erreichbarkeit, Wegebezug, Vergleich von Lage und Nutzung.</p></li>
+<li><p><strong>Schwierigkeit:</strong> <em>leicht bis mittel</em></p></li>
+<li><p><strong>Warum:</strong> Konzeptionell stark, aber technisch noch recht übersichtlich.</p></li>
+<li><p><strong>Datensätze / Quellen:</strong></p>
+<ul>
+<li>OSM / Geofabrik für Wege, Gebäude, Eingänge, Platzflächen</li>
+<li>eigene Kartierung von Nutzungsintensitäten oder Aufenthaltsorten</li>
+<li>QGIS-Dokumentation: Network Analysis / Service Area</li>
+</ul></li>
+</ul>
+</section>
+<section id="räume-der-überlagerung" class="level2">
+<h2 class="anchored" data-anchor-id="räume-der-überlagerung">4. Räume der Überlagerung</h2>
+<ul>
+<li><p><strong>Konkrete Idee:</strong> Wo überlagern sich mehrere Problemlagen, etwa Versiegelung, geringe Grünnähe, hohe Nutzungsintensität, geringe Aufenthaltsqualität oder Umweltbelastung?</p></li>
+<li><p><strong>Konzeptidee:</strong> Im Zentrum steht die Idee des <strong>mehrfach belasteten Raums</strong>. Relevant wird der Raum gerade dort, wo mehrere Indikatoren gleichzeitig problematisch werden.</p></li>
+<li><p><strong>Methoden:</strong> Standardisierung mehrerer Layer, Überlagerung, Summen- oder Konfliktindex, Kartierung von Verdichtungsräumen.</p></li>
+<li><p><strong>Schwierigkeit:</strong> <em>mittel</em></p></li>
+<li><p><strong>Warum:</strong> Methodisch recht einfach, aber konzeptionell anfällig für Beliebigkeit, wenn die Layerwahl nicht sauber begründet wird.</p></li>
+<li><p><strong>Datensätze / Quellen:</strong></p>
+<ul>
+<li>Urban Atlas</li>
+<li>OSM / Geofabrik</li>
+<li>Copernicus DEM</li>
+<li>optional zusätzliche Umwelt- oder Klimadaten aus offenen Portalen</li>
+</ul></li>
+</ul>
+</section>
+<section id="maßstab-als-problem" class="level2">
+<h2 class="anchored" data-anchor-id="maßstab-als-problem">5. Maßstab als Problem</h2>
+<ul>
+<li><p><strong>Konkrete Idee:</strong> Wie verändert sich dieselbe Analyse, wenn sie mit gröberer oder feinerer Rasterauflösung bzw. auf unterschiedlichem Aggregationsniveau durchgeführt wird?</p></li>
+<li><p><strong>Konzeptidee:</strong> Das Projekt zeigt die <strong>Skalenabhängigkeit räumlicher Aussagen</strong>.</p></li>
+<li><p><strong>Methoden:</strong> Resampling, Aggregation, mehrfache Berechnung desselben Workflows, Differenzanalyse.</p></li>
+<li><p><strong>Schwierigkeit:</strong> <strong>hoch</strong></p></li>
+<li><p><strong>Warum:</strong> Rechentechnisch nicht extrem, aber intellektuell anspruchsvoll. Gute Gruppen können hier sehr sauber zeigen, wie Ergebnisse vom Maßstab abhängen.</p></li>
+<li><p><strong>Datensätze / Quellen:</strong></p>
+<ul>
+<li>Copernicus DEM</li>
+<li>Urban Atlas</li>
+<li>OSM / Geofabrik</li>
+<li>QGIS-Rasterwerkzeuge und Zonal Statistics</li>
+</ul></li>
+</ul>
+</section>
+<section id="räume-die-sich-widersprechen" class="level2">
+<h2 class="anchored" data-anchor-id="räume-die-sich-widersprechen">6. Räume, die sich widersprechen</h2>
+<ul>
+<li><p><strong>Konkrete Idee:</strong> Wo treffen gegensätzliche räumliche Qualitäten zusammen, etwa gute Lage und hohe Belastung, grüne Umgebung und schlechte Zugänglichkeit oder hohe Sichtbarkeit und geringe Nutzbarkeit?</p></li>
+<li><p><strong>Konzeptidee:</strong> Das Thema untersucht <strong>Widerspruchsräume</strong>, also Räume, die sich nicht in einer einfachen Gut-Schlecht-Logik auflösen lassen.</p></li>
+<li><p><strong>Methoden:</strong> Kombination gegensätzlicher Indikatoren, Vergleich mehrerer Karten, Identifikation von Divergenzflächen.</p></li>
+<li><p><strong>Schwierigkeit:</strong> <strong>mittel bis hoch</strong></p></li>
+<li><p><strong>Warum:</strong> Methodisch nicht extrem komplex, aber analytisch nur dann stark, wenn die Gegensätze sauber konstruiert werden.</p></li>
+<li><p><strong>Datensätze / Quellen:</strong></p>
+<ul>
+<li>OSM / Geofabrik</li>
+<li>Urban Atlas</li>
+<li>Copernicus DEM</li>
+<li>optionale Umweltindikatoren aus offenen Quellen</li>
+</ul></li>
+</ul>
+</section>
+<section id="vorhernachher-ohne-pathos" class="level2">
+<h2 class="anchored" data-anchor-id="vorhernachher-ohne-pathos">7. Vorher–Nachher ohne Pathos</h2>
+<ul>
+<li><p><strong>Konkrete Idee:</strong> Was hat sich zwischen zwei Zeitständen räumlich tatsächlich verändert, etwa vor und nach Umgestaltung, Neubau oder Flächennutzungsänderung?</p></li>
+<li><p><strong>Konzeptidee:</strong> Ziel ist eine <strong>nüchterne Differenzanalyse</strong>, nicht eine vorgefertigte Aufwertungs- oder Fortschrittserzählung.</p></li>
+<li><p><strong>Methoden:</strong> Overlay zweier Zeitstände, Differenzkarten, Flächenbilanz, Prüfung von Vergleichbarkeit und Unsicherheit.</p></li>
+<li><p><strong>Schwierigkeit:</strong> <strong>mittel bis hoch</strong></p></li>
+<li><p><strong>Warum:</strong> Gut machbar, wenn zwei belastbare Zeitstände vorliegen. Die Hauptschwierigkeit liegt in der Vergleichbarkeit, nicht in der Softwaretechnik.</p></li>
+<li><p><strong>Datensätze / Quellen:</strong></p>
+<ul>
+<li>Urban Atlas mit mehreren Zeitständen und Change-Layern</li>
+<li>OSM / Geofabrik als ergänzender Vektorkontext</li>
+<li>lokale Luftbilder oder kommunale Open-Data-Zeitstände</li>
+</ul></li>
+</ul>
+</section>
+<section id="korridore-statt-punkte" class="level2">
+<h2 class="anchored" data-anchor-id="korridore-statt-punkte">8. Korridore statt Punkte</h2>
+<ul>
+<li><p><strong>Konkrete Idee:</strong> Wo verläuft ein möglichst konfliktarmer, barrierearmer oder landschaftsschonender Verbindungskorridor zwischen zwei Orten?</p></li>
+<li><p><strong>Konzeptidee:</strong> Statt eines besten Punktstandorts wird hier ein <strong>geeigneter Verlauf</strong> gesucht. Das Thema eignet sich für Wege, Grünverbindungen oder ruhige Verbindungsräume.</p></li>
+<li><p><strong>Methoden:</strong> Kostenfläche, Least-Cost Path oder Korridor, Ausschlussflächen, Variantenvergleich.</p></li>
+<li><p><strong>Schwierigkeit:</strong> <em>mittel bis hoch</em></p></li>
+<li><p><strong>Warum:</strong> starkes vielseitiges Thema, aber die Kostenoberfläche muss plausibel und transparent konstruiert werden.</p></li>
+<li><p><strong>Datensätze / Quellen:</strong></p>
+<ul>
+<li>OSM / Geofabrik für Wege, Barrieren, Straßen, Gewässer</li>
+<li>Copernicus DEM für Steigung</li>
+<li>Urban Atlas für Nutzungs- und Ausschlussflächen</li>
+<li>GRASS / QGIS-Processing für kostenbasierte Raster-Workflows</li>
+</ul></li>
+</ul>
+</section>
+<section id="rangfolgen-unter-knappheit" class="level2">
+<h2 class="anchored" data-anchor-id="rangfolgen-unter-knappheit">9. Rangfolgen unter Knappheit</h2>
+<ul>
+<li><p><strong>Konkrete Idee:</strong> Wenn nur drei Flächen entsiegelt, begrünt, beschattet oder aufgewertet werden können: Welche sollten zuerst gewählt werden?</p></li>
+<li><p><strong>Konzeptidee:</strong> Das Projekt behandelt <strong>Priorisierung unter Ressourcenknappheit</strong>. Es geht nicht nur um Eignung, sondern um echte Auswahlentscheidungen.</p></li>
+<li><p><strong>Methoden:</strong> Kriterienbildung, Gewichtung, Ranking, Priorisierung, Vergleich alternativer Auswahlregeln.</p></li>
+<li><p><strong>Schwierigkeit:</strong> <em>hoch</em></p></li>
+<li><p><strong>Warum:</strong> Nicht primär technisch schwer, aber argumentativ anspruchsvoll. Die Priorisierungslogik muss offen und belastbar sein.</p></li>
+<li><p><strong>Datensätze / Quellen:</strong></p>
+<ul>
+<li>Urban Atlas</li>
+<li>OSM / Geofabrik</li>
+<li>Copernicus DEM</li>
+<li>methodische Orientierung über Suitability- und Priorisierungsworkflows in QGIS</li>
+</ul></li>
+</ul>
+</section>
+<section id="interpolation-mit-misstrauen" class="level2">
+<h2 class="anchored" data-anchor-id="interpolation-mit-misstrauen">10. Interpolation mit Misstrauen</h2>
+<ul>
+<li><p><strong>Konkrete Idee:</strong> Wie verändert sich ein interpoliertes Temperatur-, Luftqualitäts- oder Lärmfeld, wenn Verfahren, Parameter oder Punktdichte variiert werden?</p></li>
+<li><p><strong>Konzeptidee:</strong> Flächenwerte werden hier als <strong>Schätzung unter Unsicherheit</strong> verstanden, nicht als objektive Wahrheit.</p></li>
+<li><p><strong>Methoden:</strong> Punktdaten, IDW oder TIN, Variantenvergleich, Fehlervalidierung oder Plausibilitätsprüfung.</p></li>
+<li><p><strong>Schwierigkeit:</strong> <em>hoch</em></p></li>
+<li><p><strong>Warum:</strong> Sehr gutes wissenschaftliches Thema, aber stark abhängig von der Qualität und Dichte der Punktdaten.</p></li>
+<li><p><strong>Datensätze / Quellen:</strong></p>
+<ul>
+<li>eigene Messdaten</li>
+<li>OpenAQ für Luftqualitätsdaten</li>
+<li>QGIS-Dokumentation: Interpolation / IDW / TIN</li>
+</ul></li>
+</ul>
+</section>
+<section id="gemeinsame-basisquellen" class="level2">
+<h2 class="anchored" data-anchor-id="gemeinsame-basisquellen">Gemeinsame Basisquellen</h2>
+<section id="methodische-quellen" class="level3">
+<h3 class="anchored" data-anchor-id="methodische-quellen">Methodische Quellen</h3>
+<ul>
+<li><a href="https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/networkanalysis.html">QGIS Documentation – Network Analysis / Service Area</a></li>
+<li><a href="https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/interpolation.html">QGIS Documentation – Interpolation</a></li>
+<li><a href="https://docs.qgis.org/latest/en/docs/training_manual/rasters/terrain_analysis.html">QGIS Training Manual – Terrain Analysis</a></li>
+<li><a href="https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/gdal/rastermiscellaneous.html">QGIS / GDAL Documentation – Viewshed</a></li>
+<li><a href="https://grass.osgeo.org/grass-stable/manuals/">GRASS GIS Documentation</a></li>
+</ul>
+</section>
+<section id="datensätze" class="level3">
+<h3 class="anchored" data-anchor-id="datensätze">Datensätze</h3>
+<ul>
+<li><a href="https://download.geofabrik.de/">Geofabrik / OpenStreetMap</a></li>
+<li><a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM">Copernicus DEM</a></li>
+<li><a href="https://land.copernicus.eu/en/products/urban-atlas">Urban Atlas</a></li>
+<li><a href="https://openaq.org/">OpenAQ</a></li>
+<li>kommunale Open-Data-Portale oder eigene Erhebungen</li>
+</ul>
 </section>
 </section>
-<section id="studienleistung" class="level2">
-<h2 class="anchored" data-anchor-id="studienleistung">Studienleistung</h2>
-<p>Die individuell zu erbringende Studienleistung wird durch das erfolgreiche Absolvieren der Self-Assessment-Einheiten in Ilias erbracht. Dazu müssen 3 der 5 Einheiten bis zu dem im Ilias-Kurs angegebenen Termin mit mindestens ausreichend bestanden werden.</p>
+<section id="quellenlinks-nach-themen" class="level2">
+<h2 class="anchored" data-anchor-id="quellenlinks-nach-themen">Quellenlinks nach Themen</h2>
+<section id="hotspots-ohne-erklärung-1" class="level3">
+<h3 class="anchored" data-anchor-id="hotspots-ohne-erklärung-1">1. Hotspots ohne Erklärung</h3>
+<ul>
+<li><a href="https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/interpolation.html">QGIS Documentation – Interpolation / Heatmap</a></li>
+<li><a href="https://download.geofabrik.de/">Geofabrik / OpenStreetMap</a></li>
+</ul>
 </section>
-<section id="prüfungsleistung" class="level2">
-<h2 class="anchored" data-anchor-id="prüfungsleistung">Prüfungsleistung</h2>
-<p>Im Anschluss an die 5 Übungsblöcke wird eine Präsenzklausur mit praktischem Prüfungsanteil für 3 LP/ECTS oder eine Projektarbeit für 6 LP/ECTS abgelegt. Dazu bearbeiten Sie ein eigenständiges/vorgegebenes kleines Projekt. Die Abgabe des wissenschaftlichen Projektberichts (4-6 Seiten) stellt die Grundlage der zu bewertenden Leistung dar.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Wichtig
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Die Prüfungsleistung in Form einer Projektarbeit ist grundsätzlich individuell zu erbringen, kann aber auch in 2er Gruppen erbracht werden, wenn die Anteile kenntlich gemacht werden.</p>
-</div>
-</div>
-<section id="gewichtung-der-übungen" class="level3">
-<h3 class="anchored" data-anchor-id="gewichtung-der-übungen">Gewichtung der Übungen</h3>
-<p>Die Übungsaufgaben werden gewichtet. Die Gewichtung der Übungsaufgaben entspricht in etwa den methodischen Fertigkeiten, die in die Projektarbeit einzubringen sind. Das bedeutet, dass Sie in der Regel &gt; 50% der vermittelten Methoden (oder äquivalenter Methoden) in die Projektarbeit einbringen müssen. Damit wird sichergestellt, dass ein gewisses Anspruchsniveau erreicht wird. Da die Projektarbeit in der Regel schrittweise entwickelt wird, erfolgt die Einschätzung eines ausreichenden Anspruchsniveaus in Absprache mit der Kursleitung. Die Gewichtung der einzelnen Kenntnisse und Fertigkeiten ist der Aufgabenstellung zu entnehmen.</p>
+<section id="sichtachsen-und-tote-winkel-1" class="level3">
+<h3 class="anchored" data-anchor-id="sichtachsen-und-tote-winkel-1">2. Sichtachsen und tote Winkel</h3>
+<ul>
+<li><a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM">Copernicus DEM</a></li>
+<li><a href="https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/gdal/rastermiscellaneous.html">QGIS / GDAL Documentation – Viewshed</a></li>
+<li><a href="https://download.geofabrik.de/">Geofabrik / OpenStreetMap</a></li>
+</ul>
 </section>
-<section id="bewertungskriterien-projektarbeit" class="level3">
-<h3 class="anchored" data-anchor-id="bewertungskriterien-projektarbeit">Bewertungskriterien Projektarbeit</h3>
-<p>Im folgenden <a href="https://docs.google.com/document/d/1OFLIm8IEBQKYhaFDggTUswrBG_N58jeh/edit?usp=sharing&amp;ouid=116863676082637149781&amp;rtpof=true&amp;sd=true">Bewertungsleitfaden</a> finden Sie die als <strong><em>verbindlich vorausgesetzten</em></strong> Formalia für die Beurteilung, die Definition der verwendeten Begriffe sowie Beurteilungskonzepte und Erwartungshorizonte. Bei Fragen und Anmerkungen wenden Sie sich bitte an Ihre Dozent:innen.</p>
-<iframe width="100%" height="650" allowfullscreen="true" src="https://docs.google.com/document/d/e/2PACX-1vQzz7W33uJOsuUh7fJ2wjliBY764-Edd71T3d2tGeuh5dJ8zZGE-8tgOTI9Adf4Jw/pub?embedded=true">
-</iframe>
+<section id="verlorene-mitte-1" class="level3">
+<h3 class="anchored" data-anchor-id="verlorene-mitte-1">3. Verlorene Mitte</h3>
+<ul>
+<li><a href="https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/networkanalysis.html">QGIS Documentation – Network Analysis / Service Area</a></li>
+<li><a href="https://download.geofabrik.de/">Geofabrik / OpenStreetMap</a></li>
+</ul>
 </section>
-<section id="einreichungen" class="level3">
-<h3 class="anchored" data-anchor-id="einreichungen">Einreichungen</h3>
-<p>Die Ausarbeitung soll grundsätzlich (alles inbegriffen) <strong>2500 Wörter</strong> nicht überschreiten. Sie ist als <strong>PDF-Datei</strong> mit den als wichtig erachteten Abbildungen abzuspeichern und gemäß den <a href="#formale-anforderungen">formalen Anforderungen</a> einzureichen.</p>
-<div class="callout callout-style-simple callout-warning no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Eine Unter-/Überschreitung von mehr als 10 Prozent führt zu einem Abzug von 1 Notenpunkt pro 10 Prozent.</p>
-</div>
-</div>
-</div>
-<p>Als Orientierungshilfe finden Sie im Reader <em>Projektarbeit</em> den beispielhaften Aufbau einer solchen Arbeit.</p>
-<p>Grundsätzlich sind Studien- und Prüfungsleistungen im <a href="https://ilias.uni-marburg.de/login.php?target=&amp;client_id=UNIMR&amp;auth_stat=">Kursbereich der Lernplattform PUM Ilias</a> fristgerecht und unter Berücksichtigung der <a href="#formale-anforderungen">formalen Anforderungen</a> eingereicht werden. Ausnahmen sind nur in begründeten und vorher abgesprochenen Fällen möglich.</p>
-<p><a name="formale-anforderungen"></a>Formale Anforderungen {#formale-anforderungen}</p>
-<p>Bitte reichen Sie die Übungsaufgaben innerhalb einer Kurseinheit <strong>ausnahmslos</strong> als PDF-Datei ein. Benennen Sie die PDF-Datei wie folgt</p>
-<p><code>Aufgabe_X_&lt;Nachname&gt;_&lt;Vorname&gt;.pdf</code> (z.B. Aufgabe_1_Reudenbach_Chris.pdf_).</p>
-<div class="callout callout-style-simple callout-tip no-icon callout-titled" title="Tipp">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tipp</span>Tipp
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Verwenden Sie ein Textverarbeitungsprogramm wie z.B. Microsoft Word, ONLYOFFICE oder OpenOffice zur Erstellung der Abgabedatei und erzeugen Sie mit diesen Werkzeugen <strong>eine</strong> PDF-Datei. Kontrollieren Sie unbedingt, ob die fertige PDF-Datei Ihren Vorstellungen entspricht.</p>
-</div>
-</div>
-<p>Fügen Sie in die Kopfzeile Ihren Namen und Ihre Matrikelnummer nach folgendem Schema ein:</p>
-<p><code>Nachname, Vorname, Matrikelnummer</code> (z.B. Reudenbach, Chris, 1234567).</p>
-<p>Bitte geben Sie nur die <strong>überprüfte Endfassung</strong> in den jeweiligen ILIAS-Abgabeordner ein.</p>
+<section id="räume-der-überlagerung-1" class="level3">
+<h3 class="anchored" data-anchor-id="räume-der-überlagerung-1">4. Räume der Überlagerung</h3>
+<ul>
+<li><a href="https://land.copernicus.eu/en/products/urban-atlas">Urban Atlas</a></li>
+<li><a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM">Copernicus DEM</a></li>
+<li><a href="https://download.geofabrik.de/">Geofabrik / OpenStreetMap</a></li>
+</ul>
+</section>
+<section id="korridore-statt-punkte-1" class="level3">
+<h3 class="anchored" data-anchor-id="korridore-statt-punkte-1">5. Korridore statt Punkte</h3>
+<ul>
+<li><a href="https://grass.osgeo.org/grass-stable/manuals/">GRASS GIS Documentation</a></li>
+<li><a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM">Copernicus DEM</a></li>
+<li><a href="https://land.copernicus.eu/en/products/urban-atlas">Urban Atlas</a></li>
+<li><a href="https://download.geofabrik.de/">Geofabrik / OpenStreetMap</a></li>
+</ul>
+</section>
+<section id="rangfolgen-unter-knappheit-1" class="level3">
+<h3 class="anchored" data-anchor-id="rangfolgen-unter-knappheit-1">6. Rangfolgen unter Knappheit</h3>
+<ul>
+<li><a href="https://land.copernicus.eu/en/products/urban-atlas">Urban Atlas</a></li>
+<li><a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM">Copernicus DEM</a></li>
+<li><a href="https://download.geofabrik.de/">Geofabrik / OpenStreetMap</a></li>
+<li><a href="https://docs.qgis.org/latest/en/docs/user_manual/processing/index.html">QGIS Documentation – Processing Framework</a></li>
+</ul>
+</section>
+<section id="interpolation-mit-misstrauen-1" class="level3">
+<h3 class="anchored" data-anchor-id="interpolation-mit-misstrauen-1">7. Interpolation mit Misstrauen</h3>
+<ul>
+<li><a href="https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/interpolation.html">QGIS Documentation – Interpolation</a></li>
+<li><a href="https://openaq.org/">OpenAQ</a></li>
+</ul>
+</section>
+<section id="maßstab-als-problem-1" class="level3">
+<h3 class="anchored" data-anchor-id="maßstab-als-problem-1">8. Maßstab als Problem</h3>
+<ul>
+<li><a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM">Copernicus DEM</a></li>
+<li><a href="https://land.copernicus.eu/en/products/urban-atlas">Urban Atlas</a></li>
+<li><a href="https://download.geofabrik.de/">Geofabrik / OpenStreetMap</a></li>
+<li><a href="https://docs.qgis.org/latest/en/docs/user_manual/working_with_raster/index.html">QGIS Documentation – Raster Analysis</a></li>
+</ul>
+</section>
+<section id="räume-die-sich-widersprechen-1" class="level3">
+<h3 class="anchored" data-anchor-id="räume-die-sich-widersprechen-1">9. Räume, die sich widersprechen</h3>
+<ul>
+<li><a href="https://land.copernicus.eu/en/products/urban-atlas">Urban Atlas</a></li>
+<li><a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM">Copernicus DEM</a></li>
+<li><a href="https://download.geofabrik.de/">Geofabrik / OpenStreetMap</a></li>
+</ul>
+</section>
+<section id="vorhernachher-ohne-pathos-1" class="level3">
+<h3 class="anchored" data-anchor-id="vorhernachher-ohne-pathos-1">10. Vorher–Nachher ohne Pathos</h3>
+<ul>
+<li><a href="https://land.copernicus.eu/en/products/urban-atlas">Urban Atlas</a></li>
+<li><a href="https://download.geofabrik.de/">Geofabrik / OpenStreetMap</a></li>
+</ul>
 </section>
 </section>
-<section id="kurszeiten" class="level2">
-<h2 class="anchored" data-anchor-id="kurszeiten">Kurszeiten</h2>
-<p>Kurszeiten Mittwoch, 12:15-13:45 Uhr</p>
+<section id="hinweise-zur-themenwahl" class="level2">
+<h2 class="anchored" data-anchor-id="hinweise-zur-themenwahl">Hinweise zur Themenwahl</h2>
+<p>Die Themen bilden unterschiedliche räumliche Denkformen ab:</p>
+<ul>
+<li>Muster erkennen</li>
+<li>Sichtbarkeit analysieren</li>
+<li>funktionale Mitte hinterfragen</li>
+<li>Problemlagen überlagern</li>
+<li>Korridore modellieren</li>
+<li>Prioritäten setzen</li>
+<li>Unsicherheit in Interpolation prüfen</li>
+<li>Maßstab reflektieren</li>
+<li>Widerspruchsräume identifizieren</li>
+<li>Veränderungen vergleichen</li>
+</ul>
 
 
 </section>
@@ -1053,4 +1129,4 @@ Wichtig
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit00/unit00-01-formales.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit00/unit00-04-themen.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></div></div></footer></body></html>

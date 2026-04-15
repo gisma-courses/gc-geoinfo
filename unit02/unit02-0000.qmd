@@ -13,6 +13,12 @@ bibliography: unit02.bib
 lang: de
 comments: false
 ---
+
+::: {.banner-credit}
+Titelbild: Quelle nach [@snow].
+:::
+
+
 In der Praxis wird der Begriff „Informationssystem“ (IS) fast beliebig verwendet, so gibt es neben Geoinformationssystemen auch Landinformationssysteme, Umweltinformationssysteme oder amtlich-topographische Informationssysteme. Auch die Abgrenzung der Begriffe Land-, Geo- und Rauminformationssysteme (LIS, GIS und RIS) wird in der Fachliteratur nicht einheitlich gehandhabt. In der Regel wird der Begriff Rauminformationssystem (RIS) als Oberbegriff verwendet, während Attribute wie Landschaft oder Geo vor allem die fachliche oder methodische Ausrichtung bezeichnen.
 Das Vier-Komponenten-Modell eines GIS und seine funktionalen Komponenten.
 
@@ -42,8 +48,5 @@ GIS-Softwarepakete sind Softwarewerkzeuge, die sowohl kommerziell als auch auf O
 
 
 
-::: {#cite  style="color: transparent;"}
-@snow
-:::
 
 :::

@@ -312,16 +312,28 @@ background-size: cover;
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../unit00/unit00-02-formales.html"> <i class="bi bi-question-square-fill" role="img">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-formales" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Formales</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-formales">    
+        <li>
+    <a class="dropdown-item" href="../unit00/unit00-02-formales.html"><i class="bi bi-exclamation-square-fill" role="img">
 </i> 
-<span class="menu-text">Projektarbeit</span></a>
+ <span class="dropdown-text">Formalia</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../unit00/unit00-03-formales.html" aria-current="page"> <i class="bi bi-clipboard-check" role="img">
+        <li>
+    <a class="dropdown-item" href="../unit00/unit00-03-formales.html"><i class="bi bi-clipboard-check" role="img">
 </i> 
-<span class="menu-text">Sitzungsgestaltung</span></a>
+ <span class="dropdown-text">Gestaltung der studentischen Übungssitzungen</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../unit00/unit00-04-themen.html"><i class="bi bi-map" role="img">
+</i> 
+ <span class="dropdown-text">Projekt-Themen</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -363,7 +375,6 @@ background-size: cover;
   <li><a href="#aktivierender-übungsanteil" id="toc-aktivierender-übungsanteil" class="nav-link" data-scroll-target="#aktivierender-übungsanteil">3. Aktivierender Übungsanteil</a></li>
   <li><a href="#auswertung-und-kritische-reflexion" id="toc-auswertung-und-kritische-reflexion" class="nav-link" data-scroll-target="#auswertung-und-kritische-reflexion">4. Auswertung und kritische Reflexion</a></li>
   </ul></li>
-  <li><a href="#mindestanforderung-an-den-übungscharakter" id="toc-mindestanforderung-an-den-übungscharakter" class="nav-link" data-scroll-target="#mindestanforderung-an-den-übungscharakter">Mindestanforderung an den Übungscharakter</a></li>
   <li><a href="#rolle-des-qgis-projekts" id="toc-rolle-des-qgis-projekts" class="nav-link" data-scroll-target="#rolle-des-qgis-projekts">Rolle des QGIS-Projekts</a></li>
   <li><a href="#bewertung-der-sitzungsgestaltung" id="toc-bewertung-der-sitzungsgestaltung" class="nav-link" data-scroll-target="#bewertung-der-sitzungsgestaltung">Bewertung der Sitzungsgestaltung</a></li>
   </ul>
@@ -377,18 +388,17 @@ background-size: cover;
 
 
 
-<p>Die studentisch gestalteten Sitzungen sind als <strong>anwendungsorientierte Übungssitzungen</strong> konzipiert. Sie sollen kein klassisches Referat sein, sondern eine fachlich strukturierte Arbeitsphase auf Basis eines eigenständig entwickelten QGIS-Mini-Projekts.</p>
-<p>Ziel ist es, eine reale räumliche Fragestellung so aufzubereiten, dass die Teilnehmenden nicht nur Ergebnisse sehen, sondern Analyseweg, Entscheidungslogik und Grenzen der Aussage nachvollziehen und diskutieren können.</p>
+<p>Die studentisch gestalteten Sitzungen sind als <strong>anwendungsorientierte Übungssitzungen</strong> konzipiert. Sie sollen kein klassisches Referat sein, sondern eine fachlich strukturierte Arbeitsphase auf Basis eines eigenständig entwickelten QGIS-Mini-Projekts. Ziel ist es, eine reale räumliche Fragestellung so aufzubereiten, dass die Teilnehmenden nicht nur Ergebnisse sehen, sondern Analyseweg, Entscheidungslogik und Grenzen der Aussage nachvollziehen und diskutieren können.</p>
 <section id="grundprinzip" class="level2">
 <h2 class="anchored" data-anchor-id="grundprinzip">Grundprinzip</h2>
-<p>Die studentische Sitzung ist <strong>keine reine Präsentation</strong>, sondern eine <strong>kleine fachliche Übungssitzung mit aktivem Beteiligungsanteil</strong>. Das QGIS-Projekt dient dabei nicht nur als Abgabeprodukt, sondern als Arbeitsgrundlage der Sitzung.</p>
+<p>Die studentische Sitzung ist keine reine Präsentation, sondern eine Übungssitzung mit aktivem Beteiligungsanteil. Das spätere QGIS-Projekt dient dabei nicht nur als Abgabeprodukt, sondern als Arbeitsgrundlage der Sitzung.</p>
 <p>Erwartet wird eine Verbindung aus:</p>
-<ul>
-<li>kurzer Einführung in Problem und Raumfrage,</li>
-<li>kompakter Darstellung des QGIS-Projekts,</li>
-<li>aktivierendem Übungs- oder Diskussionsanteil,</li>
-<li>gemeinsamer Auswertung und kritischer Reflexion.</li>
-</ul>
+<ol type="1">
+<li>kurzer Einführung in Problem und Raumfrage (max. 5 Minuten),</li>
+<li>kompakter Darstellung des QGIS-Projekts (max. 10 Minuten),</li>
+<li>aktivierendem Übungs- oder Diskussionsanteil (max. 60 Minuten),</li>
+<li>gemeinsamer Auswertung und kritischer Reflexion (max. 15 Minuten).</li>
+</ol>
 <div class="callout callout-style-simple callout-important no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -437,28 +447,17 @@ background-size: cover;
 <p>Zum Abschluss werden Ergebnisse, Grenzen, Unsicherheiten und mögliche Alternativen gemeinsam eingeordnet.</p>
 </section>
 </section>
-<section id="mindestanforderung-an-den-übungscharakter" class="level2">
-<h2 class="anchored" data-anchor-id="mindestanforderung-an-den-übungscharakter">Mindestanforderung an den Übungscharakter</h2>
-<p>Jede Sitzung muss mindestens <strong>eine klar erkennbare Aktivierungsphase</strong> enthalten. Reine Vortragsformate ohne Übungs-, Bewertungs- oder Diskussionsanteil erfüllen die Anforderungen nicht vollständig.</p>
-<p>Geeignete Aktivierungsformen sind insbesondere:</p>
-<ul>
-<li>Karten lesen und bewerten,</li>
-<li>Kriterien diskutieren oder gewichten,</li>
-<li>räumliche Entscheidungen begründen,</li>
-<li>Ergebnisunterschiede interpretieren,</li>
-<li>Unsicherheiten oder Alternativen benennen.</li>
-</ul>
-</section>
 <section id="rolle-des-qgis-projekts" class="level2">
 <h2 class="anchored" data-anchor-id="rolle-des-qgis-projekts">Rolle des QGIS-Projekts</h2>
-<p>Das QGIS-Projekt soll so vorbereitet sein, dass es in der Sitzung als nachvollziehbare Arbeitsgrundlage dient. Sichtbar werden soll,</p>
+<p>Das QGIS-Projekt soll so vorbereitet sein, dass es in der Sitzung als nachvollziehbare Arbeitsgrundlage dient. Im Idealfall soll sichtbar werden,</p>
 <ul>
 <li>wie die Fragestellung operationalisiert wurde,</li>
 <li>welche Daten und Layer verwendet wurden,</li>
 <li>welche Analyseentscheidungen getroffen wurden,</li>
 <li>und wie daraus ein Ergebnis entstanden ist.</li>
 </ul>
-<p>Die Sitzung soll deshalb <strong>projektbasiert</strong> und nicht nur <strong>folienbasiert</strong> sein.</p>
+<p>Da es sich um ein Work-in-Progress-Projekt handelt, muss die Sitzung kein vollständig abgeschlossenes Ergebnis präsentieren. Sie kann vielmehr auch dazu dienen, besondere Problembereiche, methodische Schwierigkeiten und offene Fragen zum Gegenstand der gemeinsamen Arbeit zu machen. Voraussetzung ist, dass diese Punkte aus dem bisherigen Projektverlauf heraus entwickelt werden. Es soll also erkennbar werden, welche Schritte bereits unternommen wurden, welche Lösungsansätze getestet wurden, an welchen Stellen Probleme aufgetreten sind und warum diese bislang nicht zufriedenstellend gelöst werden konnten.</p>
+<p>Die Sitzung ist zwingend <strong>anwendungsbasiert</strong> und nicht nur <strong>folienbasiert</strong> sein.</p>
 </section>
 <section id="bewertung-der-sitzungsgestaltung" class="level2">
 <h2 class="anchored" data-anchor-id="bewertung-der-sitzungsgestaltung">Bewertung der Sitzungsgestaltung</h2>
@@ -466,19 +465,9 @@ background-size: cover;
 <ul>
 <li>ob die Sitzung als Übungssitzung erkennbar gestaltet ist,</li>
 <li>ob die Teilnehmenden sinnvoll aktiviert werden,</li>
-<li>ob Problem, Daten, Methode und Ergebnis verständlich vermittelt werden,</li>
+<li>ob Probleme, Daten, Methode und Ergebnis verständlich vermittelt werden,</li>
 <li>und ob Grenzen und Unsicherheiten kritisch reflektiert werden.</li>
 </ul>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Didaktisch überzeugend ist eine Sitzung dann, wenn aus einem QGIS-Mini-Projekt eine kurze, klare und aktivierende Arbeitsphase für das Plenum wird.</p>
-</div>
-</div>
-</div>
 
 
 </section>

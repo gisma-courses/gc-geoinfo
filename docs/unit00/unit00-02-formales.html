@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Formales – Grundlagenkurs GI-S (QGIS)</title>
+<title>Formalia – Grundlagenkurs GI-S (QGIS)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -120,10 +120,10 @@ background-size: cover;
 
 
 <link rel="stylesheet" href="../css/styles.css">
-<meta property="og:title" content="Formales – Grundlagenkurs GI-S (QGIS)">
+<meta property="og:title" content="Formalia – Grundlagenkurs GI-S (QGIS)">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
-<meta name="twitter:title" content="Formales – Grundlagenkurs GI-S (QGIS)">
+<meta name="twitter:title" content="Formalia – Grundlagenkurs GI-S (QGIS)">
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@gisma">
 <meta name="twitter:card" content="summary">
@@ -312,16 +312,28 @@ background-size: cover;
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="../unit00/unit00-02-formales.html" aria-current="page"> <i class="bi bi-question-square-fill" role="img">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-formales" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Formales</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-formales">    
+        <li>
+    <a class="dropdown-item" href="../unit00/unit00-02-formales.html"><i class="bi bi-exclamation-square-fill" role="img">
 </i> 
-<span class="menu-text">Projektarbeit</span></a>
+ <span class="dropdown-text">Formalia</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../unit00/unit00-03-formales.html"> <i class="bi bi-clipboard-check" role="img">
+        <li>
+    <a class="dropdown-item" href="../unit00/unit00-03-formales.html"><i class="bi bi-clipboard-check" role="img">
 </i> 
-<span class="menu-text">Sitzungsgestaltung</span></a>
+ <span class="dropdown-text">Gestaltung der studentischen Übungssitzungen</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../unit00/unit00-04-themen.html"><i class="bi bi-map" role="img">
+</i> 
+ <span class="dropdown-text">Projekt-Themen</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -334,7 +346,7 @@ background-size: cover;
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Formales</h1>
+      <h1 class="title">Formalia</h1>
                       </div>
   </div>
     
@@ -369,10 +381,8 @@ background-size: cover;
   </ul></li>
   <li><a href="#studienleistung" id="toc-studienleistung" class="nav-link" data-scroll-target="#studienleistung">Studienleistung</a></li>
   <li><a href="#prüfungsleistung" id="toc-prüfungsleistung" class="nav-link" data-scroll-target="#prüfungsleistung">Prüfungsleistung</a></li>
-  <li><a href="#didaktisches-format-der-studentischen-anwendungssitzungen" id="toc-didaktisches-format-der-studentischen-anwendungssitzungen" class="nav-link" data-scroll-target="#didaktisches-format-der-studentischen-anwendungssitzungen">Didaktisches Format der studentischen Anwendungssitzungen</a>
+  <li><a href="#format-der-studentischen-anwendungssitzungen" id="toc-format-der-studentischen-anwendungssitzungen" class="nav-link" data-scroll-target="#format-der-studentischen-anwendungssitzungen">Format der studentischen Anwendungssitzungen</a>
   <ul class="collapse">
-  <li><a href="#mindestanforderung-an-die-sitzungsform" id="toc-mindestanforderung-an-die-sitzungsform" class="nav-link" data-scroll-target="#mindestanforderung-an-die-sitzungsform">Mindestanforderung an die Sitzungsform</a></li>
-  <li><a href="#verbindliche-grundstruktur" id="toc-verbindliche-grundstruktur" class="nav-link" data-scroll-target="#verbindliche-grundstruktur">Verbindliche Grundstruktur</a></li>
   <li><a href="#bestandteile-des-mini-projektpakets" id="toc-bestandteile-des-mini-projektpakets" class="nav-link" data-scroll-target="#bestandteile-des-mini-projektpakets">Bestandteile des Mini-Projektpakets</a></li>
   </ul></li>
   <li><a href="#gewichtung-und-fachliche-anforderungen" id="toc-gewichtung-und-fachliche-anforderungen" class="nav-link" data-scroll-target="#gewichtung-und-fachliche-anforderungen">Gewichtung und fachliche Anforderungen</a></li>
@@ -404,7 +414,7 @@ background-size: cover;
 <p>Die Aufgaben im Reader und die Übungsblätter auf den Kursseiten bilden die Grundlage für die Studien- und Prüfungsleistungen. Für den anwendungsorientierten Kursteil werden diese methodischen Grundlagen in ein eigenständig bearbeitetes Mini-Projekt in QGIS überführt.</p>
 <section id="anwesenheit" class="level2">
 <h2 class="anchored" data-anchor-id="anwesenheit">Anwesenheit</h2>
-<p>Die Lehrveranstaltung findet grundsätzlich als <strong>Präsenzveranstaltung</strong> statt. Eine kontinuierliche Teilnahme ist fachlich erforderlich, da die Input-Sitzungen, Rückfragen, Diskussionen und Projektberatungen direkt aufeinander aufbauen. Einzelne Termine können in begründeten Ausnahmefällen online oder per Streaming durchgeführt werden.</p>
+<p>Die Lehrveranstaltung findet grundsätzlich als <strong>Präsenzveranstaltung</strong> statt. Eine kontinuierliche Teilnahme ist fachlich sinnvoll, da die Input-Sitzungen, Rückfragen, Diskussionen und Projektberatungen direkt aufeinander aufbauen. Einzelne Termine können in begründeten Ausnahmefällen online oder per Streaming durchgeführt werden.</p>
 </section>
 <section id="übersicht-der-kommunikationsformen" class="level2">
 <h2 class="anchored" data-anchor-id="übersicht-der-kommunikationsformen">Übersicht der Kommunikationsformen</h2>
@@ -414,7 +424,7 @@ background-size: cover;
 </section>
 <section id="kursbereich-in-ilias" class="level3">
 <h3 class="anchored" data-anchor-id="kursbereich-in-ilias">Kursbereich in Ilias</h3>
-<p>Der <a href="https://ilias.uni-marburg.de/login.php?target=&amp;client_id=UNIMR&amp;auth_stat=">Kursbereich der Lernplattform PUM Ilias</a> dient der Organisation des Kurses, der Bereitstellung urheberrechtlich geschützter Materialien, der Durchführung der Self-Assessments sowie der Abgabe der Projektarbeiten.</p>
+<p>Der <a href="https://ilias.uni-marburg.de/login.php?target=&amp;client_id=UNIMR&amp;auth_stat=">Kursbereich der Lernplattform PUM Ilias</a> dient der Organisation des Kurses, der Bereitstellung urheberrechtlich geschützter Materialien sowie der Abgabe der Projektarbeiten.</p>
 </section>
 <section id="fragen" class="level3">
 <h3 class="anchored" data-anchor-id="fragen">Fragen</h3>
@@ -423,15 +433,32 @@ background-size: cover;
 </section>
 <section id="zeitaufwand-und-ablauf" class="level2">
 <h2 class="anchored" data-anchor-id="zeitaufwand-und-ablauf">Zeitaufwand und Ablauf</h2>
-<p>Jede Kurseinheit dauert eine Woche und besteht aus einem Input- und einem Anwendungsanteil. In den ersten vier Sitzungen werden die methodischen und konzeptionellen Grundlagen erarbeitet. Anschließend gestalten die Studierenden anwendungsorientierte Sitzungen auf Grundlage eigenständig entwickelter Mini-Projekte.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Zur realistischen Einordnung der Leistungs- und Bewertungsgrundlage eines **6 ECTS Moduls**">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Zur realistischen Einordnung der Leistungs- und Bewertungsgrundlage eines <strong>6 ECTS Moduls</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Im Bologna-/ECTS-System ist ein solches formal mit <strong>150 bis 180 Stunden Gesamtarbeitsaufwand</strong> verbunden, da 1 ECTS in der Regel 25 bis 30 Stunden studentischer Arbeit entspricht (<a href="https://education.ec.europa.eu/sites/default/files/document-library-docs/ects-users-guide_en.pdf">ECTS Users’ Guide, Europäische Kommission</a>). Gemeint ist dabei ausdrücklich nicht nur die Präsenzzeit, sondern die gesamte Arbeit für das Modul, also auch Vor- und Nachbereitung, Aufgaben, Prüfungsvorbereitung und selbstständiges Lernen.</p>
+<p>Entscheidend ist dabei auch die <strong>Bewertungslogik</strong> des ECTS-Systems: ECTS-Punkte werden nicht für bloße Teilnahme vergeben, sondern erst dann, wenn die erforderlichen Lernaktivitäten absolviert, die definierten Lernergebnisse erreicht und das Modul erfolgreich abgeschlossen wurde (<a href="https://www.kmk.org/fileadmin/Dateien/veroeffentlichungen_beschluesse/2024/2024_11_21-Musterrechtsverordnung.pdf">Musterrechtsverordnung, § 8 Leistungspunktesystem</a>; <a href="https://education.ec.europa.eu/sites/default/files/document-library-docs/ects-users-guide_en.pdf">ECTS Users’ Guide, Europäische Kommission</a>). Daraus folgt sachlich, dass der ausgewiesene Workload keine unverbindliche Orientierungsgröße ist, sondern der reguläre Maßstab, in dem ein durchschnittlicher Studierender die Anforderungen eines Moduls im Regelfall <strong>bestehen können soll</strong>; andernfalls wären Workload, Lernergebnisse und Prüfung nicht realistisch aufeinander abgestimmt (<a href="https://education.ec.europa.eu/sites/default/files/document-library-docs/ects-users-guide_en.pdf">ECTS Users’ Guide, Europäische Kommission</a>).</p>
+<p>Fürs Protokoll: Historisch wurde dieser Zusammenhang im deutschen Bologna-Kontext sogar noch offener benannt: ECTS wurde dort als Maß des studentischen Gesamtaufwands <em>„in terms of the necessary level of study and the exam grades needed to obtain a degree“</em> beschrieben (<a href="https://ehea.info/Upload/document/members/germany/National_Report_Germany_2005_567037.pdf">Bologna National Report Germany 2005</a>; <a href="https://www.uni-bamberg.de/fileadmin/abt-studium/strukturreform/ECTSUsersguide.pdf">ECTS Users’ Guide, ältere Fassung</a>).</p>
+<p>Für die offizielle Planung heißt das: Wenn man den formalen Gesamtaufwand eines 6-ECTS-Moduls auf 15 Vorlesungswochen umlegt, ergibt sich rechnerisch eine Größenordnung von etwa 10 bis 12 Stunden Arbeit pro Woche (<a href="https://education.ec.europa.eu/sites/default/files/document-library-docs/ects-users-guide_en.pdf">ECTS Users’ Guide, Europäische Kommission</a>).</p>
+<p>Die im Kurs genannte Orientierung von etwa 8 Stunden pro Woche ist der Versuch, die im Bologna-System angelegte und ignorierte Asymmetrie der Leistungserbringung und -bewertung transparent zu machen und formal in einen praktikablen Kompromiss zu überführen.</p>
+</div>
+</div>
 <section id="kursverlauf" class="level3">
 <h3 class="anchored" data-anchor-id="kursverlauf">Kursverlauf</h3>
+<p>Jede Kurseinheit dauert eine Woche und besteht aus einem Input- und einem Anwendungsanteil. In den ersten vier Sitzungen werden die methodischen und konzeptionellen Grundlagen erarbeitet Der Anwendugnsteilist dann die Bearbeitung der Arbeitsblätter. Anschließend gestalten die Studierenden anwendungsorientierte Sitzungen auf Grundlage eigenständig entwickelter Mini-Projekte. Hier ist der Anwendungsteil das selbständige Nachvollziehen der vorgestellten Projekte.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 13%">
-<col style="width: 12%">
-<col style="width: 41%">
-<col style="width: 32%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 34%">
+<col style="width: 26%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -546,7 +573,7 @@ background-size: cover;
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Die Themenvergabe erfolgt <strong>frühzeitig innerhalb der Inputphase</strong>, damit die Vorbereitungszeit nicht von der späteren Präsentationsreihenfolge abhängt. Die Projektentwicklung läuft somit parallel zum methodischen Input.</p>
+<p>Die Themenvergabe erfolgt zu Beginn der zweiten Inputsitzung, damit die Vorbereitungszeit nicht von der späteren Präsentationsreihenfolge abhängt. Die Projektentwicklung läuft somit parallel zum methodischen Input.</p>
 </div>
 </div>
 </div>
@@ -558,7 +585,7 @@ background-size: cover;
 <ul>
 <li>Input-Sitzung oder studentisch gestaltete Anwendungssitzung</li>
 </ul></li>
-<li><strong>Selbststudium:</strong> ca. 7 Stunden pro Woche
+<li><strong>Selbststudium:</strong> ca. 6 Stunden pro Woche
 <ul>
 <li>Vor- und Nachbereitung der Reader und Übungsblätter</li>
 <li>Arbeit am QGIS-Projekt</li>
@@ -566,13 +593,13 @@ background-size: cover;
 <li>Ausarbeitung von Präsentation, Exposé und Dokumentation</li>
 </ul></li>
 </ul>
-<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout callout-style-simple callout-important no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Für die Projektphase ist eine kontinuierliche Arbeitsweise erforderlich. Die Abgaben sind so konzipiert, dass das Projekt schrittweise entwickelt, dokumentiert und begründet wird.</p>
+<p>Für das Projekt ist eine kontinuierliche Arbeitsweise erforderlich. Es ist so konzipiert, dass es schrittweise entwickelt, dokumentiert und begründet wird.</p>
 </div>
 </div>
 </div>
@@ -580,12 +607,12 @@ background-size: cover;
 </section>
 <section id="studienleistung" class="level2">
 <h2 class="anchored" data-anchor-id="studienleistung">Studienleistung</h2>
-<p>Die individuell zu erbringende Studienleistung wird durch das erfolgreiche Absolvieren der vorgesehenen Self-Assessment-Einheiten in Ilias erbracht. Maßgeblich sind die dort kommunizierten Fristen und Mindestanforderungen.</p>
+<p>Die individuell zu erbringende Studienleistung wird durch das erfolgreiche Absolvieren der vorgesehenen Self-Assessment-Einheiten erbracht.</p>
 </section>
 <section id="prüfungsleistung" class="level2">
 <h2 class="anchored" data-anchor-id="prüfungsleistung">Prüfungsleistung</h2>
-<p>Die Prüfungsleistung wird in Form einer <strong>anwendungsorientierten Mini-Projektarbeit</strong> erbracht. Diese ersetzt in der 6-LP-Variante die reine Klausurlogik durch eine eigenständige, fachlich begründete QGIS-Anwendung.</p>
-<p>Die Projektarbeit ist grundsätzlich <strong>individuell</strong> zu erbringen. Eine Bearbeitung in <strong>2er-Gruppen</strong> ist möglich, sofern die jeweiligen Arbeitsanteile klar kenntlich gemacht werden.</p>
+<p>Die Prüfungsleistung wird in Form einer <strong>anwendungsorientierten Mini-Projektarbeit</strong> erbracht.</p>
+<p>Die Projektarbeit ist grundsätzlich <strong>individuell</strong> zu erbringen. Eine Bearbeitung in <strong>2-3er-Gruppen</strong> ist möglich, sofern die jeweiligen Arbeitsanteile klar kenntlich gemacht werden.</p>
 <div class="callout callout-style-simple callout-important no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -597,18 +624,17 @@ background-size: cover;
 </div>
 </div>
 </section>
-<section id="didaktisches-format-der-studentischen-anwendungssitzungen" class="level2">
-<h2 class="anchored" data-anchor-id="didaktisches-format-der-studentischen-anwendungssitzungen">Didaktisches Format der studentischen Anwendungssitzungen</h2>
+<section id="format-der-studentischen-anwendungssitzungen" class="level2">
+<h2 class="anchored" data-anchor-id="format-der-studentischen-anwendungssitzungen">Format der studentischen Anwendungssitzungen</h2>
 <p>Die studentisch gestalteten Sitzungen sind als <strong>anwendungsorientierte Übungssitzungen</strong> konzipiert. Sie sollen nicht die Form eines klassischen Referats annehmen, sondern eine fachlich strukturierte Arbeitsphase auf Basis eines eigenständig entwickelten QGIS-Mini-Projekts bilden.</p>
 <p>Erwartet wird deshalb eine Verbindung aus:</p>
-<ul>
-<li>kurzer Einführung in Problem und Raumfrage,</li>
-<li>kompakter Darstellung des QGIS-Projekts,</li>
-<li>aktivierendem Übungs- oder Diskussionsanteil,</li>
-<li>gemeinsamer Auswertung und kritischer Reflexion.</li>
-</ul>
-<section id="mindestanforderung-an-die-sitzungsform" class="level3">
-<h3 class="anchored" data-anchor-id="mindestanforderung-an-die-sitzungsform"><a href="../unit00/unit00-03-formales.html">Mindestanforderung an die Sitzungsform</a></h3>
+<ol type="1">
+<li>kurzer Einführung in Problem und Raumfrage (max. 5 Minuten),</li>
+<li>kompakter Darstellung des QGIS-Projekts (max. 10 Minuten),</li>
+<li>aktivierendem Übungs- oder Diskussionsanteil (max. 60 Minuten),</li>
+<li>gemeinsamer Auswertung und kritischer Reflexion (max. 15 Minuten).</li>
+</ol>
+<p><a href="../unit00/unit00-03-formales.html">Gestaltung der studentischen Übungssitzungen</a></p>
 <p>Jede studentische Sitzung muss mindestens <strong>eine klar erkennbare Aktivierungsphase</strong> enthalten. Reine Vortragsformate ohne Übungs-, Bewertungs- oder Diskussionsanteil erfüllen die Anforderungen nicht vollständig.</p>
 <p>Geeignete Aktivierungsformen sind zum Beispiel:</p>
 <ul>
@@ -618,20 +644,6 @@ background-size: cover;
 <li>Analyse von Unsicherheiten, Schwellenwerten oder Datenproblemen,</li>
 <li>kurze Gruppenaufgaben zur Interpretation des QGIS-Projekts.</li>
 </ul>
-</section>
-<section id="verbindliche-grundstruktur" class="level3">
-<h3 class="anchored" data-anchor-id="verbindliche-grundstruktur">Verbindliche Grundstruktur</h3>
-<p>Die studentische Sitzung soll in vier Teile gegliedert sein:</p>
-<ol type="1">
-<li><p><strong>Problemaufriss und Arbeitsauftrag</strong><br>
-kurze Einführung in Problem, Raumfrage und Untersuchungsraum</p></li>
-<li><p><strong>Verdichtete Projektdemonstration</strong><br>
-kompakte Darstellung von Daten, Analyseweg und Ergebnissen</p></li>
-<li><p><strong>Aktivierender Übungsanteil</strong><br>
-fachliche Beteiligung des Plenums an Bewertung, Interpretation oder Entscheidungslogik</p></li>
-<li><p><strong>Auswertung und kritische Reflexion</strong><br>
-gemeinsame Einordnung der Ergebnisse sowie Benennung von Grenzen und Unsicherheiten</p></li>
-</ol>
 <div class="callout callout-style-simple callout-important no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -642,11 +654,20 @@ gemeinsame Einordnung der Ergebnisse sowie Benennung von Grenzen und Unsicherhei
 </div>
 </div>
 </div>
-</section>
 <section id="bestandteile-des-mini-projektpakets" class="level3">
 <h3 class="anchored" data-anchor-id="bestandteile-des-mini-projektpakets">Bestandteile des Mini-Projektpakets</h3>
-<section id="qgis-projekt" class="level4">
-<h4 class="anchored" data-anchor-id="qgis-projekt">1. QGIS-Projekt</h4>
+<section id="projektskizze-und-qgis-projekt" class="level4">
+<h4 class="anchored" data-anchor-id="projektskizze-und-qgis-projekt">1. Projektskizze und QGIS-Projekt</h4>
+<p>Abzugeben ist eine <strong>1–2-seitige Projektskizze</strong> einzureichen. Diese enthält:</p>
+<ul>
+<li>Titel des Projekts,</li>
+<li>Fragestellung,</li>
+<li>Untersuchungsraum,</li>
+<li>Datensatz bzw. Datengrundlage,</li>
+<li>Kriterien bzw. Analysevariablen,</li>
+<li>erwartete Aussagekraft,</li>
+<li>voraussichtlichen Workflow.</li>
+</ul>
 <p>Abzugeben ist ein lauffähiges QGIS-Projekt mit:</p>
 <ul>
 <li>sauber benannten Layern,</li>
@@ -667,22 +688,10 @@ gemeinsame Einordnung der Ergebnisse sowie Benennung von Grenzen und Unsicherhei
 <li>Ergebnisse,</li>
 <li>kritische Reflexion der Aussagekraft und Grenzen.</li>
 </ul>
-</section>
-<section id="projektskizze-exposé" class="level4">
-<h4 class="anchored" data-anchor-id="projektskizze-exposé">3. Projektskizze / Exposé</h4>
-<p>Zusätzlich ist eine <strong>1–2-seitige Projektskizze</strong> einzureichen. Diese enthält:</p>
-<ul>
-<li>Titel des Projekts,</li>
-<li>Fragestellung,</li>
-<li>Untersuchungsraum,</li>
-<li>Datensatz bzw. Datengrundlage,</li>
-<li>Kriterien bzw. Analysevariablen,</li>
-<li>erwartete Aussagekraft,</li>
-<li>voraussichtlichen Workflow.</li>
-</ul>
+<p>Die Präsentation kann ein Foliensatz oder ein Miniposter/Cheat-sheet etc sein.</p>
 </section>
 <section id="kurze-workflow-dokumentation" class="level4">
-<h4 class="anchored" data-anchor-id="kurze-workflow-dokumentation">4. Kurze Workflow-Dokumentation</h4>
+<h4 class="anchored" data-anchor-id="kurze-workflow-dokumentation">3. Kurze Workflow-Dokumentation</h4>
 <p>Die Workflow-Dokumentation dient der Reproduzierbarkeit. Sie soll knapp, aber konkret darlegen,</p>
 <ul>
 <li>welche Daten verwendet wurden,</li>
@@ -690,6 +699,7 @@ gemeinsame Einordnung der Ergebnisse sowie Benennung von Grenzen und Unsicherhei
 <li>welche Annahmen und Schwellenwerte gesetzt wurden,</li>
 <li>und wie das Ergebnis zustande kam.</li>
 </ul>
+<p>In der Regel kann diese aus dem QGIS Protokoll abgeleitet werden.</p>
 </section>
 </section>
 </section>
@@ -698,7 +708,7 @@ gemeinsame Einordnung der Ergebnisse sowie Benennung von Grenzen und Unsicherhei
 <p>Die Reader, Aufgaben und Übungsblätter der Inputphase bilden den methodischen Unterbau der Projektarbeit. Die anwendungsorientierte Sitzung muss deshalb erkennbar auf den Kursinhalten aufbauen.</p>
 <p>Das bedeutet insbesondere:</p>
 <ul>
-<li>Das Projekt darf keine bloße Tool-Demonstration sein.</li>
+<li>Das Projekt ist keine Tool-Demonstration.</li>
 <li>Es muss eine <strong>reale räumliche Fragestellung</strong> bearbeiten.</li>
 <li>Es muss mehrere im Kurs behandelte Konzepte und Methoden sinnvoll zusammenführen.</li>
 <li>Es muss den Zusammenhang zwischen Daten, Methode, Interpretation und Entscheidung offenlegen.</li>
@@ -709,7 +719,7 @@ gemeinsame Einordnung der Ergebnisse sowie Benennung von Grenzen und Unsicherhei
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Die Projektarbeit soll in der Regel deutlich mehr leisten als eine isolierte Standardübung. Erwartet wird eine eigenständige Anwendung, die zentrale methodische Bausteine des Kurses sichtbar integriert.</p>
+<p>Die Projektarbeit soll mehr leisten als eine isolierte Standardübung. Erwartet wird eine eigenständige Anwendung, die zentrale methodische Bausteine des Kurses sichtbar integriert.</p>
 </div>
 </div>
 </div>
@@ -721,7 +731,7 @@ gemeinsame Einordnung der Ergebnisse sowie Benennung von Grenzen und Unsicherhei
 <h3 class="anchored" data-anchor-id="fachliche-und-konzeptionelle-qualität">1. Fachliche und konzeptionelle Qualität</h3>
 <p>Bewertet wird,</p>
 <ul>
-<li>ob die Fragestellung fachlich sinnvoll und räumlich klar formuliert ist,</li>
+<li>ob die Fragestellung fachlich sinnvoll und räumlich klar ausgestaltet ist,</li>
 <li>ob der Untersuchungsraum und die Datenlage angemessen gewählt wurden,</li>
 <li>ob die Analyse inhaltlich begründet ist,</li>
 <li>und ob die Ergebnisse plausibel interpretiert werden.</li>

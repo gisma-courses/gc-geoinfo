@@ -62,7 +62,7 @@ Versuchen Sie, diese sehr abstrakte Sicht auf räumliche Daten und Informationen
 * [Öffentliche Toiletten in Australien](https://toiletmap.gov.au/)
 * [Aktuelle Wasserstände der Lahn](http://www.wetterbote.de/wetter/pegel/lahn.htm)
 * [Lufthygiene-Messstation Bad Arolsen](https://www.hlnug.de/messwerte/datenportal/messstelle/2/1/1406)
-* [Cineplex](http://www.cineplex.de/kino/home/city32/)
+* [Kilometrierung der Bundesautobahnen](https://www.arcgis.com/apps/mapviewer/index.html?layers=d057d278f94d433e9abfd1a4f8040d50)
 
 Reflektieren Sie anhand der folgenden Leitfragen:
 

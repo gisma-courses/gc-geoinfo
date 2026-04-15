@@ -1,0 +1,243 @@
+---
+title: "Projekt-Themen"
+title-block-banner: ../assets/images/splash-geoinformatik.jpg
+title-block-banner-color: black
+lang: de
+
+---
+
+Die folgenden Themen sind als eigenständige Mini-Projekte für studentische QGIS-Sitzungen gedacht. Sie unterscheiden sich nicht nur im Gegenstand, sondern vor allem in der zugrunde liegenden Konzeptualsierung: Mustererkennung, Sichtbarkeit, Zentralität, Überlagerung, Korridorbildung, Priorisierung, Interpolation, Maßstabsreflexion, Widerspruchsanalyse und Zeitvergleich.
+
+Jedes Thema enthält eine konkrete Projektidee, eine knappe konzeptionelle Rahmung, eine möglichst realistische Einschätzung der Schwierigkeit sowie Hinweise auf verfügbare Datensätze und methodische Quellen.
+
+## 1. Hotspots ohne Erklärung
+
+* **Konkrete Idee:** Wo häufen sich Fahrraddiebstähle, Müllablagerungen, Schäden oder andere punktförmige Vorfälle in einem Stadtteil oder auf einem Campus?
+* **Konzeptidee:** Das Projekt dient der **deskriptiven Mustererkennung**. Ziel ist nicht, Ursachen zu behaupten, sondern Cluster, Dichtezonen und räumliche Auffälligkeiten sichtbar zu machen.
+* **Methoden:** Punktdaten, Heatmap/KDE, Vergleich mit Wegen, Gebäuden, Haltestellen oder Nutzungsflächen.
+* **Schwierigkeit:** *leicht*
+* **Warum:** Technisch gut beherrschbar. Die eigentliche Schwierigkeit liegt in der disziplinierten Interpretation.
+* **Datensätze / Quellen:**
+
+  * eigene Erhebung oder kommunale Open-Data-Punktdaten
+  * OSM / Geofabrik für Wege, Gebäude, Haltestellen und POIs
+  * QGIS-Dokumentation: Heatmap / Interpolation
+
+## 2. Sichtachsen und tote Winkel
+
+* **Konkrete Idee:** Welche Bereiche eines Schulhofs, Parks oder Aussichtspunkts sind von ausgewählten Beobachtungspunkten aus sichtbar und welche systematisch abgeschirmt?
+* **Konzeptidee:** Sichtbarkeit wird hier als **räumliche Ressource und Begrenzung** verstanden. Das Thema eignet sich für Orientierung, Überblick, Kontrolle oder Abschirmung.
+* **Methoden:** DGM, Viewshed, Auswahl mehrerer Beobachtungspunkte, Überlagerung der Sichtfelder.
+* **Schwierigkeit:** *mittel*
+* **Warum:** Die Methode ist klar, aber nur dann überzeugend, wenn Beobachtungspunkte sinnvoll gewählt und die Grenzen der Höhendaten benannt werden.
+* **Datensätze / Quellen:**
+
+  * Copernicus DEM
+  * OSM / Geofabrik für Wege, Gebäude, Aussichtspunkte
+  * QGIS / GDAL Viewshed-Dokumentation
+
+## 3. Verlorene Mitte
+
+* **Konkrete Idee:** Welche Flächen auf einem Campus oder in einem Quartier liegen geometrisch zentral, bleiben funktional aber randständig?
+* **Konzeptidee:** Das Projekt untersucht die Differenz zwischen **geometrischer Zentralität** und **tatsächlicher funktionaler Einbindung**.
+* **Methoden:** Distanzanalyse, Erreichbarkeit, Wegebezug, Vergleich von Lage und Nutzung.
+* **Schwierigkeit:** *leicht bis mittel*
+* **Warum:** Konzeptionell stark, aber technisch noch recht übersichtlich.
+* **Datensätze / Quellen:**
+
+  * OSM / Geofabrik für Wege, Gebäude, Eingänge, Platzflächen
+  * eigene Kartierung von Nutzungsintensitäten oder Aufenthaltsorten
+  * QGIS-Dokumentation: Network Analysis / Service Area
+
+## 4. Räume der Überlagerung
+
+* **Konkrete Idee:** Wo überlagern sich mehrere Problemlagen, etwa Versiegelung, geringe Grünnähe, hohe Nutzungsintensität, geringe Aufenthaltsqualität oder Umweltbelastung?
+* **Konzeptidee:** Im Zentrum steht die Idee des **mehrfach belasteten Raums**. Relevant wird der Raum gerade dort, wo mehrere Indikatoren gleichzeitig problematisch werden.
+* **Methoden:** Standardisierung mehrerer Layer, Überlagerung, Summen- oder Konfliktindex, Kartierung von Verdichtungsräumen.
+* **Schwierigkeit:** *mittel*
+* **Warum:** Methodisch recht einfach, aber konzeptionell anfällig für Beliebigkeit, wenn die Layerwahl nicht sauber begründet wird.
+* **Datensätze / Quellen:**
+
+  * Urban Atlas
+  * OSM / Geofabrik
+  * Copernicus DEM
+  * optional zusätzliche Umwelt- oder Klimadaten aus offenen Portalen
+  
+## 5. Maßstab als Problem
+
+* **Konkrete Idee:** Wie verändert sich dieselbe Analyse, wenn sie mit gröberer oder feinerer Rasterauflösung bzw. auf unterschiedlichem Aggregationsniveau durchgeführt wird?
+* **Konzeptidee:** Das Projekt zeigt die **Skalenabhängigkeit räumlicher Aussagen**.
+* **Methoden:** Resampling, Aggregation, mehrfache Berechnung desselben Workflows, Differenzanalyse.
+* **Schwierigkeit:** **hoch**
+* **Warum:** Rechentechnisch nicht extrem, aber intellektuell anspruchsvoll. Gute Gruppen können hier sehr sauber zeigen, wie Ergebnisse vom Maßstab abhängen.
+* **Datensätze / Quellen:**
+
+  * Copernicus DEM
+  * Urban Atlas
+  * OSM / Geofabrik
+  * QGIS-Rasterwerkzeuge und Zonal Statistics
+
+## 6. Räume, die sich widersprechen
+
+* **Konkrete Idee:** Wo treffen gegensätzliche räumliche Qualitäten zusammen, etwa gute Lage und hohe Belastung, grüne Umgebung und schlechte Zugänglichkeit oder hohe Sichtbarkeit und geringe Nutzbarkeit?
+* **Konzeptidee:** Das Thema untersucht **Widerspruchsräume**, also Räume, die sich nicht in einer einfachen Gut-Schlecht-Logik auflösen lassen.
+* **Methoden:** Kombination gegensätzlicher Indikatoren, Vergleich mehrerer Karten, Identifikation von Divergenzflächen.
+* **Schwierigkeit:** **mittel bis hoch**
+* **Warum:** Methodisch nicht extrem komplex, aber analytisch nur dann stark, wenn die Gegensätze sauber konstruiert werden.
+* **Datensätze / Quellen:**
+
+  * OSM / Geofabrik
+  * Urban Atlas
+  * Copernicus DEM
+  * optionale Umweltindikatoren aus offenen Quellen
+
+## 7. Vorher–Nachher ohne Pathos
+
+* **Konkrete Idee:** Was hat sich zwischen zwei Zeitständen räumlich tatsächlich verändert, etwa vor und nach Umgestaltung, Neubau oder Flächennutzungsänderung?
+* **Konzeptidee:** Ziel ist eine **nüchterne Differenzanalyse**, nicht eine vorgefertigte Aufwertungs- oder Fortschrittserzählung.
+* **Methoden:** Overlay zweier Zeitstände, Differenzkarten, Flächenbilanz, Prüfung von Vergleichbarkeit und Unsicherheit.
+* **Schwierigkeit:** **mittel bis hoch**
+* **Warum:** Gut machbar, wenn zwei belastbare Zeitstände vorliegen. Die Hauptschwierigkeit liegt in der Vergleichbarkeit, nicht in der Softwaretechnik.
+* **Datensätze / Quellen:**
+
+  * Urban Atlas mit mehreren Zeitständen und Change-Layern
+  * OSM / Geofabrik als ergänzender Vektorkontext
+  * lokale Luftbilder oder kommunale Open-Data-Zeitstände
+  
+
+## 8. Korridore statt Punkte
+
+* **Konkrete Idee:** Wo verläuft ein möglichst konfliktarmer, barrierearmer oder landschaftsschonender Verbindungskorridor zwischen zwei Orten?
+* **Konzeptidee:** Statt eines besten Punktstandorts wird hier ein **geeigneter Verlauf** gesucht. Das Thema eignet sich für Wege, Grünverbindungen oder ruhige Verbindungsräume.
+* **Methoden:** Kostenfläche, Least-Cost Path oder Korridor, Ausschlussflächen, Variantenvergleich.
+* **Schwierigkeit:** *mittel bis hoch*
+* **Warum:** starkes vielseitiges Thema, aber die Kostenoberfläche muss plausibel und transparent konstruiert werden.
+* **Datensätze / Quellen:**
+
+  * OSM / Geofabrik für Wege, Barrieren, Straßen, Gewässer
+  * Copernicus DEM für Steigung
+  * Urban Atlas für Nutzungs- und Ausschlussflächen
+  * GRASS / QGIS-Processing für kostenbasierte Raster-Workflows
+
+## 9. Rangfolgen unter Knappheit
+
+* **Konkrete Idee:** Wenn nur drei Flächen entsiegelt, begrünt, beschattet oder aufgewertet werden können: Welche sollten zuerst gewählt werden?
+* **Konzeptidee:** Das Projekt behandelt **Priorisierung unter Ressourcenknappheit**. Es geht nicht nur um Eignung, sondern um echte Auswahlentscheidungen.
+* **Methoden:** Kriterienbildung, Gewichtung, Ranking, Priorisierung, Vergleich alternativer Auswahlregeln.
+* **Schwierigkeit:** *hoch*
+* **Warum:** Nicht primär technisch schwer, aber argumentativ anspruchsvoll. Die Priorisierungslogik muss offen und belastbar sein.
+* **Datensätze / Quellen:**
+
+  * Urban Atlas
+  * OSM / Geofabrik
+  * Copernicus DEM
+  * methodische Orientierung über Suitability- und Priorisierungsworkflows in QGIS
+
+## 10. Interpolation mit Misstrauen
+
+* **Konkrete Idee:** Wie verändert sich ein interpoliertes Temperatur-, Luftqualitäts- oder Lärmfeld, wenn Verfahren, Parameter oder Punktdichte variiert werden?
+* **Konzeptidee:** Flächenwerte werden hier als **Schätzung unter Unsicherheit** verstanden, nicht als objektive Wahrheit.
+* **Methoden:** Punktdaten, IDW oder TIN, Variantenvergleich, Fehlervalidierung oder Plausibilitätsprüfung.
+* **Schwierigkeit:** *hoch*
+* **Warum:** Sehr gutes wissenschaftliches Thema, aber stark abhängig von der Qualität und Dichte der Punktdaten.
+* **Datensätze / Quellen:**
+
+  * eigene Messdaten
+  * OpenAQ für Luftqualitätsdaten
+  * QGIS-Dokumentation: Interpolation / IDW / TIN
+
+
+## Gemeinsame Basisquellen
+
+### Methodische Quellen
+
+* [QGIS Documentation – Network Analysis / Service Area](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/networkanalysis.html)
+* [QGIS Documentation – Interpolation](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/interpolation.html)
+* [QGIS Training Manual – Terrain Analysis](https://docs.qgis.org/latest/en/docs/training_manual/rasters/terrain_analysis.html)
+* [QGIS / GDAL Documentation – Viewshed](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/gdal/rastermiscellaneous.html)
+* [GRASS GIS Documentation](https://grass.osgeo.org/grass-stable/manuals/)
+
+### Datensätze
+
+* [Geofabrik / OpenStreetMap](https://download.geofabrik.de/)
+* [Copernicus DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM)
+* [Urban Atlas](https://land.copernicus.eu/en/products/urban-atlas)
+* [OpenAQ](https://openaq.org/)
+* kommunale Open-Data-Portale oder eigene Erhebungen
+
+## Quellenlinks nach Themen
+
+### 1. Hotspots ohne Erklärung
+
+* [QGIS Documentation – Interpolation / Heatmap](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/interpolation.html)
+* [Geofabrik / OpenStreetMap](https://download.geofabrik.de/)
+
+### 2. Sichtachsen und tote Winkel
+
+* [Copernicus DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM)
+* [QGIS / GDAL Documentation – Viewshed](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/gdal/rastermiscellaneous.html)
+* [Geofabrik / OpenStreetMap](https://download.geofabrik.de/)
+
+### 3. Verlorene Mitte
+
+* [QGIS Documentation – Network Analysis / Service Area](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/networkanalysis.html)
+* [Geofabrik / OpenStreetMap](https://download.geofabrik.de/)
+
+### 4. Räume der Überlagerung
+
+* [Urban Atlas](https://land.copernicus.eu/en/products/urban-atlas)
+* [Copernicus DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM)
+* [Geofabrik / OpenStreetMap](https://download.geofabrik.de/)
+
+### 5. Korridore statt Punkte
+
+* [GRASS GIS Documentation](https://grass.osgeo.org/grass-stable/manuals/)
+* [Copernicus DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM)
+* [Urban Atlas](https://land.copernicus.eu/en/products/urban-atlas)
+* [Geofabrik / OpenStreetMap](https://download.geofabrik.de/)
+
+### 6. Rangfolgen unter Knappheit
+
+* [Urban Atlas](https://land.copernicus.eu/en/products/urban-atlas)
+* [Copernicus DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM)
+* [Geofabrik / OpenStreetMap](https://download.geofabrik.de/)
+* [QGIS Documentation – Processing Framework](https://docs.qgis.org/latest/en/docs/user_manual/processing/index.html)
+
+### 7. Interpolation mit Misstrauen
+
+* [QGIS Documentation – Interpolation](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/interpolation.html)
+* [OpenAQ](https://openaq.org/)
+
+### 8. Maßstab als Problem
+
+* [Copernicus DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM)
+* [Urban Atlas](https://land.copernicus.eu/en/products/urban-atlas)
+* [Geofabrik / OpenStreetMap](https://download.geofabrik.de/)
+* [QGIS Documentation – Raster Analysis](https://docs.qgis.org/latest/en/docs/user_manual/working_with_raster/index.html)
+
+### 9. Räume, die sich widersprechen
+
+* [Urban Atlas](https://land.copernicus.eu/en/products/urban-atlas)
+* [Copernicus DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM)
+* [Geofabrik / OpenStreetMap](https://download.geofabrik.de/)
+
+### 10. Vorher–Nachher ohne Pathos
+
+* [Urban Atlas](https://land.copernicus.eu/en/products/urban-atlas)
+* [Geofabrik / OpenStreetMap](https://download.geofabrik.de/)
+
+## Hinweise zur Themenwahl
+
+Die Themen bilden unterschiedliche räumliche Denkformen ab:
+
+* Muster erkennen
+* Sichtbarkeit analysieren
+* funktionale Mitte hinterfragen
+* Problemlagen überlagern
+* Korridore modellieren
+* Prioritäten setzen
+* Unsicherheit in Interpolation prüfen
+* Maßstab reflektieren
+* Widerspruchsräume identifizieren
+* Veränderungen vergleichen
+

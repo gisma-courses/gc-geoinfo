@@ -1,5 +1,5 @@
 ---
-title: "Formales"
+title: "Formalia"
 title-block-banner: ../assets/images/splash-geoinformatik.jpg
 title-block-banner-color: Black
 lang: de
@@ -10,7 +10,7 @@ Die Aufgaben im Reader und die Übungsblätter auf den Kursseiten bilden die Gru
 
 ## Anwesenheit
 
-Die Lehrveranstaltung findet grundsätzlich als **Präsenzveranstaltung** statt. Eine kontinuierliche Teilnahme ist fachlich erforderlich, da die Input-Sitzungen, Rückfragen, Diskussionen und Projektberatungen direkt aufeinander aufbauen. Einzelne Termine können in begründeten Ausnahmefällen online oder per Streaming durchgeführt werden.
+Die Lehrveranstaltung findet grundsätzlich als **Präsenzveranstaltung** statt. Eine kontinuierliche Teilnahme ist fachlich sinnvoll, da die Input-Sitzungen, Rückfragen, Diskussionen und Projektberatungen direkt aufeinander aufbauen. Einzelne Termine können in begründeten Ausnahmefällen online oder per Streaming durchgeführt werden.
 
 ## Übersicht der Kommunikationsformen
 
@@ -20,7 +20,7 @@ Diese Webseite dient der einseitigen und überwiegend asynchronen Kommunikation 
 
 ### Kursbereich in Ilias
 
-Der [Kursbereich der Lernplattform PUM Ilias](https://ilias.uni-marburg.de/login.php?target=&client_id=UNIMR&auth_stat=) dient der Organisation des Kurses, der Bereitstellung urheberrechtlich geschützter Materialien, der Durchführung der Self-Assessments sowie der Abgabe der Projektarbeiten.
+Der [Kursbereich der Lernplattform PUM Ilias](https://ilias.uni-marburg.de/login.php?target=&client_id=UNIMR&auth_stat=) dient der Organisation des Kurses, der Bereitstellung urheberrechtlich geschützter Materialien sowie der Abgabe der Projektarbeiten.
 
 ### Fragen
 
@@ -28,12 +28,27 @@ Fachliche und organisatorische Fragen sollen in erster Linie in den Präsenzzeit
 
 ## Zeitaufwand und Ablauf
 
-Jede Kurseinheit dauert eine Woche und besteht aus einem Input- und einem Anwendungsanteil. In den ersten vier Sitzungen werden die methodischen und konzeptionellen Grundlagen erarbeitet. Anschließend gestalten die Studierenden anwendungsorientierte Sitzungen auf Grundlage eigenständig entwickelter Mini-Projekte.
+::: {.callout-note title="Zur realistischen Einordnung der Leistungs- und Bewertungsgrundlage eines **6 ECTS Moduls**" appearance="minimal"}
+
+Im Bologna-/ECTS-System ist ein solches formal mit **150 bis 180 Stunden Gesamtarbeitsaufwand** verbunden, da 1 ECTS in der Regel 25 bis 30 Stunden studentischer Arbeit entspricht ([ECTS Users’ Guide, Europäische Kommission](https://education.ec.europa.eu/sites/default/files/document-library-docs/ects-users-guide_en.pdf)). Gemeint ist dabei ausdrücklich nicht nur die Präsenzzeit, sondern die gesamte Arbeit für das Modul, also auch Vor- und Nachbereitung, Aufgaben, Prüfungsvorbereitung und selbstständiges Lernen.
+
+Entscheidend ist dabei auch die **Bewertungslogik** des ECTS-Systems: ECTS-Punkte werden nicht für bloße Teilnahme vergeben, sondern erst dann, wenn die erforderlichen Lernaktivitäten absolviert, die definierten Lernergebnisse erreicht und das Modul erfolgreich abgeschlossen wurde ([Musterrechtsverordnung, § 8 Leistungspunktesystem](https://www.kmk.org/fileadmin/Dateien/veroeffentlichungen_beschluesse/2024/2024_11_21-Musterrechtsverordnung.pdf); [ECTS Users’ Guide, Europäische Kommission](https://education.ec.europa.eu/sites/default/files/document-library-docs/ects-users-guide_en.pdf)). Daraus folgt sachlich, dass der ausgewiesene Workload keine unverbindliche Orientierungsgröße ist, sondern der reguläre Maßstab, in dem ein durchschnittlicher Studierender die Anforderungen eines Moduls im Regelfall **bestehen können soll**; andernfalls wären Workload, Lernergebnisse und Prüfung nicht realistisch aufeinander abgestimmt ([ECTS Users’ Guide, Europäische Kommission](https://education.ec.europa.eu/sites/default/files/document-library-docs/ects-users-guide_en.pdf)). 
+
+Fürs Protokoll: Historisch wurde dieser Zusammenhang im deutschen Bologna-Kontext sogar noch offener benannt: ECTS wurde dort als Maß des studentischen Gesamtaufwands *„in terms of the necessary level of study and the exam grades needed to obtain a degree“* beschrieben ([Bologna National Report Germany 2005](https://ehea.info/Upload/document/members/germany/National_Report_Germany_2005_567037.pdf); [ECTS Users’ Guide, ältere Fassung](https://www.uni-bamberg.de/fileadmin/abt-studium/strukturreform/ECTSUsersguide.pdf)).
+
+Für die offizielle Planung heißt das: Wenn man den formalen Gesamtaufwand eines 6-ECTS-Moduls auf 15 Vorlesungswochen umlegt, ergibt sich rechnerisch eine Größenordnung von etwa 10 bis 12 Stunden Arbeit pro Woche ([ECTS Users’ Guide, Europäische Kommission](https://education.ec.europa.eu/sites/default/files/document-library-docs/ects-users-guide_en.pdf)). 
+
+Die im Kurs genannte Orientierung von etwa 8 Stunden pro Woche ist der Versuch, die im Bologna-System angelegte und ignorierte Asymmetrie der Leistungserbringung und -bewertung  transparent zu machen und formal in einen praktikablen Kompromiss zu überführen.
+
+:::
 
 ### Kursverlauf
 
+Jede Kurseinheit dauert eine Woche und besteht aus einem Input- und einem Anwendungsanteil. In den ersten vier Sitzungen werden die methodischen und konzeptionellen Grundlagen erarbeitet Der Anwendugnsteilist dann die Bearbeitung der Arbeitsblätter. Anschließend gestalten die Studierenden anwendungsorientierte Sitzungen auf Grundlage eigenständig entwickelter Mini-Projekte. Hier ist der Anwendungsteil das selbständige Nachvollziehen der vorgestellten Projekte.
+
+
 | Sitzung | Phase | Schwerpunkt | Ergebnissicherung |
-|:--------:|---------|------------------------------|------------------------|
+|:------------:|--------------|-------------------------|-------------------|
 | 1 | Input | Raumkonzepte, Raumrepräsentation, Datenmodelle, QGIS-Orientierung | Reader- und Übungsgrundlagen |
 | 2 | Input | Vektordaten, Attribute, thematische, geometrische und topologische Abfragen | Ergebnissicherung Sitzung 1 |
 | 3 | Input | Rasterdaten, DGM, topographische Ableitungen, Sichtfeld, prozessbezogene Interpretation | Ergebnissicherung Sitzung 2 |
@@ -52,86 +67,80 @@ Jede Kurseinheit dauert eine Woche und besteht aus einem Input- und einem Anwend
 | 16 | Anwendung Block D | Studentische Projektsitzung D3 | Ergebnissicherung Sitzung 15 |
 
 ::: {.callout-important appearance="simple" icon="false"}
-Die Themenvergabe erfolgt **frühzeitig innerhalb der Inputphase**, damit die Vorbereitungszeit nicht von der späteren Präsentationsreihenfolge abhängt. Die Projektentwicklung läuft somit parallel zum methodischen Input.
+
+Die Themenvergabe erfolgt zu Beginn der zweiten Inputsitzung, damit die Vorbereitungszeit nicht von der späteren Präsentationsreihenfolge abhängt. Die Projektentwicklung läuft somit parallel zum methodischen Input.
 :::
 
 ### Exemplarischer Stundenplan der Lehrveranstaltung
 
 -   **Präsenz:** 2 Stunden pro Woche
     -   Input-Sitzung oder studentisch gestaltete Anwendungssitzung
--   **Selbststudium:** ca. 7 Stunden pro Woche
+-   **Selbststudium:** ca. 6 Stunden pro Woche
     -   Vor- und Nachbereitung der Reader und Übungsblätter
     -   Arbeit am QGIS-Projekt
     -   Abstimmung in Lerngruppen
     -   Ausarbeitung von Präsentation, Exposé und Dokumentation
 
-::: {.callout-tip icon="false" appearance="simple"}
-Für die Projektphase ist eine kontinuierliche Arbeitsweise erforderlich. Die Abgaben sind so konzipiert, dass das Projekt schrittweise entwickelt, dokumentiert und begründet wird.
+::: {.callout-important appearance="simple" icon="false"}
+Für das Projekt ist eine kontinuierliche Arbeitsweise erforderlich. Es ist so konzipiert, dass es schrittweise entwickelt, dokumentiert und begründet wird.
 :::
 
 ## Studienleistung
 
-Die individuell zu erbringende Studienleistung wird durch das erfolgreiche Absolvieren der vorgesehenen Self-Assessment-Einheiten in Ilias erbracht. Maßgeblich sind die dort kommunizierten Fristen und Mindestanforderungen.
+Die individuell zu erbringende Studienleistung wird durch das erfolgreiche Absolvieren der vorgesehenen Self-Assessment-Einheiten erbracht. 
 
 ## Prüfungsleistung
 
-Die Prüfungsleistung wird in Form einer **anwendungsorientierten Mini-Projektarbeit** erbracht. Diese ersetzt in der 6-LP-Variante die reine Klausurlogik durch eine eigenständige, fachlich begründete QGIS-Anwendung.
+Die Prüfungsleistung wird in Form einer **anwendungsorientierten Mini-Projektarbeit** erbracht. 
 
-Die Projektarbeit ist grundsätzlich **individuell** zu erbringen. Eine Bearbeitung in **2er-Gruppen** ist möglich, sofern die jeweiligen Arbeitsanteile klar kenntlich gemacht werden.
+Die Projektarbeit ist grundsätzlich **individuell** zu erbringen. Eine Bearbeitung in **2-3er-Gruppen** ist möglich, sofern die jeweiligen Arbeitsanteile klar kenntlich gemacht werden.
 
 ::: {.callout-important appearance="simple" icon="false"}
 Die Prüfungsleistung besteht nicht nur aus einer Präsentation oder einer Projektdatei, sondern aus einem vollständigen **Mini-Projektpaket**.
 :::
 
-
-## Didaktisches Format der studentischen Anwendungssitzungen
+## Format der studentischen Anwendungssitzungen
 
 Die studentisch gestalteten Sitzungen sind als **anwendungsorientierte Übungssitzungen** konzipiert. Sie sollen nicht die Form eines klassischen Referats annehmen, sondern eine fachlich strukturierte Arbeitsphase auf Basis eines eigenständig entwickelten QGIS-Mini-Projekts bilden.
 
 Erwartet wird deshalb eine Verbindung aus:
 
-- kurzer Einführung in Problem und Raumfrage,
-- kompakter Darstellung des QGIS-Projekts,
-- aktivierendem Übungs- oder Diskussionsanteil,
-- gemeinsamer Auswertung und kritischer Reflexion.
+1.   kurzer Einführung in Problem und Raumfrage (max. 5 Minuten),
+2.   kompakter Darstellung des QGIS-Projekts (max. 10 Minuten),
+3.   aktivierendem Übungs- oder Diskussionsanteil (max. 60 Minuten),
+4.   gemeinsamer Auswertung und kritischer Reflexion (max. 15 Minuten).
 
-### [Mindestanforderung an die Sitzungsform](unit00-03-formales.qmd)
+[Gestaltung der studentischen Übungssitzungen](unit00-03-formales.qmd)
 
 Jede studentische Sitzung muss mindestens **eine klar erkennbare Aktivierungsphase** enthalten. Reine Vortragsformate ohne Übungs-, Bewertungs- oder Diskussionsanteil erfüllen die Anforderungen nicht vollständig.
 
 Geeignete Aktivierungsformen sind zum Beispiel:
 
-- Bewertung von Karten oder Standortalternativen,
-- Diskussion und Gewichtung von Kriterien,
-- Vergleich unterschiedlicher Ergebnisvarianten,
-- Analyse von Unsicherheiten, Schwellenwerten oder Datenproblemen,
-- kurze Gruppenaufgaben zur Interpretation des QGIS-Projekts.
+-   Bewertung von Karten oder Standortalternativen,
+-   Diskussion und Gewichtung von Kriterien,
+-   Vergleich unterschiedlicher Ergebnisvarianten,
+-   Analyse von Unsicherheiten, Schwellenwerten oder Datenproblemen,
+-   kurze Gruppenaufgaben zur Interpretation des QGIS-Projekts.
 
-### Verbindliche Grundstruktur
-
-Die studentische Sitzung soll in vier Teile gegliedert sein:
-
-1. **Problemaufriss und Arbeitsauftrag**  
-   kurze Einführung in Problem, Raumfrage und Untersuchungsraum
-
-2. **Verdichtete Projektdemonstration**  
-   kompakte Darstellung von Daten, Analyseweg und Ergebnissen
-
-3. **Aktivierender Übungsanteil**  
-   fachliche Beteiligung des Plenums an Bewertung, Interpretation oder Entscheidungslogik
-
-4. **Auswertung und kritische Reflexion**  
-   gemeinsame Einordnung der Ergebnisse sowie Benennung von Grenzen und Unsicherheiten
 
 ::: {.callout-important appearance="simple" icon="false"}
 Die studentischen Sitzungen sind ausdrücklich **nicht** als reine Ergebnisvorträge gedacht. Erwartet wird eine kleine fachliche Lehr-Lern-Einheit mit erkennbarem Übungscharakter.
 :::
 
-
-
 ### Bestandteile des Mini-Projektpakets
 
-#### 1. QGIS-Projekt
+#### 1. Projektskizze und QGIS-Projekt
+
+Abzugeben  ist eine **1–2-seitige Projektskizze** einzureichen. Diese enthält:
+
+-   Titel des Projekts,
+-   Fragestellung,
+-   Untersuchungsraum,
+-   Datensatz bzw. Datengrundlage,
+-   Kriterien bzw. Analysevariablen,
+-   erwartete Aussagekraft,
+-   voraussichtlichen Workflow.
+
 
 Abzugeben ist ein lauffähiges QGIS-Projekt mit:
 
@@ -152,19 +161,10 @@ Die Präsentation dokumentiert und begründet das Projekt in verdichteter Form. 
 -   Ergebnisse,
 -   kritische Reflexion der Aussagekraft und Grenzen.
 
-#### 3. Projektskizze / Exposé
+Die Präsentation kann ein Foliensatz oder ein Miniposter/Cheat-sheet etc sein.
 
-Zusätzlich ist eine **1–2-seitige Projektskizze** einzureichen. Diese enthält:
 
--   Titel des Projekts,
--   Fragestellung,
--   Untersuchungsraum,
--   Datensatz bzw. Datengrundlage,
--   Kriterien bzw. Analysevariablen,
--   erwartete Aussagekraft,
--   voraussichtlichen Workflow.
-
-#### 4. Kurze Workflow-Dokumentation
+#### 3. Kurze Workflow-Dokumentation
 
 Die Workflow-Dokumentation dient der Reproduzierbarkeit. Sie soll knapp, aber konkret darlegen,
 
@@ -173,19 +173,21 @@ Die Workflow-Dokumentation dient der Reproduzierbarkeit. Sie soll knapp, aber ko
 -   welche Annahmen und Schwellenwerte gesetzt wurden,
 -   und wie das Ergebnis zustande kam.
 
+In der Regel kann diese aus dem QGIS Protokoll abgeleitet werden.
+
 ## Gewichtung und fachliche Anforderungen
 
 Die Reader, Aufgaben und Übungsblätter der Inputphase bilden den methodischen Unterbau der Projektarbeit. Die anwendungsorientierte Sitzung muss deshalb erkennbar auf den Kursinhalten aufbauen.
 
 Das bedeutet insbesondere:
 
--   Das Projekt darf keine bloße Tool-Demonstration sein.
+-   Das Projekt ist keine Tool-Demonstration.
 -   Es muss eine **reale räumliche Fragestellung** bearbeiten.
 -   Es muss mehrere im Kurs behandelte Konzepte und Methoden sinnvoll zusammenführen.
 -   Es muss den Zusammenhang zwischen Daten, Methode, Interpretation und Entscheidung offenlegen.
 
 ::: {.callout-warning appearance="simple" icon="false"}
-Die Projektarbeit soll in der Regel deutlich mehr leisten als eine isolierte Standardübung. Erwartet wird eine eigenständige Anwendung, die zentrale methodische Bausteine des Kurses sichtbar integriert.
+Die Projektarbeit soll mehr leisten als eine isolierte Standardübung. Erwartet wird eine eigenständige Anwendung, die zentrale methodische Bausteine des Kurses sichtbar integriert.
 :::
 
 ## Bewertungskriterien
@@ -196,7 +198,7 @@ Die Bewertung orientiert sich an vier gleichrangigen Leistungsdimensionen.
 
 Bewertet wird,
 
--   ob die Fragestellung fachlich sinnvoll und räumlich klar formuliert ist,
+-   ob die Fragestellung fachlich sinnvoll und räumlich klar ausgestaltet ist,
 -   ob der Untersuchungsraum und die Datenlage angemessen gewählt wurden,
 -   ob die Analyse inhaltlich begründet ist,
 -   und ob die Ergebnisse plausibel interpretiert werden.

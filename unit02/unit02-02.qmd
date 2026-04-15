@@ -13,6 +13,9 @@ bibliography: ../assets/geoinfo.bib
 lang: de
 comments: false
 ---
+::: {.banner-credit}
+Titelbild: Quelle nach [@snow].
+:::
 
 ## Raum im GIS
 
@@ -20,10 +23,10 @@ Bisher haben wir ständig und ohne besondere Vorüberlegungen mit den Begriffen 
 
 Der Raum in GI-Systemen wird in Anlehnung an die Mathematik und Physik als dreidimensionaler euklidischer Raum verstanden. Aus dem Mathematikunterricht kennen wir die euklidische Ebene (mit 2 Dimensionen) und den euklidischen Raum (mit 3 Dimensionen). Am einfachsten lässt sich der euklidische Raum mit Hilfe eines kartesischen Koordinatensystems beschreiben, in dem die Koordinaten entlang senkrecht zueinander stehender Achsen aufgetragen werden (vgl. Abb. 02-1).
 
-![Abbildung 02-01: Ausschnitt aus einem zweidimensionalen kartesischen Koordinatensystem mit 3 eingetragenen Punkten in Koordinatenschreibweise (Quelle: @bolino)](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/354px-Cartesian-coordinate-system.svg.png)
+![Abbildung 02-01: Ausschnitt aus einem zweidimensionalen kartesischen Koordinatensystem mit 3 eingetragenen Punkten in Koordinatenschreibweise (Quelle: @bolino)](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/CartesianPlane.svg/3840px-CartesianPlane.svg.png)
 
 
-![Abbildung 02-2: Allgemeine Abbildung eines dreidimensionales kartesischen Koordinatensystem mit euklidischen Ebenen durch den Ursprungspunkt (Quelle:  @sakurambo)](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/3D_coordinate_system.svg/768px-3D_coordinate_system.svg.png){width="50%" height="50%"}
+![Abbildung 02-2: Allgemeine Abbildung eines dreidimensionales kartesischen Koordinatensystem mit euklidischen Ebenen durch den Ursprungspunkt (Quelle:  @sakurambo)](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/3D_coordinate_system.svg/1280px-3D_coordinate_system.svg.png){width="50%" height="50%"}
 
 ## Die Raumrichtungen 
 
@@ -71,10 +74,7 @@ Analysieren Sie vor dem Hintergrund Ihrer neu erworbenen Kenntnisse die folgende
   * Welche Dimension und Geometrie liegt der Darstellung Ihrer Meinung nach zugrunde?
   * Versuchen Sie, weitere alltägliche Beispiele für die Bedeutung von Lage und Dimensionalität zu finden.
 
-::: {#cite  style="color: transparent;"}
-@snow
-:::
-  
+
 :::  
 
 

@@ -13,6 +13,13 @@ bibliography: ../assets/geoinfo.bib
 lang: de
 comments: false
 ---
+
+::: {.banner-credit}
+Titelbild: Quelle nach [@snow].
+:::
+
+
+
 # Geographische Koordinaten 
 
 Die vorstehenden Beispiele zeigen, wie mühsam und fehleranfällig die Orientierung an Objekten und ihren Namen ist. Sie zeigen auch, dass messbare, d.h. geometrisch maßstäbliche Bezugssysteme nicht unbedingt geographisch lokalisierbar sein müssen. Im Kapitel über Raumrepräsentationen wurde der Bogen von der abstrakten Definition des Raumes und seiner Objekte bis hin zur Repräsentation geographischer Informationen in spezifischen Datenobjekten gespannt. Nun geht es darum, diese beiden Konzepte zusammenzuführen.
@@ -26,7 +33,8 @@ Ein leistungsfähiges System zur Referenzierung von geographischen Räumen sollt
 Die Erde ist in erster Näherung eine Kugel. Daher ist es naheliegend, Punkte auf der Oberfläche durch Kugelkoordinaten zu definieren. Da die Oberfläche einer Kugel bekannt ist, genügen zur Bestimmung eines Punktes die beiden Winkel für den Azimut (geographische Länge) Lambda und den Zenit (geographische Breite) Phi (Abb. 03-07).
 
 
-![Abbildung 03-07: Das Konzept der Kugelkoordinaten, @ag2](https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Kugelkoord-def.svg/768px-Kugelkoord-def.svg.png){width="50%"}
+![Abbildung 03-07: Das Konzept der Kugelkoordinaten, @ag2](https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Kugelkoord-def.svg/1280px-Kugelkoord-def.svg.png){width="50%"}
+
 
  
 Überträgt man das Konzept der Kugelkoordinaten auf die Erde, so ergeben sich eine Reihe von Problemen. Das augenfälligste ist die Abplattung der Erde an den Polen, die durch die Erdrotation verursacht wird. Für die Längenbestimmung ist die Tatsache, dass die Erde ein Rotationsellipsoid mit großen und kleinen Halbachsen ist, unerheblich. Anders verhält es sich bei der Bestimmung der geographischen Breite, da sich die Halbachsen der Erde um ca. 21,4 km unterscheiden (Abb. 03-08).
@@ -63,7 +71,9 @@ Für genaue Messungen oder möglichst genaue Kartenprojektionen müssen beide Be
 ::: {layout-ncol=2}
 ![Abb. 03-12: Veranschaulichung der Schwerevariation entlang des Äquators bezogen auf eine kreisförmige Referenzfläche (schwarz), @dantora](http://upload.wikimedia.org/wikipedia/commons/4/41/Geoundaequrp.png)
 
+
 ![Abb. 03-13: Birnenform als Näherung der Erdfigur im Vergleich zum elliptischen Querschnitt (schwarze Linie), @dantorb](http://upload.wikimedia.org/wikipedia/commons/7/78/Geoundnsrp.png)
+
 :::
 
 
@@ -128,9 +138,5 @@ Besuchen Sie die folgende interaktive Webseite [Kartenprojektionen](https://map-
   * Normale und transversale Mercator-Projektion
   * Mollweide-Projektion
   * Robinson-Projektion
-
-::: {#cite  style="color: transparent;"}
-@snow
-:::
 
 :::

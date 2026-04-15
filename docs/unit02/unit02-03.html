@@ -334,16 +334,28 @@ background-size: cover;
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../unit00/unit00-02-formales.html"> <i class="bi bi-question-square-fill" role="img">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-formales" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Formales</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-formales">    
+        <li>
+    <a class="dropdown-item" href="../unit00/unit00-02-formales.html"><i class="bi bi-exclamation-square-fill" role="img">
 </i> 
-<span class="menu-text">Projektarbeit</span></a>
+ <span class="dropdown-text">Formalia</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../unit00/unit00-03-formales.html"> <i class="bi bi-clipboard-check" role="img">
+        <li>
+    <a class="dropdown-item" href="../unit00/unit00-03-formales.html"><i class="bi bi-clipboard-check" role="img">
 </i> 
-<span class="menu-text">Sitzungsgestaltung</span></a>
+ <span class="dropdown-text">Gestaltung der studentischen Übungssitzungen</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../unit00/unit00-04-themen.html"><i class="bi bi-map" role="img">
+</i> 
+ <span class="dropdown-text">Projekt-Themen</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -758,6 +770,9 @@ background-size: cover;
 
 
 
+<div class="banner-credit">
+<p>Titelbild: Quelle nach <span class="citation" data-cites="snow">(<a href="#ref-snow" role="doc-biblioref">Snow 1854</a>)</span>.</p>
+</div>
 <p>Wir haben im Reader 01 festgestellt, dass sowohl diskrete Geoobjekte als auch mehrdimensionale Merkmalsausprägungen von Raumkontinua mit Hilfe von Koordinaten verortet und als <a href="../unit01/unit01-04_reader_geo_raum.html">Geodaten</a> in Computern gespeichert werden können. Solche binären Geodaten stellen somit die geographische Repräsentation der Realität in GI-Systemen dar.</p>
 <p>Die Grundlage für die Informationsreduktion bilden so genannte Datenmodelle. Ein Datenmodell entsteht durch die Abstraktion einzelner Objekte (Entitäten) und deren Eigenschaften (Attribute). Dabei werden gleichartige Objekte (z.B. Flüsse, Bundesstraßen, Stadtgebiete) zusammengefasst. Da die Grundlage aller GI-Systeme auf einer räumlichen Darstellung beruht, muss die bereits bekannte <a href="../unit01/unit01-02_reader_geo_raum.html">Geographische Abstraktion</a> für ein besseres Verständnis der Datenmodellierung etwas umorganisiert und angepasst werden.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -816,9 +831,6 @@ background-size: cover;
 <li>Lassen sich aus den auf dem Bildschirm dargestellten Informationen weitere Eigenschaften des verwendeten Datenmodells ableiten? Wenn ja, welche? Wenn nein, warum nicht?</li>
 <li>Wechseln Sie in die vertikale Ansicht und deaktivieren Sie die Option Terrain. Zoomen Sie langsam bis zu einer Höhe von 10 Metern über dem Boden. Was sehen Sie?</li>
 </ul>
-<div id="cite" style="color: transparent;">
-<p><span class="citation" data-cites="snow">Snow (<a href="#ref-snow" role="doc-biblioref">1854</a>)</span></p>
-</div>
 </div>
 </div>
 </div>

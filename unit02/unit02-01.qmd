@@ -13,7 +13,9 @@ bibliography: ../assets/geoinfo.bib
 lang: de
 comments: false
 ---
-
+::: {.banner-credit}
+Titelbild: Quelle nach [@snow].
+:::
 
 
 Wenn wir die reale Welt, im Folgenden auch als reale Welt oder Realwelt bezeichnet, in Form einer Karte oder in einem Geoinformationssystem abbilden wollen, müssen wir abstrahieren. Das bedeutet, dass wir einzelne Aspekte der realen Welt in den Mittelpunkt unserer Darstellung stellen und sie so weit vereinfachen und verallgemeinern, dass sie mit den uns zur Verfügung stehenden Methoden tatsächlich abgebildet werden können.
@@ -41,6 +43,3 @@ Nach dieser Sitzung sollten Sie
 -   die Begriffe kontinuierlicher Raum und diskrete Objekte im Raum unterscheiden können
 -   die Konzepte von Geoobjekten und Geodaten und ihre digitale Repräsentation als Konzepte zur Kodierung der realen Welt kennen.
 
-::: {#cite  style="color: transparent;"}
-@snow
-:::
