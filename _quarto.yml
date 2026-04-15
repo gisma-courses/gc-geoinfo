@@ -32,6 +32,13 @@ website:
         text: Formales
         href: unit00/unit00-01-formales.qmd
       - icon: question-square-fill
+        text: Projektarbeit
+        href: unit00/unit00-02-formales.qmd
+      - icon: clipboard-check
+        text: Sitzugnsgestaltung
+        href: unit00/unit00-03-formales.qmd
+      
+      
       # - text: "Raumkonzepte"   
       #   menu: 
       #     - unit01/unit01-01.qmd

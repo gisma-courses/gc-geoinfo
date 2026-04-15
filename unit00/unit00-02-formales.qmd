@@ -1,0 +1,269 @@
+---
+title: "Formales"
+title-block-banner: ../assets/images/splash-geoinformatik.jpg
+title-block-banner-color: Black
+lang: de
+comments: false
+---
+
+Die Aufgaben im Reader und die Übungsblätter auf den Kursseiten bilden die Grundlage für die Studien- und Prüfungsleistungen. Für den anwendungsorientierten Kursteil werden diese methodischen Grundlagen in ein eigenständig bearbeitetes Mini-Projekt in QGIS überführt.
+
+## Anwesenheit
+
+Die Lehrveranstaltung findet grundsätzlich als **Präsenzveranstaltung** statt. Eine kontinuierliche Teilnahme ist fachlich erforderlich, da die Input-Sitzungen, Rückfragen, Diskussionen und Projektberatungen direkt aufeinander aufbauen. Einzelne Termine können in begründeten Ausnahmefällen online oder per Streaming durchgeführt werden.
+
+## Übersicht der Kommunikationsformen
+
+### Diese Website
+
+Diese Webseite dient der einseitigen und überwiegend asynchronen Kommunikation sowie der Bereitstellung der Reader, Übungsblätter und organisatorischen Hinweise.
+
+### Kursbereich in Ilias
+
+Der [Kursbereich der Lernplattform PUM Ilias](https://ilias.uni-marburg.de/login.php?target=&client_id=UNIMR&auth_stat=) dient der Organisation des Kurses, der Bereitstellung urheberrechtlich geschützter Materialien, der Durchführung der Self-Assessments sowie der Abgabe der Projektarbeiten.
+
+### Fragen
+
+Fachliche und organisatorische Fragen sollen in erster Linie in den Präsenzzeiten geklärt werden. Prüfen Sie bitte zunächst, ob Ihre Frage bereits durch Reader, Übungsblätter, Screencasts oder FAQ-Einträge abgedeckt ist. Darüber hinausgehende Fragen können per E-Mail gestellt werden. Verwenden Sie dabei bitte einen eindeutigen Betreff nach dem Schema **\[Geoinfo SoSe**<Jahr>\] oder **\[Geoinfo WiSe**<Jahr>\].
+
+## Zeitaufwand und Ablauf
+
+Jede Kurseinheit dauert eine Woche und besteht aus einem Input- und einem Anwendungsanteil. In den ersten vier Sitzungen werden die methodischen und konzeptionellen Grundlagen erarbeitet. Anschließend gestalten die Studierenden anwendungsorientierte Sitzungen auf Grundlage eigenständig entwickelter Mini-Projekte.
+
+### Kursverlauf
+
+| Sitzung | Phase | Schwerpunkt | Ergebnissicherung |
+|:--------:|---------|------------------------------|------------------------|
+| 1 | Input | Raumkonzepte, Raumrepräsentation, Datenmodelle, QGIS-Orientierung | Reader- und Übungsgrundlagen |
+| 2 | Input | Vektordaten, Attribute, thematische, geometrische und topologische Abfragen | Ergebnissicherung Sitzung 1 |
+| 3 | Input | Rasterdaten, DGM, topographische Ableitungen, Sichtfeld, prozessbezogene Interpretation | Ergebnissicherung Sitzung 2 |
+| 4 | Input | Multikriterienanalyse, Eignungsanalyse, Workflows, Reproduzierbarkeit, Projektlogik | Ergebnissicherung Sitzung 3 |
+| 5 | Anwendung Block A | Studentische Projektsitzung A1 | Ergebnissicherung Inputphase |
+| 6 | Anwendung Block A | Studentische Projektsitzung A2 | Ergebnissicherung Sitzung 5 |
+| 7 | Anwendung Block A | Studentische Projektsitzung A3 | Ergebnissicherung Sitzung 6 |
+| 8 | Anwendung Block B | Studentische Projektsitzung B1 | Ergebnissicherung Sitzung 7 |
+| 9 | Anwendung Block B | Studentische Projektsitzung B2 | Ergebnissicherung Sitzung 8 |
+| 10 | Anwendung Block B | Studentische Projektsitzung B3 | Ergebnissicherung Sitzung 9 |
+| 11 | Anwendung Block C | Studentische Projektsitzung C1 | Ergebnissicherung Sitzung 10 |
+| 12 | Anwendung Block C | Studentische Projektsitzung C2 | Ergebnissicherung Sitzung 11 |
+| 13 | Anwendung Block C | Studentische Projektsitzung C3 | Ergebnissicherung Sitzung 12 |
+| 14 | Anwendung Block D | Studentische Projektsitzung D1 | Ergebnissicherung Sitzung 13 |
+| 15 | Anwendung Block D | Studentische Projektsitzung D2 | Ergebnissicherung Sitzung 14 |
+| 16 | Anwendung Block D | Studentische Projektsitzung D3 | Ergebnissicherung Sitzung 15 |
+
+::: {.callout-important appearance="simple" icon="false"}
+Die Themenvergabe erfolgt **frühzeitig innerhalb der Inputphase**, damit die Vorbereitungszeit nicht von der späteren Präsentationsreihenfolge abhängt. Die Projektentwicklung läuft somit parallel zum methodischen Input.
+:::
+
+### Exemplarischer Stundenplan der Lehrveranstaltung
+
+-   **Präsenz:** 2 Stunden pro Woche
+    -   Input-Sitzung oder studentisch gestaltete Anwendungssitzung
+-   **Selbststudium:** ca. 7 Stunden pro Woche
+    -   Vor- und Nachbereitung der Reader und Übungsblätter
+    -   Arbeit am QGIS-Projekt
+    -   Abstimmung in Lerngruppen
+    -   Ausarbeitung von Präsentation, Exposé und Dokumentation
+
+::: {.callout-tip icon="false" appearance="simple"}
+Für die Projektphase ist eine kontinuierliche Arbeitsweise erforderlich. Die Abgaben sind so konzipiert, dass das Projekt schrittweise entwickelt, dokumentiert und begründet wird.
+:::
+
+## Studienleistung
+
+Die individuell zu erbringende Studienleistung wird durch das erfolgreiche Absolvieren der vorgesehenen Self-Assessment-Einheiten in Ilias erbracht. Maßgeblich sind die dort kommunizierten Fristen und Mindestanforderungen.
+
+## Prüfungsleistung
+
+Die Prüfungsleistung wird in Form einer **anwendungsorientierten Mini-Projektarbeit** erbracht. Diese ersetzt in der 6-LP-Variante die reine Klausurlogik durch eine eigenständige, fachlich begründete QGIS-Anwendung.
+
+Die Projektarbeit ist grundsätzlich **individuell** zu erbringen. Eine Bearbeitung in **2er-Gruppen** ist möglich, sofern die jeweiligen Arbeitsanteile klar kenntlich gemacht werden.
+
+::: {.callout-important appearance="simple" icon="false"}
+Die Prüfungsleistung besteht nicht nur aus einer Präsentation oder einer Projektdatei, sondern aus einem vollständigen **Mini-Projektpaket**.
+:::
+
+
+## Didaktisches Format der studentischen Anwendungssitzungen
+
+Die studentisch gestalteten Sitzungen sind als **anwendungsorientierte Übungssitzungen** konzipiert. Sie sollen nicht die Form eines klassischen Referats annehmen, sondern eine fachlich strukturierte Arbeitsphase auf Basis eines eigenständig entwickelten QGIS-Mini-Projekts bilden.
+
+Erwartet wird deshalb eine Verbindung aus:
+
+- kurzer Einführung in Problem und Raumfrage,
+- kompakter Darstellung des QGIS-Projekts,
+- aktivierendem Übungs- oder Diskussionsanteil,
+- gemeinsamer Auswertung und kritischer Reflexion.
+
+### [Mindestanforderung an die Sitzungsform](unit00-03-formales.qmd)
+
+Jede studentische Sitzung muss mindestens **eine klar erkennbare Aktivierungsphase** enthalten. Reine Vortragsformate ohne Übungs-, Bewertungs- oder Diskussionsanteil erfüllen die Anforderungen nicht vollständig.
+
+Geeignete Aktivierungsformen sind zum Beispiel:
+
+- Bewertung von Karten oder Standortalternativen,
+- Diskussion und Gewichtung von Kriterien,
+- Vergleich unterschiedlicher Ergebnisvarianten,
+- Analyse von Unsicherheiten, Schwellenwerten oder Datenproblemen,
+- kurze Gruppenaufgaben zur Interpretation des QGIS-Projekts.
+
+### Verbindliche Grundstruktur
+
+Die studentische Sitzung soll in vier Teile gegliedert sein:
+
+1. **Problemaufriss und Arbeitsauftrag**  
+   kurze Einführung in Problem, Raumfrage und Untersuchungsraum
+
+2. **Verdichtete Projektdemonstration**  
+   kompakte Darstellung von Daten, Analyseweg und Ergebnissen
+
+3. **Aktivierender Übungsanteil**  
+   fachliche Beteiligung des Plenums an Bewertung, Interpretation oder Entscheidungslogik
+
+4. **Auswertung und kritische Reflexion**  
+   gemeinsame Einordnung der Ergebnisse sowie Benennung von Grenzen und Unsicherheiten
+
+::: {.callout-important appearance="simple" icon="false"}
+Die studentischen Sitzungen sind ausdrücklich **nicht** als reine Ergebnisvorträge gedacht. Erwartet wird eine kleine fachliche Lehr-Lern-Einheit mit erkennbarem Übungscharakter.
+:::
+
+
+
+### Bestandteile des Mini-Projektpakets
+
+#### 1. QGIS-Projekt
+
+Abzugeben ist ein lauffähiges QGIS-Projekt mit:
+
+-   sauber benannten Layern,
+-   nachvollziehbarer Datenorganisation,
+-   erkennbarer Analyseabfolge,
+-   sinnvoll strukturierten Ausgaben,
+-   und einem insgesamt verständlichen Workflow.
+
+#### 2. Präsentation
+
+Die Präsentation dokumentiert und begründet das Projekt in verdichteter Form. Sie soll mindestens folgende Elemente enthalten:
+
+-   Problemstellung,
+-   räumliche Fragestellung,
+-   verwendete Datengrundlagen,
+-   methodisches Vorgehen,
+-   Ergebnisse,
+-   kritische Reflexion der Aussagekraft und Grenzen.
+
+#### 3. Projektskizze / Exposé
+
+Zusätzlich ist eine **1–2-seitige Projektskizze** einzureichen. Diese enthält:
+
+-   Titel des Projekts,
+-   Fragestellung,
+-   Untersuchungsraum,
+-   Datensatz bzw. Datengrundlage,
+-   Kriterien bzw. Analysevariablen,
+-   erwartete Aussagekraft,
+-   voraussichtlichen Workflow.
+
+#### 4. Kurze Workflow-Dokumentation
+
+Die Workflow-Dokumentation dient der Reproduzierbarkeit. Sie soll knapp, aber konkret darlegen,
+
+-   welche Daten verwendet wurden,
+-   welche Verarbeitungsschritte durchgeführt wurden,
+-   welche Annahmen und Schwellenwerte gesetzt wurden,
+-   und wie das Ergebnis zustande kam.
+
+## Gewichtung und fachliche Anforderungen
+
+Die Reader, Aufgaben und Übungsblätter der Inputphase bilden den methodischen Unterbau der Projektarbeit. Die anwendungsorientierte Sitzung muss deshalb erkennbar auf den Kursinhalten aufbauen.
+
+Das bedeutet insbesondere:
+
+-   Das Projekt darf keine bloße Tool-Demonstration sein.
+-   Es muss eine **reale räumliche Fragestellung** bearbeiten.
+-   Es muss mehrere im Kurs behandelte Konzepte und Methoden sinnvoll zusammenführen.
+-   Es muss den Zusammenhang zwischen Daten, Methode, Interpretation und Entscheidung offenlegen.
+
+::: {.callout-warning appearance="simple" icon="false"}
+Die Projektarbeit soll in der Regel deutlich mehr leisten als eine isolierte Standardübung. Erwartet wird eine eigenständige Anwendung, die zentrale methodische Bausteine des Kurses sichtbar integriert.
+:::
+
+## Bewertungskriterien
+
+Die Bewertung orientiert sich an vier gleichrangigen Leistungsdimensionen.
+
+### 1. Fachliche und konzeptionelle Qualität
+
+Bewertet wird,
+
+-   ob die Fragestellung fachlich sinnvoll und räumlich klar formuliert ist,
+-   ob der Untersuchungsraum und die Datenlage angemessen gewählt wurden,
+-   ob die Analyse inhaltlich begründet ist,
+-   und ob die Ergebnisse plausibel interpretiert werden.
+
+### 2. Methodische Umsetzung in QGIS
+
+Bewertet wird,
+
+-   ob die gewählten Analysewege nachvollziehbar und sachlich passend sind,
+-   ob Vektor-, Raster-, DGM-, Sichtfeld-, Voronoi- oder Eignungslogiken angemessen eingesetzt werden,
+-   ob Kriterien sauber operationalisiert wurden,
+-   und ob der Workflow technisch und logisch konsistent ist.
+
+### 3. Reproduzierbarkeit und Dokumentation
+
+Bewertet wird,
+
+-   ob das Projekt strukturiert abgelegt ist,
+-   ob Layer, Zwischenschritte und Ergebnisse verständlich benannt sind,
+-   ob die Workflow-Dokumentation tatsächlich nachvollziehbar ist,
+-   und ob die Projektidee im Exposé klar vorbereitet wurde.
+
+### 4. Wissenschaftliche Kommunikation
+
+Bewertet wird,
+
+-   ob die Präsentation klar gegliedert ist,
+-   ob Problem, Daten, Methode und Ergebnis sauber unterschieden werden,
+-   ob Grenzen und Unsicherheiten benannt werden,
+-   und ob die Sitzung als fachlich tragfähige Anwendung gestaltet ist.
+
+## Einreichungen
+
+Die Abgabe erfolgt fristgerecht über den [Kursbereich der Lernplattform PUM Ilias](https://ilias.uni-marburg.de/login.php?target=&client_id=UNIMR&auth_stat=). Einzureichen sind alle Bestandteile des Mini-Projektpakets in der jeweils angegebenen Form.
+
+### Formate
+
+-   **Präsentation** als PDF
+-   **Exposé** als PDF
+-   **Workflow-Dokumentation** als PDF
+-   **QGIS-Projekt** als komprimierter Projektordner oder in der von der Kursleitung vorgegebenen Form
+
+### Benennung
+
+Bitte benennen Sie die Dateien eindeutig und konsistent, zum Beispiel nach dem Schema:
+
+`Projekt_<Nachname>_<Vorname>_<Bestandteil>.pdf`
+
+Beispiele:
+
+-   `Projekt_Mustermann_Max_Praesentation.pdf`
+-   `Projekt_Mustermann_Max_Expose.pdf`
+-   `Projekt_Mustermann_Max_Workflow.pdf`
+-   `Projekt_Mustermann_Max_QGIS.zip`
+
+::: {.callout-tip appearance="simple" icon="false" title="Hinweis"}
+Geben Sie ausschließlich die überprüfte Endfassung ab. Kontrollieren Sie insbesondere, ob alle Verknüpfungen, Datenquellen und Layereinstellungen im QGIS-Projekt korrekt funktionieren.
+:::
+
+## Formale Anforderungen
+
+Die schriftlichen Bestandteile sind als **PDF-Dateien** einzureichen. Achten Sie auf eine saubere sprachliche und formale Ausarbeitung. In allen schriftlichen Dokumenten müssen Name und Matrikelnummer eindeutig angegeben sein.
+
+Empfohlen wird folgendes Schema in der Kopfzeile:
+
+`Nachname, Vorname, Matrikelnummer`
+
+## Kurszeiten
+
+Kurszeiten Mittwoch, 12:15–13:45 Uhr.

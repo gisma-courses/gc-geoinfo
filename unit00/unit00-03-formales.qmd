@@ -1,0 +1,92 @@
+---
+title: "Gestaltung der studentischen Übungssitzungen"
+title-block-banner: ../assets/images/splash-geoinformatik.jpg
+title-block-banner-color: Black
+lang: de
+comments: false
+---
+
+Die studentisch gestalteten Sitzungen sind als **anwendungsorientierte Übungssitzungen** konzipiert. Sie sollen kein klassisches Referat sein, sondern eine fachlich strukturierte Arbeitsphase auf Basis eines eigenständig entwickelten QGIS-Mini-Projekts.
+
+Ziel ist es, eine reale räumliche Fragestellung so aufzubereiten, dass die Teilnehmenden nicht nur Ergebnisse sehen, sondern Analyseweg, Entscheidungslogik und Grenzen der Aussage nachvollziehen und diskutieren können.
+
+## Grundprinzip
+
+Die studentische Sitzung ist **keine reine Präsentation**, sondern eine **kleine fachliche Übungssitzung mit aktivem Beteiligungsanteil**. Das QGIS-Projekt dient dabei nicht nur als Abgabeprodukt, sondern als Arbeitsgrundlage der Sitzung.
+
+Erwartet wird eine Verbindung aus:
+
+-   kurzer Einführung in Problem und Raumfrage,
+-   kompakter Darstellung des QGIS-Projekts,
+-   aktivierendem Übungs- oder Diskussionsanteil,
+-   gemeinsamer Auswertung und kritischer Reflexion.
+
+::: {.callout-important appearance="simple" icon="false"}
+Nicht ausreichend ist eine lineare Folienpräsentation mit kurzer Fragerunde. Erwartet wird eine erkennbare Arbeits- und Beteiligungsphase.
+:::
+
+## Verbindliche Struktur der Sitzung
+
+Jede studentische Sitzung soll vier Teile enthalten:
+
+### 1. Problemaufriss und Arbeitsauftrag
+
+Kurze Einführung in Problem, Untersuchungsraum, Relevanz und Ziel der Sitzung.
+
+### 2. Verdichtete Projektdemonstration
+
+Kompakte Darstellung von Datengrundlage, Analyseidee, zentralen Verarbeitungsschritten und Ergebnissen.
+
+::: {.callout-important appearance="simple" icon="false"}
+Der reine Präsentationsteil darf **maximal 15 Minuten** dauern. Die Sitzung soll nicht durch einen langen Vortrag geprägt sein, sondern genügend Zeit für den Übungs- und Diskussionsteil lassen.
+:::
+
+### 3. Aktivierender Übungsanteil
+
+Im Zentrum der Sitzung steht ein aktiver Arbeitsanteil. Geeignet sind zum Beispiel:
+
+-   Bewertung alternativer Standorte auf Karten,
+-   Diskussion und Gewichtung von Kriterien,
+-   Vergleich mehrerer Ergebnisvarianten,
+-   kurze Gruppenaufgaben zur Karten- oder Workflowinterpretation,
+-   Reflexion über Schwellenwerte, Datenwahl und Unsicherheiten.
+
+### 4. Auswertung und kritische Reflexion
+
+Zum Abschluss werden Ergebnisse, Grenzen, Unsicherheiten und mögliche Alternativen gemeinsam eingeordnet.
+
+## Mindestanforderung an den Übungscharakter
+
+Jede Sitzung muss mindestens **eine klar erkennbare Aktivierungsphase** enthalten. Reine Vortragsformate ohne Übungs-, Bewertungs- oder Diskussionsanteil erfüllen die Anforderungen nicht vollständig.
+
+Geeignete Aktivierungsformen sind insbesondere:
+
+-   Karten lesen und bewerten,
+-   Kriterien diskutieren oder gewichten,
+-   räumliche Entscheidungen begründen,
+-   Ergebnisunterschiede interpretieren,
+-   Unsicherheiten oder Alternativen benennen.
+
+## Rolle des QGIS-Projekts
+
+Das QGIS-Projekt soll so vorbereitet sein, dass es in der Sitzung als nachvollziehbare Arbeitsgrundlage dient. Sichtbar werden soll,
+
+-   wie die Fragestellung operationalisiert wurde,
+-   welche Daten und Layer verwendet wurden,
+-   welche Analyseentscheidungen getroffen wurden,
+-   und wie daraus ein Ergebnis entstanden ist.
+
+Die Sitzung soll deshalb **projektbasiert** und nicht nur **folienbasiert** sein.
+
+## Bewertung der Sitzungsgestaltung
+
+Bewertet wird nicht nur die fachliche Qualität, sondern auch,
+
+-   ob die Sitzung als Übungssitzung erkennbar gestaltet ist,
+-   ob die Teilnehmenden sinnvoll aktiviert werden,
+-   ob Problem, Daten, Methode und Ergebnis verständlich vermittelt werden,
+-   und ob Grenzen und Unsicherheiten kritisch reflektiert werden.
+
+::: {.callout-tip appearance="simple" icon="false"}
+Didaktisch überzeugend ist eine Sitzung dann, wenn aus einem QGIS-Mini-Projekt eine kurze, klare und aktivierende Arbeitsphase für das Plenum wird.
+:::

@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Formales – Grundlagenkurs GI-S (QGIS)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="..//images/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-7ac2f9da8c2617a4fdd15004b4601015.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7ee1517e378b1eed86ed86c3e4f26a5e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-539e905237efd59d0d717aa5e73aad62.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-7ee1517e378b1eed86ed86c3e4f26a5e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: Black;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: Black;
+background-image: url(../assets/images/splash-geoinformatik.jpg);
+background-size: cover;
+      }
+</style>
+<style>
+  .footer-wrapper {
+    position: relative;
+  }
+  .footer-banner {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 75px;
+    text-align: center;
+    line-height: 75px; /* Vertically centers text within the height */
+    color: darkred;
+    font-size: 12px; /* Smaller font size */
+    z-index: 1000;
+    overflow: hidden;
+    background: url('../images/banner3.png') repeat-x; 
+    opacity: 0.5;  /* Makes the image 50% fainter */
+    
+  }
+    
+  
+  .footer-banner a {
+    color: rgba(139, 0, 0, 1.0); /* Dark red with 80% opacity */
+    text-decoration: none;
+    padding: 0 10px;
+  }
+
+</style>
+
+
+<link rel="stylesheet" href="../css/styles.css">
+<meta property="og:title" content="Formales – Grundlagenkurs GI-S (QGIS)">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
+<meta name="twitter:title" content="Formales – Grundlagenkurs GI-S (QGIS)">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@gisma">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.png" alt="" class="navbar-logo light-content">
+    <img src="../images/logo.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Grundlagenkurs GI-S (QGIS)</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Suchen"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../unit00/unit00-01-formales.html"> <i class="bi bi-compass" role="img">
+</i> 
+<span class="menu-text">Formales</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../unit00/unit00-02-formales.html" aria-current="page"> <i class="bi bi-question-square-fill" role="img">
+</i> 
+<span class="menu-text">Projektarbeit</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../unit00/unit00-03-formales.html"> <i class="bi bi-clipboard-check" role="img">
+</i> 
+<span class="menu-text">Sitzugnsgestaltung</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Dunkelmodus umschalten"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Formales</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhalt</h2>
+   
+  <ul>
+  <li><a href="#anwesenheit" id="toc-anwesenheit" class="nav-link active" data-scroll-target="#anwesenheit">Anwesenheit</a></li>
+  <li><a href="#übersicht-der-kommunikationsformen" id="toc-übersicht-der-kommunikationsformen" class="nav-link" data-scroll-target="#übersicht-der-kommunikationsformen">Übersicht der Kommunikationsformen</a>
+  <ul class="collapse">
+  <li><a href="#diese-website" id="toc-diese-website" class="nav-link" data-scroll-target="#diese-website">Diese Website</a></li>
+  <li><a href="#kursbereich-in-ilias" id="toc-kursbereich-in-ilias" class="nav-link" data-scroll-target="#kursbereich-in-ilias">Kursbereich in Ilias</a></li>
+  <li><a href="#fragen" id="toc-fragen" class="nav-link" data-scroll-target="#fragen">Fragen</a></li>
+  </ul></li>
+  <li><a href="#zeitaufwand-und-ablauf" id="toc-zeitaufwand-und-ablauf" class="nav-link" data-scroll-target="#zeitaufwand-und-ablauf">Zeitaufwand und Ablauf</a>
+  <ul class="collapse">
+  <li><a href="#kursverlauf" id="toc-kursverlauf" class="nav-link" data-scroll-target="#kursverlauf">Kursverlauf</a></li>
+  <li><a href="#exemplarischer-stundenplan-der-lehrveranstaltung" id="toc-exemplarischer-stundenplan-der-lehrveranstaltung" class="nav-link" data-scroll-target="#exemplarischer-stundenplan-der-lehrveranstaltung">Exemplarischer Stundenplan der Lehrveranstaltung</a></li>
+  </ul></li>
+  <li><a href="#studienleistung" id="toc-studienleistung" class="nav-link" data-scroll-target="#studienleistung">Studienleistung</a></li>
+  <li><a href="#prüfungsleistung" id="toc-prüfungsleistung" class="nav-link" data-scroll-target="#prüfungsleistung">Prüfungsleistung</a></li>
+  <li><a href="#didaktisches-format-der-studentischen-anwendungssitzungen" id="toc-didaktisches-format-der-studentischen-anwendungssitzungen" class="nav-link" data-scroll-target="#didaktisches-format-der-studentischen-anwendungssitzungen">Didaktisches Format der studentischen Anwendungssitzungen</a>
+  <ul class="collapse">
+  <li><a href="#mindestanforderung-an-die-sitzungsform" id="toc-mindestanforderung-an-die-sitzungsform" class="nav-link" data-scroll-target="#mindestanforderung-an-die-sitzungsform">Mindestanforderung an die Sitzungsform</a></li>
+  <li><a href="#verbindliche-grundstruktur" id="toc-verbindliche-grundstruktur" class="nav-link" data-scroll-target="#verbindliche-grundstruktur">Verbindliche Grundstruktur</a></li>
+  <li><a href="#bestandteile-des-mini-projektpakets" id="toc-bestandteile-des-mini-projektpakets" class="nav-link" data-scroll-target="#bestandteile-des-mini-projektpakets">Bestandteile des Mini-Projektpakets</a></li>
+  </ul></li>
+  <li><a href="#gewichtung-und-fachliche-anforderungen" id="toc-gewichtung-und-fachliche-anforderungen" class="nav-link" data-scroll-target="#gewichtung-und-fachliche-anforderungen">Gewichtung und fachliche Anforderungen</a></li>
+  <li><a href="#bewertungskriterien" id="toc-bewertungskriterien" class="nav-link" data-scroll-target="#bewertungskriterien">Bewertungskriterien</a>
+  <ul class="collapse">
+  <li><a href="#fachliche-und-konzeptionelle-qualität" id="toc-fachliche-und-konzeptionelle-qualität" class="nav-link" data-scroll-target="#fachliche-und-konzeptionelle-qualität">1. Fachliche und konzeptionelle Qualität</a></li>
+  <li><a href="#methodische-umsetzung-in-qgis" id="toc-methodische-umsetzung-in-qgis" class="nav-link" data-scroll-target="#methodische-umsetzung-in-qgis">2. Methodische Umsetzung in QGIS</a></li>
+  <li><a href="#reproduzierbarkeit-und-dokumentation" id="toc-reproduzierbarkeit-und-dokumentation" class="nav-link" data-scroll-target="#reproduzierbarkeit-und-dokumentation">3. Reproduzierbarkeit und Dokumentation</a></li>
+  <li><a href="#wissenschaftliche-kommunikation" id="toc-wissenschaftliche-kommunikation" class="nav-link" data-scroll-target="#wissenschaftliche-kommunikation">4. Wissenschaftliche Kommunikation</a></li>
+  </ul></li>
+  <li><a href="#einreichungen" id="toc-einreichungen" class="nav-link" data-scroll-target="#einreichungen">Einreichungen</a>
+  <ul class="collapse">
+  <li><a href="#formate" id="toc-formate" class="nav-link" data-scroll-target="#formate">Formate</a></li>
+  <li><a href="#benennung" id="toc-benennung" class="nav-link" data-scroll-target="#benennung">Benennung</a></li>
+  </ul></li>
+  <li><a href="#formale-anforderungen" id="toc-formale-anforderungen" class="nav-link" data-scroll-target="#formale-anforderungen">Formale Anforderungen</a></li>
+  <li><a href="#kurszeiten" id="toc-kurszeiten" class="nav-link" data-scroll-target="#kurszeiten">Kurszeiten</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit00/unit00-02-formales.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+
+<p>Die Aufgaben im Reader und die Übungsblätter auf den Kursseiten bilden die Grundlage für die Studien- und Prüfungsleistungen. Für den anwendungsorientierten Kursteil werden diese methodischen Grundlagen in ein eigenständig bearbeitetes Mini-Projekt in QGIS überführt.</p>
+<section id="anwesenheit" class="level2">
+<h2 class="anchored" data-anchor-id="anwesenheit">Anwesenheit</h2>
+<p>Die Lehrveranstaltung findet grundsätzlich als <strong>Präsenzveranstaltung</strong> statt. Eine kontinuierliche Teilnahme ist fachlich erforderlich, da die Input-Sitzungen, Rückfragen, Diskussionen und Projektberatungen direkt aufeinander aufbauen. Einzelne Termine können in begründeten Ausnahmefällen online oder per Streaming durchgeführt werden.</p>
+</section>
+<section id="übersicht-der-kommunikationsformen" class="level2">
+<h2 class="anchored" data-anchor-id="übersicht-der-kommunikationsformen">Übersicht der Kommunikationsformen</h2>
+<section id="diese-website" class="level3">
+<h3 class="anchored" data-anchor-id="diese-website">Diese Website</h3>
+<p>Diese Webseite dient der einseitigen und überwiegend asynchronen Kommunikation sowie der Bereitstellung der Reader, Übungsblätter und organisatorischen Hinweise.</p>
+</section>
+<section id="kursbereich-in-ilias" class="level3">
+<h3 class="anchored" data-anchor-id="kursbereich-in-ilias">Kursbereich in Ilias</h3>
+<p>Der <a href="https://ilias.uni-marburg.de/login.php?target=&amp;client_id=UNIMR&amp;auth_stat=">Kursbereich der Lernplattform PUM Ilias</a> dient der Organisation des Kurses, der Bereitstellung urheberrechtlich geschützter Materialien, der Durchführung der Self-Assessments sowie der Abgabe der Projektarbeiten.</p>
+</section>
+<section id="fragen" class="level3">
+<h3 class="anchored" data-anchor-id="fragen">Fragen</h3>
+<p>Fachliche und organisatorische Fragen sollen in erster Linie in den Präsenzzeiten geklärt werden. Prüfen Sie bitte zunächst, ob Ihre Frage bereits durch Reader, Übungsblätter, Screencasts oder FAQ-Einträge abgedeckt ist. Darüber hinausgehende Fragen können per E-Mail gestellt werden. Verwenden Sie dabei bitte einen eindeutigen Betreff nach dem Schema <strong>[Geoinfo SoSe</strong><jahr>] oder <strong>[Geoinfo WiSe</strong><jahr>].</jahr></jahr></p>
+</section>
+</section>
+<section id="zeitaufwand-und-ablauf" class="level2">
+<h2 class="anchored" data-anchor-id="zeitaufwand-und-ablauf">Zeitaufwand und Ablauf</h2>
+<p>Jede Kurseinheit dauert eine Woche und besteht aus einem Input- und einem Anwendungsanteil. In den ersten vier Sitzungen werden die methodischen und konzeptionellen Grundlagen erarbeitet. Anschließend gestalten die Studierenden anwendungsorientierte Sitzungen auf Grundlage eigenständig entwickelter Mini-Projekte.</p>
+<section id="kursverlauf" class="level3">
+<h3 class="anchored" data-anchor-id="kursverlauf">Kursverlauf</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 12%">
+<col style="width: 41%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Sitzung</th>
+<th>Phase</th>
+<th>Schwerpunkt</th>
+<th>Ergebnissicherung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td>Input</td>
+<td>Raumkonzepte, Raumrepräsentation, Datenmodelle, QGIS-Orientierung</td>
+<td>Reader- und Übungsgrundlagen</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td>Input</td>
+<td>Vektordaten, Attribute, thematische, geometrische und topologische Abfragen</td>
+<td>Ergebnissicherung Sitzung 1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td>Input</td>
+<td>Rasterdaten, DGM, topographische Ableitungen, Sichtfeld, prozessbezogene Interpretation</td>
+<td>Ergebnissicherung Sitzung 2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td>Input</td>
+<td>Multikriterienanalyse, Eignungsanalyse, Workflows, Reproduzierbarkeit, Projektlogik</td>
+<td>Ergebnissicherung Sitzung 3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td>Anwendung Block A</td>
+<td>Studentische Projektsitzung A1</td>
+<td>Ergebnissicherung Inputphase</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td>Anwendung Block A</td>
+<td>Studentische Projektsitzung A2</td>
+<td>Ergebnissicherung Sitzung 5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td>Anwendung Block A</td>
+<td>Studentische Projektsitzung A3</td>
+<td>Ergebnissicherung Sitzung 6</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td>Anwendung Block B</td>
+<td>Studentische Projektsitzung B1</td>
+<td>Ergebnissicherung Sitzung 7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td>Anwendung Block B</td>
+<td>Studentische Projektsitzung B2</td>
+<td>Ergebnissicherung Sitzung 8</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td>Anwendung Block B</td>
+<td>Studentische Projektsitzung B3</td>
+<td>Ergebnissicherung Sitzung 9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">11</td>
+<td>Anwendung Block C</td>
+<td>Studentische Projektsitzung C1</td>
+<td>Ergebnissicherung Sitzung 10</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">12</td>
+<td>Anwendung Block C</td>
+<td>Studentische Projektsitzung C2</td>
+<td>Ergebnissicherung Sitzung 11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">13</td>
+<td>Anwendung Block C</td>
+<td>Studentische Projektsitzung C3</td>
+<td>Ergebnissicherung Sitzung 12</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">14</td>
+<td>Anwendung Block D</td>
+<td>Studentische Projektsitzung D1</td>
+<td>Ergebnissicherung Sitzung 13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">15</td>
+<td>Anwendung Block D</td>
+<td>Studentische Projektsitzung D2</td>
+<td>Ergebnissicherung Sitzung 14</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">16</td>
+<td>Anwendung Block D</td>
+<td>Studentische Projektsitzung D3</td>
+<td>Ergebnissicherung Sitzung 15</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Die Themenvergabe erfolgt <strong>frühzeitig innerhalb der Inputphase</strong>, damit die Vorbereitungszeit nicht von der späteren Präsentationsreihenfolge abhängt. Die Projektentwicklung läuft somit parallel zum methodischen Input.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exemplarischer-stundenplan-der-lehrveranstaltung" class="level3">
+<h3 class="anchored" data-anchor-id="exemplarischer-stundenplan-der-lehrveranstaltung">Exemplarischer Stundenplan der Lehrveranstaltung</h3>
+<ul>
+<li><strong>Präsenz:</strong> 2 Stunden pro Woche
+<ul>
+<li>Input-Sitzung oder studentisch gestaltete Anwendungssitzung</li>
+</ul></li>
+<li><strong>Selbststudium:</strong> ca. 7 Stunden pro Woche
+<ul>
+<li>Vor- und Nachbereitung der Reader und Übungsblätter</li>
+<li>Arbeit am QGIS-Projekt</li>
+<li>Abstimmung in Lerngruppen</li>
+<li>Ausarbeitung von Präsentation, Exposé und Dokumentation</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Für die Projektphase ist eine kontinuierliche Arbeitsweise erforderlich. Die Abgaben sind so konzipiert, dass das Projekt schrittweise entwickelt, dokumentiert und begründet wird.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="studienleistung" class="level2">
+<h2 class="anchored" data-anchor-id="studienleistung">Studienleistung</h2>
+<p>Die individuell zu erbringende Studienleistung wird durch das erfolgreiche Absolvieren der vorgesehenen Self-Assessment-Einheiten in Ilias erbracht. Maßgeblich sind die dort kommunizierten Fristen und Mindestanforderungen.</p>
+</section>
+<section id="prüfungsleistung" class="level2">
+<h2 class="anchored" data-anchor-id="prüfungsleistung">Prüfungsleistung</h2>
+<p>Die Prüfungsleistung wird in Form einer <strong>anwendungsorientierten Mini-Projektarbeit</strong> erbracht. Diese ersetzt in der 6-LP-Variante die reine Klausurlogik durch eine eigenständige, fachlich begründete QGIS-Anwendung.</p>
+<p>Die Projektarbeit ist grundsätzlich <strong>individuell</strong> zu erbringen. Eine Bearbeitung in <strong>2er-Gruppen</strong> ist möglich, sofern die jeweiligen Arbeitsanteile klar kenntlich gemacht werden.</p>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Die Prüfungsleistung besteht nicht nur aus einer Präsentation oder einer Projektdatei, sondern aus einem vollständigen <strong>Mini-Projektpaket</strong>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="didaktisches-format-der-studentischen-anwendungssitzungen" class="level2">
+<h2 class="anchored" data-anchor-id="didaktisches-format-der-studentischen-anwendungssitzungen">Didaktisches Format der studentischen Anwendungssitzungen</h2>
+<p>Die studentisch gestalteten Sitzungen sind als <strong>anwendungsorientierte Übungssitzungen</strong> konzipiert. Sie sollen nicht die Form eines klassischen Referats annehmen, sondern eine fachlich strukturierte Arbeitsphase auf Basis eines eigenständig entwickelten QGIS-Mini-Projekts bilden.</p>
+<p>Erwartet wird deshalb eine Verbindung aus:</p>
+<ul>
+<li>kurzer Einführung in Problem und Raumfrage,</li>
+<li>kompakter Darstellung des QGIS-Projekts,</li>
+<li>aktivierendem Übungs- oder Diskussionsanteil,</li>
+<li>gemeinsamer Auswertung und kritischer Reflexion.</li>
+</ul>
+<section id="mindestanforderung-an-die-sitzungsform" class="level3">
+<h3 class="anchored" data-anchor-id="mindestanforderung-an-die-sitzungsform"><a href="../unit00/unit00-03-formales.html">Mindestanforderung an die Sitzungsform</a></h3>
+<p>Jede studentische Sitzung muss mindestens <strong>eine klar erkennbare Aktivierungsphase</strong> enthalten. Reine Vortragsformate ohne Übungs-, Bewertungs- oder Diskussionsanteil erfüllen die Anforderungen nicht vollständig.</p>
+<p>Geeignete Aktivierungsformen sind zum Beispiel:</p>
+<ul>
+<li>Bewertung von Karten oder Standortalternativen,</li>
+<li>Diskussion und Gewichtung von Kriterien,</li>
+<li>Vergleich unterschiedlicher Ergebnisvarianten,</li>
+<li>Analyse von Unsicherheiten, Schwellenwerten oder Datenproblemen,</li>
+<li>kurze Gruppenaufgaben zur Interpretation des QGIS-Projekts.</li>
+</ul>
+</section>
+<section id="verbindliche-grundstruktur" class="level3">
+<h3 class="anchored" data-anchor-id="verbindliche-grundstruktur">Verbindliche Grundstruktur</h3>
+<p>Die studentische Sitzung soll in vier Teile gegliedert sein:</p>
+<ol type="1">
+<li><p><strong>Problemaufriss und Arbeitsauftrag</strong><br>
+kurze Einführung in Problem, Raumfrage und Untersuchungsraum</p></li>
+<li><p><strong>Verdichtete Projektdemonstration</strong><br>
+kompakte Darstellung von Daten, Analyseweg und Ergebnissen</p></li>
+<li><p><strong>Aktivierender Übungsanteil</strong><br>
+fachliche Beteiligung des Plenums an Bewertung, Interpretation oder Entscheidungslogik</p></li>
+<li><p><strong>Auswertung und kritische Reflexion</strong><br>
+gemeinsame Einordnung der Ergebnisse sowie Benennung von Grenzen und Unsicherheiten</p></li>
+</ol>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Die studentischen Sitzungen sind ausdrücklich <strong>nicht</strong> als reine Ergebnisvorträge gedacht. Erwartet wird eine kleine fachliche Lehr-Lern-Einheit mit erkennbarem Übungscharakter.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="bestandteile-des-mini-projektpakets" class="level3">
+<h3 class="anchored" data-anchor-id="bestandteile-des-mini-projektpakets">Bestandteile des Mini-Projektpakets</h3>
+<section id="qgis-projekt" class="level4">
+<h4 class="anchored" data-anchor-id="qgis-projekt">1. QGIS-Projekt</h4>
+<p>Abzugeben ist ein lauffähiges QGIS-Projekt mit:</p>
+<ul>
+<li>sauber benannten Layern,</li>
+<li>nachvollziehbarer Datenorganisation,</li>
+<li>erkennbarer Analyseabfolge,</li>
+<li>sinnvoll strukturierten Ausgaben,</li>
+<li>und einem insgesamt verständlichen Workflow.</li>
+</ul>
+</section>
+<section id="präsentation" class="level4">
+<h4 class="anchored" data-anchor-id="präsentation">2. Präsentation</h4>
+<p>Die Präsentation dokumentiert und begründet das Projekt in verdichteter Form. Sie soll mindestens folgende Elemente enthalten:</p>
+<ul>
+<li>Problemstellung,</li>
+<li>räumliche Fragestellung,</li>
+<li>verwendete Datengrundlagen,</li>
+<li>methodisches Vorgehen,</li>
+<li>Ergebnisse,</li>
+<li>kritische Reflexion der Aussagekraft und Grenzen.</li>
+</ul>
+</section>
+<section id="projektskizze-exposé" class="level4">
+<h4 class="anchored" data-anchor-id="projektskizze-exposé">3. Projektskizze / Exposé</h4>
+<p>Zusätzlich ist eine <strong>1–2-seitige Projektskizze</strong> einzureichen. Diese enthält:</p>
+<ul>
+<li>Titel des Projekts,</li>
+<li>Fragestellung,</li>
+<li>Untersuchungsraum,</li>
+<li>Datensatz bzw. Datengrundlage,</li>
+<li>Kriterien bzw. Analysevariablen,</li>
+<li>erwartete Aussagekraft,</li>
+<li>voraussichtlichen Workflow.</li>
+</ul>
+</section>
+<section id="kurze-workflow-dokumentation" class="level4">
+<h4 class="anchored" data-anchor-id="kurze-workflow-dokumentation">4. Kurze Workflow-Dokumentation</h4>
+<p>Die Workflow-Dokumentation dient der Reproduzierbarkeit. Sie soll knapp, aber konkret darlegen,</p>
+<ul>
+<li>welche Daten verwendet wurden,</li>
+<li>welche Verarbeitungsschritte durchgeführt wurden,</li>
+<li>welche Annahmen und Schwellenwerte gesetzt wurden,</li>
+<li>und wie das Ergebnis zustande kam.</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="gewichtung-und-fachliche-anforderungen" class="level2">
+<h2 class="anchored" data-anchor-id="gewichtung-und-fachliche-anforderungen">Gewichtung und fachliche Anforderungen</h2>
+<p>Die Reader, Aufgaben und Übungsblätter der Inputphase bilden den methodischen Unterbau der Projektarbeit. Die anwendungsorientierte Sitzung muss deshalb erkennbar auf den Kursinhalten aufbauen.</p>
+<p>Das bedeutet insbesondere:</p>
+<ul>
+<li>Das Projekt darf keine bloße Tool-Demonstration sein.</li>
+<li>Es muss eine <strong>reale räumliche Fragestellung</strong> bearbeiten.</li>
+<li>Es muss mehrere im Kurs behandelte Konzepte und Methoden sinnvoll zusammenführen.</li>
+<li>Es muss den Zusammenhang zwischen Daten, Methode, Interpretation und Entscheidung offenlegen.</li>
+</ul>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Die Projektarbeit soll in der Regel deutlich mehr leisten als eine isolierte Standardübung. Erwartet wird eine eigenständige Anwendung, die zentrale methodische Bausteine des Kurses sichtbar integriert.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="bewertungskriterien" class="level2">
+<h2 class="anchored" data-anchor-id="bewertungskriterien">Bewertungskriterien</h2>
+<p>Die Bewertung orientiert sich an vier gleichrangigen Leistungsdimensionen.</p>
+<section id="fachliche-und-konzeptionelle-qualität" class="level3">
+<h3 class="anchored" data-anchor-id="fachliche-und-konzeptionelle-qualität">1. Fachliche und konzeptionelle Qualität</h3>
+<p>Bewertet wird,</p>
+<ul>
+<li>ob die Fragestellung fachlich sinnvoll und räumlich klar formuliert ist,</li>
+<li>ob der Untersuchungsraum und die Datenlage angemessen gewählt wurden,</li>
+<li>ob die Analyse inhaltlich begründet ist,</li>
+<li>und ob die Ergebnisse plausibel interpretiert werden.</li>
+</ul>
+</section>
+<section id="methodische-umsetzung-in-qgis" class="level3">
+<h3 class="anchored" data-anchor-id="methodische-umsetzung-in-qgis">2. Methodische Umsetzung in QGIS</h3>
+<p>Bewertet wird,</p>
+<ul>
+<li>ob die gewählten Analysewege nachvollziehbar und sachlich passend sind,</li>
+<li>ob Vektor-, Raster-, DGM-, Sichtfeld-, Voronoi- oder Eignungslogiken angemessen eingesetzt werden,</li>
+<li>ob Kriterien sauber operationalisiert wurden,</li>
+<li>und ob der Workflow technisch und logisch konsistent ist.</li>
+</ul>
+</section>
+<section id="reproduzierbarkeit-und-dokumentation" class="level3">
+<h3 class="anchored" data-anchor-id="reproduzierbarkeit-und-dokumentation">3. Reproduzierbarkeit und Dokumentation</h3>
+<p>Bewertet wird,</p>
+<ul>
+<li>ob das Projekt strukturiert abgelegt ist,</li>
+<li>ob Layer, Zwischenschritte und Ergebnisse verständlich benannt sind,</li>
+<li>ob die Workflow-Dokumentation tatsächlich nachvollziehbar ist,</li>
+<li>und ob die Projektidee im Exposé klar vorbereitet wurde.</li>
+</ul>
+</section>
+<section id="wissenschaftliche-kommunikation" class="level3">
+<h3 class="anchored" data-anchor-id="wissenschaftliche-kommunikation">4. Wissenschaftliche Kommunikation</h3>
+<p>Bewertet wird,</p>
+<ul>
+<li>ob die Präsentation klar gegliedert ist,</li>
+<li>ob Problem, Daten, Methode und Ergebnis sauber unterschieden werden,</li>
+<li>ob Grenzen und Unsicherheiten benannt werden,</li>
+<li>und ob die Sitzung als fachlich tragfähige Anwendung gestaltet ist.</li>
+</ul>
+</section>
+</section>
+<section id="einreichungen" class="level2">
+<h2 class="anchored" data-anchor-id="einreichungen">Einreichungen</h2>
+<p>Die Abgabe erfolgt fristgerecht über den <a href="https://ilias.uni-marburg.de/login.php?target=&amp;client_id=UNIMR&amp;auth_stat=">Kursbereich der Lernplattform PUM Ilias</a>. Einzureichen sind alle Bestandteile des Mini-Projektpakets in der jeweils angegebenen Form.</p>
+<section id="formate" class="level3">
+<h3 class="anchored" data-anchor-id="formate">Formate</h3>
+<ul>
+<li><strong>Präsentation</strong> als PDF</li>
+<li><strong>Exposé</strong> als PDF</li>
+<li><strong>Workflow-Dokumentation</strong> als PDF</li>
+<li><strong>QGIS-Projekt</strong> als komprimierter Projektordner oder in der von der Kursleitung vorgegebenen Form</li>
+</ul>
+</section>
+<section id="benennung" class="level3">
+<h3 class="anchored" data-anchor-id="benennung">Benennung</h3>
+<p>Bitte benennen Sie die Dateien eindeutig und konsistent, zum Beispiel nach dem Schema:</p>
+<p><code>Projekt_&lt;Nachname&gt;_&lt;Vorname&gt;_&lt;Bestandteil&gt;.pdf</code></p>
+<p>Beispiele:</p>
+<ul>
+<li><code>Projekt_Mustermann_Max_Praesentation.pdf</code></li>
+<li><code>Projekt_Mustermann_Max_Expose.pdf</code></li>
+<li><code>Projekt_Mustermann_Max_Workflow.pdf</code></li>
+<li><code>Projekt_Mustermann_Max_QGIS.zip</code></li>
+</ul>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Geben Sie ausschließlich die überprüfte Endfassung ab. Kontrollieren Sie insbesondere, ob alle Verknüpfungen, Datenquellen und Layereinstellungen im QGIS-Projekt korrekt funktionieren.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="formale-anforderungen" class="level2">
+<h2 class="anchored" data-anchor-id="formale-anforderungen">Formale Anforderungen</h2>
+<p>Die schriftlichen Bestandteile sind als <strong>PDF-Dateien</strong> einzureichen. Achten Sie auf eine saubere sprachliche und formale Ausarbeitung. In allen schriftlichen Dokumenten müssen Name und Matrikelnummer eindeutig angegeben sein.</p>
+<p>Empfohlen wird folgendes Schema in der Kopfzeile:</p>
+<p><code>Nachname, Vorname, Matrikelnummer</code></p>
+</section>
+<section id="kurszeiten" class="level2">
+<h2 class="anchored" data-anchor-id="kurszeiten">Kurszeiten</h2>
+<p>Kurszeiten Mittwoch, 12:15–13:45 Uhr.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<div class="footer-banner">
+
+    <a href="https://github.com/gisma-courses/gc" target="_blank">GISMA (2024)</a> |
+    <a href="../unit00/impressum.html" target="_blank">Impressum</a>
+
+</div>
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Kopiert");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Kopiert");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("^(?:http:|https:)\/\/www\.quarto\.org\/custom");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit00/unit00-02-formales.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></div></div></footer></body></html>
