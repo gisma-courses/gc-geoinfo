@@ -1425,11 +1425,11 @@
     "text": "6. Räume, die sich widersprechen\n\nKonkrete Idee: Wo treffen gegensätzliche räumliche Qualitäten zusammen, etwa gute Lage und hohe Belastung, grüne Umgebung und schlechte Zugänglichkeit oder hohe Sichtbarkeit und geringe Nutzbarkeit?\nKonzeptidee: Das Thema untersucht Widerspruchsräume, also Räume, die sich nicht in einer einfachen Gut-Schlecht-Logik auflösen lassen.\nMethoden: Kombination gegensätzlicher Indikatoren, Vergleich mehrerer Karten, Identifikation von Divergenzflächen.\nSchwierigkeit: mittel bis hoch\nWarum: Methodisch nicht extrem komplex, aber analytisch nur dann stark, wenn die Gegensätze sauber konstruiert werden.\nDatensätze / Quellen:\n\nOSM / Geofabrik\nUrban Atlas\nCopernicus DEM\noptionale Umweltindikatoren aus offenen Quellen"
   },
   {
-    "objectID": "unit00/unit00-04-themen.html#vorhernachher-ohne-pathos",
-    "href": "unit00/unit00-04-themen.html#vorhernachher-ohne-pathos",
+    "objectID": "unit00/unit00-04-themen.html#vorhernachher-ein-klassiker",
+    "href": "unit00/unit00-04-themen.html#vorhernachher-ein-klassiker",
     "title": "Projekt-Themen",
-    "section": "7. Vorher–Nachher ohne Pathos",
-    "text": "7. Vorher–Nachher ohne Pathos\n\nKonkrete Idee: Was hat sich zwischen zwei Zeitständen räumlich tatsächlich verändert, etwa vor und nach Umgestaltung, Neubau oder Flächennutzungsänderung?\nKonzeptidee: Ziel ist eine nüchterne Differenzanalyse, nicht eine vorgefertigte Aufwertungs- oder Fortschrittserzählung.\nMethoden: Overlay zweier Zeitstände, Differenzkarten, Flächenbilanz, Prüfung von Vergleichbarkeit und Unsicherheit.\nSchwierigkeit: mittel bis hoch\nWarum: Gut machbar, wenn zwei belastbare Zeitstände vorliegen. Die Hauptschwierigkeit liegt in der Vergleichbarkeit, nicht in der Softwaretechnik.\nDatensätze / Quellen:\n\nUrban Atlas mit mehreren Zeitständen und Change-Layern\nOSM / Geofabrik als ergänzender Vektorkontext\nlokale Luftbilder oder kommunale Open-Data-Zeitstände"
+    "section": "7. Vorher–Nachher ein Klassiker",
+    "text": "7. Vorher–Nachher ein Klassiker\n\nKonkrete Idee: Was hat sich zwischen zwei Zeitständen räumlich tatsächlich verändert, etwa vor und nach Umgestaltung, Neubau oder Flächennutzungsänderung?\nKonzeptidee: Ziel ist eine nüchterne Differenzanalyse, nicht eine vorgefertigte Aufwertungs- oder Fortschrittserzählung.\nMethoden: Overlay zweier Zeitstände, Differenzkarten, Flächenbilanz, Prüfung von Vergleichbarkeit und Unsicherheit.\nSchwierigkeit: mittel bis hoch\nWarum: Gut machbar, wenn zwei belastbare Zeitstände vorliegen. Die Hauptschwierigkeit liegt in der Vergleichbarkeit, nicht in der Softwaretechnik.\nDatensätze / Quellen:\n\nUrban Atlas mit mehreren Zeitständen und Change-Layern\nOSM / Geofabrik als ergänzender Vektorkontext\nlokale Luftbilder oder kommunale Open-Data-Zeitstände"
   },
   {
     "objectID": "unit00/unit00-04-themen.html#korridore-statt-punkte",
@@ -1439,18 +1439,18 @@
     "text": "8. Korridore statt Punkte\n\nKonkrete Idee: Wo verläuft ein möglichst konfliktarmer, barrierearmer oder landschaftsschonender Verbindungskorridor zwischen zwei Orten?\nKonzeptidee: Statt eines besten Punktstandorts wird hier ein geeigneter Verlauf gesucht. Das Thema eignet sich für Wege, Grünverbindungen oder ruhige Verbindungsräume.\nMethoden: Kostenfläche, Least-Cost Path oder Korridor, Ausschlussflächen, Variantenvergleich.\nSchwierigkeit: mittel bis hoch\nWarum: starkes vielseitiges Thema, aber die Kostenoberfläche muss plausibel und transparent konstruiert werden.\nDatensätze / Quellen:\n\nOSM / Geofabrik für Wege, Barrieren, Straßen, Gewässer\nCopernicus DEM für Steigung\nUrban Atlas für Nutzungs- und Ausschlussflächen\nGRASS / QGIS-Processing für kostenbasierte Raster-Workflows"
   },
   {
-    "objectID": "unit00/unit00-04-themen.html#rangfolgen-unter-knappheit",
-    "href": "unit00/unit00-04-themen.html#rangfolgen-unter-knappheit",
+    "objectID": "unit00/unit00-04-themen.html#rangfolgen-unter-ressourcenknappheit",
+    "href": "unit00/unit00-04-themen.html#rangfolgen-unter-ressourcenknappheit",
     "title": "Projekt-Themen",
-    "section": "9. Rangfolgen unter Knappheit",
-    "text": "9. Rangfolgen unter Knappheit\n\nKonkrete Idee: Wenn nur drei Flächen entsiegelt, begrünt, beschattet oder aufgewertet werden können: Welche sollten zuerst gewählt werden?\nKonzeptidee: Das Projekt behandelt Priorisierung unter Ressourcenknappheit. Es geht nicht nur um Eignung, sondern um echte Auswahlentscheidungen.\nMethoden: Kriterienbildung, Gewichtung, Ranking, Priorisierung, Vergleich alternativer Auswahlregeln.\nSchwierigkeit: hoch\nWarum: Nicht primär technisch schwer, aber argumentativ anspruchsvoll. Die Priorisierungslogik muss offen und belastbar sein.\nDatensätze / Quellen:\n\nUrban Atlas\nOSM / Geofabrik\nCopernicus DEM\nmethodische Orientierung über Suitability- und Priorisierungsworkflows in QGIS"
+    "section": "9. Rangfolgen unter Ressourcenknappheit",
+    "text": "9. Rangfolgen unter Ressourcenknappheit\n\nKonkrete Idee: Wenn nur drei Flächen entsiegelt, begrünt, beschattet oder aufgewertet werden können: Welche sollten zuerst gewählt werden?\nKonzeptidee: Das Projekt behandelt Priorisierung unter Ressourcenknappheit. Es geht nicht nur um Eignung, sondern um echte Auswahlentscheidungen.\nMethoden: Kriterienbildung, Gewichtung, Ranking, Priorisierung, Vergleich alternativer Auswahlregeln.\nSchwierigkeit: hoch\nWarum: Nicht primär technisch schwer, aber argumentativ anspruchsvoll. Die Priorisierungslogik muss offen und belastbar sein.\nDatensätze / Quellen:\n\nUrban Atlas\nOSM / Geofabrik\nCopernicus DEM\nmethodische Orientierung über Suitability- und Priorisierungsworkflows in QGIS"
   },
   {
-    "objectID": "unit00/unit00-04-themen.html#interpolation-mit-misstrauen",
-    "href": "unit00/unit00-04-themen.html#interpolation-mit-misstrauen",
+    "objectID": "unit00/unit00-04-themen.html#interpolation-und-unsicherheit",
+    "href": "unit00/unit00-04-themen.html#interpolation-und-unsicherheit",
     "title": "Projekt-Themen",
-    "section": "10. Interpolation mit Misstrauen",
-    "text": "10. Interpolation mit Misstrauen\n\nKonkrete Idee: Wie verändert sich ein interpoliertes Temperatur-, Luftqualitäts- oder Lärmfeld, wenn Verfahren, Parameter oder Punktdichte variiert werden?\nKonzeptidee: Flächenwerte werden hier als Schätzung unter Unsicherheit verstanden, nicht als objektive Wahrheit.\nMethoden: Punktdaten, IDW oder TIN, Variantenvergleich, Fehlervalidierung oder Plausibilitätsprüfung.\nSchwierigkeit: hoch\nWarum: Sehr gutes wissenschaftliches Thema, aber stark abhängig von der Qualität und Dichte der Punktdaten.\nDatensätze / Quellen:\n\neigene Messdaten\nOpenAQ für Luftqualitätsdaten\nQGIS-Dokumentation: Interpolation / IDW / TIN"
+    "section": "10. Interpolation und Unsicherheit",
+    "text": "10. Interpolation und Unsicherheit\n\nKonkrete Idee: Wie verändert sich ein interpoliertes Temperatur-, Luftqualitäts- oder Lärmfeld, wenn Verfahren, Parameter oder Punktdichte variiert werden?\nKonzeptidee: Flächenwerte werden hier als Schätzung unter Unsicherheit verstanden, nicht als objektive Wahrheit.\nMethoden: Punktdaten, IDW oder TIN, Variantenvergleich, Fehlervalidierung oder Plausibilitätsprüfung.\nSchwierigkeit: hoch\nWarum: Sehr gutes wissenschaftliches Thema, aber stark abhängig von der Qualität und Dichte der Punktdaten.\nDatensätze / Quellen:\n\neigene Messdaten\nOpenAQ für Luftqualitätsdaten\nQGIS-Dokumentation: Interpolation / IDW / TIN"
   },
   {
     "objectID": "unit00/unit00-04-themen.html#gemeinsame-basisquellen",
@@ -1464,7 +1464,7 @@
     "href": "unit00/unit00-04-themen.html#quellenlinks-nach-themen",
     "title": "Projekt-Themen",
     "section": "Quellenlinks nach Themen",
-    "text": "Quellenlinks nach Themen\n\n1. Hotspots ohne Erklärung\n\nQGIS Documentation – Interpolation / Heatmap\nGeofabrik / OpenStreetMap\n\n\n\n2. Sichtachsen und tote Winkel\n\nCopernicus DEM\nQGIS / GDAL Documentation – Viewshed\nGeofabrik / OpenStreetMap\n\n\n\n3. Verlorene Mitte\n\nQGIS Documentation – Network Analysis / Service Area\nGeofabrik / OpenStreetMap\n\n\n\n4. Räume der Überlagerung\n\nUrban Atlas\nCopernicus DEM\nGeofabrik / OpenStreetMap\n\n\n\n5. Korridore statt Punkte\n\nGRASS GIS Documentation\nCopernicus DEM\nUrban Atlas\nGeofabrik / OpenStreetMap\n\n\n\n6. Rangfolgen unter Knappheit\n\nUrban Atlas\nCopernicus DEM\nGeofabrik / OpenStreetMap\nQGIS Documentation – Processing Framework\n\n\n\n7. Interpolation mit Misstrauen\n\nQGIS Documentation – Interpolation\nOpenAQ\n\n\n\n8. Maßstab als Problem\n\nCopernicus DEM\nUrban Atlas\nGeofabrik / OpenStreetMap\nQGIS Documentation – Raster Analysis\n\n\n\n9. Räume, die sich widersprechen\n\nUrban Atlas\nCopernicus DEM\nGeofabrik / OpenStreetMap\n\n\n\n10. Vorher–Nachher ohne Pathos\n\nUrban Atlas\nGeofabrik / OpenStreetMap"
+    "text": "Quellenlinks nach Themen\n\n1. Hotspots ohne Erklärung\n\nQGIS Documentation – Interpolation / Heatmap\nGeofabrik / OpenStreetMap\n\n\n\n2. Sichtachsen und tote Winkel\n\nCopernicus DEM\nQGIS / GDAL Documentation – Viewshed\nGeofabrik / OpenStreetMap\n\n\n\n3. Verlorene Mitte\n\nQGIS Documentation – Network Analysis / Service Area\nGeofabrik / OpenStreetMap\n\n\n\n4. Räume der Überlagerung\n\nUrban Atlas\nCopernicus DEM\nGeofabrik / OpenStreetMap\n\n\n\n5. Korridore statt Punkte\n\nGRASS GIS Documentation\nCopernicus DEM\nUrban Atlas\nGeofabrik / OpenStreetMap\n\n\n\n6. Rangfolgen unter Ressourcenknappheit\n\nUrban Atlas\nCopernicus DEM\nGeofabrik / OpenStreetMap\nQGIS Documentation – Processing Framework\n\n\n\n7. Interpolation und Unsicherheit\n\nQGIS Documentation – Interpolation\nOpenAQ\n\n\n\n8. Maßstab als Problem\n\nCopernicus DEM\nUrban Atlas\nGeofabrik / OpenStreetMap\nQGIS Documentation – Raster Analysis\n\n\n\n9. Räume, die sich widersprechen\n\nUrban Atlas\nCopernicus DEM\nGeofabrik / OpenStreetMap\n\n\n\n10. Vorher–Nachher ein Klassiker\n\nUrban Atlas\nGeofabrik / OpenStreetMap"
   },
   {
     "objectID": "unit00/unit00-04-themen.html#hinweise-zur-themenwahl",
