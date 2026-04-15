@@ -18,7 +18,7 @@
     "text": "Digitale Geländemodelle liegen in der Regel als Rasterdaten vor und werden häufig in GIS-Analysen verwendet. Dabei tragen sie sowohl direkt zur Höheninformation als auch indirekt, z.B. als morphometrische oder hydrologische Basisdatensätze, zum prozessorientierten Erkenntnisgewinn bei.\nDer Themenkomplex der digitalen Geländemodelle einschließlich ihrer Erstellung auf der Basis unterschiedlicher Fernerkundungssensoren ist vielfältig. Die Materialien des Readers skizzieren verschiedene häufig verwendete Ableitungen und räumliche Filter. Diese Konzepte können auf fast alle Rasterdaten angewendet werden.",
     "crumbs": [
       "Arbeitsblätter",
-      "A3 -  Analysen und Ableitungen"
+      "A3 - Analysen und Ableitungen"
     ]
   },
   {
@@ -29,7 +29,7 @@
     "text": "Worum geht es in dieses Arbeitsblatt?\nIn der Übung werden Sie Informationen aus digitalen Geländemodellen ableiten und sich unter anderem mit räumlichen Filtermethoden beschäftigen. Darüber hinaus werden komplexere Werkzeuge wie die Berechnung eines topographischen Indexes oder des Oberflächenabflusses exemplarisch geübt.",
     "crumbs": [
       "Arbeitsblätter",
-      "A3 -  Analysen und Ableitungen"
+      "A3 - Analysen und Ableitungen"
     ]
   },
   {
@@ -40,7 +40,7 @@
     "text": "Lernziele\nNach dieser Übung können Sie\n\nDigitale Geländemodelle in ihrer Vielfalt und Bedeutung einschätzen können\nAbgeleitete Rasterdaten mit typischen Werkzeugen (Algorithmen) erzeugen\ndiese abgeleiteten Informationen gezielt in Fragestellungen einsetzen\nDirekte und statistisch aggregierte Informationen extrahieren",
     "crumbs": [
       "Arbeitsblätter",
-      "A3 -  Analysen und Ableitungen"
+      "A3 - Analysen und Ableitungen"
     ]
   },
   {
@@ -51,7 +51,7 @@
     "text": "Benötigte Materialien\n\nDaten\n\nCopernicus EU-DEM v1.1 Das EU DEM ist das beste und am höchsten aufgelöste homogene DEM für ganz Europa. Es wird aus verschiedenen Datenquellen erzeugt und ist daher räumlich besser aufgelöst als reine SRTM-basierte Höhenmodelle.\nCGIAR-CSI SRTM V4 Der CGIAR-CSI SRTM V4 ist vermutlich der weltweit beste homogen nachprozessierte SRTM-Datensatz. Zur neuen Version 4 sagt CGIAR-CSI: “envisaged that CGIAR-CSI SRTM Version 4 is our definitive and final release […]”, siehe CGIAR FAQ.\nSRTM Geländemodell TileDownloader. ACHTUNG: (Erfordert Registrierung bei NASA Earthdata) Der Infolink der Oberfläche ist korrupt, daher siehe für die notwendigen Metadaten die NASA JPL Seite. ACHTUNG: Diese Datei muss als ZIP-Datei geladen werden, da es sich um ein SRTMHGT-Format handelt. Format handelt.\nOpenDEM Deutschland ACHTUNG: Bitte unbedingt die Info Seite beachten, da eine umfangreiche Reanalyse der SRTM Daten stattgefunden hat.\nOpenDEM Europa ACHTUNG: Bitte unbedingt die Info Seite beachten, da eine umfangreiche Re-Analyse der SRTM Daten stattgefunden hat.\nPolygon Marburg Stadtgebiet",
     "crumbs": [
       "Arbeitsblätter",
-      "A3 -  Analysen und Ableitungen"
+      "A3 - Analysen und Ableitungen"
     ]
   },
   {
@@ -62,7 +62,7 @@
     "text": "Aufgaben Arbeitsblatt 3\nDie Ableitung und Analyse von Rasterdaten ist ein sehr weites Feld. Es umfasst über die Bildverarbeitung und Fernerkundung auch die direkte Interpretation und Analyse von z.B. Geländemodelldaten, die als Basisdaten für räumliche Analysen der realen Welt eine besonders prominente Rolle spielen. Aufgrund der langen Historie und Bedeutung gibt es eine nahezu unüberschaubare Anzahl unterschiedlichster Geländemodelldaten. Insbesondere die bekannten SRTM-Daten liegen in unzähligen Varianten vor. Darüber hinaus gibt es Daten in besserer Qualität. Die obige Datenauswahl soll Ihnen einen Eindruck vermitteln, wo Sie überall fündig werden können, wenn Sie z.B. nach SRTM DEM Deutschland Europa googeln. Natürlich finden Sie zu allen Daten auch die notwendigen Informationen und können dann beurteilen, ob Sie diese für geeignet halten. Deshalb sollten Sie in den folgenden Aufgaben mindestens zwei verschiedene Datensätze verwenden (gerne auch alle).",
     "crumbs": [
       "Arbeitsblätter",
-      "A3 -  Analysen und Ableitungen"
+      "A3 - Analysen und Ableitungen"
     ]
   },
   {
@@ -73,7 +73,7 @@
     "text": "Aufgabe 03\n\n\n\n\n\n\n\nLaden Sie sich mindestestens zwei der oben genannten Geländemodell Datensätze herunter. Sie müssen diese Daten evtl. projizieren und auf die Bezugsgröße des Marburg-Luftbildes zuschneiden.\nWas repräsentiert der Datensatz? Schauen Sie sich die Metadaten an. Verschaffen Sie sich einen Überblick über die Projektion, räumliche Auflösung und Fehlerwerte.\nProjizieren Sie die heruntergeladenen Geländemodelldatensätze in ETRS89 UTM32 und schneiden es auf den Ausschnitt des Marburger Luftbildes zu.\nBerechnen Sie für die zugeschnittenen und projizierten Datensätze die Hangneigung, Exposition/Aspect (SAGA Werkzeug Slope, Aspect, Curvature) und Topographischen Index (GDAL TPI).\nExtrahieren Sie die Datensätze Slope, Aspect und TPI an der Position des Brunnens am Marburger Oberstadt-Marktplatz (Nutzen Sie die Brunen-Signatur der Openstreetmap Webkarte).\nWenden Sie einen 5*5 Mittelwertsfilter auf die Geländehöhe an und ermitteln Sie erneut für die Position des Makrtplatzbrunnen die Werte von Hangneigung, Aspect und TPI.\nBerechnen Sie unter Benutzung des Datensatzes (Marburg Stadtgebiet) und unter Verwendung der auf dem ungefilterten Geländemodell erhobenen Hangneigungswerte die minimale, maximale und mittlere Hangneigung.\nBerechnen Sie unter Benutzung des Datensatzes (Marburg Stadtgebiet) und unter Verwendung der 5x5 gefilterten Mittwelwert-Geländemodelle erhobenen Expositionswerte die minimale, maximale und mittlere Exposition.\nZeigen Sie die Werte in einer Tabelle\nBenennen und Begründen Sie die möglichen Ursachen für etwaige Unterschiede der Resultate der von Ihnen verwendeten Datensätzen. (Stichpunktliste).\n\n\n\n\n\nGewichtung der Aufgaben in Arbeitsblatt 3\n\n\n\nAufgabenteil\nGewichtung Teilaufgabe\nGewichtung Gesamt\n\n\n\n\nAufgabe 03-01\n0.5\n0.11\n\n\nAufgabe 03-02\n0.5\n0.11\n\n\nAufgabe 03\n1.0\n0.2",
     "crumbs": [
       "Arbeitsblätter",
-      "A3 -  Analysen und Ableitungen"
+      "A3 - Analysen und Ableitungen"
     ]
   },
   {
@@ -84,7 +84,7 @@
     "text": "Unterstützung\n\nAufgabe 03-01\nWichtige Meta-Informationen zu den SRTM-Daten finden Sie auf den jeweiligen Seiten der Datenanbieter (z.B. CGIAR FAQ{:target=“_blank”} oder EU-DEM Meta{:target=“_blank”}). Bitte beachten Sie, dass sich die Geländemodelle zum Teil erheblich unterscheiden. Dies gilt nicht nur für das Copernicus-Modell im Vergleich zu den SRTM-Modellen, sondern auch für die SRTM-Modelle, die sich trotz gleicher Datengrundlage erheblich unterscheiden. Besonders wichtig für die erfolgreiche Bearbeitung der letzten Teilaufgabe 03-01 ist die Auseinandersetzung mit den Metadaten.\nBenutzen Sie einen der Marburg-Layer aus den vorherigen Sitzungen als Vorlage, um das Raster auszuschneiden.\nDas Stichwort für die QGIS-Hilfe zum Mittelwertfilter ist “Nachbarn” oder auch “Filter” in der Werkzeugleiste. Als Ergebnis wird z.B. r.neighbors aus der GRASS GIS Funktionssammlung angezeigt, bei “filter” gibt es eine Reihe von Treffern. Hier ist Simple Filter aus der SAGA GIS Funktionssammlung ein guter Einstieg.\nMit Zonenstatistik können Sie sich die Minimum-/Maximum-/Mittelwerte eines definierten Gebietes als Tabelle ausgeben lassen. Für Marburg können Sie entweder das Stadtgebiet als Polygon digitalisieren oder z.B. nach Verwaltungsgrenzen suchen. Hier wäre z.B. der Bundesamt für Kartographie und Geodäsie Open Data Server{:target=“_blank”} eine gute Einstiegsmöglichkeit. Wenn Ihnen das zu umständlich ist, können Sie auch die Datei Marburg Stadtgebiet) aus dem Download verwenden. Bitte beachten Sie, dass dies natürlich zu unterschiedlichen Ergebnissen führt, wenn Sie unterschiedliche Polygone als Flächenreferenz verwenden.",
     "crumbs": [
       "Arbeitsblätter",
-      "A3 -  Analysen und Ableitungen"
+      "A3 - Analysen und Ableitungen"
     ]
   },
   {
@@ -433,7 +433,7 @@
     "href": "unit02/unit02-04.html",
     "title": "Die Vermessung der Welt - Namen - Orte - Lage",
     "section": "",
-    "text": "Die zentrale Aufgabe eines Koordinatensystems in Geoinformationssystemen ist die räumlich reproduzierbare Verortung diskreter und/oder kontinuierlicher Geoinformationselemente.\nÜber die unmittelbare räumliche Dimension hinausgehende Eigenschaften können den Geoobjekten als Attribute zugeordnet werden. Um die reale Welt abstrahieren zu können, muss unsere GIS-Software grundlegende Methoden zur Verfügung stellen, die das geographische Datentripel Zeit, Ort und Attribut konsistent nutzbar machen.\nDie aktuelle Sitzung ist in mehrere Abschnitte gegliedert, um diese komplexe Materie schrittweise zu erarbeiten. Zunächst werden die Prinzipien der räumlichen Referenzierung (Georeferenzierung) anhand von Ortsnamen, der linearen Referenzierung und der exakten zweidimensionalen Verortung in einem Katastersystem besprochen. Anschließend werden die wichtigsten geodätischen bzw. kartographischen Methoden der räumlichen Zuordnung und Darstellung wiederholt und in den Kontext von GIS gestellt.",
+    "text": "Titelbild: Quelle nach (Snow 1854).\nDie zentrale Aufgabe eines Koordinatensystems in Geoinformationssystemen ist die räumlich reproduzierbare Verortung diskreter und/oder kontinuierlicher Geoinformationselemente.\nÜber die unmittelbare räumliche Dimension hinausgehende Eigenschaften können den Geoobjekten als Attribute zugeordnet werden. Um die reale Welt abstrahieren zu können, muss unsere GIS-Software grundlegende Methoden zur Verfügung stellen, die das geographische Datentripel Zeit, Ort und Attribut konsistent nutzbar machen.\nDie aktuelle Sitzung ist in mehrere Abschnitte gegliedert, um diese komplexe Materie schrittweise zu erarbeiten. Zunächst werden die Prinzipien der räumlichen Referenzierung (Georeferenzierung) anhand von Ortsnamen, der linearen Referenzierung und der exakten zweidimensionalen Verortung in einem Katastersystem besprochen. Anschließend werden die wichtigsten geodätischen bzw. kartographischen Methoden der räumlichen Zuordnung und Darstellung wiederholt und in den Kontext von GIS gestellt.",
     "crumbs": [
       "Reader GI Raumkonzepte",
       "Die Vermessung der Welt - Namen - Orte - Lage"
@@ -488,7 +488,7 @@
     "href": "unit02/unit02-04.html#übung",
     "title": "Die Vermessung der Welt - Namen - Orte - Lage",
     "section": "Übung",
-    "text": "Übung\n\n\n\n\n\n\nBearbeiten Sie bitte folgende Aufgaben:\n\nWählen Sie mit Hilfe von Google Maps einen Ort (z.B. Ihren Geburtsort) auf der Weltkarte aus und versuchen Sie, ihn mit Hilfe von GIS-Werkzeugen genau zu georeferenzieren. Verwenden Sie verschiedene Methoden wie die Eingabe von Koordinaten, die Suche nach Ortsnamen oder das Setzen von Markierungen auf der Karte. Vergleiche die Ergebnisse. Welche Unterschiede fallen Ihnen auf?\nVerwenden Sie Google Earth, um zeitliche Daten zu analysieren, z.B. die Veränderung von Landnutzungsmustern im Laufe der Zeit. Verwenden Sie Zeitreihendaten und erstellen Sie Visualisierungen, die zeitliche Trends und Muster aufzeigen. Wie bewerten Sie die zeitliche Entwicklung räumlicher Informationen?\n\n\nSnow (1854)",
+    "text": "Übung\n\n\n\n\n\n\nBearbeiten Sie bitte folgende Aufgaben:\n\nWählen Sie mit Hilfe von Google Maps einen Ort (z.B. Ihren Geburtsort) auf der Weltkarte aus und versuchen Sie, ihn mit Hilfe von GIS-Werkzeugen genau zu georeferenzieren. Verwenden Sie verschiedene Methoden wie die Eingabe von Koordinaten, die Suche nach Ortsnamen oder das Setzen von Markierungen auf der Karte. Vergleiche die Ergebnisse. Welche Unterschiede fallen Ihnen auf?\nVerwenden Sie Google Earth, um zeitliche Daten zu analysieren, z.B. die Veränderung von Landnutzungsmustern im Laufe der Zeit. Verwenden Sie Zeitreihendaten und erstellen Sie Visualisierungen, die zeitliche Trends und Muster aufzeigen. Wie bewerten Sie die zeitliche Entwicklung räumlicher Informationen?",
     "crumbs": [
       "Reader GI Raumkonzepte",
       "Die Vermessung der Welt - Namen - Orte - Lage"
@@ -499,7 +499,7 @@
     "href": "unit02/unit02-02.html",
     "title": "Koordinaten, Topologie und Dimension",
     "section": "",
-    "text": "Bisher haben wir ständig und ohne besondere Vorüberlegungen mit den Begriffen Raum und Zeit gearbeitet. Um die bereits im Abschnitt Objekte im Raum vorgestellten Raumkonzepte (diskrete Geoobjekte, kontinuierliche Räume) in GI-Systemen und letztlich auch allgemein wissenschaftlich nutzbar zu machen, müssen wir diese Begriffe konkreter fassen.\nDer Raum in GI-Systemen wird in Anlehnung an die Mathematik und Physik als dreidimensionaler euklidischer Raum verstanden. Aus dem Mathematikunterricht kennen wir die euklidische Ebene (mit 2 Dimensionen) und den euklidischen Raum (mit 3 Dimensionen). Am einfachsten lässt sich der euklidische Raum mit Hilfe eines kartesischen Koordinatensystems beschreiben, in dem die Koordinaten entlang senkrecht zueinander stehender Achsen aufgetragen werden (vgl. Abb. 02-1).\n\n\n\nAbbildung 02-01: Ausschnitt aus einem zweidimensionalen kartesischen Koordinatensystem mit 3 eingetragenen Punkten in Koordinatenschreibweise (Quelle: Bolino (2008))\n\n\n\n\n\nAbbildung 02-2: Allgemeine Abbildung eines dreidimensionales kartesischen Koordinatensystem mit euklidischen Ebenen durch den Ursprungspunkt (Quelle: Sakurambo (2007))",
+    "text": "Titelbild: Quelle nach (Snow 1854).",
     "crumbs": [
       "Reader GI Raumkonzepte",
       "Koordinaten, Topologie und Dimension"
@@ -509,8 +509,8 @@
     "objectID": "unit02/unit02-02.html#raum-im-gis",
     "href": "unit02/unit02-02.html#raum-im-gis",
     "title": "Koordinaten, Topologie und Dimension",
-    "section": "",
-    "text": "Bisher haben wir ständig und ohne besondere Vorüberlegungen mit den Begriffen Raum und Zeit gearbeitet. Um die bereits im Abschnitt Objekte im Raum vorgestellten Raumkonzepte (diskrete Geoobjekte, kontinuierliche Räume) in GI-Systemen und letztlich auch allgemein wissenschaftlich nutzbar zu machen, müssen wir diese Begriffe konkreter fassen.\nDer Raum in GI-Systemen wird in Anlehnung an die Mathematik und Physik als dreidimensionaler euklidischer Raum verstanden. Aus dem Mathematikunterricht kennen wir die euklidische Ebene (mit 2 Dimensionen) und den euklidischen Raum (mit 3 Dimensionen). Am einfachsten lässt sich der euklidische Raum mit Hilfe eines kartesischen Koordinatensystems beschreiben, in dem die Koordinaten entlang senkrecht zueinander stehender Achsen aufgetragen werden (vgl. Abb. 02-1).\n\n\n\nAbbildung 02-01: Ausschnitt aus einem zweidimensionalen kartesischen Koordinatensystem mit 3 eingetragenen Punkten in Koordinatenschreibweise (Quelle: Bolino (2008))\n\n\n\n\n\nAbbildung 02-2: Allgemeine Abbildung eines dreidimensionales kartesischen Koordinatensystem mit euklidischen Ebenen durch den Ursprungspunkt (Quelle: Sakurambo (2007))",
+    "section": "Raum im GIS",
+    "text": "Raum im GIS\nBisher haben wir ständig und ohne besondere Vorüberlegungen mit den Begriffen Raum und Zeit gearbeitet. Um die bereits im Abschnitt Objekte im Raum vorgestellten Raumkonzepte (diskrete Geoobjekte, kontinuierliche Räume) in GI-Systemen und letztlich auch allgemein wissenschaftlich nutzbar zu machen, müssen wir diese Begriffe konkreter fassen.\nDer Raum in GI-Systemen wird in Anlehnung an die Mathematik und Physik als dreidimensionaler euklidischer Raum verstanden. Aus dem Mathematikunterricht kennen wir die euklidische Ebene (mit 2 Dimensionen) und den euklidischen Raum (mit 3 Dimensionen). Am einfachsten lässt sich der euklidische Raum mit Hilfe eines kartesischen Koordinatensystems beschreiben, in dem die Koordinaten entlang senkrecht zueinander stehender Achsen aufgetragen werden (vgl. Abb. 02-1).\n\n\n\nAbbildung 02-01: Ausschnitt aus einem zweidimensionalen kartesischen Koordinatensystem mit 3 eingetragenen Punkten in Koordinatenschreibweise (Quelle: Bolino (2008))\n\n\n\n\n\nAbbildung 02-2: Allgemeine Abbildung eines dreidimensionales kartesischen Koordinatensystem mit euklidischen Ebenen durch den Ursprungspunkt (Quelle: Sakurambo (2007))",
     "crumbs": [
       "Reader GI Raumkonzepte",
       "Koordinaten, Topologie und Dimension"
@@ -554,7 +554,7 @@
     "href": "unit02/unit02-02.html#übung",
     "title": "Koordinaten, Topologie und Dimension",
     "section": "Übung",
-    "text": "Übung\n\n\n\n\n\n\nBesuchen Sie erneut die Ihnen bereits bekannen Websites.\n\nÖffentliche Toiletten in Australien\nAktuelle Wasserstände der Lahn\nLufthygiene Bad Arolsen\nKopernikus EU-DEM v1.1\n\nAnalysieren Sie vor dem Hintergrund Ihrer neu erworbenen Kenntnisse die folgenden Fragen:\n\nWas wird dargestellt? Geoobjekte oder Raumkontinua?\nWelche Dimension und Geometrie liegt der Darstellung Ihrer Meinung nach zugrunde?\nVersuchen Sie, weitere alltägliche Beispiele für die Bedeutung von Lage und Dimensionalität zu finden.\n\n\nSnow (1854)",
+    "text": "Übung\n\n\n\n\n\n\nBesuchen Sie erneut die Ihnen bereits bekannen Websites.\n\nÖffentliche Toiletten in Australien\nAktuelle Wasserstände der Lahn\nLufthygiene Bad Arolsen\nKopernikus EU-DEM v1.1\n\nAnalysieren Sie vor dem Hintergrund Ihrer neu erworbenen Kenntnisse die folgenden Fragen:\n\nWas wird dargestellt? Geoobjekte oder Raumkontinua?\nWelche Dimension und Geometrie liegt der Darstellung Ihrer Meinung nach zugrunde?\nVersuchen Sie, weitere alltägliche Beispiele für die Bedeutung von Lage und Dimensionalität zu finden.",
     "crumbs": [
       "Reader GI Raumkonzepte",
       "Koordinaten, Topologie und Dimension"
@@ -565,7 +565,7 @@
     "href": "unit02/unit02-0000.html",
     "title": "Definitionen - Begriffe - Software",
     "section": "",
-    "text": "In der Praxis wird der Begriff „Informationssystem“ (IS) fast beliebig verwendet, so gibt es neben Geoinformationssystemen auch Landinformationssysteme, Umweltinformationssysteme oder amtlich-topographische Informationssysteme. Auch die Abgrenzung der Begriffe Land-, Geo- und Rauminformationssysteme (LIS, GIS und RIS) wird in der Fachliteratur nicht einheitlich gehandhabt. In der Regel wird der Begriff Rauminformationssystem (RIS) als Oberbegriff verwendet, während Attribute wie Landschaft oder Geo vor allem die fachliche oder methodische Ausrichtung bezeichnen. Das Vier-Komponenten-Modell eines GIS und seine funktionalen Komponenten.\nDarüber hinaus ändert sich das Verständnis der verschiedenen Definitionen mit einer bemerkenswerten Geschwindigkeit. Trotz der Vielfalt des Begriffs GIS hat sich folgende strukturelle Definition durchgesetzt: “GIS ist ein computergestütztes Informationssystem, das aus den vier Komponenten Hardware, Software, Daten und Anwendungen besteht […]”. (vgl. Abb. 01-9 Bill 2008). Daraus folgt nach Bill (2008), dass:"
+    "text": "Titelbild: Quelle nach (Snow.).\nIn der Praxis wird der Begriff „Informationssystem“ (IS) fast beliebig verwendet, so gibt es neben Geoinformationssystemen auch Landinformationssysteme, Umweltinformationssysteme oder amtlich-topographische Informationssysteme. Auch die Abgrenzung der Begriffe Land-, Geo- und Rauminformationssysteme (LIS, GIS und RIS) wird in der Fachliteratur nicht einheitlich gehandhabt. In der Regel wird der Begriff Rauminformationssystem (RIS) als Oberbegriff verwendet, während Attribute wie Landschaft oder Geo vor allem die fachliche oder methodische Ausrichtung bezeichnen. Das Vier-Komponenten-Modell eines GIS und seine funktionalen Komponenten.\nDarüber hinaus ändert sich das Verständnis der verschiedenen Definitionen mit einer bemerkenswerten Geschwindigkeit. Trotz der Vielfalt des Begriffs GIS hat sich folgende strukturelle Definition durchgesetzt: “GIS ist ein computergestütztes Informationssystem, das aus den vier Komponenten Hardware, Software, Daten und Anwendungen besteht […]”. (vgl. Abb. 01-9 Bill 2008). Daraus folgt nach Bill (2008), dass:"
   },
   {
     "objectID": "unit02/unit02-0000.html#gis-software",
@@ -579,7 +579,7 @@
     "href": "unit02/unit02-0000.html#übung",
     "title": "Definitionen - Begriffe - Software",
     "section": "Übung",
-    "text": "Übung\n\n\n\n\n\n\n\nSnow (.)"
+    "text": "Übung"
   },
   {
     "objectID": "unit01/unit01-04.html",
@@ -641,7 +641,7 @@
     "href": "unit01/unit01-04.html#übung",
     "title": "Kodierung der Welt durch Geodatensätze",
     "section": "Übung",
-    "text": "Übung\n\n\n\n\n\n\nVersuchen Sie, diese sehr abstrakte Sicht auf räumliche Daten und Informationen im (GIS-)Alltag wiederzufinden. Besuchen Sie die folgenden Websites\n\nÖffentliche Toiletten in Australien\nAktuelle Wasserstände der Lahn\nLufthygiene-Messstation Bad Arolsen\nCineplex\n\nReflektieren Sie anhand der folgenden Leitfragen:\n\nWelche Merkmalsausprägungen werden genannt (evtl. auch welche nicht)?\nIst die Abstraktion für die mutmaßliche Zielsetzung sinnvoll?\nIst der geographische Aspekt für Sie erkennbar?\nGibt es formale bzw. inhaltliche Unterschiede in der geographischen Darstellung der Lufthygiene-Messstation Bad Arolsen und des Cineplex Marburg?",
+    "text": "Übung\n\n\n\n\n\n\nVersuchen Sie, diese sehr abstrakte Sicht auf räumliche Daten und Informationen im (GIS-)Alltag wiederzufinden. Besuchen Sie die folgenden Websites\n\nÖffentliche Toiletten in Australien\nAktuelle Wasserstände der Lahn\nLufthygiene-Messstation Bad Arolsen\nKilometrierung der Bundesautobahnen\n\nReflektieren Sie anhand der folgenden Leitfragen:\n\nWelche Merkmalsausprägungen werden genannt (evtl. auch welche nicht)?\nIst die Abstraktion für die mutmaßliche Zielsetzung sinnvoll?\nIst der geographische Aspekt für Sie erkennbar?\nGibt es formale bzw. inhaltliche Unterschiede in der geographischen Darstellung der Lufthygiene-Messstation Bad Arolsen und des Cineplex Marburg?",
     "crumbs": [
       "Reader Geographische Raumkonzept",
       "Kodierung der Welt durch Geodatensätze"
@@ -739,88 +739,39 @@
     "text": "This is a senseless question to meet a meaningfull answer\n\n\n\n\n\n\n\n\n\nThis is a meaningful answer to a senseless question\n\n\n\n\n\n\n\n\n\nWarningLearn More…\n\n\n\n\n\nThis is a even more meaningful answer to a senseless question"
   },
   {
-    "objectID": "unit00/unit00-02-formales.html",
-    "href": "unit00/unit00-02-formales.html",
-    "title": "Formales",
+    "objectID": "unit00/unit00-03-formales.html",
+    "href": "unit00/unit00-03-formales.html",
+    "title": "Gestaltung der studentischen Übungssitzungen",
     "section": "",
-    "text": "Die Aufgaben im Reader und die Übungsblätter auf den Kursseiten bilden die Grundlage für die Studien- und Prüfungsleistungen. Für den anwendungsorientierten Kursteil werden diese methodischen Grundlagen in ein eigenständig bearbeitetes Mini-Projekt in QGIS überführt."
+    "text": "Die studentisch gestalteten Sitzungen sind als anwendungsorientierte Übungssitzungen konzipiert. Sie sollen kein klassisches Referat sein, sondern eine fachlich strukturierte Arbeitsphase auf Basis eines eigenständig entwickelten QGIS-Mini-Projekts. Ziel ist es, eine reale räumliche Fragestellung so aufzubereiten, dass die Teilnehmenden nicht nur Ergebnisse sehen, sondern Analyseweg, Entscheidungslogik und Grenzen der Aussage nachvollziehen und diskutieren können."
   },
   {
-    "objectID": "unit00/unit00-02-formales.html#anwesenheit",
-    "href": "unit00/unit00-02-formales.html#anwesenheit",
-    "title": "Formales",
-    "section": "Anwesenheit",
-    "text": "Anwesenheit\nDie Lehrveranstaltung findet grundsätzlich als Präsenzveranstaltung statt. Eine kontinuierliche Teilnahme ist fachlich erforderlich, da die Input-Sitzungen, Rückfragen, Diskussionen und Projektberatungen direkt aufeinander aufbauen. Einzelne Termine können in begründeten Ausnahmefällen online oder per Streaming durchgeführt werden."
+    "objectID": "unit00/unit00-03-formales.html#grundprinzip",
+    "href": "unit00/unit00-03-formales.html#grundprinzip",
+    "title": "Gestaltung der studentischen Übungssitzungen",
+    "section": "Grundprinzip",
+    "text": "Grundprinzip\nDie studentische Sitzung ist keine reine Präsentation, sondern eine Übungssitzung mit aktivem Beteiligungsanteil. Das spätere QGIS-Projekt dient dabei nicht nur als Abgabeprodukt, sondern als Arbeitsgrundlage der Sitzung.\nErwartet wird eine Verbindung aus:\n\nkurzer Einführung in Problem und Raumfrage (max. 5 Minuten),\nkompakter Darstellung des QGIS-Projekts (max. 10 Minuten),\naktivierendem Übungs- oder Diskussionsanteil (max. 60 Minuten),\ngemeinsamer Auswertung und kritischer Reflexion (max. 15 Minuten).\n\n\n\n\n\n\n\nNicht ausreichend ist eine lineare Folienpräsentation mit kurzer Fragerunde. Erwartet wird eine erkennbare Arbeits- und Beteiligungsphase."
   },
   {
-    "objectID": "unit00/unit00-02-formales.html#übersicht-der-kommunikationsformen",
-    "href": "unit00/unit00-02-formales.html#übersicht-der-kommunikationsformen",
-    "title": "Formales",
-    "section": "Übersicht der Kommunikationsformen",
-    "text": "Übersicht der Kommunikationsformen\n\nDiese Website\nDiese Webseite dient der einseitigen und überwiegend asynchronen Kommunikation sowie der Bereitstellung der Reader, Übungsblätter und organisatorischen Hinweise.\n\n\nKursbereich in Ilias\nDer Kursbereich der Lernplattform PUM Ilias dient der Organisation des Kurses, der Bereitstellung urheberrechtlich geschützter Materialien, der Durchführung der Self-Assessments sowie der Abgabe der Projektarbeiten.\n\n\nFragen\nFachliche und organisatorische Fragen sollen in erster Linie in den Präsenzzeiten geklärt werden. Prüfen Sie bitte zunächst, ob Ihre Frage bereits durch Reader, Übungsblätter, Screencasts oder FAQ-Einträge abgedeckt ist. Darüber hinausgehende Fragen können per E-Mail gestellt werden. Verwenden Sie dabei bitte einen eindeutigen Betreff nach dem Schema [Geoinfo SoSe] oder [Geoinfo WiSe]."
+    "objectID": "unit00/unit00-03-formales.html#verbindliche-struktur-der-sitzung",
+    "href": "unit00/unit00-03-formales.html#verbindliche-struktur-der-sitzung",
+    "title": "Gestaltung der studentischen Übungssitzungen",
+    "section": "Verbindliche Struktur der Sitzung",
+    "text": "Verbindliche Struktur der Sitzung\nJede studentische Sitzung soll vier Teile enthalten:\n\n1. Problemaufriss und Arbeitsauftrag\nKurze Einführung in Problem, Untersuchungsraum, Relevanz und Ziel der Sitzung.\n\n\n2. Verdichtete Projektdemonstration\nKompakte Darstellung von Datengrundlage, Analyseidee, zentralen Verarbeitungsschritten und Ergebnissen.\n\n\n\n\n\n\nDer reine Präsentationsteil darf maximal 15 Minuten dauern. Die Sitzung soll nicht durch einen langen Vortrag geprägt sein, sondern genügend Zeit für den Übungs- und Diskussionsteil lassen.\n\n\n\n\n\n3. Aktivierender Übungsanteil\nIm Zentrum der Sitzung steht ein aktiver Arbeitsanteil. Geeignet sind zum Beispiel:\n\nBewertung alternativer Standorte auf Karten,\nDiskussion und Gewichtung von Kriterien,\nVergleich mehrerer Ergebnisvarianten,\nkurze Gruppenaufgaben zur Karten- oder Workflowinterpretation,\nReflexion über Schwellenwerte, Datenwahl und Unsicherheiten.\n\n\n\n4. Auswertung und kritische Reflexion\nZum Abschluss werden Ergebnisse, Grenzen, Unsicherheiten und mögliche Alternativen gemeinsam eingeordnet."
   },
   {
-    "objectID": "unit00/unit00-02-formales.html#zeitaufwand-und-ablauf",
-    "href": "unit00/unit00-02-formales.html#zeitaufwand-und-ablauf",
-    "title": "Formales",
-    "section": "Zeitaufwand und Ablauf",
-    "text": "Zeitaufwand und Ablauf\nJede Kurseinheit dauert eine Woche und besteht aus einem Input- und einem Anwendungsanteil. In den ersten vier Sitzungen werden die methodischen und konzeptionellen Grundlagen erarbeitet. Anschließend gestalten die Studierenden anwendungsorientierte Sitzungen auf Grundlage eigenständig entwickelter Mini-Projekte.\n\nKursverlauf\n\n\n\n\n\n\n\n\n\nSitzung\nPhase\nSchwerpunkt\nErgebnissicherung\n\n\n\n\n1\nInput\nRaumkonzepte, Raumrepräsentation, Datenmodelle, QGIS-Orientierung\nReader- und Übungsgrundlagen\n\n\n2\nInput\nVektordaten, Attribute, thematische, geometrische und topologische Abfragen\nErgebnissicherung Sitzung 1\n\n\n3\nInput\nRasterdaten, DGM, topographische Ableitungen, Sichtfeld, prozessbezogene Interpretation\nErgebnissicherung Sitzung 2\n\n\n4\nInput\nMultikriterienanalyse, Eignungsanalyse, Workflows, Reproduzierbarkeit, Projektlogik\nErgebnissicherung Sitzung 3\n\n\n5\nAnwendung Block A\nStudentische Projektsitzung A1\nErgebnissicherung Inputphase\n\n\n6\nAnwendung Block A\nStudentische Projektsitzung A2\nErgebnissicherung Sitzung 5\n\n\n7\nAnwendung Block A\nStudentische Projektsitzung A3\nErgebnissicherung Sitzung 6\n\n\n8\nAnwendung Block B\nStudentische Projektsitzung B1\nErgebnissicherung Sitzung 7\n\n\n9\nAnwendung Block B\nStudentische Projektsitzung B2\nErgebnissicherung Sitzung 8\n\n\n10\nAnwendung Block B\nStudentische Projektsitzung B3\nErgebnissicherung Sitzung 9\n\n\n11\nAnwendung Block C\nStudentische Projektsitzung C1\nErgebnissicherung Sitzung 10\n\n\n12\nAnwendung Block C\nStudentische Projektsitzung C2\nErgebnissicherung Sitzung 11\n\n\n13\nAnwendung Block C\nStudentische Projektsitzung C3\nErgebnissicherung Sitzung 12\n\n\n14\nAnwendung Block D\nStudentische Projektsitzung D1\nErgebnissicherung Sitzung 13\n\n\n15\nAnwendung Block D\nStudentische Projektsitzung D2\nErgebnissicherung Sitzung 14\n\n\n16\nAnwendung Block D\nStudentische Projektsitzung D3\nErgebnissicherung Sitzung 15\n\n\n\n\n\n\n\n\n\nDie Themenvergabe erfolgt frühzeitig innerhalb der Inputphase, damit die Vorbereitungszeit nicht von der späteren Präsentationsreihenfolge abhängt. Die Projektentwicklung läuft somit parallel zum methodischen Input.\n\n\n\n\n\nExemplarischer Stundenplan der Lehrveranstaltung\n\nPräsenz: 2 Stunden pro Woche\n\nInput-Sitzung oder studentisch gestaltete Anwendungssitzung\n\nSelbststudium: ca. 7 Stunden pro Woche\n\nVor- und Nachbereitung der Reader und Übungsblätter\nArbeit am QGIS-Projekt\nAbstimmung in Lerngruppen\nAusarbeitung von Präsentation, Exposé und Dokumentation\n\n\n\n\n\n\n\n\nFür die Projektphase ist eine kontinuierliche Arbeitsweise erforderlich. Die Abgaben sind so konzipiert, dass das Projekt schrittweise entwickelt, dokumentiert und begründet wird."
+    "objectID": "unit00/unit00-03-formales.html#rolle-des-qgis-projekts",
+    "href": "unit00/unit00-03-formales.html#rolle-des-qgis-projekts",
+    "title": "Gestaltung der studentischen Übungssitzungen",
+    "section": "Rolle des QGIS-Projekts",
+    "text": "Rolle des QGIS-Projekts\nDas QGIS-Projekt soll so vorbereitet sein, dass es in der Sitzung als nachvollziehbare Arbeitsgrundlage dient. Im Idealfall soll sichtbar werden,\n\nwie die Fragestellung operationalisiert wurde,\nwelche Daten und Layer verwendet wurden,\nwelche Analyseentscheidungen getroffen wurden,\nund wie daraus ein Ergebnis entstanden ist.\n\nDa es sich um ein Work-in-Progress-Projekt handelt, muss die Sitzung kein vollständig abgeschlossenes Ergebnis präsentieren. Sie kann vielmehr auch dazu dienen, besondere Problembereiche, methodische Schwierigkeiten und offene Fragen zum Gegenstand der gemeinsamen Arbeit zu machen. Voraussetzung ist, dass diese Punkte aus dem bisherigen Projektverlauf heraus entwickelt werden. Es soll also erkennbar werden, welche Schritte bereits unternommen wurden, welche Lösungsansätze getestet wurden, an welchen Stellen Probleme aufgetreten sind und warum diese bislang nicht zufriedenstellend gelöst werden konnten.\nDie Sitzung ist zwingend anwendungsbasiert und nicht nur folienbasiert sein."
   },
   {
-    "objectID": "unit00/unit00-02-formales.html#studienleistung",
-    "href": "unit00/unit00-02-formales.html#studienleistung",
-    "title": "Formales",
-    "section": "Studienleistung",
-    "text": "Studienleistung\nDie individuell zu erbringende Studienleistung wird durch das erfolgreiche Absolvieren der vorgesehenen Self-Assessment-Einheiten in Ilias erbracht. Maßgeblich sind die dort kommunizierten Fristen und Mindestanforderungen."
-  },
-  {
-    "objectID": "unit00/unit00-02-formales.html#prüfungsleistung",
-    "href": "unit00/unit00-02-formales.html#prüfungsleistung",
-    "title": "Formales",
-    "section": "Prüfungsleistung",
-    "text": "Prüfungsleistung\nDie Prüfungsleistung wird in Form einer anwendungsorientierten Mini-Projektarbeit erbracht. Diese ersetzt in der 6-LP-Variante die reine Klausurlogik durch eine eigenständige, fachlich begründete QGIS-Anwendung.\nDie Projektarbeit ist grundsätzlich individuell zu erbringen. Eine Bearbeitung in 2er-Gruppen ist möglich, sofern die jeweiligen Arbeitsanteile klar kenntlich gemacht werden.\n\n\n\n\n\n\nDie Prüfungsleistung besteht nicht nur aus einer Präsentation oder einer Projektdatei, sondern aus einem vollständigen Mini-Projektpaket."
-  },
-  {
-    "objectID": "unit00/unit00-02-formales.html#didaktisches-format-der-studentischen-anwendungssitzungen",
-    "href": "unit00/unit00-02-formales.html#didaktisches-format-der-studentischen-anwendungssitzungen",
-    "title": "Formales",
-    "section": "Didaktisches Format der studentischen Anwendungssitzungen",
-    "text": "Didaktisches Format der studentischen Anwendungssitzungen\nDie studentisch gestalteten Sitzungen sind als anwendungsorientierte Übungssitzungen konzipiert. Sie sollen nicht die Form eines klassischen Referats annehmen, sondern eine fachlich strukturierte Arbeitsphase auf Basis eines eigenständig entwickelten QGIS-Mini-Projekts bilden.\nErwartet wird deshalb eine Verbindung aus:\n\nkurzer Einführung in Problem und Raumfrage,\nkompakter Darstellung des QGIS-Projekts,\naktivierendem Übungs- oder Diskussionsanteil,\ngemeinsamer Auswertung und kritischer Reflexion.\n\n\nMindestanforderung an die Sitzungsform\nJede studentische Sitzung muss mindestens eine klar erkennbare Aktivierungsphase enthalten. Reine Vortragsformate ohne Übungs-, Bewertungs- oder Diskussionsanteil erfüllen die Anforderungen nicht vollständig.\nGeeignete Aktivierungsformen sind zum Beispiel:\n\nBewertung von Karten oder Standortalternativen,\nDiskussion und Gewichtung von Kriterien,\nVergleich unterschiedlicher Ergebnisvarianten,\nAnalyse von Unsicherheiten, Schwellenwerten oder Datenproblemen,\nkurze Gruppenaufgaben zur Interpretation des QGIS-Projekts.\n\n\n\nVerbindliche Grundstruktur\nDie studentische Sitzung soll in vier Teile gegliedert sein:\n\nProblemaufriss und Arbeitsauftrag\nkurze Einführung in Problem, Raumfrage und Untersuchungsraum\nVerdichtete Projektdemonstration\nkompakte Darstellung von Daten, Analyseweg und Ergebnissen\nAktivierender Übungsanteil\nfachliche Beteiligung des Plenums an Bewertung, Interpretation oder Entscheidungslogik\nAuswertung und kritische Reflexion\ngemeinsame Einordnung der Ergebnisse sowie Benennung von Grenzen und Unsicherheiten\n\n\n\n\n\n\n\nDie studentischen Sitzungen sind ausdrücklich nicht als reine Ergebnisvorträge gedacht. Erwartet wird eine kleine fachliche Lehr-Lern-Einheit mit erkennbarem Übungscharakter.\n\n\n\n\n\nBestandteile des Mini-Projektpakets\n\n1. QGIS-Projekt\nAbzugeben ist ein lauffähiges QGIS-Projekt mit:\n\nsauber benannten Layern,\nnachvollziehbarer Datenorganisation,\nerkennbarer Analyseabfolge,\nsinnvoll strukturierten Ausgaben,\nund einem insgesamt verständlichen Workflow.\n\n\n\n2. Präsentation\nDie Präsentation dokumentiert und begründet das Projekt in verdichteter Form. Sie soll mindestens folgende Elemente enthalten:\n\nProblemstellung,\nräumliche Fragestellung,\nverwendete Datengrundlagen,\nmethodisches Vorgehen,\nErgebnisse,\nkritische Reflexion der Aussagekraft und Grenzen.\n\n\n\n3. Projektskizze / Exposé\nZusätzlich ist eine 1–2-seitige Projektskizze einzureichen. Diese enthält:\n\nTitel des Projekts,\nFragestellung,\nUntersuchungsraum,\nDatensatz bzw. Datengrundlage,\nKriterien bzw. Analysevariablen,\nerwartete Aussagekraft,\nvoraussichtlichen Workflow.\n\n\n\n4. Kurze Workflow-Dokumentation\nDie Workflow-Dokumentation dient der Reproduzierbarkeit. Sie soll knapp, aber konkret darlegen,\n\nwelche Daten verwendet wurden,\nwelche Verarbeitungsschritte durchgeführt wurden,\nwelche Annahmen und Schwellenwerte gesetzt wurden,\nund wie das Ergebnis zustande kam."
-  },
-  {
-    "objectID": "unit00/unit00-02-formales.html#gewichtung-und-fachliche-anforderungen",
-    "href": "unit00/unit00-02-formales.html#gewichtung-und-fachliche-anforderungen",
-    "title": "Formales",
-    "section": "Gewichtung und fachliche Anforderungen",
-    "text": "Gewichtung und fachliche Anforderungen\nDie Reader, Aufgaben und Übungsblätter der Inputphase bilden den methodischen Unterbau der Projektarbeit. Die anwendungsorientierte Sitzung muss deshalb erkennbar auf den Kursinhalten aufbauen.\nDas bedeutet insbesondere:\n\nDas Projekt darf keine bloße Tool-Demonstration sein.\nEs muss eine reale räumliche Fragestellung bearbeiten.\nEs muss mehrere im Kurs behandelte Konzepte und Methoden sinnvoll zusammenführen.\nEs muss den Zusammenhang zwischen Daten, Methode, Interpretation und Entscheidung offenlegen.\n\n\n\n\n\n\n\nDie Projektarbeit soll in der Regel deutlich mehr leisten als eine isolierte Standardübung. Erwartet wird eine eigenständige Anwendung, die zentrale methodische Bausteine des Kurses sichtbar integriert."
-  },
-  {
-    "objectID": "unit00/unit00-02-formales.html#bewertungskriterien",
-    "href": "unit00/unit00-02-formales.html#bewertungskriterien",
-    "title": "Formales",
-    "section": "Bewertungskriterien",
-    "text": "Bewertungskriterien\nDie Bewertung orientiert sich an vier gleichrangigen Leistungsdimensionen.\n\n1. Fachliche und konzeptionelle Qualität\nBewertet wird,\n\nob die Fragestellung fachlich sinnvoll und räumlich klar formuliert ist,\nob der Untersuchungsraum und die Datenlage angemessen gewählt wurden,\nob die Analyse inhaltlich begründet ist,\nund ob die Ergebnisse plausibel interpretiert werden.\n\n\n\n2. Methodische Umsetzung in QGIS\nBewertet wird,\n\nob die gewählten Analysewege nachvollziehbar und sachlich passend sind,\nob Vektor-, Raster-, DGM-, Sichtfeld-, Voronoi- oder Eignungslogiken angemessen eingesetzt werden,\nob Kriterien sauber operationalisiert wurden,\nund ob der Workflow technisch und logisch konsistent ist.\n\n\n\n3. Reproduzierbarkeit und Dokumentation\nBewertet wird,\n\nob das Projekt strukturiert abgelegt ist,\nob Layer, Zwischenschritte und Ergebnisse verständlich benannt sind,\nob die Workflow-Dokumentation tatsächlich nachvollziehbar ist,\nund ob die Projektidee im Exposé klar vorbereitet wurde.\n\n\n\n4. Wissenschaftliche Kommunikation\nBewertet wird,\n\nob die Präsentation klar gegliedert ist,\nob Problem, Daten, Methode und Ergebnis sauber unterschieden werden,\nob Grenzen und Unsicherheiten benannt werden,\nund ob die Sitzung als fachlich tragfähige Anwendung gestaltet ist."
-  },
-  {
-    "objectID": "unit00/unit00-02-formales.html#einreichungen",
-    "href": "unit00/unit00-02-formales.html#einreichungen",
-    "title": "Formales",
-    "section": "Einreichungen",
-    "text": "Einreichungen\nDie Abgabe erfolgt fristgerecht über den Kursbereich der Lernplattform PUM Ilias. Einzureichen sind alle Bestandteile des Mini-Projektpakets in der jeweils angegebenen Form.\n\nFormate\n\nPräsentation als PDF\nExposé als PDF\nWorkflow-Dokumentation als PDF\nQGIS-Projekt als komprimierter Projektordner oder in der von der Kursleitung vorgegebenen Form\n\n\n\nBenennung\nBitte benennen Sie die Dateien eindeutig und konsistent, zum Beispiel nach dem Schema:\nProjekt_&lt;Nachname&gt;_&lt;Vorname&gt;_&lt;Bestandteil&gt;.pdf\nBeispiele:\n\nProjekt_Mustermann_Max_Praesentation.pdf\nProjekt_Mustermann_Max_Expose.pdf\nProjekt_Mustermann_Max_Workflow.pdf\nProjekt_Mustermann_Max_QGIS.zip\n\n\n\n\n\n\n\nTippHinweis\n\n\n\nGeben Sie ausschließlich die überprüfte Endfassung ab. Kontrollieren Sie insbesondere, ob alle Verknüpfungen, Datenquellen und Layereinstellungen im QGIS-Projekt korrekt funktionieren."
-  },
-  {
-    "objectID": "unit00/unit00-02-formales.html#formale-anforderungen",
-    "href": "unit00/unit00-02-formales.html#formale-anforderungen",
-    "title": "Formales",
-    "section": "Formale Anforderungen",
-    "text": "Formale Anforderungen\nDie schriftlichen Bestandteile sind als PDF-Dateien einzureichen. Achten Sie auf eine saubere sprachliche und formale Ausarbeitung. In allen schriftlichen Dokumenten müssen Name und Matrikelnummer eindeutig angegeben sein.\nEmpfohlen wird folgendes Schema in der Kopfzeile:\nNachname, Vorname, Matrikelnummer"
-  },
-  {
-    "objectID": "unit00/unit00-02-formales.html#kurszeiten",
-    "href": "unit00/unit00-02-formales.html#kurszeiten",
-    "title": "Formales",
-    "section": "Kurszeiten",
-    "text": "Kurszeiten\nKurszeiten Mittwoch, 12:15–13:45 Uhr."
+    "objectID": "unit00/unit00-03-formales.html#bewertung-der-sitzungsgestaltung",
+    "href": "unit00/unit00-03-formales.html#bewertung-der-sitzungsgestaltung",
+    "title": "Gestaltung der studentischen Übungssitzungen",
+    "section": "Bewertung der Sitzungsgestaltung",
+    "text": "Bewertung der Sitzungsgestaltung\nBewertet wird nicht nur die fachliche Qualität, sondern auch,\n\nob die Sitzung als Übungssitzung erkennbar gestaltet ist,\nob die Teilnehmenden sinnvoll aktiviert werden,\nob Probleme, Daten, Methode und Ergebnis verständlich vermittelt werden,\nund ob Grenzen und Unsicherheiten kritisch reflektiert werden."
   },
   {
     "objectID": "unit00/impressum.html",
@@ -1341,95 +1292,186 @@
     "text": "About this site\nThis page summarizes the essential workflows , basic literature and web resources from the distributed course systems , documents and field protocols into a knowledge base.\nAlthough the web space is topic-centered any keyword can be searched using the full text search.\nThe creation of new pages, the editing of existing pages can be triggered directly via the right column online.\nOffline there are several visual editors and full integration with Rstudio etc."
   },
   {
-    "objectID": "unit00/unit00-01-formales.html",
-    "href": "unit00/unit00-01-formales.html",
-    "title": "Formales",
+    "objectID": "unit00/unit00-02-formales.html",
+    "href": "unit00/unit00-02-formales.html",
+    "title": "Formalia",
     "section": "",
-    "text": "Die Aufgaben im Reader und die Übungsblätter auf den Kursseiten bilden die Grundlage für die Studien- und Prüfungsleistungen."
+    "text": "Die Aufgaben im Reader und die Übungsblätter auf den Kursseiten bilden die Grundlage für die Studien- und Prüfungsleistungen. Für den anwendungsorientierten Kursteil werden diese methodischen Grundlagen in ein eigenständig bearbeitetes Mini-Projekt in QGIS überführt."
   },
   {
-    "objectID": "unit00/unit00-01-formales.html#anwesenheit",
-    "href": "unit00/unit00-01-formales.html#anwesenheit",
-    "title": "Formales",
+    "objectID": "unit00/unit00-02-formales.html#anwesenheit",
+    "href": "unit00/unit00-02-formales.html#anwesenheit",
+    "title": "Formalia",
     "section": "Anwesenheit",
-    "text": "Anwesenheit\nDie Übungen zu diesem Kurs finden grundsätzlich als Präsenzveranstaltung statt. Obwohl bekanntlich keine rechtlich verbindliche Anwesenheitspflicht besteht, ist Ihre Anwesenheit erwünscht und erforderlich, da der Kursverlauf maßgeblich durch Ihre Frage- und Diskussionsbeiträge bestimmt wird. In begründeten Ausnahmefällen können einzelne Sitzungen online oder per Streaming durchgeführt werden."
+    "text": "Anwesenheit\nDie Lehrveranstaltung findet grundsätzlich als Präsenzveranstaltung statt. Eine kontinuierliche Teilnahme ist fachlich sinnvoll, da die Input-Sitzungen, Rückfragen, Diskussionen und Projektberatungen direkt aufeinander aufbauen. Einzelne Termine können in begründeten Ausnahmefällen online oder per Streaming durchgeführt werden."
   },
   {
-    "objectID": "unit00/unit00-01-formales.html#übersicht-der-kommunikationsformen",
-    "href": "unit00/unit00-01-formales.html#übersicht-der-kommunikationsformen",
-    "title": "Formales",
+    "objectID": "unit00/unit00-02-formales.html#übersicht-der-kommunikationsformen",
+    "href": "unit00/unit00-02-formales.html#übersicht-der-kommunikationsformen",
+    "title": "Formalia",
     "section": "Übersicht der Kommunikationsformen",
-    "text": "Übersicht der Kommunikationsformen\n\nDiese Website\nDiese Webseite dient der einseitigen und überwiegend asynchronen Kommunikation und der Bereitstellung von Lern-/Lehrmaterialien.\n\n\nKursbereich in Ilias\nDer [Kursbereich der Lernplattform PUM Ilias] (https://ilias.uni-marburg.de/login.php?target=&client_id=UNIMR&auth_stat=) dient der Organisation des Kurses, der Bereitstellung der urheberrechtlich geschützten Materialien, der Bereitstellung weiterer Kommunikationsformate, den obligatorischen Self-Assessments und der Abgabe der Projektarbeit.\n\n\nFragen\nWenn Sie Fragen haben, nutzen Sie bitte in erster Linie die Präsenzzeiten des Seminars. Prüfen Sie zunächst, ob Ihre Fragen bereits in Form von Screencasts und FAQ-Einträgen vorhanden sind. Sollten Sie darüber hinaus Fragen haben, senden Sie diese bitte per E-Mail mit dem Betreff [Geoinfo SoSe] oder [Geoinfo WiSe] (im Platzhalter Jahr tragen Sie bitte das aktuelle Semesterjahr ein)."
+    "text": "Übersicht der Kommunikationsformen\n\nDiese Website\nDiese Webseite dient der einseitigen und überwiegend asynchronen Kommunikation sowie der Bereitstellung der Reader, Übungsblätter und organisatorischen Hinweise.\n\n\nKursbereich in Ilias\nDer Kursbereich der Lernplattform PUM Ilias dient der Organisation des Kurses, der Bereitstellung urheberrechtlich geschützter Materialien sowie der Abgabe der Projektarbeiten.\n\n\nFragen\nFachliche und organisatorische Fragen sollen in erster Linie in den Präsenzzeiten geklärt werden. Prüfen Sie bitte zunächst, ob Ihre Frage bereits durch Reader, Übungsblätter, Screencasts oder FAQ-Einträge abgedeckt ist. Darüber hinausgehende Fragen können per E-Mail gestellt werden. Verwenden Sie dabei bitte einen eindeutigen Betreff nach dem Schema [Geoinfo SoSe] oder [Geoinfo WiSe]."
   },
   {
-    "objectID": "unit00/unit00-01-formales.html#zeitaufwand-und-ablauf",
-    "href": "unit00/unit00-01-formales.html#zeitaufwand-und-ablauf",
-    "title": "Formales",
+    "objectID": "unit00/unit00-02-formales.html#zeitaufwand-und-ablauf",
+    "href": "unit00/unit00-02-formales.html#zeitaufwand-und-ablauf",
+    "title": "Formalia",
     "section": "Zeitaufwand und Ablauf",
-    "text": "Zeitaufwand und Ablauf\nJede Kurseinheit dauert eine Woche und besteht aus einem Lern- und einem Übungsteil. Die Übungsblätter werden bei Bedarf oder Rückfragen in der folgenden Kurseinheit besprochen.\n\nKursverlauf SoSe 2024\n\n\n\n\n\n\n\n\n\nSitzung\nDatum\nThema\nErgebnissicherung\n\n\n\n\n1\n17.04.\nOrga/ Einführung in geographische und GI Raumkonzepte\n\n\n\n2\n24.04.\nVektordaten & Attributtabellen\nEinführung in geographische und GI Raumkonzepte\n\n\n3\n29.04.\nRasterdatenanalyse\nVektordaten & Attributtabellen\n\n\n4\n08.05\nKostenanalyse\nRasterdatenanalyse\n\n\n5\n15.05.\nInterpolation\nKostenanalyse\n\n\n\n\nWrapUp\nUnabhängige Wiederholung des methodischen Inputs\n\n\n6\n05.06.\n\nF&A Alle Themen\n\n\n7\n12.06\nAutomatisierung von Arbeitsabläufen in QGIS\n\n\n\n8\n19.06\nProjektarbeit\nAutomatisierung von Arbeitsabläufen in QGIS\n\n\n9\n26.06.\nPräsentation der Projektarbeitkonzepte mit Feedback\n\n\n\n10\n03.07.\nProjektarbeit\nBeratung\n\n\n11\n10.07.\nProjektarbeit\nBeratung\n\n\n12\n17.07.\nProjektarbeit\nBeratung\n\n\n\n31.07.\nAbgabe Projektarbeit\nBeratung\n\n\n\n\n\nAnforderungen und Zeitaufwand\nDer Kurs ist standardmäßig auf 6 Leistungspunkte (LP/ECTS) gemäß der Zeiteinteilung nach den Bologna-Kriterien ausgelegt. Umgerechnet in Zeit entspricht dies 180 Stunden/Person. Dies ist die Zeit, die ein durchschnittlicher Studierender nach den Bologna-Kriterien benötigt, um ein zufriedenstellendes Ergebnis zu erzielen. Da diese Leistung mit 5 Lehrveranstaltungen/Semester zu erbringen ist, müssten 60 Arbeitsstunden pro Woche erbracht werden. Dieses Bologna-Standardszenario halten wir für realitätsfern. Zieht man davon die vorlesungsfreie Zeit ab, verbleiben ca. 90 Stunden, um die geforderten Kenntnisse und Kompetenzen von 180 Stunden zu erwerben - ebenfalls realitätsfern. Ein gangbarer Kompromiss besteht darin, etwa die Hälfte der vorlesungsfreien Zeit in den Lehrbetrieb zu integrieren, so dass 135 Stunden für 6 ECTS, also 9 Stunden pro Woche, verbleiben. Dies ist anspruchsvoll, aber machbar. Die Aufwandskalkulation gilt trotz Halbierung der Stundenzahl auch für die 3 LP/ECTS-Variante, da der Kurs in der Mitte des Semesters mit einer Klausur abgeschlossen wird.\n\n\nExemplarischer Stundenplan der Lehrveranstaltung\n\nPräsenz: 2 Stunden pro Woche\n\nDer Kurs besteht für jede Gruppe aus einer Input-Sitzung und einem zugehörigen Seminar (Zeiten siehe Ilias).\n\nSelbststudium: 7 Stunden pro Woche\n\nWöchentliche Arbeitszeiten\nWöchentliche Treffen mit Kommiliton:innen\nWöchentliche Hausarbeit\nBearbeitung der Abschlussarbeit\n\n\nDie folgende Abbildung zeigt beispielhaft eine mögliche Verteilung dieser notwendigen/verfügbaren Arbeitszeiten. Diese Zeiten sind aus didaktischen Gründen exemplarisch über die Woche verteilt und beinhalten sowohl Zeiten in der Lerngruppe als auch Zeiten des Selbststudiums. Natürlich können Sie sich auch anders organisieren.\n\n\n\n\n\n\n\n\nBeispielhafter Stundenplan für die Lehrveranstaltung Geoinformatik. Der Gesamtaufwand ist mit 11 Stunden pro Woche inklusive Präsenzzeit kalkuliert. Die Planung, Blockung und Aufteilung in Selbststudium und Lerngruppen ist wünschenswert, muss aber selbstredend den eigenen Bedürfnissen angepasst werden."
+    "text": "Zeitaufwand und Ablauf\n\n\n\n\n\n\nHinweisZur realistischen Einordnung der Leistungs- und Bewertungsgrundlage eines 6 ECTS Moduls\n\n\n\nIm Bologna-/ECTS-System ist ein solches formal mit 150 bis 180 Stunden Gesamtarbeitsaufwand verbunden, da 1 ECTS in der Regel 25 bis 30 Stunden studentischer Arbeit entspricht (ECTS Users’ Guide, Europäische Kommission). Gemeint ist dabei ausdrücklich nicht nur die Präsenzzeit, sondern die gesamte Arbeit für das Modul, also auch Vor- und Nachbereitung, Aufgaben, Prüfungsvorbereitung und selbstständiges Lernen.\nEntscheidend ist dabei auch die Bewertungslogik des ECTS-Systems: ECTS-Punkte werden nicht für bloße Teilnahme vergeben, sondern erst dann, wenn die erforderlichen Lernaktivitäten absolviert, die definierten Lernergebnisse erreicht und das Modul erfolgreich abgeschlossen wurde (Musterrechtsverordnung, § 8 Leistungspunktesystem; ECTS Users’ Guide, Europäische Kommission). Daraus folgt sachlich, dass der ausgewiesene Workload keine unverbindliche Orientierungsgröße ist, sondern der reguläre Maßstab, in dem ein durchschnittlicher Studierender die Anforderungen eines Moduls im Regelfall bestehen können soll; andernfalls wären Workload, Lernergebnisse und Prüfung nicht realistisch aufeinander abgestimmt (ECTS Users’ Guide, Europäische Kommission).\nFürs Protokoll: Historisch wurde dieser Zusammenhang im deutschen Bologna-Kontext sogar noch offener benannt: ECTS wurde dort als Maß des studentischen Gesamtaufwands „in terms of the necessary level of study and the exam grades needed to obtain a degree“ beschrieben (Bologna National Report Germany 2005; ECTS Users’ Guide, ältere Fassung).\nFür die offizielle Planung heißt das: Wenn man den formalen Gesamtaufwand eines 6-ECTS-Moduls auf 15 Vorlesungswochen umlegt, ergibt sich rechnerisch eine Größenordnung von etwa 10 bis 12 Stunden Arbeit pro Woche (ECTS Users’ Guide, Europäische Kommission).\nDie im Kurs genannte Orientierung von etwa 8 Stunden pro Woche ist der Versuch, die im Bologna-System angelegte und ignorierte Asymmetrie der Leistungserbringung und -bewertung transparent zu machen und formal in einen praktikablen Kompromiss zu überführen.\n\n\n\nKursverlauf\nJede Kurseinheit dauert eine Woche und besteht aus einem Input- und einem Anwendungsanteil. In den ersten vier Sitzungen werden die methodischen und konzeptionellen Grundlagen erarbeitet Der Anwendugnsteilist dann die Bearbeitung der Arbeitsblätter. Anschließend gestalten die Studierenden anwendungsorientierte Sitzungen auf Grundlage eigenständig entwickelter Mini-Projekte. Hier ist der Anwendungsteil das selbständige Nachvollziehen der vorgestellten Projekte.\n\n\n\n\n\n\n\n\n\nSitzung\nPhase\nSchwerpunkt\nErgebnissicherung\n\n\n\n\n1\nInput\nRaumkonzepte, Raumrepräsentation, Datenmodelle, QGIS-Orientierung\nReader- und Übungsgrundlagen\n\n\n2\nInput\nVektordaten, Attribute, thematische, geometrische und topologische Abfragen\nErgebnissicherung Sitzung 1\n\n\n3\nInput\nRasterdaten, DGM, topographische Ableitungen, Sichtfeld, prozessbezogene Interpretation\nErgebnissicherung Sitzung 2\n\n\n4\nInput\nMultikriterienanalyse, Eignungsanalyse, Workflows, Reproduzierbarkeit, Projektlogik\nErgebnissicherung Sitzung 3\n\n\n5\nAnwendung Block A\nStudentische Projektsitzung A1\nErgebnissicherung Inputphase\n\n\n6\nAnwendung Block A\nStudentische Projektsitzung A2\nErgebnissicherung Sitzung 5\n\n\n7\nAnwendung Block A\nStudentische Projektsitzung A3\nErgebnissicherung Sitzung 6\n\n\n8\nAnwendung Block B\nStudentische Projektsitzung B1\nErgebnissicherung Sitzung 7\n\n\n9\nAnwendung Block B\nStudentische Projektsitzung B2\nErgebnissicherung Sitzung 8\n\n\n10\nAnwendung Block B\nStudentische Projektsitzung B3\nErgebnissicherung Sitzung 9\n\n\n11\nAnwendung Block C\nStudentische Projektsitzung C1\nErgebnissicherung Sitzung 10\n\n\n12\nAnwendung Block C\nStudentische Projektsitzung C2\nErgebnissicherung Sitzung 11\n\n\n13\nAnwendung Block C\nStudentische Projektsitzung C3\nErgebnissicherung Sitzung 12\n\n\n14\nAnwendung Block D\nStudentische Projektsitzung D1\nErgebnissicherung Sitzung 13\n\n\n15\nAnwendung Block D\nStudentische Projektsitzung D2\nErgebnissicherung Sitzung 14\n\n\n16\nAnwendung Block D\nStudentische Projektsitzung D3\nErgebnissicherung Sitzung 15\n\n\n\n\n\n\n\n\n\nDie Themenvergabe erfolgt zu Beginn der zweiten Inputsitzung, damit die Vorbereitungszeit nicht von der späteren Präsentationsreihenfolge abhängt. Die Projektentwicklung läuft somit parallel zum methodischen Input.\n\n\n\n\n\nExemplarischer Stundenplan der Lehrveranstaltung\n\nPräsenz: 2 Stunden pro Woche\n\nInput-Sitzung oder studentisch gestaltete Anwendungssitzung\n\nSelbststudium: ca. 6 Stunden pro Woche\n\nVor- und Nachbereitung der Reader und Übungsblätter\nArbeit am QGIS-Projekt\nAbstimmung in Lerngruppen\nAusarbeitung von Präsentation, Exposé und Dokumentation\n\n\n\n\n\n\n\n\nFür das Projekt ist eine kontinuierliche Arbeitsweise erforderlich. Es ist so konzipiert, dass es schrittweise entwickelt, dokumentiert und begründet wird."
   },
   {
-    "objectID": "unit00/unit00-01-formales.html#studienleistung",
-    "href": "unit00/unit00-01-formales.html#studienleistung",
-    "title": "Formales",
+    "objectID": "unit00/unit00-02-formales.html#studienleistung",
+    "href": "unit00/unit00-02-formales.html#studienleistung",
+    "title": "Formalia",
     "section": "Studienleistung",
-    "text": "Studienleistung\nDie individuell zu erbringende Studienleistung wird durch das erfolgreiche Absolvieren der Self-Assessment-Einheiten in Ilias erbracht. Dazu müssen 3 der 5 Einheiten bis zu dem im Ilias-Kurs angegebenen Termin mit mindestens ausreichend bestanden werden."
+    "text": "Studienleistung\nDie individuell zu erbringende Studienleistung wird durch das erfolgreiche Absolvieren der vorgesehenen Self-Assessment-Einheiten erbracht."
   },
   {
-    "objectID": "unit00/unit00-01-formales.html#prüfungsleistung",
-    "href": "unit00/unit00-01-formales.html#prüfungsleistung",
-    "title": "Formales",
+    "objectID": "unit00/unit00-02-formales.html#prüfungsleistung",
+    "href": "unit00/unit00-02-formales.html#prüfungsleistung",
+    "title": "Formalia",
     "section": "Prüfungsleistung",
-    "text": "Prüfungsleistung\nIm Anschluss an die 5 Übungsblöcke wird eine Präsenzklausur mit praktischem Prüfungsanteil für 3 LP/ECTS oder eine Projektarbeit für 6 LP/ECTS abgelegt. Dazu bearbeiten Sie ein eigenständiges/vorgegebenes kleines Projekt. Die Abgabe des wissenschaftlichen Projektberichts (4-6 Seiten) stellt die Grundlage der zu bewertenden Leistung dar.\n\n\n\n\n\n\nWichtig\n\n\n\nDie Prüfungsleistung in Form einer Projektarbeit ist grundsätzlich individuell zu erbringen, kann aber auch in 2er Gruppen erbracht werden, wenn die Anteile kenntlich gemacht werden.\n\n\n\nGewichtung der Übungen\nDie Übungsaufgaben werden gewichtet. Die Gewichtung der Übungsaufgaben entspricht in etwa den methodischen Fertigkeiten, die in die Projektarbeit einzubringen sind. Das bedeutet, dass Sie in der Regel &gt; 50% der vermittelten Methoden (oder äquivalenter Methoden) in die Projektarbeit einbringen müssen. Damit wird sichergestellt, dass ein gewisses Anspruchsniveau erreicht wird. Da die Projektarbeit in der Regel schrittweise entwickelt wird, erfolgt die Einschätzung eines ausreichenden Anspruchsniveaus in Absprache mit der Kursleitung. Die Gewichtung der einzelnen Kenntnisse und Fertigkeiten ist der Aufgabenstellung zu entnehmen.\n\n\nBewertungskriterien Projektarbeit\nIm folgenden Bewertungsleitfaden finden Sie die als verbindlich vorausgesetzten Formalia für die Beurteilung, die Definition der verwendeten Begriffe sowie Beurteilungskonzepte und Erwartungshorizonte. Bei Fragen und Anmerkungen wenden Sie sich bitte an Ihre Dozent:innen.\n\n\n\n\nEinreichungen\nDie Ausarbeitung soll grundsätzlich (alles inbegriffen) 2500 Wörter nicht überschreiten. Sie ist als PDF-Datei mit den als wichtig erachteten Abbildungen abzuspeichern und gemäß den formalen Anforderungen einzureichen.\n\n\n\n\n\n\nEine Unter-/Überschreitung von mehr als 10 Prozent führt zu einem Abzug von 1 Notenpunkt pro 10 Prozent.\n\n\n\nAls Orientierungshilfe finden Sie im Reader Projektarbeit den beispielhaften Aufbau einer solchen Arbeit.\nGrundsätzlich sind Studien- und Prüfungsleistungen im Kursbereich der Lernplattform PUM Ilias fristgerecht und unter Berücksichtigung der formalen Anforderungen eingereicht werden. Ausnahmen sind nur in begründeten und vorher abgesprochenen Fällen möglich.\nFormale Anforderungen {#formale-anforderungen}\nBitte reichen Sie die Übungsaufgaben innerhalb einer Kurseinheit ausnahmslos als PDF-Datei ein. Benennen Sie die PDF-Datei wie folgt\nAufgabe_X_&lt;Nachname&gt;_&lt;Vorname&gt;.pdf (z.B. Aufgabe_1_Reudenbach_Chris.pdf_).\n\n\n\n\n\n\nTippTipp\n\n\n\nVerwenden Sie ein Textverarbeitungsprogramm wie z.B. Microsoft Word, ONLYOFFICE oder OpenOffice zur Erstellung der Abgabedatei und erzeugen Sie mit diesen Werkzeugen eine PDF-Datei. Kontrollieren Sie unbedingt, ob die fertige PDF-Datei Ihren Vorstellungen entspricht.\n\n\nFügen Sie in die Kopfzeile Ihren Namen und Ihre Matrikelnummer nach folgendem Schema ein:\nNachname, Vorname, Matrikelnummer (z.B. Reudenbach, Chris, 1234567).\nBitte geben Sie nur die überprüfte Endfassung in den jeweiligen ILIAS-Abgabeordner ein."
+    "text": "Prüfungsleistung\nDie Prüfungsleistung wird in Form einer anwendungsorientierten Mini-Projektarbeit erbracht.\nDie Projektarbeit ist grundsätzlich individuell zu erbringen. Eine Bearbeitung in 2-3er-Gruppen ist möglich, sofern die jeweiligen Arbeitsanteile klar kenntlich gemacht werden.\n\n\n\n\n\n\nDie Prüfungsleistung besteht nicht nur aus einer Präsentation oder einer Projektdatei, sondern aus einem vollständigen Mini-Projektpaket."
   },
   {
-    "objectID": "unit00/unit00-01-formales.html#kurszeiten",
-    "href": "unit00/unit00-01-formales.html#kurszeiten",
-    "title": "Formales",
+    "objectID": "unit00/unit00-02-formales.html#format-der-studentischen-anwendungssitzungen",
+    "href": "unit00/unit00-02-formales.html#format-der-studentischen-anwendungssitzungen",
+    "title": "Formalia",
+    "section": "Format der studentischen Anwendungssitzungen",
+    "text": "Format der studentischen Anwendungssitzungen\nDie studentisch gestalteten Sitzungen sind als anwendungsorientierte Übungssitzungen konzipiert. Sie sollen nicht die Form eines klassischen Referats annehmen, sondern eine fachlich strukturierte Arbeitsphase auf Basis eines eigenständig entwickelten QGIS-Mini-Projekts bilden.\nErwartet wird deshalb eine Verbindung aus:\n\nkurzer Einführung in Problem und Raumfrage (max. 5 Minuten),\nkompakter Darstellung des QGIS-Projekts (max. 10 Minuten),\naktivierendem Übungs- oder Diskussionsanteil (max. 60 Minuten),\ngemeinsamer Auswertung und kritischer Reflexion (max. 15 Minuten).\n\nGestaltung der studentischen Übungssitzungen\nJede studentische Sitzung muss mindestens eine klar erkennbare Aktivierungsphase enthalten. Reine Vortragsformate ohne Übungs-, Bewertungs- oder Diskussionsanteil erfüllen die Anforderungen nicht vollständig.\nGeeignete Aktivierungsformen sind zum Beispiel:\n\nBewertung von Karten oder Standortalternativen,\nDiskussion und Gewichtung von Kriterien,\nVergleich unterschiedlicher Ergebnisvarianten,\nAnalyse von Unsicherheiten, Schwellenwerten oder Datenproblemen,\nkurze Gruppenaufgaben zur Interpretation des QGIS-Projekts.\n\n\n\n\n\n\n\nDie studentischen Sitzungen sind ausdrücklich nicht als reine Ergebnisvorträge gedacht. Erwartet wird eine kleine fachliche Lehr-Lern-Einheit mit erkennbarem Übungscharakter.\n\n\n\n\nBestandteile des Mini-Projektpakets\n\n1. Projektskizze und QGIS-Projekt\nAbzugeben ist eine 1–2-seitige Projektskizze einzureichen. Diese enthält:\n\nTitel des Projekts,\nFragestellung,\nUntersuchungsraum,\nDatensatz bzw. Datengrundlage,\nKriterien bzw. Analysevariablen,\nerwartete Aussagekraft,\nvoraussichtlichen Workflow.\n\nAbzugeben ist ein lauffähiges QGIS-Projekt mit:\n\nsauber benannten Layern,\nnachvollziehbarer Datenorganisation,\nerkennbarer Analyseabfolge,\nsinnvoll strukturierten Ausgaben,\nund einem insgesamt verständlichen Workflow.\n\n\n\n2. Präsentation\nDie Präsentation dokumentiert und begründet das Projekt in verdichteter Form. Sie soll mindestens folgende Elemente enthalten:\n\nProblemstellung,\nräumliche Fragestellung,\nverwendete Datengrundlagen,\nmethodisches Vorgehen,\nErgebnisse,\nkritische Reflexion der Aussagekraft und Grenzen.\n\nDie Präsentation kann ein Foliensatz oder ein Miniposter/Cheat-sheet etc sein.\n\n\n3. Kurze Workflow-Dokumentation\nDie Workflow-Dokumentation dient der Reproduzierbarkeit. Sie soll knapp, aber konkret darlegen,\n\nwelche Daten verwendet wurden,\nwelche Verarbeitungsschritte durchgeführt wurden,\nwelche Annahmen und Schwellenwerte gesetzt wurden,\nund wie das Ergebnis zustande kam.\n\nIn der Regel kann diese aus dem QGIS Protokoll abgeleitet werden."
+  },
+  {
+    "objectID": "unit00/unit00-02-formales.html#gewichtung-und-fachliche-anforderungen",
+    "href": "unit00/unit00-02-formales.html#gewichtung-und-fachliche-anforderungen",
+    "title": "Formalia",
+    "section": "Gewichtung und fachliche Anforderungen",
+    "text": "Gewichtung und fachliche Anforderungen\nDie Reader, Aufgaben und Übungsblätter der Inputphase bilden den methodischen Unterbau der Projektarbeit. Die anwendungsorientierte Sitzung muss deshalb erkennbar auf den Kursinhalten aufbauen.\nDas bedeutet insbesondere:\n\nDas Projekt ist keine Tool-Demonstration.\nEs muss eine reale räumliche Fragestellung bearbeiten.\nEs muss mehrere im Kurs behandelte Konzepte und Methoden sinnvoll zusammenführen.\nEs muss den Zusammenhang zwischen Daten, Methode, Interpretation und Entscheidung offenlegen.\n\n\n\n\n\n\n\nDie Projektarbeit soll mehr leisten als eine isolierte Standardübung. Erwartet wird eine eigenständige Anwendung, die zentrale methodische Bausteine des Kurses sichtbar integriert."
+  },
+  {
+    "objectID": "unit00/unit00-02-formales.html#bewertungskriterien",
+    "href": "unit00/unit00-02-formales.html#bewertungskriterien",
+    "title": "Formalia",
+    "section": "Bewertungskriterien",
+    "text": "Bewertungskriterien\nDie Bewertung orientiert sich an vier gleichrangigen Leistungsdimensionen.\n\n1. Fachliche und konzeptionelle Qualität\nBewertet wird,\n\nob die Fragestellung fachlich sinnvoll und räumlich klar ausgestaltet ist,\nob der Untersuchungsraum und die Datenlage angemessen gewählt wurden,\nob die Analyse inhaltlich begründet ist,\nund ob die Ergebnisse plausibel interpretiert werden.\n\n\n\n2. Methodische Umsetzung in QGIS\nBewertet wird,\n\nob die gewählten Analysewege nachvollziehbar und sachlich passend sind,\nob Vektor-, Raster-, DGM-, Sichtfeld-, Voronoi- oder Eignungslogiken angemessen eingesetzt werden,\nob Kriterien sauber operationalisiert wurden,\nund ob der Workflow technisch und logisch konsistent ist.\n\n\n\n3. Reproduzierbarkeit und Dokumentation\nBewertet wird,\n\nob das Projekt strukturiert abgelegt ist,\nob Layer, Zwischenschritte und Ergebnisse verständlich benannt sind,\nob die Workflow-Dokumentation tatsächlich nachvollziehbar ist,\nund ob die Projektidee im Exposé klar vorbereitet wurde.\n\n\n\n4. Wissenschaftliche Kommunikation\nBewertet wird,\n\nob die Präsentation klar gegliedert ist,\nob Problem, Daten, Methode und Ergebnis sauber unterschieden werden,\nob Grenzen und Unsicherheiten benannt werden,\nund ob die Sitzung als fachlich tragfähige Anwendung gestaltet ist."
+  },
+  {
+    "objectID": "unit00/unit00-02-formales.html#einreichungen",
+    "href": "unit00/unit00-02-formales.html#einreichungen",
+    "title": "Formalia",
+    "section": "Einreichungen",
+    "text": "Einreichungen\nDie Abgabe erfolgt fristgerecht über den Kursbereich der Lernplattform PUM Ilias. Einzureichen sind alle Bestandteile des Mini-Projektpakets in der jeweils angegebenen Form.\n\nFormate\n\nPräsentation als PDF\nExposé als PDF\nWorkflow-Dokumentation als PDF\nQGIS-Projekt als komprimierter Projektordner oder in der von der Kursleitung vorgegebenen Form\n\n\n\nBenennung\nBitte benennen Sie die Dateien eindeutig und konsistent, zum Beispiel nach dem Schema:\nProjekt_&lt;Nachname&gt;_&lt;Vorname&gt;_&lt;Bestandteil&gt;.pdf\nBeispiele:\n\nProjekt_Mustermann_Max_Praesentation.pdf\nProjekt_Mustermann_Max_Expose.pdf\nProjekt_Mustermann_Max_Workflow.pdf\nProjekt_Mustermann_Max_QGIS.zip\n\n\n\n\n\n\n\nTippHinweis\n\n\n\nGeben Sie ausschließlich die überprüfte Endfassung ab. Kontrollieren Sie insbesondere, ob alle Verknüpfungen, Datenquellen und Layereinstellungen im QGIS-Projekt korrekt funktionieren."
+  },
+  {
+    "objectID": "unit00/unit00-02-formales.html#formale-anforderungen",
+    "href": "unit00/unit00-02-formales.html#formale-anforderungen",
+    "title": "Formalia",
+    "section": "Formale Anforderungen",
+    "text": "Formale Anforderungen\nDie schriftlichen Bestandteile sind als PDF-Dateien einzureichen. Achten Sie auf eine saubere sprachliche und formale Ausarbeitung. In allen schriftlichen Dokumenten müssen Name und Matrikelnummer eindeutig angegeben sein.\nEmpfohlen wird folgendes Schema in der Kopfzeile:\nNachname, Vorname, Matrikelnummer"
+  },
+  {
+    "objectID": "unit00/unit00-02-formales.html#kurszeiten",
+    "href": "unit00/unit00-02-formales.html#kurszeiten",
+    "title": "Formalia",
     "section": "Kurszeiten",
-    "text": "Kurszeiten\nKurszeiten Mittwoch, 12:15-13:45 Uhr"
+    "text": "Kurszeiten\nKurszeiten Mittwoch, 12:15–13:45 Uhr."
   },
   {
-    "objectID": "unit00/unit00-03-formales.html",
-    "href": "unit00/unit00-03-formales.html",
-    "title": "Gestaltung der studentischen Übungssitzungen",
+    "objectID": "unit00/unit00-04-themen.html",
+    "href": "unit00/unit00-04-themen.html",
+    "title": "Projekt-Themen",
     "section": "",
-    "text": "Die studentisch gestalteten Sitzungen sind als anwendungsorientierte Übungssitzungen konzipiert. Sie sollen kein klassisches Referat sein, sondern eine fachlich strukturierte Arbeitsphase auf Basis eines eigenständig entwickelten QGIS-Mini-Projekts.\nZiel ist es, eine reale räumliche Fragestellung so aufzubereiten, dass die Teilnehmenden nicht nur Ergebnisse sehen, sondern Analyseweg, Entscheidungslogik und Grenzen der Aussage nachvollziehen und diskutieren können."
+    "text": "Die folgenden Themen sind als eigenständige Mini-Projekte für studentische QGIS-Sitzungen gedacht. Sie unterscheiden sich nicht nur im Gegenstand, sondern vor allem in der zugrunde liegenden Konzeptualsierung: Mustererkennung, Sichtbarkeit, Zentralität, Überlagerung, Korridorbildung, Priorisierung, Interpolation, Maßstabsreflexion, Widerspruchsanalyse und Zeitvergleich.\nJedes Thema enthält eine konkrete Projektidee, eine knappe konzeptionelle Rahmung, eine möglichst realistische Einschätzung der Schwierigkeit sowie Hinweise auf verfügbare Datensätze und methodische Quellen."
   },
   {
-    "objectID": "unit00/unit00-03-formales.html#grundprinzip",
-    "href": "unit00/unit00-03-formales.html#grundprinzip",
-    "title": "Gestaltung der studentischen Übungssitzungen",
-    "section": "Grundprinzip",
-    "text": "Grundprinzip\nDie studentische Sitzung ist keine reine Präsentation, sondern eine kleine fachliche Übungssitzung mit aktivem Beteiligungsanteil. Das QGIS-Projekt dient dabei nicht nur als Abgabeprodukt, sondern als Arbeitsgrundlage der Sitzung.\nErwartet wird eine Verbindung aus:\n\nkurzer Einführung in Problem und Raumfrage,\nkompakter Darstellung des QGIS-Projekts,\naktivierendem Übungs- oder Diskussionsanteil,\ngemeinsamer Auswertung und kritischer Reflexion.\n\n\n\n\n\n\n\nNicht ausreichend ist eine lineare Folienpräsentation mit kurzer Fragerunde. Erwartet wird eine erkennbare Arbeits- und Beteiligungsphase."
+    "objectID": "unit00/unit00-04-themen.html#hotspots-ohne-erklärung",
+    "href": "unit00/unit00-04-themen.html#hotspots-ohne-erklärung",
+    "title": "Projekt-Themen",
+    "section": "1. Hotspots ohne Erklärung",
+    "text": "1. Hotspots ohne Erklärung\n\nKonkrete Idee: Wo häufen sich Fahrraddiebstähle, Müllablagerungen, Schäden oder andere punktförmige Vorfälle in einem Stadtteil oder auf einem Campus?\nKonzeptidee: Das Projekt dient der deskriptiven Mustererkennung. Ziel ist nicht, Ursachen zu behaupten, sondern Cluster, Dichtezonen und räumliche Auffälligkeiten sichtbar zu machen.\nMethoden: Punktdaten, Heatmap/KDE, Vergleich mit Wegen, Gebäuden, Haltestellen oder Nutzungsflächen.\nSchwierigkeit: leicht\nWarum: Technisch gut beherrschbar. Die eigentliche Schwierigkeit liegt in der disziplinierten Interpretation.\nDatensätze / Quellen:\n\neigene Erhebung oder kommunale Open-Data-Punktdaten\nOSM / Geofabrik für Wege, Gebäude, Haltestellen und POIs\nQGIS-Dokumentation: Heatmap / Interpolation"
   },
   {
-    "objectID": "unit00/unit00-03-formales.html#verbindliche-struktur-der-sitzung",
-    "href": "unit00/unit00-03-formales.html#verbindliche-struktur-der-sitzung",
-    "title": "Gestaltung der studentischen Übungssitzungen",
-    "section": "Verbindliche Struktur der Sitzung",
-    "text": "Verbindliche Struktur der Sitzung\nJede studentische Sitzung soll vier Teile enthalten:\n\n1. Problemaufriss und Arbeitsauftrag\nKurze Einführung in Problem, Untersuchungsraum, Relevanz und Ziel der Sitzung.\n\n\n2. Verdichtete Projektdemonstration\nKompakte Darstellung von Datengrundlage, Analyseidee, zentralen Verarbeitungsschritten und Ergebnissen.\n\n\n\n\n\n\nDer reine Präsentationsteil darf maximal 15 Minuten dauern. Die Sitzung soll nicht durch einen langen Vortrag geprägt sein, sondern genügend Zeit für den Übungs- und Diskussionsteil lassen.\n\n\n\n\n\n3. Aktivierender Übungsanteil\nIm Zentrum der Sitzung steht ein aktiver Arbeitsanteil. Geeignet sind zum Beispiel:\n\nBewertung alternativer Standorte auf Karten,\nDiskussion und Gewichtung von Kriterien,\nVergleich mehrerer Ergebnisvarianten,\nkurze Gruppenaufgaben zur Karten- oder Workflowinterpretation,\nReflexion über Schwellenwerte, Datenwahl und Unsicherheiten.\n\n\n\n4. Auswertung und kritische Reflexion\nZum Abschluss werden Ergebnisse, Grenzen, Unsicherheiten und mögliche Alternativen gemeinsam eingeordnet."
+    "objectID": "unit00/unit00-04-themen.html#sichtachsen-und-tote-winkel",
+    "href": "unit00/unit00-04-themen.html#sichtachsen-und-tote-winkel",
+    "title": "Projekt-Themen",
+    "section": "2. Sichtachsen und tote Winkel",
+    "text": "2. Sichtachsen und tote Winkel\n\nKonkrete Idee: Welche Bereiche eines Schulhofs, Parks oder Aussichtspunkts sind von ausgewählten Beobachtungspunkten aus sichtbar und welche systematisch abgeschirmt?\nKonzeptidee: Sichtbarkeit wird hier als räumliche Ressource und Begrenzung verstanden. Das Thema eignet sich für Orientierung, Überblick, Kontrolle oder Abschirmung.\nMethoden: DGM, Viewshed, Auswahl mehrerer Beobachtungspunkte, Überlagerung der Sichtfelder.\nSchwierigkeit: mittel\nWarum: Die Methode ist klar, aber nur dann überzeugend, wenn Beobachtungspunkte sinnvoll gewählt und die Grenzen der Höhendaten benannt werden.\nDatensätze / Quellen:\n\nCopernicus DEM\nOSM / Geofabrik für Wege, Gebäude, Aussichtspunkte\nQGIS / GDAL Viewshed-Dokumentation"
   },
   {
-    "objectID": "unit00/unit00-03-formales.html#mindestanforderung-an-den-übungscharakter",
-    "href": "unit00/unit00-03-formales.html#mindestanforderung-an-den-übungscharakter",
-    "title": "Gestaltung der studentischen Übungssitzungen",
-    "section": "Mindestanforderung an den Übungscharakter",
-    "text": "Mindestanforderung an den Übungscharakter\nJede Sitzung muss mindestens eine klar erkennbare Aktivierungsphase enthalten. Reine Vortragsformate ohne Übungs-, Bewertungs- oder Diskussionsanteil erfüllen die Anforderungen nicht vollständig.\nGeeignete Aktivierungsformen sind insbesondere:\n\nKarten lesen und bewerten,\nKriterien diskutieren oder gewichten,\nräumliche Entscheidungen begründen,\nErgebnisunterschiede interpretieren,\nUnsicherheiten oder Alternativen benennen."
+    "objectID": "unit00/unit00-04-themen.html#verlorene-mitte",
+    "href": "unit00/unit00-04-themen.html#verlorene-mitte",
+    "title": "Projekt-Themen",
+    "section": "3. Verlorene Mitte",
+    "text": "3. Verlorene Mitte\n\nKonkrete Idee: Welche Flächen auf einem Campus oder in einem Quartier liegen geometrisch zentral, bleiben funktional aber randständig?\nKonzeptidee: Das Projekt untersucht die Differenz zwischen geometrischer Zentralität und tatsächlicher funktionaler Einbindung.\nMethoden: Distanzanalyse, Erreichbarkeit, Wegebezug, Vergleich von Lage und Nutzung.\nSchwierigkeit: leicht bis mittel\nWarum: Konzeptionell stark, aber technisch noch recht übersichtlich.\nDatensätze / Quellen:\n\nOSM / Geofabrik für Wege, Gebäude, Eingänge, Platzflächen\neigene Kartierung von Nutzungsintensitäten oder Aufenthaltsorten\nQGIS-Dokumentation: Network Analysis / Service Area"
   },
   {
-    "objectID": "unit00/unit00-03-formales.html#rolle-des-qgis-projekts",
-    "href": "unit00/unit00-03-formales.html#rolle-des-qgis-projekts",
-    "title": "Gestaltung der studentischen Übungssitzungen",
-    "section": "Rolle des QGIS-Projekts",
-    "text": "Rolle des QGIS-Projekts\nDas QGIS-Projekt soll so vorbereitet sein, dass es in der Sitzung als nachvollziehbare Arbeitsgrundlage dient. Sichtbar werden soll,\n\nwie die Fragestellung operationalisiert wurde,\nwelche Daten und Layer verwendet wurden,\nwelche Analyseentscheidungen getroffen wurden,\nund wie daraus ein Ergebnis entstanden ist.\n\nDie Sitzung soll deshalb projektbasiert und nicht nur folienbasiert sein."
+    "objectID": "unit00/unit00-04-themen.html#räume-der-überlagerung",
+    "href": "unit00/unit00-04-themen.html#räume-der-überlagerung",
+    "title": "Projekt-Themen",
+    "section": "4. Räume der Überlagerung",
+    "text": "4. Räume der Überlagerung\n\nKonkrete Idee: Wo überlagern sich mehrere Problemlagen, etwa Versiegelung, geringe Grünnähe, hohe Nutzungsintensität, geringe Aufenthaltsqualität oder Umweltbelastung?\nKonzeptidee: Im Zentrum steht die Idee des mehrfach belasteten Raums. Relevant wird der Raum gerade dort, wo mehrere Indikatoren gleichzeitig problematisch werden.\nMethoden: Standardisierung mehrerer Layer, Überlagerung, Summen- oder Konfliktindex, Kartierung von Verdichtungsräumen.\nSchwierigkeit: mittel\nWarum: Methodisch recht einfach, aber konzeptionell anfällig für Beliebigkeit, wenn die Layerwahl nicht sauber begründet wird.\nDatensätze / Quellen:\n\nUrban Atlas\nOSM / Geofabrik\nCopernicus DEM\noptional zusätzliche Umwelt- oder Klimadaten aus offenen Portalen"
   },
   {
-    "objectID": "unit00/unit00-03-formales.html#bewertung-der-sitzungsgestaltung",
-    "href": "unit00/unit00-03-formales.html#bewertung-der-sitzungsgestaltung",
-    "title": "Gestaltung der studentischen Übungssitzungen",
-    "section": "Bewertung der Sitzungsgestaltung",
-    "text": "Bewertung der Sitzungsgestaltung\nBewertet wird nicht nur die fachliche Qualität, sondern auch,\n\nob die Sitzung als Übungssitzung erkennbar gestaltet ist,\nob die Teilnehmenden sinnvoll aktiviert werden,\nob Problem, Daten, Methode und Ergebnis verständlich vermittelt werden,\nund ob Grenzen und Unsicherheiten kritisch reflektiert werden.\n\n\n\n\n\n\n\nDidaktisch überzeugend ist eine Sitzung dann, wenn aus einem QGIS-Mini-Projekt eine kurze, klare und aktivierende Arbeitsphase für das Plenum wird."
+    "objectID": "unit00/unit00-04-themen.html#maßstab-als-problem",
+    "href": "unit00/unit00-04-themen.html#maßstab-als-problem",
+    "title": "Projekt-Themen",
+    "section": "5. Maßstab als Problem",
+    "text": "5. Maßstab als Problem\n\nKonkrete Idee: Wie verändert sich dieselbe Analyse, wenn sie mit gröberer oder feinerer Rasterauflösung bzw. auf unterschiedlichem Aggregationsniveau durchgeführt wird?\nKonzeptidee: Das Projekt zeigt die Skalenabhängigkeit räumlicher Aussagen.\nMethoden: Resampling, Aggregation, mehrfache Berechnung desselben Workflows, Differenzanalyse.\nSchwierigkeit: hoch\nWarum: Rechentechnisch nicht extrem, aber intellektuell anspruchsvoll. Gute Gruppen können hier sehr sauber zeigen, wie Ergebnisse vom Maßstab abhängen.\nDatensätze / Quellen:\n\nCopernicus DEM\nUrban Atlas\nOSM / Geofabrik\nQGIS-Rasterwerkzeuge und Zonal Statistics"
+  },
+  {
+    "objectID": "unit00/unit00-04-themen.html#räume-die-sich-widersprechen",
+    "href": "unit00/unit00-04-themen.html#räume-die-sich-widersprechen",
+    "title": "Projekt-Themen",
+    "section": "6. Räume, die sich widersprechen",
+    "text": "6. Räume, die sich widersprechen\n\nKonkrete Idee: Wo treffen gegensätzliche räumliche Qualitäten zusammen, etwa gute Lage und hohe Belastung, grüne Umgebung und schlechte Zugänglichkeit oder hohe Sichtbarkeit und geringe Nutzbarkeit?\nKonzeptidee: Das Thema untersucht Widerspruchsräume, also Räume, die sich nicht in einer einfachen Gut-Schlecht-Logik auflösen lassen.\nMethoden: Kombination gegensätzlicher Indikatoren, Vergleich mehrerer Karten, Identifikation von Divergenzflächen.\nSchwierigkeit: mittel bis hoch\nWarum: Methodisch nicht extrem komplex, aber analytisch nur dann stark, wenn die Gegensätze sauber konstruiert werden.\nDatensätze / Quellen:\n\nOSM / Geofabrik\nUrban Atlas\nCopernicus DEM\noptionale Umweltindikatoren aus offenen Quellen"
+  },
+  {
+    "objectID": "unit00/unit00-04-themen.html#vorhernachher-ohne-pathos",
+    "href": "unit00/unit00-04-themen.html#vorhernachher-ohne-pathos",
+    "title": "Projekt-Themen",
+    "section": "7. Vorher–Nachher ohne Pathos",
+    "text": "7. Vorher–Nachher ohne Pathos\n\nKonkrete Idee: Was hat sich zwischen zwei Zeitständen räumlich tatsächlich verändert, etwa vor und nach Umgestaltung, Neubau oder Flächennutzungsänderung?\nKonzeptidee: Ziel ist eine nüchterne Differenzanalyse, nicht eine vorgefertigte Aufwertungs- oder Fortschrittserzählung.\nMethoden: Overlay zweier Zeitstände, Differenzkarten, Flächenbilanz, Prüfung von Vergleichbarkeit und Unsicherheit.\nSchwierigkeit: mittel bis hoch\nWarum: Gut machbar, wenn zwei belastbare Zeitstände vorliegen. Die Hauptschwierigkeit liegt in der Vergleichbarkeit, nicht in der Softwaretechnik.\nDatensätze / Quellen:\n\nUrban Atlas mit mehreren Zeitständen und Change-Layern\nOSM / Geofabrik als ergänzender Vektorkontext\nlokale Luftbilder oder kommunale Open-Data-Zeitstände"
+  },
+  {
+    "objectID": "unit00/unit00-04-themen.html#korridore-statt-punkte",
+    "href": "unit00/unit00-04-themen.html#korridore-statt-punkte",
+    "title": "Projekt-Themen",
+    "section": "8. Korridore statt Punkte",
+    "text": "8. Korridore statt Punkte\n\nKonkrete Idee: Wo verläuft ein möglichst konfliktarmer, barrierearmer oder landschaftsschonender Verbindungskorridor zwischen zwei Orten?\nKonzeptidee: Statt eines besten Punktstandorts wird hier ein geeigneter Verlauf gesucht. Das Thema eignet sich für Wege, Grünverbindungen oder ruhige Verbindungsräume.\nMethoden: Kostenfläche, Least-Cost Path oder Korridor, Ausschlussflächen, Variantenvergleich.\nSchwierigkeit: mittel bis hoch\nWarum: starkes vielseitiges Thema, aber die Kostenoberfläche muss plausibel und transparent konstruiert werden.\nDatensätze / Quellen:\n\nOSM / Geofabrik für Wege, Barrieren, Straßen, Gewässer\nCopernicus DEM für Steigung\nUrban Atlas für Nutzungs- und Ausschlussflächen\nGRASS / QGIS-Processing für kostenbasierte Raster-Workflows"
+  },
+  {
+    "objectID": "unit00/unit00-04-themen.html#rangfolgen-unter-knappheit",
+    "href": "unit00/unit00-04-themen.html#rangfolgen-unter-knappheit",
+    "title": "Projekt-Themen",
+    "section": "9. Rangfolgen unter Knappheit",
+    "text": "9. Rangfolgen unter Knappheit\n\nKonkrete Idee: Wenn nur drei Flächen entsiegelt, begrünt, beschattet oder aufgewertet werden können: Welche sollten zuerst gewählt werden?\nKonzeptidee: Das Projekt behandelt Priorisierung unter Ressourcenknappheit. Es geht nicht nur um Eignung, sondern um echte Auswahlentscheidungen.\nMethoden: Kriterienbildung, Gewichtung, Ranking, Priorisierung, Vergleich alternativer Auswahlregeln.\nSchwierigkeit: hoch\nWarum: Nicht primär technisch schwer, aber argumentativ anspruchsvoll. Die Priorisierungslogik muss offen und belastbar sein.\nDatensätze / Quellen:\n\nUrban Atlas\nOSM / Geofabrik\nCopernicus DEM\nmethodische Orientierung über Suitability- und Priorisierungsworkflows in QGIS"
+  },
+  {
+    "objectID": "unit00/unit00-04-themen.html#interpolation-mit-misstrauen",
+    "href": "unit00/unit00-04-themen.html#interpolation-mit-misstrauen",
+    "title": "Projekt-Themen",
+    "section": "10. Interpolation mit Misstrauen",
+    "text": "10. Interpolation mit Misstrauen\n\nKonkrete Idee: Wie verändert sich ein interpoliertes Temperatur-, Luftqualitäts- oder Lärmfeld, wenn Verfahren, Parameter oder Punktdichte variiert werden?\nKonzeptidee: Flächenwerte werden hier als Schätzung unter Unsicherheit verstanden, nicht als objektive Wahrheit.\nMethoden: Punktdaten, IDW oder TIN, Variantenvergleich, Fehlervalidierung oder Plausibilitätsprüfung.\nSchwierigkeit: hoch\nWarum: Sehr gutes wissenschaftliches Thema, aber stark abhängig von der Qualität und Dichte der Punktdaten.\nDatensätze / Quellen:\n\neigene Messdaten\nOpenAQ für Luftqualitätsdaten\nQGIS-Dokumentation: Interpolation / IDW / TIN"
+  },
+  {
+    "objectID": "unit00/unit00-04-themen.html#gemeinsame-basisquellen",
+    "href": "unit00/unit00-04-themen.html#gemeinsame-basisquellen",
+    "title": "Projekt-Themen",
+    "section": "Gemeinsame Basisquellen",
+    "text": "Gemeinsame Basisquellen\n\nMethodische Quellen\n\nQGIS Documentation – Network Analysis / Service Area\nQGIS Documentation – Interpolation\nQGIS Training Manual – Terrain Analysis\nQGIS / GDAL Documentation – Viewshed\nGRASS GIS Documentation\n\n\n\nDatensätze\n\nGeofabrik / OpenStreetMap\nCopernicus DEM\nUrban Atlas\nOpenAQ\nkommunale Open-Data-Portale oder eigene Erhebungen"
+  },
+  {
+    "objectID": "unit00/unit00-04-themen.html#quellenlinks-nach-themen",
+    "href": "unit00/unit00-04-themen.html#quellenlinks-nach-themen",
+    "title": "Projekt-Themen",
+    "section": "Quellenlinks nach Themen",
+    "text": "Quellenlinks nach Themen\n\n1. Hotspots ohne Erklärung\n\nQGIS Documentation – Interpolation / Heatmap\nGeofabrik / OpenStreetMap\n\n\n\n2. Sichtachsen und tote Winkel\n\nCopernicus DEM\nQGIS / GDAL Documentation – Viewshed\nGeofabrik / OpenStreetMap\n\n\n\n3. Verlorene Mitte\n\nQGIS Documentation – Network Analysis / Service Area\nGeofabrik / OpenStreetMap\n\n\n\n4. Räume der Überlagerung\n\nUrban Atlas\nCopernicus DEM\nGeofabrik / OpenStreetMap\n\n\n\n5. Korridore statt Punkte\n\nGRASS GIS Documentation\nCopernicus DEM\nUrban Atlas\nGeofabrik / OpenStreetMap\n\n\n\n6. Rangfolgen unter Knappheit\n\nUrban Atlas\nCopernicus DEM\nGeofabrik / OpenStreetMap\nQGIS Documentation – Processing Framework\n\n\n\n7. Interpolation mit Misstrauen\n\nQGIS Documentation – Interpolation\nOpenAQ\n\n\n\n8. Maßstab als Problem\n\nCopernicus DEM\nUrban Atlas\nGeofabrik / OpenStreetMap\nQGIS Documentation – Raster Analysis\n\n\n\n9. Räume, die sich widersprechen\n\nUrban Atlas\nCopernicus DEM\nGeofabrik / OpenStreetMap\n\n\n\n10. Vorher–Nachher ohne Pathos\n\nUrban Atlas\nGeofabrik / OpenStreetMap"
+  },
+  {
+    "objectID": "unit00/unit00-04-themen.html#hinweise-zur-themenwahl",
+    "href": "unit00/unit00-04-themen.html#hinweise-zur-themenwahl",
+    "title": "Projekt-Themen",
+    "section": "Hinweise zur Themenwahl",
+    "text": "Hinweise zur Themenwahl\nDie Themen bilden unterschiedliche räumliche Denkformen ab:\n\nMuster erkennen\nSichtbarkeit analysieren\nfunktionale Mitte hinterfragen\nProblemlagen überlagern\nKorridore modellieren\nPrioritäten setzen\nUnsicherheit in Interpolation prüfen\nMaßstab reflektieren\nWiderspruchsräume identifizieren\nVeränderungen vergleichen"
   },
   {
     "objectID": "unit01/unit01-01.html",
@@ -1513,7 +1555,7 @@
     "href": "unit01/unit01-05.html",
     "title": "Zusammenfassung – Geographischer Raum",
     "section": "",
-    "text": "Die kurze Einführung sollte Sie für die erkenntnis- und wissenschaftstheoretischen Grundgedanken räumlicher Abstraktionskonzepte in der Geographie sensibilisiert haben. Jenseits aller konkurrierenden Begriffe und Definitionen können GI-Methoden als Werkzeuge zur Umsetzung eines zeitgemäßen raum-zeitlich strukturierten, abstrahierenden und reproduzierenden Denkens in der Geographie bezeichnet werden. GI beantwortet also nicht nur Fragen im Sinne eines “einfachen” Auskunftssystems, sondern vielmehr wird räumliche Wirklichkeit für Planung, für Analysen, für Erkenntnisgewinn im GIS generiert/gedacht. Die dafür notwendigen Abstraktionskonzepte stammen aus der Informatik und der Erkenntnistheorie. Sie sind transparent und nachvollziehbar und damit überprüfbar. Geoinformationssysteme in ihrer ganzen Vielfalt bestimmen zunehmend unsere alltägliche Wahrnehmung und Interpretation der Welt. Die Geographie betrachtet dies seit Beginn ihrer akademischen Existenz als ihre Kernkompetenz.\nOhne den Einsatz von GI-Techniken und -Wissen wird eine gesellschaftsrelevante und zeitgemäße Geographie in Zukunft kaum sinnvoll betrieben werden können.",
+    "text": "Die kurze Einführung sollte Sie für die erkenntnis- und wissenschaftstheoretischen Grundgedanken räumlicher Abstraktionskonzepte in der Geographie sensibilisieren.\nJenseits aller konkurrierenden Begriffe und Definitionen können GI-Methoden als Werkzeuge zur Umsetzung eines zeitgemäßen raum-zeitlich strukturierten, abstrahierenden und reproduzierenden Denkens in der Geographie bezeichnet werden.\nGI beantwortet also nicht nur Fragen im Sinne eines “einfachen” Auskunftssystems, sondern vielmehr wird räumliche Wirklichkeit für Planung, für Analysen, für Erkenntnisgewinn im Daten und Konzepten generiert/gedacht.\nDie dafür notwendigen Abstraktionskonzepte stammen aus der Informatik und der Erkenntnistheorie. Sie sind transparent und nachvollziehbar und damit überprüfbar. Geoinformationssysteme in ihrer ganzen Vielfalt bestimmen zunehmend unsere alltägliche Wahrnehmung und Interpretation der Welt. Die Geographie betrachtet dies seit Beginn ihrer akademischen Existenz als ihre Kernkompetenz.\nOhne den Einsatz von GI-Techniken und -Wissen wird eine gesellschaftsrelevante und zeitgemäße Geographie in Zukunft kaum sinnvoll betrieben werden können.",
     "crumbs": [
       "Reader Geographische Raumkonzept",
       "Zusammenfassung – Geographischer Raum"
@@ -1524,7 +1566,7 @@
     "href": "unit02/unit02-01.html",
     "title": "Raumrepräsentation in der Geoinformatik",
     "section": "",
-    "text": "Wenn wir die reale Welt, im Folgenden auch als reale Welt oder Realwelt bezeichnet, in Form einer Karte oder in einem Geoinformationssystem abbilden wollen, müssen wir abstrahieren. Das bedeutet, dass wir einzelne Aspekte der realen Welt in den Mittelpunkt unserer Darstellung stellen und sie so weit vereinfachen und verallgemeinern, dass sie mit den uns zur Verfügung stehenden Methoden tatsächlich abgebildet werden können.\nBeispielsweise kann man in einer auf Papier gedruckten Karte (2D) kein mit Händen greifbares Hochhaus (3D) darstellen, aber man kann z.B. eine perspektivische Zeichnung eines Hochhauses einfügen. Das in irgendeiner Form gezeichnete Hochhaus ist also ein Abbild des realen Hochhauses. Es repräsentiert in unserem Bild das Hochhaus, weshalb man auch von einer Repräsentation oder einer Repräsentation der realen Welt spricht.",
+    "text": "Titelbild: Quelle nach (Snow 1854).\nWenn wir die reale Welt, im Folgenden auch als reale Welt oder Realwelt bezeichnet, in Form einer Karte oder in einem Geoinformationssystem abbilden wollen, müssen wir abstrahieren. Das bedeutet, dass wir einzelne Aspekte der realen Welt in den Mittelpunkt unserer Darstellung stellen und sie so weit vereinfachen und verallgemeinern, dass sie mit den uns zur Verfügung stehenden Methoden tatsächlich abgebildet werden können.\nBeispielsweise kann man in einer auf Papier gedruckten Karte (2D) kein mit Händen greifbares Hochhaus (3D) darstellen, aber man kann z.B. eine perspektivische Zeichnung eines Hochhauses einfügen. Das in irgendeiner Form gezeichnete Hochhaus ist also ein Abbild des realen Hochhauses. Es repräsentiert in unserem Bild das Hochhaus, weshalb man auch von einer Repräsentation oder einer Repräsentation der realen Welt spricht.",
     "crumbs": [
       "Reader GI Raumkonzepte",
       "Raumrepräsentation in der Geoinformatik"
@@ -1557,7 +1599,7 @@
     "href": "unit02/unit02-01.html#lernziele",
     "title": "Raumrepräsentation in der Geoinformatik",
     "section": "Lernziele",
-    "text": "Lernziele\nNach dieser Sitzung sollten Sie\n\ndie Bedeutung der Repräsentation der realen Welt durch Daten verstehen\ndie Begriffe kontinuierlicher Raum und diskrete Objekte im Raum unterscheiden können\ndie Konzepte von Geoobjekten und Geodaten und ihre digitale Repräsentation als Konzepte zur Kodierung der realen Welt kennen.\n\n\nSnow (1854)",
+    "text": "Lernziele\nNach dieser Sitzung sollten Sie\n\ndie Bedeutung der Repräsentation der realen Welt durch Daten verstehen\ndie Begriffe kontinuierlicher Raum und diskrete Objekte im Raum unterscheiden können\ndie Konzepte von Geoobjekten und Geodaten und ihre digitale Repräsentation als Konzepte zur Kodierung der realen Welt kennen.",
     "crumbs": [
       "Reader GI Raumkonzepte",
       "Raumrepräsentation in der Geoinformatik"
@@ -1568,7 +1610,7 @@
     "href": "unit02/unit02-03.html",
     "title": "Datenmodelle für Raumdaten",
     "section": "",
-    "text": "Wir haben im Reader 01 festgestellt, dass sowohl diskrete Geoobjekte als auch mehrdimensionale Merkmalsausprägungen von Raumkontinua mit Hilfe von Koordinaten verortet und als Geodaten in Computern gespeichert werden können. Solche binären Geodaten stellen somit die geographische Repräsentation der Realität in GI-Systemen dar.\nDie Grundlage für die Informationsreduktion bilden so genannte Datenmodelle. Ein Datenmodell entsteht durch die Abstraktion einzelner Objekte (Entitäten) und deren Eigenschaften (Attribute). Dabei werden gleichartige Objekte (z.B. Flüsse, Bundesstraßen, Stadtgebiete) zusammengefasst. Da die Grundlage aller GI-Systeme auf einer räumlichen Darstellung beruht, muss die bereits bekannte Geographische Abstraktion für ein besseres Verständnis der Datenmodellierung etwas umorganisiert und angepasst werden.\nDie konkrete digitale bzw. technische Umsetzung ist mit diesem Konzept jedoch nicht geklärt. Die betrachteten Geoobjekte der realen Welt enthalten eine Informationsfülle, die gegen unendlich geht. Dies gilt erst recht für räumliche Kontinua, die je nach Maßstab beliebig komplex sein können. Für die digitale Repräsentation räumlicher Eigenschaften benötigen wir daher eine effiziente und einfache Methode zur Informations- bzw. Datenreduktion.\nDie Abbildung zur Darstellung als Raster- und Vektordatenmodell verdeutlicht diesen zentralen Aspekt der Modellierung raumbezogener Daten. In der GIS-Anwendung haben sich hierfür zwei völlig unterschiedliche Datenmodelle etabliert, die als Rastermodell bzw. Vektordatenmodell bezeichnet werden. Beide Datenmodelle können prinzipiell sowohl zur Abbildung kontinuierlicher Eigenschaften als auch diskreter Geoobjekte verwendet werden. In der Praxis werden jedoch in der Regel kontinuierliche Daten im Rasterdatenmodell und diskrete Daten im Vektordatenmodell abgebildet. Beide Datenmodelle unterscheiden sich hauptsächlich in der Art der räumlichen Darstellung ihrer Merkmale, was auch in der Abbildung deutlich wird. Es ist zu beachten, dass die genannten Datenmodelle nicht nur für die Darstellung von zeitlich konstanten Merkmalsausprägungen, sondern auch für zeitlich veränderliche Merkmale verwendet werden können.",
+    "text": "Titelbild: Quelle nach (Snow 1854).\nWir haben im Reader 01 festgestellt, dass sowohl diskrete Geoobjekte als auch mehrdimensionale Merkmalsausprägungen von Raumkontinua mit Hilfe von Koordinaten verortet und als Geodaten in Computern gespeichert werden können. Solche binären Geodaten stellen somit die geographische Repräsentation der Realität in GI-Systemen dar.\nDie Grundlage für die Informationsreduktion bilden so genannte Datenmodelle. Ein Datenmodell entsteht durch die Abstraktion einzelner Objekte (Entitäten) und deren Eigenschaften (Attribute). Dabei werden gleichartige Objekte (z.B. Flüsse, Bundesstraßen, Stadtgebiete) zusammengefasst. Da die Grundlage aller GI-Systeme auf einer räumlichen Darstellung beruht, muss die bereits bekannte Geographische Abstraktion für ein besseres Verständnis der Datenmodellierung etwas umorganisiert und angepasst werden.\nDie konkrete digitale bzw. technische Umsetzung ist mit diesem Konzept jedoch nicht geklärt. Die betrachteten Geoobjekte der realen Welt enthalten eine Informationsfülle, die gegen unendlich geht. Dies gilt erst recht für räumliche Kontinua, die je nach Maßstab beliebig komplex sein können. Für die digitale Repräsentation räumlicher Eigenschaften benötigen wir daher eine effiziente und einfache Methode zur Informations- bzw. Datenreduktion.\nDie Abbildung zur Darstellung als Raster- und Vektordatenmodell verdeutlicht diesen zentralen Aspekt der Modellierung raumbezogener Daten. In der GIS-Anwendung haben sich hierfür zwei völlig unterschiedliche Datenmodelle etabliert, die als Rastermodell bzw. Vektordatenmodell bezeichnet werden. Beide Datenmodelle können prinzipiell sowohl zur Abbildung kontinuierlicher Eigenschaften als auch diskreter Geoobjekte verwendet werden. In der Praxis werden jedoch in der Regel kontinuierliche Daten im Rasterdatenmodell und diskrete Daten im Vektordatenmodell abgebildet. Beide Datenmodelle unterscheiden sich hauptsächlich in der Art der räumlichen Darstellung ihrer Merkmale, was auch in der Abbildung deutlich wird. Es ist zu beachten, dass die genannten Datenmodelle nicht nur für die Darstellung von zeitlich konstanten Merkmalsausprägungen, sondern auch für zeitlich veränderliche Merkmale verwendet werden können.",
     "crumbs": [
       "Reader GI Raumkonzepte",
       "Datenmodelle für Raumdaten"
@@ -1601,7 +1643,7 @@
     "href": "unit02/unit02-03.html#übung",
     "title": "Datenmodelle für Raumdaten",
     "section": "Übung",
-    "text": "Übung\n\n\n\n\n\n\nÖffnen Sie mit Google Earth die zuvor heruntergeladene Datei Raster oder Vektor. Versuchen Sie zu identifizieren, welches Datenmodell für welche der dargestellten Informationen verwendet wird.\n\nWelche(s) Datenmodell(e) verwendet Google Earth Ihrer Meinung nach?\nLassen sich aus den auf dem Bildschirm dargestellten Informationen weitere Eigenschaften des verwendeten Datenmodells ableiten? Wenn ja, welche? Wenn nein, warum nicht?\nWechseln Sie in die vertikale Ansicht und deaktivieren Sie die Option Terrain. Zoomen Sie langsam bis zu einer Höhe von 10 Metern über dem Boden. Was sehen Sie?\n\n\nSnow (1854)",
+    "text": "Übung\n\n\n\n\n\n\nÖffnen Sie mit Google Earth die zuvor heruntergeladene Datei Raster oder Vektor. Versuchen Sie zu identifizieren, welches Datenmodell für welche der dargestellten Informationen verwendet wird.\n\nWelche(s) Datenmodell(e) verwendet Google Earth Ihrer Meinung nach?\nLassen sich aus den auf dem Bildschirm dargestellten Informationen weitere Eigenschaften des verwendeten Datenmodells ableiten? Wenn ja, welche? Wenn nein, warum nicht?\nWechseln Sie in die vertikale Ansicht und deaktivieren Sie die Option Terrain. Zoomen Sie langsam bis zu einer Höhe von 10 Metern über dem Boden. Was sehen Sie?",
     "crumbs": [
       "Reader GI Raumkonzepte",
       "Datenmodelle für Raumdaten"
@@ -1612,7 +1654,7 @@
     "href": "unit02/unit02-05.html",
     "title": "Die Vermessung der Welt - Geographische Koordinaten und Projektionen",
     "section": "",
-    "text": "Die vorstehenden Beispiele zeigen, wie mühsam und fehleranfällig die Orientierung an Objekten und ihren Namen ist. Sie zeigen auch, dass messbare, d.h. geometrisch maßstäbliche Bezugssysteme nicht unbedingt geographisch lokalisierbar sein müssen. Im Kapitel über Raumrepräsentationen wurde der Bogen von der abstrakten Definition des Raumes und seiner Objekte bis hin zur Repräsentation geographischer Informationen in spezifischen Datenobjekten gespannt. Nun geht es darum, diese beiden Konzepte zusammenzuführen.\nEin leistungsfähiges System zur Referenzierung von geographischen Räumen sollte unbedingt die folgenden grundlegenden Eigenschaften vereinen:\n\nSkalenunabhängige Identifikation jedes Punktes auf der Erdoberfläche\nMessbarkeit, d.h. mathematische Berechnungsvorschriften für alle geometrischen Operationen\nZuweisung aller beliebig skalierten Attribute (z.B. Name, Temperatur, Qualität)\n\nDie Erde ist in erster Näherung eine Kugel. Daher ist es naheliegend, Punkte auf der Oberfläche durch Kugelkoordinaten zu definieren. Da die Oberfläche einer Kugel bekannt ist, genügen zur Bestimmung eines Punktes die beiden Winkel für den Azimut (geographische Länge) Lambda und den Zenit (geographische Breite) Phi (Abb. 03-07).\n\n\n\nAbbildung 03-07: Das Konzept der Kugelkoordinaten, Ag2gaeh (2015)\n\n\nÜberträgt man das Konzept der Kugelkoordinaten auf die Erde, so ergeben sich eine Reihe von Problemen. Das augenfälligste ist die Abplattung der Erde an den Polen, die durch die Erdrotation verursacht wird. Für die Längenbestimmung ist die Tatsache, dass die Erde ein Rotationsellipsoid mit großen und kleinen Halbachsen ist, unerheblich. Anders verhält es sich bei der Bestimmung der geographischen Breite, da sich die Halbachsen der Erde um ca. 21,4 km unterscheiden (Abb. 03-08).\n\n\n\nAbbildung 03-07: Darstellung eines Rotationsellipsoid, GIS (2011) verändert nach AugPi (2004)\n\n\nDie Abbildung zeigt das Rotationsellipsoid der Erde mit kreisförmigen Breitenkreisen (in der Äquatorebene Radius der großen Halbachse) und Längenkreisen (kleine Halbachse an den Polen). Das daraus resultierende Maß für die Exzentrizität von ca. 1:298 gibt die Abplattung der Erde und damit die Streckenverschiebung bei der Bestimmung der sphärischen Koordinaten an. Das zentrale Problem der exakten Bestimmung der Erdoberfläche (im Sinne einer homogenen Oberfläche für die Berechnung der sphärischen Koordinaten) liegt nun in der Entscheidung, welche mathematische Darstellung eines Ellipsoids als geeignetes Modell für das reale Rotationsellipsoid der Erde verwendet wird.\nDa es sich immer nur um eine Annäherung an die ideale Erdform bezogen auf ein bestimmtes Erdgebiet handelt, ist die Eignung des gewählten Ellipsoids als Referenz (Bezugsellipsoid) für die Berechnung der Vermessungsnetze (Koordinatensysteme) und der daraus abgeleiteten Projektionssysteme von entscheidender Bedeutung (Abb. 03-09).\n\n\n\nAbbildung 03-09: Die Bestimmung geographischer Koordinaten auf einem Rotationsellipsoid, E^(nix) (2006)",
+    "text": "Titelbild: Quelle nach (Snow 1854).",
     "crumbs": [
       "Reader GI Raumkonzepte",
       "Die Vermessung der Welt - Geographische Koordinaten und Projektionen"
@@ -1634,7 +1676,7 @@
     "href": "unit02/unit02-05.html#übung",
     "title": "Die Vermessung der Welt - Geographische Koordinaten und Projektionen",
     "section": "Übung",
-    "text": "Übung\n\n\n\n\n\n\nBesuchen Sie die folgende interaktive Webseite Kartenprojektionen und machen Sie sich interaktiv ein Bild von den Eigenschaften und Auswirkungen der verschiedenen Kartenprojektionen. Betrachten Sie zumindest die folgenden Netzprojektionen:\n\nLambert-konforme Schnittkegelprojektion\nLambert’sche Azimutalprojektion\nNormale und transversale Mercator-Projektion\nMollweide-Projektion\nRobinson-Projektion\n\n\nSnow (1854)",
+    "text": "Übung\n\n\n\n\n\n\nBesuchen Sie die folgende interaktive Webseite Kartenprojektionen und machen Sie sich interaktiv ein Bild von den Eigenschaften und Auswirkungen der verschiedenen Kartenprojektionen. Betrachten Sie zumindest die folgenden Netzprojektionen:\n\nLambert-konforme Schnittkegelprojektion\nLambert’sche Azimutalprojektion\nNormale und transversale Mercator-Projektion\nMollweide-Projektion\nRobinson-Projektion",
     "crumbs": [
       "Reader GI Raumkonzepte",
       "Die Vermessung der Welt - Geographische Koordinaten und Projektionen"
@@ -1951,7 +1993,7 @@
     "text": "In dieser Aufgabe sollen Sie anhand vorgegebener Kriterien oder Merkmalsausprägungen verschiedene Analysen durchführen. Das heißt, Sie sollen die Eignung von Rasterzellen (Raumeinheiten) für eine bestimmte Nutzung bewerten. Sie können die Werte der so bewerteten Rasterzellen auch dazu verwenden, die Überwindung von räumlichen Widerständen oder auch Kosten zu kumulieren, um für eine bestimmte Nutzung geeignete Trassen oder Korridore zu identifizieren.\nNimmt man eine Position A und eine Position B auf einem solchen Raster als Start und Ziel, so kann die kostengünstigste Route als Bewegung durch einen Raum mit unterschiedlichen Widerständen interpretiert werden, d.h. man kann die Werte eines Pixels als Kosten für das Betreten/Nutzen/Überwinden dieses Pixels interpretieren. Diese Kosten können durchaus mit kategorialen Merkmalsausprägungen wie leicht oder schwer, günstig oder teuer, attraktiv oder unattraktiv usw. beschrieben werden. Vor diesem Hintergrund sind die Kriterien, die z.B. für die Planung einer günstigen Route herangezogen werden, immer in Bezug auf die Fragestellung bzw. Zielsetzung zu bewerten.",
     "crumbs": [
       "Arbeitsblätter",
-      "A4 -  Kosten und Kriterien"
+      "A4 - Kosten und Kriterien"
     ]
   },
   {
@@ -1962,7 +2004,7 @@
     "text": "Worum geht es in dieses Arbeitsblatt?\nIm Rahmen der Übung werden Sie eine einfache Eignungsanalyse und eine Kostenpfadanalyse durchführen. Dies beinhaltet die vollständige Datenaufbereitung sowie die Interpretation der verwendeten Kriterien und der Ergebnisse.",
     "crumbs": [
       "Arbeitsblätter",
-      "A4 -  Kosten und Kriterien"
+      "A4 - Kosten und Kriterien"
     ]
   },
   {
@@ -1973,7 +2015,7 @@
     "text": "Lernziele\nNach dieser Übung können Sie\n\nunterschiedliche Datenebenen zielgerichtet aufbereiten und kombinieren\ndie Bedeutung verschiedener Kriterien erkennen und einschätzen\neine Eignungsanalyse durchführen, indem Sie geeignete Datenebenen miteinander verrechnen\neine Kostenanalyse planen und durchführen",
     "crumbs": [
       "Arbeitsblätter",
-      "A4 -  Kosten und Kriterien"
+      "A4 - Kosten und Kriterien"
     ]
   },
   {
@@ -1984,7 +2026,7 @@
     "text": "Benötigte Materialien\n\nMarburg Open Forest (MOF) Geländemodell in 1 m Auflösung\nCorine Landnutzungsdaten für das MOF\nOpen Street Map (OSM) Wegedaten für das MOF\nKoordinaten (ETRS89, UTM32 EPSG:25832) Position Parkplatz (478188,5632178), Position Grillhütte (476170,5631657)\n\n\n\n\n\n\n\nDie Daten finden Sie im Zip-Archiv Daten-Aufgabe-L04",
     "crumbs": [
       "Arbeitsblätter",
-      "A4 -  Kosten und Kriterien"
+      "A4 - Kosten und Kriterien"
     ]
   },
   {
@@ -1995,7 +2037,7 @@
     "text": "Aufgaben Lerneinheit 4\n\nAufgabe 04-01\nSie sollen eine Entscheidung anhand mehrerer Kriterien treffen. Konkret soll die Eignung des Uniwaldes als Wildkatzenlebensraum untersucht werden.\nDabei sollen folgende Aussagen gelten:\n\n\n\n\n\n\n\nWildkatzen bevorzugen Waldgebiete\nWildkatzen bevorzugen mittlere und steile Hanglagen\nWaldgebiete werden gegenüber Hanglagen bevorzugt\n\n\n\n\n\n\n\n\n\n\n\nDaten herunterladen (wie gewohnt überprüfen)\nBerechnung der Hangneigung\nExtrahieren Sie alle Waldflächen aus den Corine Landnutzungsdaten, so dass Sie ein Raster mit den Werten 1 für Waldflächen und 0 für keine Waldflächen erhalten. (Bereits zugeschnittene Corine-Daten finden Sie im heruntergeladenen Archiv unter dem Dateinamen clc2018_1m_MOF_25832.tif). Tipp Dieser Vorgang wird auch als Datenreklassifizierung bezeichnet.\nZur Vorbereitung der Multikriterienbewertung sollen die kontinuierlichen Hangneigungswerte in ganzzahlige kategoriale Klassen überführt (reklassifiziert) werden. D.h. durch die Reklassifizierung der Hangneigung in drei Klassen 0-15 Grad = Klasse mit Wert 1, 15-30 Grad = Klasse mit Wert 2 und &gt; 30 Grad = Klasse mit Wert 3 (1=flach, 2=mittlere Neigung und 3=steile Neigung) werden kategoriale Zielvariablen generiert.\nLegen Sie für jede Datenebene eine Gewichtung gemäß der von Ihnen festgelegten Bedeutung in Bezug auf ihre Eignung fest (z. B. Wald/Nichtwald = Faktor 0,5, Hangneigung = Faktor 0,3). Bitte beachten Sie, dass Werkzeuge wie die WMCA Weighted Multicriteria Analysis eine Gewichtungssumme von genau 1.0 erwarten. Daher müssen die Gewichte entsprechend verteilt werden.\nLegen Sie für jede Klasse in diesem Layer eine Bewertung zwischen 0 und 10 fest (z. B. Wald = 10, Nichtwald = 1, Hangneigung Klasse 1 = 5 usw.) Beachten Sie, dass die Festlegung der Bewertung die Bedeutung der Kriterien für die Fragestellung berücksichtigen muss.\nErläutern Sie die Ergebnisse in max. 2 Sätzen.",
     "crumbs": [
       "Arbeitsblätter",
-      "A4 -  Kosten und Kriterien"
+      "A4 - Kosten und Kriterien"
     ]
   },
   {
@@ -2006,7 +2048,7 @@
     "text": "Aufgabe 04-02\nSie sollen einen Trimm-Dich-Pfad durch den Uniwald (Marburger Offener Wald, MOF) bei Caldern planen. Der Trail beginnt am Parkplatz in der Nähe des Kreisverkehrs am südöstlichen Rand und endet am Grillplatz am nordwestlichen Ende. Machen Sie sich zunächst mit dem Konzept der Kostenanalyse vertraut (siehe Hilfen und Reader).\nDie Vorgaben für die Streckenplanung sind:\n\n\n\n\n\n\n\ndie Strecke soll möglichst durch Wald führen\ndie Strecke soll möglichst weit von Wegen entfernt sein\ndie Route soll möglichst steil sein\n\n\n\n\n\n\n\n\n\n\n\nHerunterladen und Überprüfen der bereitgestellten Daten\nHangneigung berechnen\nVerwendung der reklassifizierten Corine-Daten aus Aufgabe 04-01 (Wald, Kein Wald).\nBerechnen Sie ein Entfernungsraster, das die Entfernungen zu den Straßen enthält (OSM_roads_MOF_25832.gpkg) (räumliche Auflösung wie das Hangneigungsraster).\nFür jede Rasterklasse (z.B. Wald Nicht-Wald) sind Werte zu definieren, die die Kosten bzw. den Reibungswert für das Überqueren/Nutzen der Zelle darstellen. Es ist daher sinnvoll (im Sinne der obigen Vorgaben), unattraktive Zellen mit hohen Werten und attraktive Zellen mit niedrigen Werten umzuklassifizieren.\nVerrechnen Sie die einzelnen Raster zu einem Gesamtkostenraster. Überlegen Sie dabei, ob alle drei Kriterien gleich gewichtet werden sollen oder ob Sie z.B. der Hangneigung ein höheres Gewicht geben wollen (z.B. wegen des höheren Trainingseffektes).\nBerechnen Sie auf dieser Grundlage die im Sinne der Vorgaben attraktivste (=“kostengünstigste”) Strecke zwischen Start- und Zielpunkt. Beschreiben Sie das Ergebnis, fügen Sie aussagekräftige Grafik(en) ein und begründen Sie stichpunktartig die einzelnen Arbeitsschritte.\n\n\n\n\n\nGewichtung der Aufgaben in Lerneinheit 4\n\n\n\nAufgabenteil\nGewichtung Teilaufgabe\nGewichtung Gesamt\n\n\n\n\nAufgabe 04-01\n0.4\n0.15\n\n\nAufgabe 04-02\n0.6\n0.25\n\n\nAufgabe 04\n1.0\n0.3",
     "crumbs": [
       "Arbeitsblätter",
-      "A4 -  Kosten und Kriterien"
+      "A4 - Kosten und Kriterien"
     ]
   },
   {
@@ -2017,7 +2059,7 @@
     "text": "Unterstützung\n\nBei Verwendung des Plugins WMCA Weighted Multicriteria Analysis (WMCA) müssen die kontinuierlichen Werte für Hangneigung und Entfernung von der Straße in diskrete Klassen umgewandelt werden. Das WMCA-Tool kann jedoch maximal 100 Klassen verarbeiten, so dass bei der Verwendung dieses Tools die kontinuierlichen Werte neu klassifiziert werden müssen (z.B. je 25 Meter Entfernung eine Klasse und alles &gt; 200 Meter Entfernung in eine Klasse, bzw. je 5 Grad Hangneigung von 0 Grad bis 30 Grad je eine Klasse und &gt; 30 Grad in eine Klasse). Außerdem entfällt die separate Normierung und Gewichtung.\nWenn Sie den Raster-Rechner verwenden, ist diese Neuklassifizierung nicht notwendig, Sie müssen dann aber Gewichtung und Normalisierung in die Berechnung integrieren. {: .hinweis–info}\nDas Plugin WMCA Weighted Multicriteria Analysis (WMCA) ist sehr komfortabel für die gewichtete Multikriterienanalyse. Es erscheint nach der Installation unter dem Hauptmenü Raster oder in der Erweiterungen-Werkzeugleiste (für die normale Installation muss “Auch experimentelle Erweiterungen anzeigen” in den Einstellungen aktiviert sein). Achtung: Zur Zeit (seit 2021) kann es je nach QGIS-Version zu einer Python-Fehlermeldung nach der Installation des Plugins kommen. Bitte verwenden Sie dann den alternativen Kurs-Repo-Download des Plugins. Weitere Informationen finden Sie unter WMCA Course Repository. Installieren Sie das gezippte Plugin über das QGIS-Menü ‘Erweiterungen -&gt; Erweiterungen verwalten und installieren -&gt; Aus Zip installieren’. Sollte es beim Ausführen des Plugins zu Fehlermeldungen oder Warnungen kommen, müssen in der Regel negative Werte im Ergebnisdatensatz neu klassifiziert werden. Achten Sie darauf, dass Sie diesen möglichst hohe neue Werte zuweisen, da es sich hierbei um fehlerhafte und somit für die Least Cost Path Analyse irrelevante Daten handelt.\n\nEine wesentlich detailliertere Hilfe für den gesamten Arbeitsablauf finden Sie QGIS-spezifisch unter Multi Criteria Overlay Analysis (QGIS3).\nDa es sich um ein weit verbreitetes Raster-GIS-Konzept handelt, werden Sie ähnliche Werkzeuge in allen GI-Softwarepaketen finden. So ist z.B. das MCE Tutorial for SAGA GIS eine hilfreiche Ressource, um den Prozess zu verstehen.\nTypische Rechenoperationen auf Rasterdaten, u.a. auch die Reklassifizierung von Daten, können mit dem Raster-Rechner durchgeführt werden. Der Raster-Rechner ist als Raster-Taschenrechner ein sehr wichtiges und mächtiges Werkzeug für viele Operationen. Alternativ und einfacher für eine einfache Reklassifizierung ist das QGIS-Werkzeug Reklassifizieren nach Tabelle. Einen Überblick über die verfügbaren Daten(re)klassifikations-Tools erhalten Sie, wenn Sie in der Toolbar klassifizieren oder reklassifizieren eingeben. Darüber hinaus finden Sie im Internet zahlreiche Anleitungen zum Thema Reklassifizierung, z.B. im Blogbeitrag How to reclassify a raster layer in QGIS oder auch auf YouTube Slope Analysis/Reclassify from a DEM in QGIS 3. Zusätzlich finden Sie auf den Hilfeseiten von GRASS GIS und SAGA GIS eine detaillierte Beschreibung des technischen Vorgehens.\nDie Normalisierung von Rasterdatenwerten kann sehr einfach mit dem SAGA-Modul Grid Normalisation durchgeführt werden. Alternativ kann sie auch mit dem Raster-Rechner nach der Formel xnorm = (x-min(x))/(max(x)-min(x)) berechnet werden (wobei x das Raster, min(x) und max(x) das Minimum bzw. Maximum aller Werte des jeweiligen Rasters sind).\nDie Gewichtung kann dann durch einfache Multiplikation (Rasterrechner) des jeweiligen Rasters mit dem Gewichtungswert erreicht werden. Z.B. Gleichgewichtung Raster1*Raster2*Raster3/3 Gewichtung Raster1 Faktor 0.5 Raster2 und Raster3 Faktor 0.25 0.5*Raster1 + 0.3*Raster2 + 0.2*Raster3. Wird mit Proportionalwerten von 1 (Prozent) gewichtet, so ist darauf zu achten, dass die Summe aller Gewichtungsfaktoren 1 ergibt.\nFür das exakte Digitalisieren von Punkten ist die Erweiterung Numerical Digitize sehr hilfreich. Sie wird nach der Installation in die Digitalisierungsleiste eingehängt. Sollte die Extension nicht mit Ihrer QGIS Version kompatibel sein, finden Sie auf [Stackoverflow] (https://gis.stackexchange.com/questions/34204/creating-point-features-with-exact-coordinates-in-qgis) weitere Hilfe zu diesem Problem.\nFür die Kostenanalyse sollte das Plugin Least Cost Path installiert werden. Es erscheint unter den Bearbeitungswerkzeugen als eigener Menüeintrag Cost Distance Analysis. Auch hierzu gibt es sowohl für QGIS als auch für die verwandten GRASS- und SAGA-Werkzeuge zahlreiche Videos und Tutorials (z.B. Least Cost Path). Achten Sie bei der Google-Suche darauf, dass Sie nur aktuelle und für Ihre QGIS-Hauptversion - also für QGIS 3.x - gültige Tutorials verwenden. Bei Interesse an den Konzepten und dem Anwendungsbezug (insbesondere für Fragestellungen auf der Landschaftsskala) lohnt sich ein Blick in Least-Cost Modelling and Landscape Ecology: Concepts, Applications, and Opportunities.\nFür Entfernungsberechnungen kann das Nearness/Proximity Tool verwendet werden. Bitte beachten Sie, dass Vektordaten zunächst in Rasterdaten umgewandelt werden müssen (Raster-&gt;Conversion-&gt;Raster).\nWeitere Unterstützung finden Sie unter QGIS Materials",
     "crumbs": [
       "Arbeitsblätter",
-      "A4 -  Kosten und Kriterien"
+      "A4 - Kosten und Kriterien"
     ]
   },
   {

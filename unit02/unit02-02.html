@@ -341,16 +341,28 @@ background-size: cover;
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../unit00/unit00-02-formales.html"> <i class="bi bi-question-square-fill" role="img">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-formales" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Formales</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-formales">    
+        <li>
+    <a class="dropdown-item" href="../unit00/unit00-02-formales.html"><i class="bi bi-exclamation-square-fill" role="img">
 </i> 
-<span class="menu-text">Projektarbeit</span></a>
+ <span class="dropdown-text">Formalia</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../unit00/unit00-03-formales.html"> <i class="bi bi-clipboard-check" role="img">
+        <li>
+    <a class="dropdown-item" href="../unit00/unit00-03-formales.html"><i class="bi bi-clipboard-check" role="img">
 </i> 
-<span class="menu-text">Sitzungsgestaltung</span></a>
+ <span class="dropdown-text">Gestaltung der studentischen Übungssitzungen</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../unit00/unit00-04-themen.html"><i class="bi bi-map" role="img">
+</i> 
+ <span class="dropdown-text">Projekt-Themen</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -767,19 +779,22 @@ background-size: cover;
 
 
 
+<div class="banner-credit">
+<p>Titelbild: Quelle nach <span class="citation" data-cites="snow">(<a href="#ref-snow" role="doc-biblioref">Snow 1854</a>)</span>.</p>
+</div>
 <section id="raum-im-gis" class="level2">
 <h2 class="anchored" data-anchor-id="raum-im-gis">Raum im GIS</h2>
 <p>Bisher haben wir ständig und ohne besondere Vorüberlegungen mit den Begriffen Raum und Zeit gearbeitet. Um die bereits im Abschnitt <a href="../unit01/unit01-03_reader_geo_raum.html">Objekte im Raum</a> vorgestellten Raumkonzepte (diskrete Geoobjekte, kontinuierliche Räume) in GI-Systemen und letztlich auch allgemein wissenschaftlich nutzbar zu machen, müssen wir diese Begriffe konkreter fassen.</p>
 <p>Der Raum in GI-Systemen wird in Anlehnung an die Mathematik und Physik als dreidimensionaler euklidischer Raum verstanden. Aus dem Mathematikunterricht kennen wir die euklidische Ebene (mit 2 Dimensionen) und den euklidischen Raum (mit 3 Dimensionen). Am einfachsten lässt sich der euklidische Raum mit Hilfe eines kartesischen Koordinatensystems beschreiben, in dem die Koordinaten entlang senkrecht zueinander stehender Achsen aufgetragen werden (vgl. Abb. 02-1).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/354px-Cartesian-coordinate-system.svg.png" class="img-fluid figure-img"></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/CartesianPlane.svg/3840px-CartesianPlane.svg.png" class="img-fluid figure-img"></p>
 <figcaption>Abbildung 02-01: Ausschnitt aus einem zweidimensionalen kartesischen Koordinatensystem mit 3 eingetragenen Punkten in Koordinatenschreibweise (Quelle: <span class="citation" data-cites="bolino">Bolino (<a href="#ref-bolino" role="doc-biblioref">2008</a>)</span>)</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/3D_coordinate_system.svg/768px-3D_coordinate_system.svg.png" style="width:50.0%;height:50.0%" class="figure-img"></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/3D_coordinate_system.svg/1280px-3D_coordinate_system.svg.png" style="width:50.0%;height:50.0%" class="figure-img"></p>
 <figcaption>Abbildung 02-2: Allgemeine Abbildung eines dreidimensionales kartesischen Koordinatensystem mit euklidischen Ebenen durch den Ursprungspunkt (Quelle: <span class="citation" data-cites="sakurambo">Sakurambo (<a href="#ref-sakurambo" role="doc-biblioref">2007</a>)</span>)</figcaption>
 </figure>
 </div>
@@ -832,9 +847,6 @@ background-size: cover;
 <li>Welche Dimension und Geometrie liegt der Darstellung Ihrer Meinung nach zugrunde?</li>
 <li>Versuchen Sie, weitere alltägliche Beispiele für die Bedeutung von Lage und Dimensionalität zu finden.</li>
 </ul>
-<div id="cite" style="color: transparent;">
-<p><span class="citation" data-cites="snow">Snow (<a href="#ref-snow" role="doc-biblioref">1854</a>)</span></p>
-</div>
 </div>
 </div>
 </div>
