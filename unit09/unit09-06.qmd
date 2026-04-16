@@ -43,6 +43,7 @@ Die Daten befinden sich in der Archivdatei [Daten-Aufgabe-L04.zip](../assets/dat
 
 
 Es geht um die Nutzung des Uniwaldes als Lebensraum für die Wildkatze. Entwickeln und bearbeiten Sie ein Projekt, das durch den folgenden Titel und Untertitel skizziert wird. Sie können den Titel und den Untertitel an Ihre Fragestellung anpassen. Die Ausarbeitung hat im Kern eine GI-Analyse als Hauptarbeitspaket. Die Feinabstimmung ist Ihnen überlassen. Unter den Materialien finden Sie einen Link zu ausgewählter Literatur zum Thema.
+
 ::: {.callout-tip icon="false" appearance="simple"}
 Der Marburger Universitätswald - Lebensraum für die Wildkatze?
 

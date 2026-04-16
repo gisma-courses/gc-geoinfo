@@ -5,14 +5,11 @@ title-block-banner-color: black
 bibliography: ../assets/geoinfo.bib
 lang: de
 comments: false
-
-
 ---
 
 Wie können wir in der Geographie die Abstraktion unserer Interpretation der Welt am einfachsten und effizientesten umsetzen? Grundsätzlich kann die geographische Darstellung des Raumes mit Hilfe von zwei unterschiedlichen Konzepten erfolgen: Zum einen können eindeutige Objekte, sogenannte diskrete Geoobjekte, identifiziert werden, dem gegenüber steht das Konzept kontinuierlicher Räume oder Felder. Grundsätzlich sind diskrete (Geo-)Objekte alles, was in irgendeiner Weise abgegrenzt und gezählt werden kann. Also z.B. Autos, Häuser, Fußgänger, Blumen, Bären, Fußballplätze und so weiter. Felder hingegen beschreiben kontinuierliche, raum-zeitlich veränderliche Attributwerte oder Merkmalsausprägungen von Räumen (z.B. Lufttemperatur, Einwohner / Hektar).
 
-![Abbildung 01-03: Blick auf die Fränkische Schweiz von Westen. In der Bildmitte ist der Zeugenberg Walberla zu sehen (Quelle:  @arnold)](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Fr%C3%A4nkische-Schweiz-westliche-Kante-16-05-2005.jpeg/1280px-Fr%C3%A4nkische-Schweiz-westliche-Kante-16-05-2005.jpeg)
-
+![Abbildung 01-03: Blick auf die Fränkische Schweiz von Westen. In der Bildmitte ist der Zeugenberg Walberla zu sehen (Quelle: @arnold)](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Fr%C3%A4nkische-Schweiz-westliche-Kante-16-05-2005.jpeg/1280px-Fr%C3%A4nkische-Schweiz-westliche-Kante-16-05-2005.jpeg)
 
 Beginnen wir mit einem geographischen Raumbegriff, der uns aus dem Alltagswissen vertraut ist. So kennen viele die Region [*Fränkische Schweiz*](https://de.wikipedia.org/wiki/Fr%C3%A4nkische_Schweiz). Mit solchen *Raumentitäten* verbinden wir eine mehr oder weniger diffuse, aber abgegrenzte räumliche Ausdehnung (Region) oder die Vorstellung einer Landschaft (vgl. Abb. 01-03). Häufig werden solchen als Einheit wahrgenommenen Räumen auch Attribute wie kulinarische, kulturelle oder freizeitorientierte Aspekte zugeordnet. So ist die Fränkische Schweiz nicht nur für ihre Weine und Biere bekannt, sondern beispielsweise auch für ihre Osterbrunnen (vgl. Abb. 01-04) oder ihr touristisches Potenzial.
 
@@ -33,9 +30,9 @@ Diskrete Objekte zeichnen sich durch eine eindeutige räumliche Abgrenzbarkeit a
 ::: {.callout-tip icon="false" appearance="simple"}
 Betrachten Sie das folgende Luftbild (Abb. 01-07) und überlegen Sie, wie Sie diesen Raum darstellen würden. Notieren Sie die folgenden Merkmale:
 
-* Landnutzung in Form von Landnutzungstypen
-* Straßennetz
-* Bebaute Fläche
+-   Landnutzung in Form von Landnutzungstypen
+-   Straßennetz
+-   Bebaute Fläche
 
 ![Abbildung 01-07: Luftbild des Felsengarten Sanspareil (Fränkische Schweiz) als Beispiel eines zu repäsentierenden Wirklichkeitsauschnitts. Es wird vernachlässigt, dass ein Luftbild selbst bereits eine Repräsentation der Wahrnehmung des Fotografen ist. (Quelle: @presse03)](../assets/images/unit01/Sanspareil_Luftbild_West.jpg)
 :::
