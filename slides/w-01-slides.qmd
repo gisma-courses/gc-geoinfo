@@ -29,9 +29,10 @@ lightbox: true
 
 ::: {layout-ncol="2" layout-valign="bottom"}
 
-![~2D\ kartesisches\ Koordinatensystem~ ~(@bolino)~](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/354px-Cartesian-coordinate-system.svg.png)
+![~2D\ kartesisches\ Koordinatensystem~ ~(@bolino)~](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/CartesianPlane.svg/3840px-CartesianPlane.svg.png)
 
-![~3D\ kartesisches\ Koordinatensystem\ (@sakurambo)~](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/3D_coordinate_system.svg/768px-3D_coordinate_system.svg.png){width="70%" height="70%"}
+
+![~3D\ kartesisches\ Koordinatensystem\ (@sakurambo)~](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/3D_coordinate_system.svg/1280px-3D_coordinate_system.svg.png){width="70%" height="70%"}
 
 :::
 
@@ -41,7 +42,7 @@ lightbox: true
 
 ## Die Topologie oder Lage im Raum
 
-![~Tagesliniennetzplan\ der\ Stadtwerke\ Marburg,\ (@swm)~](../../assets/images/unit02/mr_biko_net.png){width="70%"}
+![~Tagesliniennetzplan\ der\ Stadtwerke\ Marburg,\ (@swm)~](../assets/images/unit02/mr_biko_net.png){width="70%"}
 
 ## Datenmodelle
 
@@ -78,12 +79,12 @@ lightbox: true
 
 ## Der Ort
 
-![@gisma](../../assets/images/unit02/hier.2.png){width="60%"}
+![@gisma](../assets/images/unit02/hier.2.png){width="60%"}
 
 
 ## Raum-Zeit-Kodierung - Orte und Namen
 
-![](../../assets/images/unit02/Segnaleladino.jpg){ width="80%"}
+![](../assets/images/unit02/Segnaleladino.jpg){ width="80%"}
 
 ## Raum-Zeit-Kodierung - Lineare metrische Lokalisierung
 
@@ -98,7 +99,7 @@ lightbox: true
 
 ::: {layout-ncol="2" layout-valign="bottom"}
 
-![Darstellung eines Rotationsellipsoid, @gisma verändert nach  @augpi](../../images/halbachsenellipsoid.png)
+![Darstellung eines Rotationsellipsoid, @gisma verändert nach  @augpi](../images/halbachsenellipsoid.png)
 
 ![Bestimmung geographischer Koordinaten auf einem Rotationsellipsoid, @enix](https://upload.wikimedia.org/wikipedia/commons/3/36/Geographic_coordinates_sphere.png){width="50%"}
 
