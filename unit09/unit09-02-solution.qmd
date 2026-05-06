@@ -1,0 +1,220 @@
+---
+title: Lösungen Arbeitsblatt 2 - Geometrien und Attribute
+title-block-banner: ../assets/images/01-splash.jpg
+title-block-banner-color: black
+
+bibliography: ../assets/geoinfo.bib
+
+lang: de
+comments: false
+---
+## Lösungsbeschreibung Arbeitsblatt 2
+
+Diese Lösungsbeschreibung ist als Korrektur- und Lehrendenfassung gedacht. Die konkreten Zahlen hängen davon ab, ob die Datensätze vorher exakt auf die Ausdehnung des Luftbildes zugeschnitten wurden, welche POI-Layer einbezogen werden und wie uneinheitliche Schreibweisen behandelt werden. Bewertet werden daher nicht nur die Endzahlen, sondern vor allem die nachvollziehbare Wahl von Layern, Attributfeldern, Abfragebedingungen und räumlichen Auswahlwerkzeugen.
+
+Vor Beginn der Auswertung sollten alle Archivdateien entpackt und die benötigten Layer in QGIS geladen werden. Für alle Distanzabfragen muss geprüft werden, ob die Daten in einem metrischen Koordinatensystem vorliegen. Falls die Layer in geografischen Koordinaten vorliegen, sollten sie vor den Distanzabfragen in ein geeignetes metrisches CRS exportiert werden, für Marburg z. B. nach ETRS89 / UTM Zone 32N. Andernfalls sind Puffer- und Distanzwerte in Metern nicht belastbar.
+
+Für jede Teilfrage sollte dokumentiert werden:
+
+- verwendeter Layer
+- verwendetes Attributfeld
+- Art der Abfrage
+- verwendetes QGIS-Werkzeug
+- Anzahl der ausgewählten Objekte
+- kurze Plausibilitätskontrolle auf der Karte
+
+### Lösung zu Aufgabe 02-01
+
+In Aufgabe 02-01 werden ausschließlich thematische Abfragen durchgeführt. Die Auswahl erfolgt über Attributwerte, nicht über die räumliche Lage der Objekte.
+
+Geeignetes Werkzeug: **Attributtabelle → Objekte über Ausdruck wählen** oder ein entsprechender Filter über den Ausdruckseditor.
+
+#### 02-01.1 Ampeln
+
+Der passende POI- oder Verkehrslayer wird nach der Kategorie für Ampeln durchsucht. Maßgeblich ist das Attributfeld, in dem die OSM-Klasse gespeichert ist, typischerweise `fclass`.
+
+Die Abfrage wählt alle Objekte, deren Klassenwert `traffic_signals` entspricht. Anschließend wird die Anzahl der ausgewählten Objekte gezählt.
+
+Korrekturhinweis: Entscheidend ist, dass die Studierenden den richtigen Layer und das richtige Klassenfeld identifizieren. Falls mehrere Layer Ampelobjekte enthalten, muss die Auswahl der Datenbasis begründet werden.
+
+#### 02-01.2 Café und Bar
+
+Es werden alle Objekte ausgewählt, deren Klassenattribut auf Café oder Bar verweist. Dabei ist zu prüfen, ob die Werte in der Attributtabelle als `cafe`, `bar`, `pub`, `biergarten` oder in anderer Form vorkommen.
+
+Korrekturhinweis: Es ist fachlich zulässig, nur die im Aufgabentext genannten Kategorien zu zählen, wenn die Auswahl klar dokumentiert ist. Eine erweiterte Berücksichtigung ähnlicher Gastronomieklassen muss begründet werden.
+
+#### 02-01.3 Nicht Universität
+
+Es werden alle Objekte ausgewählt, deren Klassenwert nicht der Kategorie Universität entspricht.
+
+Korrekturhinweis: Hier ist wichtig, ob leere Werte mitgezählt oder ausgeschlossen werden. Beide Varianten können unterschiedliche Ergebnisse liefern. Die Entscheidung muss dokumentiert werden.
+
+#### 02-01.4 Name enthält „cafe“
+
+Es wird nicht nach der Objektklasse gesucht, sondern im Attribut `name`. Die Aufgabe prüft, ob Studierende zwischen Namen und Klassen unterscheiden können.
+
+Gesucht werden Objekte, bei denen der Name den Textbestandteil `cafe` enthält. Dabei sollten Groß-/Kleinschreibung und Schreibvarianten wie `café` beachtet werden.
+
+Korrekturhinweis: Exakte Namensgleichheit ist hier falsch, weil nach enthaltenem Text gesucht wird.
+
+#### 02-01.5 Name enthält „cafe“, aber Klasse ist nicht Café
+
+Diese Aufgabe kombiniert zwei thematische Bedingungen: Der Name enthält den Suchbegriff, die Objektklasse entspricht aber nicht der Kategorie Café.
+
+Korrekturhinweis: Die Aufgabe trennt Bezeichnung und Klassifikation. Ein Objekt kann im Namen „Cafe“ enthalten, ohne als Café klassifiziert zu sein.
+
+#### 02-01.6 Exakter Name „REWE“ und Typ „Supermarkt“
+
+Hier müssen beide Bedingungen gleichzeitig erfüllt sein. Gesucht werden nur Objekte, die exakt `REWE` heißen und zugleich als Supermarkt klassifiziert sind.
+
+Korrekturhinweis: Dies ist eine UND-Verknüpfung. Objekte, die nur eine der beiden Bedingungen erfüllen, dürfen nicht gezählt werden.
+
+#### 02-01.7 Exakter Name „REWE“ oder Typ „Supermarkt“
+
+Hier reicht es aus, wenn eine der beiden Bedingungen erfüllt ist. Gezählt werden Objekte mit exakt dem Namen `REWE` sowie Objekte vom Typ Supermarkt.
+
+Korrekturhinweis: Dies ist eine ODER-Verknüpfung. Die Ergebnismenge muss mindestens so groß sein wie bei der vorherigen UND-Abfrage.
+
+### Lösung zu Aufgabe 02-02
+
+In Aufgabe 02-02 werden thematische Abfragen mit räumlichen Beziehungen kombiniert. Es treten zwei verschiedene Typen räumlicher Abfragen auf:
+
+Topologische Abfragen prüfen Lagebeziehungen wie „liegt in“, „schneidet“ oder „enthält“.  
+Geometrische Abfragen verwenden Entfernungen, zum Beispiel 150 m, 250 m, 500 m oder 1 km.
+
+Geeignete Werkzeuge sind:
+
+- **Auswahl nach Position**
+- **Extraktion nach Position**
+- **Objekte innerhalb eines Abstands wählen**
+- **Objekte innerhalb eines Abstands extrahieren**
+- **Puffer**
+- anschließend ggf. erneute Attributabfragen
+
+Zwischenergebnisse können als temporäre Layer erzeugt und für eine dauerhafte Sicherung als GeoPackage exportiert werden.
+
+#### 02-02.1 POI in Waldflächen
+
+Die POI werden räumlich mit den Waldflächen verglichen. Geeignet ist eine Punkt-in-Polygon-Abfrage.
+
+Gezählt werden POI, die innerhalb der Waldflächen liegen oder die Waldflächen schneiden. Bei Punktdaten liefern `within` und `intersect` meist sehr ähnliche Ergebnisse; Unterschiede können bei Randlagen auftreten.
+
+Korrekturhinweis: Dies ist eine topologische Abfrage ohne Distanzwert.
+
+#### 02-02.2 POI maximal 150 m von Waldflächen entfernt
+
+Hier wird eine Distanzbedingung verwendet. Die POI werden danach ausgewählt, ob sie höchstens 150 m von einer Waldfläche entfernt liegen.
+
+Mögliche Lösungswege:
+
+- Auswahl innerhalb eines Abstands von 150 m
+- oder 150-m-Puffer um Waldflächen und anschließend räumliche Auswahl der POI im Puffer
+
+Korrekturhinweis: Dies ist eine geometrische Distanzabfrage. Ein metrisches CRS ist Voraussetzung.
+
+#### 02-02.3 Restaurants oder Bars maximal 150 m von Waldflächen entfernt
+
+Zuerst wird die thematische Grundmenge gebildet: Restaurants und Bars. Danach wird auf diese Auswahl die Distanzbedingung zu Waldflächen angewendet.
+
+Mögliche Reihenfolge:
+
+1. Gastronomieobjekte thematisch auswählen.
+2. Auswahl als Zwischenergebnis sichern.
+3. Distanzabfrage zu Waldflächen durchführen.
+4. Ergebnis zählen.
+
+Korrekturhinweis: Die Aufgabe kombiniert thematische und geometrische Abfrage.
+
+#### 02-02.4 Straßen durch Waldgebiete
+
+Die Straßen werden mit den Waldflächen räumlich verglichen. Da Straßen Linienobjekte sind, ist `intersect` die naheliegende räumliche Beziehung.
+
+Gezählt werden Straßenobjekte, die Waldflächen schneiden.
+
+Korrekturhinweis: Dies ist eine topologische Abfrage. Es geht nicht um Entfernung, sondern um tatsächliche räumliche Überschneidung.
+
+#### 02-02.5 POI maximal 500 m vom Marburger Bahnhof entfernt
+
+Zuerst muss der Bahnhof im passenden POI- oder ÖPNV-Layer identifiziert werden. Danach werden alle POI ausgewählt, die innerhalb von 500 m um diesen Bahnhof liegen.
+
+Mögliche Lösungswege:
+
+- Bahnhof auswählen und als eigenen Layer speichern.
+- 500-m-Puffer erzeugen.
+- POI innerhalb dieses Puffers auswählen.
+
+Oder direkt:
+
+- POI innerhalb eines Abstands von 500 m zum Bahnhof auswählen.
+
+Korrekturhinweis: Wichtig ist, dass wirklich der Marburger Bahnhof als Bezugspunkt verwendet wird und nicht alle Bahnhofs- oder Haltestellenobjekte.
+
+#### 02-02.6 Kneipen maximal 500 m von der nächsten Bushaltestelle entfernt
+
+Zuerst werden Kneipen bzw. passende Gastronomieobjekte thematisch ausgewählt. Danach werden Bushaltestellen als räumlicher Bezugslayer verwendet.
+
+Gezählt werden die ausgewählten Kneipen, die innerhalb von 500 m zu mindestens einer Bushaltestelle liegen.
+
+Korrekturhinweis: „nächste Bushaltestelle“ bedeutet hier: Es reicht, wenn mindestens eine Bushaltestelle innerhalb des angegebenen Abstandes liegt.
+
+#### 02-02.7 POI im Umkreis von maximal 250 m um Parkhäuser
+
+Zuerst werden Parkhäuser oder entsprechende Parkobjekte im passenden Layer identifiziert. Danach werden alle POI ausgewählt, die innerhalb von 250 m um diese Parkhausobjekte liegen.
+
+Korrekturhinweis: Vor der räumlichen Abfrage muss geklärt werden, welche Attributwerte im Datensatz Parkhäuser repräsentieren. Nicht jedes Parkobjekt ist zwingend ein Parkhaus.
+
+#### 02-02.8 POI mit Arzt oder Krankenhaus in weniger als 500 m Entfernung
+
+Zuerst werden Ärzte und Krankenhäuser im POI-Datensatz identifiziert. Diese dienen als Bezugspunkte. Danach werden alle POI ausgewählt, die weniger als 500 m von mindestens einem dieser medizinischen Objekte entfernt liegen.
+
+Korrekturhinweis: Die Formulierung „von wie vielen POI-Punkten aus“ bedeutet, dass die POI als Ausgangsmenge gezählt werden, nicht die Anzahl der Ärzte oder Krankenhäuser. Es sollte dokumentiert werden, ob die medizinischen POI selbst mitgezählt oder ausgeschlossen wurden.
+
+#### 02-02.9 Gastronomie weiter als 1 km vom Bahnhof und weniger als 1 km vom nächsten Briefkasten entfernt
+
+Diese Aufgabe kombiniert eine thematische Auswahl mit zwei räumlichen Distanzbedingungen.
+
+Möglicher Arbeitsablauf:
+
+1. Gastronomieobjekte als Grundmenge auswählen.
+2. Bahnhof als Bezugspunkt identifizieren.
+3. Gastronomieobjekte ausschließen, die innerhalb von 1 km um den Bahnhof liegen.
+4. Briefkästen als zweiten Bezugslayer identifizieren.
+5. Aus der verbleibenden Gastronomiemenge diejenigen auswählen, die weniger als 1 km von mindestens einem Briefkasten entfernt liegen.
+6. Ergebnis zählen.
+
+Korrekturhinweis: Die beiden Distanzbedingungen wirken unterschiedlich. Zum Bahnhof gilt eine Ausschlussbedingung: weiter als 1 km. Zum Briefkasten gilt eine Einschlussbedingung: weniger als 1 km. Beide Bedingungen müssen gleichzeitig erfüllt sein.
+
+### Bewertungshinweise
+
+Für die Bewertung sollte nicht allein die Endzahl herangezogen werden. Unterschiedliche Ergebnisse können entstehen durch:
+
+- unterschiedliche Vorauswahl der Layer
+- vorheriges Zuschneiden auf die Luftbildausdehnung
+- unterschiedliche Behandlung von Schreibvarianten
+- unterschiedliche Behandlung leerer Attributwerte
+- Wahl von `within` oder `intersect` bei Randfällen
+- Verwendung eines ungeeigneten CRS für Distanzabfragen
+- Einbezug oder Ausschluss von Zwischenergebnissen
+
+Eine Lösung ist fachlich tragfähig, wenn die verwendeten Layer, Felder, Abfragebedingungen und räumlichen Werkzeuge nachvollziehbar dokumentiert sind und die Karte eine plausible Ergebniskontrolle erlaubt.
+
+### Ergebnistabelle für die Abgabe oder Korrektur
+
+| Teilfrage | Verwendeter Layer | Abfragetyp | Werkzeug | Ergebniszahl | Bemerkung |
+|:---------|:------------------|:-----------|:---------|:-------------|:----------|
+| 02-01.1 | | thematisch | Ausdruckseditor | | |
+| 02-01.2 | | thematisch | Ausdruckseditor | | |
+| 02-01.3 | | thematisch | Ausdruckseditor | | |
+| 02-01.4 | | thematisch | Ausdruckseditor | | |
+| 02-01.5 | | thematisch kombiniert | Ausdruckseditor | | |
+| 02-01.6 | | UND-Abfrage | Ausdruckseditor | | |
+| 02-01.7 | | ODER-Abfrage | Ausdruckseditor | | |
+| 02-02.1 | | topologisch | Auswahl/Extraktion nach Position | | |
+| 02-02.2 | | geometrisch | Abstand/Puffer | | |
+| 02-02.3 | | thematisch + geometrisch | Ausdruck + Abstand/Puffer | | |
+| 02-02.4 | | topologisch | Auswahl/Extraktion nach Position | | |
+| 02-02.5 | | geometrisch | Abstand/Puffer | | |
+| 02-02.6 | | thematisch + geometrisch | Ausdruck + Abstand/Puffer | | |
+| 02-02.7 | | geometrisch | Abstand/Puffer | | |
+| 02-02.8 | | geometrisch | Abstand/Puffer | | |
+| 02-02.9 | | thematisch + zwei Distanzbedingungen | Ausdruck + Abstand/Puffer | | |

@@ -12,3 +12,4 @@ package.json
 unit04-04.qmd
 
 **/*.quarto_ipynb
+.positai
