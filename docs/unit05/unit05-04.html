@@ -152,11 +152,17 @@ window.Quarto = {
 <link rel="stylesheet" href="../css/styles.css">
 <meta property="og:title" content="Praxis: Multikriterienanalyse in QGIS – Grundlagenkurs GI-S (QGIS)">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit05/moe.png">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
+<meta property="og:image:height" content="1024">
+<meta property="og:image:width" content="1536">
 <meta name="twitter:title" content="Praxis: Multikriterienanalyse in QGIS – Grundlagenkurs GI-S (QGIS)">
 <meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit05/moe.png">
 <meta name="twitter:creator" content="@gisma">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="1024">
+<meta name="twitter:image-width" content="1536">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -682,7 +688,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../unit99/coming-soon.html" class="sidebar-item-text sidebar-link">
+  <a href="../unit99/unit99-01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">coming soon</span></a>
   </div>
 </li>
@@ -772,7 +778,15 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#exkurs-vorgehensweise-beim-analytic-hierarchy-process-ahp" id="toc-exkurs-vorgehensweise-beim-analytic-hierarchy-process-ahp" class="nav-link" data-scroll-target="#exkurs-vorgehensweise-beim-analytic-hierarchy-process-ahp">Exkurs Vorgehensweise beim Analytic Hierarchy Process (AHP)</a></li>
   </ul></li>
-  <li><a href="#ausblick-von-einem-ziel-zu-mehreren-zielen" id="toc-ausblick-von-einem-ziel-zu-mehreren-zielen" class="nav-link" data-scroll-target="#ausblick-von-einem-ziel-zu-mehreren-zielen">Ausblick: Von einem Ziel zu mehreren Zielen</a></li>
+  <li><a href="#die-multi-objective-evaluation-moe-von-einem-ziel-zu-mehreren-zielen" id="toc-die-multi-objective-evaluation-moe-von-einem-ziel-zu-mehreren-zielen" class="nav-link" data-scroll-target="#die-multi-objective-evaluation-moe-von-einem-ziel-zu-mehreren-zielen">Die Multi Objective Evaluation (MOE) Von einem Ziel zu mehreren Zielen</a></li>
+  <li><a href="#kostenanalyse-auf-werte--und-kostenoberflächen" id="toc-kostenanalyse-auf-werte--und-kostenoberflächen" class="nav-link" data-scroll-target="#kostenanalyse-auf-werte--und-kostenoberflächen">Kostenanalyse auf Werte- und Kostenoberflächen</a>
+  <ul class="collapse">
+  <li><a href="#von-der-eignung-zur-kostenoberfläche" id="toc-von-der-eignung-zur-kostenoberfläche" class="nav-link" data-scroll-target="#von-der-eignung-zur-kostenoberfläche">Von der Eignung zur Kostenoberfläche</a></li>
+  <li><a href="#aufbau-einer-kostenoberfläche" id="toc-aufbau-einer-kostenoberfläche" class="nav-link" data-scroll-target="#aufbau-einer-kostenoberfläche">Aufbau einer Kostenoberfläche</a></li>
+  <li><a href="#kumulative-kosten-und-kostenpfade" id="toc-kumulative-kosten-und-kostenpfade" class="nav-link" data-scroll-target="#kumulative-kosten-und-kostenpfade">Kumulative Kosten und Kostenpfade</a></li>
+  <li><a href="#konzeptuelle-umsetzung-in-qgis" id="toc-konzeptuelle-umsetzung-in-qgis" class="nav-link" data-scroll-target="#konzeptuelle-umsetzung-in-qgis">Konzeptuelle Umsetzung in QGIS</a></li>
+  <li><a href="#bezug-zur-wildkatzenanalyse" id="toc-bezug-zur-wildkatzenanalyse" class="nav-link" data-scroll-target="#bezug-zur-wildkatzenanalyse">Bezug zur Wildkatzenanalyse</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit05/unit05-04.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
     </div>
@@ -1171,21 +1185,269 @@ Datentyp: Raster</code></pre>
 0.56 + 0.26 + 0.12 + 0.06 = 1
 \]</span></p>
 <p>Diese Werte können anschließend direkt in der gewichteten Verschneidung verwendet werden:</p>
-<p>```qgis ( “walddichte_idx@1” * 0.56 + “siedlungsdistanz_idx@1” * 0.26 + “hangneigung_idx@1” * 0.12 + “exposition_idx@1” * 0.06 ) * “einschraenkung_mask@1”</p>
+<pre class="qgis"><code>(
+  "walddichte_idx@1" * 0.56 +
+  "siedlungsdistanz_idx@1" * 0.26 +
+  "hangneigung_idx@1" * 0.12 +
+  "exposition_idx@1" * 0.06
+)
+*
+"einschraenkung_mask@1"</code></pre>
 </section>
 </section>
-<section id="ausblick-von-einem-ziel-zu-mehreren-zielen" class="level2">
-<h2 class="anchored" data-anchor-id="ausblick-von-einem-ziel-zu-mehreren-zielen">Ausblick: Von einem Ziel zu mehreren Zielen</h2>
-<p>Die bisherige Übung behandelt eine MCE: Mehrere Kriterien werden für ein Ziel kombiniert. In Planungsfragen gibt es aber oft mehrere Ziele gleichzeitig. Dann spricht man von einer Multi Objective Evaluation (MOE).</p>
+<section id="die-multi-objective-evaluation-moe-von-einem-ziel-zu-mehreren-zielen" class="level2">
+<h2 class="anchored" data-anchor-id="die-multi-objective-evaluation-moe-von-einem-ziel-zu-mehreren-zielen">Die Multi Objective Evaluation (MOE) Von einem Ziel zu mehreren Zielen</h2>
+<p>Die bisherige Übung behandelt eine <strong>Multi Criteria Evaluation (MCE)</strong>. Dabei werden mehrere Kriterien für <strong>ein Ziel</strong> kombiniert. Im Wildkatzenbeispiel lautet dieses Ziel: potenziell geeignete Lebensräume für die Wildkatze identifizieren. Die einzelnen Kriterien wie Walddichte, Siedlungsnähe, Hangneigung, Exposition und Einschränkungsflächen werden also nur im Hinblick auf dieses eine Ziel bewertet.</p>
+<p>In realen Planungsfragen reicht das oft nicht aus. Eine Fläche kann aus Sicht des Naturschutzes geeignet sein, gleichzeitig aber auch für Erholung, Forstwirtschaft, Wegeplanung oder Umweltbildung beansprucht werden. Dann geht es nicht mehr nur darum, <strong>wo eine Fläche geeignet ist</strong>, sondern auch darum, <strong>für welches Ziel sie am besten geeignet ist</strong> und <strong>wo Zielkonflikte entstehen</strong>.</p>
 <p>Ein Beispiel wäre:</p>
 <ul>
 <li>Ziel A: geeignete Wildkatzenlebensräume sichern</li>
 <li>Ziel B: Erholungsnutzung ermöglichen</li>
 <li>Ziel C: forstliche Nutzung erhalten</li>
 </ul>
-<p>Solche Ziele können sich überlagern oder gegenseitig ausschließen. Dann reicht eine einfache Eignungskarte nicht mehr aus. Es müssen Zielkonflikte sichtbar gemacht und bewertet werden.</p>
+<p>Der methodische Schritt ist dabei einfach zu verstehen: Für jedes Ziel wird zunächst eine eigene Eignungskarte erstellt. Die Wildkatzenkarte bewertet Flächen nach Kriterien wie Deckung, Störungsarmut und Versiegelung. Eine Erholungskarte würde dagegen andere Kriterien verwenden, zum Beispiel Nähe zu Wegen, Erreichbarkeit, Aussichtspunkte oder geringe ökologische Empfindlichkeit. Eine forstliche Nutzungskarte würde wiederum Kriterien wie Erschließung, Hangneigung, Bestandsstruktur oder Bewirtschaftbarkeit berücksichtigen.</p>
+<p>Aus einer einzelnen Eignungskarte werden damit mehrere Eignungskarten:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ziel</th>
+<th>Beispielhafte Kriterien</th>
+<th>Ergebnis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Wildkatzenhabitat</td>
+<td>Walddichte, Siedlungsferne, geringe Versiegelung</td>
+<td>Eignungskarte A</td>
+</tr>
+<tr class="even">
+<td>Erholungsnutzung</td>
+<td>Wegnähe, Erreichbarkeit, landschaftliche Attraktivität</td>
+<td>Eignungskarte B</td>
+</tr>
+<tr class="odd">
+<td>Forstliche Nutzung</td>
+<td>Erschließung, Hangneigung, Bestandstyp</td>
+<td>Eignungskarte C</td>
+</tr>
+</tbody>
+</table>
+<p>Genau hier beginnt die <strong>Multi Objective Evaluation (MOE)</strong>. Sie fragt nicht mehr nur: <em>Welche Flächen sind geeignet?</em> Sie fragt zusätzlich: <em>Welche Flächen sind für mehrere Ziele gleichzeitig geeignet? Welche Ziele schließen sich aus? Und wo muss eine planerische Entscheidung getroffen werden?</em></p>
+<p>Besonders wichtig sind dabei Konfliktflächen. Eine Fläche kann zum Beispiel sowohl eine hohe Eignung als Wildkatzenlebensraum als auch eine hohe Eignung für Erholungsnutzung besitzen. Methodisch ist das kein Fehler, sondern ein wichtiges Ergebnis: Die Karte zeigt dann nicht nur Eignung, sondern auch Nutzungskonkurrenz.</p>
+<p>Eine einfache Konfliktlogik könnte so aussehen:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Eignung Ziel A</th>
+<th>Eignung Ziel B</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>hoch</td>
+<td>niedrig</td>
+<td>bevorzugt Ziel A</td>
+</tr>
+<tr class="even">
+<td>niedrig</td>
+<td>hoch</td>
+<td>bevorzugt Ziel B</td>
+</tr>
+<tr class="odd">
+<td>niedrig</td>
+<td>niedrig</td>
+<td>für beide Ziele wenig geeignet</td>
+</tr>
+<tr class="even">
+<td>hoch</td>
+<td>hoch</td>
+<td>potenzieller Zielkonflikt</td>
+</tr>
+</tbody>
+</table>
+<p>Für solche Konfliktflächen reicht eine reine Eignungskarte nicht mehr aus. Sie müssen sichtbar gemacht und anschließend fachlich oder politisch bewertet werden. GIS liefert also nicht automatisch die Entscheidung. Es macht aber transparent, <strong>wo</strong> Entscheidungen notwendig werden und <strong>welche Kriterien</strong> zu diesem Konflikt beitragen.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Merksatz">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Merksatz
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>MCE kombiniert mehrere Kriterien für ein Ziel. MOE vergleicht mehrere Ziele miteinander. Die eigentliche GIS-Logik bleibt ähnlich, aber die Interpretation ändert sich: Aus einer Eignungsanalyse wird eine Konflikt- und Abwägungsanalyse.</p>
+</div>
+</div>
+<p>Die folgende Abbildung zeigt dieses Prinzip für zwei sich teilweise ausschließende Nutzungsziele: Wildkatzenlebensraum und Erholungsnutzung.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit05/moe.png" class="img-fluid figure-img"></p>
+<figcaption>Konzept der Multi-Object-Evaluation (MOE) Die MOE macht sichtbar, wo Flächen eindeutig einem Ziel zugeordnet werden können und wo konkurrierende Eignungen auftreten. Gerade diese Konfliktflächen sind planerisch interessant, weil dort eine fachliche oder politische Abwägung notwendig wird.</figcaption>
+</figure>
+</div>
+</section>
+<section id="kostenanalyse-auf-werte--und-kostenoberflächen" class="level2">
+<h2 class="anchored" data-anchor-id="kostenanalyse-auf-werte--und-kostenoberflächen">Kostenanalyse auf Werte- und Kostenoberflächen</h2>
+<p>Die bisherigen Beispiele betrachten vor allem <strong>Eignung</strong>: Eine Rasterzelle erhält einen Wert dafür, wie gut sie zu einem Ziel passt. In vielen räumlichen Fragestellungen geht es aber nicht nur darum, ob ein Ort geeignet ist, sondern auch darum, wie groß der <strong>Aufwand</strong> ist, einen Ort zu erreichen, eine Verbindung herzustellen oder eine Maßnahme umzusetzen. Aus einer Eignungsanalyse wird dann eine Kosten- oder Widerstandsanalyse.</p>
+<p>Eine solche Kostenanalyse arbeitet ebenfalls mit Rasteroberflächen. Der Unterschied liegt in der Bedeutung der Werte: Bei einer Eignungskarte bedeuten hohe Werte meist „gut geeignet“. Bei einer Kostenoberfläche bedeuten hohe Werte dagegen „hoher Aufwand“, „geringe Durchlässigkeit“ oder „schlechte Erreichbarkeit“. Niedrige Werte stehen für geringe Kosten oder gute Durchlässigkeit.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit05/kosten.png" class="img-fluid figure-img"></p>
+<figcaption>Schema einer Kostenanalyse auf Werte- und Kostenoberflächen: Aus mehreren Kostentreibern wie Hangneigung, Landnutzung oder Siedlungsnähe wird zunächst eine Kostenoberfläche abgeleitet. Darauf können kumulative Kosten, minimale Kostenpfade und Erreichbarkeiten berechnet werden. Der Entscheidungsplot übersetzt die Ergebnisse in eine Abwägung zwischen Entfernung und Aufwand.</figcaption>
+</figure>
+</div>
+<section id="von-der-eignung-zur-kostenoberfläche" class="level3">
+<h3 class="anchored" data-anchor-id="von-der-eignung-zur-kostenoberfläche">Von der Eignung zur Kostenoberfläche</h3>
+<p>Die Vorgehensweise ähnelt der gewichteten Verschneidung. Zunächst werden mehrere Eingangsdaten ausgewählt, die den räumlichen Aufwand beeinflussen. Das können zum Beispiel Hangneigung, Landnutzung, Bodenbedeckung, Gewässer, Siedlungsbereiche, Schutzgebiete oder Wege sein. Diese Eingangsdaten werden anschließend so rek klassifiziert, dass sie einen Kostenwert ausdrücken.</p>
+<p>Beispiele:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Eingangsdaten</th>
+<th>Bedeutung als Kostenfaktor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Hangneigung</td>
+<td>steile Flächen verursachen höhere Bewegungskosten</td>
+</tr>
+<tr class="even">
+<td>Landnutzung</td>
+<td>Wald, Offenland, Siedlung oder Wasserflächen können unterschiedlich durchlässig sein</td>
+</tr>
+<tr class="odd">
+<td>Wege und Straßen</td>
+<td>können Bewegungskosten senken oder, je nach Fragestellung, Barrieren darstellen</td>
+</tr>
+<tr class="even">
+<td>Siedlungsnähe</td>
+<td>kann Störung, Risiko oder Aufwand erhöhen</td>
+</tr>
+<tr class="odd">
+<td>Gewässer</td>
+<td>können Barrieren oder Leitstrukturen sein</td>
+</tr>
+</tbody>
+</table>
+<p>Wichtig ist die einheitliche Richtung der Werte. Alle Raster müssen so skaliert werden, dass niedrige Werte geringe Kosten und hohe Werte hohe Kosten bedeuten.</p>
+</section>
+<section id="aufbau-einer-kostenoberfläche" class="level3">
+<h3 class="anchored" data-anchor-id="aufbau-einer-kostenoberfläche">Aufbau einer Kostenoberfläche</h3>
+<p>Aus den einzelnen Kostenfaktoren wird eine gemeinsame Kostenoberfläche berechnet. Dafür werden die standardisierten Kostenraster gewichtet und addiert:</p>
+<p><span class="math display">\[
+K = K_1 \cdot w_1 + K_2 \cdot w_2 + K_3 \cdot w_3 + \dots + K_n \cdot w_n
+\]</span></p>
+<p>Dabei steht <span class="math display">\[K\]</span> für die resultierende Kostenoberfläche, <span class="math display">\[K_1 \dots K_n\]</span> für die einzelnen Kostenfaktoren und <span class="math display">\[w_1 \dots w_n\]</span> für deren Gewichte.</p>
+<p>Ein einfaches Beispiel wäre:</p>
+<p><span class="math display">\[
+K =
+\text{Hangneigung} \cdot 0.4
++
+\text{Landnutzung} \cdot 0.4
++
+\text{Siedlungsnähe} \cdot 0.2
+\]</span></p>
+<p>Die resultierende Karte zeigt dann nicht die beste Eignung, sondern den räumlichen Widerstand. Eine Rasterzelle mit niedrigem Wert ist leicht passierbar oder günstig erreichbar. Eine Rasterzelle mit hohem Wert ist schwer passierbar oder mit hohem Aufwand verbunden.</p>
+</section>
+<section id="kumulative-kosten-und-kostenpfade" class="level3">
+<h3 class="anchored" data-anchor-id="kumulative-kosten-und-kostenpfade">Kumulative Kosten und Kostenpfade</h3>
+<p>Auf Grundlage einer Kostenoberfläche kann berechnet werden, wie teuer oder aufwendig es ist, sich von einem Ausgangspunkt durch den Raum zu bewegen. Dabei zählt nicht nur die Luftlinienentfernung, sondern der aufsummierte Aufwand entlang des Weges.</p>
+<p>Die kumulativen Kosten zu einer Zielzelle ergeben sich vereinfacht als Summe der Kostenwerte entlang eines Pfades:</p>
+<p><span class="math display">\[
+C_{\text{Pfad}} = \sum_i K_i
+\]</span></p>
+<p>Ein minimaler Kostenpfad ist dann der Pfad mit der geringsten aufsummierten Kostenlast:</p>
+<p><span class="math display">\[
+C_{\text{min}} = \min \left( \sum_i K_i \right)
+\]</span></p>
+<p>Damit kann eine Fläche, die in Luftlinie nahe liegt, trotzdem schwer erreichbar sein, wenn der Weg dorthin über steile Hänge, Barrieren oder hoch bewertete Widerstandsflächen führt. Umgekehrt kann ein etwas längerer Weg günstiger sein, wenn er durch gut passierbare Bereiche verläuft.</p>
+</section>
+<section id="konzeptuelle-umsetzung-in-qgis" class="level3">
+<h3 class="anchored" data-anchor-id="konzeptuelle-umsetzung-in-qgis">Konzeptuelle Umsetzung in QGIS</h3>
+<p>In QGIS wird eine Kostenanalyse meist in mehreren Schritten aufgebaut. Zuerst werden die Eingangsdaten in Kostenraster übersetzt. Danach werden diese Raster zu einer Kostenoberfläche kombiniert. Anschließend können kumulative Kosten oder minimale Kostenpfade berechnet werden.</p>
+<p>Typische Arbeitsschritte sind:</p>
+<ol type="1">
+<li>Kostentreiber auswählen, zum Beispiel Hangneigung, Landnutzung, Wege, Gewässer oder Siedlungsnähe.</li>
+<li>Alle Eingangsdaten in Rasterdaten mit gleicher Zellgröße, Ausdehnung und Projektion überführen.</li>
+<li>Eingangsdaten rek klassifizieren, sodass niedrige Werte geringe Kosten und hohe Werte hohe Kosten bedeuten.</li>
+<li>Kostenraster gewichten und im Rasterrechner zu einer Kostenoberfläche kombinieren.</li>
+<li>Ausgangspunkte oder Zielpunkte festlegen.</li>
+<li>Kumulative Kosten und minimale Kostenpfade berechnen.</li>
+<li>Ergebnisse interpretieren und gegebenenfalls mit Eignungskarten oder Zielkonflikten kombinieren.</li>
+</ol>
+<p>Geeignete QGIS-Werkzeuge sind:</p>
+<ul>
+<li><strong>Rasterisieren (Vektor nach Raster)</strong>: wandelt Vektordaten in Rasterdaten um.</li>
+<li><strong>Hangneigung</strong>: leitet aus dem DGM einen Kostenfaktor für Steilheit ab.</li>
+<li><strong>Nähe / Rasterdistanz</strong>: berechnet Distanzraster zu Wegen, Siedlungen oder Barrieren.</li>
+<li><strong>Reklassifizieren nach Tabelle</strong>: übersetzt Eingangswerte in Kostenwerte.</li>
+<li><strong>Rasterrechner</strong>: kombiniert mehrere Kostenraster zu einer Kostenoberfläche.</li>
+<li><strong>Raster ausrichten</strong>: vereinheitlicht Zellgröße, Ausdehnung und Rasterlage.</li>
+<li><strong>GRASS <code>r.cost</code></strong>: berechnet kumulative Kosten auf einer Kostenoberfläche.</li>
+<li><strong>GRASS <code>r.walk</code></strong>: berechnet bewegungsbezogene Kosten unter Berücksichtigung von Gelände und Hangneigung.</li>
+<li><strong>Kürzester Pfad / Least-cost path</strong>: leitet aus den kumulativen Kosten einen minimalen Kostenpfad ab.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Merksatz">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Merksatz
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Eignungskarten zeigen, wo etwas günstig oder geeignet ist. Kostenoberflächen zeigen, wie aufwendig es ist, sich durch den Raum zu bewegen oder ein Ziel zu erreichen. Beide Ansätze können kombiniert werden: Eine Fläche kann ökologisch geeignet sein, aber nur mit hohen Kosten erreichbar oder stark durch Barrieren getrennt.</p>
+</div>
+</div>
+</section>
+<section id="bezug-zur-wildkatzenanalyse" class="level3">
+<h3 class="anchored" data-anchor-id="bezug-zur-wildkatzenanalyse">Bezug zur Wildkatzenanalyse</h3>
+<p>Für das Wildkatzenbeispiel kann eine Kostenoberfläche genutzt werden, um Durchlässigkeit und mögliche Bewegungsräume zu modellieren. Niedrige Kosten könnten deckungsreiche Waldflächen, Gehölzstrukturen oder störungsarme Bereiche erhalten. Hohe Kosten könnten Siedlungen, stark befahrene Straßen, offene ausgeräumte Flächen oder andere Barrieren erhalten.</p>
+<p>Damit verschiebt sich die Fragestellung:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Eignungsanalyse</th>
+<th>Kostenanalyse</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Wo sind potenziell geeignete Lebensräume?</td>
+<td>Wie gut sind geeignete Lebensräume miteinander verbunden?</td>
+</tr>
+<tr class="even">
+<td>Welche Flächen erfüllen Habitatkriterien?</td>
+<td>Welche Wege durch die Landschaft verursachen geringe oder hohe Bewegungskosten?</td>
+</tr>
+<tr class="odd">
+<td>Ergebnis: Eignungskarte</td>
+<td>Ergebnis: Kostenoberfläche, kumulative Kosten, Kostenpfad</td>
+</tr>
+</tbody>
+</table>
+<p>Eine Kostenanalyse ergänzt also die Eignungsanalyse. Sie beantwortet nicht nur, <strong>wo</strong> geeignete Flächen liegen, sondern auch, <strong>wie</strong> diese Flächen im Raum miteinander verbunden sind.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

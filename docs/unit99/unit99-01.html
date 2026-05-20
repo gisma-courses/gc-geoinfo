@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Rasterbasierte räumliche Analysemethoden – Grundlagenkurs GI-S (QGIS)</title>
+<title>Dokumentation und Reproduzierbarkeit in QGIS – Grundlagenkurs GI-S (QGIS)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,42 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,7 +64,6 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../unit04/unit04-02.html" rel="next">
 <link href="..//images/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -106,7 +120,7 @@ div.csl-indent {
 
       .quarto-title-block .quarto-title-banner {
         color: black;
-background-image: url(../assets/images/splash_L03.png);
+background-image: url(../assets/images/splash_L04.png);
 background-size: cover;
       }
 </style>
@@ -141,10 +155,10 @@ background-size: cover;
 
 
 <link rel="stylesheet" href="../css/styles.css">
-<meta property="og:title" content="Rasterbasierte räumliche Analysemethoden – Grundlagenkurs GI-S (QGIS)">
+<meta property="og:title" content="Dokumentation und Reproduzierbarkeit in QGIS – Grundlagenkurs GI-S (QGIS)">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
-<meta name="twitter:title" content="Rasterbasierte räumliche Analysemethoden – Grundlagenkurs GI-S (QGIS)">
+<meta name="twitter:title" content="Dokumentation und Reproduzierbarkeit in QGIS – Grundlagenkurs GI-S (QGIS)">
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@gisma">
 <meta name="twitter:card" content="summary">
@@ -368,7 +382,7 @@ background-size: cover;
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Rasterbasierte räumliche Analysemethoden</h1>
+          <h1 class="quarto-secondary-nav-title">Dokumentation und Reproduzierbarkeit in QGIS</h1>
         </a>     
     </div>
   </nav>
@@ -377,7 +391,7 @@ background-size: cover;
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">Rasterbasierte räumliche Analysemethoden</h1>
+      <h1 class="title d-none d-lg-block">Dokumentation und Reproduzierbarkeit in QGIS</h1>
                       </div>
   </div>
     
@@ -586,16 +600,16 @@ background-size: cover;
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Reader Räumliche Datenanalyse</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../unit04/unit04-01.html" class="sidebar-item-text sidebar-link active">
+  <a href="../unit04/unit04-01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Räumliche Analysemethoden</span></a>
   </div>
 </li>
@@ -664,16 +678,16 @@ background-size: cover;
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Reader Automatisierung von Arbeitsabläufen in QGIS</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../unit99/unit99-01.html" class="sidebar-item-text sidebar-link">
+  <a href="../unit99/unit99-01.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">coming soon</span></a>
   </div>
 </li>
@@ -749,11 +763,19 @@ background-size: cover;
     <h2 id="toc-title">Inhalt</h2>
    
   <ul>
-  <li><a href="#räumliche-abfrage---räumliche-analyse" id="toc-räumliche-abfrage---räumliche-analyse" class="nav-link active" data-scroll-target="#räumliche-abfrage---räumliche-analyse">Räumliche Abfrage - räumliche Analyse?</a></li>
-  <li><a href="#räumliche-analysen-in-der-geographie" id="toc-räumliche-analysen-in-der-geographie" class="nav-link" data-scroll-target="#räumliche-analysen-in-der-geographie">Räumliche Analysen in der Geographie</a></li>
-  <li><a href="#lernziele" id="toc-lernziele" class="nav-link" data-scroll-target="#lernziele">Lernziele</a></li>
+  <li><a href="#warum-dokumentation-in-qgis-wichtig-ist" id="toc-warum-dokumentation-in-qgis-wichtig-ist" class="nav-link active" data-scroll-target="#warum-dokumentation-in-qgis-wichtig-ist">Warum Dokumentation in QGIS wichtig ist</a></li>
+  <li><a href="#drei-ebenen-der-dokumentation" id="toc-drei-ebenen-der-dokumentation" class="nav-link" data-scroll-target="#drei-ebenen-der-dokumentation">Drei Ebenen der Dokumentation</a></li>
+  <li><a href="#verarbeitungsverlauf" id="toc-verarbeitungsverlauf" class="nav-link" data-scroll-target="#verarbeitungsverlauf">Verarbeitungsverlauf</a></li>
+  <li><a href="#grafischer-modellierer-modelldesigner" id="toc-grafischer-modellierer-modelldesigner" class="nav-link" data-scroll-target="#grafischer-modellierer-modelldesigner">Grafischer Modellierer / Modelldesigner</a></li>
+  <li><a href="#verarbeitungsskripte" id="toc-verarbeitungsskripte" class="nav-link" data-scroll-target="#verarbeitungsskripte">Verarbeitungsskripte</a></li>
+  <li><a href="#projektdatei-und-layouts" id="toc-projektdatei-und-layouts" class="nav-link" data-scroll-target="#projektdatei-und-layouts">Projektdatei und Layouts</a></li>
+  <li><a href="#mindeststandard-für-eine-dokumentierte-gis-analyse" id="toc-mindeststandard-für-eine-dokumentierte-gis-analyse" class="nav-link" data-scroll-target="#mindeststandard-für-eine-dokumentierte-gis-analyse">Mindeststandard für eine dokumentierte GIS-Analyse</a></li>
+  <li><a href="#beispiel-dokumentation-eines-reklassifikationsschritts" id="toc-beispiel-dokumentation-eines-reklassifikationsschritts" class="nav-link" data-scroll-target="#beispiel-dokumentation-eines-reklassifikationsschritts">Beispiel: Dokumentation eines Reklassifikationsschritts</a></li>
+  <li><a href="#beispiel-dokumentation-eines-rasterrechner-ausdrucks" id="toc-beispiel-dokumentation-eines-rasterrechner-ausdrucks" class="nav-link" data-scroll-target="#beispiel-dokumentation-eines-rasterrechner-ausdrucks">Beispiel: Dokumentation eines Rasterrechner-Ausdrucks</a></li>
+  <li><a href="#empfohlener-workflow-für-die-übung" id="toc-empfohlener-workflow-für-die-übung" class="nav-link" data-scroll-target="#empfohlener-workflow-für-die-übung">Empfohlener Workflow für die Übung</a></li>
+  <li><a href="#weiterführende-qgis-dokumentation" id="toc-weiterführende-qgis-dokumentation" class="nav-link" data-scroll-target="#weiterführende-qgis-dokumentation">Weiterführende QGIS-Dokumentation</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit04/unit04-01.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit99/unit99-01.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -763,52 +785,461 @@ background-size: cover;
 
 
 
-<p>Die Motivation, GI-S in der Geographie einzusetzen, ist vielfältig. Zunächst kann es jedoch als grundlegendes Selbstverständnis einer quantitativ denkenden Wissenschaftsdisziplin angesehen werden, eine transparente, d.h. belegbare und nachvollziehbare Basis für raumbezogene Informationen zu schaffen. Da nicht nur aus konzeptionellen, sondern auch aus praktischen Gründen Daten (und damit Wissen) immer unvollständig sind, ist die Verbesserung dieser lückenhaften Daten ein wichtiger und oft grundlegender Schritt in Richtung Wissen und Information.</p>
-<p>Wir haben bisher thematische (oder semantische), räumliche und zeitliche Beziehungen (und Abfragen) kennen gelernt. Räumliche Relationen können unterteilt werden in: topologische Relationen und Entfernungsrelationen. Bei Abfragen in Relationen haben uns nicht nur die Eigenschaften der untersuchten Objekte interessiert, sondern vor allem die verschiedenen Möglichkeiten, diese Parameter miteinander zu verknüpfen. Neben den Lagebeziehungen stellen vor allem die Distanzbeziehungen quantitative Methoden zur Verfügung, um räumlich ähnliche Merkmalsausprägungen abzugrenzen oder auch fehlende räumliche Informationen durch Interpolation zu ergänzen.</p>
-<section id="räumliche-abfrage---räumliche-analyse" class="level3">
-<h3 class="anchored" data-anchor-id="räumliche-abfrage---räumliche-analyse">Räumliche Abfrage - räumliche Analyse?</h3>
-<p>Bei der Verwendung von GI-Systemen unterscheiden sich räumliche Analysen und Abfragen nur durch den Grad der Komplexität und deren Auswirkung auf die Datenbasis. Von räumlichen Analysen spricht man, wenn funktionale Zusammenhänge in gekoppelte bzw. verschachtelte Abfragen eingebaut werden und die Ergebnisse physisch als eigener Datensatz in die Datenbank eingespeist werden. Die verschiedenen Methoden der räumlichen Analyse sind nicht erst mit der Entwicklung von GI-Systemen entstanden. Viele Verfahren wurden bereits frühzeitig und oft völlig unabhängig von GI-Systemen entwickelt und erst später in die GIS-Software integriert. Aber erst durch die zunehmende Verbreitung und nutzerorientierte Weiterentwicklung von GIS-Software ist das Methodenspektrum der räumlichen Analyse effizient und effektiv nutzbar geworden. Dies nicht zuletzt deshalb, weil heutige GI-Systeme auch die weiteren notwendigen Dienste wie Datenerfassung, Datenverwaltung oder Visualisierung anbieten.</p>
-</section>
-<section id="räumliche-analysen-in-der-geographie" class="level3">
-<h3 class="anchored" data-anchor-id="räumliche-analysen-in-der-geographie">Räumliche Analysen in der Geographie</h3>
-<p>Die Wurzeln der räumlichen Analyse reichen weit zurück. Der Reader von <span class="citation" data-cites="berry1968">Berry und Marble (<a href="#ref-berry1968" role="doc-biblioref">1968</a>)</span> enthält eine Auswahl früher Artikel, die sich mit Anwendungen der räumlichen Statistik und der quantitativen räumlichen Analyse beschäftigen. Die Ansätze reichen teilweise bis in die 1930er Jahre zurück, konzentrieren sich aber vor allem auf eine erste fruchtbare Periode in den 1950er und 1960er Jahren. Die Bereitschaft, statistische und andere quantitative Methoden zur Analyse räumlicher Muster und Prozesse einzusetzen, war vor allem in den Raumwissenschaften ausgeprägt, die die Beschreibung und Erklärung räumlicher Muster und Prozesse als zentralen wissenschaftlichen Gegenstand haben wie etwa der Landschaftsökologie <span class="citation" data-cites="turner2003">(vgl. z.B. <a href="#ref-turner2003" role="doc-biblioref">Turner, Gardner, und O’Neill 2003</a>)</span>.</p>
-<p>In der deutschsprachigen Geographie ist die quantitative Analyse räumlicher Phänomene eng mit dem durch studentische Initiativen forcierten Paradigmenwechsel des “Kieler Geographentages” 1969 verbunden <span class="citation" data-cites="monheim1999">(<a href="#ref-monheim1999" role="doc-biblioref">Monheim und Schwarte 1999</a>)</span>. Die zentralen Publikationen von <span class="citation" data-cites="bartels1968">Bartels (<a href="#ref-bartels1968" role="doc-biblioref">1968</a>)</span> und <span class="citation" data-cites="hard1970a">Gerhard Hard (<a href="#ref-hard1970a" role="doc-biblioref">1970</a>)</span> stehen stellvertretend für diese entscheidende und bis heute wirksame Zäsur in der Geographie. Während in der allgemeinen Lehre bis heute von <strong><em>Landschaften</em></strong> gesprochen wird, ist seit den 1980er Jahren im Zuge der Durchsetzung von GI-Science als integrativer Arbeitsplattform eine zunehmende Konvergenz der verwendeten raumanalytischen Methoden in den an der Entwicklung der GIS-Technologie beteiligten Wissenschaften zu beobachten. Dies lässt sich z.B. an dem allgemein als Grundlage anerkannten Lehrbuch von <span class="citation" data-cites="bill2008">Bill (<a href="#ref-bill2008" role="doc-biblioref">2008</a>)</span> nachvollziehen.</p>
-</section>
-<section id="lernziele" class="level3">
-<h3 class="anchored" data-anchor-id="lernziele">Lernziele</h3>
+<section id="warum-dokumentation-in-qgis-wichtig-ist" class="level2">
+<h2 class="anchored" data-anchor-id="warum-dokumentation-in-qgis-wichtig-ist">Warum Dokumentation in QGIS wichtig ist</h2>
+<p>Bei einer Multikriterienanalyse entsteht das Ergebnis nicht durch einen einzelnen Arbeitsschritt. Die Karte ist das Ergebnis vieler Entscheidungen: Welche Eingangsdaten wurden verwendet? Wie wurden sie zugeschnitten, rasterisiert, reklassifiziert, gewichtet und miteinander verrechnet? Welche Zellgröße wurde gewählt? Welche Flächen wurden ausgeschlossen? Welche Schwellenwerte wurden gesetzt?</p>
+<p>Genau deshalb reicht es nicht, am Ende nur die fertige Karte abzugeben. Eine Eignungskarte, eine Kostenoberfläche oder eine Konfliktkarte ist nur dann fachlich nachvollziehbar, wenn auch der Weg dorthin dokumentiert ist.</p>
+<p>QGIS bietet dafür mehrere Möglichkeiten:</p>
 <ul>
-<li>Sie verstehen das Prinzip der Ableitung räumlicher Informationen durch mathematische oder thematische Transformation von Primärdaten.</li>
-<li>Sie kennen die unterschiedlichen Abstandsbeziehungen zwischen den verschiedenen geometrischen Primitiven (Punkte, Linien, Polygone).</li>
-<li>Sie verstehen das Prinzip der Pufferung und der Distanztransformation.</li>
-<li>Sie erhalten einen Überblick über die wichtigsten Möglichkeiten der räumlichen Analyse.</li>
-<li>Sie erwerben die Fähigkeit, räumliche Ableitungen aus Primärdaten zu erstellen und geographisch zu interpretieren.</li>
-<li>Sie lernen, wie räumlich wirksame Prozesskonzepte in Ihre Analysen integriert werden können.</li>
+<li>den <strong>Verarbeitungsverlauf</strong> als Protokoll ausgeführter Werkzeuge,</li>
+<li>den <strong>grafischen Modellierer / Modelldesigner</strong> für wiederholbare Verarbeitungsketten,</li>
+<li><strong>Verarbeitungsskripte</strong> für automatisierte und textlich dokumentierte Workflows,</li>
+<li>die <strong>Projektdatei</strong> mit Layern, Symbolisierung, Layouts und Datenquellen,</li>
+<li>ergänzende <strong>Methodennotizen</strong>, in denen fachliche Entscheidungen begründet werden.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Kernidee">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Kernidee
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Dokumentation bedeutet nicht nur: „Welche Knöpfe wurden gedrückt?“ Entscheidend ist, welche fachlichen Entscheidungen in den GIS-Workflow eingebaut wurden. Bei einer Multikriterienanalyse betrifft das vor allem Kriterienauswahl, Reklassifikation, Gewichtung, Einschränkungen und Interpretation.</p>
+</div>
+</div>
+</section>
+<section id="drei-ebenen-der-dokumentation" class="level2">
+<h2 class="anchored" data-anchor-id="drei-ebenen-der-dokumentation">Drei Ebenen der Dokumentation</h2>
+<p>QGIS kann Arbeitsabläufe auf unterschiedlichen Ebenen dokumentieren. Diese Ebenen ersetzen sich nicht gegenseitig, sondern ergänzen sich.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ebene</th>
+<th>Was wird dokumentiert?</th>
+<th>Stärke</th>
+<th>Grenze</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Verarbeitungsverlauf</td>
+<td>ausgeführte Processing-Werkzeuge mit Parametern</td>
+<td>schnell verfügbar, gut für Einzelwerkzeuge</td>
+<td>dokumentiert nicht automatisch alle manuellen Entscheidungen</td>
+</tr>
+<tr class="even">
+<td>Grafischer Modellierer</td>
+<td>Verarbeitungskette aus mehreren Werkzeugen</td>
+<td>gut für wiederholbare Workflows</td>
+<td>fachliche Begründung muss zusätzlich erklärt werden</td>
+</tr>
+<tr class="odd">
+<td>Skript</td>
+<td>vollständige Verarbeitung als Code</td>
+<td>sehr reproduzierbar und versionierbar</td>
+<td>setzt mehr technisches Verständnis voraus</td>
+</tr>
+<tr class="even">
+<td>Projektdatei</td>
+<td>Layer, Darstellungen, Layouts, Datenquellen</td>
+<td>wichtig für Kartendarstellung und Abgabe</td>
+<td>ersetzt kein Methodenprotokoll</td>
+</tr>
+<tr class="odd">
+<td>Methodentext</td>
+<td>Kriterien, Schwellenwerte, Gewichte, Interpretation</td>
+<td>fachlich zentral</td>
+<td>muss bewusst geschrieben werden</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="verarbeitungsverlauf" class="level2">
+<h2 class="anchored" data-anchor-id="verarbeitungsverlauf">Verarbeitungsverlauf</h2>
+<p>Der <strong>Verarbeitungsverlauf</strong> protokolliert Werkzeuge, die über die QGIS-Verarbeitungswerkzeuge ausgeführt wurden. Dazu gehören zum Beispiel <code>Rasterisieren</code>, <code>Hangneigung</code>, <code>Rasterrechner</code>, <code>Reklassifizieren nach Tabelle</code> oder <code>Nähe / Rasterdistanz</code>.</p>
+<p>Der Verlauf ist besonders nützlich, wenn ein einzelner Schritt nachvollzogen oder wiederholt werden soll. Viele Einträge lassen sich erneut öffnen, sodass die verwendeten Parameter sichtbar werden. Außerdem können Verarbeitungsschritte als Python-Befehl oder als <code>qgis_process</code>-Befehl kopiert werden.</p>
+<p>Typische Nutzung:</p>
+<ol type="1">
+<li>Werkzeug ausführen.</li>
+<li>Verarbeitungsverlauf öffnen.</li>
+<li>Eintrag kontrollieren.</li>
+<li>Parameter in das Methodenprotokoll übernehmen.</li>
+<li>Bei Bedarf Befehl als Python- oder <code>qgis_process</code>-Befehl kopieren.</li>
+</ol>
+<div class="callout callout-style-default callout-warning callout-titled" title="Grenze des Verarbeitungsverlaufs">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warnung</span>Grenze des Verarbeitungsverlaufs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Der Verarbeitungsverlauf ist kein vollständiges Forschungstagebuch. Er dokumentiert vor allem ausgeführte Processing-Werkzeuge. Manuelle Entscheidungen wie Layerauswahl, visuelle Kontrolle, Umbenennungen, Symbolisierung, Interpretation oder die fachliche Begründung von Schwellenwerten müssen zusätzlich beschrieben werden.</p>
+</div>
+</div>
+<p>Für eine Multikriterienanalyse sollten aus dem Verlauf mindestens folgende Informationen übernommen werden:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Dokumentationspunkt</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Werkzeugname</td>
+<td><code>Reklassifizieren nach Tabelle</code></td>
+</tr>
+<tr class="even">
+<td>Eingangsdaten</td>
+<td><code>siedlungsdistanz.tif</code></td>
+</tr>
+<tr class="odd">
+<td>Parameter</td>
+<td>Distanzklassen und Zielwerte</td>
+</tr>
+<tr class="even">
+<td>Ausgabe</td>
+<td><code>siedlungsdistanz_idx.tif</code></td>
+</tr>
+<tr class="odd">
+<td>Zweck</td>
+<td>Standardisierung des Störungskriteriums</td>
+</tr>
+<tr class="even">
+<td>fachliche Annahme</td>
+<td>größere Siedlungsferne = höhere Eignung</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="grafischer-modellierer-modelldesigner" class="level2">
+<h2 class="anchored" data-anchor-id="grafischer-modellierer-modelldesigner">Grafischer Modellierer / Modelldesigner</h2>
+<p>Der <strong>grafische Modellierer</strong> ist sinnvoll, wenn mehrere Verarbeitungsschritte immer wieder in derselben Reihenfolge ausgeführt werden sollen. Aus einzelnen Werkzeugen wird ein Modell gebaut. Dieses Modell kann gespeichert, erneut ausgeführt und auf andere Eingangsdaten angewendet werden.</p>
+<p>Für die Wildkatzenanalyse könnte ein Modell zum Beispiel folgende Schritte enthalten:</p>
+<ol type="1">
+<li>DGM zuschneiden.</li>
+<li>Hangneigung berechnen.</li>
+<li>Exposition berechnen.</li>
+<li>Siedlungsflächen rasterisieren.</li>
+<li>Distanz zur Siedlung berechnen.</li>
+<li>Kriterien reklassifizieren.</li>
+<li>Kriterien gewichten und addieren.</li>
+<li>Einschränkungsmaske anwenden.</li>
+<li>Eignungskarte ausgeben.</li>
+</ol>
+<p>Der Vorteil liegt darin, dass die Verarbeitungskette sichtbar wird. Das Modell zeigt nicht nur das Ergebnis, sondern auch die logische Abfolge der Analyse.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Didaktischer Vorteil">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Didaktischer Vorteil
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Der grafische Modellierer ist besonders geeignet, um Schülerinnen und Studierenden zu zeigen, dass eine GIS-Karte aus einer Kette nachvollziehbarer Operationen entsteht. Die Karte erscheint dann nicht als fertiges Bild, sondern als Ergebnis eines dokumentierten Modells.</p>
+</div>
+</div>
+<p>Ein Modell sollte immer zusätzlich beschrieben werden:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Modellelement</th>
+<th>Dokumentation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Eingaben</td>
+<td>Welche Layer werden benötigt?</td>
+</tr>
+<tr class="even">
+<td>Verarbeitungsschritte</td>
+<td>Welche Werkzeuge werden in welcher Reihenfolge genutzt?</td>
+</tr>
+<tr class="odd">
+<td>Parameter</td>
+<td>Welche Zellgröße, Schwellenwerte und Klassengrenzen werden verwendet?</td>
+</tr>
+<tr class="even">
+<td>Ausgaben</td>
+<td>Welche Raster oder Vektordaten entstehen?</td>
+</tr>
+<tr class="odd">
+<td>fachliche Begründung</td>
+<td>Warum sind diese Schritte für die Fragestellung sinnvoll?</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="verarbeitungsskripte" class="level2">
+<h2 class="anchored" data-anchor-id="verarbeitungsskripte">Verarbeitungsskripte</h2>
+<p>Skripte sind die stärkste Form der technischen Reproduzierbarkeit. Ein Skript beschreibt den Ablauf nicht grafisch, sondern als Code. In QGIS können Processing-Werkzeuge auch über Python beziehungsweise PyQGIS aufgerufen werden.</p>
+<p>Ein Verarbeitungsschritt kann dann zum Beispiel so aussehen:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>processing.run(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"gdal:slope"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"INPUT"</span>: <span class="st">"dgm.tif"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"BAND"</span>: <span class="dv">1</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"SCALE"</span>: <span class="dv">1</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"AS_PERCENT"</span>: <span class="va">False</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"OUTPUT"</span>: <span class="st">"hangneigung.tif"</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Für den Einstieg ist es nicht notwendig, alle Arbeitsschritte selbst zu programmieren. Ein praktischer Zwischenweg ist:</p>
+<ol type="1">
+<li>Werkzeug zunächst normal in QGIS ausführen.</li>
+<li>Befehl aus dem Verarbeitungsverlauf kopieren.</li>
+<li>Befehl in ein Skript übernehmen.</li>
+<li>Dateipfade, Parameter und Ausgaben sauber benennen.</li>
+<li>Skript zusammen mit dem Projekt ablegen.</li>
+</ol>
+<p>Skripte sind besonders nützlich, wenn ein Workflow mehrfach mit anderen Daten, anderen Gebieten oder anderen Gewichtungen ausgeführt werden soll.</p>
+</section>
+<section id="projektdatei-und-layouts" class="level2">
+<h2 class="anchored" data-anchor-id="projektdatei-und-layouts">Projektdatei und Layouts</h2>
+<p>Die QGIS-Projektdatei dokumentiert einen anderen Teil des Workflows. Sie speichert unter anderem, welche Layer eingebunden sind, wie sie dargestellt werden, welche Kartenlayouts angelegt wurden und auf welche Datenquellen verwiesen wird.</p>
+<p>Für eine Abgabe sollte die Projektdatei deshalb nicht zufällig entstehen, sondern bewusst organisiert werden:</p>
+<ul>
+<li>sinnvolle Layernamen verwenden,</li>
+<li>temporäre Layer vermeiden,</li>
+<li>Zwischenergebnisse eindeutig benennen,</li>
+<li>finale Ergebnisse in einem eigenen Ordner speichern,</li>
+<li>Symbolisierung nachvollziehbar gestalten,</li>
+<li>Layouts mit Titel, Legende, Maßstab, Nordpfeil, Quellen und Datum versehen.</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled" title="Temporäre Dateien vermeiden">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warnung</span>Temporäre Dateien vermeiden
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Viele QGIS-Werkzeuge erzeugen standardmäßig temporäre Ausgaben. Für eine dokumentierte Analyse sollten wichtige Zwischenergebnisse und Endergebnisse immer explizit gespeichert werden. Sonst lässt sich der Workflow später oft nicht mehr vollständig nachvollziehen.</p>
+</div>
+</div>
+</section>
+<section id="mindeststandard-für-eine-dokumentierte-gis-analyse" class="level2">
+<h2 class="anchored" data-anchor-id="mindeststandard-für-eine-dokumentierte-gis-analyse">Mindeststandard für eine dokumentierte GIS-Analyse</h2>
+<p>Für die Praxisübung reicht ein kompakter Dokumentationsstandard. Ziel ist nicht, jede Mausbewegung zu protokollieren, sondern die fachlich und technisch entscheidenden Schritte nachvollziehbar zu machen.</p>
+<p>Eine gute Dokumentation enthält mindestens:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 78%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bestandteil</th>
+<th>Leitfrage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fragestellung</td>
+<td>Was soll mit der Analyse beantwortet werden?</td>
+</tr>
+<tr class="even">
+<td>Eingangsdaten</td>
+<td>Welche Daten wurden verwendet?</td>
+</tr>
+<tr class="odd">
+<td>Raumbezug</td>
+<td>Welche Projektion, Zellgröße und Ausdehnung wurden gewählt?</td>
+</tr>
+<tr class="even">
+<td>Kriterien</td>
+<td>Welche räumlichen Kriterien gehen ein?</td>
+</tr>
+<tr class="odd">
+<td>Reklassifikation</td>
+<td>Wie wurden Rohdaten in Eignungs- oder Kostenwerte übersetzt?</td>
+</tr>
+<tr class="even">
+<td>Gewichtung</td>
+<td>Welche Gewichte wurden verwendet und warum?</td>
+</tr>
+<tr class="odd">
+<td>Einschränkungen</td>
+<td>Welche Flächen wurden ausgeschlossen oder abgewertet?</td>
+</tr>
+<tr class="even">
+<td>Werkzeuge</td>
+<td>Welche QGIS-Werkzeuge wurden genutzt?</td>
+</tr>
+<tr class="odd">
+<td>Ausgaben</td>
+<td>Welche Ergebnisdateien wurden erzeugt?</td>
+</tr>
+<tr class="even">
+<td>Interpretation</td>
+<td>Was zeigt die Karte und was zeigt sie nicht?</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="beispiel-dokumentation-eines-reklassifikationsschritts" class="level2">
+<h2 class="anchored" data-anchor-id="beispiel-dokumentation-eines-reklassifikationsschritts">Beispiel: Dokumentation eines Reklassifikationsschritts</h2>
+<p>Ein einzelner Schritt könnte im Methodenprotokoll so dokumentiert werden:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 84%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Punkt</th>
+<th>Eintrag</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ziel</td>
+<td>Standardisierung der Siedlungsnähe</td>
+</tr>
+<tr class="even">
+<td>Eingangsdaten</td>
+<td><code>siedlungsdistanz.tif</code></td>
+</tr>
+<tr class="odd">
+<td>Werkzeug</td>
+<td><code>Reklassifizieren nach Tabelle</code></td>
+</tr>
+<tr class="even">
+<td>Regel</td>
+<td>0–100 m = 0; 100–300 m = 0.3; 300–600 m = 0.6; &gt; 600 m = 1</td>
+</tr>
+<tr class="odd">
+<td>Ausgabe</td>
+<td><code>siedlungsdistanz_idx.tif</code></td>
+</tr>
+<tr class="even">
+<td>Begründung</td>
+<td>Siedlungsnahe Bereiche werden wegen höherer Störung geringer bewertet</td>
+</tr>
+<tr class="odd">
+<td>Unsicherheit</td>
+<td>Schwellenwerte sind didaktisch gesetzt und nicht lokal validiert</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="beispiel-dokumentation-eines-rasterrechner-ausdrucks" class="level2">
+<h2 class="anchored" data-anchor-id="beispiel-dokumentation-eines-rasterrechner-ausdrucks">Beispiel: Dokumentation eines Rasterrechner-Ausdrucks</h2>
+<p>Auch der Rasterrechner-Ausdruck sollte nicht nur ausgeführt, sondern dokumentiert werden:</p>
+<pre class="qgis"><code>(
+  "walddichte_idx@1" * 0.40 +
+  "siedlungsdistanz_idx@1" * 0.30 +
+  "hangneigung_idx@1" * 0.20 +
+  "exposition_idx@1" * 0.10
+)
+*
+"einschraenkung_mask@1"</code></pre>
+<p>Dazu gehört eine kurze Erklärung:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 67%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Element</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>walddichte_idx</code></td>
+<td>standardisierte Walddichte</td>
+</tr>
+<tr class="even">
+<td><code>siedlungsdistanz_idx</code></td>
+<td>standardisierte Entfernung zur Siedlung</td>
+</tr>
+<tr class="odd">
+<td><code>hangneigung_idx</code></td>
+<td>standardisierte Hangneigung</td>
+</tr>
+<tr class="even">
+<td><code>exposition_idx</code></td>
+<td>standardisierte Exposition</td>
+</tr>
+<tr class="odd">
+<td><code>einschraenkung_mask</code></td>
+<td>Ausschluss oder Abwertung versiegelter Flächen</td>
+</tr>
+<tr class="even">
+<td>Gewichte</td>
+<td>relative Bedeutung der Kriterien</td>
+</tr>
+<tr class="odd">
+<td>Ergebnis</td>
+<td>potenzielle Eignung zwischen 0 und 1</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="empfohlener-workflow-für-die-übung" class="level2">
+<h2 class="anchored" data-anchor-id="empfohlener-workflow-für-die-übung">Empfohlener Workflow für die Übung</h2>
+<p>Für die Kursübung ist folgender Ablauf sinnvoll:</p>
+<ol type="1">
+<li>Projektordner anlegen.</li>
+<li>Rohdaten unverändert speichern.</li>
+<li>QGIS-Projekt früh speichern.</li>
+<li>Alle Zwischenergebnisse mit sprechenden Namen speichern.</li>
+<li>Verarbeitungsschritte über den Verlauf kontrollieren.</li>
+<li>Wiederkehrende Abläufe im grafischen Modellierer abbilden.</li>
+<li>Zentrale Rasterrechner-Ausdrücke in das Methodenprotokoll kopieren.</li>
+<li>Kriterien, Schwellenwerte und Gewichte fachlich begründen.</li>
+<li>Ergebnislayout erstellen.</li>
+<li>Grenzen der Analyse explizit benennen.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Merksatz">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Merksatz
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Reproduzierbarkeit in QGIS entsteht nicht automatisch durch die Software. Sie entsteht durch die Kombination aus gespeicherten Daten, nachvollziehbaren Werkzeugparametern, sauber benannten Ausgaben, Modell oder Skript und einem kurzen fachlichen Methodenprotokoll.</p>
+</div>
+</div>
+</section>
+<section id="weiterführende-qgis-dokumentation" class="level2">
+<h2 class="anchored" data-anchor-id="weiterführende-qgis-dokumentation">Weiterführende QGIS-Dokumentation</h2>
+<ul>
+<li><a href="https://docs.qgis.org/latest/en/docs/user_manual/processing/toolbox.html">QGIS-Dokumentation: Processing Toolbox</a></li>
+<li><a href="https://docs.qgis.org/latest/en/docs/user_manual/processing/history.html">QGIS-Dokumentation: History Manager</a></li>
+<li><a href="https://docs.qgis.org/latest/en/docs/user_manual/processing/modeler.html">QGIS-Dokumentation: Model Designer</a></li>
 </ul>
 
 
-
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-bartels1968" class="csl-entry" role="listitem">
-Bartels, D. 1968. <span>„Zur wissenschaftstheoretischen <span>Grundlegung</span> einer <span>Geographie</span> des <span>Menschen</span>“</span>. <em>(Erdkundliches Wissen – Geographische Zeitschrift, Beihefte Nr</em>.
-</div>
-<div id="ref-berry1968" class="csl-entry" role="listitem">
-Berry, Brian Joe Lobley, und Duane Francis Marble. 1968. <em>Spatial analysis: a reader in statistical geography</em>.
-</div>
-<div id="ref-bill2008" class="csl-entry" role="listitem">
-Bill, Ralf. 2008. <span>„Grundlagen der Geo-Informationssysteme: Band 2 Analysen, Anwendungen und neue Entwicklungen“</span> 2.
-</div>
-<div id="ref-hard1970a" class="csl-entry" role="listitem">
-Gerhard Hard. 1970. <em>Die "Landschaft" der Sprache und die "Landschaft" der Geographen : semantische und forschungslogische Studien zu einigen zentralen Denkfiguren in der deutschen geographischen Literatur</em>. Bd. 11. Colloquium Geographicum. Dümmler Verlag. <a href="https://hdl.handle.net/20.500.11811/8473">https://hdl.handle.net/20.500.11811/8473</a>.
-</div>
-<div id="ref-monheim1999" class="csl-entry" role="listitem">
-Monheim, H., und M. Schwarte. 1999. <span>„Die deutsche Geographie dreißig Jahre nach Kiel. Stadt-Land-Fluß oder ernstzunehmende Raumwissenschaft?“</span> <em>Standort - Zeitschrift für Angewandte Geographie</em> 3.
-</div>
-<div id="ref-turner2003" class="csl-entry" role="listitem">
-Turner, M. G., R. H. Gardner, und R. V. O’Neill. 2003. <em>Landscape Ecology in Theory and Practice: Pattern and Process</em>. Springer New York. <a href="https://books.google.lu/books?id=RENW9Nq6IDYC">https://books.google.lu/books?id=RENW9Nq6IDYC</a>.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <div class="footer-banner">
 
     <a href="https://github.com/gisma-courses/gc" target="_blank">GISMA (2024)</a> |
@@ -1234,18 +1665,9 @@ Turner, M. G., R. H. Gardner, und R. V. O’Neill. 2003. <em>Landscape Ecology i
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../unit04/unit04-02.html" class="pagination-link" aria-label="Voronoi Polygone">
-        <span class="nav-page-text">Voronoi Polygone</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit04/unit04-01.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit99/unit99-01.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></div></div></footer></body></html>
