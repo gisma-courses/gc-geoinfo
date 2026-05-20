@@ -140,15 +140,44 @@ background-size: cover;
 
 </style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../css/styles.css">
 <meta property="og:title" content="Verschneidung unterschiedlicher Kriterien – Grundlagenkurs GI-S (QGIS)">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit05/suit1.svg">
+<meta property="og:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit05/cam06_20250922_16-28-26.jpg">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
 <meta name="twitter:title" content="Verschneidung unterschiedlicher Kriterien – Grundlagenkurs GI-S (QGIS)">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit05/suit1.svg">
+<meta name="twitter:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit05/cam06_20250922_16-28-26.jpg">
 <meta name="twitter:creator" content="@gisma">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -752,15 +781,15 @@ background-size: cover;
     <h2 id="toc-title">Inhalt</h2>
    
   <ul>
-  <li><a href="#boolesche-verschneidung" id="toc-boolesche-verschneidung" class="nav-link active" data-scroll-target="#boolesche-verschneidung">Boolesche Verschneidung</a>
+  <li><a href="#wildkatzen-im-lahntal-ausgangsfrage" id="toc-wildkatzen-im-lahntal-ausgangsfrage" class="nav-link active" data-scroll-target="#wildkatzen-im-lahntal-ausgangsfrage">Wildkatzen im Lahntal: Ausgangsfrage</a>
   <ul class="collapse">
-  <li><a href="#die-gewichtete-schnittmenge" id="toc-die-gewichtete-schnittmenge" class="nav-link" data-scroll-target="#die-gewichtete-schnittmenge">Die gewichtete Schnittmenge</a></li>
-  <li><a href="#katzen-im-lahntal" id="toc-katzen-im-lahntal" class="nav-link" data-scroll-target="#katzen-im-lahntal">Katzen im Lahntal</a></li>
+  <li><a href="#benötigte-daten" id="toc-benötigte-daten" class="nav-link" data-scroll-target="#benötigte-daten">Benötigte Daten</a></li>
   </ul></li>
-  <li><a href="#ablauf-einer-gewichteten-eignungsschätzung" id="toc-ablauf-einer-gewichteten-eignungsschätzung" class="nav-link" data-scroll-target="#ablauf-einer-gewichteten-eignungsschätzung">Ablauf einer gewichteten Eignungsschätzung</a>
-  <ul class="collapse">
+  <li><a href="#erste-modellvariante-boolesche-verschneidung" id="toc-erste-modellvariante-boolesche-verschneidung" class="nav-link" data-scroll-target="#erste-modellvariante-boolesche-verschneidung">Erste Modellvariante: Boolesche Verschneidung</a></li>
+  <li><a href="#von-der-booleschen-zur-gewichteten-verschneidung" id="toc-von-der-booleschen-zur-gewichteten-verschneidung" class="nav-link" data-scroll-target="#von-der-booleschen-zur-gewichteten-verschneidung">Von der Booleschen zur gewichteten Verschneidung</a></li>
+  <li><a href="#ablauf-der-gewichteten-eignungsschätzung" id="toc-ablauf-der-gewichteten-eignungsschätzung" class="nav-link" data-scroll-target="#ablauf-der-gewichteten-eignungsschätzung">Ablauf der gewichteten Eignungsschätzung</a></li>
+  <li><a href="#gewichtete-kriterienaddition-im-raster" id="toc-gewichtete-kriterienaddition-im-raster" class="nav-link" data-scroll-target="#gewichtete-kriterienaddition-im-raster">Gewichtete Kriterienaddition im Raster</a></li>
   <li><a href="#bestimmung-der-gewichte" id="toc-bestimmung-der-gewichte" class="nav-link" data-scroll-target="#bestimmung-der-gewichte">Bestimmung der Gewichte</a></li>
-  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit05/unit05-03.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
     </div>
@@ -772,33 +801,161 @@ background-size: cover;
 
 
 
-<section id="boolesche-verschneidung" class="level2">
-<h2 class="anchored" data-anchor-id="boolesche-verschneidung">Boolesche Verschneidung</h2>
-<p>Die Eignungskarte stellt räumliche Bereiche dar, die auf der Eignung bestimmter Kriterien in Bezug auf die Fragestellung basieren. Sie werden als gut (1) oder schlecht (0) eingestuft. Jedes Kriterium wird einzeln in Form einer binären Präferenzkarte dargestellt. Diese Karten werden dann durch eine Multiplikationsoperation kombiniert, bei der der Wert jeder Zelle durch Multiplikation der Werte der räumlich korrespondierenden Zellen in den einzelnen Karten bestimmt wird. So wird z. B. die Kombination 0 x 0 x 0 x 0 x 0 in der Zielkarte ebenso wie die Kombination 1 x 1 x 1 x 1 x 0 dem Wert Null zugeordnet. In der resultierenden Karte werden die Gebiete hervorgehoben, die alle Kriterien gleichzeitig erfüllen. Durch Aufsummierung dieser Werte kann eine Rangskala - Eignungskarte erstellt werden, die den Grad der Eignung auf Basis der kumulierten Werte aus der Kombination der Kriterien angibt und somit eine differenzierte Bewertung der räumlichen Eignung ermöglicht.</p>
+<section id="wildkatzen-im-lahntal-ausgangsfrage" class="level2">
+<h2 class="anchored" data-anchor-id="wildkatzen-im-lahntal-ausgangsfrage">Wildkatzen im Lahntal: Ausgangsfrage</h2>
+<p>In diesem Abschnitt wird die Verschneidung unterschiedlicher Kriterien am Beispiel eines potenziellen Wildkatzenhabitats im Marburger Uniwald eingeführt. Der lokale Bezug ist dabei nicht nur hypothetisch: Die folgenden Fotofallenbilder zeigen Wildkatzenbeobachtungen aus dem Marburger Uniwald. Die Analyse fragt daher nicht abstrakt nach „irgendeinem“ Habitat, sondern danach, wie sich potenziell geeignete Lebensräume im Umfeld solcher Beobachtungen methodisch modellieren lassen.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit05/cam06_20250922_16-28-26.jpg" class="img-fluid figure-img"></p>
+<figcaption>Wildkatze im Marburger Uniwald, Fotofalle cam06, D. Göttlicher, 22.09.2025</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit05/cam06_20250831_04-48-28.jpg" class="img-fluid figure-img"></p>
+<figcaption>Wildkatzen (Jungkatzen) im Marburger Uniwald, Fotofalle cam06, D. Göttlicher, 31.08.2025.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Beobachtung und Modellierung">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Beobachtung und Modellierung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die Beobachtungen zeigen, dass im Marburger Uniwald nicht nur adulte Wildkatzen, sondern auch Jungtiere nachgewiesen wurden. Die anschließende Eignungsanalyse ist dennoch keine direkte Nachweiskarte und kein validiertes Habitatmodell. Sie zeigt, wie aus fachlich begründeten Annahmen zu Deckung, Siedlungsnähe, Relief und Einschränkungsflächen eine potenzielle Eignungskarte abgeleitet werden kann.</p>
+</div>
+</div>
+<p>Die fachliche Ausgangsfrage lautet: Wo könnten innerhalb eines Untersuchungsraums Flächen liegen, die für Wildkatzen eher geeignet oder eher ungeeignet sind?</p>
+<p>Das Beispiel ist bewusst vereinfacht. Es soll nicht die vollständige Autoökologie der Wildkatze modellieren, sondern die GIS-Logik einer Eignungsanalyse zeigen. Ökologisch wird angenommen, dass Wildkatzen vor allem deckungsreiche, störungsarme und waldnahe Lebensräume nutzen. Waldstruktur, Deckung und geringe Störung sind daher zentrale Hinweise auf potenziell geeignete Lebensräume <span class="citation" data-cites="klar2008 goetz2018 bfn_wildkatze">(<a href="#ref-klar2008" role="doc-biblioref">Klar u.&nbsp;a. 2008</a>; <a href="#ref-goetz2018" role="doc-biblioref">Götz u.&nbsp;a. 2018</a>; <a href="#ref-bfn_wildkatze" role="doc-biblioref">Bundesamt für Naturschutz 2026</a>)</span>. Straßen, Siedlungsnähe und stark versiegelte Flächen wirken dagegen als Störungs-, Barriere- oder Gefährdungsfaktoren <span class="citation" data-cites="klar2009 bfn_wildkatze">(<a href="#ref-klar2009" role="doc-biblioref">Klar, Herrmann, und Kramer-Schadt 2009</a>; <a href="#ref-bfn_wildkatze" role="doc-biblioref">Bundesamt für Naturschutz 2026</a>)</span>.</p>
+<p>Für das didaktische Modell werden daraus fünf räumliche Eingangsdaten abgeleitet:</p>
+<ul>
+<li><strong>Walddichte</strong> als Hinweis auf Deckung und Waldstruktur</li>
+<li><strong>Siedlungsnähe</strong> als Störungsgradient</li>
+<li><strong>Höhe</strong>, aus der <strong>Hangneigung</strong> und <strong>Exposition</strong> abgeleitet werden</li>
+<li><strong>Hangneigung</strong> als ergänzender Reliefindikator</li>
+<li><strong>Exposition</strong> als ergänzender Relief- und Mikroklimaindikator</li>
+<li><strong>versiegelte Flächen</strong> als Einschränkung</li>
+</ul>
+<p>Die <strong>Walddichte</strong> steht im Modell stellvertretend für Deckung und Waldstruktur. Eine hohe Walddichte wird günstiger bewertet als offene oder stark ausgedünnte Bereiche. Fachlich bleibt das eine Vereinfachung, weil reale Wildkatzenhabitate auch von Totholz, Verstecken, Waldrändern, Säumen und Jagdmöglichkeiten abhängen.</p>
+<p>Die <strong>Siedlungsnähe</strong> beschreibt einen Störungsgradienten. Flächen in unmittelbarer Nähe zu Gebäuden, Siedlungsrändern oder intensiv genutzten Bereichen werden geringer bewertet als siedlungsfernere Bereiche. Damit wird nicht behauptet, dass Wildkatzen Siedlungen grundsätzlich nie queren. Die Variable beschreibt nur eine abnehmende potenzielle Eignung mit zunehmender Nähe zu menschlicher Nutzung.</p>
+<p><strong>Hangneigung</strong> und <strong>Exposition</strong> werden aus dem Höhendatensatz abgeleitet. Sie sind in diesem Beispiel keine harten Wildkatzenpräferenzen, sondern ergänzende Reliefvariablen. Hangneigung kann indirekt mit Nutzungsintensität, Zugänglichkeit oder Vegetationsstruktur zusammenhängen. Exposition kann mikroklimatische Unterschiede anzeigen. Beide Variablen sollten deshalb schwächer gewichtet werden als Deckung oder Störung.</p>
+<p>Die <strong>versiegelten Flächen</strong> werden nicht als normaler Eignungsfaktor behandelt, sondern als Einschränkung. Das entspricht der Logik des späteren Flowcharts: Zuerst wird aus den bewerteten und gewichteten Eingangsdaten eine potenzielle Eignung berechnet. Danach wird diese Eignung mit einer Einschränkungskarte kombiniert. Versiegelte Flächen, große Straßen oder stark bebaute Bereiche können dadurch stark abgewertet oder ausgeschlossen werden.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Wichtige Vereinfachung">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warnung</span>Wichtige Vereinfachung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Dieses Beispiel zeigt die Methode der Eignungsanalyse, nicht ein vollständiges Wildkatzen-Habitatmodell. Wichtige reale Habitatfaktoren wie Gewässernähe, Waldränder, Hecken, Totholz, Kleinsäugerhabitate oder konkrete Straßenklassen werden hier nicht als eigene Eingangsdaten modelliert.</p>
+</div>
+</div>
+<section id="benötigte-daten" class="level3">
+<h3 class="anchored" data-anchor-id="benötigte-daten">Benötigte Daten</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Modellbaustein</th>
+<th>Datengrundlage</th>
+<th>Verarbeitung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Höhe</td>
+<td>Digitales Geländemodell</td>
+<td>Ausgangsdatensatz für Hangneigung und Exposition</td>
+</tr>
+<tr class="even">
+<td>Hangneigung</td>
+<td>aus DGM abgeleitet</td>
+<td>Reklassifikation in Eignungsklassen</td>
+</tr>
+<tr class="odd">
+<td>Exposition</td>
+<td>aus DGM abgeleitet</td>
+<td>Umwandlung in Expositionsklassen; zirkuläre Werte beachten</td>
+</tr>
+<tr class="even">
+<td>Walddichte</td>
+<td>Landbedeckung, Vegetationsindex, Luftbild oder Waldmaske</td>
+<td>Reklassifikation in Eignungsklassen</td>
+</tr>
+<tr class="odd">
+<td>Siedlungsnähe</td>
+<td>Gebäude- oder Siedlungsflächen aus OSM, ALKIS oder ATKIS</td>
+<td>Distanzanalyse und Reklassifikation</td>
+</tr>
+<tr class="even">
+<td>Versiegelte Flächen</td>
+<td>Straßen, Gebäude, versiegelte Flächen aus OSM, ALKIS, ATKIS oder Copernicus Imperviousness</td>
+<td>Einschränkungsmaske oder Abwertungsfaktor</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="erste-modellvariante-boolesche-verschneidung" class="level2">
+<h2 class="anchored" data-anchor-id="erste-modellvariante-boolesche-verschneidung">Erste Modellvariante: Boolesche Verschneidung</h2>
+<p>Aus der Wildkatzenfrage lässt sich zunächst eine sehr einfache Modellvariante bilden. Dafür werden alle Eingangsdaten auf die beiden Zustände <strong>geeignet</strong> und <strong>nicht geeignet</strong> reduziert. Solche Daten werden als binäre Informationsebenen dargestellt. Geeignete Zellen erhalten den Wert 1, ungeeignete Zellen den Wert 0.</p>
+<p>Angenommen, die Wildkatze im Marburger Uniwald würde in diesem stark vereinfachten Beispiel nur Laubwälder und nur steile Bereiche mit mehr als 20 Grad Hangneigung nutzen. Dann reichen zwei binäre Informationsebenen aus:</p>
+<ul>
+<li><code>Wald/Nichtwald</code></li>
+<li><code>Hangneigung &gt; 20 Grad / Hangneigung &lt;= 20 Grad</code></li>
+</ul>
+<p>Potenzielle Habitate sind dann genau die Zellen, für die <strong>beide</strong> Bedingungen erfüllt sind. Mathematisch entspricht dies einer Multiplikation der binären Karten:</p>
+<p><span class="math display">\[E = K_1 \times K_2\]</span></p>
+<p>Sobald eine der beiden Karten den Wert 0 enthält, wird auch die Ergebniszelle 0. Nur dort, wo alle Kriterien den Wert 1 haben, entsteht in der Zielkarte eine geeignete Fläche.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../assets/images/unit05/suit1.svg" class="img-fluid figure-img"></p>
-<figcaption>Prinzip der boolschen Verschneidung ohne Gewichtung. Links Multiplikation zur Erzeugung einer binären Karte, Rechts Addition zurErzeugung einer Ranglistenkarte, <span class="citation" data-cites="gisma2024">GISMA (<a href="#ref-gisma2024" role="doc-biblioref">2024</a>)</span></figcaption>
+<figcaption>Prinzip der boolschen Verschneidung ohne Gewichtung. Links Multiplikation zur Erzeugung einer binären Karte, rechts Addition zur Erzeugung einer Ranglistenkarte, <span class="citation" data-cites="gisma2024">GISMA (<a href="#ref-gisma2024" role="doc-biblioref">2024</a>)</span></figcaption>
 </figure>
 </div>
-<p>Angenommen, die in den Marburger Uniwald eingewanderte Wildkatze besiedelt nur Laubwälder und nur steile Bereiche &gt; 20 Grad Hangneigung, so reicht eine logische Operation aus, um geeignete Lebensräume für die Katze zu ermitteln. Jedes dieser beiden Kriterien kann mit einer binären Informationsebene (Wald/Nichtwald und Steil/Nicht-Steil) kodiert werden. Potenzielle Habitate sind nun genau die Gebiete, für die <strong>beide</strong> Kriterien zutreffen. Mit anderen Worten: Flächen, die <em>wahr</em> für Wald <strong>und</strong> für Hangneigung &gt; 20 Grad sind. Natürlich lässt sich das Beipiel einer Ranglistenkarte ebenfalls auf dieser Grundlage erzeugen. Dur eine Addition der kodierten Datensätze bekommen wir 0 ungeeignet, 1 teilweise geeignet und 2 geeignet.</p>
-<p>Die Boolesche Verschneidung eignet sich vor allem für Eignungsanalysen mit randscharfen und klar ausschließenden Kriterien. Können z.B. Siedlungsgebiete und industrielle landwirtschaftliche Nutzflächen bereits zu Beginn der Analyse als Katzenlebensraum ausgeschlossen werden, ist das potenzielle Eignungsgebiet mit einer einfachen Booleschen Verschneidung schnell ermittelt.</p>
-<section id="die-gewichtete-schnittmenge" class="level3">
-<h3 class="anchored" data-anchor-id="die-gewichtete-schnittmenge">Die gewichtete Schnittmenge</h3>
-<p>Für viele Fragestellungen stellt die Einteilung der Realität in die binären Kategorien <em>wahr</em> oder <em>falsch</em> eine unzureichende Abbildung der Realität dar. Die gleichgewichtete Ausschlusswirkung von Einflussfaktoren spiegelt in der Regel nicht die tatsächliche Gewichtung von Entscheidungen wider.</p>
-<p>So können für den Käufer eines neuen Mobiltelefons Marke und Funktion wichtiger sein als Displaygröße, Preis oder Robustheit. Dieses allgemeine Prinzip der Gewichtung von Einflussfaktoren wird auch bei der Eignungsanalyse mit GIS angewendet. Der entsprechende Ansatz wird als <em>gewichtete Verschneidung</em> bezeichnet.</p>
-<p>In vielen räumlichen Analysen sind bestimmte Kriterien in Bezug auf das Ziel n-mal wichtiger als andere. Oft ist es gerade eine Anforderung an die Standortsuche, mehrere geeignete Standorte dahingehend zu vergleichen, ob und wie stark sie eine Reihe unterschiedlich wichtiger Kriterien erfüllen. Durch das Ebenenprinzip der GI-Systeme kann die Verschneidung sehr einfach um die Idee unterschiedlich wichtiger Kriterien erweitert werden. Jeder thematischen Ebene wird ein numerischer Gewichtungsfaktor zugeordnet, der ihrer relativen Bedeutung gegenüber den anderen Ebenen entspricht. Die so gewichteten Informationsebenen werden dann wie bisher verschnitten. Wie das Boole’sche Verschneiden ist auch das gewichtete Verschneiden prinzipiell sowohl im Raster- als auch im Vektormodell möglich. So könnten z.B. Tourismusexperten einer Urlaubsinsel die negativen Auswirkungen von Hotels und Bars für ein alternatives Tourismuskonzept mit dem Faktor 0,1 gewichten und Quad-Trek-Routen durch das Binnenland mit dem Faktor 1. In der Regel sollten die Wertebereiche der Eingangsinformationsebenen normiert (d.h. zwischen z.B. 0 und 1 skaliert) werden. In der resultierenden Eignungsstufe sind die geeigneten Räume bzw. Standorte durch besonders hohe Werte erkennbar.</p>
+<p>Die Boolesche Verschneidung eignet sich vor allem für Eignungsanalysen mit randscharfen und klar ausschließenden Kriterien. Können zum Beispiel Siedlungsgebiete oder stark versiegelte Verkehrsflächen bereits zu Beginn der Analyse als Katzenlebensraum ausgeschlossen werden, ist das potenzielle Eignungsgebiet mit einer einfachen Booleschen Verschneidung schnell ermittelt.</p>
+<p>Eine Addition binärer Karten erzeugt dagegen keine harte Ausschlusskarte, sondern eine einfache Ranglistenkarte. Bei zwei Kriterien ergibt sich dann 0 für keine erfüllte Bedingung, 1 für eine erfüllte Bedingung und 2 für beide erfüllten Bedingungen:</p>
+<p><span class="math display">\[R = K_1 + K_2\]</span></p>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Damit wird bereits sichtbar, warum die Boolesche Logik für viele ökologische Fragestellungen zu grob ist. Reale Lebensraumeignung ist selten nur wahr oder falsch.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="katzen-im-lahntal" class="level3">
-<h3 class="anchored" data-anchor-id="katzen-im-lahntal">Katzen im Lahntal</h3>
-<p>Betrachten Sie das folgende Beispiel. Hier wird die gewichtete Verschneidung am Beispiel des Wildkatzenhabitats im Marburger Uniwald eingeführt. Um eine realistischere Modellierung geeigneter Lebensräume zu ermöglichen, werden im folgenden Beispiel nicht mehr ausschließlich binäre Eingangsdaten wie die Boolesche Verschneidung verwendet, sondern sogenannte Ratiodaten. Es werden KAtegorien oder Klassen von Eignung erstellt und gleichläufig skaliert.</p>
-<ul>
-<li>Vegetationsdichte statt “Wald/Nichtwald</li>
-<li>Hangneigung statt “steil/nicht steil</li>
-<li>Nähe zu Siedlungen statt “besiedelt/nicht besiedelt</li>
-<li>Exposition in Grad</li>
-<li>Als Einschränkung versiegelte Flächen</li>
-</ul>
+<section id="von-der-booleschen-zur-gewichteten-verschneidung" class="level2">
+<h2 class="anchored" data-anchor-id="von-der-booleschen-zur-gewichteten-verschneidung">Von der Booleschen zur gewichteten Verschneidung</h2>
+<p>Für viele Fragestellungen reicht die Einteilung der Realität in die binären Kategorien <em>wahr</em> oder <em>falsch</em> nicht aus. Eine Fläche kann näher oder weiter von einer Siedlung entfernt liegen, dichter oder lichter bewaldet sein, stärker oder schwächer geneigt sein. Solche Unterschiede gehen in einer rein Booleschen Analyse verloren.</p>
+<p>Im Wildkatzenbeispiel ist deshalb eine abgestufte Bewertung sinnvoller. Aus <code>Wald/Nichtwald</code> wird <strong>Walddichte</strong>. Aus <code>steil/nicht steil</code> wird <strong>Hangneigung</strong>. Aus <code>besiedelt/nicht besiedelt</code> wird <strong>Siedlungsnähe</strong>. Diese Eingangsdaten tragen unterschiedliche Einheiten und Wertebereiche. Sie müssen deshalb vor der Verschneidung standardisiert werden.</p>
+<p>Standardisierung bedeutet, dass alle Eingangsdaten auf eine gemeinsame Eignungsskala übertragen werden. Im Flowchart geschieht dies durch die Zuweisung von Kategorien 1, 2 und 3. Alternativ können auch Skalen wie 0 bis 1, 0 bis 100 oder 0 bis 255 verwendet werden. Entscheidend ist, dass die Skala gleichläufig ist: Hohe Werte bedeuten hohe Eignung, niedrige Werte geringe Eignung.</p>
+<p>Nach der Standardisierung werden die Kriterien gewichtet. Die Gewichtung drückt aus, dass nicht alle Kriterien für die Fragestellung gleich wichtig sind. Im Wildkatzenbeispiel sollten Deckung und Störungsarmut fachlich stärker gewichtet werden als ergänzende Reliefvariablen. Die Summe der Gewichte sollte 1 ergeben:</p>
+<p><span class="math display">\[\sum_i w_i = 1\]</span></p>
+<p>Die gewichtete Eignung ergibt sich dann aus der Summe der standardisierten Kriterienwerte, jeweils multipliziert mit ihrem Gewicht:</p>
+<p><span class="math display">\[E = \sum_i w_i \cdot K_i\]</span></p>
+<p>Dabei bezeichnet <code>K_i</code> den standardisierten Wert eines Kriteriums und <code>w_i</code> sein Gewicht. Die resultierende Karte enthält keine Einheiten mehr, sondern einen Eignungsindex.</p>
+</section>
+<section id="ablauf-der-gewichteten-eignungsschätzung" class="level2">
+<h2 class="anchored" data-anchor-id="ablauf-der-gewichteten-eignungsschätzung">Ablauf der gewichteten Eignungsschätzung</h2>
 <div id="fig-flow1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-flow1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -806,438 +963,518 @@ background-size: cover;
 <defs>
 <style type="text/css">
 </style>
-</defs><g><g><path d="M 220 170 L 253.63 170" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 258.88 170 L 251.88 173.5 L 253.63 170 L 251.88 166.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><path d="M 220 220 L 253.63 220" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 258.88 220 L 251.88 223.5 L 253.63 220 L 251.88 216.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><path d="M 150 290 L 253.63 290" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 258.88 290 L 251.88 293.5 L 253.63 290 L 251.88 286.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><path d="M 150 340 L 253.63 340" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 258.88 340 L 251.88 343.5 L 253.63 340 L 251.88 336.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><path d="M 380 170 L 423.63 170" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 428.88 170 L 421.88 173.5 L 423.63 170 L 421.88 166.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><g transform="translate(-0.5 -0.5)">
+</defs></svg><p><g><g><path d="M 220 170 L 253.63 170" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"><path d="M 258.88 170 L 251.88 173.5 L 253.63 170 L 251.88 166.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></path></g><g><path d="M 220 220 L 253.63 220" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"><path d="M 258.88 220 L 251.88 223.5 L 253.63 220 L 251.88 216.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></path></g><g><path d="M 150 290 L 253.63 290" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"><path d="M 258.88 290 L 251.88 293.5 L 253.63 290 L 251.88 286.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></path></g><g><path d="M 150 340 L 253.63 340" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"><path d="M 258.88 340 L 251.88 343.5 L 253.63 340 L 251.88 336.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></path></g><g><path d="M 380 170 L 423.63 170" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"><path d="M 428.88 170 L 421.88 173.5 L 423.63 170 L 421.88 166.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></path></g><g><g transform="translate(-0.5 -0.5)"></g></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 171px; margin-left: 402px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 13px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; background-color: rgb(255, 255, 255); white-space: nowrap;">
-x
+<p>x</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="402" y="175" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="13px" text-anchor="middle" font-weight="bold">x</text>
+<p><text x="402" y="175" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="13px" text-anchor="middle" font-weight="bold">x</text></p>
 </switch>
-</g></g><g><rect x="260" y="150" width="120" height="40" fill="#e1d5e7" stroke="#9673a6" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><rect x="260" y="150" width="120" height="40" fill="#e1d5e7" stroke="#9673a6" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 170px; margin-left: 261px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
-Zuweisung Kategorien 1, 2, 3
+<p>Zuweisung Kategorien 1, 2, 3</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="320" y="174" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Zuweisung Kategorien…</text>
+<p><text x="320" y="174" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Zuweisung Kategorien…</text></p>
 </switch>
-</g></g><g><rect x="260" y="200" width="120" height="40" fill="#e1d5e7" stroke="#9673a6" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><rect x="260" y="200" width="120" height="40" fill="#e1d5e7" stroke="#9673a6" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 220px; margin-left: 261px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
-Zuweisung Kategorien 1, 2, 3
+<p>Zuweisung Kategorien 1, 2, 3</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="320" y="224" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Zuweisung Kategorien…</text>
+<p><text x="320" y="224" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Zuweisung Kategorien…</text></p>
 </switch>
-</g></g><g><rect x="260" y="270" width="120" height="40" fill="#e1d5e7" stroke="#9673a6" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><rect x="260" y="270" width="120" height="40" fill="#e1d5e7" stroke="#9673a6" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 290px; margin-left: 261px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
-Zuweisung Kategorien 1, 2, 3
+<p>Zuweisung Kategorien 1, 2, 3</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="320" y="294" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Zuweisung Kategorien…</text>
+<p><text x="320" y="294" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Zuweisung Kategorien…</text></p>
 </switch>
-</g></g><g><rect x="260" y="320" width="120" height="40" fill="#e1d5e7" stroke="#9673a6" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><rect x="260" y="320" width="120" height="40" fill="#e1d5e7" stroke="#9673a6" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 340px; margin-left: 261px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
-Zuweisung Kategorien 1, 2, 3
+<p>Zuweisung Kategorien 1, 2, 3</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="320" y="344" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Zuweisung Kategorien…</text>
+<p><text x="320" y="344" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Zuweisung Kategorien…</text></p>
 </switch>
-</g></g><g><path d="M 510 170 L 550 170 L 550 255 L 583.63 255" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 588.88 255 L 581.88 258.5 L 583.63 255 L 581.88 251.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><g transform="translate(-0.5 -0.5)rotate(-90 526.875 170.37499999999977)">
+<p><g><path d="M 510 170 L 550 170 L 550 255 L 583.63 255" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"><path d="M 588.88 255 L 581.88 258.5 L 583.63 255 L 581.88 251.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></path></g><g><g transform="translate(-0.5 -0.5)rotate(-90 526.875 170.37499999999977)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 170px; margin-left: 527px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 15px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; background-color: rgb(255, 255, 255); white-space: nowrap;">
-+
+<p>+</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="527" y="175" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px" text-anchor="middle" font-weight="bold">+</text>
+<p><text x="527" y="175" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px" text-anchor="middle" font-weight="bold">+</text></p>
 </switch>
-</g></g><g><rect x="430" y="150" width="80" height="40" fill="#fff2cc" stroke="#d6b656" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><rect x="430" y="150" width="80" height="40" fill="#fff2cc" stroke="#d6b656" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 78px; height: 1px; padding-top: 170px; margin-left: 431px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
-Gewichtung&nbsp;<br>&nbsp;0 - 1
+<p>Gewichtung&nbsp;<br>&nbsp;0 - 1</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="470" y="174" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Gewichtung…</text>
+<p><text x="470" y="174" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Gewichtung…</text></p>
 </switch>
-</g></g><g><path d="M 510 220 L 550 220 L 550 255 L 583.63 255" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 588.88 255 L 581.88 258.5 L 583.63 255 L 581.88 251.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><g transform="translate(-0.5 -0.5)rotate(-90 530.625 222.375)">
+<p><g><path d="M 510 220 L 550 220 L 550 255 L 583.63 255" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"><path d="M 588.88 255 L 581.88 258.5 L 583.63 255 L 581.88 251.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></path></g><g><g transform="translate(-0.5 -0.5)rotate(-90 530.625 222.375)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 222px; margin-left: 531px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 15px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; background-color: rgb(255, 255, 255); white-space: nowrap;">
-+
+<p>+</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="531" y="227" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px" text-anchor="middle" font-weight="bold">+</text>
+<p><text x="531" y="227" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px" text-anchor="middle" font-weight="bold">+</text></p>
 </switch>
-</g></g><g><rect x="430" y="200" width="80" height="40" fill="#fff2cc" stroke="#d6b656" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><rect x="430" y="200" width="80" height="40" fill="#fff2cc" stroke="#d6b656" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 78px; height: 1px; padding-top: 220px; margin-left: 431px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
-Gewichtung&nbsp;<br>&nbsp;0 - 1
+<p>Gewichtung&nbsp;<br>&nbsp;0 - 1</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="470" y="224" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Gewichtung…</text>
+<p><text x="470" y="224" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Gewichtung…</text></p>
 </switch>
-</g></g><g><path d="M 510 290 L 550 290 L 550 255 L 583.63 255" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 588.88 255 L 581.88 258.5 L 583.63 255 L 581.88 251.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><g transform="translate(-0.5 -0.5)rotate(-90 531.875 290.3749999999998)">
+<p><g><path d="M 510 290 L 550 290 L 550 255 L 583.63 255" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"><path d="M 588.88 255 L 581.88 258.5 L 583.63 255 L 581.88 251.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></path></g><g><g transform="translate(-0.5 -0.5)rotate(-90 531.875 290.3749999999998)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 290px; margin-left: 532px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 15px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; background-color: rgb(255, 255, 255); white-space: nowrap;">
-+
+<p>+</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="532" y="295" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px" text-anchor="middle" font-weight="bold">+</text>
+<p><text x="532" y="295" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px" text-anchor="middle" font-weight="bold">+</text></p>
 </switch>
-</g></g><g><rect x="430" y="270" width="80" height="40" fill="#fff2cc" stroke="#d6b656" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><rect x="430" y="270" width="80" height="40" fill="#fff2cc" stroke="#d6b656" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 78px; height: 1px; padding-top: 290px; margin-left: 431px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
-Gewichtung&nbsp;<br>&nbsp;0 - 1
+<p>Gewichtung&nbsp;<br>&nbsp;0 - 1</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="470" y="294" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Gewichtung…</text>
+<p><text x="470" y="294" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Gewichtung…</text></p>
 </switch>
-</g></g><g><path d="M 510 340 L 550 340 L 550 255 L 583.63 255" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 588.88 255 L 581.88 258.5 L 583.63 255 L 581.88 251.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><g transform="translate(-0.5 -0.5)rotate(-90 533.125 340.3749999999998)">
+<p><g><path d="M 510 340 L 550 340 L 550 255 L 583.63 255" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"><path d="M 588.88 255 L 581.88 258.5 L 583.63 255 L 581.88 251.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></path></g><g><g transform="translate(-0.5 -0.5)rotate(-90 533.125 340.3749999999998)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 340px; margin-left: 533px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 15px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
-<font style="font-size: 15px;"><b style="font-size: 15px;">+</b></font>
+<p><font style="font-size: 15px;"><b style="font-size: 15px;">+</b></font></p>
 </div>
 </div>
 </div>
-</foreignobject><text x="533" y="345" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px" text-anchor="middle">+</text>
+<p><text x="533" y="345" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px" text-anchor="middle">+</text></p>
 </switch>
-</g></g><g><rect x="430" y="320" width="80" height="40" fill="#fff2cc" stroke="#d6b656" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><rect x="430" y="320" width="80" height="40" fill="#fff2cc" stroke="#d6b656" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 78px; height: 1px; padding-top: 340px; margin-left: 431px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
-Gewichtung&nbsp;<br>&nbsp;0 - 1
+<p>Gewichtung&nbsp;<br>&nbsp;0 - 1</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="470" y="344" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Gewichtung…</text>
+<p><text x="470" y="344" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Gewichtung…</text></p>
 </switch>
-</g></g><g><path d="M 640 275 L 640 310 L 683.63 310" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 688.88 310 L 681.88 313.5 L 683.63 310 L 681.88 306.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><path d="M 175 415 L 543.63 415" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 548.88 415 L 541.88 418.5 L 543.63 415 L 541.88 411.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><path d="M 600 395 L 600 310 L 683.63 310" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 688.88 310 L 681.88 313.5 L 683.63 310 L 681.88 306.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><path d="M 640 275 L 640 310 L 683.63 310" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"><path d="M 688.88 310 L 681.88 313.5 L 683.63 310 L 681.88 306.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></path></g><g><path d="M 175 415 L 543.63 415" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"><path d="M 548.88 415 L 541.88 418.5 L 543.63 415 L 541.88 411.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></path></g><g><path d="M 600 395 L 600 310 L 683.63 310" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"><path d="M 688.88 310 L 681.88 313.5 L 683.63 310 L 681.88 306.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></path></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 312px; margin-left: 644px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
-x
+<p>x</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="644" y="315" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="11px" text-anchor="middle">x</text>
+<p><text x="644" y="315" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="11px" text-anchor="middle">x</text></p>
 </switch>
-</g></g><g><rect x="550" y="395" width="100" height="40" fill="#f8cecc" stroke="#b85450" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><rect x="550" y="395" width="100" height="40" fill="#f8cecc" stroke="#b85450" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 98px; height: 1px; padding-top: 415px; margin-left: 551px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
-Einschränkung
+<p>Einschränkung</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="600" y="419" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Einschränkung</text>
+<p><text x="600" y="419" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Einschränkung</text></p>
 </switch>
-</g></g><g><rect x="690" y="290" width="100" height="40" fill="#60a917" stroke="#2d7600" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><rect x="690" y="290" width="100" height="40" fill="#60a917" stroke="#2d7600" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 98px; height: 1px; padding-top: 310px; margin-left: 691px;">
 <div data-drawio-colors="color: #ffffff; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
-Potenzielle Eignung
+<p>Potenzielle Eignung</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="740" y="314" fill="#ffffff" font-family="Helvetica" font-size="12px" text-anchor="middle">Potenzielle Eign…</text>
+<p><text x="740" y="314" fill="#ffffff" font-family="Helvetica" font-size="12px" text-anchor="middle">Potenzielle Eign…</text></p>
 </switch>
-</g></g><g><rect x="0" y="470" width="560" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><rect x="0" y="470" width="560" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 485px; margin-left: 2px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left;">
 <div style="display: inline-block; font-size: 15px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">
-<font color="#999999">Schritt 1</font>: Ableiten der Hangneigung und der Exposition aus dem Höhendatensatz
+<p><font color="#999999">Schritt 1</font>: Ableiten der Hangneigung und der Exposition aus dem Höhendatensatz</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="2" y="490" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px">Schritt 1: Ableiten der Hangneigung und der Exposition aus dem Höhendatensa…</text>
+<p><text x="2" y="490" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px">Schritt 1: Ableiten der Hangneigung und der Exposition aus dem Höhendatensa…</text></p>
 </switch>
-</g></g><g><rect x="0" y="492" width="600" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><rect x="0" y="492" width="600" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 507px; margin-left: 2px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left;">
 <div style="display: inline-block; font-size: 15px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">
-<font color="#ff8000">Schritt 2</font>: Erstellen von Eignungskategorien auf der Grundlage der Eingangsdatensätze
+<p><font color="#ff8000">Schritt 2</font>: Erstellen von Eignungskategorien auf der Grundlage der Eingangsdatensätze</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="2" y="512" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px">Schritt 2: Erstellen von Eignungskategorien auf der Grundlage der Eingangsdatens…</text>
+<p><text x="2" y="512" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px">Schritt 2: Erstellen von Eignungskategorien auf der Grundlage der Eingangsdatens…</text></p>
 </switch>
-</g></g><g><rect x="0" y="515" width="620" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><rect x="0" y="515" width="620" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 530px; margin-left: 2px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left;">
 <div style="display: inline-block; font-size: 15px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">
-<font color="#0000ff">Schritt 3</font>: Multiplikation aller kategorisierten Datensätze mit ihren Gewichten (Summe = 1)
+<p><font color="#0000ff">Schritt 3</font>: Multiplikation aller kategorisierten Datensätze mit ihren Gewichten (Summe = 1)</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="2" y="535" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px">Schritt 3: Multiplikation aller kategorisierten Datensätze mit ihren Gewichten (Sum…</text>
+<p><text x="2" y="535" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px">Schritt 3: Multiplikation aller kategorisierten Datensätze mit ihren Gewichten (Sum…</text></p>
 </switch>
-</g></g><g><rect x="0" y="537" width="310" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><rect x="0" y="537" width="310" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 552px; margin-left: 2px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left;">
 <div style="display: inline-block; font-size: 15px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">
-<font color="#ff0000">Schritt 4</font>: Anwendung von Einschränkungen
+<p><font color="#ff0000">Schritt 4</font>: Anwendung von Einschränkungen</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="2" y="557" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px">Schritt 4: Anwendung von Einschränkungen</text>
+<p><text x="2" y="557" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px">Schritt 4: Anwendung von Einschränkungen</text></p>
 </switch>
-</g></g><g><rect x="0" y="559" width="450" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><rect x="0" y="559" width="450" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 574px; margin-left: 2px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left;">
 <div style="display: inline-block; font-size: 15px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">
-<font color="#009900">Schritt 5</font>:&nbsp;<span style="background-color: initial; font-size: 15px;">Multiplikation von Eignungs- und Einschränkungskarte</span>
+<p><font color="#009900">Schritt 5</font>:&nbsp;<span style="background-color: initial; font-size: 15px;">Multiplikation von Eignungs- und Einschränkungskarte</span></p>
 </div>
 </div>
 </div>
-</foreignobject><text x="2" y="579" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px">Schritt 5:&nbsp;Multiplikation von Eignungs- und Einschränkungska…</text>
+<p><text x="2" y="579" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px">Schritt 5:&nbsp;Multiplikation von Eignungs- und Einschränkungska…</text></p>
 </switch>
-</g></g><g><rect x="0" y="0" width="600" height="50" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><rect x="0" y="0" width="600" height="50" fill="none" stroke="none" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 25px; margin-left: 2px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left;">
 <div style="display: inline-block; font-size: 15px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">
-<font style="font-size: 16px;"><i>Wildkatzen bevorzugen mittlere Höhen, steilere Hänge die W-S-O exponiert, <br>Waldgebiete, Nähe zu Wasserstellen, Autobahnen werden kategorisch gemieden</i></font>
+<p><font style="font-size: 16px;"><i>Wildkatzen nutzen deckungsreiche, störungsarme Waldlebensräume; <br> Reliefdaten werden ergänzend bewertet, versiegelte Flächen wirken einschränkend. <br> Stark befahrene Strassen und Autobahnen werden kategorisch gemieden. </i></font></p>
 </div>
 </div>
 </div>
-</foreignobject><text x="2" y="30" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px">Wildkatzen bevorzugen mittlere Höhen, steilere Hänge die W-S-O exponiert,…</text>
+<p><text x="2" y="30" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="15px">Wildkatzen nutzen deckungsreiche, störungsarme Waldlebensräume.</text></p>
 </switch>
-</g></g><g><path d="M 20 70 L 20 70 L 540 70 L 540 70" fill="#ff0000" stroke="#0000ff" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all"></path><path d="M 20 70 L 20 380 L 540 380 L 540 70" fill="none" stroke="#0000ff" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="none"></path></g><g><path d="M 20 390 L 20 390 L 660 390 L 660 390" fill="#ff0000" stroke="#ff0000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all"></path><path d="M 20 390 L 20 440 L 660 440 L 660 390" fill="none" stroke="#ff0000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="none"></path></g><g><path d="M 10 60 L 10 60 L 800 60 L 800 60" fill="#ff0000" stroke="#009900" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all"></path><path d="M 10 60 L 10 450 L 800 450 L 800 60" fill="none" stroke="#009900" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="none"></path></g><g><rect x="75" y="100" width="80" height="40" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><path d="M 20 70 L 20 70 L 540 70 L 540 70" fill="#ff0000" stroke="#0000ff" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all"><path d="M 20 70 L 20 380 L 540 380 L 540 70" fill="none" stroke="#0000ff" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="none"></path></path></g><g><path d="M 20 390 L 20 390 L 660 390 L 660 390" fill="#ff0000" stroke="#ff0000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all"><path d="M 20 390 L 20 440 L 660 440 L 660 390" fill="none" stroke="#ff0000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="none"></path></path></g><g><path d="M 10 60 L 10 60 L 800 60 L 800 60" fill="#ff0000" stroke="#009900" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all"><path d="M 10 60 L 10 450 L 800 450 L 800 60" fill="none" stroke="#009900" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="none"></path></path></g><g><rect x="75" y="100" width="80" height="40" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 78px; height: 1px; padding-top: 120px; margin-left: 76px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
-Höhe
+<p>Höhe</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="115" y="124" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Höhe</text>
+<p><text x="115" y="124" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Höhe</text></p>
 </switch>
-</g></g><g><rect x="80" y="270" width="70" height="40" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><rect x="80" y="270" width="70" height="40" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 68px; height: 1px; padding-top: 290px; margin-left: 81px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
-Walddichte
+<p>Walddichte</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="115" y="294" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Walddichte</text>
+<p><text x="115" y="294" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Walddichte</text></p>
 </switch>
-</g></g><g><rect x="80" y="320" width="70" height="40" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><rect x="80" y="320" width="70" height="40" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 68px; height: 1px; padding-top: 340px; margin-left: 81px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
-Siedlungs-
+<p>Siedlungs-</p>
 <div>
-näche
+<p>näche</p>
 </div>
 </div>
 </div>
 </div>
-</foreignobject><text x="115" y="344" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Siedlungs-…</text>
+<p><text x="115" y="344" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Siedlungs-…</text></p>
 </switch>
-</g></g><g><rect x="55" y="395" width="120" height="40" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><rect x="55" y="395" width="120" height="40" fill="#dae8fc" stroke="#6c8ebf" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 415px; margin-left: 56px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
-Versiegelte Flächen
+<p>Versiegelte Flächen</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="115" y="419" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Versiegelte Flächen</text>
+<p><text x="115" y="419" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Versiegelte Flächen</text></p>
 </switch>
-</g></g><g><rect x="590" y="235" width="100" height="40" fill="#d5e8d4" stroke="#82b366" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><rect x="590" y="235" width="100" height="40" fill="#d5e8d4" stroke="#82b366" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 98px; height: 1px; padding-top: 255px; margin-left: 591px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
-Potenzielle Eignung
+<p>Potenzielle Eignung</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="640" y="259" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Potenzielle Eign…</text>
+<p><text x="640" y="259" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Potenzielle Eign…</text></p>
 </switch>
-</g></g><g><path d="M 380 220 L 405 220 L 423.63 220" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 428.88 220 L 421.88 223.5 L 423.63 220 L 421.88 216.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><path d="M 380 220 L 405 220 L 423.63 220" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"><path d="M 428.88 220 L 421.88 223.5 L 423.63 220 L 421.88 216.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></path></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 221px; margin-left: 402px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 13px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; background-color: rgb(255, 255, 255); white-space: nowrap;">
-x
+<p>x</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="402" y="225" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="13px" text-anchor="middle" font-weight="bold">x</text>
+<p><text x="402" y="225" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="13px" text-anchor="middle" font-weight="bold">x</text></p>
 </switch>
-</g></g><g><path d="M 380 290 L 423.63 290" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 428.88 290 L 421.88 293.5 L 423.63 290 L 421.88 286.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><path d="M 380 290 L 423.63 290" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"><path d="M 428.88 290 L 421.88 293.5 L 423.63 290 L 421.88 286.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></path></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 291px; margin-left: 402px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 13px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; background-color: rgb(255, 255, 255); white-space: nowrap;">
-x
+<p>x</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="402" y="295" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="13px" text-anchor="middle" font-weight="bold">x</text>
+<p><text x="402" y="295" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="13px" text-anchor="middle" font-weight="bold">x</text></p>
 </switch>
-</g></g><g><path d="M 380 340 L 423.63 340" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 428.88 340 L 421.88 343.5 L 423.63 340 L 421.88 336.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><path d="M 380 340 L 423.63 340" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"><path d="M 428.88 340 L 421.88 343.5 L 423.63 340 L 421.88 336.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></path></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 341px; margin-left: 402px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 13px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; background-color: rgb(255, 255, 255); white-space: nowrap;">
-x
+<p>x</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="402" y="345" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="13px" text-anchor="middle" font-weight="bold">x</text>
+<p><text x="402" y="345" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="13px" text-anchor="middle" font-weight="bold">x</text></p>
 </switch>
-</g></g><g></g><g><path d="M 115 140 L 115 170 L 110 170 L 110 220 L 123.63 220" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 128.88 220 L 121.88 223.5 L 123.63 220 L 121.88 216.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g><rect x="130" y="150" width="90" height="40" fill="#ffe6cc" stroke="#d79b00" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><g><path d="M 115 140 L 115 170 L 110 170 L 110 220 L 123.63 220" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"><path d="M 128.88 220 L 121.88 223.5 L 123.63 220 L 121.88 216.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></path></g><g><rect x="130" y="150" width="90" height="40" fill="#ffe6cc" stroke="#d79b00" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 88px; height: 1px; padding-top: 170px; margin-left: 131px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
-Hangneigung
+<p>Hangneigung</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="175" y="174" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Hangneigung</text>
+<p><text x="175" y="174" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Hangneigung</text></p>
 </switch>
-</g></g><g><rect x="130" y="200" width="90" height="40" fill="#ffe6cc" stroke="#d79b00" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)">
+<p><g><rect x="130" y="200" width="90" height="40" fill="#ffe6cc" stroke="#d79b00" pointer-events="all"></rect></g><g><g transform="translate(-0.5 -0.5)"></g></g></p>
 <switch>
-<foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+<p><foreignobject pointer-events="none" width="100%" height="100%" requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"></foreignobject></p>
 <div data-xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 88px; height: 1px; padding-top: 220px; margin-left: 131px;">
 <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
 <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
-Exposition
+<p>Exposition</p>
 </div>
 </div>
 </div>
-</foreignobject><text x="175" y="224" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Exposition</text>
+<p><text x="175" y="224" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">Exposition</text></p>
 </switch>
-</g></g><g><path d="M 40 90 L 40 90 L 240 90 L 240 90" fill="#e3c800" stroke="#999999" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all"></path><path d="M 40 90 L 40 250 L 240 250 L 240 90" fill="none" stroke="#999999" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="none"></path></g><g><path d="M 30 80 L 30 80 L 410 80 L 410 80" fill="#ff8000" stroke="#ff8000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all"></path><path d="M 30 80 L 30 370 L 410 370 L 410 80" fill="none" stroke="#ff8000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="none"></path></g><g><path d="M 115 140 L 115 160 L 110 160 L 110 180 L 123.63 180" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 128.88 180 L 121.88 183.5 L 123.63 180 L 121.88 176.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g></g>
+<p><g><path d="M 40 90 L 40 90 L 240 90 L 240 90" fill="#e3c800" stroke="#999999" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all"><path d="M 40 90 L 40 250 L 240 250 L 240 90" fill="none" stroke="#999999" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="none"></path></path></g><g><path d="M 30 80 L 30 80 L 410 80 L 410 80" fill="#ff8000" stroke="#ff8000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all"><path d="M 30 80 L 30 370 L 410 370 L 410 80" fill="none" stroke="#ff8000" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="none"></path></path></g><g><path d="M 115 140 L 115 160 L 110 160 L 110 180 L 123.63 180" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"><path d="M 128.88 180 L 121.88 183.5 L 123.63 180 L 121.88 176.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></path></g></p>
 <switch>
-<g requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"></g><a transform="translate(0,-5)" href="https://www.drawio.com/doc/faq/svg-export-text-problems" target="_blank"><text text-anchor="middle" font-size="10px" x="50%" y="100%">Text is not SVG - cannot display</text></a>
-</switch>
-</svg>
+<g requiredfeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><a transform="translate(0,-5)" xlink:href="https://www.drawio.com/doc/faq/svg-export-text-problems" target="_blank"><text text-anchor="middle" font-size="10px" x="50%" y="100%">Text is not SVG - cannot display</text></a>
+</g></switch>
+
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flow1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;1: Ablauf einer einfachen gewichteten Verschneidung einer Multikriterien Eignungsanalyse, <span class="citation" data-cites="gisma2024">GISMA (<a href="#ref-gisma2024" role="doc-biblioref">2024</a>)</span>
+Abbildung&nbsp;1: Das Schema zeigt eine ökologisch vereinfachte gewichtete Verschneidung dieser Multikriterien-Eignungsanalyse, <span class="citation" data-cites="gisma2024">GISMA (<a href="#ref-gisma2024" role="doc-biblioref">2024</a>)</span>
 </figcaption>
 </figure>
 </div>
-</section>
-</section>
-<section id="ablauf-einer-gewichteten-eignungsschätzung" class="level2">
-<h2 class="anchored" data-anchor-id="ablauf-einer-gewichteten-eignungsschätzung">Ablauf einer gewichteten Eignungsschätzung</h2>
-<p>Betrachten wir die Schritte im Einzeln:</p>
+<p>Das Flowchart zeigt die gesamte Logik der gewichteten Verschneidung. Zuerst werden die Eingangsdaten ausgewählt. Die Höhe liefert die abgeleiteten Reliefdaten Hangneigung und Exposition. Walddichte und Siedlungsnähe gehen direkt als weitere Kriterien ein. Danach werden alle Kriterien in gemeinsame Eignungskategorien überführt.</p>
+<p>Die Schritte lassen sich so lesen:</p>
 <ol type="1">
-<li>Kriterienauswahl: Der erste Schritt besteht in der Auswahl der Kriterien, die den gesuchten Raum im Hinblick auf die Wildkatze als geeignete Prädiktoren charakterisieren (blaue und orange unterlegte Kästen).</li>
-<li>Standardisierung: Nun müssen die unterschiedlichen Maßstäbe der Eingangsdatensätze aufeinander abgestimmt werden. Es macht wenig Sinn, eine prozentuale Hangneigung direkt mit einer Bevölkerungsdichte zu verrechnen. Deshalb werden den Eingangsdaten völlig unterschiedliche Einheiten einer standardisierten numerischen Indexskala (z.B. 0-1, 0-100, 0-255) zugeordnet/kategorisiert. Daraus folgt, dass die Werte der resultierenden Eignungsstufen keine Einheiten mehr tragen, sondern nur noch einen numerischen Eignungsindex. Die Zuordnung der Eingangswerte zur Indexskala kann auf verschiedene Weise erfolgen, wobei eine lineare Zuordnung die einfachste ist.</li>
-<li>Jeder kategorisierte Datensatz erhält einen Multiplikator bzw. ein Gewicht. Die Gewichte spiegeln die relative Bedeutung der Informationsebenen zueinander wider. Die wichtigste Ebene erhält das höchste Gewicht. Gibt es kein Wissen über Präferenzen werde die Datensätze gleich gewichtet. Wichtig ist das die Summer der Gewichte 1 ergibt.</li>
-<li>Ablauf: Jede Informationsebene wird mit ihrem Gewicht multipliziert und die Ebenen anschließend addiert. In der resultierenden Eignungsstufe haben die besser geeigneten Rasterzellen hohe Werte und die ungeeigneten Rasterzellen niedrige Werte.</li>
+<li><strong>Kriterienauswahl:</strong> Zunächst werden die räumlichen Kriterien festgelegt, die für die vereinfachte Wildkatzenfrage als geeignete Prädiktoren dienen. Im Diagramm sind dies Höhe, Hangneigung, Exposition, Walddichte und Siedlungsnähe.</li>
+<li><strong>Ableitung von Reliefdaten:</strong> Aus dem Höhendatensatz werden Hangneigung und Exposition abgeleitet. Sie werden nicht direkt aus der Karte gelesen, sondern aus dem DGM berechnet.</li>
+<li><strong>Standardisierung:</strong> Die unterschiedlichen Eingangsdaten werden in vergleichbare Eignungskategorien überführt. Dadurch können Prozentwerte, Distanzwerte, Gradwerte und Dichtewerte gemeinsam verrechnet werden.</li>
+<li><strong>Gewichtung:</strong> Jeder kategorisierte Datensatz erhält ein Gewicht zwischen 0 und 1. Die Gewichte spiegeln die relative Bedeutung der Kriterien wider. Gibt es keine fachliche Begründung für unterschiedliche Gewichte, werden die Kriterien gleich gewichtet.</li>
+<li><strong>Aggregation:</strong> Die standardisierten und gewichteten Kriterien werden addiert. Dadurch entsteht eine Karte der potenziellen Eignung.</li>
+<li><strong>Einschränkung:</strong> Versiegelte Flächen werden separat behandelt. Sie werden nicht einfach als ein weiteres positives oder negatives Kriterium addiert, sondern anschließend als Einschränkung auf die potenzielle Eignung angewendet.</li>
 </ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Ökologische Kurzinterpretation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Ökologische Kurzinterpretation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Hohe potenzielle Eignung entsteht in diesem vereinfachten Modell dort, wo deckungsreiche Waldstrukturen, geringe Siedlungsnähe und günstig bewertete Reliefbedingungen zusammenfallen. Versiegelte Flächen wirken als Einschränkung, weil sie Lebensräume zerschneiden, Störung erzeugen oder als direkte Barriere wirken können.</p>
+</div>
+</div>
+</section>
+<section id="gewichtete-kriterienaddition-im-raster" class="level2">
+<h2 class="anchored" data-anchor-id="gewichtete-kriterienaddition-im-raster">Gewichtete Kriterienaddition im Raster</h2>
+<p>Die gewichtete Verschneidung lässt sich im Rastermodell besonders einfach darstellen. Jede Rasterzelle erhält für jedes Kriterium einen standardisierten Eignungswert. Dieser Wert wird mit dem Gewicht des Kriteriums multipliziert. Anschließend werden alle gewichteten Werte derselben Zelle addiert.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../assets/images/unit05/Raster_thumb.gif" class="img-fluid figure-img"></p>
-<figcaption>Gewichtetes Kriterienaddition am Beispiel von 2 binären Datansätzen, <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
+<p><img src="../assets/images/unit05/Raster_thumb.png" class="img-fluid figure-img"></p>
+<figcaption>Gewichtete Kriterienaddition am Beispiel von zwei binären Datensätzen, <span class="citation" data-cites="gisma2024">GISMA (<a href="#ref-gisma2024" role="doc-biblioref">2024</a>)</span></figcaption>
 </figure>
 </div>
-<p>In dieser Darstellung wurden exemplarisch die beiden Eignungskriterien für den Katzenlebensraum im Lahntal entsprechend ihrer relativen Bedeutung gewichtet. Die Informationsebene „bewaldet“ wird mit dem Faktor 3 gewichtet, die des Kriteriums „steiles Gelände“ mit dem Faktor 2. Nach der Gewichtung werden die beiden Ebenen addiert. Der Eignungswert der resultierenden Informationsebene reicht von 0 (nicht geeignet) bis 5 (sehr geeignet).</p>
-<section id="bestimmung-der-gewichte" class="level3">
-<h3 class="anchored" data-anchor-id="bestimmung-der-gewichte">Bestimmung der Gewichte</h3>
-<p>Im Entscheidungsprozess werden, wie bereits erwähnt, die einzelnen Kriterien von verschiedenen Interessengruppen unterschiedlich bewertet und gewichtet. Wie können solche Bewertungen vergleichbar gemacht werden? Genau die gleiche Frage stellt sich bei der Suche nach einem Lebensraum für den Wolf in St.&nbsp;Gallen. Angenommen, die Expertinnen und Experten haben sich darauf geeinigt, eine gewichtete Schnittmenge für ihre Eignungsanalyse zu verwenden. Wie gewichten sie dann die einzelnen Kriterien? Wie kommen die Experten und Expertinnen z.B. darauf, dass das Kriterium „Rückzugsraum Wald“ 1,5 mal so wichtig ist wie „steiles und felsiges Gelände“? Die Verteilung der Gewichte ist bei einer Eignungsanalyse mit gewichteter Verschneidung ebenso wichtig wie schwierig.</p>
-<p>Der einfachste Weg, eine Gewichtung vorzunehmen, besteht darin, die Kriterien in eine Rangfolge zu bringen. Dabei kann aufsteigend oder absteigend gereiht werden. Aufsteigend bedeutet, dass das wichtigste Kriterium den Rang 1 erhält, das zweitwichtigste den Rang 2 usw. Bei einer absteigenden Rangfolge erhält das unwichtigste Kriterium den Rang 1, das zweitwichtigste den Rang 2 usw. Sobald die Ränge verteilt sind, können die numerischen Gewichte, die den Rängen entsprechen, auf verschiedene Weise abgeleitet werden. Im obigen Beiepiel wurde absteigend gewicht.</p>
-
-
-
+<p>In dieser Darstellung werden exemplarisch zwei Eignungskriterien entsprechend ihrer relativen Bedeutung gewichtet. Die Informationsebene <code>bewaldet</code> wird mit dem Faktor 3 gewichtet, die Informationsebene <code>steiles Gelände</code> mit dem Faktor 2. Nach der Gewichtung werden die beiden Ebenen addiert. Der Eignungswert der resultierenden Informationsebene reicht von 0 für nicht geeignet bis 5 für sehr geeignet.</p>
+<p>Für eine normierte Eignungsanalyse werden solche Faktoren anschließend häufig so umgerechnet, dass ihre Summe 1 ergibt. Aus den Faktoren 3 und 2 würden dann die normierten Gewichte 0,6 und 0,4:</p>
+<p><span class="math display">\[w_1 = \frac{3}{3 + 2} = 0.6\]</span></p>
+<p><span class="math display">\[w_2 = \frac{2}{3 + 2} = 0.4\]</span></p>
 </section>
+<section id="bestimmung-der-gewichte" class="level2">
+<h2 class="anchored" data-anchor-id="bestimmung-der-gewichte">Bestimmung der Gewichte</h2>
+<p>Die Verteilung der Gewichte ist bei einer Eignungsanalyse ebenso wichtig wie schwierig. Die Gewichte bestimmen, welche Kriterien das Ergebnis stark prägen und welche Kriterien nur ergänzend wirken. Im Wildkatzenbeispiel wäre es fachlich nicht sinnvoll, Exposition, Hangneigung, Walddichte und Siedlungsnähe automatisch gleich wichtig zu behandeln. Deckung und Störungsarmut sind ökologisch näher an der Habitatfrage als eine reine Hangexposition.</p>
+<p>Der einfachste Weg besteht darin, die Kriterien in eine Rangfolge zu bringen. Das wichtigste Kriterium erhält den höchsten Rang, das unwichtigste den niedrigsten Rang. Aus diesen Rangwerten können anschließend Gewichte abgeleitet werden. Bei vier Kriterien mit Rangwerten 4, 3, 2 und 1 ergibt sich die Gewichtung durch Division jedes Rangwerts durch die Summe aller Rangwerte:</p>
+<p><span class="math display">\[w_i = \frac{r_i}{\sum_i r_i}\]</span></p>
+<p>Ein mögliches didaktisches Beispiel wäre:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Kriterium</th>
+<th>Begründung</th>
+<th style="text-align: right;">Rangwert</th>
+<th style="text-align: right;">Normiertes Gewicht</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Walddichte</td>
+<td>Proxy für Deckung und Waldstruktur</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0,40</td>
+</tr>
+<tr class="even">
+<td>Siedlungsnähe</td>
+<td>Proxy für Störung und menschliche Nutzung</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0,30</td>
+</tr>
+<tr class="odd">
+<td>Hangneigung</td>
+<td>ergänzender Reliefindikator</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0,20</td>
+</tr>
+<tr class="even">
+<td>Exposition</td>
+<td>ergänzender Mikroklimaindikator</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0,10</td>
+</tr>
+</tbody>
+</table>
+<p>Diese Zahlen sind keine gemessenen Wildkatzenpräferenzen. Sie sind eine transparente Modellannahme. Genau deshalb sollte eine Eignungsanalyse immer offenlegen, wie die Gewichte festgelegt wurden. Wenn mehrere Gewichtungen fachlich plausibel sind, sollten die Ergebnisse mit unterschiedlichen Gewichtungsschemata verglichen werden. So lässt sich prüfen, ob die Eignungskarte robust ist oder stark von einzelnen Annahmen abhängt.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Merksatz">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Wichtig</span>Merksatz
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die Boolesche Verschneidung fragt: Erfüllt eine Fläche alle Bedingungen oder nicht? Die gewichtete Verschneidung fragt: Wie stark erfüllt eine Fläche mehrere unterschiedlich wichtige Bedingungen?</p>
+</div>
+</div>
+
+
+
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-bfn_wildkatze" class="csl-entry" role="listitem">
+Bundesamt für Naturschutz. 2026. <span>„<span>Felis silvestris</span>: Wildkatze. Artenportrait“</span>. <a href="https://www.bfn.de/artenportraits/felis-silvestris">https://www.bfn.de/artenportraits/felis-silvestris</a>.
+</div>
 <div id="ref-gisma2024" class="csl-entry" role="listitem">
 GISMA. 2024. <em>Eigene Darstellung</em>. Marburg: Working Group GIS; Environmental Modeling <span>GISMA</span>.
 </div>
-<div id="ref-gitta2005" class="csl-entry" role="listitem">
-GITTA. 2005-2016. <span>„Overview of available modules [online]“</span>. 2005-2016. <a href="http://www.gitta.info/website/en/html/modules_overview.html">http://www.gitta.info/website/en/html/modules_overview.html</a>.
+<div id="ref-goetz2018" class="csl-entry" role="listitem">
+Götz, Malte, Saskia Jerosch, Olaf Simon, und Sabrina Streif. 2018. <span>„Raumnutzung und Habitatanspr<span>ü</span>che der Wildkatze in Deutschland: Neue Grundlagen zur Eingriffsbewertung einer streng gesch<span>ü</span>tzten <span>FFH</span>-Art“</span>. <em>Natur und Landschaft</em> 93 (4): 161–69. <a href="https://doi.org/10.17433/4.2018.50153565.161-169">https://doi.org/10.17433/4.2018.50153565.161-169</a>.
+</div>
+<div id="ref-klar2008" class="csl-entry" role="listitem">
+Klar, Nina, Néstor Fernández, Stephanie Kramer-Schadt, Mathias Herrmann, Manfred Trinzen, Ingrid Büttner, und Carsten Niemitz. 2008. <span>„Habitat Selection Models for <span>European</span> Wildcat Conservation“</span>. <em>Biological Conservation</em> 141 (1): 308–19. <a href="https://doi.org/10.1016/j.biocon.2007.10.004">https://doi.org/10.1016/j.biocon.2007.10.004</a>.
+</div>
+<div id="ref-klar2009" class="csl-entry" role="listitem">
+Klar, Nina, Mathias Herrmann, und Stephanie Kramer-Schadt. 2009. <span>„Effects and Mitigation of Road Impacts on Individual Movement Behavior of Wildcats“</span>. <em>Journal of Wildlife Management</em> 73 (5): 631–38. <a href="https://doi.org/10.2193/2007-574">https://doi.org/10.2193/2007-574</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <div class="footer-banner">

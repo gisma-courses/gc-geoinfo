@@ -1,5 +1,5 @@
 ---
-title: Multikriterien-Multiziel-Analyse
+title: "Praxis: Multikriterienanalyse in QGIS"
 title-block-banner: ../assets/images/splash_L04.png
 title-block-banner-color: black
 
@@ -9,47 +9,234 @@ lang: de
 comments: false
 ---
 
+## Ziel der Übung
 
-## Schema einer Multikriterienanalyse (MKA)
+In der vorherigen Einheit wurde die Eignungsanalyse am Beispiel potenzieller Wildkatzenhabitate im Lahntal eingeführt. Dort wurde gezeigt, wie aus ökologischen Annahmen räumliche Kriterien abgeleitet werden und wie diese Kriterien boolesch oder gewichtet miteinander verschnitten werden können.
+
+In dieser Praxiseinheit wird diese Modelllogik in QGIS umgesetzt. Ziel ist es, aus mehreren Eingangsdaten eine einfache Eignungskarte zu erzeugen. Die Karte ist kein validiertes Habitatmodell, sondern ein methodisches Übungsbeispiel für eine rasterbasierte Multikriterienanalyse.
+
+## Ausgangsfrage
+
+Welche Bereiche im Untersuchungsgebiet besitzen nach einem vereinfachten Kriterienmodell eine hohe potenzielle Eignung als Wildkatzenlebensraum?
+
+Für diese Übung wird ein Fall mit einem Ziel und mehreren Kriterien betrachtet. Es geht also nicht um mehrere konkurrierende Nutzungsziele, sondern um eine Multi Criteria Evaluation (MCE): Mehrere räumliche Kriterien werden kombiniert, um die Eignung für ein Ziel zu bewerten.
+
+## Kriterienmodell
+
+Aus der vorherigen Einheit werden folgende Kriterien übernommen:
+
+| Kriterium | Bedeutung im Modell | Datengrundlage |
+|---|---|---|
+| Walddichte | Proxy für Deckung und Waldstruktur | Landbedeckung, Vegetationsindex oder Waldmaske |
+| Siedlungsnähe | Proxy für Störung durch menschliche Nutzung | Gebäude- oder Siedlungsflächen |
+| Hangneigung | ergänzende Reliefvariable | digitales Geländemodell |
+| Exposition | ergänzende Relief- und Mikroklimavariable | digitales Geländemodell |
+| versiegelte Flächen | Einschränkung / Ausschluss | Straßen, Gebäude, Versiegelungsdaten |
+
+Die Kriterien werden nicht direkt miteinander verrechnet. Zuerst müssen sie in eine gemeinsame Eignungsskala überführt werden. Danach können sie gewichtet und addiert werden.
+
+## Arbeitsschritt 1: Problemdefinition
+
+Die Problemdefinition lautet:
+
+> Gesucht werden Bereiche, die im vereinfachten Modell deckungsreich, störungsarm und nicht durch versiegelte Flächen eingeschränkt sind.
+
+Damit ist klar, dass die resultierende Karte keine Beobachtung realer Wildkatzenvorkommen darstellt. Sie zeigt nur, welche Flächen nach den gewählten Regeln als potenziell geeignet bewertet werden.
+
+## Arbeitsschritt 2: Kriterien operationalisieren
+
+Ökologische Kriterien müssen in messbare GIS-Parameter übersetzt werden. Aus „deckungsreicher Waldlebensraum“ wird zum Beispiel ein Raster der Walddichte. Aus „geringe Störung durch Siedlungen“ wird ein Distanzraster zur nächsten Siedlungsfläche.
+
+| Ökologische Aussage | GIS-Parameter |
+|---|---|
+| deckungsreiche Bereiche sind günstiger | Walddichte oder Waldmaske |
+| siedlungsferne Bereiche sind günstiger | Distanz zur Siedlung |
+| Relief kann Standortunterschiede anzeigen | Hangneigung und Exposition |
+| versiegelte Flächen sind ungeeignet | Einschränkungsmaske |
+
+## Arbeitsschritt 3: Daten in QGIS vorbereiten
+
+Alle Eingangsdaten müssen räumlich vergleichbar gemacht werden. Sie benötigen dieselbe Projektion, dieselbe Zellgröße, dieselbe Ausdehnung und eine einheitliche NoData-Behandlung.
+
+Typischer Zielzustand:
+
+```text
+CRS: EPSG:25832
+Zellgröße: z. B. 5 m oder 10 m
+Ausdehnung: Untersuchungsgebiet
+Datentyp: Raster
+```
+
+Geeignete QGIS-Werkzeuge:
+
+Geeignete QGIS-Werkzeuge sind:
+
+* **Rasterisieren (Vektor nach Raster)**: wandelt Vektordaten, zum Beispiel Siedlungsflächen oder versiegelte Flächen, in Rasterdaten um.
+* **Hangneigung**: leitet aus dem digitalen Geländemodell die Steilheit des Geländes ab.
+* **Exposition**: leitet aus dem digitalen Geländemodell die Hangausrichtung ab.
+* **Nähe / Rasterdistanz**: berechnet für jede Rasterzelle die Entfernung zum nächsten Objekt, zum Beispiel zur nächsten Siedlungsfläche.
+* **Raster ausrichten**: sorgt dafür, dass alle Raster dieselbe Zellgröße, Ausdehnung und Rasterlage besitzen.
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7OoKJHvsUbo?si=pAusi02ApADdz3nz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+## Arbeitsschritt 4: Kriterien standardisieren
 
-Im einfachsten Fall der Entscheidungsunterstützung mit GIS geht es darum, Räume oder Standorte zu finden, die für ein Ziel mehrere Kriterien erfüllen oder optimieren. Im Fallbeispiel der Gemeinde LAhntal besteht das Ziel in einem ersten Ansatz darin, die besten Lebensräume für die Wildkatze im Gemeindegebiet zu identifizieren. Unter der Annahme, dass die Wildkatze siedlungsferne und bewaldete Gebiete bevorzugt, lassen sich zwei Suchkriterien formulieren. Gibt es, wie in diesem Fall, mehrere Kriterien, aber nur ein Ziel, spricht man von einer Multi Criteria Evaluation (MCE).
+Die Eingangsdaten besitzen unterschiedliche Einheiten. Hangneigung wird in Grad oder Prozent gemessen, Siedlungsnähe in Metern, Walddichte als Index oder Klasse. Deshalb werden alle Kriterien in eine gemeinsame Eignungsskala überführt.
 
-1. *Problemdefinition:*
-Der erste Schritt einer MCE ist die Definition des Problems. Im Fallbeispiel der Gemeinde St. Gittal könnte die Problemdefinition lauten: „Welche Teile des Gemeindegebietes sind als Lebensraum für den Wolf geeignet“.
+Beispielhafte Skala:
 
-2. *Kriterienauswahl:*
-Der nächste Schritt ist die Auswahl der Kriterien. Die ausgewählten Kriterien sollten die Eigenschaften des gesuchten Gebietes oder Raumes möglichst gut widerspiegeln. Kriterien können sowohl räumlicher (Geometrie, Topologie) als auch sachlicher (Eigenschaften) Natur sein. Ein räumliches Kriterium ist z.B. die Entfernung des potenziellen Wolfslebensraumes zur nächsten Siedlung. Die Beschränkung auf die Landnutzungsklasse „Wald“ ist hingegen ein sachliches Kriterium. Darüber hinaus gibt es harte Kriterien, die unbedingt erfüllt sein müssen („must have“) 
+| Wert | Bedeutung       |
+| ---: | --------------- |
+|    0 | ungeeignet      |
+|  0.3 | gering geeignet |
+|  0.6 | mittel geeignet |
+|  1.0 | gut geeignet    |
 
-3. *Operationalisierung der Kriterien:*.
-Sind die Kriterien definiert, müssen sie in präzise, messbare Parameter übersetzt werden. Dieser Prozess wird als Operationalisierung bezeichnet. Beispielsweise könnte das Kriterium „nicht zu nahe an Siedlungsgebieten“ in die Angabe eines Mindestabstands zur Bauzone in Metern übersetzt werden. Man spricht von der Operationalisierung der Kriterien in quantifizierbare Größen. In den meisten Fällen entsprechen die einzelnen Kriterien jeweils einem Datenlayer im GIS (Siedlungsnähe-Layer, Wald-Layer).
+Diese Reklassifikation wird in QGIS mit `Nach Tabelle neuklassifizieren` durchgeführt.
 
-4. *Schaffen eines gemeinsamen Bezugs - Datenintegration:*.
-Die Datenintegration schafft Vergleichbarkeit durch gemeinsame Maßstäbe, gleiche Datentypen (Raster/Vektor) sowie gleiche Auflösungen und gleiche Bezugssysteme.
+Beispiel Siedlungsnähe:
 
-5. *Verschneidung:*
-Identifikation der geeignetsten Räume: Nun werden die verschiedenen Kriterien miteinander verschnitten, um die gesuchten Standorte oder Räume zu identifizieren. Dazu gibt es verschiedene Möglichkeiten:
-  * Logische (boolesche) Verschneidung: In jeder Datenschicht gibt es nur binäre wahr/falsch-Informationen (true/false, Wald/Nicht-Wald), aus deren logischer Verschneidung die gesuchten Standorte und Räume ermittelt werden. Die Boolesche Verschneidung wird in der Einheit „Boolesche Verschneidung“ behandelt.
-  * Gewichtete Verschneidung: Die einfache Unterscheidung zwischen wahr und falsch wird der komplexen Realität fast nie gerecht. Eine wesentliche Verbesserung der Ergebnisse kann erreicht werden, wenn die einzelnen Datenschichten gewichtet werden. Im Fallbeispiel könnte z.B. die Entfernung zur Siedlung viel weniger wichtig sein als das Rückzugsgebiet Wald. Um dies zu erreichen, könnte die Ebene der Siedlungsentfernung mit einem Gewichtungsfaktor von z.B. 5 multipliziert werden. Diese Themen werden separat behandelt (Einheiten „Gewichtete Verschneidung“ und „Bestimmung der Gewichte“).
-  * Fuzzy Overlay: Erhebungsfehler bei den Eingangsdaten und falsch gewählte Kriterien bergen die Gefahr von Bewertungsfehlern. Bei einer Multikriterienbewertung können geeignete Gebiete verkannt und ungeeignete fälschlicherweise als geeignet eingestuft werden. Eine Lösung dieses Problems besteht darin, scharfe Grenzen aufzulösen. Für räumliche Daten bedeutet dies, dass Grenzen nicht als scharfe Linien, sondern als Übergangszonen dargestellt werden. Bei den Attributen ersetzen unscharfe Wertebereiche die scharfen Klassengrenzen. Dieses Konzept basiert auf der Idee der Fuzzy Set Theory („fuzzy“ im Sinne von „unscharf“). Auf diese Ansätze wird erst im Intermediate Level näher eingegangen.
-6. *Überprüfung/Bewertung:*
-Im letzten Schritt sollten die Ergebnisse mit einer Referenz verglichen werden. Dies ist möglich, wenn im Feld erhobene Referenzdaten („ground truth“) herangezogen werden können. Dieser letzte Schritt wird häufig vernachlässigt. Aber Achtung: Eine Eignungskarte ohne Abschätzung ihrer Qualität und Zuverlässigkeit ist oft das Papier nicht wert, auf dem sie gedruckt wurde!
+| Entfernung zur Siedlung | Eignungswert |
+| ----------------------: | -----------: |
+|                 0–100 m |            0 |
+|               100–300 m |          0.3 |
+|               300–600 m |          0.6 |
+|                 > 600 m |          1.0 |
+
+## Arbeitsschritt 5: Gewichte festlegen
+
+Die standardisierten Kriterien werden gewichtet. Die Gewichte drücken aus, wie stark ein Kriterium in das Ergebnis eingeht.
+
+Beispiel:
+
+| Kriterium        | Gewicht |
+| ---------------- | ------: |
+| Walddichte       |    0.40 |
+| Siedlungsdistanz |    0.30 |
+| Hangneigung      |    0.20 |
+| Exposition       |    0.10 |
+
+Die Summe der Gewichte soll 1 ergeben:
+
+$$
+0.40 + 0.30 + 0.20 + 0.10 = 1
+$$
+
+Die Gewichte können fachlich begründet gesetzt oder mit einem Verfahren wie AHP bestimmt werden.
+
+## Arbeitsschritt 6: Gewichtete Verschneidung im Rasterrechner
+
+Die gewichtete Eignung wird im Rasterrechner berechnet:
+
+```qgis
+(
+  "walddichte_idx@1" * 0.40 +
+  "siedlungsdistanz_idx@1" * 0.30 +
+  "hangneigung_idx@1" * 0.20 +
+  "exposition_idx@1" * 0.10
+)
+*
+"einschraenkung_mask@1"
+```
+
+Die Einschränkungsmaske besitzt idealerweise nur zwei Werte:
+
+| Wert | Bedeutung                  |
+| ---: | -------------------------- |
+|    1 | Fläche bleibt bewertbar    |
+|    0 | Fläche wird ausgeschlossen |
+
+Damit werden versiegelte Flächen, Straßen oder stark bebaute Bereiche aus der Eignungskarte entfernt oder stark abgewertet.
+
+## Arbeitsschritt 7: Ergebnis darstellen und prüfen
+
+Das Ergebnis ist ein **dimensionsloser Eignungsindex**. Hohe Werte zeigen eine hohe potenzielle Eignung nach den gewählten Modellregeln. Niedrige Werte zeigen geringe Eignung oder Ausschlussflächen.
+
+Für die Darstellung eignet sich `Einkanal-Pseudofarbe` mit fünf Klassen:
+
+| Eignungswert | Klasse            |
+| -----------: | ----------------- |
+|        0–0.2 | ungeeignet        |
+|      0.2–0.4 | gering geeignet   |
+|      0.4–0.6 | mittel geeignet   |
+|      0.6–0.8 | gut geeignet      |
+|      0.8–1.0 | sehr gut geeignet |
+
+::: {.callout-warning title="Interpretation"}
+Die Karte zeigt keine realen Wildkatzenvorkommen. Sie zeigt nur, welche Bereiche nach den gewählten Kriterien, Klassen und Gewichten als potenziell geeignet erscheinen. Eine Eignungskarte ohne Überprüfung durch unabhängige Daten bleibt ein Modellprodukt eine sogenannte Potenzialkarte.
+:::
+
+## QGIS-Werkzeuge für AHP und gewichtete Verschneidung
+
+Die gewichtete Verschneidung lässt sich wie zuvor beschrieben in QGIS vollständig mit Standardwerkzeugen umsetzen. Benötigt werden vor allem die Reklassifikation der Eingangsdaten, Distanzanalysen, der Rasterrechner und gegebenenfalls der grafische Modellierer. Damit bleibt der gesamte Arbeitsablauf transparent: Jede Bewertung, jedes Gewicht und jede Rechenoperation ist direkt nachvollziehbar.
+
+Für die Bestimmung der Gewichte können ergänzend AHP-basierte Plugins genutzt werden. Sie sind vor allem dann sinnvoll, wenn die Gewichtung nicht einfach frei gesetzt/erfunden werden soll, sondern aus dokumentierten Paarvergleichen der Kriterien abgeleitet wird. Dadurch wird sichtbar, warum ein Kriterium stärker oder schwächer in die Analyse eingeht. AHP ersetzt also nicht die fachliche Entscheidung, macht sie aber expliziter und überprüfbarer.
+
+Geeignete Plugins sind zum Beispiel:
+
+- [Easy AHP](https://plugins.qgis.org/plugins/EasyAHP/): Plugin für AHP und Weighted Linear Combination in QGIS.
+- [Analyse Multicritère Hiérarchique / AHP Raster Analysis](https://plugins.qgis.org/plugins/ahp_analysis/): Plugin für rasterbasierte Multikriterienanalyse mit paarweisen Vergleichen, Gewichtungsberechnung und Konsistenzprüfung.
+- [RasterMCDA](https://plugins.qgis.org/plugins/raster_mcda/): experimentelles Plugin für rasterbasierte MCDA-Verfahren; vor der Nutzung sollte geprüft werden, ob es in der verwendeten QGIS-Version stabil läuft.
+
+Für die Übung bleibt der Standardworkflow mit Rasterrechner und Modellierer vorzuziehen. AHP-Plugins können ergänzend eingesetzt werden, um die Gewichte systematischer herzuleiten und die Entscheidung über die relative Bedeutung der Kriterien besser zu dokumentieren.
+
+### Exkurs Vorgehensweise beim Analytic Hierarchy Process (AHP)
+
+Der *Analytic Hierarchy Process* (AHP) ist ein Verfahren, um die Gewichte einer Multikriterienanalyse systematischer herzuleiten. Die Kriterien werden dabei nicht direkt mit festen Gewichten versehen, sondern zunächst paarweise miteinander verglichen.
+
+Für das Wildkatzenbeispiel wird also gefragt:
+
+- Ist **Walddichte** wichtiger als **Siedlungsnähe**?
+- Ist **Walddichte** wichtiger als **Hangneigung**?
+- Ist **Siedlungsnähe** wichtiger als **Exposition**?
+- Ist **Hangneigung** wichtiger als **Exposition**?
+
+Die Bewertung erfolgt mit einer einfachen Vergleichsskala. Ein Wert von `1` bedeutet, dass zwei Kriterien gleich wichtig sind. Ein Wert von `3` bedeutet, dass ein Kriterium etwas wichtiger ist. `5`, `7` und `9` stehen für deutlich, sehr stark oder extrem stärker gewichtete Bedeutung. Die Zwischenwerte `2`, `4`, `6` und `8` können verwendet werden, wenn die Entscheidung zwischen zwei Stufen liegt.
+
+Aus diesen Paarvergleichen entsteht eine Vergleichsmatrix:
+
+| Kriterium | Walddichte | Siedlungsnähe | Hangneigung | Exposition |
+|---|---:|---:|---:|---:|
+| Walddichte | 1 | 3 | 5 | 7 |
+| Siedlungsnähe | 1/3 | 1 | 3 | 5 |
+| Hangneigung | 1/5 | 1/3 | 1 | 3 |
+| Exposition | 1/7 | 1/5 | 1/3 | 1 |
+
+Aus dieser Matrix werden anschließend die relativen Gewichte berechnet. Ein mögliches Ergebnis wäre zum Beispiel:
+
+| Kriterium | Gewicht |
+|---|---:|
+| Walddichte | 0.56 |
+| Siedlungsnähe | 0.26 |
+| Hangneigung | 0.12 |
+| Exposition | 0.06 |
+
+Die Gewichte ergeben zusammen 1:
+
+$$
+0.56 + 0.26 + 0.12 + 0.06 = 1
+$$
+
+Diese Werte können anschließend direkt in der gewichteten Verschneidung verwendet werden:
+
+```qgis
+(
+  "walddichte_idx@1" * 0.56 +
+  "siedlungsdistanz_idx@1" * 0.26 +
+  "hangneigung_idx@1" * 0.12 +
+  "exposition_idx@1" * 0.06
+)
+*
+"einschraenkung_mask@1"
 
 
-## Multi-Ziel-Analyse (Multi Objective Evaluation, MOE)
+## Ausblick: Von einem Ziel zu mehreren Zielen
 
+Die bisherige Übung behandelt eine MCE: Mehrere Kriterien werden für ein Ziel kombiniert. In Planungsfragen gibt es aber oft mehrere Ziele gleichzeitig. Dann spricht man von einer Multi Objective Evaluation (MOE).
 
-Wenn die Gemeinde Lahntal den Dorffrieden in Caldern erhalten will, muss sie versuchen, die Wünsche der Naturfreunde, der Landwirte und der Erholungssuchenden unter einen Hut zu bringen. Es ist leicht zu erkennen, dass die Ziele der verschiedenen Interessengruppen sehr unterschiedlich sind.
+Ein Beispiel wäre:
 
-* Es gibt Fälle, in denen verschiedene Nutzungsansprüche auf der gleichen Parzelle realisiert werden können. Wanderwege können durchaus durch einen Wolfslebensraum führen, wenn bestimmte Regeln eingehalten werden.
-* Landnutzungsansprüche können sich auch gegenseitig ausschließen. Eine Parzelle kann nicht gleichzeitig Wolfshabitat, Lehrpfad und Golfplatz sein. In solchen Fällen gilt es, verschiedene Planungsvarianten gegeneinander abzuwägen und schließlich den Raum entsprechend seiner Eignung auf die verschiedenen Nutzungen aufzuteilen.
+* Ziel A: geeignete Wildkatzenlebensräume sichern
+* Ziel B: Erholungsnutzung ermöglichen
+* Ziel C: forstliche Nutzung erhalten
 
-Im Gegensatz zur MCE liegen hier also mehrere Ziele vor, man spricht daher von einer Multi Objective Evaluation (MOE).
-
-
-![Eignungsanalyse mit zwei sich ausschließenden Nutzungsansprüchen für den Marburger Open Forest (MOF) bei Caldern, @gitta2005](../assets/images/unit05/MOE_thumb.gif)
-
-Die Abbildung zeigt das Ergebnis einer Eignungsanalyse mit zwei sich ausschließenden Nutzungsansprüchen für den Marburg Open Forest (MOF) bei Caldern: Die beiden Ziele heißen „geeignet als Wildkatzenlebensraum“ (Ziel A) und „geeignet für Erholungsnutzung“ (Ziel B). Ganz links sieht man eine Reihe von Input-Layern der Eignungsanalyse, darunter die Layer „Landnutzung” (oben) und „Hangneigung“ (Mitte). Die Karte daneben zeigt die räumliche Zuordnung der Waldfläche zu den beiden Nutzungsarten. Weiß ist weder für (A) noch für (B) geeignet. Dunkelgrau wurde (A) und hellgrau (B) zugeordnet. Wo sich hell- und dunkelgrau überlagern, besteht ein Nutzungskonflikt (rot).
-Im Diagramm rechts kann jeder Punkt des Raumes entsprechend seiner Eignung für (A) und (B) eingetragen werden. Je mehr ein Punkt einem Kriterium entspricht, desto höher ist der entsprechende Prozentwert. Sowohl für (A) als auch für (B) kann ein Grenzwert angegeben werden, ab dem ein Punkt der entsprechenden Nutzung zugeordnet wird. Im roten Rechteck oben rechts befinden sich alle Punkte mit einem Nutzungskonflikt. Für sie muss nun im Einzelfall entschieden werden, welcher Nutzungsklasse sie zugeordnet werden sollen. Im einfachsten Fall wird ein Konfliktpixel der Nutzung zugeordnet, für die es besser geeignet ist: Liegt das Konfliktpixel im Entscheidungsplot oberhalb der roten Linie, erhält es die Nutzung (B), andernfalls (A).
+Solche Ziele können sich überlagern oder gegenseitig ausschließen. Dann reicht eine einfache Eignungskarte nicht mehr aus. Es müssen Zielkonflikte sichtbar gemacht und bewertet werden.
