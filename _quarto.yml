@@ -113,11 +113,13 @@ website:
               text: Kombination unterschiedlicher Kriterien
             - href: unit05/unit05-04.qmd
               text: Multikriterien-Multiziel-Analyse
+            - href: unit05/unit05-05.qmd
+              text: Kostenanalyse              
         - text: "---"
         - section: "Reader Automatisierung von Arbeitsabläufen in QGIS "
           contents:
             - href: unit99/unit99-01.qmd
-              text: "coming soon"
+              
         - text: "---"
         - section: "Reader Projektarbeit "
           contents:

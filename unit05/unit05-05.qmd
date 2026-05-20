@@ -1,0 +1,120 @@
+---
+title: "Praxis: Kostenanalyse in QGIS"
+title-block-banner: ../assets/images/splash_L04.png
+title-block-banner-color: black
+
+bibliography: ../assets/geoinfo.bib
+
+lang: de
+comments: false
+---
+
+
+## Kostenanalyse auf Werte- und Kostenoberflächen
+
+Die bisherigen Beispiele betrachten vor allem **Eignung**: Eine Rasterzelle erhält einen Wert dafür, wie gut sie zu einem Ziel passt. In vielen räumlichen Fragestellungen geht es aber nicht nur darum, ob ein Ort geeignet ist, sondern auch darum, wie groß der **Aufwand** ist, einen Ort zu erreichen, eine Verbindung herzustellen oder eine Maßnahme umzusetzen. Aus einer Eignungsanalyse wird dann eine Kosten- oder Widerstandsanalyse.
+
+Eine solche Kostenanalyse arbeitet ebenfalls mit Rasteroberflächen. Der Unterschied liegt in der Bedeutung der Werte: Bei einer Eignungskarte bedeuten hohe Werte meist „gut geeignet“. Bei einer Kostenoberfläche bedeuten hohe Werte dagegen „hoher Aufwand“, „geringe Durchlässigkeit“ oder „schlechte Erreichbarkeit“. Niedrige Werte stehen für geringe Kosten oder gute Durchlässigkeit.
+
+![Schema einer Kostenanalyse auf Werte- und Kostenoberflächen: Aus mehreren Kostentreibern wie Hangneigung, Landnutzung oder Siedlungsnähe wird zunächst eine Kostenoberfläche abgeleitet. Darauf können kumulative Kosten, minimale Kostenpfade und Erreichbarkeiten berechnet werden. Der Entscheidungsplot übersetzt die Ergebnisse in eine Abwägung zwischen Entfernung und Aufwand.](../assets/images/unit05/kosten.png)
+
+### Von der Eignung zur Kostenoberfläche
+
+Die Vorgehensweise ähnelt der gewichteten Verschneidung. Zunächst werden mehrere Eingangsdaten ausgewählt, die den räumlichen Aufwand beeinflussen. Das können zum Beispiel Hangneigung, Landnutzung, Bodenbedeckung, Gewässer, Siedlungsbereiche, Schutzgebiete oder Wege sein. Diese Eingangsdaten werden anschließend so rek klassifiziert, dass sie einen Kostenwert ausdrücken.
+
+Beispiele:
+
+| Eingangsdaten | Bedeutung als Kostenfaktor |
+|---|---|
+| Hangneigung | steile Flächen verursachen höhere Bewegungskosten |
+| Landnutzung | Wald, Offenland, Siedlung oder Wasserflächen können unterschiedlich durchlässig sein |
+| Wege und Straßen | können Bewegungskosten senken oder, je nach Fragestellung, Barrieren darstellen |
+| Siedlungsnähe | kann Störung, Risiko oder Aufwand erhöhen |
+| Gewässer | können Barrieren oder Leitstrukturen sein |
+
+Wichtig ist die einheitliche Richtung der Werte. Alle Raster müssen so skaliert werden, dass niedrige Werte geringe Kosten und hohe Werte hohe Kosten bedeuten.
+
+### Aufbau einer Kostenoberfläche
+
+Aus den einzelnen Kostenfaktoren wird eine gemeinsame Kostenoberfläche berechnet. Dafür werden die standardisierten Kostenraster gewichtet und addiert:
+
+$$
+K = K_1 \cdot w_1 + K_2 \cdot w_2 + K_3 \cdot w_3 + \dots + K_n \cdot w_n
+$$
+
+Dabei steht $$K$$ für die resultierende Kostenoberfläche, $$K_1 \dots K_n$$ für die einzelnen Kostenfaktoren und $$w_1 \dots w_n$$ für deren Gewichte.
+
+Ein einfaches Beispiel wäre:
+
+$$
+K =
+\text{Hangneigung} \cdot 0.4
++
+\text{Landnutzung} \cdot 0.4
++
+\text{Siedlungsnähe} \cdot 0.2
+$$
+
+Die resultierende Karte zeigt dann nicht die beste Eignung, sondern den räumlichen Widerstand. Eine Rasterzelle mit niedrigem Wert ist leicht passierbar oder günstig erreichbar. Eine Rasterzelle mit hohem Wert ist schwer passierbar oder mit hohem Aufwand verbunden.
+
+### Kumulative Kosten und Kostenpfade
+
+Auf Grundlage einer Kostenoberfläche kann berechnet werden, wie teuer oder aufwendig es ist, sich von einem Ausgangspunkt durch den Raum zu bewegen. Dabei zählt nicht nur die Luftlinienentfernung, sondern der aufsummierte Aufwand entlang des Weges.
+
+Die kumulativen Kosten zu einer Zielzelle ergeben sich vereinfacht als Summe der Kostenwerte entlang eines Pfades:
+
+$$
+C_{\text{Pfad}} = \sum_i K_i
+$$
+
+Ein minimaler Kostenpfad ist dann der Pfad mit der geringsten aufsummierten Kostenlast:
+
+$$
+C_{\text{min}} = \min \left( \sum_i K_i \right)
+$$
+
+Damit kann eine Fläche, die in Luftlinie nahe liegt, trotzdem schwer erreichbar sein, wenn der Weg dorthin über steile Hänge, Barrieren oder hoch bewertete Widerstandsflächen führt. Umgekehrt kann ein etwas längerer Weg günstiger sein, wenn er durch gut passierbare Bereiche verläuft.
+
+### Konzeptuelle Umsetzung in QGIS
+
+In QGIS wird eine Kostenanalyse meist in mehreren Schritten aufgebaut. Zuerst werden die Eingangsdaten in Kostenraster übersetzt. Danach werden diese Raster zu einer Kostenoberfläche kombiniert. Anschließend können kumulative Kosten oder minimale Kostenpfade berechnet werden.
+
+Typische Arbeitsschritte sind:
+
+1. Kostentreiber auswählen, zum Beispiel Hangneigung, Landnutzung, Wege, Gewässer oder Siedlungsnähe.
+2. Alle Eingangsdaten in Rasterdaten mit gleicher Zellgröße, Ausdehnung und Projektion überführen.
+3. Eingangsdaten rek klassifizieren, sodass niedrige Werte geringe Kosten und hohe Werte hohe Kosten bedeuten.
+4. Kostenraster gewichten und im Rasterrechner zu einer Kostenoberfläche kombinieren.
+5. Ausgangspunkte oder Zielpunkte festlegen.
+6. Kumulative Kosten und minimale Kostenpfade berechnen.
+7. Ergebnisse interpretieren und gegebenenfalls mit Eignungskarten oder Zielkonflikten kombinieren.
+
+Geeignete QGIS-Werkzeuge sind:
+
+* **Rasterisieren (Vektor nach Raster)**: wandelt Vektordaten in Rasterdaten um.
+* **Hangneigung**: leitet aus dem DGM einen Kostenfaktor für Steilheit ab.
+* **Nähe / Rasterdistanz**: berechnet Distanzraster zu Wegen, Siedlungen oder Barrieren.
+* **Reklassifizieren nach Tabelle**: übersetzt Eingangswerte in Kostenwerte.
+* **Rasterrechner**: kombiniert mehrere Kostenraster zu einer Kostenoberfläche.
+* **Raster ausrichten**: vereinheitlicht Zellgröße, Ausdehnung und Rasterlage.
+* **GRASS `r.cost`**: berechnet kumulative Kosten auf einer Kostenoberfläche.
+* **GRASS `r.walk`**: berechnet bewegungsbezogene Kosten unter Berücksichtigung von Gelände und Hangneigung.
+* **Kürzester Pfad / Least-cost path**: leitet aus den kumulativen Kosten einen minimalen Kostenpfad ab.
+
+::: {.callout-note title="Merksatz"}
+Eignungskarten zeigen, wo etwas günstig oder geeignet ist. Kostenoberflächen zeigen, wie aufwendig es ist, sich durch den Raum zu bewegen oder ein Ziel zu erreichen. Beide Ansätze können kombiniert werden: Eine Fläche kann ökologisch geeignet sein, aber nur mit hohen Kosten erreichbar oder stark durch Barrieren getrennt.
+:::
+
+### Bezug zur Wildkatzenanalyse
+
+Für das Wildkatzenbeispiel kann eine Kostenoberfläche genutzt werden, um Durchlässigkeit und mögliche Bewegungsräume zu modellieren. Niedrige Kosten könnten deckungsreiche Waldflächen, Gehölzstrukturen oder störungsarme Bereiche erhalten. Hohe Kosten könnten Siedlungen, stark befahrene Straßen, offene ausgeräumte Flächen oder andere Barrieren erhalten.
+
+Damit verschiebt sich die Fragestellung:
+
+| Eignungsanalyse | Kostenanalyse |
+|---|---|
+| Wo sind potenziell geeignete Lebensräume? | Wie gut sind geeignete Lebensräume miteinander verbunden? |
+| Welche Flächen erfüllen Habitatkriterien? | Welche Wege durch die Landschaft verursachen geringe oder hohe Bewegungskosten? |
+| Ergebnis: Eignungskarte | Ergebnis: Kostenoberfläche, kumulative Kosten, Kostenpfad |
+
+Eine Kostenanalyse ergänzt also die Eignungsanalyse. Sie beantwortet nicht nur, **wo** geeignete Flächen liegen, sondern auch, **wie** diese Flächen im Raum miteinander verbunden sind.

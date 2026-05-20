@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Arbeitsblatt 3 - Analysen und Ableitungen – Grundlagenkurs GI-S (QGIS)</title>
+<title>Praxis: Kostenanalyse in QGIS – Grundlagenkurs GI-S (QGIS)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../unit09/unit09-04.html" rel="next">
-<link href="../unit09/unit09-02.html" rel="prev">
+<link href="../unit05/unit05-04.html" rel="prev">
 <link href="..//images/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -87,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
 
       .quarto-title-block .quarto-title-banner {
         color: black;
-background-image: url(../assets/images/splash_L02.png);
+background-image: url(../assets/images/splash_L04.png);
 background-size: cover;
       }
 </style>
@@ -120,15 +119,50 @@ background-size: cover;
 
 </style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../css/styles.css">
-<meta property="og:title" content="Arbeitsblatt 3 - Analysen und Ableitungen – Grundlagenkurs GI-S (QGIS)">
+<meta property="og:title" content="Praxis: Kostenanalyse in QGIS – Grundlagenkurs GI-S (QGIS)">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit05/kosten.png">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
-<meta name="twitter:title" content="Arbeitsblatt 3 - Analysen und Ableitungen – Grundlagenkurs GI-S (QGIS)">
+<meta property="og:image:height" content="1024">
+<meta property="og:image:width" content="1536">
+<meta name="twitter:title" content="Praxis: Kostenanalyse in QGIS – Grundlagenkurs GI-S (QGIS)">
 <meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit05/kosten.png">
 <meta name="twitter:creator" content="@gisma">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="1024">
+<meta name="twitter:image-width" content="1536">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -349,7 +383,7 @@ background-size: cover;
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Arbeitsblatt 3 - Analysen und Ableitungen</h1>
+          <h1 class="quarto-secondary-nav-title">Praxis: Kostenanalyse in QGIS</h1>
         </a>     
     </div>
   </nav>
@@ -358,7 +392,7 @@ background-size: cover;
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">Arbeitsblatt 3 - Analysen und Ableitungen</h1>
+      <h1 class="title d-none d-lg-block">Praxis: Kostenanalyse in QGIS</h1>
                       </div>
   </div>
     
@@ -386,13 +420,13 @@ background-size: cover;
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Arbeitsblätter</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit09/unit09-01.html" class="sidebar-item-text sidebar-link">
@@ -407,7 +441,7 @@ background-size: cover;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../unit09/unit09-03.html" class="sidebar-item-text sidebar-link active">
+  <a href="../unit09/unit09-03.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">A3 - Analysen und Ableitungen</span></a>
   </div>
 </li>
@@ -609,13 +643,13 @@ background-size: cover;
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Reader Räumliche Datenanalyse</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit05/unit05-01.html" class="sidebar-item-text sidebar-link">
@@ -642,7 +676,7 @@ background-size: cover;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../unit05/unit05-05.html" class="sidebar-item-text sidebar-link">
+  <a href="../unit05/unit05-05.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Kostenanalyse</span></a>
   </div>
 </li>
@@ -736,23 +770,16 @@ background-size: cover;
     <h2 id="toc-title">Inhalt</h2>
    
   <ul>
-  <li><a href="#worum-geht-es-in-dieses-arbeitsblatt" id="toc-worum-geht-es-in-dieses-arbeitsblatt" class="nav-link active" data-scroll-target="#worum-geht-es-in-dieses-arbeitsblatt">Worum geht es in dieses Arbeitsblatt?</a></li>
-  <li><a href="#lernziele" id="toc-lernziele" class="nav-link" data-scroll-target="#lernziele">Lernziele</a></li>
-  <li><a href="#benötigte-materialien" id="toc-benötigte-materialien" class="nav-link" data-scroll-target="#benötigte-materialien">Benötigte Materialien</a>
+  <li><a href="#kostenanalyse-auf-werte--und-kostenoberflächen" id="toc-kostenanalyse-auf-werte--und-kostenoberflächen" class="nav-link active" data-scroll-target="#kostenanalyse-auf-werte--und-kostenoberflächen">Kostenanalyse auf Werte- und Kostenoberflächen</a>
   <ul class="collapse">
-  <li><a href="#daten" id="toc-daten" class="nav-link" data-scroll-target="#daten">Daten</a></li>
-  </ul></li>
-  <li><a href="#aufgaben-arbeitsblatt-3" id="toc-aufgaben-arbeitsblatt-3" class="nav-link" data-scroll-target="#aufgaben-arbeitsblatt-3">Aufgaben Arbeitsblatt 3</a></li>
-  <li><a href="#aufgabe-03" id="toc-aufgabe-03" class="nav-link" data-scroll-target="#aufgabe-03">Aufgabe 03</a>
-  <ul class="collapse">
-  <li><a href="#gewichtung-der-aufgaben-in-arbeitsblatt-3" id="toc-gewichtung-der-aufgaben-in-arbeitsblatt-3" class="nav-link" data-scroll-target="#gewichtung-der-aufgaben-in-arbeitsblatt-3">Gewichtung der Aufgaben in Arbeitsblatt 3</a></li>
-  </ul></li>
-  <li><a href="#unterstützung" id="toc-unterstützung" class="nav-link" data-scroll-target="#unterstützung">Unterstützung</a>
-  <ul class="collapse">
-  <li><a href="#aufgabe-03-01" id="toc-aufgabe-03-01" class="nav-link" data-scroll-target="#aufgabe-03-01">Aufgabe 03-01</a></li>
+  <li><a href="#von-der-eignung-zur-kostenoberfläche" id="toc-von-der-eignung-zur-kostenoberfläche" class="nav-link" data-scroll-target="#von-der-eignung-zur-kostenoberfläche">Von der Eignung zur Kostenoberfläche</a></li>
+  <li><a href="#aufbau-einer-kostenoberfläche" id="toc-aufbau-einer-kostenoberfläche" class="nav-link" data-scroll-target="#aufbau-einer-kostenoberfläche">Aufbau einer Kostenoberfläche</a></li>
+  <li><a href="#kumulative-kosten-und-kostenpfade" id="toc-kumulative-kosten-und-kostenpfade" class="nav-link" data-scroll-target="#kumulative-kosten-und-kostenpfade">Kumulative Kosten und Kostenpfade</a></li>
+  <li><a href="#konzeptuelle-umsetzung-in-qgis" id="toc-konzeptuelle-umsetzung-in-qgis" class="nav-link" data-scroll-target="#konzeptuelle-umsetzung-in-qgis">Konzeptuelle Umsetzung in QGIS</a></li>
+  <li><a href="#bezug-zur-wildkatzenanalyse" id="toc-bezug-zur-wildkatzenanalyse" class="nav-link" data-scroll-target="#bezug-zur-wildkatzenanalyse">Bezug zur Wildkatzenanalyse</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit09/unit09-03.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit05/unit05-05.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -762,109 +789,157 @@ background-size: cover;
 
 
 
-<p>Digitale Geländemodelle liegen in der Regel als Rasterdaten vor und werden häufig in GIS-Analysen verwendet. Dabei tragen sie sowohl direkt zur Höheninformation als auch indirekt, z.B. als morphometrische oder hydrologische Basisdatensätze, zum prozessorientierten Erkenntnisgewinn bei.</p>
-<p>Der Themenkomplex der digitalen Geländemodelle einschließlich ihrer Erstellung auf der Basis unterschiedlicher Fernerkundungssensoren ist vielfältig. Die Materialien des Readers skizzieren verschiedene häufig verwendete Ableitungen und räumliche Filter. Diese Konzepte können auf fast alle Rasterdaten angewendet werden.</p>
-<section id="worum-geht-es-in-dieses-arbeitsblatt" class="level2">
-<h2 class="anchored" data-anchor-id="worum-geht-es-in-dieses-arbeitsblatt">Worum geht es in dieses Arbeitsblatt?</h2>
-<p>In der Übung werden Sie Informationen aus digitalen Geländemodellen ableiten und sich unter anderem mit räumlichen Filtermethoden beschäftigen. Darüber hinaus werden komplexere Werkzeuge wie die Berechnung eines topographischen Indexes oder des Oberflächenabflusses exemplarisch geübt.</p>
-</section>
-<section id="lernziele" class="level2">
-<h2 class="anchored" data-anchor-id="lernziele">Lernziele</h2>
-<p>Nach dieser Übung können Sie</p>
-<ul>
-<li>Digitale Geländemodelle in ihrer Vielfalt und Bedeutung einschätzen können</li>
-<li>Abgeleitete Rasterdaten mit typischen Werkzeugen (Algorithmen) erzeugen</li>
-<li>diese abgeleiteten Informationen gezielt in Fragestellungen einsetzen</li>
-<li>Direkte und statistisch aggregierte Informationen extrahieren</li>
-</ul>
-</section>
-<section id="benötigte-materialien" class="level2">
-<h2 class="anchored" data-anchor-id="benötigte-materialien">Benötigte Materialien</h2>
-<section id="daten" class="level3">
-<h3 class="anchored" data-anchor-id="daten">Daten</h3>
-<ul>
-<li><p><a href="https://gds.hessen.de/downloadcenter/20260506/3D-Daten/Digitales%20Gel%C3%A4ndemodell%20(DGM1)/Landkreis%20Marburg-Biedenkopf/Marburg%20-%20DGM1.zip">DGM1 Hessen – Marburg</a> – Amtliches digitales Geländemodell der Geländeoberfläche mit 1 m Rasterweite für Marburg.</p></li>
-<li><p><a href="https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N50_00_E008_00_DEM/Copernicus_DSM_COG_10_N50_00_E008_00_DEM.tif">Copernicus DEM GLO-30 – Marburg-Kachel als GeoTIFF/COG</a> – Digitales Oberflächenmodell (DSM); die Kachel kann in QGIS direkt als Remote-Rasterlayer geladen werden.</p></li>
-<li><p><a href="https://srtm.csi.cgiar.org/srtmdata/">CGIAR-CSI SRTM</a> – Nachprozessierte SRTM-Daten als GeoTIFF oder Esri ASCII; die FAQ beschreibt Version 4 als endgültige/finale Veröffentlichung des 3-arc-second-Produkts.</p></li>
-<li><p><a href="https://dwtkns.com/srtm30m/">SRTM 30 m Tile Downloader</a> – Interaktive Oberfläche zum Download einzelner SRTM-30-m-Kacheln; erfordert einen <a href="https://urs.earthdata.nasa.gov/users/new">NASA Earthdata Login</a>.</p></li>
-<li><p><a href="https://www.earthdata.nasa.gov/data/instruments/srtm">NASA Earthdata: Shuttle Radar Topography Mission (SRTM)</a> – Offizielle NASA-Informationsseite zur SRTM-Mission und zum Datensatz.</p></li>
-<li><p><a href="https://gdal.org/drivers/raster/srtmhgt.html">GDAL: SRTMHGT-Format</a> – Technische Beschreibung des SRTM-HGT-Rasterformats für die Verarbeitung in GDAL/QGIS.</p></li>
-<li><p><a href="https://opendem.info/downloads/srtm_germany_dtm.zip">OpenDEM Deutschland</a> – Aus SRTM abgeleitetes und korrigiertes DTM für Deutschland; die <a href="https://opendem.info/srtm_processing.html">Info-Seite zur SRTM-Verarbeitung</a> sollte vor der Nutzung gelesen werden.</p></li>
-<li><p><a href="https://opendem.info/opendemeu_download_highres.html">OpenDEM Europa</a> – Europäische Höhendaten aus dem OpenDEM-Projekt; die <a href="https://opendem.info/opendemeu_background.html">Hintergrundinformationen</a> dokumentieren Herkunft, Bezugssysteme und Verarbeitung.</p></li>
-<li><p><a href="https://raw.githubusercontent.com/gisma-courses/gc-geoinfo/master/assets/data/marburg_stadtgebiet.gpkg">Polygon Marburg Stadtgebiet</a> – GeoPackage mit dem Polygon des Marburger Stadtgebiets.</p></li>
-</ul>
-</section>
-</section>
-<section id="aufgaben-arbeitsblatt-3" class="level2">
-<h2 class="anchored" data-anchor-id="aufgaben-arbeitsblatt-3">Aufgaben Arbeitsblatt 3</h2>
-<p>Die Ableitung und Analyse von Rasterdaten ist ein sehr weites Feld. Es umfasst über die Bildverarbeitung und Fernerkundung auch die direkte Interpretation und Analyse von z. B. Geländemodelldaten, die als Basisdaten für räumliche Analysen der realen Welt eine besonders prominente Rolle spielen. Aufgrund der langen Historie und Bedeutung gibt es eine nahezu unüberschaubare Anzahl unterschiedlichster Geländemodelldaten. Insbesondere die bekannten SRTM-Daten liegen in unzähligen Varianten vor. Darüber hinaus gibt es Daten in besserer Qualität.</p>
-<p>Die obige Datenauswahl soll Ihnen einen Eindruck vermitteln, wo Sie überall fündig werden können, wenn Sie z. B. nach <code>DEM Deutschland Europa</code> googeln. Natürlich finden Sie zu allen Daten auch die notwendigen Informationen und können dann beurteilen, ob Sie diese für geeignet halten. Deshalb sollten Sie in den folgenden Aufgaben mindestens zwei verschiedene Datensätze verwenden.</p>
-<p>Wichtig ist dabei, dass diese Datensätze die Erdoberfläche nicht einheitlich repräsentieren. Ein <strong>DGM/DTM</strong> beschreibt möglichst die reine Geländeoberfläche ohne Gebäude und Vegetation. Ein <strong>DOM/DSM</strong> bildet dagegen die sichtbare Oberfläche ab, also inklusive Bebauung, Bäumen und anderer Objekte. SRTM- und daraus abgeleitete Produkte liegen oft methodisch dazwischen, da sie aus Fernerkundungsdaten entstehen und je nach Produkt unterschiedlich stark korrigiert, geglättet oder modellhaft in Richtung Geländeoberfläche überführt wurden.</p>
-<p>Die Wahl des Höhenmodells ist daher keine rein technische Entscheidung. Unterschiedliche Rasterweiten, Sensorprinzipien, Erfassungszeitpunkte, Nachprozessierungen und Höhenbezugssysteme können dazu führen, dass verschiedene Datensätze für dasselbe Gebiet deutlich unterschiedliche Höhenwerte liefern. Das beeinflusst direkt die Ergebnisse von Hangneigungs-, Sichtbarkeits-, Abfluss-, Expositions- oder Geländeschnittanalysen.</p>
-<p>Geländemodellanalysen eignen sich deshalb besonders gut als Stellvertreter für Rasterdatenanalysen, weil an ihnen zentrale Rasterprinzipien wie Zellwerte, Auflösung, Nachbarschaftsbeziehungen, Ableitungen, Klassifikationen und Maßstabseffekte anschaulich und fachlich nachvollziehbar sichtbar werden.</p>
-</section>
-<section id="aufgabe-03" class="level2">
-<h2 class="anchored" data-anchor-id="aufgabe-03">Aufgabe 03</h2>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<section id="kostenanalyse-auf-werte--und-kostenoberflächen" class="level2">
+<h2 class="anchored" data-anchor-id="kostenanalyse-auf-werte--und-kostenoberflächen">Kostenanalyse auf Werte- und Kostenoberflächen</h2>
+<p>Die bisherigen Beispiele betrachten vor allem <strong>Eignung</strong>: Eine Rasterzelle erhält einen Wert dafür, wie gut sie zu einem Ziel passt. In vielen räumlichen Fragestellungen geht es aber nicht nur darum, ob ein Ort geeignet ist, sondern auch darum, wie groß der <strong>Aufwand</strong> ist, einen Ort zu erreichen, eine Verbindung herzustellen oder eine Maßnahme umzusetzen. Aus einer Eignungsanalyse wird dann eine Kosten- oder Widerstandsanalyse.</p>
+<p>Eine solche Kostenanalyse arbeitet ebenfalls mit Rasteroberflächen. Der Unterschied liegt in der Bedeutung der Werte: Bei einer Eignungskarte bedeuten hohe Werte meist „gut geeignet“. Bei einer Kostenoberfläche bedeuten hohe Werte dagegen „hoher Aufwand“, „geringe Durchlässigkeit“ oder „schlechte Erreichbarkeit“. Niedrige Werte stehen für geringe Kosten oder gute Durchlässigkeit.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit05/kosten.png" class="img-fluid figure-img"></p>
+<figcaption>Schema einer Kostenanalyse auf Werte- und Kostenoberflächen: Aus mehreren Kostentreibern wie Hangneigung, Landnutzung oder Siedlungsnähe wird zunächst eine Kostenoberfläche abgeleitet. Darauf können kumulative Kosten, minimale Kostenpfade und Erreichbarkeiten berechnet werden. Der Entscheidungsplot übersetzt die Ergebnisse in eine Abwägung zwischen Entfernung und Aufwand.</figcaption>
+</figure>
 </div>
-<div class="callout-body-container">
-<ul>
-<li><p>Laden Sie mindestens zwei der oben genannten Geländemodell-Datensätze herunter. Die Daten müssen gegebenenfalls projiziert und auf die Ausdehnung des Marburger Luftbildes zugeschnitten werden.</p></li>
-<li><p>Prüfen Sie die Metadaten der Datensätze: Was repräsentiert der jeweilige Datensatz? Verschaffen Sie sich einen Überblick über Projektion, räumliche Auflösung, Höhenbezug und Fehlerangaben.</p></li>
-<li><p>Projizieren Sie die heruntergeladenen Geländemodelldatensätze nach <strong>ETRS89 / UTM Zone 32N</strong> und schneiden Sie sie auf den Ausschnitt des Marburger Luftbildes zu.</p></li>
-<li><p>Berechnen Sie für die zugeschnittenen und projizierten Datensätze <strong>Hangneigung</strong>, <strong>Exposition/Aspect</strong> und <strong>Topographic Position Index (TPI)</strong>. Verwenden Sie dafür z. B. das SAGA-Werkzeug <strong>Slope, Aspect, Curvature</strong> sowie das GDAL-Werkzeug <strong>TPI</strong>.</p></li>
-<li><p>Extrahieren Sie die Werte für <strong>Slope</strong>, <strong>Aspect</strong> und <strong>TPI</strong> an der Position des Brunnens auf dem Marburger Oberstadt-Marktplatz. Nutzen Sie zur Orientierung die Brunnen-Signatur in der OpenStreetMap-Webkarte.</p></li>
-<li><p>Wenden Sie einen <strong>5 × 5-Mittelwertfilter</strong> auf die Geländehöhe an und berechnen Sie anschließend erneut <strong>Slope</strong>, <strong>Aspect</strong> und <strong>TPI</strong>. Extrahieren Sie auch diese Werte wieder an der Position des Marktplatzbrunnens.</p></li>
-<li><p>Berechnen Sie unter Verwendung des Datensatzes <a href="https://github.com/gisma-courses/gc-geoinfo/blob/master/assets/data/marburg_stadtgebiet.gpkg">Marburg Stadtgebiet</a> für die <strong>ungefilterten Geländemodelle</strong> die minimale, maximale und mittlere Hangneigung innerhalb des Stadtgebiets.</p></li>
-<li><p>Berechnen Sie unter Verwendung des Datensatzes <a href="https://github.com/gisma-courses/gc-geoinfo/blob/master/assets/data/marburg_stadtgebiet.gpkg">Marburg Stadtgebiet</a> für die <strong>5 × 5-gefilterten Geländemodelle</strong> die minimale, maximale und mittlere Exposition innerhalb des Stadtgebiets.</p></li>
-<li><p>Stellen Sie die Ergebnisse in einer Tabelle dar.</p></li>
-<li><p>Benennen und begründen Sie mögliche Ursachen für Unterschiede zwischen den Ergebnissen der verwendeten Datensätze. Formulieren Sie Ihre Begründung als Stichpunktliste.</p></li>
-</ul>
-</div>
-</div>
-</div>
-<section id="gewichtung-der-aufgaben-in-arbeitsblatt-3" class="level3">
-<h3 class="anchored" data-anchor-id="gewichtung-der-aufgaben-in-arbeitsblatt-3">Gewichtung der Aufgaben in Arbeitsblatt 3</h3>
+<section id="von-der-eignung-zur-kostenoberfläche" class="level3">
+<h3 class="anchored" data-anchor-id="von-der-eignung-zur-kostenoberfläche">Von der Eignung zur Kostenoberfläche</h3>
+<p>Die Vorgehensweise ähnelt der gewichteten Verschneidung. Zunächst werden mehrere Eingangsdaten ausgewählt, die den räumlichen Aufwand beeinflussen. Das können zum Beispiel Hangneigung, Landnutzung, Bodenbedeckung, Gewässer, Siedlungsbereiche, Schutzgebiete oder Wege sein. Diese Eingangsdaten werden anschließend so rek klassifiziert, dass sie einen Kostenwert ausdrücken.</p>
+<p>Beispiele:</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Aufgabenteil</th>
-<th style="text-align: center;">Gewichtung Teilaufgabe</th>
-<th style="text-align: center;">Gewichtung Gesamt</th>
+<th>Eingangsdaten</th>
+<th>Bedeutung als Kostenfaktor</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Aufgabe 03-01</td>
-<td style="text-align: center;">0.5</td>
-<td style="text-align: center;">0.11</td>
+<td>Hangneigung</td>
+<td>steile Flächen verursachen höhere Bewegungskosten</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Aufgabe 03-02</td>
-<td style="text-align: center;">0.5</td>
-<td style="text-align: center;">0.11</td>
+<td>Landnutzung</td>
+<td>Wald, Offenland, Siedlung oder Wasserflächen können unterschiedlich durchlässig sein</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>Aufgabe 03</strong></td>
-<td style="text-align: center;"><strong>1.0</strong></td>
-<td style="text-align: center;"><strong>0.2</strong></td>
+<td>Wege und Straßen</td>
+<td>können Bewegungskosten senken oder, je nach Fragestellung, Barrieren darstellen</td>
+</tr>
+<tr class="even">
+<td>Siedlungsnähe</td>
+<td>kann Störung, Risiko oder Aufwand erhöhen</td>
+</tr>
+<tr class="odd">
+<td>Gewässer</td>
+<td>können Barrieren oder Leitstrukturen sein</td>
 </tr>
 </tbody>
 </table>
+<p>Wichtig ist die einheitliche Richtung der Werte. Alle Raster müssen so skaliert werden, dass niedrige Werte geringe Kosten und hohe Werte hohe Kosten bedeuten.</p>
 </section>
+<section id="aufbau-einer-kostenoberfläche" class="level3">
+<h3 class="anchored" data-anchor-id="aufbau-einer-kostenoberfläche">Aufbau einer Kostenoberfläche</h3>
+<p>Aus den einzelnen Kostenfaktoren wird eine gemeinsame Kostenoberfläche berechnet. Dafür werden die standardisierten Kostenraster gewichtet und addiert:</p>
+<p><span class="math display">\[
+K = K_1 \cdot w_1 + K_2 \cdot w_2 + K_3 \cdot w_3 + \dots + K_n \cdot w_n
+\]</span></p>
+<p>Dabei steht <span class="math display">\[K\]</span> für die resultierende Kostenoberfläche, <span class="math display">\[K_1 \dots K_n\]</span> für die einzelnen Kostenfaktoren und <span class="math display">\[w_1 \dots w_n\]</span> für deren Gewichte.</p>
+<p>Ein einfaches Beispiel wäre:</p>
+<p><span class="math display">\[
+K =
+\text{Hangneigung} \cdot 0.4
++
+\text{Landnutzung} \cdot 0.4
++
+\text{Siedlungsnähe} \cdot 0.2
+\]</span></p>
+<p>Die resultierende Karte zeigt dann nicht die beste Eignung, sondern den räumlichen Widerstand. Eine Rasterzelle mit niedrigem Wert ist leicht passierbar oder günstig erreichbar. Eine Rasterzelle mit hohem Wert ist schwer passierbar oder mit hohem Aufwand verbunden.</p>
 </section>
-<section id="unterstützung" class="level2">
-<h2 class="anchored" data-anchor-id="unterstützung">Unterstützung</h2>
-<section id="aufgabe-03-01" class="level3">
-<h3 class="anchored" data-anchor-id="aufgabe-03-01">Aufgabe 03-01</h3>
-<p>Wichtige Meta-Informationen zu den Höhendaten finden Sie auf den jeweiligen Seiten der Datenanbieter, z. B. in der <a href="https://srtm.csi.cgiar.org/faq/">CGIAR-CSI SRTM FAQ</a> oder auf der offiziellen Copernicus-Seite zum <a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM">Copernicus DEM GLO-30</a>{:target=“_blank”}. Bitte beachten Sie, dass sich die Geländemodelle zum Teil erheblich unterscheiden. Dies gilt nicht nur für das Copernicus-Modell im Vergleich zu den SRTM-Modellen, sondern auch für die SRTM-Modelle, die sich trotz gleicher Datengrundlage erheblich unterscheiden. Besonders wichtig für die erfolgreiche Bearbeitung der letzten Teilaufgabe ist daher die Auseinandersetzung mit den Metadaten.</p>
-<p>Benutzen Sie einen der Marburg-Layer aus den vorherigen Sitzungen als Vorlage, um das Raster auf den Arbeitsbereich zuzuschneiden.</p>
-<p>Das Stichwort für die QGIS-Hilfe zum Mittelwertfilter ist <strong>„Nachbarn“</strong> oder <strong>„Filter“</strong> im Verarbeitungswerkzeugkasten. Als Ergebnis wird z. B. <code>r.neighbors</code> aus der GRASS-GIS-Funktionssammlung angezeigt. Bei der Suche nach <strong>„Filter“</strong> gibt es mehrere Treffer; <code>Simple Filter</code> aus der SAGA-GIS-Funktionssammlung ist ein möglicher Einstieg, sofern SAGA in Ihrer QGIS-Installation verfügbar ist.</p>
-<p>Mit <strong>Zonenstatistik</strong> können Sie sich Minimum, Maximum und Mittelwert eines Rasterdatensatzes für ein definiertes Gebiet als Tabelle ausgeben lassen. Für Marburg können Sie entweder das Stadtgebiet als Polygon digitalisieren oder nach geeigneten Verwaltungsgrenzen suchen. Ein möglicher Einstieg dafür ist der <a href="https://gdz.bkg.bund.de/index.php/default/open-data.html">Open-Data-Server des Bundesamts für Kartographie und Geodäsie</a>{:target=“_blank”}.</p>
-<p>Wenn Ihnen das zu umständlich ist, können Sie auch die Datei <a href="https://raw.githubusercontent.com/gisma-courses/gc-geoinfo/master/assets/data/marburg_stadtgebiet.gpkg">Marburg Stadtgebiet</a> aus dem Download verwenden. Bitte beachten Sie, dass unterschiedliche Bezugsflächen auch zu unterschiedlichen Ergebnissen führen können.</p>
+<section id="kumulative-kosten-und-kostenpfade" class="level3">
+<h3 class="anchored" data-anchor-id="kumulative-kosten-und-kostenpfade">Kumulative Kosten und Kostenpfade</h3>
+<p>Auf Grundlage einer Kostenoberfläche kann berechnet werden, wie teuer oder aufwendig es ist, sich von einem Ausgangspunkt durch den Raum zu bewegen. Dabei zählt nicht nur die Luftlinienentfernung, sondern der aufsummierte Aufwand entlang des Weges.</p>
+<p>Die kumulativen Kosten zu einer Zielzelle ergeben sich vereinfacht als Summe der Kostenwerte entlang eines Pfades:</p>
+<p><span class="math display">\[
+C_{\text{Pfad}} = \sum_i K_i
+\]</span></p>
+<p>Ein minimaler Kostenpfad ist dann der Pfad mit der geringsten aufsummierten Kostenlast:</p>
+<p><span class="math display">\[
+C_{\text{min}} = \min \left( \sum_i K_i \right)
+\]</span></p>
+<p>Damit kann eine Fläche, die in Luftlinie nahe liegt, trotzdem schwer erreichbar sein, wenn der Weg dorthin über steile Hänge, Barrieren oder hoch bewertete Widerstandsflächen führt. Umgekehrt kann ein etwas längerer Weg günstiger sein, wenn er durch gut passierbare Bereiche verläuft.</p>
+</section>
+<section id="konzeptuelle-umsetzung-in-qgis" class="level3">
+<h3 class="anchored" data-anchor-id="konzeptuelle-umsetzung-in-qgis">Konzeptuelle Umsetzung in QGIS</h3>
+<p>In QGIS wird eine Kostenanalyse meist in mehreren Schritten aufgebaut. Zuerst werden die Eingangsdaten in Kostenraster übersetzt. Danach werden diese Raster zu einer Kostenoberfläche kombiniert. Anschließend können kumulative Kosten oder minimale Kostenpfade berechnet werden.</p>
+<p>Typische Arbeitsschritte sind:</p>
+<ol type="1">
+<li>Kostentreiber auswählen, zum Beispiel Hangneigung, Landnutzung, Wege, Gewässer oder Siedlungsnähe.</li>
+<li>Alle Eingangsdaten in Rasterdaten mit gleicher Zellgröße, Ausdehnung und Projektion überführen.</li>
+<li>Eingangsdaten rek klassifizieren, sodass niedrige Werte geringe Kosten und hohe Werte hohe Kosten bedeuten.</li>
+<li>Kostenraster gewichten und im Rasterrechner zu einer Kostenoberfläche kombinieren.</li>
+<li>Ausgangspunkte oder Zielpunkte festlegen.</li>
+<li>Kumulative Kosten und minimale Kostenpfade berechnen.</li>
+<li>Ergebnisse interpretieren und gegebenenfalls mit Eignungskarten oder Zielkonflikten kombinieren.</li>
+</ol>
+<p>Geeignete QGIS-Werkzeuge sind:</p>
+<ul>
+<li><strong>Rasterisieren (Vektor nach Raster)</strong>: wandelt Vektordaten in Rasterdaten um.</li>
+<li><strong>Hangneigung</strong>: leitet aus dem DGM einen Kostenfaktor für Steilheit ab.</li>
+<li><strong>Nähe / Rasterdistanz</strong>: berechnet Distanzraster zu Wegen, Siedlungen oder Barrieren.</li>
+<li><strong>Reklassifizieren nach Tabelle</strong>: übersetzt Eingangswerte in Kostenwerte.</li>
+<li><strong>Rasterrechner</strong>: kombiniert mehrere Kostenraster zu einer Kostenoberfläche.</li>
+<li><strong>Raster ausrichten</strong>: vereinheitlicht Zellgröße, Ausdehnung und Rasterlage.</li>
+<li><strong>GRASS <code>r.cost</code></strong>: berechnet kumulative Kosten auf einer Kostenoberfläche.</li>
+<li><strong>GRASS <code>r.walk</code></strong>: berechnet bewegungsbezogene Kosten unter Berücksichtigung von Gelände und Hangneigung.</li>
+<li><strong>Kürzester Pfad / Least-cost path</strong>: leitet aus den kumulativen Kosten einen minimalen Kostenpfad ab.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Merksatz">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Merksatz
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Eignungskarten zeigen, wo etwas günstig oder geeignet ist. Kostenoberflächen zeigen, wie aufwendig es ist, sich durch den Raum zu bewegen oder ein Ziel zu erreichen. Beide Ansätze können kombiniert werden: Eine Fläche kann ökologisch geeignet sein, aber nur mit hohen Kosten erreichbar oder stark durch Barrieren getrennt.</p>
+</div>
+</div>
+</section>
+<section id="bezug-zur-wildkatzenanalyse" class="level3">
+<h3 class="anchored" data-anchor-id="bezug-zur-wildkatzenanalyse">Bezug zur Wildkatzenanalyse</h3>
+<p>Für das Wildkatzenbeispiel kann eine Kostenoberfläche genutzt werden, um Durchlässigkeit und mögliche Bewegungsräume zu modellieren. Niedrige Kosten könnten deckungsreiche Waldflächen, Gehölzstrukturen oder störungsarme Bereiche erhalten. Hohe Kosten könnten Siedlungen, stark befahrene Straßen, offene ausgeräumte Flächen oder andere Barrieren erhalten.</p>
+<p>Damit verschiebt sich die Fragestellung:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Eignungsanalyse</th>
+<th>Kostenanalyse</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Wo sind potenziell geeignete Lebensräume?</td>
+<td>Wie gut sind geeignete Lebensräume miteinander verbunden?</td>
+</tr>
+<tr class="even">
+<td>Welche Flächen erfüllen Habitatkriterien?</td>
+<td>Welche Wege durch die Landschaft verursachen geringe oder hohe Bewegungskosten?</td>
+</tr>
+<tr class="odd">
+<td>Ergebnis: Eignungskarte</td>
+<td>Ergebnis: Kostenoberfläche, kumulative Kosten, Kostenpfad</td>
+</tr>
+</tbody>
+</table>
+<p>Eine Kostenanalyse ergänzt also die Eignungsanalyse. Sie beantwortet nicht nur, <strong>wo</strong> geeignete Flächen liegen, sondern auch, <strong>wie</strong> diese Flächen im Raum miteinander verbunden sind.</p>
 
 
 </section>
@@ -1298,14 +1373,11 @@ background-size: cover;
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../unit09/unit09-02.html" class="pagination-link" aria-label="A2 - Geometrien und Attribute">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">A2 - Geometrien und Attribute</span>
+      <a href="../unit05/unit05-04.html" class="pagination-link" aria-label="Multikriterien-Multiziel-Analyse">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Multikriterien-Multiziel-Analyse</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../unit09/unit09-04.html" class="pagination-link" aria-label="A4 - Kosten und Kriterien">
-        <span class="nav-page-text">A4 - Kosten und Kriterien</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -1313,4 +1385,4 @@ background-size: cover;
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit09/unit09-03.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit05/unit05-05.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></div></div></footer></body></html>
