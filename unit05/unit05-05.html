@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Koordinaten, Topologie und Dimension – Grundlagenkurs GI-S (QGIS)</title>
+<title>Praxis: Kostenanalyse in QGIS – Grundlagenkurs GI-S (QGIS)</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,26 +23,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -51,8 +32,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../unit02/unit02-03.html" rel="next">
-<link href="../unit02/unit02-01.html" rel="prev">
+<link href="../unit05/unit05-04.html" rel="prev">
 <link href="..//images/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -108,7 +88,7 @@ div.csl-indent {
 
       .quarto-title-block .quarto-title-banner {
         color: black;
-background-image: url(../assets/images/01-splash.jpg);
+background-image: url(../assets/images/splash_L04.png);
 background-size: cover;
       }
 </style>
@@ -141,20 +121,49 @@ background-size: cover;
 
 </style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../css/styles.css">
-<meta property="og:title" content="Koordinaten, Topologie und Dimension – Grundlagenkurs GI-S (QGIS)">
+<meta property="og:title" content="Praxis: Kostenanalyse in QGIS – Grundlagenkurs GI-S (QGIS)">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit02/mr_biko_net.png">
+<meta property="og:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit05/kosten.png">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
-<meta property="og:image:height" content="1312">
-<meta property="og:image:width" content="1860">
-<meta name="twitter:title" content="Koordinaten, Topologie und Dimension – Grundlagenkurs GI-S (QGIS)">
+<meta property="og:image:height" content="1024">
+<meta property="og:image:width" content="1536">
+<meta name="twitter:title" content="Praxis: Kostenanalyse in QGIS – Grundlagenkurs GI-S (QGIS)">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit02/mr_biko_net.png">
+<meta name="twitter:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit05/kosten.png">
 <meta name="twitter:creator" content="@gisma">
-<meta name="twitter:image-height" content="1312">
-<meta name="twitter:image-width" content="1860">
+<meta name="twitter:image-height" content="1024">
+<meta name="twitter:image-width" content="1536">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -376,7 +385,7 @@ background-size: cover;
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Koordinaten, Topologie und Dimension</h1>
+          <h1 class="quarto-secondary-nav-title">Praxis: Kostenanalyse in QGIS</h1>
         </a>     
     </div>
   </nav>
@@ -385,7 +394,7 @@ background-size: cover;
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">Koordinaten, Topologie und Dimension</h1>
+      <h1 class="title d-none d-lg-block">Praxis: Kostenanalyse in QGIS</h1>
                       </div>
   </div>
     
@@ -504,13 +513,13 @@ background-size: cover;
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">Reader GI Raumkonzepte</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit02/unit02-01.html" class="sidebar-item-text sidebar-link">
@@ -519,7 +528,7 @@ background-size: cover;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../unit02/unit02-02.html" class="sidebar-item-text sidebar-link active">
+  <a href="../unit02/unit02-02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Koordinaten, Topologie und Dimension</span></a>
   </div>
 </li>
@@ -636,13 +645,13 @@ background-size: cover;
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Reader Räumliche Datenanalyse</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit05/unit05-01.html" class="sidebar-item-text sidebar-link">
@@ -669,7 +678,7 @@ background-size: cover;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../unit05/unit05-05.html" class="sidebar-item-text sidebar-link">
+  <a href="../unit05/unit05-05.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Kostenanalyse</span></a>
   </div>
 </li>
@@ -763,13 +772,16 @@ background-size: cover;
     <h2 id="toc-title">Inhalt</h2>
    
   <ul>
-  <li><a href="#raum-im-gis" id="toc-raum-im-gis" class="nav-link active" data-scroll-target="#raum-im-gis">Raum im GIS</a></li>
-  <li><a href="#die-raumrichtungen" id="toc-die-raumrichtungen" class="nav-link" data-scroll-target="#die-raumrichtungen">Die Raumrichtungen</a></li>
-  <li><a href="#die-lage-im-raum-topologie" id="toc-die-lage-im-raum-topologie" class="nav-link" data-scroll-target="#die-lage-im-raum-topologie">Die Lage im Raum (Topologie)</a></li>
-  <li><a href="#geometrie-dimensionen-und-topologie" id="toc-geometrie-dimensionen-und-topologie" class="nav-link" data-scroll-target="#geometrie-dimensionen-und-topologie">Geometrie, Dimensionen und Topologie</a></li>
-  <li><a href="#übung" id="toc-übung" class="nav-link" data-scroll-target="#übung">Übung</a></li>
+  <li><a href="#kostenanalyse-auf-werte--und-kostenoberflächen" id="toc-kostenanalyse-auf-werte--und-kostenoberflächen" class="nav-link active" data-scroll-target="#kostenanalyse-auf-werte--und-kostenoberflächen">Kostenanalyse auf Werte- und Kostenoberflächen</a>
+  <ul class="collapse">
+  <li><a href="#von-der-eignung-zur-kostenoberfläche" id="toc-von-der-eignung-zur-kostenoberfläche" class="nav-link" data-scroll-target="#von-der-eignung-zur-kostenoberfläche">Von der Eignung zur Kostenoberfläche</a></li>
+  <li><a href="#aufbau-einer-kostenoberfläche" id="toc-aufbau-einer-kostenoberfläche" class="nav-link" data-scroll-target="#aufbau-einer-kostenoberfläche">Aufbau einer Kostenoberfläche</a></li>
+  <li><a href="#kumulative-kosten-und-kostenpfade" id="toc-kumulative-kosten-und-kostenpfade" class="nav-link" data-scroll-target="#kumulative-kosten-und-kostenpfade">Kumulative Kosten und Kostenpfade</a></li>
+  <li><a href="#konzeptuelle-umsetzung-in-qgis" id="toc-konzeptuelle-umsetzung-in-qgis" class="nav-link" data-scroll-target="#konzeptuelle-umsetzung-in-qgis">Konzeptuelle Umsetzung in QGIS</a></li>
+  <li><a href="#bezug-zur-wildkatzenanalyse" id="toc-bezug-zur-wildkatzenanalyse" class="nav-link" data-scroll-target="#bezug-zur-wildkatzenanalyse">Bezug zur Wildkatzenanalyse</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit02/unit02-02.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div><div class="quarto-other-links"><h2>Weitere Links</h2><ul><li><a href="https://w.wiki/QtV"><i class="bi bi-link-45deg"></i>Splash Source: Snow (1855):</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit05/unit05-05.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -779,99 +791,163 @@ background-size: cover;
 
 
 
-<div class="banner-credit">
-<p>Titelbild: Quelle nach <span class="citation" data-cites="snow">(<a href="#ref-snow" role="doc-biblioref">Snow 1854</a>)</span>.</p>
-</div>
-<section id="raum-im-gis" class="level2">
-<h2 class="anchored" data-anchor-id="raum-im-gis">Raum im GIS</h2>
-<p>Bisher haben wir ständig und ohne besondere Vorüberlegungen mit den Begriffen Raum und Zeit gearbeitet. Um die bereits im Abschnitt <a href="../unit01/unit01-03_reader_geo_raum.html">Objekte im Raum</a> vorgestellten Raumkonzepte (diskrete Geoobjekte, kontinuierliche Räume) in GI-Systemen und letztlich auch allgemein wissenschaftlich nutzbar zu machen, müssen wir diese Begriffe konkreter fassen.</p>
-<p>Der Raum in GI-Systemen wird in Anlehnung an die Mathematik und Physik als dreidimensionaler euklidischer Raum verstanden. Aus dem Mathematikunterricht kennen wir die euklidische Ebene (mit 2 Dimensionen) und den euklidischen Raum (mit 3 Dimensionen). Am einfachsten lässt sich der euklidische Raum mit Hilfe eines kartesischen Koordinatensystems beschreiben, in dem die Koordinaten entlang senkrecht zueinander stehender Achsen aufgetragen werden (vgl. Abb. 02-1).</p>
+<section id="kostenanalyse-auf-werte--und-kostenoberflächen" class="level2">
+<h2 class="anchored" data-anchor-id="kostenanalyse-auf-werte--und-kostenoberflächen">Kostenanalyse auf Werte- und Kostenoberflächen</h2>
+<p>Die bisherigen Beispiele betrachten vor allem <strong>Eignung</strong>: Eine Rasterzelle erhält einen Wert dafür, wie gut sie zu einem Ziel passt. In vielen räumlichen Fragestellungen geht es aber nicht nur darum, ob ein Ort geeignet ist, sondern auch darum, wie groß der <strong>Aufwand</strong> ist, einen Ort zu erreichen, eine Verbindung herzustellen oder eine Maßnahme umzusetzen. Aus einer Eignungsanalyse wird dann eine Kosten- oder Widerstandsanalyse.</p>
+<p>Eine solche Kostenanalyse arbeitet ebenfalls mit Rasteroberflächen. Der Unterschied liegt in der Bedeutung der Werte: Bei einer Eignungskarte bedeuten hohe Werte meist „gut geeignet“. Bei einer Kostenoberfläche bedeuten hohe Werte dagegen „hoher Aufwand“, „geringe Durchlässigkeit“ oder „schlechte Erreichbarkeit“. Niedrige Werte stehen für geringe Kosten oder gute Durchlässigkeit.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/CartesianPlane.svg/3840px-CartesianPlane.svg.png" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 02-01: Ausschnitt aus einem zweidimensionalen kartesischen Koordinatensystem mit 3 eingetragenen Punkten in Koordinatenschreibweise (Quelle: <span class="citation" data-cites="bolino">Bolino (<a href="#ref-bolino" role="doc-biblioref">2008</a>)</span>)</figcaption>
+<p><img src="../assets/images/unit05/kosten.png" class="img-fluid figure-img"></p>
+<figcaption>Schema einer Kostenanalyse auf Werte- und Kostenoberflächen: Aus mehreren Kostentreibern wie Hangneigung, Landnutzung oder Siedlungsnähe wird zunächst eine Kostenoberfläche abgeleitet. Darauf können kumulative Kosten, minimale Kostenpfade und Erreichbarkeiten berechnet werden. Der Entscheidungsplot übersetzt die Ergebnisse in eine Abwägung zwischen Entfernung und Aufwand.</figcaption>
 </figure>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/3D_coordinate_system.svg/1280px-3D_coordinate_system.svg.png" style="width:50.0%;height:50.0%" class="figure-img"></p>
-<figcaption>Abbildung 02-2: Allgemeine Abbildung eines dreidimensionales kartesischen Koordinatensystem mit euklidischen Ebenen durch den Ursprungspunkt (Quelle: <span class="citation" data-cites="sakurambo">Sakurambo (<a href="#ref-sakurambo" role="doc-biblioref">2007</a>)</span>)</figcaption>
-</figure>
-</div>
+<section id="von-der-eignung-zur-kostenoberfläche" class="level3">
+<h3 class="anchored" data-anchor-id="von-der-eignung-zur-kostenoberfläche">Von der Eignung zur Kostenoberfläche</h3>
+<p>Die Vorgehensweise ähnelt der gewichteten Verschneidung. Zunächst werden mehrere Eingangsdaten ausgewählt, die den räumlichen Aufwand beeinflussen. Das können zum Beispiel Hangneigung, Landnutzung, Bodenbedeckung, Gewässer, Siedlungsbereiche, Schutzgebiete oder Wege sein. Diese Eingangsdaten werden anschließend so rek klassifiziert, dass sie einen Kostenwert ausdrücken.</p>
+<p>Beispiele:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Eingangsdaten</th>
+<th>Bedeutung als Kostenfaktor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Hangneigung</td>
+<td>steile Flächen verursachen höhere Bewegungskosten</td>
+</tr>
+<tr class="even">
+<td>Landnutzung</td>
+<td>Wald, Offenland, Siedlung oder Wasserflächen können unterschiedlich durchlässig sein</td>
+</tr>
+<tr class="odd">
+<td>Wege und Straßen</td>
+<td>können Bewegungskosten senken oder, je nach Fragestellung, Barrieren darstellen</td>
+</tr>
+<tr class="even">
+<td>Siedlungsnähe</td>
+<td>kann Störung, Risiko oder Aufwand erhöhen</td>
+</tr>
+<tr class="odd">
+<td>Gewässer</td>
+<td>können Barrieren oder Leitstrukturen sein</td>
+</tr>
+</tbody>
+</table>
+<p>Wichtig ist die einheitliche Richtung der Werte. Alle Raster müssen so skaliert werden, dass niedrige Werte geringe Kosten und hohe Werte hohe Kosten bedeuten.</p>
 </section>
-<section id="die-raumrichtungen" class="level2">
-<h2 class="anchored" data-anchor-id="die-raumrichtungen">Die Raumrichtungen</h2>
-<p>Bisher haben wir von Geoobjekten als definierte Objekte mit eindeutiger Lage (Koordinaten) gesprochen. Mit Hilfe der Koordinaten (x- und y-Wert) kann die Lage eines Punktes im zweidimensionalen Raum eindeutig bestimmt werden. In der Regel spielt auch die Höhe des Punktes, z.B. die Höhe über dem Meeresspiegel oder die Höhe über der Erdoberfläche, eine Rolle. Daher muss auch die dritte Raumdimension (z-Wert) berücksichtigt werden (vgl. Abb. 02-2).</p>
-<p>Wird ein Geoobjekt durch einen Punkt repräsentiert, so genügt ein Punkt (x, y, z) im dreidimensionalen Raum für eine eindeutige Verortung. Häufig sind die in Karten oder GI-Systemen dargestellten Geoobjekte jedoch selbst mehrdimensional. Unter der Dimension eines Geoobjektes versteht man dabei die voneinander unabhängigen Raumrichtungen, die zur Darstellung des Geoobjektes verwendet werden (vgl. Abb. 02-3). Diese entsprechen den geometrischen Eigenschaften von Punkten, Strecken, Flächen und Körpern in einem kartesischen Koordinatensystem: * 0D Geoobjekte: Punkte (Orte); keine Längen und Flächen (z.B. Messstation, Bohrpunkt) * 1D Geoobjekte: Strecken; definiert durch eine Länge aber keine Fläche (Gewässerlängsprofil, vertikales Bodenprofil) * 2D Geoobjekte: Flächen; definieren eine geschlossene Linie (Sportplatz, Stadtgebiet, Einzugsgebiet) * 3D Geoobjekte: Körper; werden z.B. als Volumenkörper (Festkörper) oder als Grenzflächenkörper (Polyeder) definiert (Grundwasserkörper, Atmosphäre).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://farm8.staticflickr.com/7087/13970512442_289d700fb6.jpg" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 02-03: Dimensionalität von Geoobjekten (verändert nach <span class="citation" data-cites="bartelme2006">Bartelme (<a href="#ref-bartelme2006" role="doc-biblioref">2006</a>)</span></figcaption>
-</figure>
-</div>
-<p>Neben den räumlichen Merkmalen sind Geoobjekte durch weitere Eigenschaften charakterisiert (z.B. kann einem Fluss ein Name zugeordnet sein, einer Stadt die Einwohnerzahl usw.). Diese Eigenschaften eines Geoobjekts, die nicht die räumliche Geometrie betreffen, werden als Attribute bezeichnet und bilden die thematische Dimension. Die zeitliche Veränderung von Geoobjekten oder Systemen wird in der Regel als vierte Dimension bezeichnet.</p>
+<section id="aufbau-einer-kostenoberfläche" class="level3">
+<h3 class="anchored" data-anchor-id="aufbau-einer-kostenoberfläche">Aufbau einer Kostenoberfläche</h3>
+<p>Aus den einzelnen Kostenfaktoren wird eine gemeinsame Kostenoberfläche berechnet. Dafür werden die standardisierten Kostenraster gewichtet und addiert:</p>
+<p><span class="math display">\[
+K = K_1 \cdot w_1 + K_2 \cdot w_2 + K_3 \cdot w_3 + \dots + K_n \cdot w_n
+\]</span></p>
+<p>Dabei steht <span class="math display">\[K\]</span> für die resultierende Kostenoberfläche, <span class="math display">\[K_1 \dots K_n\]</span> für die einzelnen Kostenfaktoren und <span class="math display">\[w_1 \dots w_n\]</span> für deren Gewichte.</p>
+<p>Ein einfaches Beispiel wäre:</p>
+<p><span class="math display">\[
+K =
+\text{Hangneigung} \cdot 0.4
++
+\text{Landnutzung} \cdot 0.4
++
+\text{Siedlungsnähe} \cdot 0.2
+\]</span></p>
+<p>Die resultierende Karte zeigt dann nicht die beste Eignung, sondern den räumlichen Widerstand. Eine Rasterzelle mit niedrigem Wert ist leicht passierbar oder günstig erreichbar. Eine Rasterzelle mit hohem Wert ist schwer passierbar oder mit hohem Aufwand verbunden.</p>
 </section>
-<section id="die-lage-im-raum-topologie" class="level2">
-<h2 class="anchored" data-anchor-id="die-lage-im-raum-topologie">Die Lage im Raum (Topologie)</h2>
-<p>Für eine vollständige und korrekte Darstellung von Geoobjekten benötigen wir neben der Lage (Geometrie) und der thematischen Dimension auch die relative Lage der Objekte zueinander. Die relative Lage der Geoobjekte zueinander wird als Topologie bezeichnet. Sie zu bestimmen scheint zunächst einfach. Man kann sie aus der geometrischen Lage berechnen. Schwieriger wird es, wenn diese Punkte exakt die gleichen Raumkoordinaten haben und sich nur in der Höhenangabe (Dimensionalität) unterscheiden, wie z.B. in einem Gebäudeplan die Ausgänge eines Aufzuges, oder wenn es nicht auf die exakte Lage zueinander ankommt, sondern auf die Information, was benachbart ist. Ein bekanntes Praxisbeispiel für eine topologische Sichtweise ist ein Liniennetzplan, der in Abbildung 02-4 die Buslinien und Haltestellen für Marburg darstellt.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/images/unit02/mr_biko_net.png" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 02-04: Tagesliniennetzplan der Stadtwerke Marburg. Nur die wenigsten Menschen würden einen Netzfahrplan nutzen, um etwa eine Stadtbesichtigung zu Fuß zu planen, oder aber die geometrisch exakte Lage der Haltestellen zueinander zu ermitteln <span class="citation" data-cites="swm">Marburg (<a href="#ref-swm" role="doc-biblioref">2020</a>)</span></figcaption>
-</figure>
-</div>
+<section id="kumulative-kosten-und-kostenpfade" class="level3">
+<h3 class="anchored" data-anchor-id="kumulative-kosten-und-kostenpfade">Kumulative Kosten und Kostenpfade</h3>
+<p>Auf Grundlage einer Kostenoberfläche kann berechnet werden, wie teuer oder aufwendig es ist, sich von einem Ausgangspunkt durch den Raum zu bewegen. Dabei zählt nicht nur die Luftlinienentfernung, sondern der aufsummierte Aufwand entlang des Weges.</p>
+<p>Die kumulativen Kosten zu einer Zielzelle ergeben sich vereinfacht als Summe der Kostenwerte entlang eines Pfades:</p>
+<p><span class="math display">\[
+C_{\text{Pfad}} = \sum_i K_i
+\]</span></p>
+<p>Ein minimaler Kostenpfad ist dann der Pfad mit der geringsten aufsummierten Kostenlast:</p>
+<p><span class="math display">\[
+C_{\text{min}} = \min \left( \sum_i K_i \right)
+\]</span></p>
+<p>Damit kann eine Fläche, die in Luftlinie nahe liegt, trotzdem schwer erreichbar sein, wenn der Weg dorthin über steile Hänge, Barrieren oder hoch bewertete Widerstandsflächen führt. Umgekehrt kann ein etwas längerer Weg günstiger sein, wenn er durch gut passierbare Bereiche verläuft.</p>
 </section>
-<section id="geometrie-dimensionen-und-topologie" class="level2">
-<h2 class="anchored" data-anchor-id="geometrie-dimensionen-und-topologie">Geometrie, Dimensionen und Topologie</h2>
-<p>In vielen, wenn nicht in den meisten Situationen ist die korrekte Verknüpfung von Geometrie, Topologie und Dimension unerlässlich. Werden verschiedene Geoobjekte zu komplexen Einheiten verknüpft, kann es zu Überlappungen, Lücken oder anderen räumlichen Zuständen in der Abbildung der Realität kommen. Bei Karten kennen wir dieses Problem nicht, da die bildliche Darstellung der dargestellten Welt zwangsläufig zweidimensional ist und kartographische Symbole zur Verfügung stehen, um diesen Mangel darzustellen (z.B. Schraffen für die dritte Dimension Höhe). Im GIS hingegen stellen wir die Welt mehrdimensional dar. So können sich z.B. zwei Streckenabschnitte, die jeweils durch zwei Koordinaten definiert sind, kreuzen. Handelt es sich dabei um eine Bundesstraße und eine Autobahn, wird diese Kreuzung in der realen Welt durch eine Brücke realisiert. Im GI-System muss diese Brücke durch die exakte Geometrie, Topologie und Dimension im Sinne einer fehlenden Verbindung zwischen Autobahn und Bundesstraße dargestellt werden. Andernfalls kann es passieren, dass das Navigationsgerät die direkte Auffahrt auf die Autobahn verlangt, weil es die Brücke für eine Kreuzung hält, oder entgegen der Fahrtrichtung auf die Autobahn leitet.</p>
-<p>Eine adäquate raum-zeitliche Beschreibung von Geoobjekten und ihren Eigenschaften erfordert daher, neben der Geometrie auch die Topologie und Dimension des Objektes bzw. des Raumkontinuums zu kennen und adäquat abzubilden.</p>
-</section>
-<section id="übung" class="level2">
-<h2 class="anchored" data-anchor-id="übung">Übung</h2>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
+<section id="konzeptuelle-umsetzung-in-qgis" class="level3">
+<h3 class="anchored" data-anchor-id="konzeptuelle-umsetzung-in-qgis">Konzeptuelle Umsetzung in QGIS</h3>
+<p>In QGIS wird eine Kostenanalyse meist in mehreren Schritten aufgebaut. Zuerst werden die Eingangsdaten in Kostenraster übersetzt. Danach werden diese Raster zu einer Kostenoberfläche kombiniert. Anschließend können kumulative Kosten oder minimale Kostenpfade berechnet werden.</p>
+<p>Typische Arbeitsschritte sind:</p>
+<ol type="1">
+<li>Kostentreiber auswählen, zum Beispiel Hangneigung, Landnutzung, Wege, Gewässer oder Siedlungsnähe.</li>
+<li>Alle Eingangsdaten in Rasterdaten mit gleicher Zellgröße, Ausdehnung und Projektion überführen.</li>
+<li>Eingangsdaten rek klassifizieren, sodass niedrige Werte geringe Kosten und hohe Werte hohe Kosten bedeuten.</li>
+<li>Kostenraster gewichten und im Rasterrechner zu einer Kostenoberfläche kombinieren.</li>
+<li>Ausgangspunkte oder Zielpunkte festlegen.</li>
+<li>Kumulative Kosten und minimale Kostenpfade berechnen.</li>
+<li>Ergebnisse interpretieren und gegebenenfalls mit Eignungskarten oder Zielkonflikten kombinieren.</li>
+</ol>
+<p>Geeignete QGIS-Werkzeuge sind:</p>
+<ul>
+<li><strong>Rasterisieren (Vektor nach Raster)</strong>: wandelt Vektordaten in Rasterdaten um.</li>
+<li><strong>Hangneigung</strong>: leitet aus dem DGM einen Kostenfaktor für Steilheit ab.</li>
+<li><strong>Nähe / Rasterdistanz</strong>: berechnet Distanzraster zu Wegen, Siedlungen oder Barrieren.</li>
+<li><strong>Reklassifizieren nach Tabelle</strong>: übersetzt Eingangswerte in Kostenwerte.</li>
+<li><strong>Rasterrechner</strong>: kombiniert mehrere Kostenraster zu einer Kostenoberfläche.</li>
+<li><strong>Raster ausrichten</strong>: vereinheitlicht Zellgröße, Ausdehnung und Rasterlage.</li>
+<li><strong>GRASS <code>r.cost</code></strong>: berechnet kumulative Kosten auf einer Kostenoberfläche.</li>
+<li><strong>GRASS <code>r.walk</code></strong>: berechnet bewegungsbezogene Kosten unter Berücksichtigung von Gelände und Hangneigung.</li>
+<li><strong>Kürzester Pfad / Least-cost path</strong>: leitet aus den kumulativen Kosten einen minimalen Kostenpfad ab.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Merksatz">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
-<p>Besuchen Sie erneut die Ihnen bereits bekannen Websites.</p>
-<ul>
-<li><a href="https://toiletmap.gov.au/#">Öffentliche Toiletten in Australien</a></li>
-<li><a href="http://www.wetterbote.de/wetter/pegel/lahn.htm">Aktuelle Wasserstände der Lahn</a></li>
-<li><a href="https://www.hlnug.de/messwerte/datenportal/messstelle/2/1/1406/">Lufthygiene Bad Arolsen</a></li>
-<li><a href="https://land.copernicus.eu/imagery-in-situ/eu-dem/eu-dem-v1.1/view">Kopernikus EU-DEM v1.1</a></li>
-</ul>
-<p>Analysieren Sie vor dem Hintergrund Ihrer neu erworbenen Kenntnisse die folgenden Fragen:</p>
-<ul>
-<li>Was wird dargestellt? Geoobjekte oder Raumkontinua?</li>
-<li>Welche Dimension und Geometrie liegt der Darstellung Ihrer Meinung nach zugrunde?</li>
-<li>Versuchen Sie, weitere alltägliche Beispiele für die Bedeutung von Lage und Dimensionalität zu finden.</li>
-</ul>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Merksatz
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>Eignungskarten zeigen, wo etwas günstig oder geeignet ist. Kostenoberflächen zeigen, wie aufwendig es ist, sich durch den Raum zu bewegen oder ein Ziel zu erreichen. Beide Ansätze können kombiniert werden: Eine Fläche kann ökologisch geeignet sein, aber nur mit hohen Kosten erreichbar oder stark durch Barrieren getrennt.</p>
 </div>
-
+</div>
+</section>
+<section id="bezug-zur-wildkatzenanalyse" class="level3">
+<h3 class="anchored" data-anchor-id="bezug-zur-wildkatzenanalyse">Bezug zur Wildkatzenanalyse</h3>
+<p>Für das Wildkatzenbeispiel kann eine Kostenoberfläche genutzt werden, um Durchlässigkeit und mögliche Bewegungsräume zu modellieren. Niedrige Kosten könnten deckungsreiche Waldflächen, Gehölzstrukturen oder störungsarme Bereiche erhalten. Hohe Kosten könnten Siedlungen, stark befahrene Straßen, offene ausgeräumte Flächen oder andere Barrieren erhalten.</p>
+<p>Damit verschiebt sich die Fragestellung:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Eignungsanalyse</th>
+<th>Kostenanalyse</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Wo sind potenziell geeignete Lebensräume?</td>
+<td>Wie gut sind geeignete Lebensräume miteinander verbunden?</td>
+</tr>
+<tr class="even">
+<td>Welche Flächen erfüllen Habitatkriterien?</td>
+<td>Welche Wege durch die Landschaft verursachen geringe oder hohe Bewegungskosten?</td>
+</tr>
+<tr class="odd">
+<td>Ergebnis: Eignungskarte</td>
+<td>Ergebnis: Kostenoberfläche, kumulative Kosten, Kostenpfad</td>
+</tr>
+</tbody>
+</table>
+<p>Eine Kostenanalyse ergänzt also die Eignungsanalyse. Sie beantwortet nicht nur, <strong>wo</strong> geeignete Flächen liegen, sondern auch, <strong>wie</strong> diese Flächen im Raum miteinander verbunden sind.</p>
 
 
 </section>
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-bartelme2006" class="csl-entry" role="listitem">
-Bartelme, N. 2006. <em>Geoinformatik: Modelle, Strukturen, Funktionen</em>. Springer Berlin Heidelberg. <a href="https://books.google.de/books?id=pV0hBAAAQBAJ">https://books.google.de/books?id=pV0hBAAAQBAJ</a>.
-</div>
-<div id="ref-bolino" class="csl-entry" role="listitem">
-Bolino, K. 2008. <span>„Ausschnitt aus einem zweidimensionalen Koordinatensystem“</span>. <a href="https://commons.wikimedia.org/wiki/File:Cartesian-coordinate-system.svg">https://commons.wikimedia.org/wiki/File:Cartesian-coordinate-system.svg</a>.
-</div>
-<div id="ref-swm" class="csl-entry" role="listitem">
-Marburg, Stadtwerke. 2020. <span>„Tagesliniennetz der Universitätsstadt Marburg“</span>. <a href="https://stadtwerke-marburg.de/busverkehr-netzplan.html">https://stadtwerke-marburg.de/busverkehr-netzplan.html</a>.
-</div>
-<div id="ref-sakurambo" class="csl-entry" role="listitem">
-Sakurambo. 2007. <span>„Ausschnitt aus einem dreidimensionalen kartesischen Koordinatensystem“</span>. <a href="https://commons.wikimedia.org/wiki/File:3D_coordinate_system.svg">https://commons.wikimedia.org/wiki/File:3D_coordinate_system.svg</a>.
-</div>
-<div id="ref-snow" class="csl-entry" role="listitem">
-Snow, John. 1854. <span>„A map taken from a report by Dr. John Snow: p. [97]-120 of the ’Report on the cholera outbreak in the Parish of St. James, Westminster, during the autumn of 1854’, presented to the vestry by the Cholera Inquiry Committee, July 1855“</span>. <a href="https://w.wiki/QtV">https://w.wiki/QtV</a>.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <div class="footer-banner">
 
     <a href="https://github.com/gisma-courses/gc" target="_blank">GISMA (2024)</a> |
@@ -1299,14 +1375,11 @@ Snow, John. 1854. <span>„A map taken from a report by Dr. John Snow: p. [97]-1
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../unit02/unit02-01.html" class="pagination-link" aria-label="Raumrepräsentation in der Geoinformatik">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Raumrepräsentation in der Geoinformatik</span>
+      <a href="../unit05/unit05-04.html" class="pagination-link" aria-label="Multikriterien-Multiziel-Analyse">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Multikriterien-Multiziel-Analyse</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../unit02/unit02-03.html" class="pagination-link" aria-label="Datenmodelle für Raumdaten">
-        <span class="nav-page-text">Datenmodelle für Raumdaten</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -1314,4 +1387,4 @@ Snow, John. 1854. <span>„A map taken from a report by Dr. John Snow: p. [97]-1
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit02/unit02-02.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit05/unit05-05.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></div></div></footer></body></html>
