@@ -52,10 +52,10 @@ website:
               text: A3 - Analysen und Ableitungen
             - href: unit09/unit09-04.qmd
               text: A4 - Kosten und Kriterien
-            - href: unit09/unit09-05.qmd
+            - href: unit099/coming-soon.qmd
               text: A5 - Reproduzierbarkeit und Workflows
-            - href: unit09/unit09-06.qmd
-              text: A6 - Die Projektarbeit
+          #  - href: unit09/unit09-06.qmd
+          #    text: A6 - Die Projektarbeit
         - text: "---"
         - text: "---"
         - section: Reader Geographische Raumkonzept
