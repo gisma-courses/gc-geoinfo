@@ -64,7 +64,7 @@ Dabei sollen folgende Aussagen gelten:
 * Extrahieren Sie alle Waldflächen aus den [Corine Landnutzungsdaten](https://land.copernicus.eu/pan-european/corine-land-cover/clc2018?tab=mapview), so dass Sie ein Raster mit den Werten 1 für *Waldflächen* und 0 für *keine Waldflächen* erhalten. (Bereits zugeschnittene Corine-Daten finden Sie im heruntergeladenen Archiv unter dem Dateinamen `clc2018_1m_MOF_25832.tif`). Tipp Dieser Vorgang wird auch als Datenreklassifizierung bezeichnet. 
 * Zur Vorbereitung der Multikriterienbewertung sollen die kontinuierlichen Hangneigungswerte in *ganzzahlige* kategoriale Klassen überführt (reklassifiziert) werden. D.h. durch die Reklassifizierung der Hangneigung in drei Klassen 0-15 Grad = Klasse mit Wert 1, 15-30 Grad = Klasse mit Wert 2 und > 30 Grad = Klasse mit Wert 3 (1=flach, 2=mittlere Neigung und 3=steile Neigung) werden kategoriale Zielvariablen generiert.
 * Legen Sie für **jede Datenebene** eine Gewichtung gemäß der von Ihnen festgelegten Bedeutung in Bezug auf ihre Eignung fest. Die Gewichtung wird anschließend im `Rasterrechner` umgesetzt. Achten Sie darauf, dass die Summe der Gewichtungsfaktoren 1.0 ergibt.
-* Legen Sie für **jede Klasse** in diesem Layer eine Bewertung zwischen 0 und 10 fest (z. B. Wald = 10, Nichtwald = 1, Hangneigung Klasse 1 = 5 usw.) Beachten Sie, dass die Festlegung der Bewertung die Bedeutung der Kriterien für die Fragestellung berücksichtigen muss. 
+* Legen Sie für **jede Klasse** eine Bewertung zwischen 0 und 10 fest. Diese Bewertung muss zur fachlichen Aussage passen: Welche Klasse ist für die Wildkatze günstiger, welche weniger günstig? Übersetzen Sie diese Bewertung anschließend in einen Rasterrechner-Ausdruck.
 * Erläutern Sie die Ergebnisse in max. 2 Sätzen.
 :::
 
@@ -87,7 +87,7 @@ Die Vorgaben für die Streckenplanung sind:
 * Hangneigung berechnen 
 * Verwendung der reklassifizierten Corine-Daten aus Aufgabe 04-01 (*Wald*, *Kein Wald*).
 * Berechnen Sie ein Entfernungsraster, das die Entfernungen zu den Straßen enthält (`OSM_roads_MOF_25832.gpkg`) (räumliche Auflösung wie das Hangneigungsraster).
-* Für jede Rasterklasse (z.B. Wald Nicht-Wald) sind Werte zu definieren, die die *Kosten* bzw. den *Reibungswert* für das Überqueren/Nutzen der Zelle darstellen. Es ist daher sinnvoll (im Sinne der obigen Vorgaben), unattraktive Zellen mit hohen Werten und attraktive Zellen mit niedrigen Werten umzuklassifizieren. 
+* Für jede Rasterklasse sind Werte zu definieren, die die *Kosten* bzw. den *Reibungswert* für das Überqueren/Nutzen der Zelle darstellen. Unattraktive Zellen erhalten hohe Kostenwerte, attraktive Zellen niedrige Kostenwerte. Übersetzen Sie diese Kostenlogik in Rasterrechner-Ausdrücke.
 * Verrechnen Sie die einzelnen Raster zu einem Gesamtkostenraster. Überlegen Sie dabei, ob alle drei Kriterien gleich gewichtet werden sollen oder ob Sie z.B. der Hangneigung ein höheres Gewicht geben wollen (z.B. wegen des höheren Trainingseffektes).
 * Berechnen Sie auf dieser Grundlage die im Sinne der Vorgaben attraktivste (=*"kostengünstigste"*) Strecke zwischen Start- und Zielpunkt.
 Beschreiben Sie das Ergebnis, fügen Sie aussagekräftige Grafik(en) ein und begründen Sie stichpunktartig die einzelnen Arbeitsschritte.
@@ -104,23 +104,69 @@ Beschreiben Sie das Ergebnis, fügen Sie aussagekräftige Grafik(en) ein und beg
 
 ## Unterstützung
 
-
 ::: {.callout-note icon="false" appearance="simple"}
-Bei der **Eignungsanalyse** bedeuten hohe Werte hohe Eignung.  
+Bei der **Eignungsanalyse** bedeuten hohe Werte hohe Eignung.
 Bei der **Kostenanalyse** bedeuten hohe Werte hohe Kosten bzw. hohen Widerstand.
 :::
 
-### Reklassifikation und Bewertung
+### Kriterienbewertung: Fachlogik in Rasterwerte übersetzen
 
-Für die Umwandlung von Rohwerten in Klassen oder Bewertungswerte verwenden Sie das Werkzeug `Reklassifizieren nach Tabelle`. Damit können zum Beispiel Hangneigungswerte, Landnutzungsklassen oder Entfernungswerte in Eignungs- oder Kostenwerte übersetzt werden.
+Eine Multikriterienanalyse besteht nicht nur aus Werkzeugbedienung. Entscheidend ist die Übersetzung einer fachlichen Aussage in eine berechenbare Rasterregel.
 
-Kontinuierliche Werte wie Hangneigung oder Entfernung zu Wegen können entweder in Klassen eingeteilt oder rechnerisch normalisiert werden. Eine einfache lineare Normalisierung auf den Wertebereich 0 bis 1 lautet:
+Aus einer Aussage wie „Wildkatzen bevorzugen Waldgebiete“ wird zum Beispiel:
+
+```text
+Wald = hoher Eignungswert
+Nicht-Wald = niedriger Eignungswert
+```
+
+Aus einer Aussage wie „die Route soll möglichst weit von Wegen entfernt verlaufen“ wird dagegen:
+
+```text
+große Entfernung zu Wegen = niedriger Kostenwert
+geringe Entfernung zu Wegen = hoher Kostenwert
+```
+
+Die technische Frage lautet also immer: **Welcher Rasterwert soll im Ergebnis günstig oder ungünstig wirken?**
+
+### Reklassifikation oder Rasterrechner
+
+Für die Umwandlung von Rohwerten in Bewertungswerte gibt es zwei sinnvolle Wege.
+
+Der übersichtliche Weg ist `Reklassifizieren nach Tabelle`. Dabei werden Wertebereiche direkt in Zielwerte übersetzt, zum Beispiel Hangneigungsklassen oder Entfernungsklassen.
+
+Der direktere Weg ist der `Rasterrechner`. Dort wird die fachliche Regel unmittelbar als Ausdruck formuliert. Das reduziert die Zahl einzelner Werkzeugdialoge und macht sichtbar, welche Bedingung welchen Wert erzeugt.
+
+Beispielhafte Struktur für eine Klassenbewertung der Hangneigung:
+
+```qgis
+("hangneigung@1" >= 0 AND "hangneigung@1" < 15) * WERT_FLACH +
+("hangneigung@1" >= 15 AND "hangneigung@1" < 30) * WERT_MITTEL +
+("hangneigung@1" >= 30) * WERT_STEIL
+```
+
+Die Platzhalter `WERT_FLACH`, `WERT_MITTEL` und `WERT_STEIL` müssen durch fachlich begründete Bewertungswerte ersetzt werden. Genau darin liegt die eigentliche Analyseentscheidung.
+
+Für eine Wald/Nicht-Wald-Bewertung gilt dieselbe Logik:
+
+```qgis
+("wald@1" = 1) * WERT_WALD +
+("wald@1" = 0) * WERT_NICHTWALD
+```
+
+Auch hier entscheidet nicht QGIS, welcher Wert richtig ist. Die Werte müssen zur Fragestellung passen.
+
+### Normalisierung kontinuierlicher Werte
+
+Kontinuierliche Rasterwerte wie Hangneigung oder Entfernung können auch rechnerisch auf eine gemeinsame Skala gebracht werden. Das nennt man Normalisierung.
+
+Eine einfache lineare Normalisierung auf den Wertebereich 0 bis 1 lautet:
 
 $$
 x_{\text{norm}} = \frac{x - x_{\min}}{x_{\max} - x_{\min}}
 $$
 
-Dabei ist $$x$$ der ursprüngliche Rasterwert, $$x_{\min}$$ der kleinste Wert des Rasters und $$x_{\max}$$ der größte Wert des Rasters.
+Dabei ist $x$ der ursprüngliche Rasterwert, $x_{\min}$ der kleinste Wert des Rasters und $x_{\max}$ der größte Wert des Rasters.
 
 Soll eine Skala von 0 bis 10 verwendet werden, wird der normalisierte Wert mit 10 multipliziert:
 
@@ -128,25 +174,43 @@ $$
 x_{0-10} = 10 \cdot x_{\text{norm}}
 $$
 
-Diese Normalisierung ist nur dann passend, wenn hohe Ausgangswerte auch hohe Eignung bedeuten. Wenn hohe Ausgangswerte niedrige Kosten bedeuten sollen, muss die Richtung umgekehrt werden:
+Diese Normalisierung ist nur dann passend, wenn hohe Ausgangswerte auch hohe Eignung bedeuten. Wenn hohe Ausgangswerte niedrige Kosten oder geringere Eignung bedeuten sollen, muss die Richtung umgekehrt werden:
 
 $$
 x_{\text{inv}} = 1 - x_{\text{norm}}
 $$
 
-Für diese Aufgabe ist `Reklassifizieren nach Tabelle` meist der übersichtlichere Weg, weil die Klassengrenzen und Zielwerte dort direkt sichtbar eingetragen werden.
+Für diese Aufgabe ist häufig eine explizite Klassenbewertung verständlicher als eine automatische Normalisierung. Die Klassengrenzen und Zielwerte bleiben dabei sichtbar und können fachlich diskutiert werden.
 
 ### Gewichtung im Rasterrechner
 
-Die Gewichtung erfolgt im `Rasterrechner`. Jedes bewertete Raster wird mit seinem Gewichtungsfaktor multipliziert. Anschließend werden die gewichteten Raster addiert.
+Nach der Bewertung der einzelnen Kriterien werden die bewerteten Raster gewichtet kombiniert. Jedes Raster wird mit seinem Gewichtungsfaktor multipliziert. Anschließend werden die gewichteten Raster addiert.
 
 Allgemein:
+
 
 $$
 E = R_1 \cdot w_1 + R_2 \cdot w_2 + \dots + R_n \cdot w_n
 $$
 
-Dabei sind $$R_1 \dots R_n$$ die bewerteten Raster und $$w_1 \dots w_n$$ die zugehörigen Gewichte. Wird mit proportionalen Gewichten gearbeitet, soll die Summe der Gewichtungsfaktoren 1 ergeben.
+
+Dabei sind $R_1 \dots R_n$ die bewerteten Raster und $w_1 \dots w_n$ die zugehörigen Gewichte. Wird mit proportionalen Gewichten gearbeitet, soll die Summe der Gewichtungsfaktoren 1 ergeben.
+
+Die Gewichte sind **keine technischen Vorgaben**. Sie drücken aus, welches Kriterium im Verhältnis zu den anderen Kriterien stärker oder schwächer wirken soll.
+
+### Eignungswerte und Kostenwerte nicht verwechseln
+
+Bei der Eignungsanalyse wird nach günstigen Flächen gesucht. Hohe Werte bedeuten dort hohe Eignung.
+
+Bei der Kostenanalyse sucht der Algorithmus dagegen einen Pfad mit möglichst niedrigen aufsummierten Kosten. Hohe Werte bedeuten dort hohe Kosten oder hohen Widerstand.
+
+Deshalb kann dieselbe räumliche Eigenschaft je nach Fragestellung unterschiedlich bewertet werden. Eine steile Fläche kann für ein Wildkatzenhabitat als günstiger Reliefindikator bewertet werden. Für einen bequemen Spazierweg wäre sie ein hoher Kostenwert. Für einen Trimm-Dich-Pfad kann sie wiederum bewusst als niedriger Kostenwert gesetzt werden, wenn Steilheit als attraktiv gilt.
+
+Die entscheidende Kontrollfrage lautet daher:
+
+```text
+Soll dieser Ausgangswert im Ergebnis günstig oder ungünstig wirken?
+```
 
 ### Start- und Zielpunkte anlegen
 
@@ -164,18 +228,95 @@ Alternativ kann das Bedienfeld `Erweitertes Digitalisieren` genutzt werden. Akti
 
 ### Entfernungs- und Kostenanalyse
 
-Für Entfernungsberechnungen kann das Werkzeug `Nähe / Rasterdistanz` verwendet werden. Vektordaten, zum Beispiel Wege oder Straßen, müssen dafür vorher rasterisiert werden. Verwenden Sie dafür `Rasterisieren (Vektor nach Raster)`.
-
 Für die Kostenanalyse kann das Plugin `Least Cost Path` verwendet werden. Es berechnet aus einem Kostenraster sowie Start- und Zielpunkten einen kostengünstigen Pfad. Achten Sie darauf, dass das verwendete Raster wirklich ein Kostenraster ist: niedrige Werte stehen für geringe Kosten, hohe Werte für hohe Kosten.
 
-### Weiterführende Hilfen
+Für eine fachlich leistungsfähigere Umsetzung können alternativ die GRASS-Werkzeuge in QGIS verwendet werden. Mit `r.cost` wird aus einem Kostenraster zunächst eine **kumulative Kostenoberfläche** berechnet. Jede Rasterzelle erhält dann den minimalen aufsummierten Aufwand, der vom Startpunkt bis zu dieser Zelle entsteht. Aus dieser kumulativen Kostenoberfläche kann anschließend mit `r.drain` beziehungsweise `r.path` ein Pfad mit minimalen Kosten abgeleitet werden. `r.cost` ist damit nicht nur ein Werkzeug zum Zeichnen einer Linie, sondern erzeugt zuerst die vollständige räumliche Kostenlogik, auf der der Pfad basiert. :contentReference[oaicite:0]{index=0}
+
+Für die Übung reicht das Plugin `Least Cost Path` als einfacher Einstieg. Wer die Kostenanalyse genauer nachvollziehen oder erweitern möchte, sollte die GRASS-Werkzeuge verwenden, weil dort die Zwischenschritte — Kostenraster, kumulative Kostenoberfläche und abgeleiteter Pfad — fachlich klarer getrennt sind.
+
+
+
+## Weiterführende Links
+
 
 * [QGIS-Dokumentation: Reklassifizieren nach Tabelle und Rasterrechner](https://documentation.qgis.org/latest/de/docs/user_manual/processing_algs/qgis/rasteranalysis.html)
 * [QGIS-Tutorial: Multi Criteria Overlay Analysis](https://www.qgistutorials.com/en/docs/3/multi_criteria_overlay.html)
 * [QGIS Plugin: Least Cost Path](https://plugins.qgis.org/plugins/leastcostpath/)
 * [Least-Cost Modelling and Landscape Ecology: Concepts, Applications, and Opportunities](https://link.springer.com/article/10.1007/s40823-016-0006-9)
-* [QGIS Materials](https://gisma-courses.github.io/geoinfo-basis-qgis//unit08/unit08-01_reader_QGIS_01.html)
 
 
+## Screencasts zu Aufgabe 
 
+### Corine-Problemstellung
 
+<iframe
+  src="https://drive.google.com/file/d/1D_tKjmXwgDneqVsOmQadAuKmCs6s-sjl/preview"
+  width="100%"
+  height="480"
+  allow="autoplay"
+  allowfullscreen>
+</iframe>
+
+### Reklassifizierung von Rasterdaten
+
+<iframe
+  src="https://drive.google.com/file/d/1LyCdQRBBrdPL5OOEiyNqR2Vn9KhFW_N7/preview"
+  width="100%"
+  height="480"
+  allow="autoplay"
+  allowfullscreen>
+</iframe>
+
+### Gewichtete Multikriterienanalyse: alte WMCA-Aufnahme
+
+::: {.callout-warning title="Hinweis"}
+Diese Screencasts zeigen noch den früheren Ablauf mit dem Plugin `WMCA Weighted Multicriteria Analysis`. Für die aktuelle Aufgabe wird WMCA nicht mehr verwendet. Die Grundidee der Kriterienbewertung bleibt aber relevant: Eingangsdaten werden bewertet, gewichtet und anschließend miteinander verrechnet.
+:::
+
+<iframe
+  src="https://drive.google.com/file/d/1OICQVG3uSVuxOpS_Es-6RvYgKF1npVvl/preview"
+  width="100%"
+  height="480"
+  allow="autoplay"
+  allowfullscreen>
+</iframe>
+
+<iframe
+  src="https://drive.google.com/file/d/1HIgzWFFodWwUpg5l3Ntpj_yP_qnkbg83/preview"
+  width="100%"
+  height="480"
+  allow="autoplay"
+  allowfullscreen>
+</iframe>
+
+### Start- und Zielpunkte anlegen
+
+::: {.callout-note title="Hinweis"}
+Die frühere Aufnahme zeigt das Plugin `Numerical Digitize`. Für die aktuelle Übung ist kein zusätzliches Plugin erforderlich. Start- und Zielpunkte können einfacher über eine kleine CSV-Datei mit X- und Y-Koordinaten oder über das QGIS-Bedienfeld `Erweitertes Digitalisieren` angelegt werden.
+:::
+
+<iframe
+  src="https://drive.google.com/file/d/1C5-vcZhYikgBkrXZ5JsrMTsBfrooHESD/preview"
+  width="100%"
+  height="480"
+  allow="autoplay"
+  allowfullscreen>
+</iframe>
+
+### Least-Cost-Path: Ablauf und Ergebnis
+
+<iframe
+  src="https://drive.google.com/file/d/10q0BwycGMB-ReHmtDBZ21HN-BHz3m-V9/preview"
+  width="100%"
+  height="480"
+  allow="autoplay"
+  allowfullscreen>
+</iframe>
+
+<iframe
+  src="https://drive.google.com/file/d/1leOHGXVN35jojCiO3ppN3iTUA6n0l_sb/preview"
+  width="100%"
+  height="480"
+  allow="autoplay"
+  allowfullscreen>
+</iframe>
