@@ -52,7 +52,7 @@ website:
               text: A3 - Analysen und Ableitungen
             - href: unit09/unit09-04.qmd
               text: A4 - Kosten und Kriterien
-            - href: unit099/coming-soon.qmd
+            - href: unit09/unit09-05.qmd
               text: A5 - Reproduzierbarkeit und Workflows
           #  - href: unit09/unit09-06.qmd
           #    text: A6 - Die Projektarbeit
@@ -120,16 +120,16 @@ website:
           contents:
             - href: unit99/unit99-01.qmd
               
-        - text: "---"
-        - section: "Reader Projektarbeit "
-          contents:
-            - href: unit06/unit06-01.qmd
-              text: Die Projektarbeit
-            - href: unit06/unit06-02.qmd
-              text: Wie entwickle ich ein Projekt?
-            - href: unit06/unit06-03.qmd
-              text: Das Exposé
-        - text: "---"
+        # - text: "---"
+        # - section: "Reader Projektarbeit "
+        #   contents:
+        #     - href: unit06/unit06-01.qmd
+        #       text: Die Projektarbeit
+        #     - href: unit06/unit06-02.qmd
+        #       text: Wie entwickle ich ein Projekt?
+        #     - href: unit06/unit06-03.qmd
+        #       text: Das Exposé
+        # - text: "---"
         - section: Folien
           contents:
             - href: slides/w-01-slides.qmd
