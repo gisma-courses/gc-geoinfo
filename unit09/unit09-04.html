@@ -23,41 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -157,6 +122,35 @@ background-size: cover;
 
 </style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../css/styles.css">
 <meta property="og:title" content="Arbeitsblatt 4 - Kosten und Kriterien – Grundlagenkurs GI-S (QGIS)">
@@ -777,6 +771,12 @@ background-size: cover;
   <li><a href="#aufgabe-04-02" id="toc-aufgabe-04-02" class="nav-link" data-scroll-target="#aufgabe-04-02">Aufgabe 04-02</a>
   <ul class="collapse">
   <li><a href="#gewichtung-der-aufgaben-in-lerneinheit-4" id="toc-gewichtung-der-aufgaben-in-lerneinheit-4" class="nav-link" data-scroll-target="#gewichtung-der-aufgaben-in-lerneinheit-4">Gewichtung der Aufgaben in Lerneinheit 4</a></li>
+  </ul></li>
+  <li><a href="#unterstützung" id="toc-unterstützung" class="nav-link" data-scroll-target="#unterstützung">Unterstützung</a>
+  <ul class="collapse">
+  <li><a href="#reklassifikation-und-bewertung" id="toc-reklassifikation-und-bewertung" class="nav-link" data-scroll-target="#reklassifikation-und-bewertung">Reklassifikation und Bewertung</a></li>
+  <li><a href="#gewichtung-im-rasterrechner" id="toc-gewichtung-im-rasterrechner" class="nav-link" data-scroll-target="#gewichtung-im-rasterrechner">Gewichtung im Rasterrechner</a></li>
+  <li><a href="#start--und-zielpunkte-anlegen" id="toc-start--und-zielpunkte-anlegen" class="nav-link" data-scroll-target="#start--und-zielpunkte-anlegen">Start- und Zielpunkte anlegen</a></li>
   <li><a href="#entfernungs--und-kostenanalyse" id="toc-entfernungs--und-kostenanalyse" class="nav-link" data-scroll-target="#entfernungs--und-kostenanalyse">Entfernungs- und Kostenanalyse</a></li>
   <li><a href="#weiterführende-hilfen" id="toc-weiterführende-hilfen" class="nav-link" data-scroll-target="#weiterführende-hilfen">Weiterführende Hilfen</a></li>
   </ul></li>
@@ -934,64 +934,54 @@ background-size: cover;
 </tr>
 </tbody>
 </table>
-<p>Re-check: Die Aufgabe ist in der Grundlogik jetzt wieder näher an deiner ursprünglichen Fassung. WMCA ist raus. Problematisch ist aber der komplette Block <strong>„Unterstützung“</strong>: Er ist redundant, teils noch wie ein Fremdkörper geschrieben, die CSV ist als Blockquote formatiert, und die Mischung aus Listenpunkten, Formeln und Fließtext wird in Quarto unsauber rendern. Außerdem erklärst du Normalisierung, Reklassifikation und Rasterrechner mehrfach.</p>
-<p>Ich würde <strong>nur den Unterstützungsblock ersetzen</strong>, nicht die Aufgaben selbst. Die QGIS-Standardwerkzeuge <code>Reklassifizieren nach Tabelle</code> und <code>Rasterrechner</code> sind dafür korrekt; beide sind in der QGIS-Rasteranalyse dokumentiert. ([documentation.qgis.org][1]) <code>Least Cost Path</code> kann für Aufgabe 04-02 als Plugin bleiben, weil es genau aus Kostenraster und Punkten einen Least-Cost-Pfad berechnet; das ist aber nur für den Pfadteil relevant, nicht für die Multikriterienbewertung. ([QGIS Plugins][2]) Für Punktkoordinaten ist dein Wechsel weg von <code>Numerical Digitize</code> richtig; QGIS hat das eingebaute Bedienfeld <strong>Erweitertes Digitalisieren</strong> mit X/Y-Koordinatenlogik. ([QGIS Documentation][3])</p>
-<p>Ersetze ab <code>## Unterstützung</code> durch diesen Block:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Unterstützung</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Die gewichtete Multikriterienanalyse wird in dieser Aufgabe ohne das frühere Plugin <span class="in">`WMCA Weighted Multicriteria Analysis`</span> umgesetzt. Stattdessen werden QGIS-Standardwerkzeuge verwendet. Der Arbeitsablauf bleibt dadurch sichtbar: Eingangsdaten werden reklassifiziert, Klassen bewertet, Datenebenen gewichtet und anschließend im <span class="in">`Rasterrechner`</span> kombiniert.</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>::: {.callout-note icon="false" appearance="simple"}</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Bei der **Eignungsanalyse** bedeuten hohe Werte hohe Eignung.  </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Bei der **Kostenanalyse** bedeuten hohe Werte hohe Kosten bzw. hohen Widerstand.</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reklassifikation und Bewertung</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>Für die Umwandlung von Rohwerten in Klassen oder Bewertungswerte verwenden Sie das Werkzeug <span class="in">`Reklassifizieren nach Tabelle`</span>. Damit können zum Beispiel Hangneigungswerte, Landnutzungsklassen oder Entfernungswerte in Eignungs- oder Kostenwerte übersetzt werden.</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Kontinuierliche Werte wie Hangneigung oder Entfernung zu Wegen können entweder in Klassen eingeteilt oder rechnerisch normalisiert werden. Eine einfache lineare Normalisierung auf den Wertebereich 0 bis 1 lautet:</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>x_{\text{norm}} = \frac{x - x_{\min}}{x_{\max} - x_{\min}}</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Dabei ist $$x$$ der ursprüngliche Rasterwert, $$x_{\min}$$ der kleinste Wert des Rasters und $$x_{\max}$$ der größte Wert des Rasters.</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Soll eine Skala von 0 bis 10 verwendet werden, wird der normalisierte Wert mit 10 multipliziert:</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>x_{0-10} = 10 \cdot x_{\text{norm}}</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Diese Normalisierung ist nur dann passend, wenn hohe Ausgangswerte auch hohe Eignung bedeuten. Wenn hohe Ausgangswerte niedrige Kosten bedeuten sollen, muss die Richtung umgekehrt werden:</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>x_{\text{inv}} = 1 - x_{\text{norm}}</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>Für diese Aufgabe ist <span class="in">`Reklassifizieren nach Tabelle`</span> meist der übersichtlichere Weg, weil die Klassengrenzen und Zielwerte dort direkt sichtbar eingetragen werden.</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">### Gewichtung im Rasterrechner</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>Die Gewichtung erfolgt im <span class="in">`Rasterrechner`</span>. Jedes bewertete Raster wird mit seinem Gewichtungsfaktor multipliziert. Anschließend werden die gewichteten Raster addiert.</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>Allgemein:</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>E = R_1 \cdot w_1 + R_2 \cdot w_2 + \dots + R_n \cdot w_n</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>Dabei sind $$R_1 \dots R_n$$ die bewerteten Raster und $$w_1 \dots w_n$$ die zugehörigen Gewichte. Wird mit proportionalen Gewichten gearbeitet, soll die Summe der Gewichtungsfaktoren 1 ergeben.</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="fu">### Start- und Zielpunkte anlegen</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Für das exakte Anlegen von Start- und Zielpunkten ist kein zusätzliches Plugin erforderlich. Am einfachsten ist eine kleine CSV-Datei mit den Punktkoordinaten:</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="in">```csv</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>name<span class="op">,</span>x<span class="op">,</span>y</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>Parkplatz<span class="op">,</span><span class="dv">478188</span><span class="op">,</span><span class="dv">5632178</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>Grillhuette<span class="op">,</span><span class="dv">476170</span><span class="op">,</span><span class="dv">5631657</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="unterstützung" class="level2">
+<h2 class="anchored" data-anchor-id="unterstützung">Unterstützung</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Bei der <strong>Eignungsanalyse</strong> bedeuten hohe Werte hohe Eignung.<br>
+Bei der <strong>Kostenanalyse</strong> bedeuten hohe Werte hohe Kosten bzw. hohen Widerstand.</p>
+</div>
+</div>
+</div>
+<section id="reklassifikation-und-bewertung" class="level3">
+<h3 class="anchored" data-anchor-id="reklassifikation-und-bewertung">Reklassifikation und Bewertung</h3>
+<p>Für die Umwandlung von Rohwerten in Klassen oder Bewertungswerte verwenden Sie das Werkzeug <code>Reklassifizieren nach Tabelle</code>. Damit können zum Beispiel Hangneigungswerte, Landnutzungsklassen oder Entfernungswerte in Eignungs- oder Kostenwerte übersetzt werden.</p>
+<p>Kontinuierliche Werte wie Hangneigung oder Entfernung zu Wegen können entweder in Klassen eingeteilt oder rechnerisch normalisiert werden. Eine einfache lineare Normalisierung auf den Wertebereich 0 bis 1 lautet:</p>
+<p><span class="math display">\[
+x_{\text{norm}} = \frac{x - x_{\min}}{x_{\max} - x_{\min}}
+\]</span></p>
+<p>Dabei ist <span class="math display">\[x\]</span> der ursprüngliche Rasterwert, <span class="math display">\[x_{\min}\]</span> der kleinste Wert des Rasters und <span class="math display">\[x_{\max}\]</span> der größte Wert des Rasters.</p>
+<p>Soll eine Skala von 0 bis 10 verwendet werden, wird der normalisierte Wert mit 10 multipliziert:</p>
+<p><span class="math display">\[
+x_{0-10} = 10 \cdot x_{\text{norm}}
+\]</span></p>
+<p>Diese Normalisierung ist nur dann passend, wenn hohe Ausgangswerte auch hohe Eignung bedeuten. Wenn hohe Ausgangswerte niedrige Kosten bedeuten sollen, muss die Richtung umgekehrt werden:</p>
+<p><span class="math display">\[
+x_{\text{inv}} = 1 - x_{\text{norm}}
+\]</span></p>
+<p>Für diese Aufgabe ist <code>Reklassifizieren nach Tabelle</code> meist der übersichtlichere Weg, weil die Klassengrenzen und Zielwerte dort direkt sichtbar eingetragen werden.</p>
+</section>
+<section id="gewichtung-im-rasterrechner" class="level3">
+<h3 class="anchored" data-anchor-id="gewichtung-im-rasterrechner">Gewichtung im Rasterrechner</h3>
+<p>Die Gewichtung erfolgt im <code>Rasterrechner</code>. Jedes bewertete Raster wird mit seinem Gewichtungsfaktor multipliziert. Anschließend werden die gewichteten Raster addiert.</p>
+<p>Allgemein:</p>
+<p><span class="math display">\[
+E = R_1 \cdot w_1 + R_2 \cdot w_2 + \dots + R_n \cdot w_n
+\]</span></p>
+<p>Dabei sind <span class="math display">\[R_1 \dots R_n\]</span> die bewerteten Raster und <span class="math display">\[w_1 \dots w_n\]</span> die zugehörigen Gewichte. Wird mit proportionalen Gewichten gearbeitet, soll die Summe der Gewichtungsfaktoren 1 ergeben.</p>
+</section>
+<section id="start--und-zielpunkte-anlegen" class="level3">
+<h3 class="anchored" data-anchor-id="start--und-zielpunkte-anlegen">Start- und Zielpunkte anlegen</h3>
+<p>Für das exakte Anlegen von Start- und Zielpunkten ist kein zusätzliches Plugin erforderlich. Am einfachsten ist eine kleine CSV-Datei mit den Punktkoordinaten:</p>
+<pre class="csv"><code>name,x,y
+Parkplatz,478188,5632178
+Grillhuette,476170,5631657</code></pre>
 <p>Diese Datei kann in QGIS über <code>Layer → Layer hinzufügen → Getrennte Textdatei hinzufügen</code> geladen werden. Verwenden Sie <code>x</code> als X-Feld, <code>y</code> als Y-Feld und <code>EPSG:25832</code> als Koordinatensystem.</p>
 <p>Alternativ kann das Bedienfeld <code>Erweitertes Digitalisieren</code> genutzt werden. Aktivieren Sie es über <code>Ansicht → Bedienfelder → Erweitertes Digitalisieren</code>, legen Sie einen Punktlayer in <code>EPSG:25832</code> an und geben Sie die Koordinaten direkt ein.</p>
 </section>
