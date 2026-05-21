@@ -1,6 +1,6 @@
 ---
 title: Dokumentation und Reproduzierbarkeit in QGIS
-title-block-banner: ../assets/images/splash_L04.png
+title-block-banner: ../assets/images/unit09/repro.png
 title-block-banner-color: black
 
 bibliography: ../assets/geoinfo.bib
