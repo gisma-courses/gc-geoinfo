@@ -2446,7 +2446,7 @@
     "href": "unit09/unit09-05.html",
     "title": "Arbeitsblatt - QGIS-Projekte nachvollziehbar abgeben",
     "section": "",
-    "text": "In diesem Arbeitsblatt üben Sie, ein QGIS-Projekt so aufzubauen und abzugeben, dass eine andere Person es öffnen, prüfen und nachvollziehen kann.\nEs geht nicht darum, jeden Klick zu beschreiben. Es geht darum, die entscheidenden Bestandteile einer GIS-Analyse sichtbar zu machen:\n\nEingangsdaten → Zwischenergebnisse → Rechenregel → Ergebnis → Layout → gepacktes Projekt\n\nEine Karte, ein Datzensatz ist nur dann fachlich brauchbar, wenn erkennbar bleibt, wie sie entstanden ist. Besonders bei Eignungsanalysen, Kostenoberflächen oder Rasterverschneidungen müssen Daten, Kriterien, Reklassifikationen, Gewichte und Ergebnislayer nachvollziehbar bleiben.\n\n\n\n\n\n\nHinweisLeitgedanke\n\n\n\nNicht jeder Arbeitsschritt muss ausgeschrieben werden. Aber die entscheidenden Analysebausteine müssen im QGIS-Projekt sichtbar und überprüfbar sein.",
+    "text": "In diesem Arbeitsblatt üben Sie, ein QGIS-Projekt so aufzubauen und abzugeben, dass eine andere Person es öffnen, prüfen und nachvollziehen kann.\nEs geht nicht darum, jeden Klick zu beschreiben. Es geht darum, die entscheidenden Bestandteile einer GIS-Analyse sichtbar zu machen:\n\nEingangsdaten → Zwischenergebnisse → Rechenregel → Ergebnis → Layout → gepacktes Projekt\n\nEine Karte oder ein Datensatz ist nur dann fachlich brauchbar, wenn erkennbar bleibt, wie er entstanden ist. Besonders bei Eignungsanalysen, Kostenoberflächen oder Rasterverschneidungen müssen Daten, Kriterien, Reklassifikationen, Gewichte und Ergebnislayer nachvollziehbar bleiben.\n\n\n\n\n\n\nHinweisLeitgedanke\n\n\n\nNicht jeder Arbeitsschritt muss ausgeschrieben werden. Aber die entscheidenden Analysebausteine müssen im QGIS-Projekt sichtbar und überprüfbar sein.",
     "crumbs": [
       "Arbeitsblätter",
       "A5 - Reproduzierbarkeit und Workflows"
@@ -2457,7 +2457,7 @@
     "href": "unit09/unit09-05.html#worum-geht-es-in-diesem-arbeitsblatt",
     "title": "Arbeitsblatt - QGIS-Projekte nachvollziehbar abgeben",
     "section": "",
-    "text": "In diesem Arbeitsblatt üben Sie, ein QGIS-Projekt so aufzubauen und abzugeben, dass eine andere Person es öffnen, prüfen und nachvollziehen kann.\nEs geht nicht darum, jeden Klick zu beschreiben. Es geht darum, die entscheidenden Bestandteile einer GIS-Analyse sichtbar zu machen:\n\nEingangsdaten → Zwischenergebnisse → Rechenregel → Ergebnis → Layout → gepacktes Projekt\n\nEine Karte, ein Datzensatz ist nur dann fachlich brauchbar, wenn erkennbar bleibt, wie sie entstanden ist. Besonders bei Eignungsanalysen, Kostenoberflächen oder Rasterverschneidungen müssen Daten, Kriterien, Reklassifikationen, Gewichte und Ergebnislayer nachvollziehbar bleiben.\n\n\n\n\n\n\nHinweisLeitgedanke\n\n\n\nNicht jeder Arbeitsschritt muss ausgeschrieben werden. Aber die entscheidenden Analysebausteine müssen im QGIS-Projekt sichtbar und überprüfbar sein.",
+    "text": "In diesem Arbeitsblatt üben Sie, ein QGIS-Projekt so aufzubauen und abzugeben, dass eine andere Person es öffnen, prüfen und nachvollziehen kann.\nEs geht nicht darum, jeden Klick zu beschreiben. Es geht darum, die entscheidenden Bestandteile einer GIS-Analyse sichtbar zu machen:\n\nEingangsdaten → Zwischenergebnisse → Rechenregel → Ergebnis → Layout → gepacktes Projekt\n\nEine Karte oder ein Datensatz ist nur dann fachlich brauchbar, wenn erkennbar bleibt, wie er entstanden ist. Besonders bei Eignungsanalysen, Kostenoberflächen oder Rasterverschneidungen müssen Daten, Kriterien, Reklassifikationen, Gewichte und Ergebnislayer nachvollziehbar bleiben.\n\n\n\n\n\n\nHinweisLeitgedanke\n\n\n\nNicht jeder Arbeitsschritt muss ausgeschrieben werden. Aber die entscheidenden Analysebausteine müssen im QGIS-Projekt sichtbar und überprüfbar sein.",
     "crumbs": [
       "Arbeitsblätter",
       "A5 - Reproduzierbarkeit und Workflows"
@@ -2479,7 +2479,7 @@
     "href": "unit09/unit09-05.html#benötigte-materialien",
     "title": "Arbeitsblatt - QGIS-Projekte nachvollziehbar abgeben",
     "section": "Benötigte Materialien",
-    "text": "Benötigte Materialien\n\nein bestehendes QGIS-Projekt aus einer vorherigen Übung, zum Beispiel eine Eignungsanalyse oder Kostenanalyse,\nmindestens ein Ergebnisraster oder Ergebnislayer,\nQGIS,\nein Plugin zum Packen von Projekten, zum Beispiel Project Packager, Project Consolidator, QPackageQGZ oder Geopacker.\n\n\n\n\n\n\n\nVerwenden Sie am besten Ihr Projekt aus der vorherigen Aufgabe. Ziel ist nicht eine neue Analyse, sondern eine überprüfbare Abgabe des bestehenden Projekts.",
+    "text": "Benötigte Materialien\n\nein bestehendes QGIS-Projekt aus einer vorherigen Übung, zum Beispiel eine Eignungsanalyse oder Kostenanalyse,\nmindestens ein Ergebnisraster oder Ergebnislayer,\nQGIS,\nein Plugin zum Packen von Projekten, zum Beispiel QPackageQGZ oder Geopacker.\n\n\n\n\n\n\n\nVerwenden Sie am besten Ihr Projekt aus der vorherigen Aufgabe. Ziel ist nicht eine neue Analyse, sondern eine überprüfbare Abgabe des bestehenden Projekts.",
     "crumbs": [
       "Arbeitsblätter",
       "A5 - Reproduzierbarkeit und Workflows"
@@ -2490,7 +2490,7 @@
     "href": "unit09/unit09-05.html#aufgabe-01-projektstruktur-aufräumen",
     "title": "Arbeitsblatt - QGIS-Projekte nachvollziehbar abgeben",
     "section": "Aufgabe 01: Projektstruktur aufräumen",
-    "text": "Aufgabe 01: Projektstruktur aufräumen\nÖffnen Sie Ihr QGIS-Projekt und ordnen Sie die Layer im Layerfenster in sinnvolle Gruppen.\nVerwenden Sie eine einfache Struktur, zum Beispiel:\n01_Rohdaten\n02_Zwischenergebnisse\n03_Bewertete_Raster\n04_Ergebnisse\n05_Layout_und_Export\nPrüfen Sie anschließend:\n\nSind alle wichtigen Layer gespeichert?\nGibt es noch temporäre Layer?\nSind die Layernamen verständlich?\nIst erkennbar, welche Layer Eingangsdaten und welche Ergebnisse sind?\n\n\n\n\n\n\n\nWarnungTemporäre Layer\n\n\n\nTemporäre Layer sind für eine Abgabe ungeeignet. Speichern Sie alle relevanten Zwischen- und Endergebnisse explizit als Datei.",
+    "text": "Aufgabe 01: Projektstruktur aufräumen\nÖffnen Sie Ihr QGIS-Projekt und ordnen Sie die Layer im Layerfenster in sinnvolle Gruppen.\nVerwenden Sie eine einfache Struktur, zum Beispiel:\n```text 01_Rohdaten 02_Zwischenergebnisse 03_Bewertete_Raster 04_Ergebnisse 05_Layout_und_Export",
     "crumbs": [
       "Arbeitsblätter",
       "A5 - Reproduzierbarkeit und Workflows"
