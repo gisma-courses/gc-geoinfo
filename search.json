@@ -2490,7 +2490,73 @@
     "href": "unit09/unit09-05.html#aufgabe-01-projektstruktur-aufräumen",
     "title": "Arbeitsblatt - QGIS-Projekte nachvollziehbar abgeben",
     "section": "Aufgabe 01: Projektstruktur aufräumen",
-    "text": "Aufgabe 01: Projektstruktur aufräumen\nÖffnen Sie Ihr QGIS-Projekt und ordnen Sie die Layer im Layerfenster in sinnvolle Gruppen.\nVerwenden Sie eine einfache Struktur, zum Beispiel:\n```text 01_Rohdaten 02_Zwischenergebnisse 03_Bewertete_Raster 04_Ergebnisse 05_Layout_und_Export",
+    "text": "Aufgabe 01: Projektstruktur aufräumen\nÖffnen Sie Ihr QGIS-Projekt und ordnen Sie die Layer im Layerfenster in sinnvolle Gruppen.\nVerwenden Sie eine einfache Struktur, zum Beispiel:\n01_Rohdaten\n02_Zwischenergebnisse\n03_Bewertete_Raster\n04_Ergebnisse\n05_Layout_und_Export\nPrüfen Sie anschließend:\n\nSind alle wichtigen Layer gespeichert?\nGibt es noch temporäre Layer?\nSind die Layernamen verständlich?\nIst erkennbar, welche Layer Eingangsdaten und welche Ergebnisse sind?\n\n\n\n\n\n\n\nWarnungTemporäre Layer\n\n\n\nTemporäre Layer sind für eine Abgabe ungeeignet. Speichern Sie alle relevanten Zwischen- und Endergebnisse explizit als Datei.",
+    "crumbs": [
+      "Arbeitsblätter",
+      "A5 - Reproduzierbarkeit und Workflows"
+    ]
+  },
+  {
+    "objectID": "unit09/unit09-05.html#aufgabe-02-layer-sinnvoll-benennen",
+    "href": "unit09/unit09-05.html#aufgabe-02-layer-sinnvoll-benennen",
+    "title": "Arbeitsblatt - QGIS-Projekte nachvollziehbar abgeben",
+    "section": "Aufgabe 02: Layer sinnvoll benennen",
+    "text": "Aufgabe 02: Layer sinnvoll benennen\nBenennen Sie zentrale Layer so, dass ihre Funktion erkennbar ist.\nAbsolut zu vermeiden:\noutput\nreclassified\nrastercalc\nclip1\nBesser:\nhangneigung_klassen\nwald_eignung\nsiedlungsdistanz_idx\neinschraenkung_mask\nwildkatze_eignung_final\ngesamt_kosten_trimm_dich_pfad\nAchten Sie besonders auf Ergebnislayer. Am Namen sollte erkennbar sein, was der Layer zeigt.",
+    "crumbs": [
+      "Arbeitsblätter",
+      "A5 - Reproduzierbarkeit und Workflows"
+    ]
+  },
+  {
+    "objectID": "unit09/unit09-05.html#aufgabe-03-zentrale-rechenregel-sichern",
+    "href": "unit09/unit09-05.html#aufgabe-03-zentrale-rechenregel-sichern",
+    "title": "Arbeitsblatt - QGIS-Projekte nachvollziehbar abgeben",
+    "section": "Aufgabe 03: Zentrale Rechenregel sichern",
+    "text": "Aufgabe 03: Zentrale Rechenregel sichern\nWenn Ihr Projekt einen Rasterrechner-Ausdruck verwendet, sichern Sie diesen Ausdruck.\nDazu reicht eine der folgenden Varianten:\n\nKopie des Ausdrucks in eine einfache Textdatei,\nScreenshot des Rasterrechner-Fensters,\n\nDer Ausdruck muss nicht schön formatiert sein. Er muss nur zeigen, wie die bewerteten Raster verrechnet wurden.\nBeispielhafte Struktur:\n\"raster_1@1\" * gewicht_1 +\n\"raster_2@1\" * gewicht_2 +\n\"raster_3@1\" * gewicht_3\n\n\n\n\n\n\nHinweisWarum das wichtig ist\n\n\n\nDer Rasterrechner-Ausdruck ist oft der eigentliche Kern der Analyse. Er zeigt, welche Kriterien mit welchen Gewichten in das Ergebnis eingegangen sind. Es ist extrem hilfreich dazu Die Textdatei mit der Literatur und Herleitung zu versehen.",
+    "crumbs": [
+      "Arbeitsblätter",
+      "A5 - Reproduzierbarkeit und Workflows"
+    ]
+  },
+  {
+    "objectID": "unit09/unit09-05.html#aufgabe-04-verarbeitungsverlauf-prüfen",
+    "href": "unit09/unit09-05.html#aufgabe-04-verarbeitungsverlauf-prüfen",
+    "title": "Arbeitsblatt - QGIS-Projekte nachvollziehbar abgeben",
+    "section": "Aufgabe 04: Verarbeitungsverlauf prüfen",
+    "text": "Aufgabe 04: Verarbeitungsverlauf prüfen\nÖffnen Sie den QGIS-Verarbeitungsverlauf.\n\nVerarbeitung → Verlauf\n\nPrüfen Sie, ob die zentralen Verarbeitungsschritte dort sichtbar sind, zum Beispiel:\n\nRasterisieren,\nHangneigung,\nExposition,\nNähe / Rasterdistanz,\nReklassifizieren nach Tabelle,\nRasterrechner,\nZuschneiden,\nVektor- oder Rasterexport.\n\nSpeichern Sie die relevanten Einträge des Verlaufs als .log- oder Textdatei. Diese Datei ist eine reine Textdatei und wird später zusätzlich zum gepackten Projekt abgegeben.\n\n\n\n\n\n\nWarnungGrenze des Verlaufs\n\n\n\nDer Verarbeitungsverlauf dokumentiert vor allem Processing-Werkzeuge. Manuelle Schritte wie Symbolisierung, Layerumbenennung, Layoutgestaltung oder visuelle Kontrolle erscheinen dort nicht vollständig.",
+    "crumbs": [
+      "Arbeitsblätter",
+      "A5 - Reproduzierbarkeit und Workflows"
+    ]
+  },
+  {
+    "objectID": "unit09/unit09-05.html#aufgabe-05-kartenlayout-erstellen",
+    "href": "unit09/unit09-05.html#aufgabe-05-kartenlayout-erstellen",
+    "title": "Arbeitsblatt - QGIS-Projekte nachvollziehbar abgeben",
+    "section": "Aufgabe 05: Kartenlayout erstellen",
+    "text": "Aufgabe 05: Kartenlayout erstellen\nErstellen Sie ein einfaches Kartenlayout für Ihr Ergebnis.\nDas Layout soll mindestens enthalten:\n\nTitel,\nErgebnislayer,\nLegende,\nMaßstab,\nDatenquelle oder kurzer Quellenhinweis,\nName oder Bearbeitungshinweis,\nDatum.\n\nDas Layout soll nicht überladen sein. Es soll zeigen, was das Ergebnis räumlich bedeutet.",
+    "crumbs": [
+      "Arbeitsblätter",
+      "A5 - Reproduzierbarkeit und Workflows"
+    ]
+  },
+  {
+    "objectID": "unit09/unit09-05.html#aufgabe-06-projekt-packen",
+    "href": "unit09/unit09-05.html#aufgabe-06-projekt-packen",
+    "title": "Arbeitsblatt - QGIS-Projekte nachvollziehbar abgeben",
+    "section": "Aufgabe 06: Projekt packen",
+    "text": "Aufgabe 06: Projekt packen\nPacken Sie Ihr QGIS-Projekt so, dass es auf einem anderen Rechner geöffnet werden kann. Entscheidend ist: Die Projektdatei, die verwendeten Datenlayer, Zwischenergebnisse und Ergebnislayer müssen gemeinsam vorliegen und dürfen keine kaputten Pfade erzeugen.\nFür das Packen des QGIS-Projekts kann QPackageQGZ verwendet werden. Das Plugin speichert das aktuelle QGIS-Projekt zusammen mit den im Projekt enthaltenen Daten in ein neues Verzeichnis. Es kann auch Rasterdaten, verwendete SVG-Symbole, Joins und Definitionsdateien übertragen. Der erzeugte Projektordner muss anschließend selbst als ZIP-Datei komprimiert und abgegeben werden.\nAlternativ kann Geopacker verwendet werden. Dieses Plugin erzeugt direkt eine ZIP-Datei des Projekts und bündelt das .qgz-Projekt mit Vektor- und Rasterdaten; außerdem werden Layout-Bilder und Styles berücksichtigt und die Layerpfade angepasst. Das ist für eine einfache Upload-Abgabe der direktere Weg.\n\n\n\n\n\n\nWarnungEinschränkung der Tools\n\n\n\nSeparat exportierte Dateien werden nicht automatisch zuverlässig durch jedes Packager-Plugin erfasst. Dazu gehören zum Beispiel Karten-PDFs, Karten-PNGs, Screenshots und Textdateien mit Rasterrechner-Ausdrücken. Diese Dateien müssen manuell zusätzlich in den Abgabeordner gelegt werden.\n\n\nDer QGIS-Verarbeitungsverlauf wird ebenfalls nicht als verlässlicher Bestandteil des gepackten Projekts behandelt. Er muss für die Abgabe zusätzlich als .log- oder Textdatei gesichert werden.\n\nWenn Sie QPackageQGZ verwenden\n\nProjekt mit QPackageQGZ in ein neues Verzeichnis packen.\nKartenlayout als PDF oder PNG exportieren und in dieses Verzeichnis legen.\nRasterrechner-Ausdruck als Textdatei oder Screenshot in dieses Verzeichnis legen.\nQGIS-Verarbeitungsverlauf als .log- oder Textdatei in dieses Verzeichnis legen.\nDen gesamten Ordner als ZIP-Datei komprimieren.\nZIP-Datei testweise entpacken und das Projekt aus dem entpackten Ordner öffnen.\n\n\n\nWenn Sie Geopacker verwenden\n\nProjekt mit Geopacker als ZIP-Datei packen.\nZIP-Datei testweise entpacken und das Projekt aus dem entpackten Ordner öffnen.\nKartenlayout als PDF oder PNG zusätzlich zur ZIP-Abgabe legen oder zusammen mit der Geopacker-ZIP in eine zweite Abgabe-ZIP packen.\nRasterrechner-Ausdruck als Textdatei oder Screenshot ebenfalls zusätzlich ablegen.\nQGIS-Verarbeitungsverlauf als .log- oder Textdatei zusätzlich ablegen.\nZIP-Datei testweise entpacken und das Projekt aus dem entpackten Ordner öffnen.\n\nEine mögliche Abgabestruktur im Archiv ist:\nabgabe_qgis/\n├── projekt_gepackt.zip\n├── karte.pdf\n├── rasterrechner_ausdruck.txt\n└── qgis_verlauf.log\nBei QPackageQGZ ist projekt_gepackt.zip der selbst gezippte Projektordner. Bei Geopacker ist projekt_gepackt.zip die direkt vom Plugin erzeugte ZIP-Datei oder ein ZIP-Archiv, das die Geopacker-ZIP plus Zusatzdateien enthält.\nNach dem Packen:\n\nÖffnen Sie das gepackte Projekt aus dem neuen Ordner.\nPrüfen Sie, ob alle Layer geladen werden.\nPrüfen Sie, ob keine roten Ausrufezeichen erscheinen.\nPrüfen Sie, ob das Layout noch funktioniert.\nPrüfen Sie, ob das finale Ergebnis sichtbar ist.\n\n\n\n\n\n\n\nWarnungPflichttest\n\n\n\nChecken Sie zwingend ein entpacktes Projekt auf Vollständigkeit. Öffnen Sie es und testen Sie die Inhalte.\n\n\nBeantworten Sie vor der Abgabe knapp diese Fragen:\n\n\n\nFrage\nAntwort\n\n\n\n\nSind alle wichtigen Layer gespeichert?\nja / nein\n\n\nGibt es keine temporären Layer?\nja / nein\n\n\nIst der Ergebnislayer eindeutig benannt?\nja / nein\n\n\nIst die zentrale Rechenregel gesichert?\nja / nein\n\n\nIst ein Kartenlayout vorhanden?\nja / nein\n\n\nWurde das gepackte Projekt testweise geöffnet?\nja / nein\n\n\nÖffnen alle Layer fehlerfrei?\nja / nein\n\n\n\nFalls alles ja ist: Abgabe hochladen. Falls etwas nein ist: zuerst fixen.",
+    "crumbs": [
+      "Arbeitsblätter",
+      "A5 - Reproduzierbarkeit und Workflows"
+    ]
+  },
+  {
+    "objectID": "unit09/unit09-05.html#abgabe",
+    "href": "unit09/unit09-05.html#abgabe",
+    "title": "Arbeitsblatt - QGIS-Projekte nachvollziehbar abgeben",
+    "section": "Abgabe",
+    "text": "Abgabe\nGeben Sie ein gepacktes QGIS-Projekt mit Zusatzdateien ab.\nDie Abgabe soll enthalten:\n\ngepacktes QGIS-Projekt,\nwichtige Zwischenergebnisse und finale Ergebnislayer im Projektpaket,\nKartenlayout als PDF oder PNG,\nRasterrechner-Ausdruck oder Screenshot der zentralen Rechenregel,\nVerarbeitungsverlauf als .log- oder Textdatei.\n\nEs wird kein ausführliches Schritt-für-Schritt-Protokoll verlangt. Entscheidend ist, dass das Projekt geöffnet und die Analyse anhand der Layer, Ergebnisdateien und Rechenregel nachvollzogen werden kann.\n\n\n\n\n\n\nHinweisMerksatz\n\n\n\nEine reproduzierbare QGIS-Abgabe ist kein Aufsatz. Sie ist ein sauber gepacktes Projekt mit verständlichen Layernamen, gespeicherten Zwischenergebnissen, sichtbarer Rechenregel und prüfbarem Ergebnis.",
     "crumbs": [
       "Arbeitsblätter",
       "A5 - Reproduzierbarkeit und Workflows"
