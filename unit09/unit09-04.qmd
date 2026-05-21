@@ -1,7 +1,7 @@
 ---
 title: Arbeitsblatt 4 - Kosten und Kriterien
 title-block-banner: ../assets/images/splash_L04.png
-title-block-banner-color: black
+title-block-banner-color: white
 
 bibliography: ../assets/geoinfo.bib
 

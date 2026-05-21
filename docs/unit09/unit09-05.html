@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lerneinheit 6 - Projektarbeit – Grundlagenkurs GI-S (QGIS)</title>
+<title>Arbeitsblatt - QGIS-Projekte nachvollziehbar abgeben – Grundlagenkurs GI-S (QGIS)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,12 +80,13 @@ ul.task-list li input[type="checkbox"] {
       .quarto-title-block .quarto-title-banner h5,
       .quarto-title-block .quarto-title-banner h6
       {
-        color: black;
+        color: white;
       }
 
       .quarto-title-block .quarto-title-banner {
-        color: black;
-background: ../assets/06-splash.jpg;
+        color: white;
+background-image: url(../assets/images/splash_L04.png);
+background-size: cover;
       }
 </style>
 <style>
@@ -119,9 +120,11 @@ background: ../assets/06-splash.jpg;
 
 
 <link rel="stylesheet" href="../css/styles.css">
-<meta property="og:title" content="Lerneinheit 6 - Projektarbeit – Grundlagenkurs GI-S (QGIS)">
+<meta property="og:title" content="Arbeitsblatt - QGIS-Projekte nachvollziehbar abgeben – Grundlagenkurs GI-S (QGIS)">
+<meta property="og:description" content="">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
-<meta name="twitter:title" content="Lerneinheit 6 - Projektarbeit – Grundlagenkurs GI-S (QGIS)">
+<meta name="twitter:title" content="Arbeitsblatt - QGIS-Projekte nachvollziehbar abgeben – Grundlagenkurs GI-S (QGIS)">
+<meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@gisma">
 <meta name="twitter:card" content="summary">
 </head>
@@ -343,7 +346,7 @@ background: ../assets/06-splash.jpg;
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Lerneinheit 6 - Projektarbeit</h1>
+      <h1 class="title">Arbeitsblatt - QGIS-Projekte nachvollziehbar abgeben</h1>
                       </div>
   </div>
     
@@ -359,8 +362,38 @@ background: ../assets/06-splash.jpg;
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhalt</h2>
+   
+  <ul>
+  <li><a href="#worum-geht-es-in-diesem-arbeitsblatt" id="toc-worum-geht-es-in-diesem-arbeitsblatt" class="nav-link active" data-scroll-target="#worum-geht-es-in-diesem-arbeitsblatt">Worum geht es in diesem Arbeitsblatt?</a></li>
+  <li><a href="#lernziele" id="toc-lernziele" class="nav-link" data-scroll-target="#lernziele">Lernziele</a></li>
+  <li><a href="#benötigte-materialien" id="toc-benötigte-materialien" class="nav-link" data-scroll-target="#benötigte-materialien">Benötigte Materialien</a></li>
+  <li><a href="#aufgabe-01-projektstruktur-aufräumen" id="toc-aufgabe-01-projektstruktur-aufräumen" class="nav-link" data-scroll-target="#aufgabe-01-projektstruktur-aufräumen">Aufgabe 01: Projektstruktur aufräumen</a></li>
+  <li><a href="#aufgabe-02-layer-sinnvoll-benennen" id="toc-aufgabe-02-layer-sinnvoll-benennen" class="nav-link" data-scroll-target="#aufgabe-02-layer-sinnvoll-benennen">Aufgabe 02: Layer sinnvoll benennen</a></li>
+  <li><a href="#aufgabe-03-zentrale-rechenregel-sichern" id="toc-aufgabe-03-zentrale-rechenregel-sichern" class="nav-link" data-scroll-target="#aufgabe-03-zentrale-rechenregel-sichern">Aufgabe 03: Zentrale Rechenregel sichern</a></li>
+  <li><a href="#aufgabe-04-verarbeitungsverlauf-prüfen" id="toc-aufgabe-04-verarbeitungsverlauf-prüfen" class="nav-link" data-scroll-target="#aufgabe-04-verarbeitungsverlauf-prüfen">Aufgabe 04: Verarbeitungsverlauf prüfen</a></li>
+  <li><a href="#aufgabe-05-kartenlayout-erstellen" id="toc-aufgabe-05-kartenlayout-erstellen" class="nav-link" data-scroll-target="#aufgabe-05-kartenlayout-erstellen">Aufgabe 05: Kartenlayout erstellen</a></li>
+  <li><a href="#aufgabe-06-projekt-packen" id="toc-aufgabe-06-projekt-packen" class="nav-link" data-scroll-target="#aufgabe-06-projekt-packen">Aufgabe 06: Projekt packen</a></li>
+  <li><a href="#abgabe" id="toc-abgabe" class="nav-link" data-scroll-target="#abgabe">Abgabe</a></li>
+  <li><a href="#geben-sie-ein-gepacktes-qgis-projekt-ab." id="toc-geben-sie-ein-gepacktes-qgis-projekt-ab." class="nav-link" data-scroll-target="#geben-sie-ein-gepacktes-qgis-projekt-ab.">Geben Sie ein gepacktes QGIS-Projekt ab.</a></li>
+  <li><a href="#worum-geht-es-in-diesem-arbeitsblatt-1" id="toc-worum-geht-es-in-diesem-arbeitsblatt-1" class="nav-link" data-scroll-target="#worum-geht-es-in-diesem-arbeitsblatt-1">Worum geht es in diesem Arbeitsblatt?</a></li>
+  <li><a href="#lernziele-1" id="toc-lernziele-1" class="nav-link" data-scroll-target="#lernziele-1">Lernziele</a></li>
+  <li><a href="#benötigte-materialien-1" id="toc-benötigte-materialien-1" class="nav-link" data-scroll-target="#benötigte-materialien-1">Benötigte Materialien</a></li>
+  <li><a href="#aufgabe-01-projektstruktur-aufräumen-1" id="toc-aufgabe-01-projektstruktur-aufräumen-1" class="nav-link" data-scroll-target="#aufgabe-01-projektstruktur-aufräumen-1">Aufgabe 01: Projektstruktur aufräumen</a></li>
+  <li><a href="#aufgabe-02-layer-sinnvoll-benennen-1" id="toc-aufgabe-02-layer-sinnvoll-benennen-1" class="nav-link" data-scroll-target="#aufgabe-02-layer-sinnvoll-benennen-1">Aufgabe 02: Layer sinnvoll benennen</a></li>
+  <li><a href="#aufgabe-03-zentrale-rechenregel-sichern-1" id="toc-aufgabe-03-zentrale-rechenregel-sichern-1" class="nav-link" data-scroll-target="#aufgabe-03-zentrale-rechenregel-sichern-1">Aufgabe 03: Zentrale Rechenregel sichern</a></li>
+  <li><a href="#aufgabe-04-verarbeitungsverlauf-prüfen-1" id="toc-aufgabe-04-verarbeitungsverlauf-prüfen-1" class="nav-link" data-scroll-target="#aufgabe-04-verarbeitungsverlauf-prüfen-1">Aufgabe 04: Verarbeitungsverlauf prüfen</a></li>
+  <li><a href="#aufgabe-05-kartenlayout-erstellen-1" id="toc-aufgabe-05-kartenlayout-erstellen-1" class="nav-link" data-scroll-target="#aufgabe-05-kartenlayout-erstellen-1">Aufgabe 05: Kartenlayout erstellen</a></li>
+  <li><a href="#aufgabe-06-projekt-packen-1" id="toc-aufgabe-06-projekt-packen-1" class="nav-link" data-scroll-target="#aufgabe-06-projekt-packen-1">Aufgabe 06: Projekt packen</a>
+  <ul class="collapse">
+  <li><a href="#wenn-sie-qpackageqgz-verwenden" id="toc-wenn-sie-qpackageqgz-verwenden" class="nav-link" data-scroll-target="#wenn-sie-qpackageqgz-verwenden">Wenn Sie <code>QPackageQGZ</code> verwenden</a></li>
+  <li><a href="#wenn-sie-geopacker-verwenden" id="toc-wenn-sie-geopacker-verwenden" class="nav-link" data-scroll-target="#wenn-sie-geopacker-verwenden">Wenn Sie <code>Geopacker</code> verwenden</a></li>
+  </ul></li>
+  <li><a href="#abgabe-1" id="toc-abgabe-1" class="nav-link" data-scroll-target="#abgabe-1">Abgabe</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit09/unit09-05.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -370,28 +403,585 @@ background: ../assets/06-splash.jpg;
 
 
 
-<div class="callout callout-style-simple callout-tip no-icon callout-empty-content">
+<section id="worum-geht-es-in-diesem-arbeitsblatt" class="level2">
+<h2 class="anchored" data-anchor-id="worum-geht-es-in-diesem-arbeitsblatt">Worum geht es in diesem Arbeitsblatt?</h2>
+<p>In diesem Arbeitsblatt üben Sie, ein QGIS-Projekt so aufzubauen und abzugeben, dass eine andere Person es öffnen, prüfen und nachvollziehen kann.</p>
+<p>Es geht nicht darum, jeden Klick zu beschreiben. Es geht darum, die entscheidenden Bestandteile einer GIS-Analyse sichtbar zu machen:</p>
+<blockquote class="blockquote">
+<p>Eingangsdaten → Zwischenergebnisse → Rechenregel → Ergebnis → Layout → gepacktes Projekt</p>
+</blockquote>
+<p>Eine Karte, ein Datzensatz ist nur dann fachlich brauchbar, wenn erkennbar bleibt, wie sie entstanden ist. Besonders bei Eignungsanalysen, Kostenoberflächen oder Rasterverschneidungen müssen Daten, Kriterien, Reklassifikationen, Gewichte und Ergebnislayer nachvollziehbar bleiben.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Leitgedanke">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Leitgedanke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Nicht jeder Arbeitsschritt muss ausgeschrieben werden. Aber die entscheidenden Analysebausteine müssen im QGIS-Projekt sichtbar und überprüfbar sein.</p>
+</div>
+</div>
+</section>
+<section id="lernziele" class="level2">
+<h2 class="anchored" data-anchor-id="lernziele">Lernziele</h2>
+<p>Nach dieser Übung können Sie</p>
+<ul>
+<li>ein QGIS-Projekt sinnvoll strukturieren,</li>
+<li>Rohdaten, Zwischenergebnisse und Ergebnisse unterscheiden,</li>
+<li>Layer eindeutig benennen,</li>
+<li>temporäre Layer vermeiden,</li>
+<li>den QGIS-Verarbeitungsverlauf als technische Kontrolle nutzen,</li>
+<li>einen Rasterrechner-Ausdruck als zentrale Rechenregel sichern,</li>
+<li>ein QGIS-Projekt vollständig packen und testweise öffnen,</li>
+<li>erkennen, ob eine Abgabe reproduzierbar genug ist.</li>
+</ul>
+</section>
+<section id="benötigte-materialien" class="level2">
+<h2 class="anchored" data-anchor-id="benötigte-materialien">Benötigte Materialien</h2>
+<ul>
+<li>ein bestehendes QGIS-Projekt aus einer vorherigen Übung, zum Beispiel eine Eignungsanalyse oder Kostenanalyse,</li>
+<li>mindestens ein Ergebnisraster oder Ergebnislayer,</li>
+<li>QGIS,</li>
+<li>ein Plugin zum Packen von Projekten, zum Beispiel <code>Project Packager</code>, <code>Project Consolidator</code>, <code>QPackageQGZ</code> oder <code>Geopacker</code>.</li>
+</ul>
+<div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-
+<p>Verwenden Sie am besten Ihr Projekt aus der vorherigen Aufgabe. Ziel ist nicht eine neue Analyse, sondern eine überprüfbare Abgabe des bestehenden Projekts.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-warning no-icon callout-empty-content">
+</section>
+<section id="aufgabe-01-projektstruktur-aufräumen" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-01-projektstruktur-aufräumen">Aufgabe 01: Projektstruktur aufräumen</h2>
+<p>Öffnen Sie Ihr QGIS-Projekt und ordnen Sie die Layer im Layerfenster in sinnvolle Gruppen.</p>
+<p>Verwenden Sie eine einfache Struktur, zum Beispiel:</p>
+<pre class="text"><code>01_Rohdaten
+02_Zwischenergebnisse
+03_Bewertete_Raster
+04_Ergebnisse
+05_Layout_und_Export</code></pre>
+<p>Prüfen Sie anschließend:</p>
+<ul>
+<li>Sind alle wichtigen Layer gespeichert?</li>
+<li>Gibt es noch temporäre Layer?</li>
+<li>Sind die Layernamen verständlich?</li>
+<li>Ist erkennbar, welche Layer Eingangsdaten und welche Ergebnisse sind?</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled" title="Temporäre Layer">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warnung</span>Temporäre Layer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Temporäre Layer sind für eine Abgabe ungeeignet. Speichern Sie alle relevanten Zwischen- und Endergebnisse explizit als Datei.</p>
+</div>
+</div>
+</section>
+<section id="aufgabe-02-layer-sinnvoll-benennen" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-02-layer-sinnvoll-benennen">Aufgabe 02: Layer sinnvoll benennen</h2>
+<p>Benennen Sie zentrale Layer so, dass ihre Funktion erkennbar ist.</p>
+<p>Ungünstig:</p>
+<pre class="text"><code>output
+reclassified
+rastercalc
+clip1</code></pre>
+<p>Besser:</p>
+<pre class="text"><code>hangneigung_klassen
+wald_eignung
+siedlungsdistanz_idx
+einschraenkung_mask
+wildkatze_eignung_final
+gesamt_kosten_trimm_dich_pfad</code></pre>
+<p>Achten Sie besonders auf Ergebnislayer. Am Namen sollte erkennbar sein, was der Layer zeigt.</p>
+</section>
+<section id="aufgabe-03-zentrale-rechenregel-sichern" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-03-zentrale-rechenregel-sichern">Aufgabe 03: Zentrale Rechenregel sichern</h2>
+<p>Wenn Ihr Projekt einen Rasterrechner-Ausdruck verwendet, sichern Sie diesen Ausdruck.</p>
+<p>Dazu reicht eine der folgenden Varianten:</p>
+<ul>
+<li>Screenshot des Rasterrechner-Fensters,</li>
+<li>Kopie des Ausdrucks in eine einfache Textdatei,</li>
+<li>Ausdruck als Notiz im Projektordner,</li>
+<li>Ausdruck in der Aufgabenabgabe.</li>
+</ul>
+<p>Der Ausdruck muss nicht schön formatiert sein. Er muss nur zeigen, wie die bewerteten Raster verrechnet wurden.</p>
+<p>Beispielhafte Struktur:</p>
+<pre class="qgis"><code>"raster_1@1" * gewicht_1 +
+"raster_2@1" * gewicht_2 +
+"raster_3@1" * gewicht_3</code></pre>
+<div class="callout callout-style-default callout-note callout-titled" title="Warum das wichtig ist">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Warum das wichtig ist
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Der Rasterrechner-Ausdruck ist oft der eigentliche Kern der Analyse. Er zeigt, welche Kriterien mit welchen Gewichten in das Ergebnis eingegangen sind.</p>
+</div>
+</div>
+</section>
+<section id="aufgabe-04-verarbeitungsverlauf-prüfen" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-04-verarbeitungsverlauf-prüfen">Aufgabe 04: Verarbeitungsverlauf prüfen</h2>
+<p>Öffnen Sie den QGIS-Verarbeitungsverlauf.</p>
+<blockquote class="blockquote">
+<p>Verarbeitung → Verlauf</p>
+</blockquote>
+<p>Prüfen Sie, ob die zentrale Verarbeitungsschritte dort sichtbar sind, zum Beispiel:</p>
+<ul>
+<li>Rasterisieren,</li>
+<li>Hangneigung,</li>
+<li>Exposition,</li>
+<li>Nähe / Rasterdistanz,</li>
+<li>Reklassifizieren nach Tabelle,</li>
+<li>Rasterrechner,</li>
+<li>Zuschneiden,</li>
+<li>Vektor- oder Rasterexport.</li>
+</ul>
+<p>Spiechern Sie ihren Verlauf als Log Datei. Diese Datei ist eine reine Textdatei.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Grenze des Verlaufs">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warnung</span>Grenze des Verlaufs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Der Verarbeitungsverlauf dokumentiert vor allem Processing-Werkzeuge. Manuelle Schritte wie Symbolisierung, Layerumbenennung, Layoutgestaltung oder visuelle Kontrolle erscheinen dort nicht (vollständig).</p>
+</div>
+</div>
+</section>
+<section id="aufgabe-05-kartenlayout-erstellen" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-05-kartenlayout-erstellen">Aufgabe 05: Kartenlayout erstellen</h2>
+<p>Erstellen Sie ein einfaches Kartenlayout für Ihr Ergebnis.</p>
+<p>Das Layout soll mindestens enthalten:</p>
+<ul>
+<li>Titel,</li>
+<li>Ergebnislayer,</li>
+<li>Legende,</li>
+<li>Maßstab,</li>
+<li>Nordpfeil,</li>
+<li>Datenquelle oder kurzer Quellenhinweis,</li>
+<li>Name oder Bearbeitungshinweis,</li>
+<li>Datum.</li>
+</ul>
+<p>Das Layout soll nicht überladen sein. Es soll zeigen, was das Ergebnis räumlich bedeutet.</p>
+</section>
+<section id="aufgabe-06-projekt-packen" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-06-projekt-packen">Aufgabe 06: Projekt packen</h2>
+<p>Packen Sie das QGIS-Projekt mit einem geeigneten Plugin.</p>
+<p>Mögliche Plugins:</p>
+<ul>
+<li><code>Project Packager</code></li>
+<li><code>Project Consolidator</code></li>
+<li><code>QPackageQGZ</code></li>
+<li><code>Geopacker</code></li>
+</ul>
+<p>Ziel ist ein Projektordner oder eine ZIP-Datei, die auf einem anderen Rechner geöffnet werden kann.</p>
+<p>Nach dem Packen:</p>
+<ol type="1">
+<li>Öffnen Sie das gepackte Projekt aus dem neuen Ordner.</li>
+<li>Prüfen Sie, ob alle Layer geladen werden.</li>
+<li>Prüfen Sie, ob keine roten Ausrufezeichen erscheinen.</li>
+<li>Prüfen Sie, ob das Layout noch funktioniert.</li>
+<li>Prüfen Sie, ob das finale Ergebnis sichtbar ist.</li>
+</ol>
+<div class="callout callout-style-default callout-warning callout-titled" title="Pflichttest">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warnung</span>Pflichttest
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Checken Siw zwingend ein entpacktes Projekt auf Vollständigkeit. Öffnen Sie es und testen sie die Inhalte.</p>
+</div>
+</div>
+<p>Beantworten Sie vor der Abgabe knapp diese Fragen:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Frage</th>
+<th>Antwort</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sind alle wichtigen Layer gespeichert?</td>
+<td>ja / nein</td>
+</tr>
+<tr class="even">
+<td>Gibt keine temporäre Layer?</td>
+<td>ja / nein</td>
+</tr>
+<tr class="odd">
+<td>Ist der Ergebnislayer eindeutig benannt?</td>
+<td>ja / nein</td>
+</tr>
+<tr class="even">
+<td>Ist die zentrale Rechenregel gesichert?</td>
+<td>ja / nein</td>
+</tr>
+<tr class="odd">
+<td>Ist ein Kartenlayout vorhanden?</td>
+<td>ja / nein</td>
+</tr>
+<tr class="even">
+<td>Wurde das gepackte Projekt testweise geöffnet?</td>
+<td>ja / nein</td>
+</tr>
+<tr class="odd">
+<td>Keine Fehler beim Öffnen Layer?</td>
+<td>ja / nein</td>
+</tr>
+</tbody>
+</table>
+<p>Falls alles ja - super , falls nein fixen.</p>
+</section>
+<section id="abgabe" class="level2">
+<h2 class="anchored" data-anchor-id="abgabe">Abgabe</h2>
+</section>
+<section id="geben-sie-ein-gepacktes-qgis-projekt-ab." class="level2">
+<h2 class="anchored" data-anchor-id="geben-sie-ein-gepacktes-qgis-projekt-ab.">Geben Sie ein gepacktes QGIS-Projekt ab.</h2>
+<p>title: Arbeitsblatt - QGIS-Projekte nachvollziehbar abgeben title-block-banner: ../assets/images/splash_L04.png title-block-banner-color: white</p>
+<p>bibliography: ../assets/geoinfo.bib</p>
+<p>lang: de comments: false —</p>
+</section>
+<section id="worum-geht-es-in-diesem-arbeitsblatt-1" class="level2">
+<h2 class="anchored" data-anchor-id="worum-geht-es-in-diesem-arbeitsblatt-1">Worum geht es in diesem Arbeitsblatt?</h2>
+<p>In diesem Arbeitsblatt üben Sie, ein QGIS-Projekt so aufzubauen und abzugeben, dass eine andere Person es öffnen, prüfen und nachvollziehen kann.</p>
+<p>Es geht nicht darum, jeden Klick zu beschreiben. Es geht darum, die entscheidenden Bestandteile einer GIS-Analyse sichtbar zu machen:</p>
+<blockquote class="blockquote">
+<p>Eingangsdaten → Zwischenergebnisse → Rechenregel → Ergebnis → Layout → gepacktes Projekt</p>
+</blockquote>
+<p>Eine Karte, ein Datzensatz ist nur dann fachlich brauchbar, wenn erkennbar bleibt, wie sie entstanden ist. Besonders bei Eignungsanalysen, Kostenoberflächen oder Rasterverschneidungen müssen Daten, Kriterien, Reklassifikationen, Gewichte und Ergebnislayer nachvollziehbar bleiben.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Leitgedanke">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Leitgedanke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Nicht jeder Arbeitsschritt muss ausgeschrieben werden. Aber die entscheidenden Analysebausteine müssen im QGIS-Projekt sichtbar und überprüfbar sein.</p>
+</div>
+</div>
+</section>
+<section id="lernziele-1" class="level2">
+<h2 class="anchored" data-anchor-id="lernziele-1">Lernziele</h2>
+<p>Nach dieser Übung können Sie</p>
+<ul>
+<li>ein QGIS-Projekt sinnvoll strukturieren,</li>
+<li>Rohdaten, Zwischenergebnisse und Ergebnisse unterscheiden,</li>
+<li>Layer eindeutig benennen,</li>
+<li>temporäre Layer vermeiden,</li>
+<li>den QGIS-Verarbeitungsverlauf als technische Kontrolle nutzen,</li>
+<li>einen Rasterrechner-Ausdruck als zentrale Rechenregel sichern,</li>
+<li>ein QGIS-Projekt vollständig packen und testweise öffnen,</li>
+<li>erkennen, ob eine Abgabe reproduzierbar genug ist.</li>
+</ul>
+</section>
+<section id="benötigte-materialien-1" class="level2">
+<h2 class="anchored" data-anchor-id="benötigte-materialien-1">Benötigte Materialien</h2>
+<ul>
+<li>ein bestehendes QGIS-Projekt aus einer vorherigen Übung, zum Beispiel eine Eignungsanalyse oder Kostenanalyse,</li>
+<li>mindestens ein Ergebnisraster oder Ergebnislayer,</li>
+<li>QGIS,</li>
+<li>ein Plugin zum Packen von Projekten, zum Beispiel <code>Project Packager</code>, <code>Project Consolidator</code>, <code>QPackageQGZ</code> oder <code>Geopacker</code>.</li>
+</ul>
+<div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-
+<p>Verwenden Sie am besten Ihr Projekt aus der vorherigen Aufgabe. Ziel ist nicht eine neue Analyse, sondern eine überprüfbare Abgabe des bestehenden Projekts.</p>
 </div>
 </div>
 </div>
+</section>
+<section id="aufgabe-01-projektstruktur-aufräumen-1" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-01-projektstruktur-aufräumen-1">Aufgabe 01: Projektstruktur aufräumen</h2>
+<p>Öffnen Sie Ihr QGIS-Projekt und ordnen Sie die Layer im Layerfenster in sinnvolle Gruppen.</p>
+<p>Verwenden Sie eine einfache Struktur, zum Beispiel:</p>
+<pre class="text"><code>01_Rohdaten
+02_Zwischenergebnisse
+03_Bewertete_Raster
+04_Ergebnisse
+05_Layout_und_Export</code></pre>
+<p>Prüfen Sie anschließend:</p>
+<ul>
+<li>Sind alle wichtigen Layer gespeichert?</li>
+<li>Gibt es noch temporäre Layer?</li>
+<li>Sind die Layernamen verständlich?</li>
+<li>Ist erkennbar, welche Layer Eingangsdaten und welche Ergebnisse sind?</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled" title="Temporäre Layer">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warnung</span>Temporäre Layer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Temporäre Layer sind für eine Abgabe ungeeignet. Speichern Sie alle relevanten Zwischen- und Endergebnisse explizit als Datei.</p>
+</div>
+</div>
+</section>
+<section id="aufgabe-02-layer-sinnvoll-benennen-1" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-02-layer-sinnvoll-benennen-1">Aufgabe 02: Layer sinnvoll benennen</h2>
+<p>Benennen Sie zentrale Layer so, dass ihre Funktion erkennbar ist.</p>
+<p>Ungünstig:</p>
+<pre class="text"><code>output
+reclassified
+rastercalc
+clip1</code></pre>
+<p>Besser:</p>
+<pre class="text"><code>hangneigung_klassen
+wald_eignung
+siedlungsdistanz_idx
+einschraenkung_mask
+wildkatze_eignung_final
+gesamt_kosten_trimm_dich_pfad</code></pre>
+<p>Achten Sie besonders auf Ergebnislayer. Am Namen sollte erkennbar sein, was der Layer zeigt.</p>
+</section>
+<section id="aufgabe-03-zentrale-rechenregel-sichern-1" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-03-zentrale-rechenregel-sichern-1">Aufgabe 03: Zentrale Rechenregel sichern</h2>
+<p>Wenn Ihr Projekt einen Rasterrechner-Ausdruck verwendet, sichern Sie diesen Ausdruck.</p>
+<p>Dazu reicht eine der folgenden Varianten:</p>
+<ul>
+<li>Screenshot des Rasterrechner-Fensters,</li>
+<li>Kopie des Ausdrucks in eine einfache Textdatei,</li>
+<li>Ausdruck als Notiz im Projektordner,</li>
+<li>Ausdruck in der Aufgabenabgabe.</li>
+</ul>
+<p>Der Ausdruck muss nicht schön formatiert sein. Er muss nur zeigen, wie die bewerteten Raster verrechnet wurden.</p>
+<p>Beispielhafte Struktur:</p>
+<pre class="qgis"><code>"raster_1@1" * gewicht_1 +
+"raster_2@1" * gewicht_2 +
+"raster_3@1" * gewicht_3</code></pre>
+<div class="callout callout-style-default callout-note callout-titled" title="Warum das wichtig ist">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Warum das wichtig ist
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Der Rasterrechner-Ausdruck ist oft der eigentliche Kern der Analyse. Er zeigt, welche Kriterien mit welchen Gewichten in das Ergebnis eingegangen sind.</p>
+</div>
+</div>
+</section>
+<section id="aufgabe-04-verarbeitungsverlauf-prüfen-1" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-04-verarbeitungsverlauf-prüfen-1">Aufgabe 04: Verarbeitungsverlauf prüfen</h2>
+<p>Öffnen Sie den QGIS-Verarbeitungsverlauf.</p>
+<blockquote class="blockquote">
+<p>Verarbeitung → Verlauf</p>
+</blockquote>
+<p>Prüfen Sie, ob die zentrale Verarbeitungsschritte dort sichtbar sind, zum Beispiel:</p>
+<ul>
+<li>Rasterisieren,</li>
+<li>Hangneigung,</li>
+<li>Exposition,</li>
+<li>Nähe / Rasterdistanz,</li>
+<li>Reklassifizieren nach Tabelle,</li>
+<li>Rasterrechner,</li>
+<li>Zuschneiden,</li>
+<li>Vektor- oder Rasterexport.</li>
+</ul>
+<p>Spiechern Sie ihren Verlauf als Log Datei. Diese Datei ist eine reine Textdatei.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Grenze des Verlaufs">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warnung</span>Grenze des Verlaufs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Der Verarbeitungsverlauf dokumentiert vor allem Processing-Werkzeuge. Manuelle Schritte wie Symbolisierung, Layerumbenennung, Layoutgestaltung oder visuelle Kontrolle erscheinen dort nicht (vollständig).</p>
+</div>
+</div>
+</section>
+<section id="aufgabe-05-kartenlayout-erstellen-1" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-05-kartenlayout-erstellen-1">Aufgabe 05: Kartenlayout erstellen</h2>
+<p>Erstellen Sie ein einfaches Kartenlayout für Ihr Ergebnis.</p>
+<p>Das Layout soll mindestens enthalten:</p>
+<ul>
+<li>Titel,</li>
+<li>Ergebnislayer,</li>
+<li>Legende,</li>
+<li>Maßstab,</li>
+<li>Nordpfeil,</li>
+<li>Datenquelle oder kurzer Quellenhinweis,</li>
+<li>Name oder Bearbeitungshinweis,</li>
+<li>Datum.</li>
+</ul>
+<p>Das Layout soll nicht überladen sein. Es soll zeigen, was das Ergebnis räumlich bedeutet.</p>
+</section>
+<section id="aufgabe-06-projekt-packen-1" class="level2">
+<h2 class="anchored" data-anchor-id="aufgabe-06-projekt-packen-1">Aufgabe 06: Projekt packen</h2>
+<p>Packen Sie Ihr QGIS-Projekt so, dass es auf einem anderen Rechner geöffnet werden kann. Entscheidend ist: Die Projektdatei, die verwendeten Datenlayer, Zwischenergebnisse und Ergebnislayer müssen gemeinsam vorliegen und dürfen keine kaputten Pfade erzeugen.</p>
+<p>Für das Packen des QGIS-Projekts kann <code>QPackageQGZ</code> verwendet werden. Das Plugin speichert das aktuelle QGIS-Projekt zusammen mit den im Projekt enthaltenen Daten in ein neues Verzeichnis. Es kann auch Rasterdaten, verwendete SVG-Symbole, Joins und Definitionsdateien übertragen. Der erzeugte Projektordner muss anschließend selbst als ZIP-Datei komprimiert und abgegeben werden.</p>
+<p>Alternativ kann <code>Geopacker</code> verwendet werden. Dieses Plugin erzeugt direkt eine ZIP-Datei des Projekts und bündelt das <code>.qgz</code>-Projekt mit Vektor- und Rasterdaten; außerdem werden Layout-Bilder und Styles berücksichtigt und die Layerpfade angepasst. Das ist für eine einfache Upload-Abgabe der direktere Weg.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Einschränkung der Tools">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warnung</span>Einschränkung der Tools
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Wichtig: Separat exportierte Dateien werden nicht automatisch zuverlässig durch jedes Packager-Plugin erfasst. Dazu gehören zum Beispiel Karten-PDFs, Karten-PNGs, Screenshots, Textdateien mit Rasterrechner-Ausdrücken etc. Diese Dateien müssen mauell zusätzlich in den Abgabeordner gelegt werden.</p>
+</div>
+</div>
+<p>Der QGIS-Verarbeitungsverlauf wird ebenfalls nicht als verlässlicher Bestandteil des gepackten Projekts behandelt. Er muss für die Abgabe zusätzlich als <code>.log</code> Datei gesichert werden.</p>
+<section id="wenn-sie-qpackageqgz-verwenden" class="level3">
+<h3 class="anchored" data-anchor-id="wenn-sie-qpackageqgz-verwenden">Wenn Sie <code>QPackageQGZ</code> verwenden</h3>
+<ol type="1">
+<li>Projekt mit <code>QPackageQGZ</code> in ein neues Verzeichnis packen.</li>
+<li>Kartenlayout als PDF oder PNG exportieren und in dieses Verzeichnis legen.</li>
+<li>Rasterrechner-Ausdruck als Textdatei oder Screenshot in dieses Verzeichnis legen.</li>
+<li>Optional: Screenshot des QGIS-Verarbeitungsverlaufs in dieses Verzeichnis legen.</li>
+<li>Den gesamten Ordner als ZIP-Datei komprimieren.</li>
+<li>QGIS-Verarbeitungsverlaufs als Log-Datei.</li>
+<li>ZIP-Datei testweise entpacken und das Projekt aus dem entpackten Ordner öffnen.</li>
+</ol>
+</section>
+<section id="wenn-sie-geopacker-verwenden" class="level3">
+<h3 class="anchored" data-anchor-id="wenn-sie-geopacker-verwenden">Wenn Sie <code>Geopacker</code> verwenden</h3>
+<ol type="1">
+<li>Projekt mit <code>Geopacker</code> als ZIP-Datei packen.</li>
+<li>ZIP-Datei testweise entpacken und das Projekt aus dem entpackten Ordner öffnen.</li>
+<li>Kartenlayout als PDF oder PNG zusätzlich zur ZIP-Abgabe legen oder zusammen mit der Geopacker-ZIP in eine zweite Abgabe-ZIP packen.</li>
+<li>Rasterrechner-Ausdruck als Textdatei oder Screenshot ebenfalls zusätzlich ablegen.</li>
+<li>QGIS-Verarbeitungsverlaufs als Log-Datei.</li>
+</ol>
+<p>Eine mögliche Abgabestruktur im Archivfile ist:</p>
+<pre class="text"><code>abgabe_qgis/
+├── projekt_gepackt.zip
+├── karte.pdf
+├── rasterrechner_ausdruck.txt
+└── optional_qgis_verlauf.png</code></pre>
+<p>Nach dem Packen:</p>
+<ol type="1">
+<li>Öffnen Sie das gepackte Projekt aus dem neuen Ordner.</li>
+<li>Prüfen Sie, ob alle Layer geladen werden.</li>
+<li>Prüfen Sie, ob keine roten Ausrufezeichen erscheinen.</li>
+<li>Prüfen Sie, ob das Layout noch funktioniert.</li>
+<li>Prüfen Sie, ob das finale Ergebnis sichtbar ist.</li>
+</ol>
+<div class="callout callout-style-default callout-warning callout-titled" title="Pflichttest">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warnung</span>Pflichttest
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Checken Sie zwingend ein entpacktes Projekt auf Vollständigkeit. Öffnen Sie es und testen sie die Inhalte.</p>
+</div>
+</div>
+<p>Beantworten Sie vor der Abgabe knapp diese Fragen:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Frage</th>
+<th>Antwort</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sind alle wichtigen Layer gespeichert?</td>
+<td>ja / nein</td>
+</tr>
+<tr class="even">
+<td>Gibt keine temporäre Layer?</td>
+<td>ja / nein</td>
+</tr>
+<tr class="odd">
+<td>Ist der Ergebnislayer eindeutig benannt?</td>
+<td>ja / nein</td>
+</tr>
+<tr class="even">
+<td>Ist die zentrale Rechenregel gesichert?</td>
+<td>ja / nein</td>
+</tr>
+<tr class="odd">
+<td>Ist ein Kartenlayout vorhanden?</td>
+<td>ja / nein</td>
+</tr>
+<tr class="even">
+<td>Wurde das gepackte Projekt testweise geöffnet?</td>
+<td>ja / nein</td>
+</tr>
+<tr class="odd">
+<td>Keine Fehler beim Öffnen Layer?</td>
+<td>ja / nein</td>
+</tr>
+</tbody>
+</table>
+<p>Falls alles ja - super , falls nein fixen.</p>
+</section>
+</section>
+<section id="abgabe-1" class="level2">
+<h2 class="anchored" data-anchor-id="abgabe-1">Abgabe</h2>
+<p>Geben Sie ein gepacktes QGIS-Projekt ab.</p>
+<p>Die Abgabe soll enthalten:</p>
+<ul>
+<li>QGIS-Projektdatei,</li>
+<li>alle verwendeten Daten oder ein vollständig gepacktes Projekt,</li>
+<li>wichtige Zwischenergebnisse,</li>
+<li>finales Ergebnis,</li>
+<li>Kartenlayout als PDF oder Bild,</li>
+<li>Rasterrechner-Ausdruck oder Screenshot der zentralen Rechenregel,</li>
+<li>Verarbeitungsverlauf.</li>
+</ul>
+<p>Es wird kein ausführliches Schritt-für-Schritt-Protokoll verlangt. Entscheidend ist, dass das Projekt geöffnet und die Analyse anhand der Layer, Ergebnisdateien und Rechenregel nachvollzogen werden kann.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Merksatz">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Merksatz
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Eine reproduzierbare QGIS-Abgabe ist kein Aufsatz. Sie ist ein sauber gepacktes Projekt mit verständlichen Layernamen, gespeicherten Zwischenergebnissen, sichtbarer Rechenregel und prüfbarem Ergebnis.</p>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <div class="footer-banner">
@@ -824,4 +1414,4 @@ background: ../assets/06-splash.jpg;
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit09/unit09-05.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit09/unit09-05.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></div></div></footer></body></html>
