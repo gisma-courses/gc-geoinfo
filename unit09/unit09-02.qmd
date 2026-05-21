@@ -103,15 +103,24 @@ Für allgemeine Abfragen auf relational strukturierten Datensätzen (Attributtab
 
 - [Map-site: Suchen, Filtern und Wählen in QGIS](https://lernplattform.map-site.de/doku.php/qgis/basic/d_layer_und_daten/cl05_abfragen_und_regeln_qgis_ausdruck) – Deutschsprachige Einführung in einfache QGIS-Abfragen mit Ausdrücken.
 
-### Youtubes - Arbeiten mit Attributen
 
-Das folgende YouTube Video macht Sie in ca. 13 Minuten mit dem Abfrageeditor vertraut. Beachten Sie auch die verschiedenen Anwendungsfälle, die im Video angesprochen werden.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KAP5GRsva2E?si=fxKcFA_CMu5RXA6W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+### YouTube – Arbeiten mit Attributen
 
-In diesem YouTube Video geht es darum "Ausdrücken" ohne Angst zu begegnen
+Die Videos sind hier bewusst als klickbare Vorschaubilder eingebunden. Das ist robuster als direkte `iframe`-Einbettungen, weil viele Browser, Hochschulnetze oder Privacy-Blocker eingebettete YouTube-Player blockieren.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4SopfgAmQH4?si=wG_uYJsVu6ot77xC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+**Video 1: QGIS-Abfrageeditor**
+
+[![QGIS-Abfrageeditor](https://img.youtube.com/vi/KAP5GRsva2E/hqdefault.jpg)](https://www.youtube.com/watch?v=KAP5GRsva2E)
+
+Falls das Vorschaubild nicht geladen wird: [Video direkt auf YouTube öffnen](https://www.youtube.com/watch?v=KAP5GRsva2E).
+
+**Video 2: Ausdrücke ohne Angst**
+
+[![QGIS-Ausdrücke](https://img.youtube.com/vi/4SopfgAmQH4/hqdefault.jpg)](https://www.youtube.com/watch?v=4SopfgAmQH4)
+
+Falls das Vorschaubild nicht geladen wird: [Video direkt auf YouTube öffnen](https://www.youtube.com/watch?v=4SopfgAmQH4).
+
 
 ## Konkrete Hinweise
 
