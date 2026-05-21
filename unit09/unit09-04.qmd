@@ -267,19 +267,6 @@ Für die Übung reicht das Plugin `Least Cost Path` als einfacher Einstieg. Wer 
   allowfullscreen>
 </iframe>
 
-### Gewichtete Multikriterienanalyse: alte WMCA-Aufnahme
-
-::: {.callout-warning title="Hinweis"}
-Diese Screencasts zeigen noch den früheren Ablauf mit dem Plugin `WMCA Weighted Multicriteria Analysis`. Für die aktuelle Aufgabe wird WMCA nicht mehr verwendet. Die Grundidee der Kriterienbewertung bleibt aber relevant: Eingangsdaten werden bewertet, gewichtet und anschließend miteinander verrechnet.
-:::
-
-<iframe
-  src="https://drive.google.com/file/d/1OICQVG3uSVuxOpS_Es-6RvYgKF1npVvl/preview"
-  width="100%"
-  height="480"
-  allow="autoplay"
-  allowfullscreen>
-</iframe>
 
 <iframe
   src="https://drive.google.com/file/d/1HIgzWFFodWwUpg5l3Ntpj_yP_qnkbg83/preview"
@@ -289,19 +276,6 @@ Diese Screencasts zeigen noch den früheren Ablauf mit dem Plugin `WMCA Weighted
   allowfullscreen>
 </iframe>
 
-### Start- und Zielpunkte anlegen
-
-::: {.callout-note title="Hinweis"}
-Die frühere Aufnahme zeigt das Plugin `Numerical Digitize`. Für die aktuelle Übung ist kein zusätzliches Plugin erforderlich. Start- und Zielpunkte können einfacher über eine kleine CSV-Datei mit X- und Y-Koordinaten oder über das QGIS-Bedienfeld `Erweitertes Digitalisieren` angelegt werden.
-:::
-
-<iframe
-  src="https://drive.google.com/file/d/1C5-vcZhYikgBkrXZ5JsrMTsBfrooHESD/preview"
-  width="100%"
-  height="480"
-  allow="autoplay"
-  allowfullscreen>
-</iframe>
 
 ### Least-Cost-Path: Ablauf und Ergebnis
 
