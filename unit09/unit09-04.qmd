@@ -101,16 +101,9 @@ Beschreiben Sie das Ergebnis, fügen Sie aussagekräftige Grafik(en) ein und beg
 |Aufgabe 04-02 | 0.6  | 0.25  | 
 |**Aufgabe 04** | **1.0**  | **0.3**  | 
 
-Re-check: Die Aufgabe ist in der Grundlogik jetzt wieder näher an deiner ursprünglichen Fassung. WMCA ist raus. Problematisch ist aber der komplette Block **„Unterstützung“**: Er ist redundant, teils noch wie ein Fremdkörper geschrieben, die CSV ist als Blockquote formatiert, und die Mischung aus Listenpunkten, Formeln und Fließtext wird in Quarto unsauber rendern. Außerdem erklärst du Normalisierung, Reklassifikation und Rasterrechner mehrfach. 
 
-Ich würde **nur den Unterstützungsblock ersetzen**, nicht die Aufgaben selbst. Die QGIS-Standardwerkzeuge `Reklassifizieren nach Tabelle` und `Rasterrechner` sind dafür korrekt; beide sind in der QGIS-Rasteranalyse dokumentiert. ([documentation.qgis.org][1]) `Least Cost Path` kann für Aufgabe 04-02 als Plugin bleiben, weil es genau aus Kostenraster und Punkten einen Least-Cost-Pfad berechnet; das ist aber nur für den Pfadteil relevant, nicht für die Multikriterienbewertung. ([QGIS Plugins][2]) Für Punktkoordinaten ist dein Wechsel weg von `Numerical Digitize` richtig; QGIS hat das eingebaute Bedienfeld **Erweitertes Digitalisieren** mit X/Y-Koordinatenlogik. ([QGIS Documentation][3])
-
-Ersetze ab `## Unterstützung` durch diesen Block:
-
-````markdown
 ## Unterstützung
 
-Die gewichtete Multikriterienanalyse wird in dieser Aufgabe ohne das frühere Plugin `WMCA Weighted Multicriteria Analysis` umgesetzt. Stattdessen werden QGIS-Standardwerkzeuge verwendet. Der Arbeitsablauf bleibt dadurch sichtbar: Eingangsdaten werden reklassifiziert, Klassen bewertet, Datenebenen gewichtet und anschließend im `Rasterrechner` kombiniert.
 
 ::: {.callout-note icon="false" appearance="simple"}
 Bei der **Eignungsanalyse** bedeuten hohe Werte hohe Eignung.  
@@ -163,7 +156,7 @@ Für das exakte Anlegen von Start- und Zielpunkten ist kein zusätzliches Plugin
 name,x,y
 Parkplatz,478188,5632178
 Grillhuette,476170,5631657
-````
+```
 
 Diese Datei kann in QGIS über `Layer → Layer hinzufügen → Getrennte Textdatei hinzufügen` geladen werden. Verwenden Sie `x` als X-Feld, `y` als Y-Feld und `EPSG:25832` als Koordinatensystem.
 
