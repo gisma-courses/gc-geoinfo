@@ -287,7 +287,7 @@
     "href": "unit09/unit09-04.html#screencasts-zu-aufgabe",
     "title": "Arbeitsblatt 4 - Kosten und Kriterien",
     "section": "Screencasts zu Aufgabe",
-    "text": "Screencasts zu Aufgabe\n\nCorine-Problemstellung\n\n\n\n\nReklassifizierung von Rasterdaten\n\n\n\n\nGewichtete Multikriterienanalyse: alte WMCA-Aufnahme\n\n\n\n\n\n\nWarnungHinweis\n\n\n\nDiese Screencasts zeigen noch den früheren Ablauf mit dem Plugin WMCA Weighted Multicriteria Analysis. Für die aktuelle Aufgabe wird WMCA nicht mehr verwendet. Die Grundidee der Kriterienbewertung bleibt aber relevant: Eingangsdaten werden bewertet, gewichtet und anschließend miteinander verrechnet.\n\n\n\n\n\n\n\n\nStart- und Zielpunkte anlegen\n\n\n\n\n\n\nHinweisHinweis\n\n\n\nDie frühere Aufnahme zeigt das Plugin Numerical Digitize. Für die aktuelle Übung ist kein zusätzliches Plugin erforderlich. Start- und Zielpunkte können einfacher über eine kleine CSV-Datei mit X- und Y-Koordinaten oder über das QGIS-Bedienfeld Erweitertes Digitalisieren angelegt werden.\n\n\n\n\n\n\nLeast-Cost-Path: Ablauf und Ergebnis",
+    "text": "Screencasts zu Aufgabe\n\nCorine-Problemstellung\n\n\n\n\nReklassifizierung von Rasterdaten\n\n\n\n\n\n\nLeast-Cost-Path: Ablauf und Ergebnis",
     "crumbs": [
       "Arbeitsblätter",
       "A4 - Kosten und Kriterien"
