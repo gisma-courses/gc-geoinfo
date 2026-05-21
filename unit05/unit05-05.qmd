@@ -1,5 +1,5 @@
 ---
-title: "Praxis: Kostenanalyse in QGIS"
+title: "Praxis: Kostenanalyse auf Werteoberflächen"
 title-block-banner: ../assets/images/splash_L04.png
 title-block-banner-color: black
 

@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -730,7 +765,7 @@ background-size: cover;
     <h2 id="toc-title">Inhalt</h2>
    
   <ul>
-  <li><a href="#worum-geht-es-in-dieses-arbeitsblatt" id="toc-worum-geht-es-in-dieses-arbeitsblatt" class="nav-link active" data-scroll-target="#worum-geht-es-in-dieses-arbeitsblatt">Worum geht es in dieses Arbeitsblatt?</a></li>
+  <li><a href="#worum-geht-es-in-diesem-arbeitsblatt" id="toc-worum-geht-es-in-diesem-arbeitsblatt" class="nav-link active" data-scroll-target="#worum-geht-es-in-diesem-arbeitsblatt">Worum geht es in diesem Arbeitsblatt?</a></li>
   <li><a href="#lernziele" id="toc-lernziele" class="nav-link" data-scroll-target="#lernziele">Lernziele</a></li>
   <li><a href="#benötigte-materialien" id="toc-benötigte-materialien" class="nav-link" data-scroll-target="#benötigte-materialien">Benötigte Materialien</a></li>
   <li><a href="#aufgaben-lerneinheit-4" id="toc-aufgaben-lerneinheit-4" class="nav-link" data-scroll-target="#aufgaben-lerneinheit-4">Aufgaben Lerneinheit 4</a>
@@ -740,8 +775,9 @@ background-size: cover;
   <li><a href="#aufgabe-04-02" id="toc-aufgabe-04-02" class="nav-link" data-scroll-target="#aufgabe-04-02">Aufgabe 04-02</a>
   <ul class="collapse">
   <li><a href="#gewichtung-der-aufgaben-in-lerneinheit-4" id="toc-gewichtung-der-aufgaben-in-lerneinheit-4" class="nav-link" data-scroll-target="#gewichtung-der-aufgaben-in-lerneinheit-4">Gewichtung der Aufgaben in Lerneinheit 4</a></li>
+  <li><a href="#entfernungs--und-kostenanalyse" id="toc-entfernungs--und-kostenanalyse" class="nav-link" data-scroll-target="#entfernungs--und-kostenanalyse">Entfernungs- und Kostenanalyse</a></li>
+  <li><a href="#weiterführende-hilfen" id="toc-weiterführende-hilfen" class="nav-link" data-scroll-target="#weiterführende-hilfen">Weiterführende Hilfen</a></li>
   </ul></li>
-  <li><a href="#unterstützung" id="toc-unterstützung" class="nav-link" data-scroll-target="#unterstützung">Unterstützung</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit09/unit09-04.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
     </div>
@@ -753,20 +789,24 @@ background-size: cover;
 
 
 
-<p>In dieser Aufgabe sollen Sie anhand vorgegebener Kriterien oder Merkmalsausprägungen verschiedene Analysen durchführen. Das heißt, Sie sollen die <em>Eignung</em> von Rasterzellen (Raumeinheiten) für eine bestimmte Nutzung bewerten. Sie können die Werte der so bewerteten Rasterzellen auch dazu verwenden, die <em>Überwindung</em> von räumlichen <em>Widerständen</em> oder auch <em>Kosten</em> zu kumulieren, um für eine bestimmte Nutzung geeignete Trassen oder Korridore zu identifizieren.</p>
-<p>Nimmt man eine Position A und eine Position B auf einem solchen Raster als Start und Ziel, so kann die kostengünstigste Route als Bewegung durch einen Raum mit unterschiedlichen <em>Widerständen</em> interpretiert werden, d.h. man kann die Werte eines Pixels als Kosten für das Betreten/Nutzen/Überwinden dieses Pixels interpretieren. Diese Kosten können durchaus mit kategorialen Merkmalsausprägungen wie <em>leicht</em> oder <em>schwer</em>, <em>günstig</em> oder <em>teuer</em>, <em>attraktiv</em> oder <em>unattraktiv</em> usw. beschrieben werden. Vor diesem Hintergrund sind die Kriterien, die z.B. für die Planung einer <em>günstigen Route</em> herangezogen werden, immer in Bezug auf die Fragestellung bzw. Zielsetzung zu bewerten.</p>
-<section id="worum-geht-es-in-dieses-arbeitsblatt" class="level2">
-<h2 class="anchored" data-anchor-id="worum-geht-es-in-dieses-arbeitsblatt">Worum geht es in dieses Arbeitsblatt?</h2>
-<p>Im Rahmen der Übung werden Sie eine einfache Eignungsanalyse und eine Kostenpfadanalyse durchführen. Dies beinhaltet die vollständige Datenaufbereitung sowie die Interpretation der verwendeten Kriterien und der Ergebnisse.</p>
+<section id="worum-geht-es-in-diesem-arbeitsblatt" class="level2">
+<h2 class="anchored" data-anchor-id="worum-geht-es-in-diesem-arbeitsblatt">Worum geht es in diesem Arbeitsblatt?</h2>
+<p>In dieser Aufgabe arbeiten Sie zum ersten Mal mit einer Analyse, bei der mehrere GIS-Schritte fachlich zusammenpassen müssen. Es geht also nicht mehr nur darum, einzelne Werkzeuge korrekt anzuwenden. Entscheidend ist, zu verstehen, welche fachliche Annahme durch welchen GIS-Schritt umgesetzt wird.</p>
+<p>Eine Multikriterienanalyse entsteht aus einer Kette solcher Übersetzungen: Aus einer fachlichen Aussage wird ein räumliches Kriterium, aus diesem Kriterium ein Datenlayer, aus dem Datenlayer eine Bewertung, und aus mehreren Bewertungen schließlich eine Karte. Wenn zum Beispiel Wald als günstiger Lebensraum bewertet wird, muss diese Aussage in eine Landnutzungsklasse, ein Raster, eine Reklassifikation und einen Zahlenwert übersetzt werden. Die Technik folgt also nicht neben der Fachlichkeit her, sondern setzt sie direkt um.</p>
+<p>Im ersten Teil bewerten Sie die <strong>Eignung</strong> von Rasterzellen für ein potenzielles Wildkatzenhabitat. Hohe Werte stehen dabei für hohe Eignung. Im zweiten Teil verwenden Sie dieselbe Rasterlogik für eine <strong>Kostenpfadanalyse</strong>. Dann bedeuten hohe Werte nicht mehr „gut“, sondern hohe Kosten oder hohen Widerstand. Die Richtung der Bewertung hängt also immer von der Fragestellung ab.</p>
+<p>Damit ist diese Übung ein Schritt vom einfachen Werkzeugtraining zur eigentlichen GIS-Analyse. Normalerweise bestehen raumbezogene Analysen genau aus dieser Verbindung: fachliche Annahmen, geeignete Daten, passende Bewertung, technische Umsetzung und kritische Interpretation des Ergebnisses.</p>
 </section>
 <section id="lernziele" class="level2">
 <h2 class="anchored" data-anchor-id="lernziele">Lernziele</h2>
 <p>Nach dieser Übung können Sie</p>
 <ul>
-<li>unterschiedliche Datenebenen zielgerichtet aufbereiten und kombinieren</li>
-<li>die Bedeutung verschiedener Kriterien erkennen und einschätzen</li>
-<li>eine Eignungsanalyse durchführen, indem Sie geeignete Datenebenen miteinander verrechnen</li>
-<li>eine Kostenanalyse planen und durchführen</li>
+<li>fachliche Aussagen in räumliche Kriterien übersetzen,</li>
+<li>geeignete Datenebenen für eine Fragestellung auswählen und aufbereiten,</li>
+<li>Rasterwerte als Eignungswerte oder Kostenwerte interpretieren,</li>
+<li>Kriterien reklassifizieren, bewerten und gewichten,</li>
+<li>mehrere Rasterebenen nachvollziehbar miteinander verrechnen,</li>
+<li>eine einfache Eignungsanalyse und eine Kostenpfadanalyse durchführen,</li>
+<li>erklären, wie fachliche Annahmen das GIS-Ergebnis beeinflussen.</li>
 </ul>
 </section>
 <section id="benötigte-materialien" class="level2">
@@ -775,7 +815,7 @@ background-size: cover;
 <li>Marburg Open Forest (MOF) Geländemodell in 1 m Auflösung</li>
 <li>Corine Landnutzungsdaten für das MOF</li>
 <li>Open Street Map (OSM) Wegedaten für das MOF</li>
-<li>Koordinaten (ETRS89, UTM32 EPSG:25832) Position <em>Parkplatz</em> (478188,5632178), Position Grillhütte (476170,5631657)</li>
+<li>Koordinaten (ETRS89 / UTM32N, EPSG:25832): Position <em>Parkplatz</em> (478188, 5632178), Position <em>Grillhütte</em> (476170, 5631657)</li>
 </ul>
 <div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
@@ -792,7 +832,7 @@ background-size: cover;
 <h2 class="anchored" data-anchor-id="aufgaben-lerneinheit-4">Aufgaben Lerneinheit 4</h2>
 <section id="aufgabe-04-01" class="level3">
 <h3 class="anchored" data-anchor-id="aufgabe-04-01">Aufgabe 04-01</h3>
-<p>Sie sollen eine Entscheidung anhand mehrerer Kriterien treffen. Konkret soll die Eignung des Uniwaldes als Wildkatzenlebensraum untersucht werden.</p>
+<p>Sie sollen eine Entscheidung anhand mehrerer Kriterien treffen. Konkret soll die potenzielle Eignung des Marburger Uniwaldes als Wildkatzenlebensraum untersucht werden. Der Bezug zur Wildkatze wurde im Reader fachlich eingeführt; die folgende Analyse ist ein vereinfachtes GIS-Modell und keine Nachweiskarte realer Vorkommen.</p>
 <p>Dabei sollen folgende Aussagen gelten:</p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
@@ -819,7 +859,7 @@ background-size: cover;
 <li>Berechnung der Hangneigung</li>
 <li>Extrahieren Sie alle Waldflächen aus den <a href="https://land.copernicus.eu/pan-european/corine-land-cover/clc2018?tab=mapview">Corine Landnutzungsdaten</a>, so dass Sie ein Raster mit den Werten 1 für <em>Waldflächen</em> und 0 für <em>keine Waldflächen</em> erhalten. (Bereits zugeschnittene Corine-Daten finden Sie im heruntergeladenen Archiv unter dem Dateinamen <code>clc2018_1m_MOF_25832.tif</code>). Tipp Dieser Vorgang wird auch als Datenreklassifizierung bezeichnet.</li>
 <li>Zur Vorbereitung der Multikriterienbewertung sollen die kontinuierlichen Hangneigungswerte in <em>ganzzahlige</em> kategoriale Klassen überführt (reklassifiziert) werden. D.h. durch die Reklassifizierung der Hangneigung in drei Klassen 0-15 Grad = Klasse mit Wert 1, 15-30 Grad = Klasse mit Wert 2 und &gt; 30 Grad = Klasse mit Wert 3 (1=flach, 2=mittlere Neigung und 3=steile Neigung) werden kategoriale Zielvariablen generiert.</li>
-<li>Legen Sie für <strong>jede Datenebene</strong> eine Gewichtung gemäß der von Ihnen festgelegten Bedeutung in Bezug auf ihre Eignung fest (z. B. Wald/Nichtwald = Faktor 0,5, Hangneigung = Faktor 0,3). Bitte beachten Sie, dass Werkzeuge wie die <code>WMCA Weighted Multicriteria Analysis</code> eine Gewichtungssumme von genau 1.0 erwarten. Daher müssen die Gewichte entsprechend verteilt werden.</li>
+<li>Legen Sie für <strong>jede Datenebene</strong> eine Gewichtung gemäß der von Ihnen festgelegten Bedeutung in Bezug auf ihre Eignung fest. Die Gewichtung wird anschließend im <code>Rasterrechner</code> umgesetzt. Achten Sie darauf, dass die Summe der Gewichtungsfaktoren 1.0 ergibt.</li>
 <li>Legen Sie für <strong>jede Klasse</strong> in diesem Layer eine Bewertung zwischen 0 und 10 fest (z. B. Wald = 10, Nichtwald = 1, Hangneigung Klasse 1 = 5 usw.) Beachten Sie, dass die Festlegung der Bewertung die Bedeutung der Kriterien für die Fragestellung berücksichtigen muss.</li>
 <li>Erläutern Sie die Ergebnisse in max. 2 Sätzen.</li>
 </ul>
@@ -892,27 +932,84 @@ background-size: cover;
 </tr>
 </tbody>
 </table>
+<p>Re-check: Die Aufgabe ist in der Grundlogik jetzt wieder näher an deiner ursprünglichen Fassung. WMCA ist raus. Problematisch ist aber der komplette Block <strong>„Unterstützung“</strong>: Er ist redundant, teils noch wie ein Fremdkörper geschrieben, die CSV ist als Blockquote formatiert, und die Mischung aus Listenpunkten, Formeln und Fließtext wird in Quarto unsauber rendern. Außerdem erklärst du Normalisierung, Reklassifikation und Rasterrechner mehrfach.</p>
+<p>Ich würde <strong>nur den Unterstützungsblock ersetzen</strong>, nicht die Aufgaben selbst. Die QGIS-Standardwerkzeuge <code>Reklassifizieren nach Tabelle</code> und <code>Rasterrechner</code> sind dafür korrekt; beide sind in der QGIS-Rasteranalyse dokumentiert. ([documentation.qgis.org][1]) <code>Least Cost Path</code> kann für Aufgabe 04-02 als Plugin bleiben, weil es genau aus Kostenraster und Punkten einen Least-Cost-Pfad berechnet; das ist aber nur für den Pfadteil relevant, nicht für die Multikriterienbewertung. ([QGIS Plugins][2]) Für Punktkoordinaten ist dein Wechsel weg von <code>Numerical Digitize</code> richtig; QGIS hat das eingebaute Bedienfeld <strong>Erweitertes Digitalisieren</strong> mit X/Y-Koordinatenlogik. ([QGIS Documentation][3])</p>
+<p>Ersetze ab <code>## Unterstützung</code> durch diesen Block:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Unterstützung</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Die gewichtete Multikriterienanalyse wird in dieser Aufgabe ohne das frühere Plugin <span class="in">`WMCA Weighted Multicriteria Analysis`</span> umgesetzt. Stattdessen werden QGIS-Standardwerkzeuge verwendet. Der Arbeitsablauf bleibt dadurch sichtbar: Eingangsdaten werden reklassifiziert, Klassen bewertet, Datenebenen gewichtet und anschließend im <span class="in">`Rasterrechner`</span> kombiniert.</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>::: {.callout-note icon="false" appearance="simple"}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Bei der **Eignungsanalyse** bedeuten hohe Werte hohe Eignung.  </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Bei der **Kostenanalyse** bedeuten hohe Werte hohe Kosten bzw. hohen Widerstand.</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reklassifikation und Bewertung</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>Für die Umwandlung von Rohwerten in Klassen oder Bewertungswerte verwenden Sie das Werkzeug <span class="in">`Reklassifizieren nach Tabelle`</span>. Damit können zum Beispiel Hangneigungswerte, Landnutzungsklassen oder Entfernungswerte in Eignungs- oder Kostenwerte übersetzt werden.</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Kontinuierliche Werte wie Hangneigung oder Entfernung zu Wegen können entweder in Klassen eingeteilt oder rechnerisch normalisiert werden. Eine einfache lineare Normalisierung auf den Wertebereich 0 bis 1 lautet:</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>x_{\text{norm}} = \frac{x - x_{\min}}{x_{\max} - x_{\min}}</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Dabei ist $$x$$ der ursprüngliche Rasterwert, $$x_{\min}$$ der kleinste Wert des Rasters und $$x_{\max}$$ der größte Wert des Rasters.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Soll eine Skala von 0 bis 10 verwendet werden, wird der normalisierte Wert mit 10 multipliziert:</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>x_{0-10} = 10 \cdot x_{\text{norm}}</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Diese Normalisierung ist nur dann passend, wenn hohe Ausgangswerte auch hohe Eignung bedeuten. Wenn hohe Ausgangswerte niedrige Kosten bedeuten sollen, muss die Richtung umgekehrt werden:</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>x_{\text{inv}} = 1 - x_{\text{norm}}</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>Für diese Aufgabe ist <span class="in">`Reklassifizieren nach Tabelle`</span> meist der übersichtlichere Weg, weil die Klassengrenzen und Zielwerte dort direkt sichtbar eingetragen werden.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">### Gewichtung im Rasterrechner</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>Die Gewichtung erfolgt im <span class="in">`Rasterrechner`</span>. Jedes bewertete Raster wird mit seinem Gewichtungsfaktor multipliziert. Anschließend werden die gewichteten Raster addiert.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>Allgemein:</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>E = R_1 \cdot w_1 + R_2 \cdot w_2 + \dots + R_n \cdot w_n</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>Dabei sind $$R_1 \dots R_n$$ die bewerteten Raster und $$w_1 \dots w_n$$ die zugehörigen Gewichte. Wird mit proportionalen Gewichten gearbeitet, soll die Summe der Gewichtungsfaktoren 1 ergeben.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="fu">### Start- und Zielpunkte anlegen</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Für das exakte Anlegen von Start- und Zielpunkten ist kein zusätzliches Plugin erforderlich. Am einfachsten ist eine kleine CSV-Datei mit den Punktkoordinaten:</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="in">```csv</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>name<span class="op">,</span>x<span class="op">,</span>y</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>Parkplatz<span class="op">,</span><span class="dv">478188</span><span class="op">,</span><span class="dv">5632178</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>Grillhuette<span class="op">,</span><span class="dv">476170</span><span class="op">,</span><span class="dv">5631657</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Diese Datei kann in QGIS über <code>Layer → Layer hinzufügen → Getrennte Textdatei hinzufügen</code> geladen werden. Verwenden Sie <code>x</code> als X-Feld, <code>y</code> als Y-Feld und <code>EPSG:25832</code> als Koordinatensystem.</p>
+<p>Alternativ kann das Bedienfeld <code>Erweitertes Digitalisieren</code> genutzt werden. Aktivieren Sie es über <code>Ansicht → Bedienfelder → Erweitertes Digitalisieren</code>, legen Sie einen Punktlayer in <code>EPSG:25832</code> an und geben Sie die Koordinaten direkt ein.</p>
 </section>
+<section id="entfernungs--und-kostenanalyse" class="level3">
+<h3 class="anchored" data-anchor-id="entfernungs--und-kostenanalyse">Entfernungs- und Kostenanalyse</h3>
+<p>Für Entfernungsberechnungen kann das Werkzeug <code>Nähe / Rasterdistanz</code> verwendet werden. Vektordaten, zum Beispiel Wege oder Straßen, müssen dafür vorher rasterisiert werden. Verwenden Sie dafür <code>Rasterisieren (Vektor nach Raster)</code>.</p>
+<p>Für die Kostenanalyse kann das Plugin <code>Least Cost Path</code> verwendet werden. Es berechnet aus einem Kostenraster sowie Start- und Zielpunkten einen kostengünstigen Pfad. Achten Sie darauf, dass das verwendete Raster wirklich ein Kostenraster ist: niedrige Werte stehen für geringe Kosten, hohe Werte für hohe Kosten.</p>
 </section>
-<section id="unterstützung" class="level2">
-<h2 class="anchored" data-anchor-id="unterstützung">Unterstützung</h2>
+<section id="weiterführende-hilfen" class="level3">
+<h3 class="anchored" data-anchor-id="weiterführende-hilfen">Weiterführende Hilfen</h3>
 <ul>
-<li><p>Bei Verwendung des Plugins <code>WMCA Weighted Multicriteria Analysis</code> (WMCA) müssen die kontinuierlichen Werte für Hangneigung und Entfernung von der Straße in diskrete Klassen umgewandelt werden. Das WMCA-Tool kann jedoch maximal 100 Klassen verarbeiten, so dass bei der Verwendung dieses Tools die kontinuierlichen Werte neu klassifiziert werden müssen (z.B. je 25 Meter Entfernung eine Klasse und alles &gt; 200 Meter Entfernung in eine Klasse, bzw. je 5 Grad Hangneigung von 0 Grad bis 30 Grad je eine Klasse und &gt; 30 Grad in eine Klasse). Außerdem entfällt die separate Normierung und Gewichtung.</p></li>
-<li><p>Wenn Sie den <code>Raster-Rechner</code> verwenden, ist diese Neuklassifizierung nicht notwendig, Sie müssen dann aber Gewichtung und Normalisierung in die Berechnung integrieren. {: .hinweis–info}</p></li>
-<li><p>Das Plugin <code>WMCA Weighted Multicriteria Analysis</code> (WMCA) ist sehr komfortabel für die gewichtete Multikriterienanalyse. Es erscheint nach der Installation unter dem Hauptmenü <code>Raster</code> oder in der <code>Erweiterungen-Werkzeugleiste</code> (für die normale Installation muss <em>“Auch experimentelle Erweiterungen anzeigen”</em> in den Einstellungen aktiviert sein). <strong>Achtung:</strong> Zur Zeit (seit 2021) kann es je nach QGIS-Version zu einer Python-Fehlermeldung nach der Installation des Plugins kommen. Bitte verwenden Sie dann den alternativen <a href="https://github.com/gisma/Weighted-Multi-Criteria-Analysis---WMCA/archive/refs/heads/master.zip">Kurs-Repo-Download</a> des Plugins. Weitere Informationen finden Sie unter <a href="https://github.com/gisma/Weighted-Multi-Criteria-Analysis---WMCA">WMCA Course Repository</a>. Installieren Sie das gezippte Plugin über das QGIS-Menü ‘Erweiterungen -&gt; Erweiterungen verwalten und installieren -&gt; Aus Zip installieren’. Sollte es beim Ausführen des Plugins zu Fehlermeldungen oder Warnungen kommen, müssen in der Regel negative Werte im Ergebnisdatensatz neu klassifiziert werden. Achten Sie darauf, dass Sie diesen möglichst hohe neue Werte zuweisen, da es sich hierbei um fehlerhafte und somit für die Least Cost Path Analyse irrelevante Daten handelt.<br>
-</p></li>
-<li><p>Eine wesentlich detailliertere Hilfe für den gesamten Arbeitsablauf finden Sie QGIS-spezifisch unter <a href="https://www.qgistutorials.com/en/docs/3/multi_criteria_overlay.html">Multi Criteria Overlay Analysis (QGIS3)</a>.</p></li>
-<li><p>Da es sich um ein weit verbreitetes Raster-GIS-Konzept handelt, werden Sie ähnliche Werkzeuge in allen GI-Softwarepaketen finden. So ist z.B. das <a href="https://sourceforge.net/projects/saga-gis/files/SAGA%20-%20Documentation/Tutorials/Multi_Criteria_Evaluation_Tutorial/MultiTutorial2.pdf/download">MCE Tutorial for SAGA GIS</a> eine hilfreiche Ressource, um den Prozess zu verstehen.</p></li>
-<li><p>Typische Rechenoperationen auf Rasterdaten, u.a. auch die Reklassifizierung von Daten, können mit dem <a href="https://docs.qgis.org/3.22/en/docs/">Raster-Rechner</a> durchgeführt werden. Der <code>Raster-Rechner</code> ist als Raster-Taschenrechner ein sehr wichtiges und mächtiges Werkzeug für viele Operationen. Alternativ und einfacher für eine einfache Reklassifizierung ist das QGIS-Werkzeug <code>Reklassifizieren nach Tabelle</code>. Einen Überblick über die verfügbaren Daten(re)klassifikations-Tools erhalten Sie, wenn Sie in der Toolbar <code>klassifizieren</code> oder <code>reklassifizieren</code> eingeben. Darüber hinaus finden Sie im Internet zahlreiche Anleitungen zum Thema Reklassifizierung, z.B. im Blogbeitrag <a href="https://fivequestionz.home.blog/2020/02/08/how-to-reclassify-a-raster-layer-in-qgis/">How to reclassify a raster layer in QGIS</a> oder auch auf YouTube <a href="https://www.youtube.com/watch?v=7eIFvZ4fU6k">Slope Analysis/Reclassify from a DEM in QGIS 3</a>. Zusätzlich finden Sie auf den Hilfeseiten von <a href="https://grass.osgeo.org/grass76/manuals/r.reclass.html">GRASS GIS</a> und <a href="http://www.saga-gis.org/saga_tool_doc/2.2.5/grid_tools_15.html">SAGA GIS</a> eine detaillierte Beschreibung des technischen Vorgehens.</p></li>
-<li><p>Die Normalisierung von Rasterdatenwerten kann sehr einfach mit dem SAGA-Modul <code>Grid Normalisation</code> durchgeführt werden. Alternativ kann sie auch mit dem <a href="https://docs.qgis.org/3.22/de/docs/user_manual/working_with_raster/raster_analysis.html#raster-calculator">Raster-Rechner</a> nach der Formel <code>xnorm = (x-min(x))/(max(x)-min(x))</code> berechnet werden (wobei x das Raster, min(x) und max(x) das Minimum bzw. Maximum aller Werte des jeweiligen Rasters sind).</p></li>
-<li><p>Die Gewichtung kann dann durch einfache Multiplikation (<code>Rasterrechner</code>) des jeweiligen Rasters mit dem Gewichtungswert erreicht werden. Z.B. Gleichgewichtung <code>Raster1*Raster2*Raster3/3</code> Gewichtung Raster1 Faktor 0.5 Raster2 und Raster3 Faktor 0.25 <code>0.5*Raster1 + 0.3*Raster2 + 0.2*Raster3</code>. Wird mit Proportionalwerten von 1 (Prozent) gewichtet, so ist darauf zu achten, dass die Summe aller Gewichtungsfaktoren 1 ergibt.</p></li>
-<li><p>Für das exakte Digitalisieren von Punkten ist die Erweiterung <code>Numerical Digitize</code> sehr hilfreich. Sie wird nach der Installation in die Digitalisierungsleiste eingehängt. Sollte die Extension nicht mit Ihrer QGIS Version kompatibel sein, finden Sie auf [Stackoverflow] (https://gis.stackexchange.com/questions/34204/creating-point-features-with-exact-coordinates-in-qgis) weitere Hilfe zu diesem Problem.</p></li>
-<li><p>Für die Kostenanalyse sollte das Plugin <code>Least Cost Path</code> installiert werden. Es erscheint unter den Bearbeitungswerkzeugen als eigener Menüeintrag <code>Cost Distance Analysis</code>. Auch hierzu gibt es sowohl für QGIS als auch für die verwandten GRASS- und SAGA-Werkzeuge zahlreiche Videos und Tutorials (z.B. <a href="https://www.youtube.com/watch?v=6dodHcHm7ws">Least Cost Path</a>). Achten Sie bei der Google-Suche darauf, dass Sie nur aktuelle und für Ihre QGIS-Hauptversion - also für QGIS 3.x - gültige Tutorials verwenden. Bei Interesse an den Konzepten und dem Anwendungsbezug (insbesondere für Fragestellungen auf der Landschaftsskala) lohnt sich ein Blick in <a href="https://link.springer.com/article/10.1007/s40823-016-0006-9">Least-Cost Modelling and Landscape Ecology: Concepts, Applications, and Opportunities</a>.</p></li>
-<li><p>Für Entfernungsberechnungen kann das <code>Nearness/Proximity Tool</code> verwendet werden. Bitte beachten Sie, dass Vektordaten zunächst in Rasterdaten umgewandelt werden müssen (<code>Raster-&gt;Conversion-&gt;Raster</code>).</p></li>
-<li><p>Weitere Unterstützung finden Sie unter <a href="https://gisma-courses.github.io/geoinfo-basis-qgis//unit08/unit08-01_reader_QGIS_01.html">QGIS Materials</a></p></li>
+<li><a href="https://documentation.qgis.org/latest/de/docs/user_manual/processing_algs/qgis/rasteranalysis.html">QGIS-Dokumentation: Reklassifizieren nach Tabelle und Rasterrechner</a></li>
+<li><a href="https://www.qgistutorials.com/en/docs/3/multi_criteria_overlay.html">QGIS-Tutorial: Multi Criteria Overlay Analysis</a></li>
+<li><a href="https://plugins.qgis.org/plugins/leastcostpath/">QGIS Plugin: Least Cost Path</a></li>
+<li><a href="https://link.springer.com/article/10.1007/s40823-016-0006-9">Least-Cost Modelling and Landscape Ecology: Concepts, Applications, and Opportunities</a></li>
+<li><a href="https://gisma-courses.github.io/geoinfo-basis-qgis//unit08/unit08-01_reader_QGIS_01.html">QGIS Materials</a></li>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
