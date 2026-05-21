@@ -23,10 +23,11 @@ Bisher haben wir ständig und ohne besondere Vorüberlegungen mit den Begriffen 
 
 Der Raum in GI-Systemen wird in Anlehnung an die Mathematik und Physik als dreidimensionaler euklidischer Raum verstanden. Aus dem Mathematikunterricht kennen wir die euklidische Ebene (mit 2 Dimensionen) und den euklidischen Raum (mit 3 Dimensionen). Am einfachsten lässt sich der euklidische Raum mit Hilfe eines kartesischen Koordinatensystems beschreiben, in dem die Koordinaten entlang senkrecht zueinander stehender Achsen aufgetragen werden (vgl. Abb. 02-1).
 
-![Abbildung 02-01: Ausschnitt aus einem zweidimensionalen kartesischen Koordinatensystem mit 3 eingetragenen Punkten in Koordinatenschreibweise (Quelle: @bolino)](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/CartesianPlane.svg/3840px-CartesianPlane.svg.png)
+![Abbildung 02-01: Ausschnitt aus einem zweidimensionalen kartesischen Koordinatensystem mit 3 eingetragenen Punkten in Koordinatenschreibweise (Quelle: @gisma)](../assets/images/unit01/coord2d.png)
 
 
-![Abbildung 02-2: Allgemeine Abbildung eines dreidimensionales kartesischen Koordinatensystem mit euklidischen Ebenen durch den Ursprungspunkt (Quelle:  @sakurambo)](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/3D_coordinate_system.svg/1280px-3D_coordinate_system.svg.png){width="50%" height="50%"}
+![Abbildung 02-2: Allgemeine Abbildung eines dreidimensionales kartesischen Koordinatensystem mit euklidischen Ebenen durch den Ursprungspunkt (Quelle:  @gisma)](../assets/images/unit01/coord3d.png)
+
 
 ## Die Raumrichtungen 
 
@@ -38,7 +39,7 @@ Wird ein Geoobjekt durch einen Punkt repräsentiert, so genügt ein Punkt (x, y,
 * 2D Geoobjekte: Flächen; definieren eine geschlossene Linie (Sportplatz, Stadtgebiet, Einzugsgebiet)
 * 3D Geoobjekte: Körper; werden z.B. als Volumenkörper (Festkörper) oder als Grenzflächenkörper (Polyeder) definiert (Grundwasserkörper, Atmosphäre).
 
-![Abbildung 02-03: Dimensionalität von Geoobjekten (verändert nach @bartelme2006](https://farm8.staticflickr.com/7087/13970512442_289d700fb6.jpg)
+![Abbildung 02-03: Dimensionalität von Geoobjekten (verändert nach @bartelme2006](../assets/images/unit01/dimensions.png)
 
 Neben den räumlichen Merkmalen sind Geoobjekte durch weitere Eigenschaften charakterisiert (z.B. kann einem Fluss ein Name zugeordnet sein, einer Stadt die Einwohnerzahl usw.). Diese Eigenschaften eines Geoobjekts, die nicht die räumliche Geometrie betreffen, werden als Attribute bezeichnet und bilden die thematische Dimension. Die zeitliche Veränderung von Geoobjekten oder Systemen wird in der Regel als vierte Dimension bezeichnet.
 

@@ -144,16 +144,16 @@ background-size: cover;
 <link rel="stylesheet" href="../css/styles.css">
 <meta property="og:title" content="Die Vermessung der Welt - Geographische Koordinaten und Projektionen – Grundlagenkurs GI-S (QGIS)">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://gisma-courses.github.io/gc-geoinfo/images/halbachsenellipsoid.png">
+<meta property="og:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit01/kugel.koord.png">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
-<meta property="og:image:height" content="439">
-<meta property="og:image:width" content="822">
+<meta property="og:image:height" content="1254">
+<meta property="og:image:width" content="1254">
 <meta name="twitter:title" content="Die Vermessung der Welt - Geographische Koordinaten und Projektionen – Grundlagenkurs GI-S (QGIS)">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://gisma-courses.github.io/gc-geoinfo/images/halbachsenellipsoid.png">
+<meta name="twitter:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit01/kugel.koord.png">
 <meta name="twitter:creator" content="@gisma">
-<meta name="twitter:image-height" content="439">
-<meta name="twitter:image-width" content="822">
+<meta name="twitter:image-height" content="1254">
+<meta name="twitter:image-width" content="1254">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -723,10 +723,12 @@ background-size: cover;
   <li><a href="#ellipsoide-und-bezugssysteme" id="toc-ellipsoide-und-bezugssysteme" class="nav-link" data-scroll-target="#ellipsoide-und-bezugssysteme">Ellipsoide und Bezugssysteme</a></li>
   <li><a href="#das-geodätische-datum" id="toc-das-geodätische-datum" class="nav-link" data-scroll-target="#das-geodätische-datum">Das geodätische Datum</a>
   <ul class="collapse">
-  <li><a href="#das-geodätische-system" id="toc-das-geodätische-system" class="nav-link" data-scroll-target="#das-geodätische-system">Das geodätische System</a></li>
+  <li><a href="#vom-geodätischen-datum-zum-geodätischen-referenzsystem" id="toc-vom-geodätischen-datum-zum-geodätischen-referenzsystem" class="nav-link" data-scroll-target="#vom-geodätischen-datum-zum-geodätischen-referenzsystem">Vom geodätischen Datum zum geodätischen Referenzsystem</a></li>
+  <li><a href="#übergang-zu-kartenprojektionen" id="toc-übergang-zu-kartenprojektionen" class="nav-link" data-scroll-target="#übergang-zu-kartenprojektionen">Übergang zu Kartenprojektionen</a></li>
   </ul></li>
   <li><a href="#kartenprojektionen-in-gi-systemen" id="toc-kartenprojektionen-in-gi-systemen" class="nav-link" data-scroll-target="#kartenprojektionen-in-gi-systemen">Kartenprojektionen in GI-Systemen</a>
   <ul class="collapse">
+  <li><a href="#warum-das-in-qgis-wichtig-ist" id="toc-warum-das-in-qgis-wichtig-ist" class="nav-link" data-scroll-target="#warum-das-in-qgis-wichtig-ist">Warum das in QGIS wichtig ist</a></li>
   <li><a href="#übung" id="toc-übung" class="nav-link" data-scroll-target="#übung">Übung</a></li>
   </ul></li>
   </ul>
@@ -755,25 +757,19 @@ background-size: cover;
 <p>Die Erde ist in erster Näherung eine Kugel. Daher ist es naheliegend, Punkte auf der Oberfläche durch Kugelkoordinaten zu definieren. Da die Oberfläche einer Kugel bekannt ist, genügen zur Bestimmung eines Punktes die beiden Winkel für den Azimut (geographische Länge) Lambda und den Zenit (geographische Breite) Phi (Abb. 03-07).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Kugelkoord-def.svg/1280px-Kugelkoord-def.svg.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Abbildung 03-07: Das Konzept der Kugelkoordinaten, <span class="citation" data-cites="ag2">Ag2gaeh (<a href="#ref-ag2" role="doc-biblioref">2015</a>)</span></figcaption>
+<p><img src="../assets/images/unit01/kugel.koord.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 03-07: Das Konzept der Kugelkoordinaten, <span class="citation" data-cites="gisma">Reudenbach (<a href="#ref-gisma" role="doc-biblioref">2025-2026</a>)</span></figcaption>
 </figure>
 </div>
 <p>Überträgt man das Konzept der Kugelkoordinaten auf die Erde, so ergeben sich eine Reihe von Problemen. Das augenfälligste ist die Abplattung der Erde an den Polen, die durch die Erdrotation verursacht wird. Für die Längenbestimmung ist die Tatsache, dass die Erde ein Rotationsellipsoid mit großen und kleinen Halbachsen ist, unerheblich. Anders verhält es sich bei der Bestimmung der geographischen Breite, da sich die Halbachsen der Erde um ca. 21,4 km unterscheiden (Abb. 03-08).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/halbachsenellipsoid.png" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-07: Darstellung eines Rotationsellipsoid, <span class="citation" data-cites="gisma">GIS (<a href="#ref-gisma" role="doc-biblioref">2011</a>)</span> verändert nach <span class="citation" data-cites="augpi">AugPi (<a href="#ref-augpi" role="doc-biblioref">2004</a>)</span></figcaption>
+<figcaption>Abbildung 03-07: Darstellung eines Rotationsellipsoid, <span class="citation" data-cites="gisma">Reudenbach (<a href="#ref-gisma" role="doc-biblioref">2025-2026</a>)</span> verändert nach <span class="citation" data-cites="augpi">AugPi (<a href="#ref-augpi" role="doc-biblioref">2004</a>)</span></figcaption>
 </figure>
 </div>
 <p>Die Abbildung zeigt das Rotationsellipsoid der Erde mit kreisförmigen Breitenkreisen (in der Äquatorebene Radius der großen Halbachse) und Längenkreisen (kleine Halbachse an den Polen). Das daraus resultierende Maß für die Exzentrizität von ca. 1:298 gibt die Abplattung der Erde und damit die Streckenverschiebung bei der Bestimmung der sphärischen Koordinaten an. Das zentrale Problem der exakten Bestimmung der Erdoberfläche (im Sinne einer homogenen Oberfläche für die Berechnung der sphärischen Koordinaten) liegt nun in der Entscheidung, welche mathematische Darstellung eines Ellipsoids als geeignetes Modell für das reale Rotationsellipsoid der Erde verwendet wird.</p>
-<p>Da es sich immer nur um eine Annäherung an die ideale Erdform bezogen auf ein bestimmtes Erdgebiet handelt, ist die Eignung des gewählten Ellipsoids als Referenz (Bezugsellipsoid) für die Berechnung der Vermessungsnetze (Koordinatensysteme) und der daraus abgeleiteten Projektionssysteme von entscheidender Bedeutung (Abb. 03-09).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Geographic_coordinates_sphere.png" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-09: Die Bestimmung geographischer Koordinaten auf einem Rotationsellipsoid, <span class="citation" data-cites="enix">E^(nix) (<a href="#ref-enix" role="doc-biblioref">2006</a>)</span></figcaption>
-</figure>
-</div>
+<p>Da es sich immer nur um eine Annäherung an die ideale Erdform bezogen auf ein bestimmtes Erdgebiet handelt, ist die Eignung des gewählten Ellipsoids als Referenz (Bezugsellipsoid) für die Berechnung der Vermessungsnetze (Koordinatensysteme) und der daraus abgeleiteten Projektionssysteme von entscheidender Bedeutung</p>
 </section>
 <section id="ellipsoide-und-bezugssysteme" class="level1">
 <h1>Ellipsoide und Bezugssysteme</h1>
@@ -781,88 +777,176 @@ background-size: cover;
 </section>
 <section id="das-geodätische-datum" class="level1">
 <h1>Das geodätische Datum</h1>
-<p>Für kleinräumige Betrachtungen ist die Genauigkeit einer auf ein Referenzellipsoid bezogenen Koordinatenbestimmung völlig ausreichend. Interessanterweise wurde erst mit der Entwicklung der Interkontinentalraketen in der ersten Hälfte des 20. Jahrhunderts eine neue Genauigkeitsdimension für die praktische Anwendung angestrebt. In der Anwendung ist eine senkrechte Projektion auf das Ellipsoid nicht möglich. Die Senkrechtprojektion auf das auf Meereshöhe angenäherte Ellipsoid weicht um die sogenannte Lotabweichung von der wahren Senkrechten ab, wie sie durch das Gravitationslot dargestellt wird. Bei Messungen, die genauer als etwa 0,5 m/1000 m sein sollen (z.B. zur Berechnung der Ballistik von Interkontinentalraketen oder der Kontinentaldrift…), muss dieser Effekt berücksichtigt und die Messung korrigiert werden (Abb. 03-10).</p>
+<p>Für kleinräumige Betrachtungen reicht es meist aus, Positionen auf ein Referenzellipsoid zu beziehen. Das Referenzellipsoid ist ein mathematisch geglättetes Erdmodell. Es beschreibt die Erde nicht in allen lokalen Schwere- und Höhenunterschieden, ist aber als Bezugsfläche für Koordinaten und Kartenprojektionen gut handhabbar.</p>
+<p>Zu einem Ellipsoid gehört an jedem Punkt eine gedachte Senkrechte auf diese Bezugsfläche. Diese Senkrechte heißt <strong>Ellipsoidnormale</strong>. Sie ist die geometrisch definierte Normalrichtung des Referenzellipsoids und damit eine rein mathematische Richtung.</p>
+<p>In der realen Erde fällt diese geometrische Senkrechte jedoch nicht immer mit der physikalischen Lotrichtung zusammen. Die tatsächliche Lotrichtung folgt dem lokalen Schwerefeld der Erde. Sie zeigt also in die Richtung, in der ein Lot unter dem Einfluss der Schwerkraft ausgerichtet wäre. Der Winkel zwischen der Ellipsoidnormalen und dieser wahren Lotrichtung heißt <strong>Lotabweichung</strong>.</p>
+<p>Die Lotabweichung entsteht, weil die Masseverteilung der Erde räumlich ungleichmäßig ist. Gebirge, Tiefseegräben, Dichteunterschiede im Erdinneren und regionale Schwereanomalien beeinflussen die Richtung der Schwerkraft. Für einfache Karten und kleinräumige Anwendungen ist dieser Effekt meist vernachlässigbar. Für sehr genaue Vermessung, Satellitengeodäsie, Navigation oder geodynamische Fragestellungen muss er berücksichtigt werden.</p>
+<p>Die physikalische Bezugsfläche des Erdschwerefeldes ist das <strong>Geoid</strong>. Es kann vereinfacht als die Fläche verstanden werden, auf der das Schwerepotential der Erde konstant ist und die ungefähr dem mittleren Meeresspiegel entspricht. Das Geoid folgt also dem Schwerefeld der Erde, während das Referenzellipsoid eine mathematisch geglättete Bezugsfläche ist.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://farm3.staticflickr.com/2919/14004801373_57decb7d14_o.png" class="img-fluid figure-img"></p>
-<figcaption>Abb. 03-10: Differenz zwischen wahrer Lotrichtung und Ellipsoidnormale (=Lotabweichung) der zugehörigen Bezugskörper des Ellipsoids und Geoids, <span class="citation" data-cites="gisma">GIS (<a href="#ref-gisma" role="doc-biblioref">2011</a>)</span></figcaption>
+<p><img src="../assets/images/unit01/geodesy_overview_geoid_and_ellipsoid_dynamics.png" class="img-fluid figure-img"></p>
+<figcaption>Abb. 03-10: Geoid, Referenzellipsoid und vereinfachte Erdfigur. Oben: Die Ellipsoidnormale steht senkrecht auf dem Referenzellipsoid. Die wahre Lotlinie folgt dagegen dem lokalen Schwerefeld. Der Winkel zwischen beiden Richtungen heißt Lotabweichung. Unten links: Schwerevariationen am Äquator führen zu Abweichungen zwischen idealisierter Referenzfläche und tatsächlicher Schwerefläche. Unten rechts: Die sogenannte Birnenform veranschaulicht stark vereinfacht, dass die reale Erdfigur vom glatten Ellipsoid abweicht. <span class="citation" data-cites="gisma">Reudenbach (<a href="#ref-gisma" role="doc-biblioref">2025-2026</a>)</span></figcaption>
 </figure>
 </div>
-<p>Das Bezugsmodell für die räumlich (und auch zeitlich) variierende Erdschwere ist das sogenannte Geoid. Die Abbildung des Erdschwerefeldes visualisiert diese Schwereanomalien stark überhöht und farblich hervorgehoben.</p>
+<p>Das Geoid ist keine sichtbare Geländeoberfläche und auch keine realistische Form der Erde. Es ist eine Bezugsfläche des Schwerefeldes. Häufig wird es stark überhöht dargestellt, um die Abweichungen vom mathematisch geglätteten Erdmodell sichtbar zu machen. Die bekannte Darstellung als „Potsdamer Kartoffel“ zeigt daher nicht die tatsächliche Erdform, sondern visualisiert Geoidundulationen und Schwereanomalien.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Modell.Potsdamer.Kartoffel.jpg" class="img-fluid figure-img" style="width:35.0%"></p>
-<figcaption>Abb. 03-11: Stark überhöhte Visualisierung des Erdschwerefelds (Geoid). Das “Potsdamer Kartoffel” Schweremodell EIGEN-6C, <span class="citation" data-cites="bautsch">Bautsch (<a href="#ref-bautsch" role="doc-biblioref">2017</a>)</span></figcaption>
+<figcaption>Abb. 03-11: Stark überhöhte Visualisierung des Erdschwerefeldes als „Potsdamer Kartoffel“. Dargestellt sind Geoidundulationen beziehungsweise Schwereanomalien gegenüber einem geglätteten Erdmodell; die Form ist nicht maßstäblich als reale Erdgestalt zu verstehen. Modell: EIGEN-6C, <span class="citation" data-cites="bautsch">Bautsch (<a href="#ref-bautsch" role="doc-biblioref">2017</a>)</span>.</figcaption>
 </figure>
 </div>
-<p>Für genaue Messungen oder möglichst genaue Kartenprojektionen müssen beide Bezugskörper, das Ellipsoid und das Geoid, berücksichtigt werden. Die Abbildung der Schwerevariation und eine weitere Alternative zeigen die konzeptionellen Probleme bei der Berücksichtigung von Geoid und Referenzellipsoid für eine exakte Koordinatenberechnung. In der klassischen Vermessungstechnik wird dazu ein Referenzpunkt (Fundamentalpunkt) möglichst im Zentrum des abzubildenden Erdausschnitts festgelegt, der zusammen mit dem Referenzellipsoid das sogenannte geodätische Datum ergibt.</p>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Für genaue Koordinatenbestimmung müssen daher zwei Ebenen unterschieden werden. Das <strong>Ellipsoid</strong> liefert die mathematische Bezugsfläche für Lagekoordinaten und Kartenprojektionen. Das <strong>Geoid</strong> beschreibt die physikalische Höhen- und Schwerereferenz. Beide Bezugskörper sind nicht identisch. Genau aus dieser Differenz entstehen Korrekturen, die in der höheren Geodäsie, bei präziser Vermessung, Satellitengeodäsie, Navigation oder geodynamischen Fragestellungen berücksichtigt werden müssen.</p>
+<p>In der klassischen Vermessung wurde ein Referenzellipsoid häufig so gelagert, dass es für ein bestimmtes Gebiet möglichst gut zur realen Erdfigur passte. Dazu wurde ein <strong>Fundamentalpunkt</strong> festgelegt. Dieser Punkt definiert, wie das Ellipsoid relativ zur Erde positioniert und orientiert wird. Die Kombination aus Referenzellipsoid, Lagerung und Fundamentalpunkt bildet das <strong>geodätische Datum</strong>.</p>
+<p>Ein geodätisches Datum ist damit nicht einfach „ein Koordinatensystem“. Es legt fest, auf welchen Bezugskörper sich Koordinaten beziehen und wie dieser Bezugskörper zur realen Erde gelagert ist. Erst dadurch werden Koordinaten eindeutig interpretierbar.</p>
+<section id="vom-geodätischen-datum-zum-geodätischen-referenzsystem" class="level2">
+<h2 class="anchored" data-anchor-id="vom-geodätischen-datum-zum-geodätischen-referenzsystem">Vom geodätischen Datum zum geodätischen Referenzsystem</h2>
+<p>Ein geodätisches Datum legt fest, wie ein Referenzellipsoid zur realen Erde gelagert ist. Historisch wurden solche Datums häufig regional optimiert. Das Ellipsoid wurde also so verschoben und orientiert, dass es in einem bestimmten Gebiet möglichst gut zur dort relevanten Erdfigur passte. Dadurch konnten lokale und regionale Vermessungen sehr genau sein, auch wenn das Ellipsoid global nicht optimal zur gesamten Erde passte.</p>
+<p>Mit satellitengestützter Vermessung änderte sich diese Logik. Globale Navigations- und Vermessungssysteme benötigen keinen regional eingepassten Bezugskörper, sondern ein weltweit einheitliches Bezugssystem. Deshalb spricht man heute häufig nicht nur von einem geodätischen Datum, sondern von einem <strong>geodätischen Referenzsystem</strong>.</p>
+<p>Das bekannteste Beispiel ist <strong>WGS 84</strong>. Es ist ein globales geodätisches Bezugssystem und bildet die Grundlage vieler GPS-Positionsangaben. Im Unterschied zu älteren regionalen Datums ist WGS 84 global konstruiert: Das Referenzellipsoid ist so gewählt und gelagert, dass es die Erde insgesamt möglichst gut annähert.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="http://upload.wikimedia.org/wikipedia/commons/4/41/Geoundaequrp.png" class="img-fluid figure-img"></p>
-<figcaption>Abb. 03-12: Veranschaulichung der Schwerevariation entlang des Äquators bezogen auf eine kreisförmige Referenzfläche (schwarz), <span class="citation" data-cites="dantora">Dantor (<a href="#ref-dantora" role="doc-biblioref">2006</a>)</span></figcaption>
+<p><img src="../assets/images/unit01/refrenzelispoid-geoid.png" class="img-fluid figure-img"></p>
+<figcaption>Abb. 03-14: Schematischer Unterschied zwischen globalem und regionalem Referenzellipsoid. Ein global angepasstes Ellipsoid nähert die gesamte Erde möglichst gut an. Ein regionales Ellipsoid kann dagegen verschoben und orientiert werden, sodass es in einem bestimmten Gebiet besser passt. Genau diese Lagerung des Ellipsoids ist ein zentraler Bestandteil eines geodätischen Datums.@gisma</figcaption>
 </figure>
 </div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="http://upload.wikimedia.org/wikipedia/commons/7/78/Geoundnsrp.png" class="img-fluid figure-img"></p>
-<figcaption>Abb. 03-13: Birnenform als Näherung der Erdfigur im Vergleich zum elliptischen Querschnitt (schwarze Linie), <span class="citation" data-cites="dantorb">(<a href="#ref-dantorb" role="doc-biblioref"><strong>dantorb?</strong></a>)</span></figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<section id="das-geodätische-system" class="level2">
-<h2 class="anchored" data-anchor-id="das-geodätische-system">Das geodätische System</h2>
-<p>Seit der satellitengestützten Vermessung mit Global Positioning Systems (GPS) liegen viele, von der realen Erdfigur unabhängige Messungen vor, so dass man nicht mehr vom geodätischen Datum, sondern vom geodätischen System spricht.</p>
-<p>Das World Geodetic System 1984 (WGS 84) ist heute das am weitesten verbreitete geodätische Bezugssystem und dient als einheitliche Grundlage für Positionsangaben auf der Erde und im erdnahen Weltraum. Geodätische Systeme sind im Gegensatz zum geodätischen Datum global konstruiert und bestehen aus dem Referenzellipsoid, dem eingemessenen Geoid, und zwölf Fundamentalstationen, über die der Bezug zur Erdkruste durch zeitabhängige Koordinaten bestimmt wird.</p>
-<p>Betrachten Sie die Abbildung zu den Referenzellipsoiden. Sie zeigt schematisch (zweidimensional) die Verschiebungen der Referenzellipsoide gegenüber dem Geoid, also der wahren Erdoberfläche. Die Sterne markieren das Zentrum des jeweiligen Körpers. Versuchen Sie herauszufinden, welche Parameter notwendig sind, um diese Verschiebung zu erreichen.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Gloabl_and_Regional_Ellipsoids.svg" class="img-fluid figure-img"></p>
-<figcaption>Abb. 03-14: Verschiebungen von Referenzellipsoiden bezogen auf das Geoid/wahre Erdoberfläche, <span class="citation" data-cites="inductive">Inductiveload (<a href="#ref-inductive" role="doc-biblioref">2008</a>)</span></figcaption>
-</figure>
-</div>
+<p>Die Abbildung zeigt den Kern des Problems: Es reicht nicht, nur die Form des Ellipsoids zu kennen. Entscheidend ist auch, <strong>wo</strong> dieses Ellipsoid relativ zur Erde liegt und <strong>wie</strong> es orientiert ist. Für die Umrechnung zwischen unterschiedlichen Bezugssystemen werden Transformationsparameter benötigt. Dazu gehören Verschiebungen entlang der Raumachsen, Rotationen und gegebenenfalls ein Maßstabsfaktor.</p>
+<p>In der Praxis bedeutet das: Zwei Koordinaten können numerisch ähnlich aussehen, aber auf unterschiedlichen Bezugssystemen beruhen. Dann bezeichnen sie nicht zwingend exakt denselben Ort. Deshalb ist bei Geodaten nicht nur die Projektion wichtig, sondern auch das zugrunde liegende geodätische Datum beziehungsweise Referenzsystem.</p>
+</section>
+<section id="übergang-zu-kartenprojektionen" class="level2">
+<h2 class="anchored" data-anchor-id="übergang-zu-kartenprojektionen">Übergang zu Kartenprojektionen</h2>
+<p>Erst wenn der geodätische Bezug geklärt ist, kann sinnvoll projiziert werden. Das geodätische Datum oder Referenzsystem beantwortet die Frage, <strong>auf welchen Bezugskörper sich Koordinaten beziehen</strong>. Die Kartenprojektion beantwortet dagegen eine andere Frage: <strong>Wie wird die gekrümmte Bezugsfläche in eine ebene Karte übertragen?</strong></p>
+<p>Damit sind Datum und Projektion zwei verschiedene Ebenen derselben Georeferenzierung. Das Datum legt den räumlichen Bezug zur Erde fest. Die Projektion legt fest, wie dieser Bezug in einem ebenen Koordinatensystem dargestellt und berechnet wird.</p>
 </section>
 </section>
 <section id="kartenprojektionen-in-gi-systemen" class="level1">
 <h1>Kartenprojektionen in GI-Systemen</h1>
-<p>Die geographischen Längen- und Breitengrade referenzieren jeden Punkt auf der Erdoberfläche mit hoher, skalierbarer Genauigkeit. Sie beziehen sich auf die wohldefinierte, dreidimensionale, idealisierte Oberfläche der Erde. Diese Figur der Erde verwendet bekannte und durch Konvention festgelegte Referenzpunkte: das Royal Observatory in Greenwich für den Referenzmeridian, den Erdmittelpunkt und die Halbachsen des Referenzellipsoids der Erde als Annäherung an ihre wahre Form.</p>
-<p>Mit Hilfe dieser Parameter ist eine hinreichend genaue Lokalisierung aller Geoobjekte möglich. Gleiches gilt für die Analyse und Berechnung ihrer geometrischen Beziehungen. Historisch wurden diese Aufgaben nicht auf einem Sphäroid, sondern auf zweidimensionalen Karten als projiziertes Abbild der Erde durchgeführt. Auch heute noch besteht für sehr viele Anwendungen und Daten die Notwendigkeit, eine nivellierte zweidimensionale Projektion der Erdoberfläche zu verwenden. Daher sind</p>
+<p>Geographische Längen- und Breitengrade beschreiben Positionen auf einer gekrümmten Bezugsfläche der Erde. Diese Bezugsfläche ist je nach Modell eine Kugel oder genauer ein Referenzellipsoid. Die Lage eines Punktes wird dabei nicht durch ebene x- und y-Werte angegeben, sondern durch Winkel: geographische Länge und geographische Breite.</p>
+<p>Für viele Anwendungen in GI-Systemen reicht diese Form der Positionsangabe allein nicht aus. Analysen, Kartenlayouts, Rasterdaten, Luftbilder, Satellitenbilder und viele Distanz- oder Flächenberechnungen arbeiten in einer zweidimensionalen Ebene. Deshalb müssen geographische Koordinaten häufig in ein ebenes kartesisches Koordinatensystem übertragen werden.</p>
+<p>Eine <strong>Kartenprojektion</strong> ist das mathematische Verfahren, mit dem Positionen von der gekrümmten Erdoberfläche auf eine ebene Karte übertragen werden. Vereinfacht geschieht dies in zwei Schritten:</p>
+<ol type="1">
+<li>Auswahl eines geeigneten geodätischen Bezugsmodells, also Datum beziehungsweise Referenzsystem und Ellipsoid.</li>
+<li>Transformation der geographischen Koordinaten in ebene Koordinaten, zum Beispiel Rechtswert und Hochwert.</li>
+</ol>
+<p>Im ebenen Koordinatensystem wird ein Punkt durch x- und y-Koordinaten lokalisiert. In der amtlichen Vermessung und in vielen GI-Systemen spricht man häufig von <strong>Rechtswert</strong> und <strong>Hochwert</strong>. Erst dadurch lassen sich viele Operationen praktisch durchführen, etwa Distanzmessungen, Flächenberechnungen, Rasteranalysen oder kartographische Darstellungen.</p>
+<p>Kartenprojektionen sind immer mit Verzerrungen verbunden. Es gibt keine verzerrungsfreie Übertragung der gekrümmten Erdoberfläche in eine zweidimensionale Karte. Je nach Projektion werden bestimmte Eigenschaften erhalten und andere verzerrt.</p>
+<p>Wichtige Abbildungseigenschaften sind:</p>
 <ul>
-<li>alle Ein- und Ausgangskarten zweidimensional</li>
-<li>alle Rasterdatensätze (Satellitendaten, Luftbilder) zweidimensional, da sich quadratische Raster nicht verzerrungsfrei und ohne Überlappungen oder Lücken auf eine Kugel auftragen lassen.</li>
+<li><strong>längentreu</strong>: bestimmte Entfernungen werden maßstäblich richtig dargestellt,</li>
+<li><strong>flächentreu</strong>: Flächeninhalte bleiben im Maßstab erhalten,</li>
+<li><strong>winkeltreu</strong>: Winkel und lokale Formen werden korrekt dargestellt,</li>
+<li><strong>vermittelnd</strong>: Kompromiss zwischen mehreren Verzerrungseigenschaften.</li>
 </ul>
-<p>Die Kartenprojektion ist nun ein mathematisches Verfahren, mit dem die gekrümmte Oberfläche der dreidimensionalen Erde auf die ebene, zweidimensionale Karte übertragen wird. Dies geschieht in zwei Schritten:</p>
-<ul>
-<li>Auswahl eines geeigneten Referenzmodells für die Kugelform der Erde</li>
-<li>Transformation der geographischen Koordinaten (Länge und Breite) in ein kartesisches Koordinatensystem (x und y bzw. Rechtswert und Hochwert).</li>
-</ul>
-<p>Im euklidischen Raum wird durch die Bestimmung der x,y-Koordinate ein Punkt in der Ebene (=zweidimensional) lokalisiert. Obwohl der dreidimensionale euklidische Raum auch die durch geographische Winkel bestimmten Positionen abbilden kann, ist aus den oben genannten Gründen die Projektion von sphärischen Koordinaten in ein zweidimensionales kartesisches Bezugssystem üblich und meist auch sinnvoll.</p>
-<p>Kartenprojektionen können somit als Transformation von sphärischen Koordinaten der geographischen Länge und Breite in kartesische Koordinaten y,x (Hochwert, Rechtswert) verstanden werden.</p>
-<p>Da es sich bei allen Transformationen um sphärische Trigonometrie handelt und Geodatensätze auf beliebig unterschiedlichen Referenzellipsoiden und/oder geodätischen Systemen basieren (können), ist es für die Arbeit mit GI-Systemen unerlässlich, diese Parameter und ihre Eigenschaften zu kennen und interpretieren zu können.</p>
-<p>Kartenprojektionen werden üblicherweise nach der Projektionsfläche, der Lage der Projektionsfläche oder den Abbildungseigenschaften klassifiziert. Da es in GI-Systemen vor allem auf Genauigkeit und Qualität ankommt, ist die Klassifizierung nach den Abbildungseigenschaften von besonderer Bedeutung. Projektionen müssen die abgebildeten Flächen der Erdoberfläche verzerren. Es gibt keine 1:1 Projektion von Orten und Flächen aus einem dreidimensionalen Bezugssystem auf eine zweidimensionale Karte:</p>
-<ul>
-<li>Längentreue Projektion (engl.: equidistance): Maßstabsgetreue Entfernungen auf der Karte</li>
-<li>flächentreue Projektion (engl.: equal area): maßstabsgetreue Flächeninhalte auf der Karte</li>
-<li>Winkeltreue Projektion (engl.: conformity): Genaue Darstellung von Winkeln auf der Karte</li>
-<li>vermittelnde Projektion: Kompromiss zwischen Längentreue, Flächentreue oder Winkeltreue</li>
-</ul>
-<p>Die daraus resultierenden Qualitätseinbußen müssen je nach Zielsetzung und Fragestellung die Kriterien für die Auswahl eines geeigneten Projektionsverfahrens bestimmen. Da alle drei Kriterien nicht erfüllbar sind (außer auf einem maßstäblich verkleinerten exakten dreidimensionalen Abbild der Erde), wurden verschiedene Projektionsverfahren und Referenzkörper entwickelt, um diese Fehler zu minimieren.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit01/map_projections_and_distortion_explained.png" class="img-fluid figure-img"></p>
+<figcaption>Abb. 03-15: Kartenprojektionen übertragen geographische Koordinaten von einer gekrümmten Bezugsfläche wie Kugel oder Referenzellipsoid in ein ebenes kartesisches Koordinatensystem. Dabei entstehen unvermeidbare Verzerrungen. Je nach Projektion können bestimmte Eigenschaften bevorzugt erhalten bleiben, etwa Winkel, Flächen oder ausgewählte Längen; alle Eigenschaften können jedoch nicht gleichzeitig weltweit unverzerrt dargestellt werden.</figcaption>
+</figure>
+</div>
+<p>Keine Projektion kann gleichzeitig überall längentreu, flächentreu und winkeltreu sein. Deshalb hängt die Wahl der Projektion immer von der Fragestellung ab. Für Flächenvergleiche ist eine flächentreue Projektion sinnvoll. Für Navigation oder lokale Richtungen kann Winkeltreue entscheidend sein. Für kleinräumige Analysen wird häufig eine Projektion gewählt, die im Untersuchungsgebiet möglichst geringe Verzerrungen erzeugt.</p>
 <div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Die Wahl der Projektion hängt von den Zielen ab, die mit der Darstellung der Daten verfolgt werden. Sollen mit den Daten räumliche Analysen durchgeführt werden, muss eine geeignete geodätische Projektion gewählt werden.</p>
+<p>Die Wahl der Projektion hängt vom Ziel der Analyse ab. Für räumliche Analysen muss eine Projektion gewählt werden, deren Verzerrungen zur Fragestellung passen. Es reicht nicht, dass die Karte „richtig aussieht“.</p>
 </div>
 </div>
 </div>
+<section id="warum-das-in-qgis-wichtig-ist" class="level2">
+<h2 class="anchored" data-anchor-id="warum-das-in-qgis-wichtig-ist">Warum das in QGIS wichtig ist</h2>
+<p>In QGIS treffen häufig Daten aus unterschiedlichen Quellen aufeinander. Diese Daten können auf unterschiedlichen geodätischen Bezugssystemen beruhen und zusätzlich in unterschiedlichen Projektionen gespeichert sein. QGIS kann solche Layer oft trotzdem gemeinsam anzeigen. Diese gemeinsame Anzeige bedeutet aber nicht automatisch, dass Messungen, Flächenberechnungen oder Rasteranalysen fachlich korrekt sind.</p>
+<p>Der vorherige Abschnitt hat gezeigt: Koordinaten beziehen sich nie einfach auf „die Erde an sich“. Sie beziehen sich auf ein festgelegtes Referenzellipsoid. Dieses Ellipsoid ist eine mathematisch vereinfachte Erdform. Ein geodätisches Datum beziehungsweise Referenzsystem legt fest, welches Ellipsoid verwendet wird und wie es relativ zur realen Erde positioniert und ausgerichtet ist. Die Begriffe lassen sich daher als Kette lesen:</p>
+<blockquote class="blockquote">
+<p>reale Erde → geodätisches Bezugssystem / Datum → Referenzellipsoid → Projektion → ebene Kartenkoordinaten</p>
+</blockquote>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Schritt</th>
+<th>Was wird festgelegt?</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Referenzellipsoid</td>
+<td>vereinfachte mathematische Erdform, auf der Länge und Breite berechnet werden können</td>
+<td>WGS84-Ellipsoid, GRS80</td>
+</tr>
+<tr class="even">
+<td>geodätisches Datum / Referenzsystem</td>
+<td>welches Referenzellipsoid für die Koordinaten verwendet wird und wie es zur realen Erde ausgerichtet ist</td>
+<td>WGS 84, ETRS89</td>
+</tr>
+<tr class="odd">
+<td>Projektion</td>
+<td>wie die gekrümmte Ellipsoidfläche in eine ebene Karte übertragen wird</td>
+<td>UTM, Gauß-Krüger, Lambert</td>
+</tr>
+<tr class="even">
+<td>ebene Kartenkoordinaten</td>
+<td>wie Punkte in der Karte als x/y-Werte angegeben werden</td>
+<td>Rechtswert / Hochwert</td>
+</tr>
+</tbody>
+</table>
+<p>Beispiel:</p>
+<pre class="text"><code>ETRS89 / UTM Zone 32N
+= Referenzsystem: ETRS89
++ Ellipsoid: GRS80
++ Projektion: UTM Zone 32N
++ Koordinaten: Rechtswert / Hochwert in Metern</code></pre>
+<p>Dagegen liegen viele GPS-Daten zunächst als geographische Koordinaten vor:</p>
+<pre class="text"><code>WGS 84
+= geodätisches Referenzsystem: WGS 84
++ Referenzellipsoid: WGS84-Ellipsoid
++ Koordinatenform: geographische Länge / Breite
++ Einheit: Grad
++ keine ebene Kartenprojektion</code></pre>
+<p>Das bedeutet: Ein GPS-Punkt (Marburg) mit den Werten <code>50.81, 8.77</code> ist keine Position in Metern auf einer Karte. Die Werte sind Winkelangaben auf dem WGS84-Ellipsoid: Breite und Länge in Grad. Für eine reine Positionsangabe reicht das aus. Für viele GIS-Operationen wie Flächenberechnung, Distanzmessung, Rasteranalyse oder lokale Kartendarstellung werden diese Koordinaten aber häufig in ein projiziertes Koordinatensystem umgerechnet.</p>
+<p>Für Marburg wäre ein typischer Arbeitsschritt daher:</p>
+<pre class="text"><code>WGS 84 Länge / Breite in Grad
+→ Umprojektion nach ETRS89 / UTM Zone 32N
+→ Rechtswert / Hochwert in Metern</code></pre>
+<p>Der Unterschied ist also:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 17%">
+<col style="width: 7%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Koordinatenform</th>
+<th style="text-align: right;">Beispielwerte</th>
+<th>Einheit</th>
+<th>Typische Nutzung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>geographische Koordinaten</td>
+<td style="text-align: right;"><code>50.81, 8.77</code></td>
+<td>Grad</td>
+<td>globale Positionsangabe, GPS, Webdaten</td>
+</tr>
+<tr class="even">
+<td>projizierte Koordinaten</td>
+<td style="text-align: right;"><code>477000, 5630000</code></td>
+<td>Meter</td>
+<td>lokale Analyse, Messen, Flächen, Rasterverarbeitung</td>
+</tr>
+</tbody>
+</table>
+<p>Wichtig ist: <code>WGS 84</code> bedeutet zunächst ein geodätisches Referenzsystem. Es kann mit geographischen Koordinaten in Grad verwendet werden. Es kann aber auch in Projektionen eingebunden werden, zum Beispiel Web Mercator. Deshalb sollte man nicht nur auf den Namen des Bezugssystems schauen, sondern prüfen, ob der Layer in <strong>Grad</strong> oder in <strong>Meterkoordinaten</strong> vorliegt.</p>
+</section>
 <section id="übung" class="level2">
 <h2 class="anchored" data-anchor-id="übung">Übung</h2>
 <div class="callout callout-style-simple callout-tip no-icon">
@@ -889,26 +973,14 @@ background-size: cover;
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-ag2" class="csl-entry" role="listitem">
-Ag2gaeh. 2015. <span>„Kugelkoordinaten: Definition“</span>. 2015. <a href="https://de.wikipedia.org/wiki/Datei:Kugelkoord-def.svg">https://de.wikipedia.org/wiki/Datei:Kugelkoord-def.svg</a>.
-</div>
 <div id="ref-augpi" class="csl-entry" role="listitem">
 AugPi. 2004. <span>„Oblate Spheroid“</span>. 2004. <a href="https://upload.wikimedia.org/wikipedia/commons/b/b5/OblateSpheroid.PNG">https://upload.wikimedia.org/wikipedia/commons/b/b5/OblateSpheroid.PNG</a>.
 </div>
 <div id="ref-bautsch" class="csl-entry" role="listitem">
 Bautsch. 2017. <span>„Dreidimensionales Modell der ’Potsdamer Kartoffel’ (2017) mit einer 15000-fach überhöhten Darstellung des Geoids, Deutsches GeoForschungszentrum in Potsdam“</span>. 2017. <a href="https://upload.wikimedia.org/wikipedia/commons/c/c3/Modell.Potsdamer.Kartoffel.jpg">https://upload.wikimedia.org/wikipedia/commons/c/c3/Modell.Potsdamer.Kartoffel.jpg</a>.
 </div>
-<div id="ref-dantora" class="csl-entry" role="listitem">
-Dantor. 2006. <span>„Geoid, indication on deviation from ellipsoid around equator“</span>. 2006. <a href="http://upload.wikimedia.org/wikipedia/commons/4/41/Geoundaequrp.png">http://upload.wikimedia.org/wikipedia/commons/4/41/Geoundaequrp.png</a>.
-</div>
-<div id="ref-enix" class="csl-entry" role="listitem">
-E^(nix). 2006. <span>„Geographic Coordinates on a sphere“</span>. 2006. <a href="https://upload.wikimedia.org/wikipedia/commons/d/d9/Geographic_coordinates_sphere.svg">https://upload.wikimedia.org/wikipedia/commons/d/d9/Geographic_coordinates_sphere.svg</a>.
-</div>
 <div id="ref-gisma" class="csl-entry" role="listitem">
-GIS. 2011. <span>„Eigene Darstellung“</span>. Marburg: GISMA. 2011. <a href="http://minibsc.gis-ma.org/">http://minibsc.gis-ma.org/</a>.
-</div>
-<div id="ref-inductive" class="csl-entry" role="listitem">
-Inductiveload. 2008. <span>„A diagram showing a greatly exaggerated stylised view of a cross section of the Earth (grey). The global best-fit ellipsoid is shown in red. A regional best-fit ellipsoid is shown in back“</span>. 2008. <a href="https://upload.wikimedia.org/wikipedia/commons/b/b2/Gloabl_and_Regional_Ellipsoids.svg">https://upload.wikimedia.org/wikipedia/commons/b/b2/Gloabl_and_Regional_Ellipsoids.svg</a>.
+Reudenbach, C. 2025-2026. University Marburg Dep. of Geography: gisma spatial science ressources. 2025-2026.
 </div>
 <div id="ref-snow" class="csl-entry" role="listitem">
 Snow, John. 1854. <span>„A map taken from a report by Dr. John Snow: p. [97]-120 of the ’Report on the cholera outbreak in the Parish of St. James, Westminster, during the autumn of 1854’, presented to the vestry by the Cholera Inquiry Committee, July 1855“</span>. 1854. <a href="https://w.wiki/QtV">https://w.wiki/QtV</a>.

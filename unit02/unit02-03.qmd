@@ -23,11 +23,11 @@ Wir haben im Reader 01 festgestellt, dass sowohl diskrete Geoobjekte als auch me
 Die Grundlage für die Informationsreduktion bilden so genannte Datenmodelle. Ein Datenmodell entsteht durch die Abstraktion einzelner Objekte (Entitäten) und deren Eigenschaften (Attribute). Dabei werden gleichartige Objekte (z.B. Flüsse, Bundesstraßen, Stadtgebiete) zusammengefasst. Da die Grundlage aller GI-Systeme auf einer räumlichen Darstellung beruht, muss die bereits bekannte [Geographische Abstraktion](../unit01/unit01-02_reader_geo_raum.html) für ein besseres Verständnis der Datenmodellierung etwas umorganisiert und angepasst werden.
 
 
-![Abbildung 02-07: Beispielhafter Ausschnitt der realen Welt und die schematische Repräsentation als Raster- bzw. Vektordatenmodell @gisma](https://farm6.staticflickr.com/5471/13950604266_962c830058.jpg)
+![Abbildung 02-07: Beispielhafter Ausschnitt der realen Welt und die schematische Repräsentation als Raster- bzw. Vektordatenmodell @gisma](../assets/images/unit01/raster-vector-model.png)
 
 Die konkrete digitale bzw. technische Umsetzung ist mit diesem Konzept jedoch nicht geklärt. Die betrachteten Geoobjekte der realen Welt enthalten eine Informationsfülle, die gegen unendlich geht. Dies gilt erst recht für räumliche Kontinua, die je nach Maßstab beliebig komplex sein können. Für die digitale Repräsentation räumlicher Eigenschaften benötigen wir daher eine effiziente und einfache Methode zur Informations- bzw. Datenreduktion.
 
-![Abbildung 02-06: Ausprägung unterschiedlicher Datenmodelle (Raster, Vektor) durch unterschiedliche räumliche Modellierung von Geoobjekten, @gisma](https://farm6.staticflickr.com/5508/13970511292_9ba1e369fa.jpg)
+![Abbildung 02-06: Ausprägung unterschiedlicher Datenmodelle (Raster, Vektor) durch unterschiedliche räumliche Modellierung von Geoobjekten, @gisma]()
 
 Die Abbildung zur Darstellung als Raster- und Vektordatenmodell verdeutlicht diesen zentralen Aspekt der Modellierung raumbezogener Daten. In der GIS-Anwendung haben sich hierfür zwei völlig unterschiedliche Datenmodelle etabliert, die als Rastermodell bzw. Vektordatenmodell bezeichnet werden. Beide Datenmodelle können prinzipiell sowohl zur Abbildung kontinuierlicher Eigenschaften als auch diskreter Geoobjekte verwendet werden. In der Praxis werden jedoch in der Regel kontinuierliche Daten im Rasterdatenmodell und diskrete Daten im Vektordatenmodell abgebildet. Beide Datenmodelle unterscheiden sich hauptsächlich in der Art der räumlichen Darstellung ihrer Merkmale, was auch in der Abbildung deutlich wird. Es ist zu beachten, dass die genannten Datenmodelle nicht nur für die Darstellung von zeitlich konstanten Merkmalsausprägungen, sondern auch für zeitlich veränderliche Merkmale verwendet werden können.
 

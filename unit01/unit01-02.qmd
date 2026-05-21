@@ -36,7 +36,8 @@ Vor diesem Hintergrund erhält der Informationsbegriff eine neue Dimension. Um z
 
 Geographische oder räumliche Darstellungen sind die Grundlage für die wissenschaftliche Interpretation raum-zeitlicher Aspekte der realen Welt. In der Wissenschaft ist es üblich, hierfür als gesichert geltende Regeln (Axiome) zu verwenden. Eines der wohl bekanntesten wurde von Waldo Tobler formuliert: “Alles ist mit allem verbunden, aber nahe Dinge sind mehr verbunden als ferne Dinge” [@tobler1970]. Es wird oft als "erstes geographisches Gesetz" zitiert. Wie sehr es auch andere Auffassungen geben kann, zeigt z.B. Benno Werlen in seinem handlungszentrierten Ansatz, der darauf hinweist, dass nicht nur reale Nachbarschaftsbeziehungen von Objekten oder Merkmalsausprägungen Raumkonstruktionen ermöglichen, sondern dass Räume z.B. auch durch handelnde Menschen, die nicht notwendigerweise in räumlicher Nachbarschaft agieren, sozial konstruiert werden können (vgl. z.B. @werlen1993).
 
-![Abbildung 01-02: Die Interpretation der perzipierten „realen Welt“ sowie die Entwicklung geeigneter Strategien für den praxistauglichen Umgang (=Abstraktion) mit dieser Welt, findet mit dem Hilfsmittel der Modellbildung statt. (@gisma)](https://farm8.staticflickr.com/7425/13911225673_23cd595e1d_n.jpg)
+  ![Abbildung 01-02: Die Interpretation der perzipierten „realen Welt“ sowie die Entwicklung geeigneter Strategien für den praxistauglichen Umgang (=Abstraktion) mit dieser Welt, findet mit dem Hilfsmittel der Modellbildung statt. (@gisma)](../assets/images/unit01/model.png)
+  
 
 
 

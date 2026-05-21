@@ -52,7 +52,7 @@ Aufgrund der Vielzahl von Reduktionsmöglichkeiten bei der Beschreibung der Erde
 - Geoobjekte sind immer Repräsentationen real existierender Objekte, die durch eine Lage im Raum direkt (z.B. durch Koordinaten = Geometrie) oder indirekt (z.B. durch Beziehungen = Topologie) referenzierbar (= lokalisierbar) sind. Sie sind immer formale Kodierungen der Eigenschaften und der zugehörigen Interpretation (= Information) dieser realen Objekte (vgl. Abb. 01-08).
 :::
 
-![Abbildung 01-08: Schematische Strukturierung eines Geoobjekts in räumliche, dynamische und inhaltliche Aspekte (GIS.MA 2009)](../assets/images/unit01/13898323961_21d8beca23_n.png)
+![Abbildung 01-08: Schematische Strukturierung eines Geoobjekts in räumliche, dynamische und inhaltliche Aspekte (GIS.MA 2009)](../assets/images/unit01/geoobjekt-schema.png)
 
 ## Übung
 
