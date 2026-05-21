@@ -774,11 +774,22 @@ window.Quarto = {
   </ul></li>
   <li><a href="#unterstützung" id="toc-unterstützung" class="nav-link" data-scroll-target="#unterstützung">Unterstützung</a>
   <ul class="collapse">
-  <li><a href="#reklassifikation-und-bewertung" id="toc-reklassifikation-und-bewertung" class="nav-link" data-scroll-target="#reklassifikation-und-bewertung">Reklassifikation und Bewertung</a></li>
+  <li><a href="#kriterienbewertung-fachlogik-in-rasterwerte-übersetzen" id="toc-kriterienbewertung-fachlogik-in-rasterwerte-übersetzen" class="nav-link" data-scroll-target="#kriterienbewertung-fachlogik-in-rasterwerte-übersetzen">Kriterienbewertung: Fachlogik in Rasterwerte übersetzen</a></li>
+  <li><a href="#reklassifikation-oder-rasterrechner" id="toc-reklassifikation-oder-rasterrechner" class="nav-link" data-scroll-target="#reklassifikation-oder-rasterrechner">Reklassifikation oder Rasterrechner</a></li>
+  <li><a href="#normalisierung-kontinuierlicher-werte" id="toc-normalisierung-kontinuierlicher-werte" class="nav-link" data-scroll-target="#normalisierung-kontinuierlicher-werte">Normalisierung kontinuierlicher Werte</a></li>
   <li><a href="#gewichtung-im-rasterrechner" id="toc-gewichtung-im-rasterrechner" class="nav-link" data-scroll-target="#gewichtung-im-rasterrechner">Gewichtung im Rasterrechner</a></li>
+  <li><a href="#eignungswerte-und-kostenwerte-nicht-verwechseln" id="toc-eignungswerte-und-kostenwerte-nicht-verwechseln" class="nav-link" data-scroll-target="#eignungswerte-und-kostenwerte-nicht-verwechseln">Eignungswerte und Kostenwerte nicht verwechseln</a></li>
   <li><a href="#start--und-zielpunkte-anlegen" id="toc-start--und-zielpunkte-anlegen" class="nav-link" data-scroll-target="#start--und-zielpunkte-anlegen">Start- und Zielpunkte anlegen</a></li>
   <li><a href="#entfernungs--und-kostenanalyse" id="toc-entfernungs--und-kostenanalyse" class="nav-link" data-scroll-target="#entfernungs--und-kostenanalyse">Entfernungs- und Kostenanalyse</a></li>
-  <li><a href="#weiterführende-hilfen" id="toc-weiterführende-hilfen" class="nav-link" data-scroll-target="#weiterführende-hilfen">Weiterführende Hilfen</a></li>
+  </ul></li>
+  <li><a href="#weiterführende-links" id="toc-weiterführende-links" class="nav-link" data-scroll-target="#weiterführende-links">Weiterführende Links</a></li>
+  <li><a href="#screencasts-zu-aufgabe" id="toc-screencasts-zu-aufgabe" class="nav-link" data-scroll-target="#screencasts-zu-aufgabe">Screencasts zu Aufgabe</a>
+  <ul class="collapse">
+  <li><a href="#corine-problemstellung" id="toc-corine-problemstellung" class="nav-link" data-scroll-target="#corine-problemstellung">Corine-Problemstellung</a></li>
+  <li><a href="#reklassifizierung-von-rasterdaten" id="toc-reklassifizierung-von-rasterdaten" class="nav-link" data-scroll-target="#reklassifizierung-von-rasterdaten">Reklassifizierung von Rasterdaten</a></li>
+  <li><a href="#gewichtete-multikriterienanalyse-alte-wmca-aufnahme" id="toc-gewichtete-multikriterienanalyse-alte-wmca-aufnahme" class="nav-link" data-scroll-target="#gewichtete-multikriterienanalyse-alte-wmca-aufnahme">Gewichtete Multikriterienanalyse: alte WMCA-Aufnahme</a></li>
+  <li><a href="#start--und-zielpunkte-anlegen-1" id="toc-start--und-zielpunkte-anlegen-1" class="nav-link" data-scroll-target="#start--und-zielpunkte-anlegen-1">Start- und Zielpunkte anlegen</a></li>
+  <li><a href="#least-cost-path-ablauf-und-ergebnis" id="toc-least-cost-path-ablauf-und-ergebnis" class="nav-link" data-scroll-target="#least-cost-path-ablauf-und-ergebnis">Least-Cost-Path: Ablauf und Ergebnis</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit09/unit09-04.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
@@ -862,7 +873,7 @@ window.Quarto = {
 <li>Extrahieren Sie alle Waldflächen aus den <a href="https://land.copernicus.eu/pan-european/corine-land-cover/clc2018?tab=mapview">Corine Landnutzungsdaten</a>, so dass Sie ein Raster mit den Werten 1 für <em>Waldflächen</em> und 0 für <em>keine Waldflächen</em> erhalten. (Bereits zugeschnittene Corine-Daten finden Sie im heruntergeladenen Archiv unter dem Dateinamen <code>clc2018_1m_MOF_25832.tif</code>). Tipp Dieser Vorgang wird auch als Datenreklassifizierung bezeichnet.</li>
 <li>Zur Vorbereitung der Multikriterienbewertung sollen die kontinuierlichen Hangneigungswerte in <em>ganzzahlige</em> kategoriale Klassen überführt (reklassifiziert) werden. D.h. durch die Reklassifizierung der Hangneigung in drei Klassen 0-15 Grad = Klasse mit Wert 1, 15-30 Grad = Klasse mit Wert 2 und &gt; 30 Grad = Klasse mit Wert 3 (1=flach, 2=mittlere Neigung und 3=steile Neigung) werden kategoriale Zielvariablen generiert.</li>
 <li>Legen Sie für <strong>jede Datenebene</strong> eine Gewichtung gemäß der von Ihnen festgelegten Bedeutung in Bezug auf ihre Eignung fest. Die Gewichtung wird anschließend im <code>Rasterrechner</code> umgesetzt. Achten Sie darauf, dass die Summe der Gewichtungsfaktoren 1.0 ergibt.</li>
-<li>Legen Sie für <strong>jede Klasse</strong> in diesem Layer eine Bewertung zwischen 0 und 10 fest (z. B. Wald = 10, Nichtwald = 1, Hangneigung Klasse 1 = 5 usw.) Beachten Sie, dass die Festlegung der Bewertung die Bedeutung der Kriterien für die Fragestellung berücksichtigen muss.</li>
+<li>Legen Sie für <strong>jede Klasse</strong> eine Bewertung zwischen 0 und 10 fest. Diese Bewertung muss zur fachlichen Aussage passen: Welche Klasse ist für die Wildkatze günstiger, welche weniger günstig? Übersetzen Sie diese Bewertung anschließend in einen Rasterrechner-Ausdruck.</li>
 <li>Erläutern Sie die Ergebnisse in max. 2 Sätzen.</li>
 </ul>
 </div>
@@ -899,7 +910,7 @@ window.Quarto = {
 <li>Hangneigung berechnen</li>
 <li>Verwendung der reklassifizierten Corine-Daten aus Aufgabe 04-01 (<em>Wald</em>, <em>Kein Wald</em>).</li>
 <li>Berechnen Sie ein Entfernungsraster, das die Entfernungen zu den Straßen enthält (<code>OSM_roads_MOF_25832.gpkg</code>) (räumliche Auflösung wie das Hangneigungsraster).</li>
-<li>Für jede Rasterklasse (z.B. Wald Nicht-Wald) sind Werte zu definieren, die die <em>Kosten</em> bzw. den <em>Reibungswert</em> für das Überqueren/Nutzen der Zelle darstellen. Es ist daher sinnvoll (im Sinne der obigen Vorgaben), unattraktive Zellen mit hohen Werten und attraktive Zellen mit niedrigen Werten umzuklassifizieren.</li>
+<li>Für jede Rasterklasse sind Werte zu definieren, die die <em>Kosten</em> bzw. den <em>Reibungswert</em> für das Überqueren/Nutzen der Zelle darstellen. Unattraktive Zellen erhalten hohe Kostenwerte, attraktive Zellen niedrige Kostenwerte. Übersetzen Sie diese Kostenlogik in Rasterrechner-Ausdrücke.</li>
 <li>Verrechnen Sie die einzelnen Raster zu einem Gesamtkostenraster. Überlegen Sie dabei, ob alle drei Kriterien gleich gewichtet werden sollen oder ob Sie z.B. der Hangneigung ein höheres Gewicht geben wollen (z.B. wegen des höheren Trainingseffektes).</li>
 <li>Berechnen Sie auf dieser Grundlage die im Sinne der Vorgaben attraktivste (=<em>“kostengünstigste”</em>) Strecke zwischen Start- und Zielpunkt. Beschreiben Sie das Ergebnis, fügen Sie aussagekräftige Grafik(en) ein und begründen Sie stichpunktartig die einzelnen Arbeitsschritte.</li>
 </ul>
@@ -944,37 +955,71 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Bei der <strong>Eignungsanalyse</strong> bedeuten hohe Werte hohe Eignung.<br>
-Bei der <strong>Kostenanalyse</strong> bedeuten hohe Werte hohe Kosten bzw. hohen Widerstand.</p>
+<p>Bei der <strong>Eignungsanalyse</strong> bedeuten hohe Werte hohe Eignung. Bei der <strong>Kostenanalyse</strong> bedeuten hohe Werte hohe Kosten bzw. hohen Widerstand.</p>
 </div>
 </div>
 </div>
-<section id="reklassifikation-und-bewertung" class="level3">
-<h3 class="anchored" data-anchor-id="reklassifikation-und-bewertung">Reklassifikation und Bewertung</h3>
-<p>Für die Umwandlung von Rohwerten in Klassen oder Bewertungswerte verwenden Sie das Werkzeug <code>Reklassifizieren nach Tabelle</code>. Damit können zum Beispiel Hangneigungswerte, Landnutzungsklassen oder Entfernungswerte in Eignungs- oder Kostenwerte übersetzt werden.</p>
-<p>Kontinuierliche Werte wie Hangneigung oder Entfernung zu Wegen können entweder in Klassen eingeteilt oder rechnerisch normalisiert werden. Eine einfache lineare Normalisierung auf den Wertebereich 0 bis 1 lautet:</p>
+<section id="kriterienbewertung-fachlogik-in-rasterwerte-übersetzen" class="level3">
+<h3 class="anchored" data-anchor-id="kriterienbewertung-fachlogik-in-rasterwerte-übersetzen">Kriterienbewertung: Fachlogik in Rasterwerte übersetzen</h3>
+<p>Eine Multikriterienanalyse besteht nicht nur aus Werkzeugbedienung. Entscheidend ist die Übersetzung einer fachlichen Aussage in eine berechenbare Rasterregel.</p>
+<p>Aus einer Aussage wie „Wildkatzen bevorzugen Waldgebiete“ wird zum Beispiel:</p>
+<pre class="text"><code>Wald = hoher Eignungswert
+Nicht-Wald = niedriger Eignungswert</code></pre>
+<p>Aus einer Aussage wie „die Route soll möglichst weit von Wegen entfernt verlaufen“ wird dagegen:</p>
+<pre class="text"><code>große Entfernung zu Wegen = niedriger Kostenwert
+geringe Entfernung zu Wegen = hoher Kostenwert</code></pre>
+<p>Die technische Frage lautet also immer: <strong>Welcher Rasterwert soll im Ergebnis günstig oder ungünstig wirken?</strong></p>
+</section>
+<section id="reklassifikation-oder-rasterrechner" class="level3">
+<h3 class="anchored" data-anchor-id="reklassifikation-oder-rasterrechner">Reklassifikation oder Rasterrechner</h3>
+<p>Für die Umwandlung von Rohwerten in Bewertungswerte gibt es zwei sinnvolle Wege.</p>
+<p>Der übersichtliche Weg ist <code>Reklassifizieren nach Tabelle</code>. Dabei werden Wertebereiche direkt in Zielwerte übersetzt, zum Beispiel Hangneigungsklassen oder Entfernungsklassen.</p>
+<p>Der direktere Weg ist der <code>Rasterrechner</code>. Dort wird die fachliche Regel unmittelbar als Ausdruck formuliert. Das reduziert die Zahl einzelner Werkzeugdialoge und macht sichtbar, welche Bedingung welchen Wert erzeugt.</p>
+<p>Beispielhafte Struktur für eine Klassenbewertung der Hangneigung:</p>
+<pre class="qgis"><code>("hangneigung@1" &gt;= 0 AND "hangneigung@1" &lt; 15) * WERT_FLACH +
+("hangneigung@1" &gt;= 15 AND "hangneigung@1" &lt; 30) * WERT_MITTEL +
+("hangneigung@1" &gt;= 30) * WERT_STEIL</code></pre>
+<p>Die Platzhalter <code>WERT_FLACH</code>, <code>WERT_MITTEL</code> und <code>WERT_STEIL</code> müssen durch fachlich begründete Bewertungswerte ersetzt werden. Genau darin liegt die eigentliche Analyseentscheidung.</p>
+<p>Für eine Wald/Nicht-Wald-Bewertung gilt dieselbe Logik:</p>
+<pre class="qgis"><code>("wald@1" = 1) * WERT_WALD +
+("wald@1" = 0) * WERT_NICHTWALD</code></pre>
+<p>Auch hier entscheidet nicht QGIS, welcher Wert richtig ist. Die Werte müssen zur Fragestellung passen.</p>
+</section>
+<section id="normalisierung-kontinuierlicher-werte" class="level3">
+<h3 class="anchored" data-anchor-id="normalisierung-kontinuierlicher-werte">Normalisierung kontinuierlicher Werte</h3>
+<p>Kontinuierliche Rasterwerte wie Hangneigung oder Entfernung können auch rechnerisch auf eine gemeinsame Skala gebracht werden. Das nennt man Normalisierung.</p>
+<p>Eine einfache lineare Normalisierung auf den Wertebereich 0 bis 1 lautet:</p>
 <p><span class="math display">\[
 x_{\text{norm}} = \frac{x - x_{\min}}{x_{\max} - x_{\min}}
 \]</span></p>
-<p>Dabei ist <span class="math display">\[x\]</span> der ursprüngliche Rasterwert, <span class="math display">\[x_{\min}\]</span> der kleinste Wert des Rasters und <span class="math display">\[x_{\max}\]</span> der größte Wert des Rasters.</p>
+<p>Dabei ist <span class="math inline">\(x\)</span> der ursprüngliche Rasterwert, <span class="math inline">\(x_{\min}\)</span> der kleinste Wert des Rasters und <span class="math inline">\(x_{\max}\)</span> der größte Wert des Rasters.</p>
 <p>Soll eine Skala von 0 bis 10 verwendet werden, wird der normalisierte Wert mit 10 multipliziert:</p>
 <p><span class="math display">\[
 x_{0-10} = 10 \cdot x_{\text{norm}}
 \]</span></p>
-<p>Diese Normalisierung ist nur dann passend, wenn hohe Ausgangswerte auch hohe Eignung bedeuten. Wenn hohe Ausgangswerte niedrige Kosten bedeuten sollen, muss die Richtung umgekehrt werden:</p>
+<p>Diese Normalisierung ist nur dann passend, wenn hohe Ausgangswerte auch hohe Eignung bedeuten. Wenn hohe Ausgangswerte niedrige Kosten oder geringere Eignung bedeuten sollen, muss die Richtung umgekehrt werden:</p>
 <p><span class="math display">\[
 x_{\text{inv}} = 1 - x_{\text{norm}}
 \]</span></p>
-<p>Für diese Aufgabe ist <code>Reklassifizieren nach Tabelle</code> meist der übersichtlichere Weg, weil die Klassengrenzen und Zielwerte dort direkt sichtbar eingetragen werden.</p>
+<p>Für diese Aufgabe ist häufig eine explizite Klassenbewertung verständlicher als eine automatische Normalisierung. Die Klassengrenzen und Zielwerte bleiben dabei sichtbar und können fachlich diskutiert werden.</p>
 </section>
 <section id="gewichtung-im-rasterrechner" class="level3">
 <h3 class="anchored" data-anchor-id="gewichtung-im-rasterrechner">Gewichtung im Rasterrechner</h3>
-<p>Die Gewichtung erfolgt im <code>Rasterrechner</code>. Jedes bewertete Raster wird mit seinem Gewichtungsfaktor multipliziert. Anschließend werden die gewichteten Raster addiert.</p>
+<p>Nach der Bewertung der einzelnen Kriterien werden die bewerteten Raster gewichtet kombiniert. Jedes Raster wird mit seinem Gewichtungsfaktor multipliziert. Anschließend werden die gewichteten Raster addiert.</p>
 <p>Allgemein:</p>
 <p><span class="math display">\[
 E = R_1 \cdot w_1 + R_2 \cdot w_2 + \dots + R_n \cdot w_n
 \]</span></p>
-<p>Dabei sind <span class="math display">\[R_1 \dots R_n\]</span> die bewerteten Raster und <span class="math display">\[w_1 \dots w_n\]</span> die zugehörigen Gewichte. Wird mit proportionalen Gewichten gearbeitet, soll die Summe der Gewichtungsfaktoren 1 ergeben.</p>
+<p>Dabei sind <span class="math inline">\(R_1 \dots R_n\)</span> die bewerteten Raster und <span class="math inline">\(w_1 \dots w_n\)</span> die zugehörigen Gewichte. Wird mit proportionalen Gewichten gearbeitet, soll die Summe der Gewichtungsfaktoren 1 ergeben.</p>
+<p>Die Gewichte sind <strong>keine technischen Vorgaben</strong>. Sie drücken aus, welches Kriterium im Verhältnis zu den anderen Kriterien stärker oder schwächer wirken soll.</p>
+</section>
+<section id="eignungswerte-und-kostenwerte-nicht-verwechseln" class="level3">
+<h3 class="anchored" data-anchor-id="eignungswerte-und-kostenwerte-nicht-verwechseln">Eignungswerte und Kostenwerte nicht verwechseln</h3>
+<p>Bei der Eignungsanalyse wird nach günstigen Flächen gesucht. Hohe Werte bedeuten dort hohe Eignung.</p>
+<p>Bei der Kostenanalyse sucht der Algorithmus dagegen einen Pfad mit möglichst niedrigen aufsummierten Kosten. Hohe Werte bedeuten dort hohe Kosten oder hohen Widerstand.</p>
+<p>Deshalb kann dieselbe räumliche Eigenschaft je nach Fragestellung unterschiedlich bewertet werden. Eine steile Fläche kann für ein Wildkatzenhabitat als günstiger Reliefindikator bewertet werden. Für einen bequemen Spazierweg wäre sie ein hoher Kostenwert. Für einen Trimm-Dich-Pfad kann sie wiederum bewusst als niedriger Kostenwert gesetzt werden, wenn Steilheit als attraktiv gilt.</p>
+<p>Die entscheidende Kontrollfrage lautet daher:</p>
+<pre class="text"><code>Soll dieser Ausgangswert im Ergebnis günstig oder ungünstig wirken?</code></pre>
 </section>
 <section id="start--und-zielpunkte-anlegen" class="level3">
 <h3 class="anchored" data-anchor-id="start--und-zielpunkte-anlegen">Start- und Zielpunkte anlegen</h3>
@@ -987,18 +1032,76 @@ Grillhuette,476170,5631657</code></pre>
 </section>
 <section id="entfernungs--und-kostenanalyse" class="level3">
 <h3 class="anchored" data-anchor-id="entfernungs--und-kostenanalyse">Entfernungs- und Kostenanalyse</h3>
-<p>Für Entfernungsberechnungen kann das Werkzeug <code>Nähe / Rasterdistanz</code> verwendet werden. Vektordaten, zum Beispiel Wege oder Straßen, müssen dafür vorher rasterisiert werden. Verwenden Sie dafür <code>Rasterisieren (Vektor nach Raster)</code>.</p>
 <p>Für die Kostenanalyse kann das Plugin <code>Least Cost Path</code> verwendet werden. Es berechnet aus einem Kostenraster sowie Start- und Zielpunkten einen kostengünstigen Pfad. Achten Sie darauf, dass das verwendete Raster wirklich ein Kostenraster ist: niedrige Werte stehen für geringe Kosten, hohe Werte für hohe Kosten.</p>
+<p>Für eine fachlich leistungsfähigere Umsetzung können alternativ die GRASS-Werkzeuge in QGIS verwendet werden. Mit <code>r.cost</code> wird aus einem Kostenraster zunächst eine <strong>kumulative Kostenoberfläche</strong> berechnet. Jede Rasterzelle erhält dann den minimalen aufsummierten Aufwand, der vom Startpunkt bis zu dieser Zelle entsteht. Aus dieser kumulativen Kostenoberfläche kann anschließend mit <code>r.drain</code> beziehungsweise <code>r.path</code> ein Pfad mit minimalen Kosten abgeleitet werden. <code>r.cost</code> ist damit nicht nur ein Werkzeug zum Zeichnen einer Linie, sondern erzeugt zuerst die vollständige räumliche Kostenlogik, auf der der Pfad basiert. :contentReference<span data-index="0">oaicite:0</span></p>
+<p>Für die Übung reicht das Plugin <code>Least Cost Path</code> als einfacher Einstieg. Wer die Kostenanalyse genauer nachvollziehen oder erweitern möchte, sollte die GRASS-Werkzeuge verwenden, weil dort die Zwischenschritte — Kostenraster, kumulative Kostenoberfläche und abgeleiteter Pfad — fachlich klarer getrennt sind.</p>
 </section>
-<section id="weiterführende-hilfen" class="level3">
-<h3 class="anchored" data-anchor-id="weiterführende-hilfen">Weiterführende Hilfen</h3>
+</section>
+<section id="weiterführende-links" class="level2">
+<h2 class="anchored" data-anchor-id="weiterführende-links">Weiterführende Links</h2>
 <ul>
 <li><a href="https://documentation.qgis.org/latest/de/docs/user_manual/processing_algs/qgis/rasteranalysis.html">QGIS-Dokumentation: Reklassifizieren nach Tabelle und Rasterrechner</a></li>
 <li><a href="https://www.qgistutorials.com/en/docs/3/multi_criteria_overlay.html">QGIS-Tutorial: Multi Criteria Overlay Analysis</a></li>
 <li><a href="https://plugins.qgis.org/plugins/leastcostpath/">QGIS Plugin: Least Cost Path</a></li>
 <li><a href="https://link.springer.com/article/10.1007/s40823-016-0006-9">Least-Cost Modelling and Landscape Ecology: Concepts, Applications, and Opportunities</a></li>
-<li><a href="https://gisma-courses.github.io/geoinfo-basis-qgis//unit08/unit08-01_reader_QGIS_01.html">QGIS Materials</a></li>
 </ul>
+</section>
+<section id="screencasts-zu-aufgabe" class="level2">
+<h2 class="anchored" data-anchor-id="screencasts-zu-aufgabe">Screencasts zu Aufgabe</h2>
+<section id="corine-problemstellung" class="level3">
+<h3 class="anchored" data-anchor-id="corine-problemstellung">Corine-Problemstellung</h3>
+<iframe src="https://drive.google.com/file/d/1D_tKjmXwgDneqVsOmQadAuKmCs6s-sjl/preview" width="100%" height="480" allow="autoplay" allowfullscreen="">
+</iframe>
+</section>
+<section id="reklassifizierung-von-rasterdaten" class="level3">
+<h3 class="anchored" data-anchor-id="reklassifizierung-von-rasterdaten">Reklassifizierung von Rasterdaten</h3>
+<iframe src="https://drive.google.com/file/d/1LyCdQRBBrdPL5OOEiyNqR2Vn9KhFW_N7/preview" width="100%" height="480" allow="autoplay" allowfullscreen="">
+</iframe>
+</section>
+<section id="gewichtete-multikriterienanalyse-alte-wmca-aufnahme" class="level3">
+<h3 class="anchored" data-anchor-id="gewichtete-multikriterienanalyse-alte-wmca-aufnahme">Gewichtete Multikriterienanalyse: alte WMCA-Aufnahme</h3>
+<div class="callout callout-style-default callout-warning callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warnung</span>Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Diese Screencasts zeigen noch den früheren Ablauf mit dem Plugin <code>WMCA Weighted Multicriteria Analysis</code>. Für die aktuelle Aufgabe wird WMCA nicht mehr verwendet. Die Grundidee der Kriterienbewertung bleibt aber relevant: Eingangsdaten werden bewertet, gewichtet und anschließend miteinander verrechnet.</p>
+</div>
+</div>
+<iframe src="https://drive.google.com/file/d/1OICQVG3uSVuxOpS_Es-6RvYgKF1npVvl/preview" width="100%" height="480" allow="autoplay" allowfullscreen="">
+</iframe>
+<iframe src="https://drive.google.com/file/d/1HIgzWFFodWwUpg5l3Ntpj_yP_qnkbg83/preview" width="100%" height="480" allow="autoplay" allowfullscreen="">
+</iframe>
+</section>
+<section id="start--und-zielpunkte-anlegen-1" class="level3">
+<h3 class="anchored" data-anchor-id="start--und-zielpunkte-anlegen-1">Start- und Zielpunkte anlegen</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die frühere Aufnahme zeigt das Plugin <code>Numerical Digitize</code>. Für die aktuelle Übung ist kein zusätzliches Plugin erforderlich. Start- und Zielpunkte können einfacher über eine kleine CSV-Datei mit X- und Y-Koordinaten oder über das QGIS-Bedienfeld <code>Erweitertes Digitalisieren</code> angelegt werden.</p>
+</div>
+</div>
+<iframe src="https://drive.google.com/file/d/1C5-vcZhYikgBkrXZ5JsrMTsBfrooHESD/preview" width="100%" height="480" allow="autoplay" allowfullscreen="">
+</iframe>
+</section>
+<section id="least-cost-path-ablauf-und-ergebnis" class="level3">
+<h3 class="anchored" data-anchor-id="least-cost-path-ablauf-und-ergebnis">Least-Cost-Path: Ablauf und Ergebnis</h3>
+<iframe src="https://drive.google.com/file/d/10q0BwycGMB-ReHmtDBZ21HN-BHz3m-V9/preview" width="100%" height="480" allow="autoplay" allowfullscreen="">
+</iframe>
+<iframe src="https://drive.google.com/file/d/1leOHGXVN35jojCiO3ppN3iTUA6n0l_sb/preview" width="100%" height="480" allow="autoplay" allowfullscreen="">
+</iframe>
 
 
 </section>
