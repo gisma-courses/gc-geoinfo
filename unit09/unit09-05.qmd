@@ -59,3 +59,193 @@ Verwenden Sie eine einfache Struktur, zum Beispiel:
 03_Bewertete_Raster
 04_Ergebnisse
 05_Layout_und_Export
+```
+
+Prüfen Sie anschließend:
+
+* Sind alle wichtigen Layer gespeichert?
+* Gibt es noch temporäre Layer?
+* Sind die Layernamen verständlich?
+* Ist erkennbar, welche Layer Eingangsdaten und welche Ergebnisse sind?
+
+::: {.callout-warning title="Temporäre Layer"}
+Temporäre Layer sind für eine Abgabe ungeeignet. Speichern Sie alle relevanten Zwischen- und Endergebnisse explizit als Datei.
+:::
+
+## Aufgabe 02: Layer sinnvoll benennen
+
+Benennen Sie zentrale Layer so, dass ihre Funktion erkennbar ist.
+
+Absolut zu vermeiden:
+
+```text
+output
+reclassified
+rastercalc
+clip1
+```
+
+Besser:
+
+```text
+hangneigung_klassen
+wald_eignung
+siedlungsdistanz_idx
+einschraenkung_mask
+wildkatze_eignung_final
+gesamt_kosten_trimm_dich_pfad
+```
+
+Achten Sie besonders auf Ergebnislayer. Am Namen sollte erkennbar sein, was der Layer zeigt.
+
+## Aufgabe 03: Zentrale Rechenregel sichern
+
+Wenn Ihr Projekt einen Rasterrechner-Ausdruck verwendet, sichern Sie diesen Ausdruck.
+
+Dazu reicht eine der folgenden Varianten:
+
+
+* Kopie des Ausdrucks in eine einfache Textdatei,
+* Screenshot des Rasterrechner-Fensters,
+
+
+Der Ausdruck muss nicht schön formatiert sein. Er muss nur zeigen, wie die bewerteten Raster verrechnet wurden.
+
+Beispielhafte Struktur:
+
+```qgis
+"raster_1@1" * gewicht_1 +
+"raster_2@1" * gewicht_2 +
+"raster_3@1" * gewicht_3
+```
+
+::: {.callout-note title="Warum das wichtig ist"}
+Der Rasterrechner-Ausdruck ist oft der eigentliche Kern der Analyse. Er zeigt, welche Kriterien mit welchen Gewichten in das Ergebnis eingegangen sind. Es ist extrem hilfreich dazu Die Textdatei mit der Literatur und Herleitung zu versehen.
+:::
+
+## Aufgabe 04: Verarbeitungsverlauf prüfen
+
+Öffnen Sie den QGIS-Verarbeitungsverlauf.
+
+> Verarbeitung → Verlauf
+
+Prüfen Sie, ob die zentralen Verarbeitungsschritte dort sichtbar sind, zum Beispiel:
+
+* Rasterisieren,
+* Hangneigung,
+* Exposition,
+* Nähe / Rasterdistanz,
+* Reklassifizieren nach Tabelle,
+* Rasterrechner,
+* Zuschneiden,
+* Vektor- oder Rasterexport.
+
+Speichern Sie die relevanten Einträge des Verlaufs als `.log`- oder Textdatei. Diese Datei ist eine reine Textdatei und wird später zusätzlich zum gepackten Projekt abgegeben.
+
+::: {.callout-warning title="Grenze des Verlaufs"}
+Der Verarbeitungsverlauf dokumentiert vor allem Processing-Werkzeuge. Manuelle Schritte wie Symbolisierung, Layerumbenennung, Layoutgestaltung oder visuelle Kontrolle erscheinen dort nicht vollständig.
+:::
+
+## Aufgabe 05: Kartenlayout erstellen
+
+Erstellen Sie ein einfaches Kartenlayout für Ihr Ergebnis.
+
+Das Layout soll mindestens enthalten:
+
+* Titel,
+* Ergebnislayer,
+* Legende,
+* Maßstab,
+* Datenquelle oder kurzer Quellenhinweis,
+* Name oder Bearbeitungshinweis,
+* Datum.
+
+Das Layout soll nicht überladen sein. Es soll zeigen, was das Ergebnis räumlich bedeutet.
+
+## Aufgabe 06: Projekt packen
+
+Packen Sie Ihr QGIS-Projekt so, dass es auf einem anderen Rechner geöffnet werden kann. Entscheidend ist: Die Projektdatei, die verwendeten Datenlayer, Zwischenergebnisse und Ergebnislayer müssen gemeinsam vorliegen und dürfen keine kaputten Pfade erzeugen.
+
+Für das Packen des QGIS-Projekts kann `QPackageQGZ` verwendet werden. Das Plugin speichert das aktuelle QGIS-Projekt zusammen mit den im Projekt enthaltenen Daten in ein neues Verzeichnis. Es kann auch Rasterdaten, verwendete SVG-Symbole, Joins und Definitionsdateien übertragen. Der erzeugte Projektordner muss anschließend selbst als ZIP-Datei komprimiert und abgegeben werden.
+
+Alternativ kann `Geopacker` verwendet werden. Dieses Plugin erzeugt direkt eine ZIP-Datei des Projekts und bündelt das `.qgz`-Projekt mit Vektor- und Rasterdaten; außerdem werden Layout-Bilder und Styles berücksichtigt und die Layerpfade angepasst. Das ist für eine einfache Upload-Abgabe der direktere Weg.
+
+::: {.callout-warning title="Einschränkung der Tools"}
+Separat exportierte Dateien werden nicht automatisch zuverlässig durch jedes Packager-Plugin erfasst. Dazu gehören zum Beispiel Karten-PDFs, Karten-PNGs, Screenshots und Textdateien mit Rasterrechner-Ausdrücken. Diese Dateien müssen manuell zusätzlich in den Abgabeordner gelegt werden.
+:::
+
+Der QGIS-Verarbeitungsverlauf wird ebenfalls nicht als verlässlicher Bestandteil des gepackten Projekts behandelt. Er muss für die Abgabe zusätzlich als `.log`- oder Textdatei gesichert werden.
+
+### Wenn Sie `QPackageQGZ` verwenden
+
+1. Projekt mit `QPackageQGZ` in ein neues Verzeichnis packen.
+2. Kartenlayout als PDF oder PNG exportieren und in dieses Verzeichnis legen.
+3. Rasterrechner-Ausdruck als Textdatei oder Screenshot in dieses Verzeichnis legen.
+4. QGIS-Verarbeitungsverlauf als `.log`- oder Textdatei in dieses Verzeichnis legen.
+5. Den gesamten Ordner als ZIP-Datei komprimieren.
+6. ZIP-Datei testweise entpacken und das Projekt aus dem entpackten Ordner öffnen.
+
+### Wenn Sie `Geopacker` verwenden
+
+1. Projekt mit `Geopacker` als ZIP-Datei packen.
+2. ZIP-Datei testweise entpacken und das Projekt aus dem entpackten Ordner öffnen.
+3. Kartenlayout als PDF oder PNG zusätzlich zur ZIP-Abgabe legen oder zusammen mit der Geopacker-ZIP in eine zweite Abgabe-ZIP packen.
+4. Rasterrechner-Ausdruck als Textdatei oder Screenshot ebenfalls zusätzlich ablegen.
+5. QGIS-Verarbeitungsverlauf als `.log`- oder Textdatei zusätzlich ablegen.
+6. ZIP-Datei testweise entpacken und das Projekt aus dem entpackten Ordner öffnen.
+
+Eine mögliche Abgabestruktur im Archiv ist:
+
+```text
+abgabe_qgis/
+├── projekt_gepackt.zip
+├── karte.pdf
+├── rasterrechner_ausdruck.txt
+└── qgis_verlauf.log
+```
+
+Bei `QPackageQGZ` ist `projekt_gepackt.zip` der selbst gezippte Projektordner. Bei `Geopacker` ist `projekt_gepackt.zip` die direkt vom Plugin erzeugte ZIP-Datei oder ein ZIP-Archiv, das die Geopacker-ZIP plus Zusatzdateien enthält.
+
+Nach dem Packen:
+
+1. Öffnen Sie das gepackte Projekt aus dem neuen Ordner.
+2. Prüfen Sie, ob alle Layer geladen werden.
+3. Prüfen Sie, ob keine roten Ausrufezeichen erscheinen.
+4. Prüfen Sie, ob das Layout noch funktioniert.
+5. Prüfen Sie, ob das finale Ergebnis sichtbar ist.
+
+::: {.callout-warning title="Pflichttest"}
+Checken Sie zwingend ein entpacktes Projekt auf Vollständigkeit. Öffnen Sie es und testen Sie die Inhalte.
+:::
+
+Beantworten Sie vor der Abgabe knapp diese Fragen:
+
+| Frage                                          | Antwort   |
+| ---------------------------------------------- | --------- |
+| Sind alle wichtigen Layer gespeichert?         | ja / nein |
+| Gibt es keine temporären Layer?                | ja / nein |
+| Ist der Ergebnislayer eindeutig benannt?       | ja / nein |
+| Ist die zentrale Rechenregel gesichert?        | ja / nein |
+| Ist ein Kartenlayout vorhanden?                | ja / nein |
+| Wurde das gepackte Projekt testweise geöffnet? | ja / nein |
+| Öffnen alle Layer fehlerfrei?                  | ja / nein |
+
+Falls alles `ja` ist: Abgabe hochladen. Falls etwas `nein` ist: zuerst fixen.
+
+## Abgabe
+
+Geben Sie ein gepacktes QGIS-Projekt mit Zusatzdateien ab.
+
+Die Abgabe soll enthalten:
+
+* gepacktes QGIS-Projekt,
+* wichtige Zwischenergebnisse und finale Ergebnislayer im Projektpaket,
+* Kartenlayout als PDF oder PNG,
+* Rasterrechner-Ausdruck oder Screenshot der zentralen Rechenregel,
+* Verarbeitungsverlauf als `.log`- oder Textdatei.
+
+Es wird kein ausführliches Schritt-für-Schritt-Protokoll verlangt. Entscheidend ist, dass das Projekt geöffnet und die Analyse anhand der Layer, Ergebnisdateien und Rechenregel nachvollzogen werden kann.
+
+::: {.callout-note title="Merksatz"}
+Eine reproduzierbare QGIS-Abgabe ist kein Aufsatz. Sie ist ein sauber gepacktes Projekt mit verständlichen Layernamen, gespeicherten Zwischenergebnissen, sichtbarer Rechenregel und prüfbarem Ergebnis.
+:::
