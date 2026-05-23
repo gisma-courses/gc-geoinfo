@@ -97,52 +97,62 @@ background-size: cover;
   .footer-wrapper {
     position: relative;
   }
-
   .footer-banner {
-    position: relative;
-
+    bottom: 0;
+    left: 0;
+    right: 0;
     height: 75px;
     text-align: center;
-    line-height: 75px;
-
-    color: darkred;
-    font-size: 12px;
-
+    line-height: 75px; /* Vertically centers text within the height */
+    color: #0000A5;
+    font-size: 16px; /* Smaller font size */
+    z-index: 1000;
     overflow: hidden;
-    background: transparent;
-    opacity: 1;
+    background: url('../images/banner3.png') repeat-x; 
+    opacity: 0.8;  /* Makes the image 50% fainter */
+    
   }
-
-  .footer-banner::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background-image: url("../images/banner3.png");
-    background-repeat: repeat-x;
-    background-position: center bottom;
-    background-size: auto 42px;
-
-    opacity: 0.25;
-
-    z-index: 0;
-    pointer-events: none;
-  }
-
+    
+  
   .footer-banner a {
-    position: relative;
-    z-index: 1;
-
-    color: darkred;
-    opacity: 1;
+    color: #0000A5; /* Dark red with 80% opacity */
     text-decoration: none;
+    padding: 0 10px;
   }
 
-  .footer-banner a:hover {
-    text-decoration: underline;
-  }
 </style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../css/styles.css">
 <meta property="og:title" content="Arbeitsblatt 4 - Kosten und Kriterien – Grundlagenkurs GI-S (QGIS)">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
@@ -150,7 +160,9 @@ background-size: cover;
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@gisma">
 <meta name="twitter:card" content="summary">
-</head><body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -312,54 +324,7 @@ background-size: cover;
     } else {
       toggleColorMode(false);
     }
-  </script><div class="footer-banner">
-  <a href="https://gisma-courses.github.io/gc/" target="_blank">GISMA (2026)</a> |
-  <a href="../unit00/impressum.html" target="_blank">Impressum</a>
-</div>
-    
-  
-  .footer-banner a {
-    color: rgba(139, 0, 0, 1.0); /* Dark red with 80% opacity */
-    text-decoration: none;
-    padding: 0 10px;
-  }
-
-
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../css/styles.css">
-
-
-
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
