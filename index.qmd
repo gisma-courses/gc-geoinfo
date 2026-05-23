@@ -44,15 +44,10 @@ Am Ende dieses Moduls sind die Studierenden in der Lage,
 - räumliche Fragestellungen in geeignete GIS-Operationen zu übersetzen,
 - eine eigenständige Analyse zu entwickeln und in Form einer kleinen wissenschaftlichen Studie nachvollziehbar zu kommunizieren.
 
-## Besonderheiten des Kurses
-
-Der Online-Kurs ist als begleitendes Material zur Präsenzveranstaltung konzipiert, eignet sich aber auch zum Selbststudium. Die Materialien sind nicht als reine Klickanleitung gedacht, sondern als Arbeitsgrundlage für eine fachlich begründete Auseinandersetzung mit Raum, Daten, Analyse und Darstellung.
-
-Die Präsenzzeit dient der Einführung neuer Konzepte, der Diskussion fachlicher Fragen und der exemplarischen Bearbeitung von Problemen, die sich aus dem Vorlesungsinput, den Readern und den Übungsaufgaben ergeben. Sollte eine Präsenzveranstaltung aus technischen Gründen nicht stattfinden können, wird ein Screencast mit der Beantwortung der Fragen und neuem Input online gestellt.
 
 ## Arbeitsverständnis
 
-Mein Selbstverständnis als Hochschullehrer ist das eines Coaches. Ich kann Ihnen die Arbeit mit Raum, Daten und Methoden nicht abnehmen. Ich kann meine Erfahrung, meine Perspektive und meine Kritik einbringen; lernen, üben, entscheiden und begründen müssen Sie selbst.
+Mein Selbstverständnis als Kursleiter ist das eines Coaches. Ich kann Ihnen die Arbeit mit Raum, Daten und Methoden nicht abnehmen. Ich kann meine Erfahrung, meine Perspektive und meine Kritik einbringen; lernen, üben, entscheiden und begründen müssen Sie selbst.
 
 Damit dieser Weg für Sie erfolgreich werden kann, müssen Sie kritisch reflektieren, was ich einbringe, was Sie in Diskussionen mit Ihren Kommilitoninnen und Kommilitonen lernen, was Sie lesen, was Sie ausprobieren und was Sie glauben, sicher verstanden zu haben. Bildung hängt zu einem großen Teil davon ab, was Sie selbst investieren. Wenn Sie nicht deutlich mehr tun, als nur anwesend zu sein, können Sie davon ausgehen, dass dieser Kurs für Sie Zeitverschwendung ist.
 
