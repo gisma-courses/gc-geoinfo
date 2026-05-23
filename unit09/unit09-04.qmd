@@ -93,14 +93,6 @@ Die Vorgaben für die Streckenplanung sind:
 Beschreiben Sie das Ergebnis, fügen Sie aussagekräftige Grafik(en) ein und begründen Sie stichpunktartig die einzelnen Arbeitsschritte.
 :::
 
-### Gewichtung der Aufgaben in Lerneinheit 4
-
-| Aufgabenteil | Gewichtung Teilaufgabe | Gewichtung  Gesamt| 
-|:-------------|:----------------------:|:-----------------:|
-|Aufgabe 04-01 | 0.4  | 0.15  | 
-|Aufgabe 04-02 | 0.6  | 0.25  | 
-|**Aufgabe 04** | **1.0**  | **0.3**  | 
-
 
 ## Unterstützung
 

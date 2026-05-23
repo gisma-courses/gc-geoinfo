@@ -156,13 +156,6 @@ diese Sorgfalt können Positionierungsfehler und damit einer der
 häufigsten Alltagsfehler in der GIS-Welt vermieden werden.
 :::
 
-### Gewichtung der Aufgaben in Arbeitsblatt 1
-
-| Aufgabenteil   | Gewichtung Teilaufgabe | Gewichtung Gesamt |
-|:---------------|:----------------------:|:-----------------:|
-| Aufgabe 01-01  |          0.5           |       0.05        |
-| Aufgabe 01-02  |          0.5           |       0.05        |
-| **Aufgabe 01** |        **1.0**         |      **0.1**      |
 
 ## Unterstützung
 
