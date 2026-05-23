@@ -115,33 +115,52 @@ background-size: cover;
   .footer-wrapper {
     position: relative;
   }
+
   .footer-banner {
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: relative;
+
     height: 75px;
     text-align: center;
-    line-height: 75px; /* Vertically centers text within the height */
+    line-height: 75px;
+
     color: darkred;
-    font-size: 12px; /* Smaller font size */
-    z-index: 1000;
+    font-size: 12px;
+
     overflow: hidden;
-    background: url('../images/banner3.png') repeat-x; 
-    opacity: 0.2;  /* Makes the image 50% fainter */
-    
-  }
-    
-  
-  .footer-banner a {
-    color: rgba(139, 0, 0, 1.0); /* Dark red with 80% opacity */
-    text-decoration: none;
-    padding: 0 10px;
+    background: transparent;
+    opacity: 1;
   }
 
+  .footer-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../images/banner3.png");
+    background-repeat: repeat-x;
+    background-position: center bottom;
+    background-size: auto 42px;
+
+    opacity: 0.25;
+
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .footer-banner a {
+    position: relative;
+    z-index: 1;
+
+    color: darkred;
+    opacity: 1;
+    text-decoration: none;
+  }
+
+  .footer-banner a:hover {
+    text-decoration: underline;
+  }
 </style>
 
-
-<link rel="stylesheet" href="../css/styles.css">
 <meta property="og:title" content="Eignungsanalysen – Grundlagenkurs GI-S (QGIS)">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
@@ -149,9 +168,7 @@ background-size: cover;
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@gisma">
 <meta name="twitter:card" content="summary">
-</head>
-
-<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+</head><body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -313,7 +330,25 @@ background-size: cover;
     } else {
       toggleColorMode(false);
     }
-  </script>
+  </script><div class="footer-banner">
+  <a href="https://gisma-courses.github.io/gc/" target="_blank">GISMA (2026)</a> |
+  <a href="../unit00/impressum.html" target="_blank">Impressum</a>
+</div>
+    
+  
+  .footer-banner a {
+    color: rgba(139, 0, 0, 1.0); /* Dark red with 80% opacity */
+    text-decoration: none;
+    padding: 0 10px;
+  }
+
+
+
+
+<link rel="stylesheet" href="../css/styles.css">
+
+
+
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
