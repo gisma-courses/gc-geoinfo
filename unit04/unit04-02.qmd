@@ -11,6 +11,7 @@ comments: false
 
 
 
+
 Als Einstieg in die Thematik der Raumanalyse wurde die Integration des einfachsten Raumkonzeptes, der Voronoi-Polygonisierung, gewählt. Sie steht exemplarisch für die Generierung geometrisch fundierter raumkontinuierlicher Interpolationskonzepte. Diese Betrachtung wird um einige komplexere Interpolationsverfahren erweitert.
 
 
