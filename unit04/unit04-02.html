@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Voronoi Polygone – Grundlagenkurs GI-S (QGIS)</title>
+<title>Rasterbasierte räumliche Ableitungen – Grundlagenkurs GI-S (QGIS)</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -143,10 +143,10 @@ background-size: cover;
 
 
 <link rel="stylesheet" href="../css/styles.css">
-<meta property="og:title" content="Voronoi Polygone – Grundlagenkurs GI-S (QGIS)">
+<meta property="og:title" content="Rasterbasierte räumliche Ableitungen – Grundlagenkurs GI-S (QGIS)">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
-<meta name="twitter:title" content="Voronoi Polygone – Grundlagenkurs GI-S (QGIS)">
+<meta name="twitter:title" content="Rasterbasierte räumliche Ableitungen – Grundlagenkurs GI-S (QGIS)">
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@gisma">
 <meta name="twitter:card" content="summary">
@@ -370,7 +370,7 @@ background-size: cover;
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Voronoi Polygone</h1>
+          <h1 class="quarto-secondary-nav-title">Rasterbasierte räumliche Ableitungen</h1>
         </a>     
     </div>
   </nav>
@@ -379,7 +379,7 @@ background-size: cover;
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">Voronoi Polygone</h1>
+      <h1 class="title d-none d-lg-block">Rasterbasierte räumliche Ableitungen</h1>
                       </div>
   </div>
     
@@ -583,7 +583,7 @@ background-size: cover;
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Reader Räumliche Datenanalyse</span></a>
+ <span class="menu-text">Reader Räumliche Ableitungen aus Geodaten</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -592,13 +592,13 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit04/unit04-01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Räumliche Analysemethoden</span></a>
+ <span class="menu-text">Räumliche Analyse als Ableitung und Begründung</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit04/unit04-02.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Voronoi Polygone</span></a>
+ <span class="menu-text">Rasterbasierte räumliche Ableitungen</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -625,7 +625,7 @@ background-size: cover;
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
- <span class="menu-text">Reader Räumliche Datenanalyse</span></a>
+ <span class="menu-text">Reader Räumliche Kriterien, Eignung und Entscheidung</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -714,11 +714,12 @@ background-size: cover;
     <h2 id="toc-title">Inhalt</h2>
    
   <ul>
-  <li><a href="#abstandsbeziehungen-voronoi-polygone-als-ableitung-von-abstand-und-nachbarschaft" id="toc-abstandsbeziehungen-voronoi-polygone-als-ableitung-von-abstand-und-nachbarschaft" class="nav-link active" data-scroll-target="#abstandsbeziehungen-voronoi-polygone-als-ableitung-von-abstand-und-nachbarschaft">Abstandsbeziehungen: Voronoi-Polygone als Ableitung von Abstand und Nachbarschaft</a>
+  <li><a href="#abstandsbeziehungen-voronoi-polygone-als-einfaches-nähemodell" id="toc-abstandsbeziehungen-voronoi-polygone-als-einfaches-nähemodell" class="nav-link active" data-scroll-target="#abstandsbeziehungen-voronoi-polygone-als-einfaches-nähemodell">Abstandsbeziehungen: Voronoi-Polygone als einfaches Nähemodell</a>
   <ul class="collapse">
-  <li><a href="#voronoi-polygone" id="toc-voronoi-polygone" class="nav-link" data-scroll-target="#voronoi-polygone">Voronoi-Polygone</a></li>
+  <li><a href="#konstruktion-von-voronoi-polygonen" id="toc-konstruktion-von-voronoi-polygonen" class="nav-link" data-scroll-target="#konstruktion-von-voronoi-polygonen">Konstruktion von Voronoi-Polygonen</a></li>
+  <li><a href="#beispiel-niederschlagsstationen-in-der-schweiz" id="toc-beispiel-niederschlagsstationen-in-der-schweiz" class="nav-link" data-scroll-target="#beispiel-niederschlagsstationen-in-der-schweiz">Beispiel: Niederschlagsstationen in der Schweiz</a></li>
   </ul></li>
-  <li><a href="#übung" id="toc-übung" class="nav-link" data-scroll-target="#übung">Übung</a></li>
+  <li><a href="#übung-voronoi-als-zellbasierte-näherungszone" id="toc-übung-voronoi-als-zellbasierte-näherungszone" class="nav-link" data-scroll-target="#übung-voronoi-als-zellbasierte-näherungszone">Übung: Voronoi als zellbasierte Näherungszone</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit04/unit04-02.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
     </div>
@@ -730,44 +731,97 @@ background-size: cover;
 
 
 
-<p>Als Einstieg in die Thematik der Raumanalyse wurde die Integration des einfachsten Raumkonzeptes, der Voronoi-Polygonisierung, gewählt. Sie steht exemplarisch für die Generierung geometrisch fundierter raumkontinuierlicher Interpolationskonzepte. Diese Betrachtung wird um einige komplexere Interpolationsverfahren erweitert.</p>
-<section id="abstandsbeziehungen-voronoi-polygone-als-ableitung-von-abstand-und-nachbarschaft" class="level2">
-<h2 class="anchored" data-anchor-id="abstandsbeziehungen-voronoi-polygone-als-ableitung-von-abstand-und-nachbarschaft">Abstandsbeziehungen: Voronoi-Polygone als Ableitung von Abstand und Nachbarschaft</h2>
-<p>Wir erweitern nun unsere Kenntnisse über die Analyse von Entfernungen zwischen räumlichen Objekten. Oft ist es sinnvoll, in einer ersten Analyse ohne räumlich einschränkende Bedingungen zu arbeiten, z.B. wenn diese Information fehlt. Der Begriff „Nähe“ weist auf eine gewisse Unschärfe hin. Als qualitative Begriffe können „nah“, „fern“ oder „in der Nähe von“ verwendet werden. Für GI-Systeme müssen diese Begriffe objektiviert und operationalisiert werden. Es muss also ein Abstandsbegriff zugrunde gelegt werden, z.B. die euklidische Distanz oder Reisezeiten. In einem zweiten interpretativen Schritt muss dann entschieden werden, welche Einheiten diese Art von Nähe definieren. Im Sinne der Zielsetzung einer Fragestellung gibt es nur geeignete und weniger geeignete Maße, aber keine richtigen oder falschen. Daher ist es von zentraler Bedeutung, für die Untersuchungsobjekte eine sinnvolle Nachbarschaftsbeziehung zu definieren.</p>
-<p>Bei Nachbarschaftsanalysen geht es häufig um Einfluss- oder Einzugsgebiete, also um räumliche Wirkungs- oder Prozessmuster. Einige Fragen sind Ihnen bereits bekannt, andere sind neu oder komplexer:</p>
+<p>Rasterdaten beschreiben den Raum als regelmäßiges Zellgitter. Jede Zelle trägt einen Wert, zum Beispiel Höhe, Temperatur, Landbedeckung, Entfernung oder Eignung. Rasterbasierte Analyse nutzt diese Zellwerte, um neue räumliche Informationen abzuleiten.</p>
+<p>Der besondere Vorteil des Rastermodells liegt darin, dass flächenhafte Muster, kontinuierliche Übergänge, Nachbarschaften und Gradienten zellweise verarbeitet werden können. Dadurch eignen sich Rasterdaten besonders für Höhenmodelle, Distanzflächen, Interpolation, Sichtbarkeit, hydrologische Ableitungen und Multikriterienanalysen.</p>
+<p>In den folgenden Abschnitten geht es daher um eine zentrale Frage:</p>
+<blockquote class="blockquote">
+<p>Wie entstehen aus lückenhaften, punktuellen oder primären Geodaten neue flächenhafte Informationen?</p>
+</blockquote>
+<p>Diese Frage wird an mehreren Beispielen entwickelt: Voronoi-Polygone zeigen eine einfache Form distanzbasierter Raumaufteilung, Interpolationen erzeugen kontinuierliche Oberflächen aus Punktmessungen, digitale Geländemodelle liefern abgeleitete Reliefgrößen, Sichtbarkeitsanalysen prüfen räumliche Sichtbeziehungen und prozessbasierte Ableitungen modellieren Fließrichtungen und hydrologische Indizes.</p>
+<p>Als Einstieg in die Thematik der Raumanalyse wurde die Integration des einfachsten Raumkonzeptes, der Voronoi-Polygonisierung, gewählt. Sie steht exemplarisch für die Generierung geometrisch fundierter raumkontinuierlicher Interpolationskonzepte. Diese Betrachtung wird anschliessend um einige komplexere Interpolationsverfahren erweitert.</p>
+<section id="abstandsbeziehungen-voronoi-polygone-als-einfaches-nähemodell" class="level2">
+<h2 class="anchored" data-anchor-id="abstandsbeziehungen-voronoi-polygone-als-einfaches-nähemodell">Abstandsbeziehungen: Voronoi-Polygone als einfaches Nähemodell</h2>
+<p>Wir erweitern nun die bisherigen geometrischen Abfragen um eine andere Form räumlicher Ableitung. Bisher wurden Distanzen vor allem gemessen oder als Puffer verwendet. Bei Voronoi-Polygonen geht es dagegen um die Frage, wie aus einzelnen Punkten flächige Zuordnungsbereiche entstehen können.</p>
+<p>Voronoi-Polygone, auch Thiessen-Polygone genannt, teilen einen Raum so auf, dass jede Fläche genau einem Ausgangspunkt zugeordnet wird. Innerhalb einer solchen Fläche liegt jeder Ort näher am zugehörigen Punkt als an jedem anderen Punkt.</p>
+<p>Diese Zuordnung beruht auf einer starken Vereinfachung: Der Raum wird als gleichförmig, richtungsneutral und widerstandslos behandelt. Es gibt keine Barrieren, keine unterschiedlichen Wegkosten, keine Topographie, keine Fließrichtungen und keine weiteren Prozessinformationen. Nähe bedeutet hier ausschließlich euklidische Distanz, also direkte Luftlinie.</p>
+<p>Damit sind Voronoi-Polygone ein geometrisches Nullmodell. Sie zeigen, welche Raumaufteilung allein aus der Lage der Punkte entsteht, wenn sonst nichts über den Raum bekannt ist. Genau darin liegt ihr didaktischer Wert: Die Methode macht sichtbar, welche Annahme getroffen wird, bevor komplexere Modelle zusätzliche Informationen einbeziehen.</p>
+<p>Typische Fragen sind zum Beispiel:</p>
 <ul>
-<li>Welche oder wie viele Diskotheken befinden sich im Umkreis von 300 m um einen bestimmten Standort (Outdoor-Camp)?</li>
-<li>Wie viele Täler kann man von einem Aussichtspunkt aus überblicken?</li>
-<li>Liegt ein bestimmter Standort in der Lärmzone eines Fun-Parks?</li>
+<li>Welche Fläche wird welcher Niederschlagsstation zugeordnet, wenn nur die nächste Distanz zählt?</li>
+<li>Welche Bereiche liegen jeweils am nächsten zu einer Bodenprobe?</li>
+<li>Welche Wohngebiete wären rechnerisch der nächstgelegenen Schule zugeordnet?</li>
+<li>Welche Flächen werden durch einzelne Messpunkte repräsentiert, solange keine bessere Interpolation oder Prozessinformation vorliegt?</li>
 </ul>
-<p>Im Folgenden werden einige Methoden zur Berechnung von Entfernungen zwischen Raumobjekten etwas ausführlicher als bisher diskutiert. Aufgrund der unterschiedlichen Art der Diskretisierung des Raumes muss dabei - wie bereits gewohnt - zwischen Vektor- und Rastermodellen unterschieden werden.</p>
-<section id="voronoi-polygone" class="level3">
-<h3 class="anchored" data-anchor-id="voronoi-polygone">Voronoi-Polygone</h3>
-<p><a href="https://de.wikipedia.org/wiki/Voronoi-Diagramm">Voronoi-Polygone</a> (oder auch Thiessen-Polygone) entsprechen einem in der Natur (z.B. Pflanzenzellen) und in den Raumwissenschaften häufig beobachteten Ordnungsprinzip, daher sind die Anwendungsmöglichkeiten vielfältig. Beispielsweise können Voronoi-Polygone in erster Näherung zur Erstellung von Bodenkarten aus unregelmäßig und isoliert entnommenen Bodenproben verwendet werden. Dabei muss angenommen werden, dass über den Raum zwischen den beprobten Stellen nichts weiter bekannt ist und dass die Grenzlinie zwischen zwei Proben unterschiedlicher Bodenart willkürlich in der Mitte zwischen ihnen liegt (siehe z. B. <span class="citation" data-cites="jones1997">Jones (<a href="#ref-jones1997" role="doc-biblioref">1997</a>)</span>, 48). Voronoi-Polygone können auch zur Abgrenzung von Einzugsgebieten von Handels- oder Dienstleistungseinrichtungen verwendet werden, wenn keine weiteren Informationen über raumwirksame Strukturen vorliegen.</p>
-<p>Voronoi-Polygone sind somit eine elementare Methode, um auch aus 0-dimensionalen Daten <em>Nähe</em> (Proximität) bzw. <em>Nachbarschaft</em> geometrisch zu bestimmen. Voronoi-Polygone können verwendet werden, wenn in einer Menge von unregelmäßig verteilten Punkten die Regionen gesucht werden, die einem Punkt am nächsten liegen. Im zweidimensionalen Fall definiert ein Voronoi-Polygon eine Fläche um einen Punkt, in der jeder Punkt im Raum näher an diesem Punkt liegt als an jedem anderen Punkt. Solche Konstruktionen können auch in höheren Dimensionen gebildet werden, wobei Voronoi-Polyeder entstehen.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><embed src="../assets/images/unit04/suisse1.html" style="width:100.0%" height="500"></p>
-<figcaption>Die blauen Kreisflächen sind ein lehrbuchhaftes Beispiel für unregelmäßig verteilte Meßpunkte im Raum - in diesem Fall offizielle Regenmessstationen in der Schweiz. Die unterschiedlichen Kreisflächen visualisieren die mittlere langjährige Niederschlagsmenge an der Messstation (nicht in der Legende abgebildet). Die überlagerten und entsprechend der Niederschlagmenge der enthaltenen Messtation eingefärbten Polygone sind die Voronoi- oder Voronoi-Polygone genannten Flächen <strong>nächster Distanz</strong> zu den Punkten <span class="citation" data-cites="gisma2021">GISMA (<a href="#ref-gisma2021" role="doc-biblioref">2011-2021</a>)</span></figcaption>
-</figure>
+<p>Die Grenze der Methode liegt genau in ihrer Stärke: Sie bildet keine Übergänge zwischen Messwerten ab und modelliert keinen physikalischen Prozess. Sie ordnet Raum nach nächster Distanz. Bei Bodenproben, Messstationen oder Versorgungsstandorten kann diese Annahme als erste Näherung sinnvoll sein. Sobald reale Prozesse aber stark durch Relief, Barrieren, Verkehrswege, Windrichtungen, Wasserfluss oder administrative Zuständigkeiten geprägt sind, muss diese einfache Zuordnung kritisch geprüft oder durch ein passenderes Modell ersetzt werden.</p>
+<p>In Bodenkarten können Voronoi-Polygone zum Beispiel als einfache Ableitung aus unregelmäßig verteilten Bodenproben dienen, wenn zwischen den Proben keine weiteren Informationen vorliegen <span class="citation" data-cites="jones1997">(vgl. <a href="#ref-jones1997" role="doc-biblioref">Jones 1997, 48</a>)</span>. Eine ausführliche methodische Darstellung von Voronoi-Diagrammen findet sich bei <span class="citation" data-cites="okabe2000">Okabe u.&nbsp;a. (<a href="#ref-okabe2000" role="doc-biblioref">2000</a>)</span>.</p>
+<section id="konstruktion-von-voronoi-polygonen" class="level3">
+<h3 class="anchored" data-anchor-id="konstruktion-von-voronoi-polygonen">Konstruktion von Voronoi-Polygonen</h3>
+<p>Voronoi-Polygone entstehen durch eine Abstandsregel. Jeder Ort im Untersuchungsraum wird demjenigen Punkt zugeordnet, zu dem er die geringste Distanz besitzt.</p>
+<p>Die Grenze zwischen zwei benachbarten Punkten liegt dort, wo beide Punkte gleich weit entfernt sind. Konstruktiv entspricht diese Grenze der Mittelsenkrechten der Verbindungslinie zwischen den beiden Punkten. Werden diese Gleichabstandsgrenzen für alle benachbarten Punkte kombiniert, entsteht eine lückenlose Zerlegung des Raumes in Zuordnungszonen.</p>
+<iframe src="../assets/images/unit04/voronoi_konstruktion_svg_animation.html" width="100%" height="820" style="border:0; border-radius: 18px; overflow: hidden;" loading="lazy">
+</iframe>
+<p><strong>Abbildung 04-01:</strong> Konstruktion von Voronoi-Polygonen. Aus Punktstandorten entstehen über Gleichabstandsgrenzen und die Nächste-Punkt-Regel flächige Zuordnungsflächen.</p>
+<p>Man kann Voronoi-Diagramme auch um Linien oder andere Geometrien bilden. Dann entstehen komplexere Formen. In dieser Einheit beschränken wir uns auf den häufigsten und didaktisch klarsten Fall: Voronoi-Polygone aus Punktdaten.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Konstruktionsprinzip">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
 </div>
-<p>Man kann Voronoi-Diagramme auch um eindimensionale Objekte (Linien) bilden, was zu komplexeren Formen führt (siehe Abbildung unten). In dieser Einheit beschränken wir uns jedoch auf den einfachsten und am häufigsten verwendeten Fall von Voronoi-Polygonen für Punkte. Eine ausführlichere Diskussion findet sich in <span class="citation" data-cites="okabe2000">Okabe u.&nbsp;a. (<a href="#ref-okabe2000" role="doc-biblioref">2000</a>)</span>.</p>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Konstruktionsprinzip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ein Voronoi-Polygon enthält alle Orte, die näher an seinem Punktstandort liegen als an jedem anderen Punkt. Die Grenzen zwischen zwei Polygonen liegen deshalb auf Gleichabstandslinien: Jeder Ort auf einer solchen Grenze ist zu zwei benachbarten Punkten gleich weit entfernt.</p>
+</div>
+</div>
+</section>
+<section id="beispiel-niederschlagsstationen-in-der-schweiz" class="level3">
+<h3 class="anchored" data-anchor-id="beispiel-niederschlagsstationen-in-der-schweiz">Beispiel: Niederschlagsstationen in der Schweiz</h3>
+<p>Das folgende Beispiel überträgt dieses Konstruktionsprinzip auf klimatologische Niederschlagsstationen in der Schweiz. Die Punkte stehen für Messstationen. An diesen Orten liegen beobachtete Niederschlagswerte einer Klimanormalperiode vor. Zwischen den Stationen ist der Niederschlag dagegen nicht direkt gemessen.</p>
+<p>Die Voronoi-Polygone teilen den Raum deshalb nach nächster Station auf. Jede Fläche wird derjenigen Station zugeordnet, die ihr räumlich am nächsten liegt. Der Stationswert wird anschließend auf die gesamte zugehörige Fläche übertragen.</p>
+<p>Damit entsteht eine flächenhafte Darstellung, aber keine echte klimatologische Niederschlagsmodellierung. Die Karte zeigt nicht, wie Niederschlag tatsächlich kontinuierlich über den Raum verteilt ist. Sie zeigt vielmehr, welche Fläche nach der einfachen Nächste-Distanz-Regel welcher Station zugeordnet wird.</p>
+<iframe src="../assets/images/unit04/suisse1.html" width="100%" height="540" style="border:0; border-radius: 18px; overflow: hidden;" loading="lazy">
+</iframe>
+<p><strong>Abbildung 04-02:</strong> Voronoi-Polygone für klimatologische Niederschlagsstationen in der Schweiz. Jede Fläche wird der nächstgelegenen Station zugeordnet und übernimmt deren Messwert. Die Karte zeigt damit eine geometrische Näherungsfläche auf Basis nächster Distanz, nicht eine physikalisch modellierte Niederschlagsverteilung.</p>
+<p>Gerade bei Niederschlag wird die Grenze dieser Methode sichtbar. Niederschlag hängt nicht nur von der Nähe zur nächsten Station ab. Relief, Höhe, Exposition, Luv- und Lee-Lagen, Talräume und großräumige Wetterlagen beeinflussen die räumliche Verteilung erheblich. Deshalb ist es sinnvoll, in der interaktiven Karte zwischen Hintergrundkarten zu wechseln und die Stationsverteilung im Verhältnis zur Topographie zu betrachten.</p>
+<p>Achten Sie beim Betrachten der Karte besonders auf folgende Fragen:</p>
+<ul>
+<li>Liegen große Voronoi-Flächen dort, wo das Stationsnetz dünn ist?</li>
+<li>Verändern Gebirge, Täler oder Höhenstufen die Plausibilität der flächenhaften Zuordnung?</li>
+<li>Wirken manche Polygon-Grenzen klimatologisch plausibel oder eher rein geometrisch?</li>
+<li>Welche Stationen repräsentieren sehr große Räume, obwohl Niederschlag dort wahrscheinlich stark variiert?</li>
+<li>Wo wäre eine topographisch informierte Interpolation plausibler als eine reine Nächste-Distanz-Zuweisung?</li>
+<li>Welche Messgröße würde sich besser für eine Voronoi Aufteilung eigenen?</li>
+</ul>
+<div class="callout callout-style-simple callout-warning no-icon" data-titel="Wichtig">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Voronoi-Polygone sind ein geometrisches Nullmodell. Sie zeigen, was man erhält, wenn ausschließlich nächste Distanz zählt. Je stärker ein Phänomen durch Prozesse wie Relief, Strömung, Barrieren oder Erreichbarkeit geprägt ist, desto vorsichtiger muss eine Voronoi-Fläche interpretiert werden.</p>
+</div>
+</div>
+</div>
 </section>
 </section>
-<section id="übung" class="level2">
-<h2 class="anchored" data-anchor-id="übung">Übung</h2>
-<p>Die Berechnung von Voronoi-Polygonen ist auch auf Rasterdaten möglich. Im Raster spricht man dann nicht mehr von Polygonen, sondern von <em>Näherungszonen</em>. Aus einer Anzahl von Punkten, die als einzelne Zellen in einem Raster gegeben sind, kann mit Hilfe einer Distanztransformation die Zugehörigkeit der Zelle zur Zentralzelle bestimmt werden. Die Berechnung im Raster hat den enormen Vorteil, dass neben der euklidischen Distanzmetrik weitere Faktoren wie z.B. Oberflächenreibung oder Kosten als Gewichtungsfaktoren etc. berücksichtigt werden können.</p>
+<section id="übung-voronoi-als-zellbasierte-näherungszone" class="level2">
+<h2 class="anchored" data-anchor-id="übung-voronoi-als-zellbasierte-näherungszone">Übung: Voronoi als zellbasierte Näherungszone</h2>
+<p>Die Voronoi-Idee lässt sich auch rasterbasiert denken. Dann entstehen keine echten Polygone, sondern Zellen werden jeweils dem nächstgelegenen Ausgangspunkt zugeordnet. Dadurch wird sichtbar, dass Voronoi weniger eine Zeichenmethode als eine Abstandsregel ist.</p>
 <div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Experimentieren Sie:</p>
+<p>Experimentieren Sie mit der Simulation:</p>
 <ul>
-<li>Mit dem Slider können Sie die Anzahl der Punkte bestimmen</li>
-<li>Setup startet die zellenbasierte Berechnung der Proximitätszonen.</li>
-<li>Wenn Sie den Go Button aktivieren, können sie interaktiv die Punkte verschieben und die Neuberechnung verfolgen</li>
+<li>Verändern Sie die Anzahl der Punkte.</li>
+<li>Beobachten Sie, wie sich die Grenzlinien verschieben.</li>
+<li>Verschieben Sie einzelne Punkte und prüfen Sie, welche Zonen größer oder kleiner werden.</li>
+<li>Beschreiben Sie, warum sich eine Grenze genau zwischen zwei Punkten bildet.</li>
+<li>Überlegen Sie, was sich ändern würde, wenn statt Luftliniendistanz Reisezeit, Hangneigung oder Barrieren berücksichtigt würden.</li>
 </ul>
 <p><embed src="../assets/images/unit04/Voronoi.html" style="width:100.0%" height="700"></p>
 </div>
@@ -779,9 +833,6 @@ background-size: cover;
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-gisma2021" class="csl-entry" role="listitem">
-GISMA. 2011-2021. <span>„: Eigene Darstellung“</span>. University Marburg Dep. of Geography: gisma spatial science ressources, 2011-2021.
-</div>
 <div id="ref-jones1997" class="csl-entry" role="listitem">
 Jones, C. B. 1997. <em>Geographical Information Systems and Computer Cartography</em>. Routledge.
 </div>
@@ -1217,8 +1268,8 @@ Okabe, Atsuyuki, Barry Boots, Kokichi Sugihara, und Sung Nok Chiu. 2000. <em>Spa
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../unit04/unit04-01.html" class="pagination-link" aria-label="Räumliche Analysemethoden">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Räumliche Analysemethoden</span>
+      <a href="../unit04/unit04-01.html" class="pagination-link" aria-label="Räumliche Analyse als Ableitung und Begründung">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Räumliche Analyse als Ableitung und Begründung</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

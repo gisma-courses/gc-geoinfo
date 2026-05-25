@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Informationsloser Raum – Distanz-basierte Interpolation – Grundlagenkurs GI-S (QGIS)</title>
+<title>Informationsloser Raum – distanzbasierte Interpolation – Grundlagenkurs GI-S (QGIS)</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,26 +23,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -143,14 +124,18 @@ background-size: cover;
 
 
 <link rel="stylesheet" href="../css/styles.css">
-<meta property="og:title" content="Informationsloser Raum – Distanz-basierte Interpolation – Grundlagenkurs GI-S (QGIS)">
+<meta property="og:title" content="Informationsloser Raum – distanzbasierte Interpolation – Grundlagenkurs GI-S (QGIS)">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit04/CH_Precip_Example_for_Intro.jpg">
+<meta property="og:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit04/interpolation_01_punktmessungen_zur_flaeche.png">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
-<meta name="twitter:title" content="Informationsloser Raum – Distanz-basierte Interpolation – Grundlagenkurs GI-S (QGIS)">
+<meta property="og:image:height" content="1086">
+<meta property="og:image:width" content="1448">
+<meta name="twitter:title" content="Informationsloser Raum – distanzbasierte Interpolation – Grundlagenkurs GI-S (QGIS)">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit04/CH_Precip_Example_for_Intro.jpg">
+<meta name="twitter:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit04/interpolation_01_punktmessungen_zur_flaeche.png">
 <meta name="twitter:creator" content="@gisma">
+<meta name="twitter:image-height" content="1086">
+<meta name="twitter:image-width" content="1448">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -372,7 +357,7 @@ background-size: cover;
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Informationsloser Raum – Distanz-basierte Interpolation</h1>
+          <h1 class="quarto-secondary-nav-title">Informationsloser Raum – distanzbasierte Interpolation</h1>
         </a>     
     </div>
   </nav>
@@ -381,7 +366,7 @@ background-size: cover;
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">Informationsloser Raum – Distanz-basierte Interpolation</h1>
+      <h1 class="title d-none d-lg-block">Informationsloser Raum – distanzbasierte Interpolation</h1>
                       </div>
   </div>
     
@@ -585,7 +570,7 @@ background-size: cover;
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Reader Räumliche Datenanalyse</span></a>
+ <span class="menu-text">Reader Räumliche Ableitungen aus Geodaten</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -594,13 +579,13 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit04/unit04-01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Räumliche Analysemethoden</span></a>
+ <span class="menu-text">Räumliche Analyse als Ableitung und Begründung</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit04/unit04-02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Voronoi Polygone</span></a>
+ <span class="menu-text">Rasterbasierte räumliche Ableitungen</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -627,7 +612,7 @@ background-size: cover;
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
- <span class="menu-text">Reader Räumliche Datenanalyse</span></a>
+ <span class="menu-text">Reader Räumliche Kriterien, Eignung und Entscheidung</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -716,10 +701,14 @@ background-size: cover;
     <h2 id="toc-title">Inhalt</h2>
    
   <ul>
-  <li><a href="#räumliche-interpolation-von-daten" id="toc-räumliche-interpolation-von-daten" class="nav-link active" data-scroll-target="#räumliche-interpolation-von-daten">Räumliche Interpolation von Daten</a></li>
-  <li><a href="#lokale-vs.-globale-interpolation" id="toc-lokale-vs.-globale-interpolation" class="nav-link" data-scroll-target="#lokale-vs.-globale-interpolation">Lokale vs.&nbsp;Globale Interpolation</a></li>
-  <li><a href="#exakte-vs.-nicht-exakte-interpolation" id="toc-exakte-vs.-nicht-exakte-interpolation" class="nav-link" data-scroll-target="#exakte-vs.-nicht-exakte-interpolation">Exakte vs.&nbsp;nicht-exakte Interpolation</a></li>
-  <li><a href="#übung" id="toc-übung" class="nav-link" data-scroll-target="#übung">Übung</a></li>
+  <li><a href="#von-punktmessungen-zur-flächigen-schätzung" id="toc-von-punktmessungen-zur-flächigen-schätzung" class="nav-link active" data-scroll-target="#von-punktmessungen-zur-flächigen-schätzung">Von Punktmessungen zur flächigen Schätzung</a></li>
+  <li><a href="#was-eine-interpolation-voraussetzt" id="toc-was-eine-interpolation-voraussetzt" class="nav-link" data-scroll-target="#was-eine-interpolation-voraussetzt">Was eine Interpolation voraussetzt</a></li>
+  <li><a href="#interpolation-als-modellentscheidung" id="toc-interpolation-als-modellentscheidung" class="nav-link" data-scroll-target="#interpolation-als-modellentscheidung">Interpolation als Modellentscheidung</a></li>
+  <li><a href="#globale-und-lokale-interpolation" id="toc-globale-und-lokale-interpolation" class="nav-link" data-scroll-target="#globale-und-lokale-interpolation">Globale und lokale Interpolation</a></li>
+  <li><a href="#exakte-und-nicht-exakte-interpolation" id="toc-exakte-und-nicht-exakte-interpolation" class="nav-link" data-scroll-target="#exakte-und-nicht-exakte-interpolation">Exakte und nicht-exakte Interpolation</a></li>
+  <li><a href="#beispiel-niederschlagsstationen-in-der-schweiz" id="toc-beispiel-niederschlagsstationen-in-der-schweiz" class="nav-link" data-scroll-target="#beispiel-niederschlagsstationen-in-der-schweiz">Beispiel: Niederschlagsstationen in der Schweiz</a></li>
+  <li><a href="#übung-interpolationsmethoden-vergleichen" id="toc-übung-interpolationsmethoden-vergleichen" class="nav-link" data-scroll-target="#übung-interpolationsmethoden-vergleichen">Übung: Interpolationsmethoden vergleichen</a></li>
+  <li><a href="#kernpunkt" id="toc-kernpunkt" class="nav-link" data-scroll-target="#kernpunkt">Kernpunkt</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit04/unit04-03.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
     </div>
@@ -731,114 +720,126 @@ background-size: cover;
 
 
 
-<p>Betrachten Sie zunächst eine andere Darstellung der Ihnen bereits bekannten Abbildung der Niederschlagsmessstationen in der Schweiz. Im oberen Teil sehen Sie eine <em>3D-Niederschlagsfläche</em>. Die blauen Punkte sind wiederum die Standorte der Messstationen, ihre Grösse entspricht der Niederschlagsmenge. Die unterschiedlichen Höhen der Fläche und ihre Färbung hängen ebenfalls mit der Niederschlagsmenge zusammen. Im unteren Teil sehen Sie die 2D Lage der Messstationen in der Schweiz.</p>
+<section id="von-punktmessungen-zur-flächigen-schätzung" class="level2">
+<h2 class="anchored" data-anchor-id="von-punktmessungen-zur-flächigen-schätzung">Von Punktmessungen zur flächigen Schätzung</h2>
+<p>Viele geographische Phänomene werden nur an einzelnen Orten gemessen. Niederschlagsstationen, Bodenproben, Temperaturfühler oder Pegel liefern punktuelle Beobachtungen. Für viele Fragestellungen reicht diese punktuelle Information aber nicht aus. Häufig wird eine flächenhafte Darstellung benötigt: Wo ist der Niederschlag hoch, wo niedrig? Welche Bereiche liegen zwischen bekannten Messwerten? Wie kann aus einzelnen Beobachtungen eine räumlich kontinuierliche Schätzung entstehen?</p>
+<p>Interpolation bezeichnet die Schätzung unbekannter Werte zwischen bekannten Messpunkten. Sie erzeugt eine Fläche, die nicht direkt beobachtet wurde, sondern aus Punktdaten und Modellannahmen abgeleitet wird. Damit ist jede Interpolation mehr als eine technische Zeichenoperation. Sie entscheidet, wie Nähe, Ähnlichkeit, räumliche Abhängigkeit und Unsicherheit verstanden werden.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../assets/images/unit04/CH_Precip_Example_for_Intro.jpg" class="img-fluid figure-img"></p>
-<figcaption>Niederschlagsoberfläche der Schweiz (oben), Karte der Messstationen (unten). <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
+<p><img src="../assets/images/unit04/interpolation_01_punktmessungen_zur_flaeche.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 04-03: Grundidee räumlicher Interpolation. Punktmessungen liefern bekannte Werte an einzelnen Orten; die Fläche dazwischen muss durch ein Modell geschätzt werden.</figcaption>
 </figure>
 </div>
-<p>Bei der Erstellung einer kontinuierlichen Fläche aus einzelnen Punktbeobachtungen, wie z.B. Niederschlagsmessungen an 100 verschiedenen Punkten, stehen zentrale Fragen im Vordergrund: Wie können diese Punktdaten in eine kontinuierliche Flächendarstellung überführt werden, welche Methoden und Werkzeuge sind dafür notwendig und welches Wissen wird vorausgesetzt?</p>
-<p>Der erste Schritt bei der Analyse solcher kontinuierlichen Variablen beginnt typischerweise mit der Erstellung einer räumlichen Stichprobe. Dabei werden Messpunkte festgelegt, die für das zu untersuchende Phänomen repräsentativ sind. Von besonderer Bedeutung sind dabei die Repräsentativität, die Homogenität hinsichtlich der räumlichen Abhängigkeiten und die räumliche Verteilung der Messpunkte. Die Repräsentativität stellt sicher, dass alle relevanten Ausprägungen des Phänomens, einschließlich der Minima und Maxima, in der Stichprobe vertreten sind. Die Homogenität (oder Stationarität) stellt sicher, dass die Messwerte miteinander vergleichbar sind, während die räumliche Verteilung der Messungen (zufällig, regelmäßig oder in Gruppen) und die Größe der Stichprobe die Aussagekraft der Ergebnisse beeinflussen.</p>
-<p>Um aus Punktbeobachtungen eine kontinuierliche Fläche zu erstellen, wie im Beispiel des Niederschlags, müssen grundlegende Überlegungen bei der Planung und Analyse der Daten berücksichtigt werden:</p>
+<p>Der zentrale Übergang lautet also:</p>
+<blockquote class="blockquote">
+<p>Punktdaten sind Beobachtungen. Interpolierte Flächen sind modellierte Schätzungen.</p>
+</blockquote>
+<p>Diese Unterscheidung ist wichtig. Eine interpolierte Niederschlagskarte sieht oft geschlossen und eindeutig aus. Tatsächlich zeigt sie aber nicht überall gemessene Werte, sondern eine räumliche Annahme darüber, wie sich Werte zwischen den Stationen verhalten.</p>
+</section>
+<section id="was-eine-interpolation-voraussetzt" class="level2">
+<h2 class="anchored" data-anchor-id="was-eine-interpolation-voraussetzt">Was eine Interpolation voraussetzt</h2>
+<p>Die Qualität einer Interpolation hängt nicht nur vom gewählten Verfahren ab. Sie hängt zuerst von den Punktdaten ab. Wenn wichtige Räume, Höhenlagen oder Wertebereiche in der Stichprobe fehlen, kann auch ein aufwendig berechnetes Verfahren keine zuverlässige Fläche erzeugen.</p>
+<p>Vier Punkte sind besonders wichtig:</p>
+<p><strong>Repräsentativität</strong> bedeutet, dass die Messpunkte das untersuchte Phänomen ausreichend abdecken. Für eine Niederschlagskarte der Schweiz wäre es problematisch, wenn nur Stationen aus Tieflagen verwendet würden. Dann wären alpine Niederschlagsmuster kaum vertreten.</p>
+<p><strong>Räumliche Verteilung</strong> beschreibt, wie die Messpunkte im Untersuchungsraum angeordnet sind. Gleichmäßig verteilte Punkte stützen eine Flächenschätzung besser als stark geclusterte Punkte mit großen Lücken.</p>
+<p><strong>Homogenität oder Stationarität</strong> beschreibt die Annahme, dass räumliche Zusammenhänge im Untersuchungsgebiet vergleichbar sind. Wenn zwei Stationen in 2 km Entfernung in einem Tal ähnlich sind, muss das nicht automatisch auch für zwei Stationen in 2 km Entfernung an einer alpinen Luv-Lee-Grenze gelten.</p>
+<p><strong>Anzahl der Messpunkte</strong> bestimmt, wie stark eine Methode überhaupt räumliche Muster erfassen kann. Zu wenige Punkte erzwingen sehr grobe Annahmen. Viele Punkte helfen aber nur dann, wenn sie den Raum und das Phänomen sinnvoll abdecken.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit04/interpolation_02_voraussetzungen.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 04-04: Voraussetzungen räumlicher Interpolation. Repräsentativität, räumliche Verteilung, Homogenität und Anzahl der Messpunkte bestimmen, wie belastbar eine Flächenschätzung sein kann.</figcaption>
+</figure>
+</div>
+<p>Diese Kriterien hängen zusammen. Fünf Messstationen reichen für eine landesweite Niederschlagsschätzung kaum aus. Eine große Zahl von Stationen kann aber ebenfalls ungeeignet sein, wenn sie fast nur in gut zugänglichen Tälern liegen. Dann wäre die Stichprobe groß, aber für das Gebirge nicht repräsentativ.</p>
+</section>
+<section id="interpolation-als-modellentscheidung" class="level2">
+<h2 class="anchored" data-anchor-id="interpolation-als-modellentscheidung">Interpolation als Modellentscheidung</h2>
+<p>Verschiedene Interpolationsverfahren erzeugen aus denselben Punktdaten unterschiedliche Flächen. Der Unterschied liegt nicht nur in der Rechenmethode, sondern in der jeweiligen Raumannahme.</p>
+<p>Voronoi-Polygone ordnen jeden Ort dem nächstgelegenen Punkt zu. Das ist keine Interpolation im engeren Sinn, sondern eine Zuordnung nach nächster Distanz. Die Fläche springt abrupt von einem Stationswert zum nächsten.</p>
+<p>Inverse Distanzgewichtung, häufig IDW genannt, nimmt an, dass nahe Punkte stärker wirken als entfernte Punkte. Der geschätzte Wert entsteht aus einem gewichteten Mittel benachbarter Messwerte. Nähe wird dabei mathematisch als abnehmender Einfluss mit wachsender Distanz formuliert.</p>
+<p>Globale Verfahren, etwa Trendflächen, suchen ein übergeordnetes räumliches Muster. Sie sind geeignet, wenn eine großräumige Richtung oder ein allgemeiner Gradient sichtbar gemacht werden soll. Lokale Details werden dabei bewusst geglättet.</p>
+<p>Lokale glatte Verfahren passen sich stärker an Nachbarschaften an. Sie können lokale Muster besser darstellen, sind aber empfindlich gegenüber Punktverteilung, Suchradius, Glättung und Parametereinstellungen.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit04/interpolation_03_methodenlogik.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 04-05: Interpolationsmethoden als Modellentscheidungen. Verschiedene Verfahren übersetzen dieselben Punktdaten in unterschiedliche räumliche Oberflächen.</figcaption>
+</figure>
+</div>
+<p>Der entscheidende Punkt ist: Es gibt nicht die eine automatisch richtige Interpolationsmethode. Eine Methode ist nur im Verhältnis zur Fragestellung, zum Phänomen, zur Datenlage und zur gewünschten Aussage angemessen.</p>
+</section>
+<section id="globale-und-lokale-interpolation" class="level2">
+<h2 class="anchored" data-anchor-id="globale-und-lokale-interpolation">Globale und lokale Interpolation</h2>
+<p>Eine wichtige Unterscheidung betrifft die Frage, welche Messpunkte in die Schätzung eingehen.</p>
+<p>Globale Interpolationsverfahren nutzen alle Messpunkte des Untersuchungsgebiets. Dadurch entstehen Oberflächen, die vor allem großräumige Trends sichtbar machen. Für die Niederschlagsdaten der Schweiz könnte eine globale Trendfläche zum Beispiel eine allgemeine Zunahme oder Abnahme in eine bestimmte Richtung zeigen. Solche Flächen sind nicht dafür gedacht, lokale Werte möglichst exakt vorherzusagen. Sie dienen eher dazu, übergeordnete räumliche Strukturen zu erkennen.</p>
+<p>Lokale Interpolationsverfahren nutzen dagegen nur Punkte in einer definierten Umgebung oder gewichten nahe Punkte deutlich stärker. Dadurch können lokale Unterschiede besser sichtbar werden. Gleichzeitig hängt das Ergebnis stärker davon ab, wie groß die Nachbarschaft gewählt wird und wie die Messpunkte verteilt sind.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit04/interpolation_04_global_lokal.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 04-06: Globale und lokale Interpolation. Globale Verfahren betonen das großräumige Muster; lokale Verfahren reagieren stärker auf Nachbarschaften und lokale Punktverteilung.</figcaption>
+</figure>
+</div>
+<p>Beide Ansätze beantworten unterschiedliche Fragen. Wer ein großräumiges Muster sucht, benötigt keine detailreiche lokale Oberfläche. Wer lokale Unterschiede zwischen Tälern, Höhenlagen oder Siedlungsräumen untersuchen will, braucht dagegen ein Verfahren, das räumliche Nachbarschaften angemessen berücksichtigt.</p>
+</section>
+<section id="exakte-und-nicht-exakte-interpolation" class="level2">
+<h2 class="anchored" data-anchor-id="exakte-und-nicht-exakte-interpolation">Exakte und nicht-exakte Interpolation</h2>
+<p>Eine zweite wichtige Unterscheidung betrifft die Frage, ob die geschätzte Oberfläche die bekannten Messwerte exakt treffen muss.</p>
+<p>Exakte Interpolation bedeutet, dass die Oberfläche an den Messpunkten genau durch die beobachteten Werte läuft. Am Ort der Messstation wird also exakt der gemessene Wert reproduziert. Das ist plausibel, wenn die Messwerte als zuverlässig gelten und keine Glättung gewünscht ist.</p>
+<p>Nicht-exakte Interpolation bedeutet, dass die geschätzte Oberfläche die Messpunkte nicht zwingend exakt trifft. Das kann sinnvoll sein, wenn Messwerte unsicher sind, kurzfristige Störungen enthalten oder wenn ein geglättetes räumliches Muster gesucht wird. Die Methode behandelt die Punkte dann nicht als fehlerfreie Wahrheit, sondern als Beobachtungen mit möglicher Unsicherheit.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit04/interpolation_05_exakt_nicht_exakt.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 04-07: Exakte und nicht-exakte Interpolation. Exakte Verfahren treffen die Messpunkte; nicht-exakte Verfahren glätten die Oberfläche und können Unsicherheit oder Rauschen berücksichtigen.</figcaption>
+</figure>
+</div>
+<p>Exakt ist daher nicht automatisch besser. Bei sehr zuverlässigen Messwerten kann eine exakte Methode sinnvoll sein. Bei verrauschten oder kurzfristig schwankenden Daten kann eine geglättete, nicht-exakte Methode fachlich angemessener sein.</p>
+</section>
+<section id="beispiel-niederschlagsstationen-in-der-schweiz" class="level2">
+<h2 class="anchored" data-anchor-id="beispiel-niederschlagsstationen-in-der-schweiz">Beispiel: Niederschlagsstationen in der Schweiz</h2>
+<p>Das folgende Beispiel verwendet klimatologische Niederschlagsstationen in der Schweiz. Die blauen Punkte zeigen die Stationen. Die Punktgröße steht für die mittlere langjährige Niederschlagsmenge an der jeweiligen Station. Aus diesen punktuellen Beobachtungen werden verschiedene flächenhafte Darstellungen berechnet.</p>
+<p>Die Karte ist besonders geeignet, um die Wirkung verschiedener Verfahren zu vergleichen. Voronoi-Polygone übertragen den Wert der nächstgelegenen Station auf eine ganze Fläche. IDW erzeugt kontinuierlichere Übergänge, weil mehrere Stationen in die Schätzung eingehen. Globale und lokale Verfahren betonen wiederum unterschiedliche räumliche Muster.</p>
+<iframe src="../assets/images/unit04/suisse4.html" width="100%" height="825" style="border:0; border-radius: 18px; overflow: hidden;" loading="lazy">
+</iframe>
+<p><strong>Abbildung 04-08:</strong> Interaktive Karte der Niederschlagsstationen und interpolierten Niederschlagsflächen in der Schweiz. Die Karte zeigt, wie unterschiedliche Verfahren aus denselben Punktdaten unterschiedliche Flächen erzeugen.</p>
+<p>Gerade bei Niederschlag muss die Karte kritisch gelesen werden. Niederschlag hängt nicht nur von der Nähe zur nächsten Station ab. Relief, Höhe, Exposition, Luv- und Lee-Lagen, Talräume und großräumige Wetterlagen beeinflussen die räumliche Verteilung. Deshalb lohnt es sich, in der Karte die Hintergrunddarstellung zu wechseln und die interpolierten Flächen mit der Topographie zu vergleichen.</p>
+<p>Achten Sie besonders auf folgende Fragen:</p>
 <ul>
-<li><p><strong>Repräsentativität:</strong> Es ist wichtig, dass die Stichprobe alle relevanten Ausprägungen des Phänomens repräsentiert. Dazu gehören insbesondere die Extremwerte (Minima und Maxima). Damit wird sichergestellt, dass das gesamte Spektrum des untersuchten Phänomens in die Analyse einfließt.</p></li>
-<li><p><strong>Homogenität:</strong> Die räumliche Abhängigkeit zwischen den Datenpunkten muss im gesamten Untersuchungsgebiet konsistent sein. Dies bedeutet, dass die Messwerte zweier Stationen, die beispielsweise 2 km voneinander entfernt sind, überall im Untersuchungsgebiet ähnlich sein sollten, egal ob im Tessin, im Jura, in Graubünden oder in Freiburg. Diese Übereinstimmung wird als „Stationarität“ bezeichnet.</p></li>
-<li><p><strong>Räumliche Verteilung der Messungen:</strong> Die Anordnung der Messpunkte kann zufällig, regelmässig oder geclustert sein. Diese Verteilung ist für die Interpretation und die statistische Analyse der Daten von grosser Bedeutung. Mit Hilfe von Techniken wie der „Nearest Neighbor“-Statistik, die Teil der „Point Pattern Analysis“ ist, kann die räumliche Verteilung der Messpunkte charakterisiert und analysiert werden.</p></li>
-<li><p><strong>Größe (= Anzahl der Messungen):</strong> Die Anzahl der Messpunkte hängt vom Phänomen und von der Größe des Untersuchungsgebietes ab. Praktische Einschränkungen wie die Zugänglichkeit des Geländes oder die Kosten der Messungen können die Anzahl der Messpunkte ebenfalls beeinflussen. Es ist oft schwierig, die ideale Stichprobengröße zu bestimmen, da sie von vielen Faktoren abhängt.</p></li>
+<li>Wo liegen große Lücken zwischen Stationen?</li>
+<li>Welche Flächen werden stark von einzelnen Stationen geprägt?</li>
+<li>Wo folgen die interpolierten Muster erkennbar der Topographie?</li>
+<li>Wo wirken Grenzen oder Gradienten eher wie ein methodischer Effekt?</li>
+<li>Welche Methode erzeugt eine plausible Fläche, und welche erzeugt nur eine formal glatte Darstellung?</li>
 </ul>
-<p>Diese Überlegungen sind entscheidend, um aus punktuellen Daten eine valide und aussagekräftige kontinuierliche Flächendarstellung zu generieren. Sie helfen nicht nur bei der Erstellung der Fläche, sondern stellen auch sicher, dass die resultierende Fläche das untersuchte Phänomen adäquat und genau repräsentiert. Diese Ansätze sind entscheidend für den Übergang von punktuellen Beobachtungen zu einer flächenhaften, räumlich kontinuierlichen Darstellung unter Berücksichtigung stochastischer Schwankungen und mathematischer Näherungen.</p>
-<p>Zur statistischen Analyse der räumlichen Verteilung der Messungen können Methoden wie die „Nearest Neighbor“-Statistik verwendet werden. Diese gehört zu den „Point Pattern Analysis“-Techniken, mit deren Hilfe die räumliche Verteilung der Messpunkte charakterisiert und analysiert werden kann.</p>
-<p>Repräsentativität, Homogenität, räumliche Verteilung und Grösse hängen zusammen. So ist eine Grösse (Anzahl) von 5 Messstationen für die Schätzung des gesamtschweizerischen Niederschlags kaum sinnvoll und damit nicht repräsentativ. Ebenso wenig repräsentativ wäre die Auswahl aller deutschschweizerischen Messstationen für die gesamtschweizerische Schätzung. Hier würde vielleicht die Grösse ausreichen, nicht aber die räumliche Verteilung. Würde man nun alle Stationen unter 750 mNN auswählen, so wäre zwar die Stichprobe sowohl von der Größe als auch von der räumlichen Verteilung her in Ordnung, aber das Phänomen wäre in der Stichprobe nicht homogen repräsentiert. Eine anschließende Schätzung würde vor allem im Bereich über 750 mNN deutlich verzerrt ausfallen.</p>
-<section id="räumliche-interpolation-von-daten" class="level3">
-<h3 class="anchored" data-anchor-id="räumliche-interpolation-von-daten">Räumliche Interpolation von Daten</h3>
-<p>Nachdem wir uns kurz mit dem Zusammenhang von räumlichen Abhängigkeiten beschäftigt haben, kommen wir nun zu räumlichen Interpolationen. Was sind räumliche <em>Interpolationen</em>? Darunter versteht man die Berechnung unbekannter Werte auf der Basis benachbarter bekannter Werte. Die meisten dieser Techniken gehören zu den komplexeren Methoden der räumlichen Analyse, daher beschränken wir uns hier bewusst auf einen prinzipiellen Überblick über die Methoden.</p>
-<p><em>Inverse Distanzgewichtung</em>, <em>Spline-Interpolation</em>, <em>Kriging-Methoden</em>, <em>Polynomiale Regressionsmethoden</em> sind nur einige der sehr gebräuchlichen Interpolationsmethoden, die in GIS-Software zu finden sind.</p>
 </section>
-<section id="lokale-vs.-globale-interpolation" class="level3">
-<h3 class="anchored" data-anchor-id="lokale-vs.-globale-interpolation">Lokale vs.&nbsp;Globale Interpolation</h3>
-<p>Globale Methoden werden auf ALLE Daten im Untersuchungsgebiet angewendet, lokale Methoden nur auf räumlich definierte Teilmengen. Globale Interpolation ist daher nicht geeignet, um möglichst exakte Werte zu ermitteln, sondern um globale räumliche Strukturen zu beurteilen.</p>
-<p>Als Beispiel ist unten eine lineare Trendfläche dargestellt - sie wurde mittels Regression aus den Niederschlagsdaten der Schweiz ermittelt und zeigt einen Trend zur Zunahme der Niederschlagshöhen von SE nach NW. In der Abbildung darunter wurde aus den gleichen Daten eine lokale Interpolation mittels sogenannter Radial-Base-Interpolation durchgeführt.</p>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/images/unit04/globale_interpolation.gif" class="img-fluid figure-img"></p>
-<figcaption>Beispiel einer globalen Interpolation – Lineare Trendoberfläche für Schweizer Niederschlagsdaten <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/images/unit04/lokale_interpolation.gif" class="img-fluid figure-img"></p>
-<figcaption>Beispiel einer lokalen Interpolation – Radial Basis Interpolation für Schweizer Niederschlagsdaten, <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="exakte-vs.-nicht-exakte-interpolation" class="level3">
-<h3 class="anchored" data-anchor-id="exakte-vs.-nicht-exakte-interpolation">Exakte vs.&nbsp;nicht-exakte Interpolation</h3>
-<p>Exakte Interpolation bedeutet, dass die geschätzte Fläche durch die bekannten Punkte verläuft, während bei nicht exakten Methoden die Schätzwerte für bekannte Beobachtungen von den tatsächlichen Werten abweichen können. Letztere Methoden sind dann sinnvoll, wenn die bekannten Daten bereits eine gewisse Unsicherheit aufweisen.</p>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/images/unit04/exakte_interpolation.jpg" class="img-fluid figure-img"></p>
-<figcaption>Exakter Interpolator: Schätzoberfläche passiert exakt die bekannten – schematisch als Säulen dargestellt – Punkte <span class="citation" data-cites="wyatt2000">Wyatt (<a href="#ref-wyatt2000" role="doc-biblioref">2000</a>)</span></figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/images/unit04/nicht_exakte_interpolation.jpg" class="img-fluid figure-img"></p>
-<figcaption>Nicht-exakter Interpolator: Schätzoberfläche passiert die bekannten – schematisch als Säulen dargestellt – Punkte NICHT <span class="citation" data-cites="wyatt2000">Wyatt (<a href="#ref-wyatt2000" role="doc-biblioref">2000</a>)</span></figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="übung" class="level2">
-<h2 class="anchored" data-anchor-id="übung">Übung</h2>
+<section id="übung-interpolationsmethoden-vergleichen" class="level2">
+<h2 class="anchored" data-anchor-id="übung-interpolationsmethoden-vergleichen">Übung: Interpolationsmethoden vergleichen</h2>
 <div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Die dargestellten Beispiele visualisieren die Ergebnisse verschiedener etablierter Interpolationsverfahren. Von diesen soll neben der bereits bekannten Voronoi-Tessellation die Inverse Distance-Weighted Interpolation aufgrund ihrer Einfachheit und häufigen Anwendung gesondert betrachtet werden.</p>
-<p>Nutzen Sie die interaktiven Möglichkeiten und vergleichen Sie: - die je nach Verfahren unterschiedlichen räumlichen Ausprägungen der flächenhaften Niederschlagsverteilung aus Punktmesswerten. - insbesondere die Voronoi-Polygone mit den alternativen zum Teil deutlich komplexeren Interpolationsergebnissen. - mit der topographischen Hintergrundskarten <em>Esri.World.Topo.Map</em> können Sie Zusammenhänge zwischen Niederschlag und Relief erkennen? Welche Interpolation bildet disen am geeignetesten ab?</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><embed src="../assets/images/unit04/suisse4.html" style="width:100.0%" height="825"></p>
-<figcaption>Die blauen Kreisflächen sind ein lehrbuchhaftes Beispiel für unregelmäßig verteilte Meßpunkte im Raum - in diesem Fall offizielle Regenmessstationen in der Schweiz. Die unterschiedlichen Kreisflächen visualisieren die mittlere langjährige Niederschlagsmenge an der Messstation (nicht in der Legende abgebildet). Die überlagerten und entsprechend der Niederschlagmenge der enthaltenen Messtation eingefärbten Polygone sind die Voronoi- oder Voronoi-Polygone genannten Flächen <strong>nächster Distanz</strong> zu den Punkten. Die jeweiligen Flächeneinfärbungen des Interpolation_Rain Layers kommen durch die unterschiedlichen räumlichen Interpolationsverfahren zustande. <span class="citation" data-cites="gisma2021">GISMA (<a href="#ref-gisma2021" role="doc-biblioref">2011-2021</a>)</span></figcaption>
-</figure>
+<p>Nutzen Sie die interaktive Karte und vergleichen Sie mehrere Interpolationsverfahren.</p>
+<p>Bearbeiten Sie die folgenden Aufgaben schriftlich:</p>
+<ol type="1">
+<li>Schalten Sie zunächst die Voronoi-Darstellung ein. Beschreiben Sie, wie die Fläche einer Station zugeordnet wird.</li>
+<li>Wechseln Sie zu einer kontinuierlichen Interpolationsfläche. Beschreiben Sie, wie sich Übergänge und Grenzen verändern.</li>
+<li>Wechseln Sie die Hintergrundkarte auf eine topographische Darstellung. Prüfen Sie, ob Niederschlagsmuster mit Höhenlagen, Gebirgsräumen oder Tälern zusammenhängen.</li>
+<li>Nennen Sie einen Bereich, in dem die Voronoi-Zuordnung unplausibel wirkt. Begründen Sie Ihre Einschätzung.</li>
+<li>Nennen Sie einen Bereich, in dem eine kontinuierliche Interpolation plausibler wirkt als die reine Zuordnung zur nächsten Station.</li>
+<li>Formulieren Sie abschließend, welche Zusatzinformation für eine bessere Niederschlagsfläche wichtig wäre.</li>
+</ol>
 </div>
 </div>
 </div>
-</div>
-
+</section>
+<section id="kernpunkt" class="level2">
+<h2 class="anchored" data-anchor-id="kernpunkt">Kernpunkt</h2>
+<p>Räumliche Interpolation übersetzt punktuelle Beobachtungen in flächenhafte Schätzungen. Diese Schätzungen sind nie neutral. Jede Methode enthält Annahmen darüber, wie Werte zwischen Messpunkten zusammenhängen. Eine gute Karte entsteht deshalb nicht nur durch ein Werkzeug, sondern durch die passende Verbindung von Daten, Methode, Prozessverständnis und kritischer Interpretation.</p>
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-gisma2021" class="csl-entry" role="listitem">
-GISMA. 2011-2021. <span>„: Eigene Darstellung“</span>. University Marburg Dep. of Geography: gisma spatial science ressources, 2011-2021.
-</div>
-<div id="ref-gitta2005" class="csl-entry" role="listitem">
-GITTA. 2005-2016. <span>„Overview of available modules [online]“</span>. 2005-2016. <a href="http://www.gitta.info/website/en/html/modules_overview.html">http://www.gitta.info/website/en/html/modules_overview.html</a>.
-</div>
-<div id="ref-wyatt2000" class="csl-entry" role="listitem">
-Wyatt, P. 2000. <span>„The Interpolation Process“</span>. Directions Magazine. <a href="http://www.directionsmag.com/article.php?article_id=52f">http://www.directionsmag.com/article.php?article_id=52f</a>.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <div class="footer-banner">
 
     <a href="https://gisma-courses.github.io/gc/" target="_blank">GISMA (2026)</a> |
@@ -1267,8 +1268,8 @@ Wyatt, P. 2000. <span>„The Interpolation Process“</span>. Directions Magazin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../unit04/unit04-02.html" class="pagination-link" aria-label="Voronoi Polygone">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Voronoi Polygone</span>
+      <a href="../unit04/unit04-02.html" class="pagination-link" aria-label="Rasterbasierte räumliche Ableitungen">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Rasterbasierte räumliche Ableitungen</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
