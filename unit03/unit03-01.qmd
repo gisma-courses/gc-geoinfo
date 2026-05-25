@@ -15,54 +15,177 @@ Im Rahmen der Datenanalyse sind grundsätzlich drei Vorgehensweisen möglich (vg
 -   *Geometrische Abfragen:* Wählt die Objekte aus, die die räumlichen Bedingungen erfüllen, z.B.: „Selektiere alle Häuser, die weniger als 250 m vom Fluss entfernt sind.“
 -   *Topologische Abfragen:* Wählt die Objekte aus, die die gegebenen Bedingungen bezüglich der räumlichen Beziehungen zwischen den Objekten erfüllen, z.B.: "Selektiere alle Gebäude, die vollständig in der Wohnzone II (WII) liegen.
 
-![Abbildung 03-01: Struktur der nicht-manipulativen GI-Abfragen (GITTA 2005)](../assets/images/unit03/abfrage2.jpg)
+![Abb. 03-01: Grundstruktur von GI-Abfragen. Geodaten liegen als Raster- oder Vektordaten vor und können über geometrische, topologische oder thematische Abfragen ausgewertet werden. Direkte Abfragen verändern die Ausgangsdaten nicht, sondern liefern Informationen, Auswahlen oder Darstellungen. Manipulative Abfragen beziehungsweise Analyseoperationen erzeugen dagegen neue abgeleitete Daten, zum Beispiel durch Pufferung, Verschneidung, Distanzanalyse oder Overlay.](../assets/images/unit03/abfragen-konzept.png)
+
 
 ## Auswahloperatoren
 
-Zentrales Werkzeug von Abfragen in GI-Systemen sind die so genannten Auswahloperatoren, auch algebraische Operatoren genannt. Sie gliedern sich in:
+Abfragen in GI-Systemen beruhen auf Operatoren. Operatoren legen fest, **wie Bedingungen formuliert, Werte verglichen oder mehrere Kriterien miteinander verknüpft werden**. Damit sind sie die sprachliche und rechnerische Grundlage vieler GIS-Abfragen.
 
--   *Vergleichsoperatoren:* Zur Formulierung von Fragen können neben dem Gleichheitszeichen auch Vergleichsoperatoren verwendet werden.
--   *Arithmetische Operatoren:* Diese Operatoren werden bei numerischen Attributen verwendet, z.B. können Mittelwerte eines Attributs, Summen von Attributwerten usw. aus einer Menge ausgewählter Objekte berechnet werden.
--   *Logische Operatoren:* Logische Operatoren werden verwendet, um Bedingungen zu formulieren.
+Eine Abfrage kann sehr einfach sein:
+
+```text
+Landnutzung = 'Wald'
+```
+
+Sie kann aber auch mehrere Bedingungen kombinieren:
+
+```text
+Landnutzung = 'Wald' AND Hangneigung > 15
+```
+
+In beiden Fällen wird aus vorhandenen Geodaten eine Auswahl erzeugt. Die Originaldaten bleiben dabei unverändert. Erst wenn die Auswahl weiterverarbeitet, gespeichert, gepuffert, verschnitten oder als neuer Layer ausgegeben wird, entsteht daraus eine neue Datenebene.
+
+Grundlegend lassen sich drei Operatorgruppen unterscheiden:
+
+* **Vergleichsoperatoren** prüfen, ob ein Attributwert eine Bedingung erfüllt.
+* **Arithmetische Operatoren** berechnen neue numerische Werte.
+* **Logische Operatoren** verknüpfen mehrere Bedingungen zu einer gemeinsamen Abfrage.
+
 
 ### Vergleichsoperatoren
 
-Die Vergleichsoperatoren können für unterschiedlich skalierte Attribute (Zahlen, Text) verwendet werden. Bei nicht-numerischen Attributen beziehen sich die Vergleiche „größer als“, „kleiner als“ usw. auf die Position in einer internen „alphabetischen“ Ordnung des Computers (z.B. ASCII-Code-Tabelle).
+Vergleichsoperatoren werden verwendet, um Attributwerte zu prüfen. Sie beantworten Fragen wie: Ist ein Wert gleich einem bestimmten Begriff? Ist eine Fläche größer als ein Schwellenwert? Liegt ein Messwert unter einer Grenze?
 
-| Vergleichsoperator | Bedeutung           |
-|:------------------:|---------------------|
-|         =          | EQ (gleich)         |
-|         \>         | GT (größer)         |
-|        \>=         | GE (größer gleich)  |
-|         \<         | LT (kleiner)        |
-|        \< =        | LE (kleiner gleich) |
-|        \<\>        | NE (ungleich)       |
+Typische Beispiele sind:
 
-: Tabelle 03-01: Vergleichsoperatoren
+```text
+Landnutzung = 'Wald'
+Fläche > 100
+Höhe <= 300
+Name <> 'Marburg'
+```
+
+| Operator | Bedeutung           | Beispiel                    |
+| :------: | ------------------- | --------------------------- |
+|    `=`   | gleich              | `Landnutzung = 'Wald'`      |
+|    `>`   | größer als          | `Fläche > 100`              |
+|   `>=`   | größer oder gleich  | `Höhe >= 300`               |
+|    `<`   | kleiner als         | `Distanz < 500`             |
+|   `<=`   | kleiner oder gleich | `Hangneigung <= 10`         |
+|   `<>`   | ungleich            | `Landnutzung <> 'Siedlung'` |
+
+: Tabelle 03-01: Vergleichsoperatoren für Attributabfragen
+
+Vergleichsoperatoren können für Zahlen und Texte verwendet werden. Bei Zahlen ist die Bedeutung direkt verständlich. Bei Texten beziehen sich Vergleiche wie „größer als“ oder „kleiner als“ nicht auf eine fachliche Größe, sondern auf eine interne alphabetische beziehungsweise zeichencodierte Ordnung. Für GIS-Abfragen sind bei Textattributen deshalb meist `=` und `<>` die wichtigsten Operatoren.
 
 ### Arithmetische Operatoren
 
-Die arithmetischen Operatoren werden für numerische Attribute verwendet, z.B. können Mittelwerte eines Attributs, Summen von Attributwerten usw. aus einer Reihe ausgewählter Objekte berechnet werden. Als arithmetische Operatoren können die Multiplikation `*`, die Division `/`, die Addition `+` und die Subtraktion `-`, der Exponent `exp` und der Modulo-Operator `%` verwendet werden. Der Modulo-Operator liefert den Rest einer ganzzahligen Division (z.B. `5 % 2 = 1`).
+Arithmetische Operatoren werden für numerische Attribute verwendet. Mit ihnen lassen sich Werte berechnen, umformen oder miteinander kombinieren. Sie sind besonders wichtig, wenn aus vorhandenen Attributen neue Kennwerte abgeleitet werden sollen.
+
+Typische Beispiele sind:
+
+```text
+Fläche_ha = Fläche_m2 / 10000
+Dichte = Einwohner / Fläche_km2
+Kosten = Distanz * Kosten_pro_Meter
+```
+
+| Operator | Bedeutung                                | Beispiel    |
+| :------: | ---------------------------------------- | ----------- |
+|    `+`   | Addition                                 | `A + B`     |
+|    `-`   | Subtraktion                              | `A - B`     |
+|    `*`   | Multiplikation                           | `A * B`     |
+|    `/`   | Division                                 | `A / B`     |
+|   `exp`  | Potenz / Exponent                        | `exp(A)`    |
+|    `%`   | Modulo, Rest einer ganzzahligen Division | `5 % 2 = 1` |
+
+Arithmetische Operatoren verändern nicht automatisch den Datenbestand. Sie erzeugen zunächst einen berechneten Ausdruck. Erst wenn das Ergebnis als neues Attribut, neuer Layer oder neues Raster gespeichert wird, entsteht eine neue Datenebene.
 
 ### Logische Operatoren
 
-Logische Operatoren verknüpfen Attribute oder Teilabfragen als logische Ausdrücke (mit den beiden möglichen Werten „wahr“ oder „falsch“). Sie eignen sich daher zur effizienten Gestaltung komplexer Abfragen. Logische Operatoren werden auch als Boolesche Algebra bezeichnet. Sie basiert auf der binären Struktur der Werte 1 (wahr) und 0 (falsch). Sie bietet eine Reihe verschiedener Verknüpfungen, die entweder „wahr“ oder „falsch“ sein können, aber niemals beides. Die booleschen (oder logischen) Operatoren, die in GIS verwendet werden, um zwei räumliche Auswahlkriterien miteinander zu verknüpfen, sind 'AND', 'OR', 'XOR' und 'NOT': Die folgende Tabelle listet die 4 logischen Grundoperatoren und ihre Wirkungsweise auf:
+Logische Operatoren verknüpfen mehrere Bedingungen. Jede einzelne Bedingung kann dabei entweder **wahr** oder **falsch** sein. Logische Operatoren legen fest, welche Kombination dieser Bedingungen als Treffer gilt.
 
-Zur Veranschaulichung sind in der rechten Spalte die *Venn-Diagramme* der Booleschen Operatoren dargestellt. Die Darstellung wird verständlicher, wenn man sich vorstellt, dass die Kreise 1 und 2 jeweils zwei Bedingungen (oder Teilmengen der Relation) grafisch darstellen. Konkret: Kreis 1: GEBIET = „bewaldet“ und Kreis 2: GEBIET = steil. Die schraffierte Fläche stellt jeweils die wahre Aussage dar. In dieser Grundform entspricht der Teil außerhalb der Kreise keinem Abfrageergebnis.
+Beispiel:
 
-![Die vier Booleschen Operatoren (GITTA 2005)](../assets/images/unit03/combination.jpg)
+```text
+Landnutzung = 'Wald'
+Hangneigung > 15
+```
+
+Diese beiden Bedingungen können unterschiedlich kombiniert werden:
+
+| Operator | Bedeutung             | Ergebnisfrage                                                         |
+| :------: | --------------------- | --------------------------------------------------------------------- |
+|   `AND`  | Schnittmenge          | Welche Objekte erfüllen beide Bedingungen?                            |
+|   `OR`   | Vereinigung           | Welche Objekte erfüllen mindestens eine der Bedingungen?              |
+|   `XOR`  | exklusive Vereinigung | Welche Objekte erfüllen genau eine der Bedingungen, aber nicht beide? |
+|   `NOT`  | Negation / Ausschluss | Welche Objekte erfüllen eine Bedingung nicht?                         |
+
+Bei `AND` müssen beide Bedingungen erfüllt sein:
+
+```text
+Landnutzung = 'Wald' AND Hangneigung > 15
+```
+
+Die Abfrage findet nur Objekte, die bewaldet und gleichzeitig steil sind.
+
+Bei `OR` reicht eine der beiden Bedingungen:
+
+```text
+Landnutzung = 'Wald' OR Hangneigung > 15
+```
+
+Die Abfrage findet Objekte, die bewaldet sind, steil sind oder beides zugleich.
+
+Bei `XOR` wird genau eine Bedingung zugelassen, aber nicht beide gemeinsam:
+
+```text
+Landnutzung = 'Wald' XOR Hangneigung > 15
+```
+
+Die Abfrage findet also bewaldete, nicht steile Objekte sowie steile, nicht bewaldete Objekte. Bewaldete und zugleich steile Objekte werden ausgeschlossen.
+
+Bei `NOT` wird eine Bedingung umgekehrt:
+
+```text
+NOT Landnutzung = 'Wald'
+```
+
+Die Abfrage findet alle Objekte, die nicht als Wald klassifiziert sind.
+
+![Abb. 03-02: Auswahloperatoren in GI-Systemen. Vergleichsoperatoren prüfen Attributwerte, arithmetische Operatoren berechnen numerische Werte und logische Operatoren verknüpfen mehrere Bedingungen. Die Venn-Diagramme zeigen die Wirkung der Booleschen Operatoren AND, OR, XOR und NOT für zwei Bedingungen oder Teilmengen.](../assets/images/unit03/auswahloperatoren.png)
 
 In vielen GIS-Programmen entsprechen die Booleschen Operatoren direkt aufrufbaren Funktionen und tragen oft ähnliche Namen. So entspricht in vielen GIS-Programmpaketen die Funktion `INTERSECT` dem Operanden `AND`, `UNION` dem Operanden `OR` und `ERASE` dem Operanden `NOT`. Die letztgenannte Funktion wird auch sehr anschaulich „Cookie-Cutting“ genannt, da die Form des zweiten Kriteriums wie beim Plätzchenbacken aus dem ausgerollten Teig des ersten „ausgestochen“ wird.
 
-### Kombination von Operatoren
+### Kombination mehrerer Bedingungen
 
-Durch die Kombination von Operatoren ist es möglich, mehrere Bedingungen miteinander zu verknüpfen. Boolesche Operatoren sind jedoch **nicht** kommutativ, d.h. das Ergebnis ihrer Anwendung in komplexen Ausdrücken hängt von der definierten Reihenfolge der Teilausdrücke ab. Schauen Sie sich die folgenden Beispiele an und versuchen Sie, die Abfragen mit ihren Komponenten mit Hilfe Ihrer bisherigen Kenntnisse nachzuvollziehen.
+In GIS-Abfragen werden Operatoren häufig kombiniert. Dadurch lassen sich fachlich präzisere Fragen formulieren:
 
-::: {layout-ncol="2"}
-![Abbildung 07-03: Beispiele für THEM = thematische und GEOM + THEM = kombinierte geometrische und thematische Abfragen (GITTA 2005](https://farm3.staticflickr.com/2922/14161471688_12d9ff0432_o.png)
+```text
+Landnutzung = 'Wald' AND Hangneigung > 15 AND Distanz_Strasse > 200
+```
 
-![Abbildung 07-04: Beispiele für GEOM = Geometrische und TOPO = Topologische Abfragen (GITTA 2005)](https://farm3.staticflickr.com/2913/14348127685_0ed1e5b815_o.png)
-:::
+Diese Abfrage sucht Waldflächen, die steil sind und weiter als 200 Meter von einer Straße entfernt liegen.
+
+Bei komplexeren Abfragen muss die Reihenfolge der Auswertung eindeutig sein. Klammern helfen, die fachliche Logik sichtbar zu machen:
+
+```text
+(Landnutzung = 'Wald' OR Landnutzung = 'Gebüsch')
+AND
+Hangneigung > 15
+```
+
+Diese Abfrage sucht steile Flächen, die entweder Wald oder Gebüsch sind.
+
+Ohne Klammern kann unklar werden, welche Bedingungen zuerst zusammengehören. Deshalb sollten komplexe Abfragen immer so geschrieben werden, dass die fachliche Logik direkt erkennbar ist.
+
+![Abb. 03-03: Kombinierte Abfragen in GI-Systemen. Komplexere GIS-Abfragen verbinden mehrere Bedingungen, Ebenen und Abfragetypen. Thematische Abfragen beziehen sich auf Attributwerte, geometrische Abfragen auf Lage, Distanz oder Ausdehnung und topologische Abfragen auf räumliche Beziehungen wie innerhalb, benachbart oder überschneidend. Die Beispiele zeigen, wie aus Eingabedaten Abfrageergebnisse als Tabelle und Karte abgeleitet werden.](../assets/images/unit03/kombination.png)
+
+### Kernidee
+
+Operatoren sind das zentrales Steuerkonzept in Abfragen. Sie übersetzen eine fachliche Frage in eine prüfbare GIS-Abfrage. Entscheidend ist daher nicht nur, ob die Syntax stimmt, sondern ob die formulierte Bedingung wirklich zur räumlichen Fragestellung passt.
+
+Eine gute GIS-Abfrage besteht aus drei Schritten:
+
+```text
+fachliche Frage
+→ geeignete Bedingungen
+→ passende Operatoren
+```
+
+
+
 
 ::: {.callout-tip icon="false" appearance="simple"}
 ## Übung

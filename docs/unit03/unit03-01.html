@@ -123,12 +123,16 @@ background-size: cover;
 <link rel="stylesheet" href="../css/styles.css">
 <meta property="og:title" content="Abfragen in Relationen - eine Einführung – Grundlagenkurs GI-S (QGIS)">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit03/abfrage2.jpg">
+<meta property="og:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit03/abfragen-konzept.png">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
+<meta property="og:image:height" content="941">
+<meta property="og:image:width" content="1672">
 <meta name="twitter:title" content="Abfragen in Relationen - eine Einführung – Grundlagenkurs GI-S (QGIS)">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit03/abfrage2.jpg">
+<meta name="twitter:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit03/abfragen-konzept.png">
 <meta name="twitter:creator" content="@gisma">
+<meta name="twitter:image-height" content="941">
+<meta name="twitter:image-width" content="1672">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -699,7 +703,8 @@ background-size: cover;
   <li><a href="#vergleichsoperatoren" id="toc-vergleichsoperatoren" class="nav-link" data-scroll-target="#vergleichsoperatoren">Vergleichsoperatoren</a></li>
   <li><a href="#arithmetische-operatoren" id="toc-arithmetische-operatoren" class="nav-link" data-scroll-target="#arithmetische-operatoren">Arithmetische Operatoren</a></li>
   <li><a href="#logische-operatoren" id="toc-logische-operatoren" class="nav-link" data-scroll-target="#logische-operatoren">Logische Operatoren</a></li>
-  <li><a href="#kombination-von-operatoren" id="toc-kombination-von-operatoren" class="nav-link" data-scroll-target="#kombination-von-operatoren">Kombination von Operatoren</a></li>
+  <li><a href="#kombination-mehrerer-bedingungen" id="toc-kombination-mehrerer-bedingungen" class="nav-link" data-scroll-target="#kombination-mehrerer-bedingungen">Kombination mehrerer Bedingungen</a></li>
+  <li><a href="#kernidee" id="toc-kernidee" class="nav-link" data-scroll-target="#kernidee">Kernidee</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit03/unit03-01.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
@@ -720,96 +725,214 @@ background-size: cover;
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../assets/images/unit03/abfrage2.jpg" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-01: Struktur der nicht-manipulativen GI-Abfragen (GITTA 2005)</figcaption>
+<p><img src="../assets/images/unit03/abfragen-konzept.png" class="img-fluid figure-img"></p>
+<figcaption>Abb. 03-01: Grundstruktur von GI-Abfragen. Geodaten liegen als Raster- oder Vektordaten vor und können über geometrische, topologische oder thematische Abfragen ausgewertet werden. Direkte Abfragen verändern die Ausgangsdaten nicht, sondern liefern Informationen, Auswahlen oder Darstellungen. Manipulative Abfragen beziehungsweise Analyseoperationen erzeugen dagegen neue abgeleitete Daten, zum Beispiel durch Pufferung, Verschneidung, Distanzanalyse oder Overlay.</figcaption>
 </figure>
 </div>
 <section id="auswahloperatoren" class="level2">
 <h2 class="anchored" data-anchor-id="auswahloperatoren">Auswahloperatoren</h2>
-<p>Zentrales Werkzeug von Abfragen in GI-Systemen sind die so genannten Auswahloperatoren, auch algebraische Operatoren genannt. Sie gliedern sich in:</p>
+<p>Abfragen in GI-Systemen beruhen auf Operatoren. Operatoren legen fest, <strong>wie Bedingungen formuliert, Werte verglichen oder mehrere Kriterien miteinander verknüpft werden</strong>. Damit sind sie die sprachliche und rechnerische Grundlage vieler GIS-Abfragen.</p>
+<p>Eine Abfrage kann sehr einfach sein:</p>
+<pre class="text"><code>Landnutzung = 'Wald'</code></pre>
+<p>Sie kann aber auch mehrere Bedingungen kombinieren:</p>
+<pre class="text"><code>Landnutzung = 'Wald' AND Hangneigung &gt; 15</code></pre>
+<p>In beiden Fällen wird aus vorhandenen Geodaten eine Auswahl erzeugt. Die Originaldaten bleiben dabei unverändert. Erst wenn die Auswahl weiterverarbeitet, gespeichert, gepuffert, verschnitten oder als neuer Layer ausgegeben wird, entsteht daraus eine neue Datenebene.</p>
+<p>Grundlegend lassen sich drei Operatorgruppen unterscheiden:</p>
 <ul>
-<li><em>Vergleichsoperatoren:</em> Zur Formulierung von Fragen können neben dem Gleichheitszeichen auch Vergleichsoperatoren verwendet werden.</li>
-<li><em>Arithmetische Operatoren:</em> Diese Operatoren werden bei numerischen Attributen verwendet, z.B. können Mittelwerte eines Attributs, Summen von Attributwerten usw. aus einer Menge ausgewählter Objekte berechnet werden.</li>
-<li><em>Logische Operatoren:</em> Logische Operatoren werden verwendet, um Bedingungen zu formulieren.</li>
+<li><strong>Vergleichsoperatoren</strong> prüfen, ob ein Attributwert eine Bedingung erfüllt.</li>
+<li><strong>Arithmetische Operatoren</strong> berechnen neue numerische Werte.</li>
+<li><strong>Logische Operatoren</strong> verknüpfen mehrere Bedingungen zu einer gemeinsamen Abfrage.</li>
 </ul>
 <section id="vergleichsoperatoren" class="level3">
 <h3 class="anchored" data-anchor-id="vergleichsoperatoren">Vergleichsoperatoren</h3>
-<p>Die Vergleichsoperatoren können für unterschiedlich skalierte Attribute (Zahlen, Text) verwendet werden. Bei nicht-numerischen Attributen beziehen sich die Vergleiche „größer als“, „kleiner als“ usw. auf die Position in einer internen „alphabetischen“ Ordnung des Computers (z.B. ASCII-Code-Tabelle).</p>
+<p>Vergleichsoperatoren werden verwendet, um Attributwerte zu prüfen. Sie beantworten Fragen wie: Ist ein Wert gleich einem bestimmten Begriff? Ist eine Fläche größer als ein Schwellenwert? Liegt ein Messwert unter einer Grenze?</p>
+<p>Typische Beispiele sind:</p>
+<pre class="text"><code>Landnutzung = 'Wald'
+Fläche &gt; 100
+Höhe &lt;= 300
+Name &lt;&gt; 'Marburg'</code></pre>
 <table class="caption-top table">
-<caption>Tabelle 03-01: Vergleichsoperatoren</caption>
+<caption>Tabelle 03-01: Vergleichsoperatoren für Attributabfragen</caption>
 <thead>
 <tr class="header">
-<th style="text-align: center;">Vergleichsoperator</th>
+<th style="text-align: center;">Operator</th>
 <th>Bedeutung</th>
+<th>Beispiel</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">=</td>
-<td>EQ (gleich)</td>
+<td style="text-align: center;"><code>=</code></td>
+<td>gleich</td>
+<td><code>Landnutzung = 'Wald'</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">&gt;</td>
-<td>GT (größer)</td>
+<td style="text-align: center;"><code>&gt;</code></td>
+<td>größer als</td>
+<td><code>Fläche &gt; 100</code></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">&gt;=</td>
-<td>GE (größer gleich)</td>
+<td style="text-align: center;"><code>&gt;=</code></td>
+<td>größer oder gleich</td>
+<td><code>Höhe &gt;= 300</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">&lt;</td>
-<td>LT (kleiner)</td>
+<td style="text-align: center;"><code>&lt;</code></td>
+<td>kleiner als</td>
+<td><code>Distanz &lt; 500</code></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">&lt; =</td>
-<td>LE (kleiner gleich)</td>
+<td style="text-align: center;"><code>&lt;=</code></td>
+<td>kleiner oder gleich</td>
+<td><code>Hangneigung &lt;= 10</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">&lt;&gt;</td>
-<td>NE (ungleich)</td>
+<td style="text-align: center;"><code>&lt;&gt;</code></td>
+<td>ungleich</td>
+<td><code>Landnutzung &lt;&gt; 'Siedlung'</code></td>
 </tr>
 </tbody>
 </table>
+<p>Vergleichsoperatoren können für Zahlen und Texte verwendet werden. Bei Zahlen ist die Bedeutung direkt verständlich. Bei Texten beziehen sich Vergleiche wie „größer als“ oder „kleiner als“ nicht auf eine fachliche Größe, sondern auf eine interne alphabetische beziehungsweise zeichencodierte Ordnung. Für GIS-Abfragen sind bei Textattributen deshalb meist <code>=</code> und <code>&lt;&gt;</code> die wichtigsten Operatoren.</p>
 </section>
 <section id="arithmetische-operatoren" class="level3">
 <h3 class="anchored" data-anchor-id="arithmetische-operatoren">Arithmetische Operatoren</h3>
-<p>Die arithmetischen Operatoren werden für numerische Attribute verwendet, z.B. können Mittelwerte eines Attributs, Summen von Attributwerten usw. aus einer Reihe ausgewählter Objekte berechnet werden. Als arithmetische Operatoren können die Multiplikation <code>*</code>, die Division <code>/</code>, die Addition <code>+</code> und die Subtraktion <code>-</code>, der Exponent <code>exp</code> und der Modulo-Operator <code>%</code> verwendet werden. Der Modulo-Operator liefert den Rest einer ganzzahligen Division (z.B. <code>5 % 2 = 1</code>).</p>
+<p>Arithmetische Operatoren werden für numerische Attribute verwendet. Mit ihnen lassen sich Werte berechnen, umformen oder miteinander kombinieren. Sie sind besonders wichtig, wenn aus vorhandenen Attributen neue Kennwerte abgeleitet werden sollen.</p>
+<p>Typische Beispiele sind:</p>
+<pre class="text"><code>Fläche_ha = Fläche_m2 / 10000
+Dichte = Einwohner / Fläche_km2
+Kosten = Distanz * Kosten_pro_Meter</code></pre>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Operator</th>
+<th>Bedeutung</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>+</code></td>
+<td>Addition</td>
+<td><code>A + B</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>-</code></td>
+<td>Subtraktion</td>
+<td><code>A - B</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>*</code></td>
+<td>Multiplikation</td>
+<td><code>A * B</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>/</code></td>
+<td>Division</td>
+<td><code>A / B</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>exp</code></td>
+<td>Potenz / Exponent</td>
+<td><code>exp(A)</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>%</code></td>
+<td>Modulo, Rest einer ganzzahligen Division</td>
+<td><code>5 % 2 = 1</code></td>
+</tr>
+</tbody>
+</table>
+<p>Arithmetische Operatoren verändern nicht automatisch den Datenbestand. Sie erzeugen zunächst einen berechneten Ausdruck. Erst wenn das Ergebnis als neues Attribut, neuer Layer oder neues Raster gespeichert wird, entsteht eine neue Datenebene.</p>
 </section>
 <section id="logische-operatoren" class="level3">
 <h3 class="anchored" data-anchor-id="logische-operatoren">Logische Operatoren</h3>
-<p>Logische Operatoren verknüpfen Attribute oder Teilabfragen als logische Ausdrücke (mit den beiden möglichen Werten „wahr“ oder „falsch“). Sie eignen sich daher zur effizienten Gestaltung komplexer Abfragen. Logische Operatoren werden auch als Boolesche Algebra bezeichnet. Sie basiert auf der binären Struktur der Werte 1 (wahr) und 0 (falsch). Sie bietet eine Reihe verschiedener Verknüpfungen, die entweder „wahr“ oder „falsch“ sein können, aber niemals beides. Die booleschen (oder logischen) Operatoren, die in GIS verwendet werden, um zwei räumliche Auswahlkriterien miteinander zu verknüpfen, sind ‘AND’, ‘OR’, ‘XOR’ und ‘NOT’: Die folgende Tabelle listet die 4 logischen Grundoperatoren und ihre Wirkungsweise auf:</p>
-<p>Zur Veranschaulichung sind in der rechten Spalte die <em>Venn-Diagramme</em> der Booleschen Operatoren dargestellt. Die Darstellung wird verständlicher, wenn man sich vorstellt, dass die Kreise 1 und 2 jeweils zwei Bedingungen (oder Teilmengen der Relation) grafisch darstellen. Konkret: Kreis 1: GEBIET = „bewaldet“ und Kreis 2: GEBIET = steil. Die schraffierte Fläche stellt jeweils die wahre Aussage dar. In dieser Grundform entspricht der Teil außerhalb der Kreise keinem Abfrageergebnis.</p>
+<p>Logische Operatoren verknüpfen mehrere Bedingungen. Jede einzelne Bedingung kann dabei entweder <strong>wahr</strong> oder <strong>falsch</strong> sein. Logische Operatoren legen fest, welche Kombination dieser Bedingungen als Treffer gilt.</p>
+<p>Beispiel:</p>
+<pre class="text"><code>Landnutzung = 'Wald'
+Hangneigung &gt; 15</code></pre>
+<p>Diese beiden Bedingungen können unterschiedlich kombiniert werden:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 21%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Operator</th>
+<th>Bedeutung</th>
+<th>Ergebnisfrage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>AND</code></td>
+<td>Schnittmenge</td>
+<td>Welche Objekte erfüllen beide Bedingungen?</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>OR</code></td>
+<td>Vereinigung</td>
+<td>Welche Objekte erfüllen mindestens eine der Bedingungen?</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>XOR</code></td>
+<td>exklusive Vereinigung</td>
+<td>Welche Objekte erfüllen genau eine der Bedingungen, aber nicht beide?</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>NOT</code></td>
+<td>Negation / Ausschluss</td>
+<td>Welche Objekte erfüllen eine Bedingung nicht?</td>
+</tr>
+</tbody>
+</table>
+<p>Bei <code>AND</code> müssen beide Bedingungen erfüllt sein:</p>
+<pre class="text"><code>Landnutzung = 'Wald' AND Hangneigung &gt; 15</code></pre>
+<p>Die Abfrage findet nur Objekte, die bewaldet und gleichzeitig steil sind.</p>
+<p>Bei <code>OR</code> reicht eine der beiden Bedingungen:</p>
+<pre class="text"><code>Landnutzung = 'Wald' OR Hangneigung &gt; 15</code></pre>
+<p>Die Abfrage findet Objekte, die bewaldet sind, steil sind oder beides zugleich.</p>
+<p>Bei <code>XOR</code> wird genau eine Bedingung zugelassen, aber nicht beide gemeinsam:</p>
+<pre class="text"><code>Landnutzung = 'Wald' XOR Hangneigung &gt; 15</code></pre>
+<p>Die Abfrage findet also bewaldete, nicht steile Objekte sowie steile, nicht bewaldete Objekte. Bewaldete und zugleich steile Objekte werden ausgeschlossen.</p>
+<p>Bei <code>NOT</code> wird eine Bedingung umgekehrt:</p>
+<pre class="text"><code>NOT Landnutzung = 'Wald'</code></pre>
+<p>Die Abfrage findet alle Objekte, die nicht als Wald klassifiziert sind.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../assets/images/unit03/combination.jpg" class="img-fluid figure-img"></p>
-<figcaption>Die vier Booleschen Operatoren (GITTA 2005)</figcaption>
+<p><img src="../assets/images/unit03/auswahloperatoren.png" class="img-fluid figure-img"></p>
+<figcaption>Abb. 03-02: Auswahloperatoren in GI-Systemen. Vergleichsoperatoren prüfen Attributwerte, arithmetische Operatoren berechnen numerische Werte und logische Operatoren verknüpfen mehrere Bedingungen. Die Venn-Diagramme zeigen die Wirkung der Booleschen Operatoren AND, OR, XOR und NOT für zwei Bedingungen oder Teilmengen.</figcaption>
 </figure>
 </div>
 <p>In vielen GIS-Programmen entsprechen die Booleschen Operatoren direkt aufrufbaren Funktionen und tragen oft ähnliche Namen. So entspricht in vielen GIS-Programmpaketen die Funktion <code>INTERSECT</code> dem Operanden <code>AND</code>, <code>UNION</code> dem Operanden <code>OR</code> und <code>ERASE</code> dem Operanden <code>NOT</code>. Die letztgenannte Funktion wird auch sehr anschaulich „Cookie-Cutting“ genannt, da die Form des zweiten Kriteriums wie beim Plätzchenbacken aus dem ausgerollten Teig des ersten „ausgestochen“ wird.</p>
 </section>
-<section id="kombination-von-operatoren" class="level3">
-<h3 class="anchored" data-anchor-id="kombination-von-operatoren">Kombination von Operatoren</h3>
-<p>Durch die Kombination von Operatoren ist es möglich, mehrere Bedingungen miteinander zu verknüpfen. Boolesche Operatoren sind jedoch <strong>nicht</strong> kommutativ, d.h. das Ergebnis ihrer Anwendung in komplexen Ausdrücken hängt von der definierten Reihenfolge der Teilausdrücke ab. Schauen Sie sich die folgenden Beispiele an und versuchen Sie, die Abfragen mit ihren Komponenten mit Hilfe Ihrer bisherigen Kenntnisse nachzuvollziehen.</p>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<section id="kombination-mehrerer-bedingungen" class="level3">
+<h3 class="anchored" data-anchor-id="kombination-mehrerer-bedingungen">Kombination mehrerer Bedingungen</h3>
+<p>In GIS-Abfragen werden Operatoren häufig kombiniert. Dadurch lassen sich fachlich präzisere Fragen formulieren:</p>
+<pre class="text"><code>Landnutzung = 'Wald' AND Hangneigung &gt; 15 AND Distanz_Strasse &gt; 200</code></pre>
+<p>Diese Abfrage sucht Waldflächen, die steil sind und weiter als 200 Meter von einer Straße entfernt liegen.</p>
+<p>Bei komplexeren Abfragen muss die Reihenfolge der Auswertung eindeutig sein. Klammern helfen, die fachliche Logik sichtbar zu machen:</p>
+<pre class="text"><code>(Landnutzung = 'Wald' OR Landnutzung = 'Gebüsch')
+AND
+Hangneigung &gt; 15</code></pre>
+<p>Diese Abfrage sucht steile Flächen, die entweder Wald oder Gebüsch sind.</p>
+<p>Ohne Klammern kann unklar werden, welche Bedingungen zuerst zusammengehören. Deshalb sollten komplexe Abfragen immer so geschrieben werden, dass die fachliche Logik direkt erkennbar ist.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://farm3.staticflickr.com/2922/14161471688_12d9ff0432_o.png" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 07-03: Beispiele für THEM = thematische und GEOM + THEM = kombinierte geometrische und thematische Abfragen (GITTA 2005</figcaption>
+<p><img src="../assets/images/unit03/kombination.png" class="img-fluid figure-img"></p>
+<figcaption>Abb. 03-03: Kombinierte Abfragen in GI-Systemen. Komplexere GIS-Abfragen verbinden mehrere Bedingungen, Ebenen und Abfragetypen. Thematische Abfragen beziehen sich auf Attributwerte, geometrische Abfragen auf Lage, Distanz oder Ausdehnung und topologische Abfragen auf räumliche Beziehungen wie innerhalb, benachbart oder überschneidend. Die Beispiele zeigen, wie aus Eingabedaten Abfrageergebnisse als Tabelle und Karte abgeleitet werden.</figcaption>
 </figure>
 </div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://farm3.staticflickr.com/2913/14348127685_0ed1e5b815_o.png" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 07-04: Beispiele für GEOM = Geometrische und TOPO = Topologische Abfragen (GITTA 2005)</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
+</section>
+<section id="kernidee" class="level3">
+<h3 class="anchored" data-anchor-id="kernidee">Kernidee</h3>
+<p>Operatoren sind das zentrales Steuerkonzept in Abfragen. Sie übersetzen eine fachliche Frage in eine prüfbare GIS-Abfrage. Entscheidend ist daher nicht nur, ob die Syntax stimmt, sondern ob die formulierte Bedingung wirklich zur räumlichen Fragestellung passt.</p>
+<p>Eine gute GIS-Abfrage besteht aus drei Schritten:</p>
+<pre class="text"><code>fachliche Frage
+→ geeignete Bedingungen
+→ passende Operatoren</code></pre>
 <div class="callout callout-style-simple callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
