@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -144,16 +124,16 @@ background-size: cover;
 <link rel="stylesheet" href="../css/styles.css">
 <meta property="og:title" content="Topologische Abfragen – Grundlagenkurs GI-S (QGIS)">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit03/topo_1.png">
+<meta property="og:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit03/topologische_beziehungen_flaechen.png">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
-<meta property="og:image:height" content="1304">
-<meta property="og:image:width" content="1306">
+<meta property="og:image:height" content="1086">
+<meta property="og:image:width" content="1448">
 <meta name="twitter:title" content="Topologische Abfragen – Grundlagenkurs GI-S (QGIS)">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit03/topo_1.png">
+<meta name="twitter:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit03/topologische_beziehungen_flaechen.png">
 <meta name="twitter:creator" content="@gisma">
-<meta name="twitter:image-height" content="1304">
-<meta name="twitter:image-width" content="1306">
+<meta name="twitter:image-height" content="1086">
+<meta name="twitter:image-width" content="1448">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -719,10 +699,16 @@ background-size: cover;
     <h2 id="toc-title">Inhalt</h2>
    
   <ul>
-  <li><a href="#topologische-beziehungen-kompakt" id="toc-topologische-beziehungen-kompakt" class="nav-link active" data-scroll-target="#topologische-beziehungen-kompakt">Topologische Beziehungen kompakt</a></li>
-  <li><a href="#topologische-operatoren" id="toc-topologische-operatoren" class="nav-link" data-scroll-target="#topologische-operatoren">Topologische Operatoren</a></li>
-  <li><a href="#häufig-vorkommende-topologische-beziehungen" id="toc-häufig-vorkommende-topologische-beziehungen" class="nav-link" data-scroll-target="#häufig-vorkommende-topologische-beziehungen">Häufig vorkommende topologische Beziehungen</a></li>
+  <li><a href="#grundidee-topologischer-beziehungen" id="toc-grundidee-topologischer-beziehungen" class="nav-link active" data-scroll-target="#grundidee-topologischer-beziehungen">Grundidee topologischer Beziehungen</a></li>
+  <li><a href="#wichtige-topologische-beziehungen" id="toc-wichtige-topologische-beziehungen" class="nav-link" data-scroll-target="#wichtige-topologische-beziehungen">Wichtige topologische Beziehungen</a></li>
+  <li><a href="#beziehungen-zwischen-geometrietypen" id="toc-beziehungen-zwischen-geometrietypen" class="nav-link" data-scroll-target="#beziehungen-zwischen-geometrietypen">Beziehungen zwischen Geometrietypen</a></li>
+  <li><a href="#topologische-abfragen-in-qgis" id="toc-topologische-abfragen-in-qgis" class="nav-link" data-scroll-target="#topologische-abfragen-in-qgis">Topologische Abfragen in QGIS</a></li>
+  <li><a href="#operatoren-fachlich-auswählen" id="toc-operatoren-fachlich-auswählen" class="nav-link" data-scroll-target="#operatoren-fachlich-auswählen">Operatoren fachlich auswählen</a></li>
+  <li><a href="#häufige-operatoren-in-qgis" id="toc-häufige-operatoren-in-qgis" class="nav-link" data-scroll-target="#häufige-operatoren-in-qgis">Häufige Operatoren in QGIS</a></li>
+  <li><a href="#typische-anwendungsfragen" id="toc-typische-anwendungsfragen" class="nav-link" data-scroll-target="#typische-anwendungsfragen">Typische Anwendungsfragen</a></li>
+  <li><a href="#abgrenzung-zu-geometrischen-abfragen" id="toc-abgrenzung-zu-geometrischen-abfragen" class="nav-link" data-scroll-target="#abgrenzung-zu-geometrischen-abfragen">Abgrenzung zu geometrischen Abfragen</a></li>
   <li><a href="#übung" id="toc-übung" class="nav-link" data-scroll-target="#übung">Übung</a></li>
+  <li><a href="#kernpunkt" id="toc-kernpunkt" class="nav-link" data-scroll-target="#kernpunkt">Kernpunkt</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit03/unit03-04.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
     </div>
@@ -734,106 +720,220 @@ background-size: cover;
 
 
 
-<p>Während geometrische Selektionskriterien Geoobjekte anhand ihrer Lage und thematische Abfragen Elemente anhand ihrer Eigenschaften identifizieren, basieren topologische Suchkriterien auf der relativen Anordnung von Geoobjekten im Raum. Ein typisches Merkmal der relativen Verortung ist der Vergleich mit anderen Geoobjekten, z.B. „am nächsten“, „Teil von“ oder „innerhalb“. Die räumlichen Lagebeziehungen werden in GI-Systemen als Topologie bezeichnet. Topologische Beziehungen werden aus geometrischen Primitiven konstruiert: Punkte (einfachstes Element), Linien (Folge verbundener Punkte), Flächen (Folge verbundener Linien). Aufgrund dieser geordneten Struktur ist das GI-System in der Lage, topologische Beziehungen zu erkennen und entsprechende Analysen durchzuführen.</p>
-<p>Die Topologie befasst sich also mit den räumlichen und strukturellen Eigenschaften geometrischer Objekte, unabhängig von deren Ausdehnung und geometrischer Form. Zu den topologischen Eigenschaften gehören die Anzahl der Dimensionen eines Objekts und die möglichen Beziehungen zwischen den Dimensionen. Die Topologie ermöglicht Analysefunktionen, wie z. B. die Verfolgung eines Flusses entlang verbundener Linien in einem Netzwerk, die Vereinigung benachbarter Flächen mit ähnlichen Eigenschaften usw.</p>
-<p>Es ist jedoch wichtig, zwischen den beiden üblichen Datenformaten zu unterscheiden: Topologische Operationen auf Vektordaten sind völlig anders als topologische Operationen auf Rasterdaten. Daher sind die für Vektordaten gültigen Algorithmen nicht ohne weiteres auf Rasterdaten anwendbar. Im Folgenden beschränken wir uns auf topologische Operationen auf Vektordaten.</p>
-<section id="topologische-beziehungen-kompakt" class="level3">
-<h3 class="anchored" data-anchor-id="topologische-beziehungen-kompakt">Topologische Beziehungen kompakt</h3>
-<p>Versuchen Sie anhand der folgenden Tabelle das 9-I-Schema und das 4-I-Schema (<a href="http://www.spatial.maine.edu/~max/4Vs9.pdf%5D">Egenhofer et al.&nbsp;1993</a> für einige typische topologische Beziehungen zwischen zwei Flächen nachzuvollziehen. Die Beziehungen sind durch die Werte 0 oder 1 gegeben. Jedes Paar hat eine leere (0) oder eine belegte (1) Schnittmenge.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/images/unit03/topo_1.png" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-18: Topologische Beziehungen, <span class="citation" data-cites="egenhofer1993">Egenhofer, Sharma, und Mark (<a href="#ref-egenhofer1993" role="doc-biblioref">1993</a>)</span>, <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
-</figure>
-</div>
-</section>
-<section id="topologische-operatoren" class="level3">
-<h3 class="anchored" data-anchor-id="topologische-operatoren">Topologische Operatoren</h3>
-<p>Die topologischen Operatoren sind Bestandteil der räumlichen Analysefunktionen eines GIS und somit grundlegend. Sie sind in kommerziellen GIS wie ArcView, ArcInfo, Geomedia, MapInfo u.a., aber auch in Open-Source-Paketen wie QGIS implementiert. Jedes System hat seine eigene Formulierung der topologischen Abfragen, einige erlauben die Ausführung der topologischen Abfragen mittels SQL. Geographische Datenbanken („spatial databases“) wie z.B. Oracle oder PostGis werden ständig weiterentwickelt und stellen solche Datenverwaltungswerkzeuge und ihre Funktionalitäten für GIS zur Verfügung. Sie implementieren weitere topologische Operatoren aus dem GIS-Bereich, die effizient auf die jeweilige Datenstruktur angewendet werden können. Die folgende Tabelle listet einige Funktionen und die entsprechenden Operatoren auf, die von Geomedia, Oracle Spatial, ArcGIS und QGIS angeboten werden.</p>
-<p>Im Folgenden werden die wichtigsten topologischen Beziehungen zwischen Geoobjekten im GIS-Bereich aufgeführt. Dabei ist zu beachten, dass grundsätzlich alle drei Geometrietypen (Punkt, Linie und Fläche) des Vektordatenmodells berücksichtigt werden.</p>
+<p>Topologische Abfragen untersuchen nicht die Attributwerte eines Geoobjekts und auch nicht seine exakte Größe oder Distanz. Sie prüfen die <strong>räumliche Beziehung</strong> zwischen zwei Geometrien.</p>
+<p>Eine thematische Abfrage fragt zum Beispiel: <em>Welche Gebäude haben die Nutzung Wohnen?</em> Eine geometrische Abfrage fragt: <em>Wie groß ist ein Gebäude?</em> oder <em>Wie weit liegt es von einer Straße entfernt?</em> Eine topologische Abfrage fragt dagegen: <em>Liegt das Gebäude innerhalb einer Fläche?</em>, <em>berührt es eine Grenze?</em> oder <em>schneidet es eine andere Geometrie?</em></p>
+<p>Topologische Beziehungen sind deshalb besonders wichtig, wenn zwei Layer miteinander verglichen werden. In QGIS betrifft das zum Beispiel Auswahlwerkzeuge wie <strong>nach Position auswählen</strong>, räumliche Joins, Verschneidungen oder Prüfungen der Datenqualität.</p>
+<section id="grundidee-topologischer-beziehungen" class="level2">
+<h2 class="anchored" data-anchor-id="grundidee-topologischer-beziehungen">Grundidee topologischer Beziehungen</h2>
+<p>Topologie beschreibt die relative Lage von Geoobjekten. Entscheidend ist dabei nicht, ob ein Objekt groß oder klein, rund oder eckig ist. Entscheidend ist, ob sich die Objekte räumlich treffen, überschneiden, enthalten oder voneinander getrennt sind.</p>
+<p>Bei Flächenobjekten kann man drei Bereiche unterscheiden:</p>
 <ul>
-<li><p><strong>Disjunkt:</strong> Objekt A und Objekt B haben keine Schnittfläche. Test auf Disjunktheit der Ausgangsgeometrie und einer anderen Geometrie.</p></li>
-<li><p><strong>Berühren:</strong> Objekt A und Objekt B berühren sich an den Begrenzungslinien. Test auf Berührung (Touch) der Ausgangsgeometrie und einer anderen Geometrie. Die Ränder schneiden sich, aber nicht die Innenseiten der beiden Geometrien. Zwei Geometrien berühren sich, wenn sich nur die Kanten schneiden.</p></li>
-<li><p><strong>Überlappung:</strong> Objekt A und Objekt B überlappen sich. Test auf Überlappung (Intersect) der Ausgangsgeometrie mit einer anderen Geometrie (Umkehrung von Disjunkt).</p></li>
-<li><p>Das Innere eines Objekts schneidet den Rand und das Innere des anderen Objekts, aber die beiden Ränder schneiden sich nicht. Dies ist z. B. der Fall, wenn eine Linie außerhalb eines Polygons (Fläche) beginnt und innerhalb des Polygons endet.</p></li>
-<li><p><strong>Überlappung mit Überschneidung:</strong> Die Ränder und das Innere der beiden Objekte schneiden sich. Wenn eine Geometrie eine andere schneiden soll, muss die Geometrie des Schnittes der kleineren Dimension in der größeren vorhanden sein.</p>
-<ul>
-<li>Punkte können keine Punkte, Linien oder Flächen schneiden.</li>
-<li>Linien
-<ul>
-<li>können keine Punkte schneiden</li>
-<li>Linien können andere Linien schneiden » Schnitt = Punkte</li>
-<li>Können Polygone schneiden » Schnitt = Linien (Punkte).</li>
-</ul></li>
-</ul></li>
-<li><p><strong>enthjalten:</strong> Objekt A enthält Objekt B. Test, ob die Ausgangsgeometrie eine andere Geometrie umschließt (Contains). Das Innere und der Rand eines Objektes sind vollständig in einem anderen Objekt enthalten. Eine Geometrie kann keine Geometrie höherer Ordnung (Dimension) enthalten, d.h:</p>
-<ul>
-<li>Punkte können keine Linien oder Flächen enthalten.</li>
-<li>Linien können keine Flächen enthalten.</li>
-</ul></li>
-<li><p><strong>innen</strong> Objekt B befindet sich innerhalb von Objekt A. Das Gegenteil von enthalten. Wenn A innerhalb von B liegt, enthält B A.</p></li>
-<li><p><strong>bedeckt</strong>: Objekt A bedeckt Objekt B. Das Innere eines Objekts liegt vollständig innerhalb des anderen Objekts und die Ränder schneiden sich. Eine Geometrie kann keine Geometrie höherer Ordnung (Dimension) enthalten, d.h:</p>
-<ul>
-<li>Punkte können keine Linien oder Flächen enthalten.</li>
-<li>Linien können keine Flächen enthalten.</li>
-</ul></li>
-<li><p><strong>Überdeckt von:</strong> Das Gegenteil von „bedecken“. Wenn A von B bedeckt wird, bedeckt B A.</p></li>
-<li><p><strong>identisch</strong>: Objekt B und Objekt A sind gleich. Test auf Gleichheit zwischen der Ausgangsgeometrie und einer anderen Geometrie. Das Innere und die Kante eines Objekts liegen auf der Kante des zweiten Objekts (und das zweite Objekt bedeckt das erste Objekt). Diese Beziehung besteht z. B., wenn eine Linie genau auf die Kante einer Fläche fällt. Die Koordinaten aller einzelnen Stützpunkte müssen gleich sein. Die verglichenen Geometrien müssen ebenfalls gleich sein, d.h:</p>
-<ul>
-<li>Punkte = Punkte</li>
-<li>Linien = Linien</li>
-<li>Polygone = Polygone</li>
-</ul></li>
+<li><strong>Innenraum</strong>: der Bereich innerhalb der Fläche</li>
+<li><strong>Rand</strong>: die Grenzlinie der Fläche</li>
+<li><strong>Außenraum</strong>: alles außerhalb der Fläche</li>
 </ul>
-<p>Die topologischen Beziehungen können anhand der folgenden Tabelle nachvollzogen werden. Die Liste zeigt die am häufigsten vorkommenden topologischen Beziehungen:</p>
+<p>Topologische Beziehungen entstehen daraus, wie sich Innenraum, Rand und Außenraum zweier Objekte zueinander verhalten. Die formale Matrixschreibweise beschreibt genau dieses Prinzip. Für die Anwendung in QGIS ist aber meist wichtiger, die räumliche Situation sauber zu lesen.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../assets/images/unit03/topo_3.png" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-19: Topologische Beziehungen von Vektordaten unterschiedlicher Dimension , <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
+<p><img src="../assets/images/unit03/topologische_beziehungen_flaechen.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 03-18: Grundmuster topologischer Beziehungen zwischen zwei Flächen. Topologie beschreibt die relative Lage zweier Objekte: getrennt, berührend, überlappend oder ineinander enthalten.</figcaption>
 </figure>
 </div>
 </section>
-<section id="häufig-vorkommende-topologische-beziehungen" class="level3">
-<h3 class="anchored" data-anchor-id="häufig-vorkommende-topologische-beziehungen">Häufig vorkommende topologische Beziehungen</h3>
-<p>Am häufigsten treten Beziehungen zwischen Flächenobjekten und anderen Objekten auf. Nachfolgend sind einige mögliche topologische Abfragen in diesem Zusammenhang aufgeführt.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/images/unit03/topo_4.png" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-19: Topologische Abfragen von Vektordaten unterschiedlicher Dimension, <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
-</figure>
-</div>
-</section>
-<section id="übung" class="level2">
-<h2 class="anchored" data-anchor-id="übung">Übung</h2>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
+<section id="wichtige-topologische-beziehungen" class="level2">
+<h2 class="anchored" data-anchor-id="wichtige-topologische-beziehungen">Wichtige topologische Beziehungen</h2>
+<p>Die wichtigsten topologischen Beziehungen lassen sich sprachlich relativ einfach beschreiben.</p>
+<p><strong>Disjunkt</strong> bedeutet: Zwei Objekte haben keine gemeinsame Stelle. Sie berühren sich nicht und sie überlappen sich nicht.</p>
+<p><strong>Berühren</strong> bedeutet: Zwei Objekte treffen sich am Rand. Ihre Innenräume überschneiden sich nicht. Das ist zum Beispiel der Fall, wenn zwei Flurstücke eine gemeinsame Grenze haben.</p>
+<p><strong>Überlappen</strong> bedeutet: Zwei Objekte haben einen gemeinsamen Innenbereich. Beide Objekte besitzen aber auch Bereiche, die nicht im jeweils anderen Objekt liegen.</p>
+<p><strong>Enthält</strong> bedeutet: Ein Objekt liegt vollständig innerhalb eines anderen Objekts. Aus Sicht des inneren Objekts lautet dieselbe Beziehung: Es liegt <strong>innerhalb</strong> des äußeren Objekts.</p>
+<p><strong>Bedeckt</strong> oder <strong>überdeckt</strong> ist ähnlich wie enthält, erlaubt aber bestimmte Fälle, bei denen Grenzen zusammenfallen. Das ist in GIS-Werkzeugen wichtig, weil es einen Unterschied machen kann, ob ein Objekt vollständig im Innenraum liegt oder ob es zusätzlich eine gemeinsame Grenze mit dem Bezugsobjekt hat.</p>
+<p><strong>Identisch</strong> bedeutet: Zwei Geometrien liegen exakt aufeinander. Das ist nur sinnvoll, wenn die verglichenen Geometrien denselben Geometrietyp haben, also Punkt mit Punkt, Linie mit Linie oder Fläche mit Fläche.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<p>Betrachten Sie die folgende Abbildung und versuchen Sie, die richtige 4- bzw. 9-Intersection-Matrix zuzuordnen. Können Sie ein Problem formulieren?</p>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Merksatz
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Topologische Abfragen messen nicht, <strong>wie viel</strong> oder <strong>wie weit</strong>, sondern prüfen, <strong>wie zwei Objekte zueinander liegen</strong>.</p>
+</div>
+</div>
+</section>
+<section id="beziehungen-zwischen-geometrietypen" class="level2">
+<h2 class="anchored" data-anchor-id="beziehungen-zwischen-geometrietypen">Beziehungen zwischen Geometrietypen</h2>
+<p>Topologische Beziehungen hängen vom Geometrietyp ab. Ein Punkt kann zum Beispiel in einer Fläche liegen, auf ihrem Rand liegen oder außerhalb liegen. Er kann aber keine Fläche überlappen, weil ein Punkt keinen Innenraum mit Flächenausdehnung besitzt.</p>
+<p>Bei Linien und Flächen sind andere Beziehungen möglich. Eine Linie kann eine Fläche schneiden, vollständig innerhalb einer Fläche verlaufen oder eine Flächengrenze berühren. Zwei Flächen können getrennt sein, sich berühren, überlappen oder ineinander enthalten sein.</p>
+<p>Die folgende Übersicht zeigt typische Beziehungen zwischen Punkten, Linien und Flächen. Leere Felder oder Striche bedeuten: Diese Beziehung ist für die jeweilige Kombination nicht sinnvoll oder kommt in dieser Form nicht vor.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../assets/images/unit03/topo_2.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Topologieübung, <span class="citation" data-cites="egenhofer1993">Egenhofer, Sharma, und Mark (<a href="#ref-egenhofer1993" role="doc-biblioref">1993</a>)</span>, <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
+<p><img src="../assets/images/unit03/topologische_beziehungen_geometrietypen.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 03-19: Topologische Beziehungen zwischen unterschiedlichen Geometrietypen. Nicht jede Beziehung ist für jede Kombination aus Punkt, Linie und Fläche sinnvoll.</figcaption>
 </figure>
 </div>
+</section>
+<section id="topologische-abfragen-in-qgis" class="level2">
+<h2 class="anchored" data-anchor-id="topologische-abfragen-in-qgis">Topologische Abfragen in QGIS</h2>
+<p>In QGIS werden topologische Beziehungen häufig über räumliche Auswahl- und Analysewerkzeuge genutzt. Typische Werkzeuge sind:</p>
+<ul>
+<li><strong>Nach Position auswählen</strong></li>
+<li><strong>Attribute nach Position verknüpfen</strong></li>
+<li><strong>Verschneiden</strong></li>
+<li><strong>Clip</strong></li>
+<li><strong>Differenz</strong></li>
+<li><strong>Puffer und anschließend auswählen</strong></li>
+<li><strong>Geometrieprüfung</strong></li>
+</ul>
+<p>Die Grundlogik ist immer ähnlich: Ein Layer enthält die Objekte, die ausgewählt oder analysiert werden sollen. Ein zweiter Layer dient als räumliche Bezugsfläche, Bezugslinie oder Bezugspunkt.</p>
+<p>Beispiel:</p>
+<p>Ein Layer enthält Gebäude. Ein zweiter Layer enthält Waldflächen. Dann lassen sich verschiedene fachliche Fragen stellen:</p>
+<ul>
+<li>Welche Gebäude liegen vollständig im Wald?</li>
+<li>Welche Gebäude schneiden den Waldrand?</li>
+<li>Welche Gebäude haben ihren Schwerpunkt im Wald?</li>
+<li>Welche Gebäude liegen außerhalb des Waldes?</li>
+<li>Welche Gebäude berühren die Waldgrenze?</li>
+</ul>
+<p>Diese Fragen klingen ähnlich, führen aber nicht zum gleichen Ergebnis. Der Unterschied liegt im gewählten topologischen Operator.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit03/topologische_abfragen_zwei_ebenen.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 03-20: Topologische Abfragen zwischen zwei Ebenen. Je nach Operator werden unterschiedliche Gebäude ausgewählt: vollständig innerhalb einer Fläche, schneidend am Rand oder mit Schwerpunkt innerhalb der Bezugsfläche.</figcaption>
+</figure>
+</div>
+</section>
+<section id="operatoren-fachlich-auswählen" class="level2">
+<h2 class="anchored" data-anchor-id="operatoren-fachlich-auswählen">Operatoren fachlich auswählen</h2>
+<p>Der wichtigste Fehler bei topologischen Abfragen besteht darin, einen Operator zu wählen, der nicht zur fachlichen Frage passt.</p>
+<p>Wenn gefragt wird, welche Gebäude <strong>vollständig im Wald liegen</strong>, reicht ein einfacher Schnitt mit der Waldfläche nicht aus. Ein Gebäude, das nur den Waldrand schneidet, würde sonst ebenfalls ausgewählt. Passender ist hier ein Operator wie <strong>innerhalb</strong> oder <strong>vollständig innerhalb</strong>.</p>
+<p>Wenn gefragt wird, welche Gebäude <strong>vom Waldrand betroffen sind</strong>, ist dagegen gerade die Grenzsituation wichtig. Dann ist ein Operator wie <strong>schneidet</strong> oder <strong>intersects</strong> sinnvoller.</p>
+<p>Wenn gefragt wird, welche Gebäude <strong>überwiegend dem Wald zugeordnet werden sollen</strong>, kann der Schwerpunkt eines Gebäudes verwendet werden. Dann wird nicht die gesamte Gebäudegeometrie geprüft, sondern ein abgeleiteter Punkt, meist der Zentroid. Diese Entscheidung ist praktisch, aber fachlich nicht neutral: Ein Gebäude kann teilweise außerhalb liegen und trotzdem ausgewählt werden, wenn sein Schwerpunkt innerhalb der Bezugsfläche liegt.</p>
+<div class="callout callout-style-simple callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warnung</span>Wichtig
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>Topologische Operatoren sind keine austauschbaren Varianten derselben Abfrage. Sie übersetzen unterschiedliche fachliche Bedeutungen. <strong>Schneidet</strong>, <strong>innerhalb</strong>, <strong>berührt</strong> und <strong>enthält</strong> können bei denselben Eingangsdaten unterschiedliche Ergebnisse liefern.</p>
 </div>
-
+</div>
+</section>
+<section id="häufige-operatoren-in-qgis" class="level2">
+<h2 class="anchored" data-anchor-id="häufige-operatoren-in-qgis">Häufige Operatoren in QGIS</h2>
+<p>In QGIS tauchen topologische Beziehungen je nach Werkzeug mit leicht unterschiedlichen Bezeichnungen auf. Die fachliche Bedeutung bleibt aber ähnlich.</p>
+<p><strong>Schneidet / intersects</strong><br>
+Das Objekt hat irgendeine räumliche Gemeinsamkeit mit dem Bezugsobjekt. Das ist ein breiter Operator. Er kann Objekte auswählen, die nur teilweise in einer Fläche liegen oder nur deren Grenze schneiden.</p>
+<p><strong>Innerhalb / within</strong><br>
+Das Objekt liegt innerhalb des Bezugsobjekts. Diese Beziehung ist strenger als intersects.</p>
+<p><strong>Enthält / contains</strong><br>
+Das Ausgangsobjekt enthält ein anderes Objekt. Diese Beziehung ist die Umkehrung von innerhalb.</p>
+<p><strong>Berührt / touches</strong><br>
+Die Objekte teilen sich eine Grenze oder einen Berührungspunkt, ohne dass ihre Innenräume überlappen.</p>
+<p><strong>Disjunkt / disjoint</strong><br>
+Die Objekte haben keine gemeinsame Stelle.</p>
+<p><strong>Gleich / equals</strong><br>
+Die Geometrien sind identisch.</p>
+<p>In der Praxis sollte der Operator immer von der fachlichen Frage her gewählt werden, nicht aus der Werkzeugliste heraus.</p>
+</section>
+<section id="typische-anwendungsfragen" class="level2">
+<h2 class="anchored" data-anchor-id="typische-anwendungsfragen">Typische Anwendungsfragen</h2>
+<p>Topologische Abfragen sind sinnvoll, wenn eine Fragestellung von der Lagebeziehung zwischen Objekten abhängt.</p>
+<p>Typische Fragen sind:</p>
+<ul>
+<li>Welche Gebäude liegen innerhalb eines Überschwemmungsgebiets?</li>
+<li>Welche Flurstücke berühren eine geplante Straße?</li>
+<li>Welche Wege schneiden ein Schutzgebiet?</li>
+<li>Welche Bäume liegen außerhalb der Untersuchungsfläche?</li>
+<li>Welche Nutzungsflächen überlappen sich mit Hanglagen?</li>
+<li>Welche Punkte liegen innerhalb eines bestimmten Polygons?</li>
+<li>Welche Linien verlaufen vollständig innerhalb eines Planungsgebiets?</li>
+</ul>
+<p>Solche Fragen können nicht allein über Attributwerte beantwortet werden. Die räumliche Beziehung zwischen zwei Geometrien muss ausgewertet werden.</p>
+</section>
+<section id="abgrenzung-zu-geometrischen-abfragen" class="level2">
+<h2 class="anchored" data-anchor-id="abgrenzung-zu-geometrischen-abfragen">Abgrenzung zu geometrischen Abfragen</h2>
+<p>Topologische und geometrische Abfragen sind eng verwandt, aber nicht dasselbe.</p>
+<p>Eine geometrische Abfrage misst zum Beispiel eine Fläche, eine Länge oder eine Distanz. Eine topologische Abfrage prüft dagegen eine Lagebeziehung.</p>
+<p>Beispiele:</p>
+<ul>
+<li><strong>Geometrisch:</strong> Wie weit liegt ein Gebäude vom Wald entfernt?</li>
+<li><strong>Topologisch:</strong> Liegt ein Gebäude im Wald?</li>
+<li><strong>Geometrisch:</strong> Wie groß ist ein Flurstück?</li>
+<li><strong>Topologisch:</strong> Berührt das Flurstück eine Straße?</li>
+<li><strong>Geometrisch:</strong> Wie lang ist ein Gewässerabschnitt?</li>
+<li><strong>Topologisch:</strong> Schneidet das Gewässer ein Schutzgebiet?</li>
+</ul>
+<p>Beide Abfragetypen können kombiniert werden. Man kann zum Beispiel zuerst einen Puffer um eine Straße erzeugen und danach topologisch abfragen, welche Gebäude diesen Puffer schneiden.</p>
+</section>
+<section id="übung" class="level2">
+<h2 class="anchored" data-anchor-id="übung">Übung</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit03/uebung_topologische_beziehungen.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 03-21: Übung zu topologischen Beziehungen. Die Situationen sollen einer passenden Beziehung zugeordnet und als mögliche GIS-Fragestellung formuliert werden.</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Arbeitsauftrag
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Betrachten Sie die drei Situationen in der Abbildung. Das dunkelgrüne Objekt ist jeweils Objekt A, das hellgrüne Objekt ist Objekt B.</p>
+<p>Bearbeiten Sie für jede Situation die folgenden Punkte:</p>
+<ol type="1">
+<li>Benennen Sie die topologische Beziehung zwischen A und B.</li>
+<li>Beschreiben Sie, welche Rolle Innenraum, Rand und Außenraum spielen.</li>
+<li>Formulieren Sie eine passende GIS-Fragestellung.</li>
+<li>Entscheiden Sie, welcher QGIS-Operator dafür geeignet wäre.</li>
+</ol>
+<section id="situation-a" class="level3">
+<h3 class="anchored" data-anchor-id="situation-a">Situation A</h3>
+<p>Prüfen Sie, ob die beiden Flächen gemeinsame Innenbereiche haben oder ob sie sich nur berühren.</p>
+<p>Mögliche Leitfrage:</p>
+<blockquote class="blockquote">
+<p>Welche Flächen überlappen sich mit einer Schutzgebietsfläche?</p>
+</blockquote>
+</section>
+<section id="situation-b" class="level3">
+<h3 class="anchored" data-anchor-id="situation-b">Situation B</h3>
+<p>Achten Sie darauf, ob die hellgrüne Fläche vollständig innerhalb der dunkelgrünen Fläche liegt oder ob sie deren Rand berührt.</p>
+<p>Mögliche Leitfrage:</p>
+<blockquote class="blockquote">
+<p>Welche Teilflächen liegen innerhalb einer größeren Verwaltungseinheit?</p>
+</blockquote>
+</section>
+<section id="situation-c" class="level3">
+<h3 class="anchored" data-anchor-id="situation-c">Situation C</h3>
+<p>Prüfen Sie, ob die beiden Flächen gemeinsame Innenräume besitzen und ob zusätzlich ein gemeinsamer Grenzabschnitt sichtbar ist.</p>
+<p>Mögliche Leitfrage:</p>
+<blockquote class="blockquote">
+<p>Welche Nutzungsflächen schneiden eine andere Nutzungsfläche und teilen dabei einen Grenzabschnitt?</p>
+</blockquote>
+<p>Formulieren Sie anschließend selbst eine weitere fachliche Frage, bei der der Unterschied zwischen <strong>berührt</strong>, <strong>schneidet</strong> und <strong>innerhalb</strong> entscheidend ist.</p>
+</section>
+</div>
+</div>
+</section>
+<section id="kernpunkt" class="level2">
+<h2 class="anchored" data-anchor-id="kernpunkt">Kernpunkt</h2>
+<p>Topologische Abfragen sind Lageprüfungen zwischen Geometrien. Sie beantworten nicht die Frage nach Attributen, Distanzen oder Flächengrößen, sondern danach, wie Objekte räumlich zueinander stehen. Entscheidend ist daher nicht die Matrixschreibweise, sondern die saubere Übersetzung einer fachlichen Frage in den passenden topologischen Operator.</p>
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-egenhofer1993" class="csl-entry" role="listitem">
-Egenhofer, M. J., J. Sharma, und D. M. Mark. 1993. <span>„A Critical Comparison of the 4-Intersection and 9-Intersection Models for Spatial Relations: Formal Analysis“</span>. <em>Proceedings of the Eleventh International Symposium on Computer-Assisted Cartography</em>, 316–36.
-</div>
-<div id="ref-gitta2005" class="csl-entry" role="listitem">
-GITTA. 2005-2016. <span>„Overview of available modules [online]“</span>. 2005-2016. <a href="http://www.gitta.info/website/en/html/modules_overview.html">http://www.gitta.info/website/en/html/modules_overview.html</a>.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <div class="footer-banner">
 
     <a href="https://gisma-courses.github.io/gc/" target="_blank">GISMA (2026)</a> |
