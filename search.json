@@ -2406,53 +2406,108 @@
   {
     "objectID": "unit04/unit04-05.html",
     "href": "unit04/unit04-05.html",
-    "title": "Modelle der Erdoberfläche – Sichtweite und Sichtfeld",
+    "title": "Sichtbarkeitsanalyse als räumliche Ableitung",
     "section": "",
-    "text": "Ein bereits komplexes Beispiel für die Ableitung räumlicher Informationen ist die Sichtbarkeitsanalyse. Bei einer Sichtbarkeitsanalyse wird ausgehend von einem digitalen Höhenmodell und einem gegebenen Punkt berechnet, welche anderen Punkte im Gelände sichtbar sind. Das Prinzip der Sichtbarkeitsberechnung wird zunächst für den eindimensionalen Fall gezeigt und anschließend auf den zweidimensionalen Fall übertragen.",
+    "text": "Sichtbarkeitsanalyse ist eine räumliche Ableitung aus einem Höhenmodell. Sie prüft, welche Orte von einem Beobachtungspunkt aus sichtbar sind und welche durch Gelände verdeckt werden. Grundlage ist nicht ein Attributwert, sondern die Geometrie der Erdoberfläche.\nDie zentrale Frage lautet:\nWenn die Sichtlinie unterwegs durch höher liegendes Gelände geschnitten wird, ist der Zielpunkt nicht sichtbar. Wenn kein Gelände die Sichtlinie blockiert, ist der Zielpunkt sichtbar. Ein Sichtfeld entsteht, wenn dieser Test nicht nur für einen einzelnen Zielpunkt, sondern für viele Zielpunkte im Raum durchgeführt wird.",
     "crumbs": [
       "Reader Räumliche Ableitungen aus Geodaten",
       "Sichtweite und Sichtfeld"
     ]
   },
   {
-    "objectID": "unit04/unit04-05.html#anwendung-sichtbarkeitsanalyse",
-    "href": "unit04/unit04-05.html#anwendung-sichtbarkeitsanalyse",
-    "title": "Modelle der Erdoberfläche – Sichtweite und Sichtfeld",
-    "section": "Anwendung Sichtbarkeitsanalyse",
-    "text": "Anwendung Sichtbarkeitsanalyse\nSichtbarkeitsberechnungen werden in verschiedenen Anwendungen eingesetzt. Ein erstes Beispiel ist die Platzierung eines Aussichtsturms. Mit einem digitalen Geländemodell können in kurzer Zeit verschiedene Standorte geprüft werden. Außerdem kann die Berechnung mit verschiedenen Turmhöhen (Variation von hv) durchgeführt werden. Ein weiteres Beispiel ist die Ausbreitung elektromagnetischer Wellen (z.B. für die Planung von Mobilfunkantennen). Hier ist zu beachten, dass der Bereich, in dem elektromagnetische Signale empfangen werden können, nicht genau mit dem sichtbaren Bereich übereinstimmt. Im GIS wird dies in der Regel dadurch korrigiert, dass die Höhe eines Punktes um einen bestimmten Betrag unterhalb der Sichtlinie liegen muss, damit das Signal an diesem Punkt nicht empfangen werden kann. Dieser Betrag hängt von der Wellenlänge ab. Ein letztes Beispiel stammt aus der Wildbiologie. Hier kann ein GIS eingesetzt werden, um ein optimales Gebiet für die Wiederansiedlung von Tierarten auszuwählen. Das Rocky Mountain Bighorn Schaf zum Beispiel bevorzugt (unter anderem) Gebiete, die nur von wenigen Stellen aus eingesehen werden können. Dies verringert die Wahrscheinlichkeit, von einem Raubtier entdeckt zu werden.",
+    "objectID": "unit04/unit04-05.html#grundprinzip-sichtlinie-geländeprofil-und-blockierung",
+    "href": "unit04/unit04-05.html#grundprinzip-sichtlinie-geländeprofil-und-blockierung",
+    "title": "Sichtbarkeitsanalyse als räumliche Ableitung",
+    "section": "Grundprinzip: Sichtlinie, Geländeprofil und Blockierung",
+    "text": "Grundprinzip: Sichtlinie, Geländeprofil und Blockierung\nSichtbarkeit ist keine Eigenschaft eines Punktes allein. Sie ist eine Beziehung zwischen drei Elementen:\n\ndem Beobachtungspunkt,\ndem Zielpunkt,\nund dem Gelände dazwischen.\n\nIm einfachsten Fall wird ein Geländeprofil zwischen Beobachtungspunkt und Zielpunkt betrachtet. Über dieses Profil wird eine direkte Sichtlinie gelegt. Danach wird geprüft, ob ein Zwischenpunkt des Geländes höher liegt als diese Sichtlinie.\nLiegt kein Zwischenpunkt über der Sichtlinie, ist der Zielpunkt sichtbar. Liegt ein Zwischenpunkt darüber, wird die Sichtlinie blockiert und der Zielpunkt ist nicht sichtbar.\n\n\n\nAbbildung 04-09: Grundprinzip der Sichtbarkeitsanalyse. Ein Zielpunkt ist sichtbar, wenn die Sichtlinie vom Beobachtungspunkt nicht durch Gelände blockiert wird.",
     "crumbs": [
       "Reader Räumliche Ableitungen aus Geodaten",
       "Sichtweite und Sichtfeld"
     ]
   },
   {
-    "objectID": "unit04/unit04-05.html#sichtbarkeitsanalyse-vektordatenmodell",
-    "href": "unit04/unit04-05.html#sichtbarkeitsanalyse-vektordatenmodell",
-    "title": "Modelle der Erdoberfläche – Sichtweite und Sichtfeld",
-    "section": "Sichtbarkeitsanalyse Vektordatenmodell",
-    "text": "Sichtbarkeitsanalyse Vektordatenmodell\nIm eindimensionalen Fall eines Profils wird zur Bestimmung der Sichtbarkeit eines Zielpunktes berechnet, ob ein Punkt zwischen dem Standort V und dem Zielpunkt P höher liegt als die Verbindungslinie (d.h. die Sichtlinie; engl. line of sight = LOS). Ist dies der Fall, so ist die Sichtlinie LOS blockiert und der Zielpunkt nicht sichtbar, andernfalls ist der Zielpunkt sichtbar. Am einfachsten lässt sich ein solcher Test programmieren, indem geprüft wird, ob die Steigung der Linie zwischen dem Standpunkt V und dem geprüften Zielpunkt P auf dem Profil größer oder kleiner ist als die der Linie zum zuletzt gespeicherten Horizontpunkt Ihor. Mit anderen Worten, ob der Vertikalwinkel γi zum aktuell geprüften Punkt größer (= sichtbar) oder kleiner (= unsichtbar) ist als der Vertikalwinkel γhor des letzten Horizonts.\n\n\n\nZweidimensionaler Längsschnitt Sichtbarkeitsanalyse, GITTA (2005-2016)\n\n\nIn einem linear interpolierten, dreiecksbasierten Geländemodell müssen zunächst die Höhen der Schnittpunkte der Verbindungslinien (von Start- und Zielpunkt) und der Dreiecksvermaschung berechnet werden, wie in der folgenden Abbildung dargestellt.\n\n\n\nDreiecksvermaschung Sichtbarkeitsanalyse, GITTA (2005-2016)\n\n\nDie Höhen an den Schnittpunkten S1 bis Sn können durch lineare Interpolation aus den Höhen der beiden Dreieckspunkte berechnet werden, die die betreffende Dreieckskante abschließen. Das Ergebnis ist ein Profil wie im eindimensionalen Fall (siehe Abbildung unten). Auf dieses Profil kann nun der gleiche Algorithmus zur Bestimmung der LOS wie oben angewendet werden.\n\n\n\nLängsschnitt Sichtbarkeitsanalyse Sichtbarkeitsanalyse Extraktion der Dreicksvermaschungsanalyse, GITTA (2005-2016)",
+    "objectID": "unit04/unit04-05.html#geländeprofil-und-horizont",
+    "href": "unit04/unit04-05.html#geländeprofil-und-horizont",
+    "title": "Sichtbarkeitsanalyse als räumliche Ableitung",
+    "section": "Geländeprofil und Horizont",
+    "text": "Geländeprofil und Horizont\nFür die Berechnung ist besonders wichtig, wie sich der sichtbare Horizont entlang eines Profils verändert. Vom Beobachtungspunkt aus wird für jeden geprüften Punkt ein Vertikalwinkel berechnet. Dieser Winkel beschreibt, wie steil die Sichtlinie zu diesem Punkt ansteigt oder abfällt.\nEin Punkt ist sichtbar, wenn sein Vertikalwinkel größer ist als der bisher höchste gespeicherte Horizontwinkel in dieser Richtung. Ist der Winkel kleiner, liegt der Punkt hinter einem bereits höheren Geländepunkt und bleibt verdeckt.\nDie Berechnung folgt damit einer einfachen Logik:\n\nStarte am Beobachtungspunkt.\nPrüfe die Punkte entlang einer Richtung nacheinander.\nSpeichere den bisher höchsten Horizontwinkel.\nEin neuer Punkt ist sichtbar, wenn sein Winkel größer ist als dieser gespeicherte Horizont.\nEin neuer Punkt ist unsichtbar, wenn sein Winkel kleiner ist.\n\nDiese Logik erklärt, warum nahe Hindernisse große Bereiche dahinter verdecken können. Entscheidend ist nicht nur die Höhe eines Zielpunktes, sondern seine Lage im Verhältnis zum Beobachtungspunkt und zum Geländeprofil dazwischen.\n\n\n\nAbbildung 04-10: Geländeprofil und Horizontwinkel. Ein Punkt ist sichtbar, wenn seine Sichtlinie über dem bisher gespeicherten Horizont liegt. Liegt sie darunter, wird der Punkt durch Gelände verdeckt.",
     "crumbs": [
       "Reader Räumliche Ableitungen aus Geodaten",
       "Sichtweite und Sichtfeld"
     ]
   },
   {
-    "objectID": "unit04/unit04-05.html#rasterbasierte-sichtbarkeitsanalyse",
-    "href": "unit04/unit04-05.html#rasterbasierte-sichtbarkeitsanalyse",
-    "title": "Modelle der Erdoberfläche – Sichtweite und Sichtfeld",
-    "section": "Rasterbasierte Sichtbarkeitsanalyse",
-    "text": "Rasterbasierte Sichtbarkeitsanalyse\nDie Bestimmung von Profilen zwischen dem Standpunkt V und dem Zielpunkt P in einem rasterbasierten Geländemodell (Raster) ist ein Sonderfall der Dreiecksvermaschung: Hier kann analog die Verbindungslinie der durch das Raster gebildeten Quadrate (anstelle der Dreiecke) geschnitten und ein Profil erstellt werden (Abbildung a). Da die Berechnung der Schnittpunkte je nach Rasterauflösung sehr rechenintensiv sein kann, gibt es Näherungsalgorithmen zur Berechnung eines Profils. Zwei davon sind in der folgenden Abbildung dargestellt: In Abbildung b) wird die Höhe entlang der Sichtlinie in regelmäßigen Abständen abgefragt und gespeichert. Da jede Gitterzelle genau eine Höhe hat, muss nur berechnet werden, in welcher Gitterzelle der betreffende Zwischenpunkt liegt. Bei der Lösung in Abbildung c) wird zuerst der Sichtstrahl gerastert und dann die Höhe der so entstandenen Rasterzellen mit denen des Geländemodells verglichen.\n\n\n\nLängsschnitt Sichtbarkeitsanalyse Sichtbarkeitsanalyse Rastermodell, GITTA (2005-2016)",
+    "objectID": "unit04/unit04-05.html#vom-einzelnen-zielpunkt-zum-sichtfeld",
+    "href": "unit04/unit04-05.html#vom-einzelnen-zielpunkt-zum-sichtfeld",
+    "title": "Sichtbarkeitsanalyse als räumliche Ableitung",
+    "section": "Vom einzelnen Zielpunkt zum Sichtfeld",
+    "text": "Vom einzelnen Zielpunkt zum Sichtfeld\nEine einzelne Sichtlinie beantwortet nur eine einfache Frage: Ist dieser eine Zielpunkt sichtbar oder nicht?\nEin Sichtfeld beantwortet eine flächenhafte Frage:\n\nWelche Bereiche des Untersuchungsgebiets sind vom Beobachtungspunkt aus sichtbar?\n\nDafür werden viele Sichtlinien in verschiedene Richtungen geprüft. Jeder Zielpunkt oder jede Rasterzelle erhält ein Ergebnis: sichtbar oder nicht sichtbar. Aus diesen Einzelentscheidungen entsteht eine Karte des sichtbaren und nicht sichtbaren Raums.\nDas Ergebnis ist also keine gemessene Fläche, sondern eine Ableitung aus dem Höhenmodell. Sichtbarkeit wird dabei aus Geländeform, Beobachterhöhe, Zielhöhe, maximaler Entfernung und gewählter Auflösung berechnet.\n\n\n\nAbbildung 04-11: Vom Sichtstrahl zum Sichtfeld. Viele einzelne Sichtlinien werden zu einer flächenhaften Sichtbarkeitskarte zusammengeführt.",
     "crumbs": [
       "Reader Räumliche Ableitungen aus Geodaten",
       "Sichtweite und Sichtfeld"
     ]
   },
   {
-    "objectID": "unit04/unit04-05.html#übung",
-    "href": "unit04/unit04-05.html#übung",
-    "title": "Modelle der Erdoberfläche – Sichtweite und Sichtfeld",
-    "section": "Übung",
-    "text": "Übung\n\n\n\n\n\n\nVerwenden Sie die [Cesium Sandbox Implementierung]",
+    "objectID": "unit04/unit04-05.html#höhenmodell-raster-und-tin",
+    "href": "unit04/unit04-05.html#höhenmodell-raster-und-tin",
+    "title": "Sichtbarkeitsanalyse als räumliche Ableitung",
+    "section": "Höhenmodell, Raster und TIN",
+    "text": "Höhenmodell, Raster und TIN\nEine Sichtbarkeitsanalyse benötigt ein Höhenmodell. Dieses kann unterschiedlich aufgebaut sein.\nIm Rastermodell ist die Erdoberfläche als regelmäßiges Zellgitter beschrieben. Jede Zelle besitzt einen Höhenwert. Eine Sichtlinie wird dann über das Raster gelegt, und die Höhen entlang dieser Linie werden aus den betroffenen Zellen entnommen oder abgetastet.\nIm TIN-Modell wird die Oberfläche aus Dreiecken aufgebaut. Eine Sichtlinie schneidet die Dreieckskanten, und an diesen Schnittpunkten werden Höhenwerte durch lineare Interpolation bestimmt. Daraus entsteht ebenfalls ein Profil entlang der Sichtlinie.\nBeide Datenmodelle führen zum gleichen konzeptionellen Problem: Für eine Sichtlinie muss ein Höhenprofil zwischen Beobachtungspunkt und Zielpunkt gewonnen werden. Danach wird geprüft, ob dieses Profil die Sichtlinie überschreitet.\n\n\n\nAbbildung 04-12: Profilgewinnung aus Raster und TIN. Im Rastermodell wird die Sichtlinie über Zellen abgetastet; im TIN-Modell schneidet sie Dreieckskanten. In beiden Fällen entsteht ein Höhenprofil für den Sichtlinientest.",
+    "crumbs": [
+      "Reader Räumliche Ableitungen aus Geodaten",
+      "Sichtweite und Sichtfeld"
+    ]
+  },
+  {
+    "objectID": "unit04/unit04-05.html#was-sichtbarkeit-bedeutet-und-was-nicht",
+    "href": "unit04/unit04-05.html#was-sichtbarkeit-bedeutet-und-was-nicht",
+    "title": "Sichtbarkeitsanalyse als räumliche Ableitung",
+    "section": "Was Sichtbarkeit bedeutet – und was nicht",
+    "text": "Was Sichtbarkeit bedeutet – und was nicht\nEine Sichtbarkeitsanalyse liefert eine geometrische Aussage. Sie zeigt, welche Bereiche nach dem verwendeten Höhenmodell von einem Beobachtungspunkt aus sichtbar sind. Sie sagt aber nicht automatisch, ob ein Objekt tatsächlich wahrgenommen wird, ob es gut erkennbar ist oder ob ein Funksignal sicher empfangen wird.\nDie Interpretation hängt stark von den Eingabedaten und Parametern ab.\nEin DGM beschreibt in der Regel die Geländeoberfläche ohne Gebäude und Vegetation. Ein DSM enthält dagegen auch Oberflächenobjekte wie Gebäude oder Baumkronen. Eine Sichtbarkeitsanalyse auf Basis eines DGM kann deshalb Sichtbereiche anzeigen, die in der Realität durch Wald oder Bebauung verdeckt wären.\nAuch die Rasterauflösung ist entscheidend. Kleine Geländekanten, Mauern, Gebäude oder Vegetationsstrukturen können in einem groben Höhenmodell fehlen. Das Sichtfeld wirkt dann glatter und oft größer, als es in der Realität wäre.\nDie Beobachterhöhe und die Zielhöhe verändern das Ergebnis ebenfalls. Ein Aussichtspunkt in 1,7 m Augenhöhe liefert ein anderes Sichtfeld als ein Aussichtsturm mit 20 m Höhe. Ebenso macht es einen Unterschied, ob Sichtbarkeit auf den Boden, auf ein Gebäude oder auf eine Antenne geprüft wird.\n\n\n\nAbbildung 04-13: Grenzen der Sichtbarkeitsanalyse. Höhenmodell, Auflösung, Beobachterhöhe, Zielhöhe und reale Hindernisse bestimmen, wie das Ergebnis interpretiert werden darf.\n\n\n\n\n\n\n\n\nWarnungWichtig\n\n\n\nEin Sichtfeld ist keine direkte Beobachtung. Es ist eine berechnete Sichtbarkeitsannahme auf Grundlage eines Höhenmodells und festgelegter Parameter.",
+    "crumbs": [
+      "Reader Räumliche Ableitungen aus Geodaten",
+      "Sichtweite und Sichtfeld"
+    ]
+  },
+  {
+    "objectID": "unit04/unit04-05.html#anwendungen",
+    "href": "unit04/unit04-05.html#anwendungen",
+    "title": "Sichtbarkeitsanalyse als räumliche Ableitung",
+    "section": "Anwendungen",
+    "text": "Anwendungen\nSichtbarkeitsanalysen werden in vielen raumbezogenen Fragestellungen eingesetzt.\nIn der Landschaftsplanung kann geprüft werden, von welchen Bereichen aus ein Windrad, ein Gebäude, ein Aussichtsturm oder eine technische Anlage sichtbar wäre. Dabei ist entscheidend, ob mit Gelände allein oder mit Gelände plus Vegetation und Bebauung gerechnet wird.\nIn der Planung von Aussichtspunkten kann untersucht werden, welche Standorte ein großes Sichtfeld erzeugen. Durch Variation der Beobachterhöhe lassen sich zum Beispiel einfache Standorte mit Aussichtstürmen vergleichen.\nIn Archäologie und historischer Geographie können Sichtbeziehungen zwischen Siedlungen, Wegen, Geländepunkten oder Befestigungen untersucht werden. Dabei darf Sichtbarkeit aber nicht direkt mit Kontrolle, Kommunikation oder Bedeutung gleichgesetzt werden. Sie liefert nur eine räumliche Bedingung, die anschließend interpretiert werden muss.\nIn der Funkplanung kann eine Sichtlinienanalyse als erste Näherung dienen. Sie ersetzt aber keine vollständige Funkwellenausbreitungsmodellierung. Funkabdeckung hängt zusätzlich von Frequenz, Antennencharakteristik, Beugung, Reflexion, Dämpfung und weiteren Faktoren ab.\nIn der Wildbiologie kann Sichtbarkeit als Hinweis auf Deckung, Störung oder Exponiertheit genutzt werden. Auch hier bleibt das Sichtfeld nur ein Teil eines Habitat- oder Störungsmodells.",
+    "crumbs": [
+      "Reader Räumliche Ableitungen aus Geodaten",
+      "Sichtweite und Sichtfeld"
+    ]
+  },
+  {
+    "objectID": "unit04/unit04-05.html#werkzeug-sichtfeld-in-qgis-berechnen",
+    "href": "unit04/unit04-05.html#werkzeug-sichtfeld-in-qgis-berechnen",
+    "title": "Sichtbarkeitsanalyse als räumliche Ableitung",
+    "section": "Werkzeug: Sichtfeld in QGIS berechnen",
+    "text": "Werkzeug: Sichtfeld in QGIS berechnen\nFür die Übung verwenden wir nicht mehr die Cesium-Sandbox, sondern ein GIS-basiertes Werkzeug. Geeignet ist insbesondere:\n\nQGIS → Processing Toolbox → GRASS → r.viewshed\n\nBenötigt werden:\n\nein digitales Höhenmodell als Raster,\nein Beobachtungspunkt,\neine Beobachterhöhe,\noptional eine Zielhöhe,\noptional eine maximale Sichtweite.\n\nDas Werkzeug berechnet daraus ein Sichtfeld auf Basis des Höhenrasters. Je nach Einstellung kann das Ergebnis als sichtbare/nicht sichtbare Fläche oder als Raster mit Sichtbarkeitsinformationen ausgegeben werden.\nAlternativ kann in QGIS das Plugin Visibility Analysis genutzt werden. Für die Kursübung ist r.viewshed jedoch günstiger, weil es direkt an Rasteranalyse, Höhenmodelle und reproduzierbare GIS-Verarbeitung anschließt.",
+    "crumbs": [
+      "Reader Räumliche Ableitungen aus Geodaten",
+      "Sichtweite und Sichtfeld"
+    ]
+  },
+  {
+    "objectID": "unit04/unit04-05.html#übung-sichtfeld-aus-einem-höhenmodell-ableiten",
+    "href": "unit04/unit04-05.html#übung-sichtfeld-aus-einem-höhenmodell-ableiten",
+    "title": "Sichtbarkeitsanalyse als räumliche Ableitung",
+    "section": "Übung: Sichtfeld aus einem Höhenmodell ableiten",
+    "text": "Übung: Sichtfeld aus einem Höhenmodell ableiten\n\n\n\n\n\n\nTippArbeitsauftrag\n\n\n\nVerwenden Sie ein digitales Höhenmodell und berechnen Sie ein Sichtfeld mit QGIS und GRASS r.viewshed.\nBearbeiten Sie die folgenden Aufgaben:\n\nLaden Sie ein digitales Höhenmodell in QGIS.\nSetzen Sie einen Beobachtungspunkt auf einen erhöhten Standort.\nBerechnen Sie ein Sichtfeld mit einer Beobachterhöhe von 1,7 m.\nWiederholen Sie die Berechnung mit einer deutlich höheren Beobachterhöhe, zum Beispiel 10 m oder 20 m.\nVergleichen Sie beide Ergebnisse: Welche Bereiche werden zusätzlich sichtbar?\nSuchen Sie einen nahen Bereich, der nicht sichtbar ist. Begründen Sie dies mit dem Geländeprofil.\nSuchen Sie einen weiter entfernten Bereich, der sichtbar bleibt. Begründen Sie, warum Entfernung allein nicht über Sichtbarkeit entscheidet.\nPrüfen Sie, ob das verwendete Höhenmodell Gebäude oder Vegetation enthält. Erklären Sie, wie sich das auf die Interpretation des Sichtfeldes auswirkt.\n\nFormulieren Sie abschließend in zwei bis drei Sätzen, was das berechnete Sichtfeld zuverlässig zeigt und was es nicht zeigen kann.",
+    "crumbs": [
+      "Reader Räumliche Ableitungen aus Geodaten",
+      "Sichtweite und Sichtfeld"
+    ]
+  },
+  {
+    "objectID": "unit04/unit04-05.html#kernpunkt",
+    "href": "unit04/unit04-05.html#kernpunkt",
+    "title": "Sichtbarkeitsanalyse als räumliche Ableitung",
+    "section": "Kernpunkt",
+    "text": "Kernpunkt\nSichtbarkeitsanalyse übersetzt ein Höhenmodell in eine Karte möglicher Sichtbeziehungen. Sie prüft Sichtlinien zwischen Beobachtungspunkt und Zielpunkten und leitet daraus sichtbare und verdeckte Bereiche ab. Das Ergebnis ist nur so belastbar wie das Höhenmodell, die gewählten Parameter und die fachliche Interpretation der Fragestellung.",
     "crumbs": [
       "Reader Räumliche Ableitungen aus Geodaten",
       "Sichtweite und Sichtfeld"
