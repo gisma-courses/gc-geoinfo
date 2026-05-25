@@ -8,88 +8,208 @@ lang: de
 comments: false
 ---
 
-Geometrische Abfragen messen die Fläche oder den Umfang eines Objektes bzw. den Abstand oder die Richtung zwischen zwei Objekten. Bei der Diskussion geometrischer Abfragen müssen Raster- und Vektordatenmodelle aufgrund ihrer völlig unterschiedlichen Raumauffassung getrennt betrachtet werden. Im Sinne einer Relation ist die Geometrie eine weitere Eigenschaft eines Geoobjektes.
+Geometrische Abfragen werten nicht die Attributwerte eines Geoobjekts aus, sondern seine Geometrie. Sie messen zum Beispiel Abstände zwischen Objekten, die Länge einer Linie, den Umfang einer Fläche, die Fläche eines Polygons oder die räumliche Reichweite um ein Objekt.
 
-Im Folgenden werden die wichtigsten geometrischen Abfragen (Messfunktionen) beschrieben:
+Damit unterscheiden sich geometrische Abfragen deutlich von thematischen Abfragen. Bei einer thematischen Abfrage lautet die Frage zum Beispiel: *Welche Parzellen haben die Baumart Lärche?* Bei einer geometrischen Abfrage lautet die Frage eher: *Wie weit liegen zwei Objekte auseinander?*, *Wie groß ist eine Fläche?* oder *Welche Bereiche liegen innerhalb von 100 m Abstand zu einer Straße?*
 
-### Euklidische Distanz im Vektormodell
+Wichtig ist dabei die Unterscheidung zwischen Vektor- und Rasterdaten. Im Vektormodell werden Punkte, Linien und Polygone als geometrische Objekte beschrieben. Im Rastermodell wird der Raum dagegen in Zellen zerlegt. Dadurch hängen Messergebnisse im Rastermodell immer auch von der Zellgröße ab.
 
-Bei Vektordaten wird die Distanz zwischen zwei Objekten einfach nach dem Satz des Pythagoras berechnet und entspricht der kürzesten Strecke.
+![Abbildung 03-10: Überblick über geometrische Abfragen in QGIS. Geometrische Abfragen messen Distanzen, Flächen, Umfänge und Distanzzonen und übersetzen räumliche Fragestellungen in messbare Größen.](../assets/images/unit03/geometrische_abfragen_qgis.png)
 
+## Distanz und Ausdehnung
 
-![Abbildung 03-10: Euklidische Distanz zwischen den Punkten A und B am Beispiel eines Vektordatenmodells , @gitta2005](../assets/images/unit03/euklid_dist_1.png)
+Geometrische Messungen können im Vektormodell und im Rastermodell unterschiedlich funktionieren. Im Vektormodell stehen die exakten Koordinaten der Geometrien im Vordergrund. Im Rastermodell werden dagegen Zellen ausgewertet. Dadurch können sich Messergebnisse je nach Rasterauflösung unterscheiden.
 
+Für metrische Distanzen und Flächen muss in QGIS ein geeignetes projiziertes Koordinatensystem verwendet werden. Liegen Daten nur in geographischen Koordinaten vor, also in Längen- und Breitengraden, sind die Werte nicht direkt als Meter oder Quadratmeter interpretierbar.
 
+![Abbildung 03-11: Distanz und Ausdehnung im Vektor- und Rastermodell. Im Vektormodell werden Geometrien direkt gemessen; im Rastermodell beeinflusst die Zellgröße das Ergebnis.](../assets/images/unit03/distanz_ausdehnung_vektor_raster.png)
 
-### Euklidische Distanz Rastermodell
+### Distanz im Vektormodell
 
-Im Rastermodell können drei verschiedene Ansätze zur Messung von Distanzen zwischen Punkten verwendet werden.
+Im Vektormodell wird die Distanz zwischen zwei Punkten als kürzeste Verbindung zwischen diesen Punkten berechnet. Diese kürzeste Verbindung entspricht der euklidischen Distanz, also der direkten Luftlinie.
 
-![Abbildung 03-10: Euklidische Distanz zwischen den Punkten A und B am Beispiel des Rasterdatenmodells. Oberste Reihe: Euklidische Distanz von den Zellrändern, mittlere Reihe: Manhattan-Distanz entlang der Zellränder, untere Reihe: Konzentrische Nachbarschaftsdistanz , @gitta2005"](../assets/images/unit03/euklid_dist_2.png)
+Für zwei Punkte mit den Koordinaten $$A(x_1, y_1)$$ und $$B(x_2, y_2)$$ ergibt sich die Distanz aus:
 
+$$
+AB = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+$$
 
+In QGIS kann eine solche Distanz zum Beispiel über Messwerkzeuge, Geometrieausdrücke oder Analysewerkzeuge bestimmt werden. Fachlich geht es dabei immer um die Frage, wie weit zwei Objekte im Raum voneinander entfernt liegen.
 
-### Ausdehnung Vektormodell
+### Distanz im Rastermodell
 
-![Abbildung 03-11: Abgeleitete Distanzmaße eines Polygons im Vektormodell , @gitta2005](../assets/images/unit03/euklid_dist_3.png)
+Im Rastermodell wird Distanz nicht zwischen frei liegenden Koordinatenpunkten gemessen, sondern über Rasterzellen angenähert. Dafür gibt es verschiedene Metriken.
 
+Die euklidische Distanz beschreibt die direkte Luftlinie zwischen zwei Positionen. Die Manhattan-Distanz folgt dagegen nur den Zellkanten, also horizontalen und vertikalen Schritten. Nachbarschaftsbasierte Distanzen berücksichtigen zusätzlich, welche Zellen direkt oder diagonal benachbart sind.
 
+Diese Unterschiede sind nicht nur rechnerisch. Sie verändern auch die fachliche Interpretation. Eine Luftliniendistanz passt gut für direkte Reichweiten, zum Beispiel Sichtbarkeit oder theoretische Nähe. Eine Manhattan-Distanz passt eher zu Bewegungen entlang rechtwinkliger Strukturen, etwa in einem Straßengitter. Nachbarschaftsdistanzen sind besonders relevant, wenn Ausbreitungen zellweise modelliert werden.
 
-### Rastermodell
+### Fläche und Umfang im Vektormodell
 
-![Abbildung 03-12: Abgeleitete Distanzmaße eines Polygons im Rastermodell , @gitta2005](../assets/images/unit03/euklid_dist_4.png)
+Im Vektormodell wird der Umfang eines Polygons aus der Summe seiner Kantenlängen berechnet. Die Fläche ergibt sich aus der geometrisch umschlossenen Innenfläche.
 
+In QGIS können solche Werte zum Beispiel über den Feldrechner erzeugt werden. Typische Ausdrücke sind:
 
-## Distanzzonen: Distanzpuffer und Distanztransformation
+```qgis
+$area
+```
 
-Neben der Ermittlung von (kürzesten) Distanzen zwischen Objekten ist eine weitere wichtige Anwendung in einem GIS die Ermittlung von Distanzzonen. Dabei wird jedem Punkt im Raum ein Distanzwert zum nächstgelegenen Bezugsobjekt zugeordnet. Die Bildung von Distanzzonen unterscheidet sich für Vektor- und Rastermodell sowohl in der Lösung als auch in der Anwendung deutlich.
+für die Fläche eines Polygons,
 
-### Vektormodell
+```qgis
+$perimeter
+```
 
-Vektormodelle werden in der Regel zur Modellierung von randscharfen Phänomenen verwendet. Distanzzonen im Vektormodell ergeben wiederum klare, randscharfe Polygone. Daher wird anstelle des allgemeineren Begriffs Distanzzone der Begriff Distanzpuffer verwendet. Die Berechnung eines solchen Distanzpuffers ergibt als Ergebnis immer eine Fläche (d.h. ein Polygon), unabhängig davon, ob von Punkten, Linien oder Flächen ausgegangen wird. Gesucht wird die Umrisslinie (Grenzlinie) dieser resultierenden Fläche, die das Ausgangsobjekt in einem definierten Abstand umgibt (siehe Animation unten). Die Berechnung der Abstandspuffer basiert auf einer euklidischen Metrik. Weitergehende Möglichkeiten, wie sie im Rastermodell einfach realisiert werden können, sind nur aufwendig realisierbar. So können z.B. ineinander verschachtelte Abstandszonen (z.B. 0-500 m, 501-1000 m, 1001-2000 m) nur durch wiederholte Berechnung und anschließende Verschneidung der Puffer als Polygone (engl. polygon overlay) realisiert werden. Die Möglichkeiten der Pufferbildung im Vektormodell sind begrenzter als im Rastermodell. Dennoch gibt es einige Möglichkeiten, Distanzpuffer zu variieren (Animation unten):
+für den Umfang eines Polygons und
 
-* Die Form eines Puffers kann variiert werden. Zum Beispiel kann das Ende eines Puffers um eine Linie flach oder rund sein.
-* Pufferabstände können in Abhängigkeit von einem Attributwert der Ausgangsobjekte berechnet werden. Beispielsweise bestimmt die Sendeleistung von Mobilfunkantennen deren Reichweite.
-* Puffer können auch einseitig gebildet werden, z.B. Bauverbotszone um einen See.
+```qgis
+$length
+```
 
+für die Länge einer Liniengeometrie.
 
+Die Werte sind nur dann sinnvoll interpretierbar, wenn das Projekt beziehungsweise der Layer in einem passenden metrischen Koordinatensystem vorliegt.
 
-### Rastermodell
+### Fläche und Umfang im Rastermodell
 
-![Abbildung 03-12: Abgeleitete Distanzmaße eines Polygons im Rastermodell , @gitta2005](../assets/images/unit03/euklid_dist_4.png)
+Im Rastermodell wird Fläche über die Anzahl der beteiligten Zellen berechnet. Wenn eine Zelle zum Beispiel eine Fläche von 25 m² repräsentiert und ein Objekt aus 40 Zellen besteht, ergibt sich eine Rasterfläche von 1000 m².
 
+Allgemein gilt:
 
-## Distanzzonen: Distanzpuffer und Distanztransformation
+$$
+A_\text{Raster} = n_\text{Zellen} \cdot A_\text{Zelle}
+$$
 
-Neben der Ermittlung von (kürzesten) Distanzen zwischen Objekten ist eine weitere wichtige Anwendung in einem GIS die Ermittlung von Distanzzonen. Dabei wird jedem Punkt im Raum ein Distanzwert zum nächstgelegenen Bezugsobjekt zugeordnet. Die Bildung von Distanzzonen unterscheidet sich für Vektor- und Rastermodell sowohl in der Lösung als auch in der Anwendung deutlich.
+Der Umfang wird im Rastermodell über Randkanten angenähert. Dabei wird gezählt, wie viele Zellkanten das Objekt nach außen begrenzen. Diese Anzahl wird mit der Zellgröße multipliziert:
 
-### Vektormodell
+$$
+U_\text{Raster} = n_\text{Randkanten} \cdot s_\text{Zelle}
+$$
 
-Vektormodelle werden in der Regel zur Modellierung von randscharfen Phänomenen verwendet. Distanzzonen im Vektormodell ergeben wiederum klare, randscharfe Polygone. Daher wird anstelle des allgemeineren Begriffs Distanzzone der Begriff Distanzpuffer verwendet. Die Berechnung eines solchen Distanzpuffers ergibt als Ergebnis immer eine Fläche (d.h. ein Polygon), unabhängig davon, ob von Punkten, Linien oder Flächen ausgegangen wird. Gesucht wird die Umrisslinie (Grenzlinie) dieser resultierenden Fläche, die das Ausgangsobjekt in einem definierten Abstand umgibt (siehe Animation unten). Die Berechnung der Abstandspuffer basiert auf einer euklidischen Metrik. Weitergehende Möglichkeiten, wie sie im Rastermodell einfach realisiert werden können, sind nur aufwendig realisierbar. So können z.B. ineinander verschachtelte Abstandszonen (z.B. 0-500 m, 501-1000 m, 1001-2000 m) nur durch wiederholte Berechnung und anschließende Verschneidung der Puffer als Polygone (engl. polygon overlay) realisiert werden. Die Möglichkeiten der Pufferbildung im Vektormodell sind begrenzter als im Rastermodell. Dennoch gibt es einige Möglichkeiten, Distanzpuffer zu variieren (Animation unten):
+Dadurch ist der Umfang im Rastermodell meist stärker von der Auflösung abhängig als im Vektormodell. Grobe Raster können kleine Einbuchtungen, schmale Formen oder gekrümmte Grenzen nur vereinfacht abbilden.
 
-  * Die Form eines Puffers kann variiert werden. Zum Beispiel kann das Ende eines Puffers um eine Linie flach oder rund sein.
-  * Pufferabstände können in Abhängigkeit von einem Attributwert der Ausgangsobjekte berechnet werden. Beispielsweise bestimmt die Sendeleistung von Mobilfunkantennen deren Reichweite.
-  * Puffer können auch einseitig gebildet werden, z.B. Bauverbotszone um einen See.
+## Distanzzonen und Puffer
 
-### Rastermodell
+Eine wichtige Anwendung geometrischer Abfragen ist die Bildung von Distanzzonen. Dabei wird gefragt, welche Bereiche innerhalb eines bestimmten Abstands zu einem Objekt liegen.
 
-Die Bildung von Abstandszonen im Rastermodell weist jeder einzelnen Rasterzelle einen Abstandswert entsprechend ihrer Entfernung zur nächstgelegenen „Quellzelle“ zu. Dies führt zu einem quasi-kontinuierlichen Ergebnis. Da der Raum also entsprechend der Distanz zu bestimmten Objekten transformiert wird, kann man im Rastermodell von einer Distanztransformation sprechen: Im Rastermodell kann eine geeignete Metrik für die Distanztransformation gewählt werden: Euklidische Metrik, Manhattan-Metrik oder eine Metrik, die zusätzlich zur Manhattan-Metrik (4er-Nachbarschaft der Rasterzellen) auch die diagonalen Nachbarn (8er-Nachbarschaft) einbezieht. Zusätzlich können Wegkosten oder Wegzeiten als Kostenflächen berücksichtigt werden. Kostenoberflächen enthalten Informationen über den Aufwand, der zur Überwindung einer Entfernung erforderlich ist und der je Zelle variiert. Eine quasi-kontinuierliche Rasterdistanztransformation kann elegant durch eine einfache Einteilung in klassifizierte Entfernungszonen (z.B. Entfernungszonen bis 250m, bis 500m usw.) transformiert werden. Die Genauigkeit des Ergebnisses hängt jedoch direkt von der Auflösung (Maschenweite) des Rasters ab.
+Im Vektormodell wird dafür meist der Begriff **Puffer** verwendet. Ein Puffer erzeugt eine neue Polygonfläche in einem festgelegten Abstand um ein Ausgangsobjekt. Dieses Ausgangsobjekt kann ein Punkt, eine Linie oder ein Polygon sein.
 
-	
-### Erstellen eines Abstandspuffers im Vektormodell.
+![Abbildung 03-12: Distanzzonen und Puffer in QGIS. Puffer können um Punkte, Linien und Polygone gebildet werden; im Rastermodell entstehen dagegen flächige Distanzwerte pro Zelle.](../assets/images/unit03/distanzzonen_puffer_qgis.png)
 
-Abstandspuffer um Punkte sind Kreisflächen. Die Punkte in der folgenden Abbildung stellen Standorte von Mobilfunkantennen mit unterschiedlicher Sendeleistung dar. Die äußerste Linie stellt die maximale Reichweite bei gegebener Sendeleistung dar. Die Abstandspuffer sind hier mit den Attributwerten der Ausgangsobjekte gewichtet. Die Karte zeigt, welche Teile der Siedlungsfläche versorgt sind und welche nicht.
+### Puffer um Punkte
 
-![Abbildung 03-13: Distanzpuffer um Antennenstandorte auf Basis von Attributdaten , @gitta2005](http://gisbsc.gis-ma.org/GISBScL6/de/image/distpuff_punkte.gif)
+Ein Punktpuffer erzeugt eine Kreisfläche um einen Punkt. Das ist zum Beispiel sinnvoll, wenn Reichweiten oder Einzugsbereiche modelliert werden sollen.
 
+Beispiele sind:
 
-Im nächsten Beispiel geht es um Distanzpuffer entlang von Linien. Die Linien sind in diesem Fall Straßen verschiedener Kategorien. Durch die Klassifizierung der Straßen ist die zulässige Höchstgeschwindigkeit bekannt: Autobahnen 120 km/h und Landstraßen 80 km/h. Mit Hilfe eines Immissions-/Emissionsmodells für Straßenlärm (vgl. [Lärmorama](http://www.laermorama.ch/)) wurden die Abstandspuffer für einen Grenzwert von 70 dB in Abhängigkeit von der zulässigen Höchstgeschwindigkeit berechnet. In das Modell gehen im Wesentlichen drei Parameter ein: die Durchschnittsgeschwindigkeit, die durchschnittliche Anzahl der Fahrzeuge pro Stunde und der Lkw-Anteil. Hindernisse etc. wurden nicht berücksichtigt. Es wird davon ausgegangen, dass sich der Schall ungehindert im Raum ausbreiten kann. Die so ermittelten Flächen decken einen Bereich von 85,1 dB an der Verkehrsachse und bis zu 70 dB an der Umrisslinie des Distanzpuffers (bzw. von 82,9 dB bis 70 dB) ab. Das bedeutet, dass die Pufferfläche hinsichtlich der Schallbelastung (Immissionswert) nicht homogen ist. Häufig interessiert die Grenzlinie bzw. ein Grenzwert, der durch die Umrisslinie der Pufferfläche markiert wird. Diese Fläche ist von Interesse, wenn man z.B. wissen möchte, wie groß die Fläche (bzw. die Anzahl der Einwohner) des Siedlungsgebietes ist, die einem Lärm von 85,1 dB bis 70 dB ausgesetzt ist. Soll eine Abstufung bzw. Verschachtelung der Immissionswerte dargestellt werden, müssen mehrere Abstandspuffer mit den jeweiligen Immissionswerten berechnet werden. 
+* Einzugsbereiche um Haltestellen
+* Reichweiten um Mobilfunkantennen
+* Suchbereiche um Fundpunkte
+* Mindestabstände um Gefahrenpunkte
 
-![Abbildung 03-14: Distanzpuffer der Lärmausbreitung entlang einer Autobahn, @gitta2005](../assets/images/unit03/distpuff_linie.gif)
+Der Pufferabstand kann konstant sein oder von einem Attributwert abhängen. Eine Antenne mit höherer Sendeleistung kann zum Beispiel einen größeren Puffer erhalten als eine Antenne mit niedrigerer Sendeleistung.
 
-Das letzte Beispiel zeigt einseitige Abstandspuffer, die aufgrund eines Gesetzes festgelegt wurden, das die Abstände um ein Naturschutzgebiet für extensive Landwirtschaft (schonender Umgang mit der Natur) und ein generelles Bauverbot festlegt.
+### Puffer entlang von Linien
 
-![Abbildung 03-15: Einseitiger Abstandspuffer um ein Schutzgebiet, @gitta2005](../assets/images/unit03/distpuff_polygone.gif)
+Ein Linienpuffer erzeugt eine Zone entlang einer Linie. Das ist typisch für Straßen, Flüsse, Leitungen oder Wege.
 
+Beispiele sind:
 
+* Lärmbereiche entlang von Straßen
+* Schutzstreifen entlang von Gewässern
+* Einzugsbereiche entlang von Wegen
+* Sicherheitsabstände entlang von Leitungen
 
+Dabei muss klar bleiben: Ein Puffer ist zunächst nur eine geometrische Abstandzone. Er ist noch kein vollständiges Wirkungsmodell. Ein Lärmpuffer zeigt zum Beispiel eine angenommene Zone um eine Straße, ersetzt aber keine vollständige Ausbreitungsrechnung mit Gelände, Bebauung, Verkehrsdichte und Abschirmung.
+
+### Puffer um Polygone
+
+Auch Flächen können gepuffert werden. Ein Polygonpuffer erzeugt eine Zone innerhalb oder außerhalb einer bestehenden Fläche. Das ist zum Beispiel bei Schutzgebieten, Seen, Siedlungsflächen oder Baugebieten relevant.
+
+Beispiele sind:
+
+* Bauverbotszonen um ein Schutzgebiet
+* Gewässerrandstreifen um einen See
+* Abstandszonen um Siedlungsflächen
+* Erweiterungsflächen um Planungsgebiete
+
+Puffer können außerdem verschachtelt werden. Dadurch entstehen mehrere Abstandsklassen, etwa 0–50 m, 50–100 m und 100–250 m.
+
+### Distanztransformation im Rastermodell
+
+Im Rastermodell wird häufig nicht nur eine scharfe Pufferfläche erzeugt. Stattdessen kann jeder Rasterzelle ein Distanzwert zum nächstgelegenen Ausgangsobjekt zugewiesen werden. Daraus entsteht eine Distanzfläche.
+
+Diese Distanzwerte können anschließend klassifiziert werden. Aus einer kontinuierlichen Distanzfläche entstehen dann zum Beispiel Klassen wie:
+
+* 0–100 m
+* 100–250 m
+* 250–500 m
+* über 500 m
+
+Das Rastermodell ist deshalb besonders geeignet, wenn Distanzen flächendeckend ausgewertet oder mit weiteren Rasterdaten kombiniert werden sollen. Die Genauigkeit hängt aber direkt von der Zellgröße ab.
+
+::: {.callout-warning icon="false" appearance="simple"}
+
+## Wichtig
+
+Ein Puffer beschreibt zunächst nur Abstand. Ob dieser Abstand fachlich eine Wirkung, eine Belastung, eine Erreichbarkeit oder eine Schutzfunktion bedeutet, muss zusätzlich begründet werden.
+:::
+
+## Typische Fragen für geometrische Abfragen
+
+Geometrische Abfragen sind sinnvoll, wenn eine Fragestellung direkt an Lage, Entfernung, Länge oder Ausdehnung gebunden ist.
+
+Typische Fragen sind:
+
+* Wie weit liegt ein Gebäude von der nächsten Straße entfernt?
+* Welche Flächen liegen innerhalb von 100 m Abstand zu einem Gewässer?
+* Wie groß ist eine versiegelte Fläche?
+* Wie lang ist ein Wegabschnitt?
+* Welche Siedlungsbereiche liegen in einer angenommenen Lärmzone?
+* Wie verändert sich ein Ergebnis, wenn statt Vektor- ein Rastermodell verwendet wird?
+
+Der Kern ist immer gleich: Eine räumliche Frage wird in eine messbare geometrische Größe übersetzt.
+
+## Übung
+
+![Abbildung 03-13: Übung zu geometrischen Abfragen. Die Aufgaben prüfen, welche Messfunktion oder Pufferart zu einer räumlichen Fragestellung passt und wie Vektor- und Rastermodell unterschieden werden.](../assets/images/unit03/uebung_geometrische_abfragen_qgis.png)
+
+::: {.callout-tip icon="false" appearance="simple"}
+
+## Arbeitsauftrag
+
+Bearbeiten Sie die folgenden Aufgaben schriftlich. Verwenden Sie dabei die Begriffe **Distanz**, **euklidische Distanz**, **Manhattan-Distanz**, **Fläche**, **Umfang**, **Puffer**, **Vektormodell** und **Rastermodell** passend.
+
+### A: Distanz zwischen zwei Punkten
+
+Zwei Standorte liegen bei $$A(2,4)$$ und $$B(10,12)$$.
+
+* Formulieren Sie eine fachliche Frage, die zu dieser Messung passt.
+* Berechnen Sie die euklidische Distanz zwischen beiden Punkten.
+* Erklären Sie, warum diese Distanz als Luftlinie interpretiert werden kann.
+
+### B: Rasterdistanz vergleichen
+
+Ein Raster bildet Wege zwischen zwei Punkten ab.
+
+* Erklären Sie den Unterschied zwischen euklidischer Distanz und Manhattan-Distanz.
+* Nennen Sie ein Beispiel, bei dem die Manhattan-Distanz fachlich sinnvoller ist als die Luftlinie.
+* Beschreiben Sie, warum die Rasterauflösung das Ergebnis beeinflussen kann.
+
+### C: Fläche und Umfang
+
+Eine Grünfläche liegt einmal als Polygon und einmal als Rasterfläche vor.
+
+* Erklären Sie, wie die Fläche im Vektormodell bestimmt wird.
+* Erklären Sie, wie die Fläche im Rastermodell bestimmt wird.
+* Erklären Sie, warum der Umfang im Rastermodell stärker von der Auflösung abhängt.
+
+### D: Puffer anwenden
+
+Für ein Planungsgebiet sollen Abstandszonen gebildet werden.
+
+* Nennen Sie je ein sinnvolles Beispiel für einen Punktpuffer, einen Linienpuffer und einen Polygonpuffer.
+* Begründen Sie jeweils, warum ein Puffer für diese Fragestellung geeignet ist.
+* Erklären Sie, warum ein Puffer allein noch keine fachliche Wirkung nachweist.
+
+:::

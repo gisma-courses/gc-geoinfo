@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -140,20 +120,49 @@ background-size: cover;
 
 </style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../css/styles.css">
 <meta property="og:title" content="Geometrische Abfragen – Grundlagenkurs GI-S (QGIS)">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit03/euklid_dist_1.png">
+<meta property="og:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit03/geometrische_abfragen_qgis.png">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
-<meta property="og:image:height" content="1222">
-<meta property="og:image:width" content="1678">
+<meta property="og:image:height" content="941">
+<meta property="og:image:width" content="1672">
 <meta name="twitter:title" content="Geometrische Abfragen – Grundlagenkurs GI-S (QGIS)">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit03/euklid_dist_1.png">
+<meta name="twitter:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit03/geometrische_abfragen_qgis.png">
 <meta name="twitter:creator" content="@gisma">
-<meta name="twitter:image-height" content="1222">
-<meta name="twitter:image-width" content="1678">
+<meta name="twitter:image-height" content="941">
+<meta name="twitter:image-width" content="1672">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -719,21 +728,22 @@ background-size: cover;
     <h2 id="toc-title">Inhalt</h2>
    
   <ul>
-  <li><a href="#euklidische-distanz-im-vektormodell" id="toc-euklidische-distanz-im-vektormodell" class="nav-link active" data-scroll-target="#euklidische-distanz-im-vektormodell">Euklidische Distanz im Vektormodell</a></li>
-  <li><a href="#euklidische-distanz-rastermodell" id="toc-euklidische-distanz-rastermodell" class="nav-link" data-scroll-target="#euklidische-distanz-rastermodell">Euklidische Distanz Rastermodell</a></li>
-  <li><a href="#ausdehnung-vektormodell" id="toc-ausdehnung-vektormodell" class="nav-link" data-scroll-target="#ausdehnung-vektormodell">Ausdehnung Vektormodell</a></li>
-  <li><a href="#rastermodell" id="toc-rastermodell" class="nav-link" data-scroll-target="#rastermodell">Rastermodell</a></li>
-  <li><a href="#distanzzonen-distanzpuffer-und-distanztransformation" id="toc-distanzzonen-distanzpuffer-und-distanztransformation" class="nav-link" data-scroll-target="#distanzzonen-distanzpuffer-und-distanztransformation">Distanzzonen: Distanzpuffer und Distanztransformation</a>
+  <li><a href="#distanz-und-ausdehnung" id="toc-distanz-und-ausdehnung" class="nav-link active" data-scroll-target="#distanz-und-ausdehnung">Distanz und Ausdehnung</a>
   <ul class="collapse">
-  <li><a href="#vektormodell" id="toc-vektormodell" class="nav-link" data-scroll-target="#vektormodell">Vektormodell</a></li>
-  <li><a href="#rastermodell-1" id="toc-rastermodell-1" class="nav-link" data-scroll-target="#rastermodell-1">Rastermodell</a></li>
+  <li><a href="#distanz-im-vektormodell" id="toc-distanz-im-vektormodell" class="nav-link" data-scroll-target="#distanz-im-vektormodell">Distanz im Vektormodell</a></li>
+  <li><a href="#distanz-im-rastermodell" id="toc-distanz-im-rastermodell" class="nav-link" data-scroll-target="#distanz-im-rastermodell">Distanz im Rastermodell</a></li>
+  <li><a href="#fläche-und-umfang-im-vektormodell" id="toc-fläche-und-umfang-im-vektormodell" class="nav-link" data-scroll-target="#fläche-und-umfang-im-vektormodell">Fläche und Umfang im Vektormodell</a></li>
+  <li><a href="#fläche-und-umfang-im-rastermodell" id="toc-fläche-und-umfang-im-rastermodell" class="nav-link" data-scroll-target="#fläche-und-umfang-im-rastermodell">Fläche und Umfang im Rastermodell</a></li>
   </ul></li>
-  <li><a href="#distanzzonen-distanzpuffer-und-distanztransformation-1" id="toc-distanzzonen-distanzpuffer-und-distanztransformation-1" class="nav-link" data-scroll-target="#distanzzonen-distanzpuffer-und-distanztransformation-1">Distanzzonen: Distanzpuffer und Distanztransformation</a>
+  <li><a href="#distanzzonen-und-puffer" id="toc-distanzzonen-und-puffer" class="nav-link" data-scroll-target="#distanzzonen-und-puffer">Distanzzonen und Puffer</a>
   <ul class="collapse">
-  <li><a href="#vektormodell-1" id="toc-vektormodell-1" class="nav-link" data-scroll-target="#vektormodell-1">Vektormodell</a></li>
-  <li><a href="#rastermodell-2" id="toc-rastermodell-2" class="nav-link" data-scroll-target="#rastermodell-2">Rastermodell</a></li>
-  <li><a href="#erstellen-eines-abstandspuffers-im-vektormodell." id="toc-erstellen-eines-abstandspuffers-im-vektormodell." class="nav-link" data-scroll-target="#erstellen-eines-abstandspuffers-im-vektormodell.">Erstellen eines Abstandspuffers im Vektormodell.</a></li>
+  <li><a href="#puffer-um-punkte" id="toc-puffer-um-punkte" class="nav-link" data-scroll-target="#puffer-um-punkte">Puffer um Punkte</a></li>
+  <li><a href="#puffer-entlang-von-linien" id="toc-puffer-entlang-von-linien" class="nav-link" data-scroll-target="#puffer-entlang-von-linien">Puffer entlang von Linien</a></li>
+  <li><a href="#puffer-um-polygone" id="toc-puffer-um-polygone" class="nav-link" data-scroll-target="#puffer-um-polygone">Puffer um Polygone</a></li>
+  <li><a href="#distanztransformation-im-rastermodell" id="toc-distanztransformation-im-rastermodell" class="nav-link" data-scroll-target="#distanztransformation-im-rastermodell">Distanztransformation im Rastermodell</a></li>
   </ul></li>
+  <li><a href="#typische-fragen-für-geometrische-abfragen" id="toc-typische-fragen-für-geometrische-abfragen" class="nav-link" data-scroll-target="#typische-fragen-für-geometrische-abfragen">Typische Fragen für geometrische Abfragen</a></li>
+  <li><a href="#übung" id="toc-übung" class="nav-link" data-scroll-target="#übung">Übung</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit03/unit03-03.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
     </div>
@@ -745,118 +755,214 @@ background-size: cover;
 
 
 
-<p>Geometrische Abfragen messen die Fläche oder den Umfang eines Objektes bzw. den Abstand oder die Richtung zwischen zwei Objekten. Bei der Diskussion geometrischer Abfragen müssen Raster- und Vektordatenmodelle aufgrund ihrer völlig unterschiedlichen Raumauffassung getrennt betrachtet werden. Im Sinne einer Relation ist die Geometrie eine weitere Eigenschaft eines Geoobjektes.</p>
-<p>Im Folgenden werden die wichtigsten geometrischen Abfragen (Messfunktionen) beschrieben:</p>
-<section id="euklidische-distanz-im-vektormodell" class="level3">
-<h3 class="anchored" data-anchor-id="euklidische-distanz-im-vektormodell">Euklidische Distanz im Vektormodell</h3>
-<p>Bei Vektordaten wird die Distanz zwischen zwei Objekten einfach nach dem Satz des Pythagoras berechnet und entspricht der kürzesten Strecke.</p>
+<p>Geometrische Abfragen werten nicht die Attributwerte eines Geoobjekts aus, sondern seine Geometrie. Sie messen zum Beispiel Abstände zwischen Objekten, die Länge einer Linie, den Umfang einer Fläche, die Fläche eines Polygons oder die räumliche Reichweite um ein Objekt.</p>
+<p>Damit unterscheiden sich geometrische Abfragen deutlich von thematischen Abfragen. Bei einer thematischen Abfrage lautet die Frage zum Beispiel: <em>Welche Parzellen haben die Baumart Lärche?</em> Bei einer geometrischen Abfrage lautet die Frage eher: <em>Wie weit liegen zwei Objekte auseinander?</em>, <em>Wie groß ist eine Fläche?</em> oder <em>Welche Bereiche liegen innerhalb von 100 m Abstand zu einer Straße?</em></p>
+<p>Wichtig ist dabei die Unterscheidung zwischen Vektor- und Rasterdaten. Im Vektormodell werden Punkte, Linien und Polygone als geometrische Objekte beschrieben. Im Rastermodell wird der Raum dagegen in Zellen zerlegt. Dadurch hängen Messergebnisse im Rastermodell immer auch von der Zellgröße ab.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../assets/images/unit03/euklid_dist_1.png" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-10: Euklidische Distanz zwischen den Punkten A und B am Beispiel eines Vektordatenmodells , <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
+<p><img src="../assets/images/unit03/geometrische_abfragen_qgis.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 03-10: Überblick über geometrische Abfragen in QGIS. Geometrische Abfragen messen Distanzen, Flächen, Umfänge und Distanzzonen und übersetzen räumliche Fragestellungen in messbare Größen.</figcaption>
 </figure>
 </div>
-</section>
-<section id="euklidische-distanz-rastermodell" class="level3">
-<h3 class="anchored" data-anchor-id="euklidische-distanz-rastermodell">Euklidische Distanz Rastermodell</h3>
-<p>Im Rastermodell können drei verschiedene Ansätze zur Messung von Distanzen zwischen Punkten verwendet werden.</p>
+<section id="distanz-und-ausdehnung" class="level2">
+<h2 class="anchored" data-anchor-id="distanz-und-ausdehnung">Distanz und Ausdehnung</h2>
+<p>Geometrische Messungen können im Vektormodell und im Rastermodell unterschiedlich funktionieren. Im Vektormodell stehen die exakten Koordinaten der Geometrien im Vordergrund. Im Rastermodell werden dagegen Zellen ausgewertet. Dadurch können sich Messergebnisse je nach Rasterauflösung unterscheiden.</p>
+<p>Für metrische Distanzen und Flächen muss in QGIS ein geeignetes projiziertes Koordinatensystem verwendet werden. Liegen Daten nur in geographischen Koordinaten vor, also in Längen- und Breitengraden, sind die Werte nicht direkt als Meter oder Quadratmeter interpretierbar.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../assets/images/unit03/euklid_dist_2.png" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-10: Euklidische Distanz zwischen den Punkten A und B am Beispiel des Rasterdatenmodells. Oberste Reihe: Euklidische Distanz von den Zellrändern, mittlere Reihe: Manhattan-Distanz entlang der Zellränder, untere Reihe: Konzentrische Nachbarschaftsdistanz , <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span>”</figcaption>
+<p><img src="../assets/images/unit03/distanz_ausdehnung_vektor_raster.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 03-11: Distanz und Ausdehnung im Vektor- und Rastermodell. Im Vektormodell werden Geometrien direkt gemessen; im Rastermodell beeinflusst die Zellgröße das Ergebnis.</figcaption>
 </figure>
 </div>
+<section id="distanz-im-vektormodell" class="level3">
+<h3 class="anchored" data-anchor-id="distanz-im-vektormodell">Distanz im Vektormodell</h3>
+<p>Im Vektormodell wird die Distanz zwischen zwei Punkten als kürzeste Verbindung zwischen diesen Punkten berechnet. Diese kürzeste Verbindung entspricht der euklidischen Distanz, also der direkten Luftlinie.</p>
+<p>Für zwei Punkte mit den Koordinaten <span class="math display">\[A(x_1, y_1)\]</span> und <span class="math display">\[B(x_2, y_2)\]</span> ergibt sich die Distanz aus:</p>
+<p><span class="math display">\[
+AB = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+\]</span></p>
+<p>In QGIS kann eine solche Distanz zum Beispiel über Messwerkzeuge, Geometrieausdrücke oder Analysewerkzeuge bestimmt werden. Fachlich geht es dabei immer um die Frage, wie weit zwei Objekte im Raum voneinander entfernt liegen.</p>
 </section>
-<section id="ausdehnung-vektormodell" class="level3">
-<h3 class="anchored" data-anchor-id="ausdehnung-vektormodell">Ausdehnung Vektormodell</h3>
+<section id="distanz-im-rastermodell" class="level3">
+<h3 class="anchored" data-anchor-id="distanz-im-rastermodell">Distanz im Rastermodell</h3>
+<p>Im Rastermodell wird Distanz nicht zwischen frei liegenden Koordinatenpunkten gemessen, sondern über Rasterzellen angenähert. Dafür gibt es verschiedene Metriken.</p>
+<p>Die euklidische Distanz beschreibt die direkte Luftlinie zwischen zwei Positionen. Die Manhattan-Distanz folgt dagegen nur den Zellkanten, also horizontalen und vertikalen Schritten. Nachbarschaftsbasierte Distanzen berücksichtigen zusätzlich, welche Zellen direkt oder diagonal benachbart sind.</p>
+<p>Diese Unterschiede sind nicht nur rechnerisch. Sie verändern auch die fachliche Interpretation. Eine Luftliniendistanz passt gut für direkte Reichweiten, zum Beispiel Sichtbarkeit oder theoretische Nähe. Eine Manhattan-Distanz passt eher zu Bewegungen entlang rechtwinkliger Strukturen, etwa in einem Straßengitter. Nachbarschaftsdistanzen sind besonders relevant, wenn Ausbreitungen zellweise modelliert werden.</p>
+</section>
+<section id="fläche-und-umfang-im-vektormodell" class="level3">
+<h3 class="anchored" data-anchor-id="fläche-und-umfang-im-vektormodell">Fläche und Umfang im Vektormodell</h3>
+<p>Im Vektormodell wird der Umfang eines Polygons aus der Summe seiner Kantenlängen berechnet. Die Fläche ergibt sich aus der geometrisch umschlossenen Innenfläche.</p>
+<p>In QGIS können solche Werte zum Beispiel über den Feldrechner erzeugt werden. Typische Ausdrücke sind:</p>
+<pre class="qgis"><code>$area</code></pre>
+<p>für die Fläche eines Polygons,</p>
+<pre class="qgis"><code>$perimeter</code></pre>
+<p>für den Umfang eines Polygons und</p>
+<pre class="qgis"><code>$length</code></pre>
+<p>für die Länge einer Liniengeometrie.</p>
+<p>Die Werte sind nur dann sinnvoll interpretierbar, wenn das Projekt beziehungsweise der Layer in einem passenden metrischen Koordinatensystem vorliegt.</p>
+</section>
+<section id="fläche-und-umfang-im-rastermodell" class="level3">
+<h3 class="anchored" data-anchor-id="fläche-und-umfang-im-rastermodell">Fläche und Umfang im Rastermodell</h3>
+<p>Im Rastermodell wird Fläche über die Anzahl der beteiligten Zellen berechnet. Wenn eine Zelle zum Beispiel eine Fläche von 25 m² repräsentiert und ein Objekt aus 40 Zellen besteht, ergibt sich eine Rasterfläche von 1000 m².</p>
+<p>Allgemein gilt:</p>
+<p><span class="math display">\[
+A_\text{Raster} = n_\text{Zellen} \cdot A_\text{Zelle}
+\]</span></p>
+<p>Der Umfang wird im Rastermodell über Randkanten angenähert. Dabei wird gezählt, wie viele Zellkanten das Objekt nach außen begrenzen. Diese Anzahl wird mit der Zellgröße multipliziert:</p>
+<p><span class="math display">\[
+U_\text{Raster} = n_\text{Randkanten} \cdot s_\text{Zelle}
+\]</span></p>
+<p>Dadurch ist der Umfang im Rastermodell meist stärker von der Auflösung abhängig als im Vektormodell. Grobe Raster können kleine Einbuchtungen, schmale Formen oder gekrümmte Grenzen nur vereinfacht abbilden.</p>
+</section>
+</section>
+<section id="distanzzonen-und-puffer" class="level2">
+<h2 class="anchored" data-anchor-id="distanzzonen-und-puffer">Distanzzonen und Puffer</h2>
+<p>Eine wichtige Anwendung geometrischer Abfragen ist die Bildung von Distanzzonen. Dabei wird gefragt, welche Bereiche innerhalb eines bestimmten Abstands zu einem Objekt liegen.</p>
+<p>Im Vektormodell wird dafür meist der Begriff <strong>Puffer</strong> verwendet. Ein Puffer erzeugt eine neue Polygonfläche in einem festgelegten Abstand um ein Ausgangsobjekt. Dieses Ausgangsobjekt kann ein Punkt, eine Linie oder ein Polygon sein.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../assets/images/unit03/euklid_dist_3.png" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-11: Abgeleitete Distanzmaße eines Polygons im Vektormodell , <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
+<p><img src="../assets/images/unit03/distanzzonen_puffer_qgis.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 03-12: Distanzzonen und Puffer in QGIS. Puffer können um Punkte, Linien und Polygone gebildet werden; im Rastermodell entstehen dagegen flächige Distanzwerte pro Zelle.</figcaption>
 </figure>
 </div>
-</section>
-<section id="rastermodell" class="level3">
-<h3 class="anchored" data-anchor-id="rastermodell">Rastermodell</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/images/unit03/euklid_dist_4.png" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-12: Abgeleitete Distanzmaße eines Polygons im Rastermodell , <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
-</figure>
-</div>
-</section>
-<section id="distanzzonen-distanzpuffer-und-distanztransformation" class="level2">
-<h2 class="anchored" data-anchor-id="distanzzonen-distanzpuffer-und-distanztransformation">Distanzzonen: Distanzpuffer und Distanztransformation</h2>
-<p>Neben der Ermittlung von (kürzesten) Distanzen zwischen Objekten ist eine weitere wichtige Anwendung in einem GIS die Ermittlung von Distanzzonen. Dabei wird jedem Punkt im Raum ein Distanzwert zum nächstgelegenen Bezugsobjekt zugeordnet. Die Bildung von Distanzzonen unterscheidet sich für Vektor- und Rastermodell sowohl in der Lösung als auch in der Anwendung deutlich.</p>
-<section id="vektormodell" class="level3">
-<h3 class="anchored" data-anchor-id="vektormodell">Vektormodell</h3>
-<p>Vektormodelle werden in der Regel zur Modellierung von randscharfen Phänomenen verwendet. Distanzzonen im Vektormodell ergeben wiederum klare, randscharfe Polygone. Daher wird anstelle des allgemeineren Begriffs Distanzzone der Begriff Distanzpuffer verwendet. Die Berechnung eines solchen Distanzpuffers ergibt als Ergebnis immer eine Fläche (d.h. ein Polygon), unabhängig davon, ob von Punkten, Linien oder Flächen ausgegangen wird. Gesucht wird die Umrisslinie (Grenzlinie) dieser resultierenden Fläche, die das Ausgangsobjekt in einem definierten Abstand umgibt (siehe Animation unten). Die Berechnung der Abstandspuffer basiert auf einer euklidischen Metrik. Weitergehende Möglichkeiten, wie sie im Rastermodell einfach realisiert werden können, sind nur aufwendig realisierbar. So können z.B. ineinander verschachtelte Abstandszonen (z.B. 0-500 m, 501-1000 m, 1001-2000 m) nur durch wiederholte Berechnung und anschließende Verschneidung der Puffer als Polygone (engl. polygon overlay) realisiert werden. Die Möglichkeiten der Pufferbildung im Vektormodell sind begrenzter als im Rastermodell. Dennoch gibt es einige Möglichkeiten, Distanzpuffer zu variieren (Animation unten):</p>
+<section id="puffer-um-punkte" class="level3">
+<h3 class="anchored" data-anchor-id="puffer-um-punkte">Puffer um Punkte</h3>
+<p>Ein Punktpuffer erzeugt eine Kreisfläche um einen Punkt. Das ist zum Beispiel sinnvoll, wenn Reichweiten oder Einzugsbereiche modelliert werden sollen.</p>
+<p>Beispiele sind:</p>
 <ul>
-<li>Die Form eines Puffers kann variiert werden. Zum Beispiel kann das Ende eines Puffers um eine Linie flach oder rund sein.</li>
-<li>Pufferabstände können in Abhängigkeit von einem Attributwert der Ausgangsobjekte berechnet werden. Beispielsweise bestimmt die Sendeleistung von Mobilfunkantennen deren Reichweite.</li>
-<li>Puffer können auch einseitig gebildet werden, z.B. Bauverbotszone um einen See.</li>
+<li>Einzugsbereiche um Haltestellen</li>
+<li>Reichweiten um Mobilfunkantennen</li>
+<li>Suchbereiche um Fundpunkte</li>
+<li>Mindestabstände um Gefahrenpunkte</li>
+</ul>
+<p>Der Pufferabstand kann konstant sein oder von einem Attributwert abhängen. Eine Antenne mit höherer Sendeleistung kann zum Beispiel einen größeren Puffer erhalten als eine Antenne mit niedrigerer Sendeleistung.</p>
+</section>
+<section id="puffer-entlang-von-linien" class="level3">
+<h3 class="anchored" data-anchor-id="puffer-entlang-von-linien">Puffer entlang von Linien</h3>
+<p>Ein Linienpuffer erzeugt eine Zone entlang einer Linie. Das ist typisch für Straßen, Flüsse, Leitungen oder Wege.</p>
+<p>Beispiele sind:</p>
+<ul>
+<li>Lärmbereiche entlang von Straßen</li>
+<li>Schutzstreifen entlang von Gewässern</li>
+<li>Einzugsbereiche entlang von Wegen</li>
+<li>Sicherheitsabstände entlang von Leitungen</li>
+</ul>
+<p>Dabei muss klar bleiben: Ein Puffer ist zunächst nur eine geometrische Abstandzone. Er ist noch kein vollständiges Wirkungsmodell. Ein Lärmpuffer zeigt zum Beispiel eine angenommene Zone um eine Straße, ersetzt aber keine vollständige Ausbreitungsrechnung mit Gelände, Bebauung, Verkehrsdichte und Abschirmung.</p>
+</section>
+<section id="puffer-um-polygone" class="level3">
+<h3 class="anchored" data-anchor-id="puffer-um-polygone">Puffer um Polygone</h3>
+<p>Auch Flächen können gepuffert werden. Ein Polygonpuffer erzeugt eine Zone innerhalb oder außerhalb einer bestehenden Fläche. Das ist zum Beispiel bei Schutzgebieten, Seen, Siedlungsflächen oder Baugebieten relevant.</p>
+<p>Beispiele sind:</p>
+<ul>
+<li>Bauverbotszonen um ein Schutzgebiet</li>
+<li>Gewässerrandstreifen um einen See</li>
+<li>Abstandszonen um Siedlungsflächen</li>
+<li>Erweiterungsflächen um Planungsgebiete</li>
+</ul>
+<p>Puffer können außerdem verschachtelt werden. Dadurch entstehen mehrere Abstandsklassen, etwa 0–50 m, 50–100 m und 100–250 m.</p>
+</section>
+<section id="distanztransformation-im-rastermodell" class="level3">
+<h3 class="anchored" data-anchor-id="distanztransformation-im-rastermodell">Distanztransformation im Rastermodell</h3>
+<p>Im Rastermodell wird häufig nicht nur eine scharfe Pufferfläche erzeugt. Stattdessen kann jeder Rasterzelle ein Distanzwert zum nächstgelegenen Ausgangsobjekt zugewiesen werden. Daraus entsteht eine Distanzfläche.</p>
+<p>Diese Distanzwerte können anschließend klassifiziert werden. Aus einer kontinuierlichen Distanzfläche entstehen dann zum Beispiel Klassen wie:</p>
+<ul>
+<li>0–100 m</li>
+<li>100–250 m</li>
+<li>250–500 m</li>
+<li>über 500 m</li>
+</ul>
+<p>Das Rastermodell ist deshalb besonders geeignet, wenn Distanzen flächendeckend ausgewertet oder mit weiteren Rasterdaten kombiniert werden sollen. Die Genauigkeit hängt aber direkt von der Zellgröße ab.</p>
+<div class="callout callout-style-simple callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warnung</span>Wichtig
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ein Puffer beschreibt zunächst nur Abstand. Ob dieser Abstand fachlich eine Wirkung, eine Belastung, eine Erreichbarkeit oder eine Schutzfunktion bedeutet, muss zusätzlich begründet werden.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="typische-fragen-für-geometrische-abfragen" class="level2">
+<h2 class="anchored" data-anchor-id="typische-fragen-für-geometrische-abfragen">Typische Fragen für geometrische Abfragen</h2>
+<p>Geometrische Abfragen sind sinnvoll, wenn eine Fragestellung direkt an Lage, Entfernung, Länge oder Ausdehnung gebunden ist.</p>
+<p>Typische Fragen sind:</p>
+<ul>
+<li>Wie weit liegt ein Gebäude von der nächsten Straße entfernt?</li>
+<li>Welche Flächen liegen innerhalb von 100 m Abstand zu einem Gewässer?</li>
+<li>Wie groß ist eine versiegelte Fläche?</li>
+<li>Wie lang ist ein Wegabschnitt?</li>
+<li>Welche Siedlungsbereiche liegen in einer angenommenen Lärmzone?</li>
+<li>Wie verändert sich ein Ergebnis, wenn statt Vektor- ein Rastermodell verwendet wird?</li>
+</ul>
+<p>Der Kern ist immer gleich: Eine räumliche Frage wird in eine messbare geometrische Größe übersetzt.</p>
+</section>
+<section id="übung" class="level2">
+<h2 class="anchored" data-anchor-id="übung">Übung</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit03/uebung_geometrische_abfragen_qgis.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 03-13: Übung zu geometrischen Abfragen. Die Aufgaben prüfen, welche Messfunktion oder Pufferart zu einer räumlichen Fragestellung passt und wie Vektor- und Rastermodell unterschieden werden.</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Arbeitsauftrag
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Bearbeiten Sie die folgenden Aufgaben schriftlich. Verwenden Sie dabei die Begriffe <strong>Distanz</strong>, <strong>euklidische Distanz</strong>, <strong>Manhattan-Distanz</strong>, <strong>Fläche</strong>, <strong>Umfang</strong>, <strong>Puffer</strong>, <strong>Vektormodell</strong> und <strong>Rastermodell</strong> passend.</p>
+<section id="a-distanz-zwischen-zwei-punkten" class="level3">
+<h3 class="anchored" data-anchor-id="a-distanz-zwischen-zwei-punkten">A: Distanz zwischen zwei Punkten</h3>
+<p>Zwei Standorte liegen bei <span class="math display">\[A(2,4)\]</span> und <span class="math display">\[B(10,12)\]</span>.</p>
+<ul>
+<li>Formulieren Sie eine fachliche Frage, die zu dieser Messung passt.</li>
+<li>Berechnen Sie die euklidische Distanz zwischen beiden Punkten.</li>
+<li>Erklären Sie, warum diese Distanz als Luftlinie interpretiert werden kann.</li>
 </ul>
 </section>
-<section id="rastermodell-1" class="level3">
-<h3 class="anchored" data-anchor-id="rastermodell-1">Rastermodell</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/images/unit03/euklid_dist_4.png" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-12: Abgeleitete Distanzmaße eines Polygons im Rastermodell , <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
-</figure>
-</div>
-</section>
-</section>
-<section id="distanzzonen-distanzpuffer-und-distanztransformation-1" class="level2">
-<h2 class="anchored" data-anchor-id="distanzzonen-distanzpuffer-und-distanztransformation-1">Distanzzonen: Distanzpuffer und Distanztransformation</h2>
-<p>Neben der Ermittlung von (kürzesten) Distanzen zwischen Objekten ist eine weitere wichtige Anwendung in einem GIS die Ermittlung von Distanzzonen. Dabei wird jedem Punkt im Raum ein Distanzwert zum nächstgelegenen Bezugsobjekt zugeordnet. Die Bildung von Distanzzonen unterscheidet sich für Vektor- und Rastermodell sowohl in der Lösung als auch in der Anwendung deutlich.</p>
-<section id="vektormodell-1" class="level3">
-<h3 class="anchored" data-anchor-id="vektormodell-1">Vektormodell</h3>
-<p>Vektormodelle werden in der Regel zur Modellierung von randscharfen Phänomenen verwendet. Distanzzonen im Vektormodell ergeben wiederum klare, randscharfe Polygone. Daher wird anstelle des allgemeineren Begriffs Distanzzone der Begriff Distanzpuffer verwendet. Die Berechnung eines solchen Distanzpuffers ergibt als Ergebnis immer eine Fläche (d.h. ein Polygon), unabhängig davon, ob von Punkten, Linien oder Flächen ausgegangen wird. Gesucht wird die Umrisslinie (Grenzlinie) dieser resultierenden Fläche, die das Ausgangsobjekt in einem definierten Abstand umgibt (siehe Animation unten). Die Berechnung der Abstandspuffer basiert auf einer euklidischen Metrik. Weitergehende Möglichkeiten, wie sie im Rastermodell einfach realisiert werden können, sind nur aufwendig realisierbar. So können z.B. ineinander verschachtelte Abstandszonen (z.B. 0-500 m, 501-1000 m, 1001-2000 m) nur durch wiederholte Berechnung und anschließende Verschneidung der Puffer als Polygone (engl. polygon overlay) realisiert werden. Die Möglichkeiten der Pufferbildung im Vektormodell sind begrenzter als im Rastermodell. Dennoch gibt es einige Möglichkeiten, Distanzpuffer zu variieren (Animation unten):</p>
+<section id="b-rasterdistanz-vergleichen" class="level3">
+<h3 class="anchored" data-anchor-id="b-rasterdistanz-vergleichen">B: Rasterdistanz vergleichen</h3>
+<p>Ein Raster bildet Wege zwischen zwei Punkten ab.</p>
 <ul>
-<li>Die Form eines Puffers kann variiert werden. Zum Beispiel kann das Ende eines Puffers um eine Linie flach oder rund sein.</li>
-<li>Pufferabstände können in Abhängigkeit von einem Attributwert der Ausgangsobjekte berechnet werden. Beispielsweise bestimmt die Sendeleistung von Mobilfunkantennen deren Reichweite.</li>
-<li>Puffer können auch einseitig gebildet werden, z.B. Bauverbotszone um einen See.</li>
+<li>Erklären Sie den Unterschied zwischen euklidischer Distanz und Manhattan-Distanz.</li>
+<li>Nennen Sie ein Beispiel, bei dem die Manhattan-Distanz fachlich sinnvoller ist als die Luftlinie.</li>
+<li>Beschreiben Sie, warum die Rasterauflösung das Ergebnis beeinflussen kann.</li>
 </ul>
 </section>
-<section id="rastermodell-2" class="level3">
-<h3 class="anchored" data-anchor-id="rastermodell-2">Rastermodell</h3>
-<p>Die Bildung von Abstandszonen im Rastermodell weist jeder einzelnen Rasterzelle einen Abstandswert entsprechend ihrer Entfernung zur nächstgelegenen „Quellzelle“ zu. Dies führt zu einem quasi-kontinuierlichen Ergebnis. Da der Raum also entsprechend der Distanz zu bestimmten Objekten transformiert wird, kann man im Rastermodell von einer Distanztransformation sprechen: Im Rastermodell kann eine geeignete Metrik für die Distanztransformation gewählt werden: Euklidische Metrik, Manhattan-Metrik oder eine Metrik, die zusätzlich zur Manhattan-Metrik (4er-Nachbarschaft der Rasterzellen) auch die diagonalen Nachbarn (8er-Nachbarschaft) einbezieht. Zusätzlich können Wegkosten oder Wegzeiten als Kostenflächen berücksichtigt werden. Kostenoberflächen enthalten Informationen über den Aufwand, der zur Überwindung einer Entfernung erforderlich ist und der je Zelle variiert. Eine quasi-kontinuierliche Rasterdistanztransformation kann elegant durch eine einfache Einteilung in klassifizierte Entfernungszonen (z.B. Entfernungszonen bis 250m, bis 500m usw.) transformiert werden. Die Genauigkeit des Ergebnisses hängt jedoch direkt von der Auflösung (Maschenweite) des Rasters ab.</p>
+<section id="c-fläche-und-umfang" class="level3">
+<h3 class="anchored" data-anchor-id="c-fläche-und-umfang">C: Fläche und Umfang</h3>
+<p>Eine Grünfläche liegt einmal als Polygon und einmal als Rasterfläche vor.</p>
+<ul>
+<li>Erklären Sie, wie die Fläche im Vektormodell bestimmt wird.</li>
+<li>Erklären Sie, wie die Fläche im Rastermodell bestimmt wird.</li>
+<li>Erklären Sie, warum der Umfang im Rastermodell stärker von der Auflösung abhängt.</li>
+</ul>
 </section>
-<section id="erstellen-eines-abstandspuffers-im-vektormodell." class="level3">
-<h3 class="anchored" data-anchor-id="erstellen-eines-abstandspuffers-im-vektormodell.">Erstellen eines Abstandspuffers im Vektormodell.</h3>
-<p>Abstandspuffer um Punkte sind Kreisflächen. Die Punkte in der folgenden Abbildung stellen Standorte von Mobilfunkantennen mit unterschiedlicher Sendeleistung dar. Die äußerste Linie stellt die maximale Reichweite bei gegebener Sendeleistung dar. Die Abstandspuffer sind hier mit den Attributwerten der Ausgangsobjekte gewichtet. Die Karte zeigt, welche Teile der Siedlungsfläche versorgt sind und welche nicht.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="http://gisbsc.gis-ma.org/GISBScL6/de/image/distpuff_punkte.gif" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-13: Distanzpuffer um Antennenstandorte auf Basis von Attributdaten , <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
-</figure>
+<section id="d-puffer-anwenden" class="level3">
+<h3 class="anchored" data-anchor-id="d-puffer-anwenden">D: Puffer anwenden</h3>
+<p>Für ein Planungsgebiet sollen Abstandszonen gebildet werden.</p>
+<ul>
+<li>Nennen Sie je ein sinnvolles Beispiel für einen Punktpuffer, einen Linienpuffer und einen Polygonpuffer.</li>
+<li>Begründen Sie jeweils, warum ein Puffer für diese Fragestellung geeignet ist.</li>
+<li>Erklären Sie, warum ein Puffer allein noch keine fachliche Wirkung nachweist.</li>
+</ul>
+</section>
 </div>
-<p>Im nächsten Beispiel geht es um Distanzpuffer entlang von Linien. Die Linien sind in diesem Fall Straßen verschiedener Kategorien. Durch die Klassifizierung der Straßen ist die zulässige Höchstgeschwindigkeit bekannt: Autobahnen 120 km/h und Landstraßen 80 km/h. Mit Hilfe eines Immissions-/Emissionsmodells für Straßenlärm (vgl. <a href="http://www.laermorama.ch/">Lärmorama</a>) wurden die Abstandspuffer für einen Grenzwert von 70 dB in Abhängigkeit von der zulässigen Höchstgeschwindigkeit berechnet. In das Modell gehen im Wesentlichen drei Parameter ein: die Durchschnittsgeschwindigkeit, die durchschnittliche Anzahl der Fahrzeuge pro Stunde und der Lkw-Anteil. Hindernisse etc. wurden nicht berücksichtigt. Es wird davon ausgegangen, dass sich der Schall ungehindert im Raum ausbreiten kann. Die so ermittelten Flächen decken einen Bereich von 85,1 dB an der Verkehrsachse und bis zu 70 dB an der Umrisslinie des Distanzpuffers (bzw. von 82,9 dB bis 70 dB) ab. Das bedeutet, dass die Pufferfläche hinsichtlich der Schallbelastung (Immissionswert) nicht homogen ist. Häufig interessiert die Grenzlinie bzw. ein Grenzwert, der durch die Umrisslinie der Pufferfläche markiert wird. Diese Fläche ist von Interesse, wenn man z.B. wissen möchte, wie groß die Fläche (bzw. die Anzahl der Einwohner) des Siedlungsgebietes ist, die einem Lärm von 85,1 dB bis 70 dB ausgesetzt ist. Soll eine Abstufung bzw. Verschachtelung der Immissionswerte dargestellt werden, müssen mehrere Abstandspuffer mit den jeweiligen Immissionswerten berechnet werden.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/images/unit03/distpuff_linie.gif" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-14: Distanzpuffer der Lärmausbreitung entlang einer Autobahn, <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
-</figure>
 </div>
-<p>Das letzte Beispiel zeigt einseitige Abstandspuffer, die aufgrund eines Gesetzes festgelegt wurden, das die Abstände um ein Naturschutzgebiet für extensive Landwirtschaft (schonender Umgang mit der Natur) und ein generelles Bauverbot festlegt.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/images/unit03/distpuff_polygone.gif" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-15: Einseitiger Abstandspuffer um ein Schutzgebiet, <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
-</figure>
-</div>
-
 
 
 </section>
-</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-gitta2005" class="csl-entry" role="listitem">
-GITTA. 2005-2016. <span>„Overview of available modules [online]“</span>. 2005-2016. <a href="http://www.gitta.info/website/en/html/modules_overview.html">http://www.gitta.info/website/en/html/modules_overview.html</a>.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <div class="footer-banner">
 
     <a href="https://gisma-courses.github.io/gc/" target="_blank">GISMA (2026)</a> |
