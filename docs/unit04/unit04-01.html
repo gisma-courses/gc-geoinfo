@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Rasterbasierte räumliche Analysemethoden – Grundlagenkurs GI-S (QGIS)</title>
+<title>Räumliche Analyse als Ableitung und Begründung – Grundlagenkurs GI-S (QGIS)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -141,10 +141,10 @@ background-size: cover;
 
 
 <link rel="stylesheet" href="../css/styles.css">
-<meta property="og:title" content="Rasterbasierte räumliche Analysemethoden – Grundlagenkurs GI-S (QGIS)">
+<meta property="og:title" content="Räumliche Analyse als Ableitung und Begründung – Grundlagenkurs GI-S (QGIS)">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
-<meta name="twitter:title" content="Rasterbasierte räumliche Analysemethoden – Grundlagenkurs GI-S (QGIS)">
+<meta name="twitter:title" content="Räumliche Analyse als Ableitung und Begründung – Grundlagenkurs GI-S (QGIS)">
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@gisma">
 <meta name="twitter:card" content="summary">
@@ -368,7 +368,7 @@ background-size: cover;
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Rasterbasierte räumliche Analysemethoden</h1>
+          <h1 class="quarto-secondary-nav-title">Räumliche Analyse als Ableitung und Begründung</h1>
         </a>     
     </div>
   </nav>
@@ -377,7 +377,7 @@ background-size: cover;
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">Rasterbasierte räumliche Analysemethoden</h1>
+      <h1 class="title d-none d-lg-block">Räumliche Analyse als Ableitung und Begründung</h1>
                       </div>
   </div>
     
@@ -581,7 +581,7 @@ background-size: cover;
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Reader Räumliche Datenanalyse</span></a>
+ <span class="menu-text">Reader Räumliche Ableitungen aus Geodaten</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -590,13 +590,13 @@ background-size: cover;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit04/unit04-01.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Räumliche Analysemethoden</span></a>
+ <span class="menu-text">Räumliche Analyse als Ableitung und Begründung</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../unit04/unit04-02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Voronoi Polygone</span></a>
+ <span class="menu-text">Rasterbasierte räumliche Ableitungen</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -623,7 +623,7 @@ background-size: cover;
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
- <span class="menu-text">Reader Räumliche Datenanalyse</span></a>
+ <span class="menu-text">Reader Räumliche Kriterien, Eignung und Entscheidung</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -712,8 +712,10 @@ background-size: cover;
     <h2 id="toc-title">Inhalt</h2>
    
   <ul>
-  <li><a href="#räumliche-abfrage---räumliche-analyse" id="toc-räumliche-abfrage---räumliche-analyse" class="nav-link active" data-scroll-target="#räumliche-abfrage---räumliche-analyse">Räumliche Abfrage - räumliche Analyse?</a></li>
-  <li><a href="#räumliche-analysen-in-der-geographie" id="toc-räumliche-analysen-in-der-geographie" class="nav-link" data-scroll-target="#räumliche-analysen-in-der-geographie">Räumliche Analysen in der Geographie</a></li>
+  <li><a href="#warum-räumliche-analyse-nicht-nur-werkzeugbedienung-ist" id="toc-warum-räumliche-analyse-nicht-nur-werkzeugbedienung-ist" class="nav-link active" data-scroll-target="#warum-räumliche-analyse-nicht-nur-werkzeugbedienung-ist">Warum räumliche Analyse nicht nur Werkzeugbedienung ist</a></li>
+  <li><a href="#von-der-abfrage-zur-analyse" id="toc-von-der-abfrage-zur-analyse" class="nav-link" data-scroll-target="#von-der-abfrage-zur-analyse">Von der Abfrage zur Analyse</a></li>
+  <li><a href="#zwei-richtungen-räumlicher-analyse" id="toc-zwei-richtungen-räumlicher-analyse" class="nav-link" data-scroll-target="#zwei-richtungen-räumlicher-analyse">Zwei Richtungen räumlicher Analyse</a></li>
+  <li><a href="#räumliche-analyse-in-der-geographie" id="toc-räumliche-analyse-in-der-geographie" class="nav-link" data-scroll-target="#räumliche-analyse-in-der-geographie">Räumliche Analyse in der Geographie</a></li>
   <li><a href="#lernziele" id="toc-lernziele" class="nav-link" data-scroll-target="#lernziele">Lernziele</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit04/unit04-01.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
@@ -726,26 +728,50 @@ background-size: cover;
 
 
 
-<p>Die Motivation, GI-S in der Geographie einzusetzen, ist vielfältig. Zunächst kann es jedoch als grundlegendes Selbstverständnis einer quantitativ denkenden Wissenschaftsdisziplin angesehen werden, eine transparente, d.h. belegbare und nachvollziehbare Basis für raumbezogene Informationen zu schaffen. Da nicht nur aus konzeptionellen, sondern auch aus praktischen Gründen Daten (und damit Wissen) immer unvollständig sind, ist die Verbesserung dieser lückenhaften Daten ein wichtiger und oft grundlegender Schritt in Richtung Wissen und Information.</p>
-<p>Wir haben bisher thematische (oder semantische), räumliche und zeitliche Beziehungen (und Abfragen) kennen gelernt. Räumliche Relationen können unterteilt werden in: topologische Relationen und Entfernungsrelationen. Bei Abfragen in Relationen haben uns nicht nur die Eigenschaften der untersuchten Objekte interessiert, sondern vor allem die verschiedenen Möglichkeiten, diese Parameter miteinander zu verknüpfen. Neben den Lagebeziehungen stellen vor allem die Distanzbeziehungen quantitative Methoden zur Verfügung, um räumlich ähnliche Merkmalsausprägungen abzugrenzen oder auch fehlende räumliche Informationen durch Interpolation zu ergänzen.</p>
-<section id="räumliche-abfrage---räumliche-analyse" class="level3">
-<h3 class="anchored" data-anchor-id="räumliche-abfrage---räumliche-analyse">Räumliche Abfrage - räumliche Analyse?</h3>
-<p>Bei der Verwendung von GI-Systemen unterscheiden sich räumliche Analysen und Abfragen nur durch den Grad der Komplexität und deren Auswirkung auf die Datenbasis. Von räumlichen Analysen spricht man, wenn funktionale Zusammenhänge in gekoppelte bzw. verschachtelte Abfragen eingebaut werden und die Ergebnisse physisch als eigener Datensatz in die Datenbank eingespeist werden. Die verschiedenen Methoden der räumlichen Analyse sind nicht erst mit der Entwicklung von GI-Systemen entstanden. Viele Verfahren wurden bereits frühzeitig und oft völlig unabhängig von GI-Systemen entwickelt und erst später in die GIS-Software integriert. Aber erst durch die zunehmende Verbreitung und nutzerorientierte Weiterentwicklung von GIS-Software ist das Methodenspektrum der räumlichen Analyse effizient und effektiv nutzbar geworden. Dies nicht zuletzt deshalb, weil heutige GI-Systeme auch die weiteren notwendigen Dienste wie Datenerfassung, Datenverwaltung oder Visualisierung anbieten.</p>
+<p>Bisher standen vor allem Abfragen im Vordergrund. Thematische Abfragen wählen Objekte nach Attributwerten aus, geometrische Abfragen messen Distanzen, Längen oder Flächen, topologische Abfragen prüfen Lagebeziehungen zwischen Objekten. Räumliche Analyse geht darüber hinaus. Sie fragt nicht nur, welche vorhandenen Objekte eine Bedingung erfüllen, sondern welche neuen räumlichen Informationen aus vorhandenen Daten abgeleitet werden können.</p>
+<p>Damit verändert sich auch der Anspruch an die Arbeit mit GI-Systemen. Eine räumliche Analyse ist nicht nur eine technische Operation, sondern eine begründete Transformation von Daten. Aus Punktmessungen werden Flächen, aus Höhenwerten werden Hangneigung und Sichtbarkeit, aus Distanzwerten werden Nähezonen, aus mehreren Kriterien wird eine Eignungskarte. Jede dieser Ableitungen enthält Annahmen über Raum, Maßstab, Prozess und Aussagegrenze.</p>
+<section id="warum-räumliche-analyse-nicht-nur-werkzeugbedienung-ist" class="level2">
+<h2 class="anchored" data-anchor-id="warum-räumliche-analyse-nicht-nur-werkzeugbedienung-ist">Warum räumliche Analyse nicht nur Werkzeugbedienung ist</h2>
+<p>Geographie arbeitet mit unvollständigen räumlichen Informationen. Messpunkte decken den Raum nie vollständig ab, Fernerkundungsdaten bilden nur bestimmte Eigenschaften ab, Klassifikationen vereinfachen kontinuierliche Übergänge, und räumliche Modelle übersetzen komplexe Prozesse in berechenbare Regeln. Räumliche Analyse ist deshalb immer auch der Versuch, aus unvollständigen Daten nachvollziehbare, prüfbare und begründete Aussagen zu entwickeln.</p>
+<p>GI-Systeme sind dabei keine neutralen Antwortmaschinen. Sie stellen Werkzeuge bereit, mit denen räumliche Daten transformiert, kombiniert, ausgewertet und visualisiert werden können. Ob das Ergebnis fachlich sinnvoll ist, hängt aber davon ab, ob die gewählte Operation zur Fragestellung, zum Datenmodell, zum Maßstab und zum angenommenen Prozess passt.</p>
+<p>Eine Interpolation kann zum Beispiel eine plausible Oberfläche erzeugen, obwohl zwischen den Messpunkten keine direkte Beobachtung vorliegt. Eine Sichtbarkeitsanalyse kann zeigen, welche Bereiche nach einem Höhenmodell sichtbar sind, aber sie bildet nicht automatisch Vegetation, Bebauung oder atmosphärische Sichtbedingungen ab. Eine Eignungsanalyse kann Kriterien transparent gewichten, aber sie ersetzt keine empirische Validierung des Ergebnisses.</p>
 </section>
-<section id="räumliche-analysen-in-der-geographie" class="level3">
-<h3 class="anchored" data-anchor-id="räumliche-analysen-in-der-geographie">Räumliche Analysen in der Geographie</h3>
-<p>Die Wurzeln der räumlichen Analyse reichen weit zurück. Der Reader von <span class="citation" data-cites="berry1968">Berry und Marble (<a href="#ref-berry1968" role="doc-biblioref">1968</a>)</span> enthält eine Auswahl früher Artikel, die sich mit Anwendungen der räumlichen Statistik und der quantitativen räumlichen Analyse beschäftigen. Die Ansätze reichen teilweise bis in die 1930er Jahre zurück, konzentrieren sich aber vor allem auf eine erste fruchtbare Periode in den 1950er und 1960er Jahren. Die Bereitschaft, statistische und andere quantitative Methoden zur Analyse räumlicher Muster und Prozesse einzusetzen, war vor allem in den Raumwissenschaften ausgeprägt, die die Beschreibung und Erklärung räumlicher Muster und Prozesse als zentralen wissenschaftlichen Gegenstand haben wie etwa der Landschaftsökologie <span class="citation" data-cites="turner2003">(vgl. z.B. <a href="#ref-turner2003" role="doc-biblioref">Turner, Gardner, und O’Neill 2003</a>)</span>.</p>
-<p>In der deutschsprachigen Geographie ist die quantitative Analyse räumlicher Phänomene eng mit dem durch studentische Initiativen forcierten Paradigmenwechsel des “Kieler Geographentages” 1969 verbunden <span class="citation" data-cites="monheim1999">(<a href="#ref-monheim1999" role="doc-biblioref">Monheim und Schwarte 1999</a>)</span>. Die zentralen Publikationen von <span class="citation" data-cites="bartels1968">Bartels (<a href="#ref-bartels1968" role="doc-biblioref">1968</a>)</span> und <span class="citation" data-cites="hard1970a">Gerhard Hard (<a href="#ref-hard1970a" role="doc-biblioref">1970</a>)</span> stehen stellvertretend für diese entscheidende und bis heute wirksame Zäsur in der Geographie. Während in der allgemeinen Lehre bis heute von <strong><em>Landschaften</em></strong> gesprochen wird, ist seit den 1980er Jahren im Zuge der Durchsetzung von GI-Science als integrativer Arbeitsplattform eine zunehmende Konvergenz der verwendeten raumanalytischen Methoden in den an der Entwicklung der GIS-Technologie beteiligten Wissenschaften zu beobachten. Dies lässt sich z.B. an dem allgemein als Grundlage anerkannten Lehrbuch von <span class="citation" data-cites="bill2008">Bill (<a href="#ref-bill2008" role="doc-biblioref">2008</a>)</span> nachvollziehen.</p>
+<section id="von-der-abfrage-zur-analyse" class="level2">
+<h2 class="anchored" data-anchor-id="von-der-abfrage-zur-analyse">Von der Abfrage zur Analyse</h2>
+<p>Eine Abfrage beantwortet meist eine Auswahlfrage:</p>
+<blockquote class="blockquote">
+<p>Welche vorhandenen Objekte erfüllen eine bestimmte Bedingung?</p>
+</blockquote>
+<p>Eine räumliche Analyse beantwortet dagegen eine Ableitungsfrage:</p>
+<blockquote class="blockquote">
+<p>Welche neue räumliche Information kann aus vorhandenen Daten, Annahmen und Regeln erzeugt werden?</p>
+</blockquote>
+<p>Der Unterschied liegt nicht nur in der Komplexität. Eine Abfrage markiert vorhandene Objekte. Eine Analyse erzeugt neue Daten: ein Distanzraster, eine interpolierte Oberfläche, eine Hangneigungskarte, ein Sichtfeld, einen Feuchteindex, eine Eignungskarte oder eine Kostenoberfläche.</p>
+<p>Deshalb müssen räumliche Analysen stärker begründet werden als einfache Abfragen. Man muss nicht nur zeigen, welches Werkzeug verwendet wurde, sondern auch warum genau dieses Werkzeug zur fachlichen Frage passt.</p>
 </section>
-<section id="lernziele" class="level3">
-<h3 class="anchored" data-anchor-id="lernziele">Lernziele</h3>
+<section id="zwei-richtungen-räumlicher-analyse" class="level2">
+<h2 class="anchored" data-anchor-id="zwei-richtungen-räumlicher-analyse">Zwei Richtungen räumlicher Analyse</h2>
+<p>In den folgenden Einheiten werden zwei eng verbundene Richtungen räumlicher Analyse behandelt.</p>
+<p>Die erste Richtung ist die <strong>räumliche Ableitung</strong>. Dabei werden aus vorhandenen Daten neue räumliche Informationen berechnet. Beispiele sind Voronoi-Flächen, Interpolationen, digitale Geländemodelle, Sichtbarkeitsanalysen oder hydrologische Ableitungen.</p>
+<p>Die zweite Richtung ist die <strong>räumliche Bewertung</strong>. Dabei werden mehrere Kriterien kombiniert, standardisiert und gewichtet, um Entscheidungsräume sichtbar zu machen. Beispiele sind Eignungsanalysen, Multikriterienanalysen und Kostenanalysen.</p>
+<p>Beide Richtungen beruhen auf derselben Grundidee: Raumbezogene Information entsteht nicht einfach durch Darstellung, sondern durch eine nachvollziehbare Kette aus Daten, Annahmen, Operationen und Interpretation.</p>
+</section>
+<section id="räumliche-analyse-in-der-geographie" class="level2">
+<h2 class="anchored" data-anchor-id="räumliche-analyse-in-der-geographie">Räumliche Analyse in der Geographie</h2>
+<p>Räumliche Analyse ist älter als GIS-Software. Viele Verfahren der quantitativen räumlichen Analyse und räumlichen Statistik wurden bereits vor der breiten Nutzung digitaler GI-Systeme entwickelt. Frühe Arbeiten zur quantitativen Analyse räumlicher Muster und Prozesse sind etwa in <span class="citation" data-cites="berry1968">Berry und Marble (<a href="#ref-berry1968" role="doc-biblioref">1968</a>)</span> dokumentiert. In raumwissenschaftlichen und landschaftsökologischen Anwendungen wurden solche Verfahren besonders wichtig, weil dort Muster, Nachbarschaften, Gradienten und Prozesse zentrale Analysegegenstände sind <span class="citation" data-cites="turner2003">(vgl. <a href="#ref-turner2003" role="doc-biblioref">Turner, Gardner, und O’Neill 2003</a>)</span>.</p>
+<p>In der deutschsprachigen Geographie ist die stärkere Orientierung an quantitativen und analytischen Verfahren eng mit dem Paradigmenwechsel um den Kieler Geographentag 1969 verbunden <span class="citation" data-cites="monheim1999">(<a href="#ref-monheim1999" role="doc-biblioref">Monheim und Schwarte 1999</a>)</span>. Arbeiten wie <span class="citation" data-cites="bartels1968">Bartels (<a href="#ref-bartels1968" role="doc-biblioref">1968</a>)</span> und <span class="citation" data-cites="hard1970a">Gerhard Hard (<a href="#ref-hard1970a" role="doc-biblioref">1970</a>)</span> stehen für diese Zäsur. Mit der Entwicklung von GIS und GI-Science wurden raumanalytische Verfahren zunehmend praktisch verfügbar, weil Datenerfassung, Datenverwaltung, Analyse und Visualisierung in einer gemeinsamen Arbeitsumgebung zusammengeführt wurden <span class="citation" data-cites="bill2008">(vgl. <a href="#ref-bill2008" role="doc-biblioref">Bill 2008</a>)</span>.</p>
+<p>Für diesen Kurs ist daraus vor allem ein Punkt wichtig: Räumliche Analyse ist nicht nur die Anwendung vorhandener Funktionen. Sie ist die begründete Übersetzung einer räumlichen Frage in Daten, Operationen und interpretierbare Ergebnisse.</p>
+</section>
+<section id="lernziele" class="level2">
+<h2 class="anchored" data-anchor-id="lernziele">Lernziele</h2>
+<p>Nach dieser Einheit können Sie:</p>
 <ul>
-<li>Sie verstehen das Prinzip der Ableitung räumlicher Informationen durch mathematische oder thematische Transformation von Primärdaten.</li>
-<li>Sie kennen die unterschiedlichen Abstandsbeziehungen zwischen den verschiedenen geometrischen Primitiven (Punkte, Linien, Polygone).</li>
-<li>Sie verstehen das Prinzip der Pufferung und der Distanztransformation.</li>
-<li>Sie erhalten einen Überblick über die wichtigsten Möglichkeiten der räumlichen Analyse.</li>
-<li>Sie erwerben die Fähigkeit, räumliche Ableitungen aus Primärdaten zu erstellen und geographisch zu interpretieren.</li>
-<li>Sie lernen, wie räumlich wirksame Prozesskonzepte in Ihre Analysen integriert werden können.</li>
+<li>den Unterschied zwischen räumlicher Abfrage und räumlicher Analyse erklären;</li>
+<li>räumliche Analyse als Ableitung neuer Informationen aus vorhandenen Daten beschreiben;</li>
+<li>erläutern, warum Datenlücken, Maßstab, Auflösung und Modellannahmen das Ergebnis beeinflussen;</li>
+<li>einfache räumliche Ableitungen von bewertenden Entscheidungsmodellen unterscheiden;</li>
+<li>erklären, warum GIS-Ergebnisse begründet und nicht nur visualisiert werden müssen;</li>
+<li>die folgenden Einheiten zu Interpolation, Geländemodellen, Sichtbarkeit, Prozessableitungen und Multikriterienanalysen in einen gemeinsamen methodischen Rahmen einordnen.</li>
 </ul>
 
 
@@ -1202,8 +1228,8 @@ Turner, M. G., R. H. Gardner, und R. V. O’Neill. 2003. <em>Landscape Ecology i
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../unit04/unit04-02.html" class="pagination-link" aria-label="Voronoi Polygone">
-        <span class="nav-page-text">Voronoi Polygone</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../unit04/unit04-02.html" class="pagination-link" aria-label="Rasterbasierte räumliche Ableitungen">
+        <span class="nav-page-text">Rasterbasierte räumliche Ableitungen</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

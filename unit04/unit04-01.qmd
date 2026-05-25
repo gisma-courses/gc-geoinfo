@@ -1,5 +1,5 @@
 ---
-title: Rasterbasierte räumliche Analysemethoden
+title: Räumliche Analyse als Ableitung und Begründung
 title-block-banner: ../assets/images/splash_L03.png
 title-block-banner-color: black
 
@@ -9,32 +9,57 @@ lang: de
 comments: false
 ---
 
-Die Motivation, GI-S in der Geographie einzusetzen, ist vielfältig. Zunächst kann es jedoch als grundlegendes Selbstverständnis einer quantitativ denkenden Wissenschaftsdisziplin angesehen werden, eine transparente, d.h. belegbare und nachvollziehbare Basis für raumbezogene Informationen zu schaffen. Da nicht nur aus konzeptionellen, sondern auch aus praktischen Gründen Daten (und damit Wissen) immer unvollständig sind, ist die Verbesserung dieser lückenhaften Daten ein wichtiger und oft grundlegender Schritt in Richtung Wissen und Information. 
+Bisher standen vor allem Abfragen im Vordergrund. Thematische Abfragen wählen Objekte nach Attributwerten aus, geometrische Abfragen messen Distanzen, Längen oder Flächen, topologische Abfragen prüfen Lagebeziehungen zwischen Objekten. Räumliche Analyse geht darüber hinaus. Sie fragt nicht nur, welche vorhandenen Objekte eine Bedingung erfüllen, sondern welche neuen räumlichen Informationen aus vorhandenen Daten abgeleitet werden können.
 
-Wir haben bisher thematische (oder semantische), räumliche und zeitliche Beziehungen (und Abfragen) kennen gelernt. Räumliche Relationen können unterteilt werden in: topologische Relationen und Entfernungsrelationen. Bei Abfragen in Relationen haben uns nicht nur die Eigenschaften der untersuchten Objekte interessiert, sondern vor allem die verschiedenen Möglichkeiten, diese Parameter miteinander zu verknüpfen. Neben den Lagebeziehungen stellen vor allem die Distanzbeziehungen quantitative Methoden zur Verfügung, um räumlich ähnliche Merkmalsausprägungen abzugrenzen oder auch fehlende räumliche Informationen durch Interpolation zu ergänzen.
+Damit verändert sich auch der Anspruch an die Arbeit mit GI-Systemen. Eine räumliche Analyse ist nicht nur eine technische Operation, sondern eine begründete Transformation von Daten. Aus Punktmessungen werden Flächen, aus Höhenwerten werden Hangneigung und Sichtbarkeit, aus Distanzwerten werden Nähezonen, aus mehreren Kriterien wird eine Eignungskarte. Jede dieser Ableitungen enthält Annahmen über Raum, Maßstab, Prozess und Aussagegrenze.
 
+## Warum räumliche Analyse nicht nur Werkzeugbedienung ist
 
+Geographie arbeitet mit unvollständigen räumlichen Informationen. Messpunkte decken den Raum nie vollständig ab, Fernerkundungsdaten bilden nur bestimmte Eigenschaften ab, Klassifikationen vereinfachen kontinuierliche Übergänge, und räumliche Modelle übersetzen komplexe Prozesse in berechenbare Regeln. Räumliche Analyse ist deshalb immer auch der Versuch, aus unvollständigen Daten nachvollziehbare, prüfbare und begründete Aussagen zu entwickeln.
 
+GI-Systeme sind dabei keine neutralen Antwortmaschinen. Sie stellen Werkzeuge bereit, mit denen räumliche Daten transformiert, kombiniert, ausgewertet und visualisiert werden können. Ob das Ergebnis fachlich sinnvoll ist, hängt aber davon ab, ob die gewählte Operation zur Fragestellung, zum Datenmodell, zum Maßstab und zum angenommenen Prozess passt.
 
+Eine Interpolation kann zum Beispiel eine plausible Oberfläche erzeugen, obwohl zwischen den Messpunkten keine direkte Beobachtung vorliegt. Eine Sichtbarkeitsanalyse kann zeigen, welche Bereiche nach einem Höhenmodell sichtbar sind, aber sie bildet nicht automatisch Vegetation, Bebauung oder atmosphärische Sichtbedingungen ab. Eine Eignungsanalyse kann Kriterien transparent gewichten, aber sie ersetzt keine empirische Validierung des Ergebnisses.
 
-### Räumliche Abfrage - räumliche Analyse? 
+## Von der Abfrage zur Analyse
 
+Eine Abfrage beantwortet meist eine Auswahlfrage:
 
-Bei der Verwendung von GI-Systemen unterscheiden sich räumliche Analysen und Abfragen nur durch den Grad der Komplexität und deren Auswirkung auf die Datenbasis. Von räumlichen Analysen spricht man, wenn funktionale Zusammenhänge in gekoppelte bzw. verschachtelte Abfragen eingebaut werden und die Ergebnisse physisch als eigener Datensatz in die Datenbank eingespeist werden. Die verschiedenen Methoden der räumlichen Analyse sind nicht erst mit der Entwicklung von GI-Systemen entstanden. Viele Verfahren wurden bereits frühzeitig und oft völlig unabhängig von GI-Systemen entwickelt und erst später in die GIS-Software integriert. Aber erst durch die zunehmende Verbreitung und nutzerorientierte Weiterentwicklung von GIS-Software ist das Methodenspektrum der räumlichen Analyse effizient und effektiv nutzbar geworden. Dies nicht zuletzt deshalb, weil heutige GI-Systeme auch die weiteren notwendigen Dienste wie Datenerfassung, Datenverwaltung oder Visualisierung anbieten.
+> Welche vorhandenen Objekte erfüllen eine bestimmte Bedingung?
 
-### Räumliche Analysen in der Geographie
+Eine räumliche Analyse beantwortet dagegen eine Ableitungsfrage:
 
-Die Wurzeln der räumlichen Analyse reichen weit zurück. Der Reader von @berry1968 enthält eine Auswahl früher Artikel, die sich mit Anwendungen der räumlichen Statistik und der quantitativen räumlichen Analyse beschäftigen. Die Ansätze reichen teilweise bis in die 1930er Jahre zurück, konzentrieren sich aber vor allem auf eine erste fruchtbare Periode in den 1950er und 1960er Jahren. Die Bereitschaft, statistische und andere quantitative Methoden zur Analyse räumlicher Muster und Prozesse einzusetzen, war vor allem in den Raumwissenschaften ausgeprägt, die die Beschreibung und Erklärung räumlicher Muster und Prozesse als zentralen wissenschaftlichen Gegenstand haben wie etwa der Landschaftsökologie  [vgl. z.B. @turner2003].
+> Welche neue räumliche Information kann aus vorhandenen Daten, Annahmen und Regeln erzeugt werden?
 
-In der deutschsprachigen Geographie ist die quantitative Analyse räumlicher Phänomene eng mit dem durch studentische Initiativen forcierten Paradigmenwechsel des “Kieler Geographentages” 1969 verbunden [@monheim1999]. Die zentralen Publikationen von @bartels1968 und @hard1970a stehen stellvertretend für diese entscheidende und bis heute wirksame Zäsur in der Geographie. Während in der allgemeinen Lehre bis heute von ***Landschaften*** gesprochen wird, ist seit den 1980er Jahren im Zuge der Durchsetzung von GI-Science als integrativer Arbeitsplattform eine zunehmende Konvergenz der verwendeten raumanalytischen Methoden in den an der Entwicklung der GIS-Technologie beteiligten Wissenschaften zu beobachten. Dies lässt sich z.B. an dem allgemein als Grundlage anerkannten Lehrbuch von @bill2008 nachvollziehen.
+Der Unterschied liegt nicht nur in der Komplexität. Eine Abfrage markiert vorhandene Objekte. Eine Analyse erzeugt neue Daten: ein Distanzraster, eine interpolierte Oberfläche, eine Hangneigungskarte, ein Sichtfeld, einen Feuchteindex, eine Eignungskarte oder eine Kostenoberfläche.
 
+Deshalb müssen räumliche Analysen stärker begründet werden als einfache Abfragen. Man muss nicht nur zeigen, welches Werkzeug verwendet wurde, sondern auch warum genau dieses Werkzeug zur fachlichen Frage passt.
 
-### Lernziele
+## Zwei Richtungen räumlicher Analyse
 
-* Sie verstehen das Prinzip der Ableitung räumlicher Informationen durch mathematische oder thematische Transformation von Primärdaten.
-* Sie kennen die unterschiedlichen Abstandsbeziehungen zwischen den verschiedenen geometrischen Primitiven (Punkte, Linien, Polygone).
-* Sie verstehen das Prinzip der Pufferung und der Distanztransformation.
-* Sie erhalten einen Überblick über die wichtigsten Möglichkeiten der räumlichen Analyse.
-* Sie erwerben die Fähigkeit, räumliche Ableitungen aus Primärdaten zu erstellen und geographisch zu interpretieren.
-* Sie lernen, wie räumlich wirksame Prozesskonzepte in Ihre Analysen integriert werden können.
+In den folgenden Einheiten werden zwei eng verbundene Richtungen räumlicher Analyse behandelt.
 
+Die erste Richtung ist die **räumliche Ableitung**. Dabei werden aus vorhandenen Daten neue räumliche Informationen berechnet. Beispiele sind Voronoi-Flächen, Interpolationen, digitale Geländemodelle, Sichtbarkeitsanalysen oder hydrologische Ableitungen.
+
+Die zweite Richtung ist die **räumliche Bewertung**. Dabei werden mehrere Kriterien kombiniert, standardisiert und gewichtet, um Entscheidungsräume sichtbar zu machen. Beispiele sind Eignungsanalysen, Multikriterienanalysen und Kostenanalysen.
+
+Beide Richtungen beruhen auf derselben Grundidee: Raumbezogene Information entsteht nicht einfach durch Darstellung, sondern durch eine nachvollziehbare Kette aus Daten, Annahmen, Operationen und Interpretation.
+
+## Räumliche Analyse in der Geographie
+
+Räumliche Analyse ist älter als GIS-Software. Viele Verfahren der quantitativen räumlichen Analyse und räumlichen Statistik wurden bereits vor der breiten Nutzung digitaler GI-Systeme entwickelt. Frühe Arbeiten zur quantitativen Analyse räumlicher Muster und Prozesse sind etwa in @berry1968 dokumentiert. In raumwissenschaftlichen und landschaftsökologischen Anwendungen wurden solche Verfahren besonders wichtig, weil dort Muster, Nachbarschaften, Gradienten und Prozesse zentrale Analysegegenstände sind [vgl. @turner2003].
+
+In der deutschsprachigen Geographie ist die stärkere Orientierung an quantitativen und analytischen Verfahren eng mit dem Paradigmenwechsel um den Kieler Geographentag 1969 verbunden [@monheim1999]. Arbeiten wie @bartels1968 und @hard1970a stehen für diese Zäsur. Mit der Entwicklung von GIS und GI-Science wurden raumanalytische Verfahren zunehmend praktisch verfügbar, weil Datenerfassung, Datenverwaltung, Analyse und Visualisierung in einer gemeinsamen Arbeitsumgebung zusammengeführt wurden [vgl. @bill2008].
+
+Für diesen Kurs ist daraus vor allem ein Punkt wichtig: Räumliche Analyse ist nicht nur die Anwendung vorhandener Funktionen. Sie ist die begründete Übersetzung einer räumlichen Frage in Daten, Operationen und interpretierbare Ergebnisse.
+
+## Lernziele
+
+Nach dieser Einheit können Sie:
+
+- den Unterschied zwischen räumlicher Abfrage und räumlicher Analyse erklären;
+- räumliche Analyse als Ableitung neuer Informationen aus vorhandenen Daten beschreiben;
+- erläutern, warum Datenlücken, Maßstab, Auflösung und Modellannahmen das Ergebnis beeinflussen;
+- einfache räumliche Ableitungen von bewertenden Entscheidungsmodellen unterscheiden;
+- erklären, warum GIS-Ergebnisse begründet und nicht nur visualisiert werden müssen;
+- die folgenden Einheiten zu Interpolation, Geländemodellen, Sichtbarkeit, Prozessableitungen und Multikriterienanalysen in einen gemeinsamen methodischen Rahmen einordnen.

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Rasterbasierte räumliche Ableitungen – Grundlagenkurs GI-S (QGIS)</title>
+<title>Informationsloser Raum – distanzbasierte Interpolation – Grundlagenkurs GI-S (QGIS)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,8 +29,6 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../unit04/unit04-03.html" rel="next">
-<link href="../unit04/unit04-01.html" rel="prev">
 <link href="..//images/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -142,16 +120,22 @@ background-size: cover;
 
 
 <link rel="stylesheet" href="../css/styles.css">
-<meta property="og:title" content="Rasterbasierte räumliche Ableitungen – Grundlagenkurs GI-S (QGIS)">
+<meta property="og:title" content="Informationsloser Raum – distanzbasierte Interpolation – Grundlagenkurs GI-S (QGIS)">
 <meta property="og:description" content="">
+<meta property="og:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit04/interpolation_01_punktmessungen_zur_flaeche.png">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
-<meta name="twitter:title" content="Rasterbasierte räumliche Ableitungen – Grundlagenkurs GI-S (QGIS)">
+<meta property="og:image:height" content="1086">
+<meta property="og:image:width" content="1448">
+<meta name="twitter:title" content="Informationsloser Raum – distanzbasierte Interpolation – Grundlagenkurs GI-S (QGIS)">
 <meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit04/interpolation_01_punktmessungen_zur_flaeche.png">
 <meta name="twitter:creator" content="@gisma">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="1086">
+<meta name="twitter:image-width" content="1448">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -363,22 +347,12 @@ background-size: cover;
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Rasterbasierte räumliche Ableitungen</h1>
-        </a>     
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">Rasterbasierte räumliche Ableitungen</h1>
+      <h1 class="title">Informationsloser Raum – distanzbasierte Interpolation</h1>
                       </div>
   </div>
     
@@ -393,334 +367,22 @@ background-size: cover;
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Grundlagen der räumlichen Analyse</span></a>
-  </div>
-</li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">Arbeitsblätter</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit09/unit09-01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">A1 - Warm Up QGIS</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit09/unit09-02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">A2 - Geometrien und Attribute</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit09/unit09-03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">A3 - Analysen und Ableitungen</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit09/unit09-04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">A4 - Kosten und Kriterien</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit09/unit09-05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">A5 - Reproduzierbarkeit und Workflows</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">Reader Geographische Raumkonzept</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit01/unit01-01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Raum braucht einen Geltungsbereich</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit01/unit01-02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Geographie - räumliche Interpretation der Welt</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit01/unit01-03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Objekte im Raum</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit01/unit01-04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kodierung der Welt durch Geodatensätze</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit01/unit01-05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Zusammenfassung – Geographischer Raum</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">Reader GI Raumkonzepte</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit02/unit02-01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Raumrepräsentation in der Geoinformatik</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit02/unit02-02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Koordinaten, Topologie und Dimension</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit02/unit02-03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Datenmodelle für Raumdaten</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit02/unit02-04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Die Vermessung der Welt - Namen - Orte - Lage</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit02/unit02-05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Die Vermessung der Welt - Geographische Koordinaten und Projektionen</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit02/unit02-06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Zusammenfassung GI Raumkonzepte</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">Reader Vektordaten &amp; Attributtabellen</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit03/unit03-01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fragen und Antworten</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit03/unit03-02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Thematische Abfragen</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit03/unit03-03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Geometrische Abfragen</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit03/unit03-04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Topologische Abfragen</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit03/unit03-05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Zusammnfassung Fragen und Antworten</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Reader Räumliche Ableitungen aus Geodaten</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit04/unit04-01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Räumliche Analyse als Ableitung und Begründung</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit04/unit04-02.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Rasterbasierte räumliche Ableitungen</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit04/unit04-03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Informationsloser Raum</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit04/unit04-05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sichtweite und Sichtfeld</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit04/unit04-06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Prozeßbasierte Ableitungen</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
- <span class="menu-text">Reader Räumliche Kriterien, Eignung und Entscheidung</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit05/unit05-01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Multikriterien-Analysen</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit05/unit05-02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Eignungsanalysen</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit05/unit05-03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kombination unterschiedlicher Kriterien</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit05/unit05-04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Multikriterien-Multiziel-Analyse</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit05/unit05-05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kostenanalyse</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
- <span class="menu-text">Reader Automatisierung von Arbeitsabläufen in QGIS</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../unit99/unit99-01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dokumentation und Reproduzierbarkeit in QGIS</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
- <span class="menu-text">Folien</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../slides/w-01-slides.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Raumkonzepte</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../slides/w-02-slides.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Relationen und Abfragen</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Inhalt</h2>
    
   <ul>
-  <li><a href="#abstandsbeziehungen-voronoi-polygone-als-einfaches-nähemodell" id="toc-abstandsbeziehungen-voronoi-polygone-als-einfaches-nähemodell" class="nav-link active" data-scroll-target="#abstandsbeziehungen-voronoi-polygone-als-einfaches-nähemodell">Abstandsbeziehungen: Voronoi-Polygone als einfaches Nähemodell</a>
-  <ul class="collapse">
-  <li><a href="#konstruktion-von-voronoi-polygonen" id="toc-konstruktion-von-voronoi-polygonen" class="nav-link" data-scroll-target="#konstruktion-von-voronoi-polygonen">Konstruktion von Voronoi-Polygonen</a></li>
+  <li><a href="#von-punktmessungen-zur-flächigen-schätzung" id="toc-von-punktmessungen-zur-flächigen-schätzung" class="nav-link active" data-scroll-target="#von-punktmessungen-zur-flächigen-schätzung">Von Punktmessungen zur flächigen Schätzung</a></li>
+  <li><a href="#was-eine-interpolation-voraussetzt" id="toc-was-eine-interpolation-voraussetzt" class="nav-link" data-scroll-target="#was-eine-interpolation-voraussetzt">Was eine Interpolation voraussetzt</a></li>
+  <li><a href="#interpolation-als-modellentscheidung" id="toc-interpolation-als-modellentscheidung" class="nav-link" data-scroll-target="#interpolation-als-modellentscheidung">Interpolation als Modellentscheidung</a></li>
+  <li><a href="#globale-und-lokale-interpolation" id="toc-globale-und-lokale-interpolation" class="nav-link" data-scroll-target="#globale-und-lokale-interpolation">Globale und lokale Interpolation</a></li>
+  <li><a href="#exakte-und-nicht-exakte-interpolation" id="toc-exakte-und-nicht-exakte-interpolation" class="nav-link" data-scroll-target="#exakte-und-nicht-exakte-interpolation">Exakte und nicht-exakte Interpolation</a></li>
   <li><a href="#beispiel-niederschlagsstationen-in-der-schweiz" id="toc-beispiel-niederschlagsstationen-in-der-schweiz" class="nav-link" data-scroll-target="#beispiel-niederschlagsstationen-in-der-schweiz">Beispiel: Niederschlagsstationen in der Schweiz</a></li>
-  </ul></li>
-  <li><a href="#übung-voronoi-als-zellbasierte-näherungszone" id="toc-übung-voronoi-als-zellbasierte-näherungszone" class="nav-link" data-scroll-target="#übung-voronoi-als-zellbasierte-näherungszone">Übung: Voronoi als zellbasierte Näherungszone</a></li>
+  <li><a href="#übung-interpolationsmethoden-vergleichen" id="toc-übung-interpolationsmethoden-vergleichen" class="nav-link" data-scroll-target="#übung-interpolationsmethoden-vergleichen">Übung: Interpolationsmethoden vergleichen</a></li>
+  <li><a href="#kernpunkt" id="toc-kernpunkt" class="nav-link" data-scroll-target="#kernpunkt">Kernpunkt</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit04/unit04-02.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit04/unit04_interpolation_neufassung.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -730,115 +392,126 @@ background-size: cover;
 
 
 
-<p>Rasterdaten beschreiben den Raum als regelmäßiges Zellgitter. Jede Zelle trägt einen Wert, zum Beispiel Höhe, Temperatur, Landbedeckung, Entfernung oder Eignung. Rasterbasierte Analyse nutzt diese Zellwerte, um neue räumliche Informationen abzuleiten.</p>
-<p>Der besondere Vorteil des Rastermodells liegt darin, dass flächenhafte Muster, kontinuierliche Übergänge, Nachbarschaften und Gradienten zellweise verarbeitet werden können. Dadurch eignen sich Rasterdaten besonders für Höhenmodelle, Distanzflächen, Interpolation, Sichtbarkeit, hydrologische Ableitungen und Multikriterienanalysen.</p>
-<p>In den folgenden Abschnitten geht es daher um eine zentrale Frage:</p>
+<section id="von-punktmessungen-zur-flächigen-schätzung" class="level2">
+<h2 class="anchored" data-anchor-id="von-punktmessungen-zur-flächigen-schätzung">Von Punktmessungen zur flächigen Schätzung</h2>
+<p>Viele geographische Phänomene werden nur an einzelnen Orten gemessen. Niederschlagsstationen, Bodenproben, Temperaturfühler oder Pegel liefern punktuelle Beobachtungen. Für viele Fragestellungen reicht diese punktuelle Information aber nicht aus. Häufig wird eine flächenhafte Darstellung benötigt: Wo ist der Niederschlag hoch, wo niedrig? Welche Bereiche liegen zwischen bekannten Messwerten? Wie kann aus einzelnen Beobachtungen eine räumlich kontinuierliche Schätzung entstehen?</p>
+<p>Interpolation bezeichnet die Schätzung unbekannter Werte zwischen bekannten Messpunkten. Sie erzeugt eine Fläche, die nicht direkt beobachtet wurde, sondern aus Punktdaten und Modellannahmen abgeleitet wird. Damit ist jede Interpolation mehr als eine technische Zeichenoperation. Sie entscheidet, wie Nähe, Ähnlichkeit, räumliche Abhängigkeit und Unsicherheit verstanden werden.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit04/interpolation_01_punktmessungen_zur_flaeche.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 04-03: Grundidee räumlicher Interpolation. Punktmessungen liefern bekannte Werte an einzelnen Orten; die Fläche dazwischen muss durch ein Modell geschätzt werden.</figcaption>
+</figure>
+</div>
+<p>Der zentrale Übergang lautet also:</p>
 <blockquote class="blockquote">
-<p>Wie entstehen aus lückenhaften, punktuellen oder primären Geodaten neue flächenhafte Informationen?</p>
+<p>Punktdaten sind Beobachtungen. Interpolierte Flächen sind modellierte Schätzungen.</p>
 </blockquote>
-<p>Diese Frage wird an mehreren Beispielen entwickelt: Voronoi-Polygone zeigen eine einfache Form distanzbasierter Raumaufteilung, Interpolationen erzeugen kontinuierliche Oberflächen aus Punktmessungen, digitale Geländemodelle liefern abgeleitete Reliefgrößen, Sichtbarkeitsanalysen prüfen räumliche Sichtbeziehungen und prozessbasierte Ableitungen modellieren Fließrichtungen und hydrologische Indizes.</p>
-<p>Als Einstieg in die Thematik der Raumanalyse wurde die Integration des einfachsten Raumkonzeptes, der Voronoi-Polygonisierung, gewählt. Sie steht exemplarisch für die Generierung geometrisch fundierter raumkontinuierlicher Interpolationskonzepte. Diese Betrachtung wird anschliessend um einige komplexere Interpolationsverfahren erweitert.</p>
-<section id="abstandsbeziehungen-voronoi-polygone-als-einfaches-nähemodell" class="level2">
-<h2 class="anchored" data-anchor-id="abstandsbeziehungen-voronoi-polygone-als-einfaches-nähemodell">Abstandsbeziehungen: Voronoi-Polygone als einfaches Nähemodell</h2>
-<p>Wir erweitern nun die bisherigen geometrischen Abfragen um eine andere Form räumlicher Ableitung. Bisher wurden Distanzen vor allem gemessen oder als Puffer verwendet. Bei Voronoi-Polygonen geht es dagegen um die Frage, wie aus einzelnen Punkten flächige Zuordnungsbereiche entstehen können.</p>
-<p>Voronoi-Polygone, auch Thiessen-Polygone genannt, teilen einen Raum so auf, dass jede Fläche genau einem Ausgangspunkt zugeordnet wird. Innerhalb einer solchen Fläche liegt jeder Ort näher am zugehörigen Punkt als an jedem anderen Punkt.</p>
-<p>Diese Zuordnung beruht auf einer starken Vereinfachung: Der Raum wird als gleichförmig, richtungsneutral und widerstandslos behandelt. Es gibt keine Barrieren, keine unterschiedlichen Wegkosten, keine Topographie, keine Fließrichtungen und keine weiteren Prozessinformationen. Nähe bedeutet hier ausschließlich euklidische Distanz, also direkte Luftlinie.</p>
-<p>Damit sind Voronoi-Polygone ein geometrisches Nullmodell. Sie zeigen, welche Raumaufteilung allein aus der Lage der Punkte entsteht, wenn sonst nichts über den Raum bekannt ist. Genau darin liegt ihr didaktischer Wert: Die Methode macht sichtbar, welche Annahme getroffen wird, bevor komplexere Modelle zusätzliche Informationen einbeziehen.</p>
-<p>Typische Fragen sind zum Beispiel:</p>
-<ul>
-<li>Welche Fläche wird welcher Niederschlagsstation zugeordnet, wenn nur die nächste Distanz zählt?</li>
-<li>Welche Bereiche liegen jeweils am nächsten zu einer Bodenprobe?</li>
-<li>Welche Wohngebiete wären rechnerisch der nächstgelegenen Schule zugeordnet?</li>
-<li>Welche Flächen werden durch einzelne Messpunkte repräsentiert, solange keine bessere Interpolation oder Prozessinformation vorliegt?</li>
-</ul>
-<p>Die Grenze der Methode liegt genau in ihrer Stärke: Sie bildet keine Übergänge zwischen Messwerten ab und modelliert keinen physikalischen Prozess. Sie ordnet Raum nach nächster Distanz. Bei Bodenproben, Messstationen oder Versorgungsstandorten kann diese Annahme als erste Näherung sinnvoll sein. Sobald reale Prozesse aber stark durch Relief, Barrieren, Verkehrswege, Windrichtungen, Wasserfluss oder administrative Zuständigkeiten geprägt sind, muss diese einfache Zuordnung kritisch geprüft oder durch ein passenderes Modell ersetzt werden.</p>
-<p>In Bodenkarten können Voronoi-Polygone zum Beispiel als einfache Ableitung aus unregelmäßig verteilten Bodenproben dienen, wenn zwischen den Proben keine weiteren Informationen vorliegen <span class="citation" data-cites="jones1997">(vgl. <a href="#ref-jones1997" role="doc-biblioref">Jones 1997, 48</a>)</span>. Eine ausführliche methodische Darstellung von Voronoi-Diagrammen findet sich bei <span class="citation" data-cites="okabe2000">Okabe u.&nbsp;a. (<a href="#ref-okabe2000" role="doc-biblioref">2000</a>)</span>.</p>
-<section id="konstruktion-von-voronoi-polygonen" class="level3">
-<h3 class="anchored" data-anchor-id="konstruktion-von-voronoi-polygonen">Konstruktion von Voronoi-Polygonen</h3>
-<p>Voronoi-Polygone entstehen durch eine Abstandsregel. Jeder Ort im Untersuchungsraum wird demjenigen Punkt zugeordnet, zu dem er die geringste Distanz besitzt.</p>
-<p>Die Grenze zwischen zwei benachbarten Punkten liegt dort, wo beide Punkte gleich weit entfernt sind. Konstruktiv entspricht diese Grenze der Mittelsenkrechten der Verbindungslinie zwischen den beiden Punkten. Werden diese Gleichabstandsgrenzen für alle benachbarten Punkte kombiniert, entsteht eine lückenlose Zerlegung des Raumes in Zuordnungszonen.</p>
-<iframe src="../assets/images/unit04/voronoi_konstruktion_svg_animation.html" width="100%" height="820" style="border:0; border-radius: 18px; overflow: hidden;" loading="lazy">
+<p>Diese Unterscheidung ist wichtig. Eine interpolierte Niederschlagskarte sieht oft geschlossen und eindeutig aus. Tatsächlich zeigt sie aber nicht überall gemessene Werte, sondern eine räumliche Annahme darüber, wie sich Werte zwischen den Stationen verhalten.</p>
+</section>
+<section id="was-eine-interpolation-voraussetzt" class="level2">
+<h2 class="anchored" data-anchor-id="was-eine-interpolation-voraussetzt">Was eine Interpolation voraussetzt</h2>
+<p>Die Qualität einer Interpolation hängt nicht nur vom gewählten Verfahren ab. Sie hängt zuerst von den Punktdaten ab. Wenn wichtige Räume, Höhenlagen oder Wertebereiche in der Stichprobe fehlen, kann auch ein aufwendig berechnetes Verfahren keine zuverlässige Fläche erzeugen.</p>
+<p>Vier Punkte sind besonders wichtig:</p>
+<p><strong>Repräsentativität</strong> bedeutet, dass die Messpunkte das untersuchte Phänomen ausreichend abdecken. Für eine Niederschlagskarte der Schweiz wäre es problematisch, wenn nur Stationen aus Tieflagen verwendet würden. Dann wären alpine Niederschlagsmuster kaum vertreten.</p>
+<p><strong>Räumliche Verteilung</strong> beschreibt, wie die Messpunkte im Untersuchungsraum angeordnet sind. Gleichmäßig verteilte Punkte stützen eine Flächenschätzung besser als stark geclusterte Punkte mit großen Lücken.</p>
+<p><strong>Homogenität oder Stationarität</strong> beschreibt die Annahme, dass räumliche Zusammenhänge im Untersuchungsgebiet vergleichbar sind. Wenn zwei Stationen in 2 km Entfernung in einem Tal ähnlich sind, muss das nicht automatisch auch für zwei Stationen in 2 km Entfernung an einer alpinen Luv-Lee-Grenze gelten.</p>
+<p><strong>Anzahl der Messpunkte</strong> bestimmt, wie stark eine Methode überhaupt räumliche Muster erfassen kann. Zu wenige Punkte erzwingen sehr grobe Annahmen. Viele Punkte helfen aber nur dann, wenn sie den Raum und das Phänomen sinnvoll abdecken.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit04/interpolation_02_voraussetzungen.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 04-04: Voraussetzungen räumlicher Interpolation. Repräsentativität, räumliche Verteilung, Homogenität und Anzahl der Messpunkte bestimmen, wie belastbar eine Flächenschätzung sein kann.</figcaption>
+</figure>
+</div>
+<p>Diese Kriterien hängen zusammen. Fünf Messstationen reichen für eine landesweite Niederschlagsschätzung kaum aus. Eine große Zahl von Stationen kann aber ebenfalls ungeeignet sein, wenn sie fast nur in gut zugänglichen Tälern liegen. Dann wäre die Stichprobe groß, aber für das Gebirge nicht repräsentativ.</p>
+</section>
+<section id="interpolation-als-modellentscheidung" class="level2">
+<h2 class="anchored" data-anchor-id="interpolation-als-modellentscheidung">Interpolation als Modellentscheidung</h2>
+<p>Verschiedene Interpolationsverfahren erzeugen aus denselben Punktdaten unterschiedliche Flächen. Der Unterschied liegt nicht nur in der Rechenmethode, sondern in der jeweiligen Raumannahme.</p>
+<p>Voronoi-Polygone ordnen jeden Ort dem nächstgelegenen Punkt zu. Das ist keine Interpolation im engeren Sinn, sondern eine Zuordnung nach nächster Distanz. Die Fläche springt abrupt von einem Stationswert zum nächsten.</p>
+<p>Inverse Distanzgewichtung, häufig IDW genannt, nimmt an, dass nahe Punkte stärker wirken als entfernte Punkte. Der geschätzte Wert entsteht aus einem gewichteten Mittel benachbarter Messwerte. Nähe wird dabei mathematisch als abnehmender Einfluss mit wachsender Distanz formuliert.</p>
+<p>Globale Verfahren, etwa Trendflächen, suchen ein übergeordnetes räumliches Muster. Sie sind geeignet, wenn eine großräumige Richtung oder ein allgemeiner Gradient sichtbar gemacht werden soll. Lokale Details werden dabei bewusst geglättet.</p>
+<p>Lokale glatte Verfahren passen sich stärker an Nachbarschaften an. Sie können lokale Muster besser darstellen, sind aber empfindlich gegenüber Punktverteilung, Suchradius, Glättung und Parametereinstellungen.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit04/interpolation_03_methodenlogik.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 04-05: Interpolationsmethoden als Modellentscheidungen. Verschiedene Verfahren übersetzen dieselben Punktdaten in unterschiedliche räumliche Oberflächen.</figcaption>
+</figure>
+</div>
+<p>Der entscheidende Punkt ist: Es gibt nicht die eine automatisch richtige Interpolationsmethode. Eine Methode ist nur im Verhältnis zur Fragestellung, zum Phänomen, zur Datenlage und zur gewünschten Aussage angemessen.</p>
+</section>
+<section id="globale-und-lokale-interpolation" class="level2">
+<h2 class="anchored" data-anchor-id="globale-und-lokale-interpolation">Globale und lokale Interpolation</h2>
+<p>Eine wichtige Unterscheidung betrifft die Frage, welche Messpunkte in die Schätzung eingehen.</p>
+<p>Globale Interpolationsverfahren nutzen alle Messpunkte des Untersuchungsgebiets. Dadurch entstehen Oberflächen, die vor allem großräumige Trends sichtbar machen. Für die Niederschlagsdaten der Schweiz könnte eine globale Trendfläche zum Beispiel eine allgemeine Zunahme oder Abnahme in eine bestimmte Richtung zeigen. Solche Flächen sind nicht dafür gedacht, lokale Werte möglichst exakt vorherzusagen. Sie dienen eher dazu, übergeordnete räumliche Strukturen zu erkennen.</p>
+<p>Lokale Interpolationsverfahren nutzen dagegen nur Punkte in einer definierten Umgebung oder gewichten nahe Punkte deutlich stärker. Dadurch können lokale Unterschiede besser sichtbar werden. Gleichzeitig hängt das Ergebnis stärker davon ab, wie groß die Nachbarschaft gewählt wird und wie die Messpunkte verteilt sind.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit04/interpolation_04_global_lokal.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 04-06: Globale und lokale Interpolation. Globale Verfahren betonen das großräumige Muster; lokale Verfahren reagieren stärker auf Nachbarschaften und lokale Punktverteilung.</figcaption>
+</figure>
+</div>
+<p>Beide Ansätze beantworten unterschiedliche Fragen. Wer ein großräumiges Muster sucht, benötigt keine detailreiche lokale Oberfläche. Wer lokale Unterschiede zwischen Tälern, Höhenlagen oder Siedlungsräumen untersuchen will, braucht dagegen ein Verfahren, das räumliche Nachbarschaften angemessen berücksichtigt.</p>
+</section>
+<section id="exakte-und-nicht-exakte-interpolation" class="level2">
+<h2 class="anchored" data-anchor-id="exakte-und-nicht-exakte-interpolation">Exakte und nicht-exakte Interpolation</h2>
+<p>Eine zweite wichtige Unterscheidung betrifft die Frage, ob die geschätzte Oberfläche die bekannten Messwerte exakt treffen muss.</p>
+<p>Exakte Interpolation bedeutet, dass die Oberfläche an den Messpunkten genau durch die beobachteten Werte läuft. Am Ort der Messstation wird also exakt der gemessene Wert reproduziert. Das ist plausibel, wenn die Messwerte als zuverlässig gelten und keine Glättung gewünscht ist.</p>
+<p>Nicht-exakte Interpolation bedeutet, dass die geschätzte Oberfläche die Messpunkte nicht zwingend exakt trifft. Das kann sinnvoll sein, wenn Messwerte unsicher sind, kurzfristige Störungen enthalten oder wenn ein geglättetes räumliches Muster gesucht wird. Die Methode behandelt die Punkte dann nicht als fehlerfreie Wahrheit, sondern als Beobachtungen mit möglicher Unsicherheit.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit04/interpolation_05_exakt_nicht_exakt.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 04-07: Exakte und nicht-exakte Interpolation. Exakte Verfahren treffen die Messpunkte; nicht-exakte Verfahren glätten die Oberfläche und können Unsicherheit oder Rauschen berücksichtigen.</figcaption>
+</figure>
+</div>
+<p>Exakt ist daher nicht automatisch besser. Bei sehr zuverlässigen Messwerten kann eine exakte Methode sinnvoll sein. Bei verrauschten oder kurzfristig schwankenden Daten kann eine geglättete, nicht-exakte Methode fachlich angemessener sein.</p>
+</section>
+<section id="beispiel-niederschlagsstationen-in-der-schweiz" class="level2">
+<h2 class="anchored" data-anchor-id="beispiel-niederschlagsstationen-in-der-schweiz">Beispiel: Niederschlagsstationen in der Schweiz</h2>
+<p>Das folgende Beispiel verwendet klimatologische Niederschlagsstationen in der Schweiz. Die blauen Punkte zeigen die Stationen. Die Punktgröße steht für die mittlere langjährige Niederschlagsmenge an der jeweiligen Station. Aus diesen punktuellen Beobachtungen werden verschiedene flächenhafte Darstellungen berechnet.</p>
+<p>Die Karte ist besonders geeignet, um die Wirkung verschiedener Verfahren zu vergleichen. Voronoi-Polygone übertragen den Wert der nächstgelegenen Station auf eine ganze Fläche. IDW erzeugt kontinuierlichere Übergänge, weil mehrere Stationen in die Schätzung eingehen. Globale und lokale Verfahren betonen wiederum unterschiedliche räumliche Muster.</p>
+<iframe src="../assets/images/unit04/suisse4.html" width="100%" height="825" style="border:0; border-radius: 18px; overflow: hidden;" loading="lazy">
 </iframe>
-<p><strong>Abbildung 04-01:</strong> Konstruktion von Voronoi-Polygonen. Aus Punktstandorten entstehen über Gleichabstandsgrenzen und die Nächste-Punkt-Regel flächige Zuordnungsflächen.</p>
-<p>Man kann Voronoi-Diagramme auch um Linien oder andere Geometrien bilden. Dann entstehen komplexere Formen. In dieser Einheit beschränken wir uns auf den häufigsten und didaktisch klarsten Fall: Voronoi-Polygone aus Punktdaten.</p>
-<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Konstruktionsprinzip">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Hinweis</span>Konstruktionsprinzip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Ein Voronoi-Polygon enthält alle Orte, die näher an seinem Punktstandort liegen als an jedem anderen Punkt. Die Grenzen zwischen zwei Polygonen liegen deshalb auf Gleichabstandslinien: Jeder Ort auf einer solchen Grenze ist zu zwei benachbarten Punkten gleich weit entfernt.</p>
-</div>
-</div>
-</section>
-<section id="beispiel-niederschlagsstationen-in-der-schweiz" class="level3">
-<h3 class="anchored" data-anchor-id="beispiel-niederschlagsstationen-in-der-schweiz">Beispiel: Niederschlagsstationen in der Schweiz</h3>
-<p>Das folgende Beispiel überträgt dieses Konstruktionsprinzip auf klimatologische Niederschlagsstationen in der Schweiz. Die Punkte stehen für Messstationen. An diesen Orten liegen beobachtete Niederschlagswerte einer Klimanormalperiode vor. Zwischen den Stationen ist der Niederschlag dagegen nicht direkt gemessen.</p>
-<p>Die Voronoi-Polygone teilen den Raum deshalb nach nächster Station auf. Jede Fläche wird derjenigen Station zugeordnet, die ihr räumlich am nächsten liegt. Der Stationswert wird anschließend auf die gesamte zugehörige Fläche übertragen.</p>
-<p>Damit entsteht eine flächenhafte Darstellung, aber keine echte klimatologische Niederschlagsmodellierung. Die Karte zeigt nicht, wie Niederschlag tatsächlich kontinuierlich über den Raum verteilt ist. Sie zeigt vielmehr, welche Fläche nach der einfachen Nächste-Distanz-Regel welcher Station zugeordnet wird.</p>
-<iframe src="../assets/images/unit04/suisse1.html" width="100%" height="540" style="border:0; border-radius: 18px; overflow: hidden;" loading="lazy">
-</iframe>
-<p><strong>Abbildung 04-02:</strong> Voronoi-Polygone für klimatologische Niederschlagsstationen in der Schweiz. Jede Fläche wird der nächstgelegenen Station zugeordnet und übernimmt deren Messwert. Die Karte zeigt damit eine geometrische Näherungsfläche auf Basis nächster Distanz, nicht eine physikalisch modellierte Niederschlagsverteilung.</p>
-<p>Gerade bei Niederschlag wird die Grenze dieser Methode sichtbar. Niederschlag hängt nicht nur von der Nähe zur nächsten Station ab. Relief, Höhe, Exposition, Luv- und Lee-Lagen, Talräume und großräumige Wetterlagen beeinflussen die räumliche Verteilung erheblich. Deshalb ist es sinnvoll, in der interaktiven Karte zwischen Hintergrundkarten zu wechseln und die Stationsverteilung im Verhältnis zur Topographie zu betrachten.</p>
-<p>Achten Sie beim Betrachten der Karte besonders auf folgende Fragen:</p>
+<p><strong>Abbildung 04-08:</strong> Interaktive Karte der Niederschlagsstationen und interpolierten Niederschlagsflächen in der Schweiz. Die Karte zeigt, wie unterschiedliche Verfahren aus denselben Punktdaten unterschiedliche Flächen erzeugen.</p>
+<p>Gerade bei Niederschlag muss die Karte kritisch gelesen werden. Niederschlag hängt nicht nur von der Nähe zur nächsten Station ab. Relief, Höhe, Exposition, Luv- und Lee-Lagen, Talräume und großräumige Wetterlagen beeinflussen die räumliche Verteilung. Deshalb lohnt es sich, in der Karte die Hintergrunddarstellung zu wechseln und die interpolierten Flächen mit der Topographie zu vergleichen.</p>
+<p>Achten Sie besonders auf folgende Fragen:</p>
 <ul>
-<li>Liegen große Voronoi-Flächen dort, wo das Stationsnetz dünn ist?</li>
-<li>Verändern Gebirge, Täler oder Höhenstufen die Plausibilität der flächenhaften Zuordnung?</li>
-<li>Wirken manche Polygon-Grenzen klimatologisch plausibel oder eher rein geometrisch?</li>
-<li>Welche Stationen repräsentieren sehr große Räume, obwohl Niederschlag dort wahrscheinlich stark variiert?</li>
-<li>Wo wäre eine topographisch informierte Interpolation plausibler als eine reine Nächste-Distanz-Zuweisung?</li>
-<li>Welche Messgröße würde sich besser für eine Voronoi Aufteilung eigenen?</li>
+<li>Wo liegen große Lücken zwischen Stationen?</li>
+<li>Welche Flächen werden stark von einzelnen Stationen geprägt?</li>
+<li>Wo folgen die interpolierten Muster erkennbar der Topographie?</li>
+<li>Wo wirken Grenzen oder Gradienten eher wie ein methodischer Effekt?</li>
+<li>Welche Methode erzeugt eine plausible Fläche, und welche erzeugt nur eine formal glatte Darstellung?</li>
 </ul>
-<div class="callout callout-style-simple callout-warning no-icon" data-titel="Wichtig">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Voronoi-Polygone sind ein geometrisches Nullmodell. Sie zeigen, was man erhält, wenn ausschließlich nächste Distanz zählt. Je stärker ein Phänomen durch Prozesse wie Relief, Strömung, Barrieren oder Erreichbarkeit geprägt ist, desto vorsichtiger muss eine Voronoi-Fläche interpretiert werden.</p>
-</div>
-</div>
-</div>
 </section>
-</section>
-<section id="übung-voronoi-als-zellbasierte-näherungszone" class="level2">
-<h2 class="anchored" data-anchor-id="übung-voronoi-als-zellbasierte-näherungszone">Übung: Voronoi als zellbasierte Näherungszone</h2>
-<p>Die Voronoi-Idee lässt sich auch rasterbasiert denken. Dann entstehen keine echten Polygone, sondern Zellen werden jeweils dem nächstgelegenen Ausgangspunkt zugeordnet. Dadurch wird sichtbar, dass Voronoi weniger eine Zeichenmethode als eine Abstandsregel ist.</p>
+<section id="übung-interpolationsmethoden-vergleichen" class="level2">
+<h2 class="anchored" data-anchor-id="übung-interpolationsmethoden-vergleichen">Übung: Interpolationsmethoden vergleichen</h2>
 <div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Experimentieren Sie mit der Simulation:</p>
-<ul>
-<li>Verändern Sie die Anzahl der Punkte.</li>
-<li>Beobachten Sie, wie sich die Grenzlinien verschieben.</li>
-<li>Verschieben Sie einzelne Punkte und prüfen Sie, welche Zonen größer oder kleiner werden.</li>
-<li>Beschreiben Sie, warum sich eine Grenze genau zwischen zwei Punkten bildet.</li>
-<li>Überlegen Sie, was sich ändern würde, wenn statt Luftliniendistanz Reisezeit, Hangneigung oder Barrieren berücksichtigt würden.</li>
-</ul>
-<p><embed src="../assets/images/unit04/Voronoi.html" style="width:100.0%" height="700"></p>
+<p>Nutzen Sie die interaktive Karte und vergleichen Sie mehrere Interpolationsverfahren.</p>
+<p>Bearbeiten Sie die folgenden Aufgaben schriftlich:</p>
+<ol type="1">
+<li>Schalten Sie zunächst die Voronoi-Darstellung ein. Beschreiben Sie, wie die Fläche einer Station zugeordnet wird.</li>
+<li>Wechseln Sie zu einer kontinuierlichen Interpolationsfläche. Beschreiben Sie, wie sich Übergänge und Grenzen verändern.</li>
+<li>Wechseln Sie die Hintergrundkarte auf eine topographische Darstellung. Prüfen Sie, ob Niederschlagsmuster mit Höhenlagen, Gebirgsräumen oder Tälern zusammenhängen.</li>
+<li>Nennen Sie einen Bereich, in dem die Voronoi-Zuordnung unplausibel wirkt. Begründen Sie Ihre Einschätzung.</li>
+<li>Nennen Sie einen Bereich, in dem eine kontinuierliche Interpolation plausibler wirkt als die reine Zuordnung zur nächsten Station.</li>
+<li>Formulieren Sie abschließend, welche Zusatzinformation für eine bessere Niederschlagsfläche wichtig wäre.</li>
+</ol>
 </div>
 </div>
 </div>
-
+</section>
+<section id="kernpunkt" class="level2">
+<h2 class="anchored" data-anchor-id="kernpunkt">Kernpunkt</h2>
+<p>Räumliche Interpolation übersetzt punktuelle Beobachtungen in flächenhafte Schätzungen. Diese Schätzungen sind nie neutral. Jede Methode enthält Annahmen darüber, wie Werte zwischen Messpunkten zusammenhängen. Eine gute Karte entsteht deshalb nicht nur durch ein Werkzeug, sondern durch die passende Verbindung von Daten, Methode, Prozessverständnis und kritischer Interpretation.</p>
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-jones1997" class="csl-entry" role="listitem">
-Jones, C. B. 1997. <em>Geographical Information Systems and Computer Cartography</em>. Routledge.
-</div>
-<div id="ref-okabe2000" class="csl-entry" role="listitem">
-Okabe, Atsuyuki, Barry Boots, Kokichi Sugihara, und Sung Nok Chiu. 2000. <em>Spatial Tessellations: Concepts and Applications of Voronoi Diagrams</em>. 2nd ed. John Wiley; Sons, Inc.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <div class="footer-banner">
 
     <a href="https://gisma-courses.github.io/gc/" target="_blank">GISMA (2026)</a> |
@@ -1265,21 +938,9 @@ Okabe, Atsuyuki, Barry Boots, Kokichi Sugihara, und Sung Nok Chiu. 2000. <em>Spa
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../unit04/unit04-01.html" class="pagination-link" aria-label="Räumliche Analyse als Ableitung und Begründung">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Räumliche Analyse als Ableitung und Begründung</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../unit04/unit04-03.html" class="pagination-link" aria-label="Informationsloser Raum">
-        <span class="nav-page-text">Informationsloser Raum</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit04/unit04-02.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit04/unit04_interpolation_neufassung.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></div></div></footer></body></html>

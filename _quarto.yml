@@ -88,12 +88,12 @@ website:
             - href: unit03/unit03-05.qmd
               text: Zusammnfassung Fragen und Antworten
         - text: "---"
-        - section: "Reader Räumliche Datenanalyse"
+        - section: "Reader Räumliche Ableitungen aus Geodaten"
           contents:
             - href: unit04/unit04-01.qmd
-              text: Räumliche Analysemethoden
+            #  text: Räumliche Analysemethoden
             - href: unit04/unit04-02.qmd
-              text: Voronoi Polygone
+            #  text: Voronoi Polygone
             - href: unit04/unit04-03.qmd
               text: Informationsloser Raum
             #- href: unit04/unit04-04.qmd
@@ -103,7 +103,7 @@ website:
             - href: unit04/unit04-06.qmd
               text: Prozeßbasierte Ableitungen
         - text: "---"
-        - section: "Reader Räumliche Datenanalyse"
+        - section: "Reader Räumliche Kriterien, Eignung und Entscheidung"
           contents:
             - href: unit05/unit05-01.qmd
               text: Multikriterien-Analysen
