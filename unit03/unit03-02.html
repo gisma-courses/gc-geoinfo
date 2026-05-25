@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -23,26 +23,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -60,9 +41,9 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-23bbe8b5e4efc1e257f6d59dce478b08.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de63f62b328812d8e578a4d74e282472.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-6b6957c917596b414ec0b78690761e87.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de63f62b328812d8e578a4d74e282472.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-ce8e423fa6c5ca0bc669b9cb09338b09.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -145,12 +126,16 @@ background-size: cover;
 <link rel="stylesheet" href="../css/styles.css">
 <meta property="og:title" content="Thematische Abfragen – Grundlagenkurs GI-S (QGIS)">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit03/0304_input.jpg">
+<meta property="og:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit03/thematsiche_abfragen.png">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
+<meta property="og:image:height" content="1055">
+<meta property="og:image:width" content="1491">
 <meta name="twitter:title" content="Thematische Abfragen – Grundlagenkurs GI-S (QGIS)">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit03/0304_input.jpg">
+<meta name="twitter:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit03/thematsiche_abfragen.png">
 <meta name="twitter:creator" content="@gisma">
+<meta name="twitter:image-height" content="1055">
+<meta name="twitter:image-width" content="1491">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -716,16 +701,18 @@ background-size: cover;
     <h2 id="toc-title">Inhalt</h2>
    
   <ul>
-  <li><a href="#eingabedaten-für-die-operatorbeispiele" id="toc-eingabedaten-für-die-operatorbeispiele" class="nav-link active" data-scroll-target="#eingabedaten-für-die-operatorbeispiele">Eingabedaten für die Operatorbeispiele</a></li>
+  <li><a href="#grundprinzip-thematischer-abfragen" id="toc-grundprinzip-thematischer-abfragen" class="nav-link active" data-scroll-target="#grundprinzip-thematischer-abfragen">Grundprinzip thematischer Abfragen</a></li>
+  <li><a href="#von-der-fachlichen-frage-zur-qgis-abfrage" id="toc-von-der-fachlichen-frage-zur-qgis-abfrage" class="nav-link" data-scroll-target="#von-der-fachlichen-frage-zur-qgis-abfrage">Von der fachlichen Frage zur QGIS-Abfrage</a></li>
   <li><a href="#vergleichsoperatoren" id="toc-vergleichsoperatoren" class="nav-link" data-scroll-target="#vergleichsoperatoren">Vergleichsoperatoren</a></li>
   <li><a href="#logische-operatoren" id="toc-logische-operatoren" class="nav-link" data-scroll-target="#logische-operatoren">Logische Operatoren</a>
   <ul class="collapse">
-  <li><a href="#die-logische-verknüpfung-and" id="toc-die-logische-verknüpfung-and" class="nav-link" data-scroll-target="#die-logische-verknüpfung-and">Die logische Verknüpfung AND</a></li>
-  <li><a href="#die-logische-verknüpfung-or" id="toc-die-logische-verknüpfung-or" class="nav-link" data-scroll-target="#die-logische-verknüpfung-or">Die logische Verknüpfung OR</a></li>
-  <li><a href="#die-logische-verknüpfung-xor" id="toc-die-logische-verknüpfung-xor" class="nav-link" data-scroll-target="#die-logische-verknüpfung-xor">Die logische Verknüpfung XOR</a></li>
-  <li><a href="#die-logische-verknüpfung-not" id="toc-die-logische-verknüpfung-not" class="nav-link" data-scroll-target="#die-logische-verknüpfung-not">Die logische Verknüpfung NOT</a></li>
-  <li><a href="#verschachtelte-logische-operatoren" id="toc-verschachtelte-logische-operatoren" class="nav-link" data-scroll-target="#verschachtelte-logische-operatoren">Verschachtelte logische Operatoren</a></li>
+  <li><a href="#and" id="toc-and" class="nav-link" data-scroll-target="#and">AND</a></li>
+  <li><a href="#or" id="toc-or" class="nav-link" data-scroll-target="#or">OR</a></li>
+  <li><a href="#not" id="toc-not" class="nav-link" data-scroll-target="#not">NOT</a></li>
+  <li><a href="#xor" id="toc-xor" class="nav-link" data-scroll-target="#xor">XOR</a></li>
   </ul></li>
+  <li><a href="#klammern-und-prioritäten" id="toc-klammern-und-prioritäten" class="nav-link" data-scroll-target="#klammern-und-prioritäten">Klammern und Prioritäten</a></li>
+  <li><a href="#kernpunkt" id="toc-kernpunkt" class="nav-link" data-scroll-target="#kernpunkt">Kernpunkt</a></li>
   <li><a href="#übung" id="toc-übung" class="nav-link" data-scroll-target="#übung">Übung</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit03/unit03-02.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
@@ -738,80 +725,114 @@ background-size: cover;
 
 
 
-<p>Eine thematische Abfrage führt zu einer den Bedingungen entsprechenden Auswahl der abgefragten Attributwerte. Thematische Abfragen sind somit konventionelle (= nicht raumbezogene) Abfragen relationaler Datenbestände. In GIS werden thematische Abfragen entweder mit <code>SQL</code> (Structured Query Language) oder mit systeminternen Abfragesprachen durchgeführt. In beiden Fällen werden die einzelnen Befehle in der Regel mit Hilfe eines grafischen Dialogsystems ausgewählt und zusammengestellt.</p>
-<section id="eingabedaten-für-die-operatorbeispiele" class="level3">
-<h3 class="anchored" data-anchor-id="eingabedaten-für-die-operatorbeispiele">Eingabedaten für die Operatorbeispiele</h3>
-<p>Die folgenden Beispiele gehen von folgenden Eingabedaten (Geometrie und Relation) aus. Für die logischen Operatoren sind die Venn-Diagramme wie bisher zu interpretieren.</p>
+<p>Thematische Abfragen führen zu einer Auswahl von Geoobjekten auf Grundlage ihrer <strong>Attributwerte</strong>. Es handelt sich also um <strong>nicht raumbezogene</strong> Abfragen, bei denen nicht die Lage, sondern die in der Attributtabelle gespeicherten Eigenschaften der Objekte ausgewertet werden. Typische Fragen sind zum Beispiel: <em>Welche Parzellen sind mit Lärche bewaldet?</em> oder <em>Welche Parzellen haben einen Vorrat über 110 m³/ha?</em></p>
+<p>In QGIS werden solche Abfragen in der Regel nicht über klassisches SQL, sondern über den <strong>Ausdruckseditor</strong> formuliert. Dabei werden Attributfelder, Vergleichsoperatoren und logische Verknüpfungen kombiniert. Die Ergebnisse erscheinen konsistent in <strong>Karte und Attributtabelle</strong>.</p>
+<section id="grundprinzip-thematischer-abfragen" class="level2">
+<h2 class="anchored" data-anchor-id="grundprinzip-thematischer-abfragen">Grundprinzip thematischer Abfragen</h2>
+<p>Die folgenden Beispiele beziehen sich auf einen kleinen Beispieldatensatz aus Parzellengeometrie und Attributtabelle. Die Abfragen prüfen jeweils bestimmte Attributwerte und markieren diejenigen Objekte, die die formulierte Bedingung erfüllen.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../assets/images/unit03/0304_input.jpg" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-04: Eingabedaten für die folgenden Abfragen , <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
+<p><img src="../assets/images/unit03/thematsiche_abfragen.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 03-04: Grundprinzip thematischer Abfragen in QGIS. Geoobjekte werden anhand ihrer Attributwerte ausgewählt; sichtbar wird die Auswahl zugleich in der Karte und in der Attributtabelle.</figcaption>
 </figure>
 </div>
-<p>Machen Sie sich mit der Funktionsweise der Operatoren vertraut. Nachfolgend finden Sie eine Reihe von SQL-Abfragen. Die Ergebnisse werden sowohl als Relation als auch als Geometrie dargestellt.</p>
+</section>
+<section id="von-der-fachlichen-frage-zur-qgis-abfrage" class="level2">
+<h2 class="anchored" data-anchor-id="von-der-fachlichen-frage-zur-qgis-abfrage">Von der fachlichen Frage zur QGIS-Abfrage</h2>
+<p>Der zentrale Schritt besteht darin, eine fachliche Frage in eine <strong>formale Bedingung</strong> zu übersetzen. Dazu müssen zunächst die relevanten Attribute identifiziert werden. Anschließend wird daraus ein passender Ausdruck formuliert.</p>
+<p>Beispielsweise wird aus der Frage <em>Welche Parzellen sind mit Lärche bewaldet?</em> die Bedingung:</p>
+<p><code>"Baumart" = 'Lärche'</code></p>
+<p>Eine komplexere Frage wie <em>Welche Parzellen sind mit Lärche bewaldet und haben einen Vorrat über 110 m³/ha?</em> erfordert dagegen zwei Bedingungen und eine logische Verknüpfung:</p>
+<p><code>"Baumart" = 'Lärche' AND "Vorrat_m3_ha" &gt; 110</code></p>
+<p>Die folgende Abbildung zeigt diesen Weg systematisch – von der fachlichen Frage über die benötigten Attribute und Bedingungen bis zur eigentlichen Auswahl in Karte und Tabelle.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit03/thematische_abfragen_qgis.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 03-05: Von der fachlichen Frage zur QGIS-Abfrage. Die Abbildung zeigt, wie aus einer inhaltlichen Fragestellung schrittweise passende Attribute, Bedingungen und QGIS-Ausdrücke abgeleitet werden.</figcaption>
+</figure>
+</div>
 </section>
 <section id="vergleichsoperatoren" class="level2">
 <h2 class="anchored" data-anchor-id="vergleichsoperatoren">Vergleichsoperatoren</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/images/unit03/0305_vop.jpg" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-05: Vergleichsoperatoren , <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
-</figure>
-</div>
+<p>Vergleichsoperatoren prüfen einzelne Attributwerte. Sie bilden die Grundlage jeder thematischen Abfrage.</p>
+<p>Typische Vergleichsoperatoren in QGIS sind:</p>
+<ul>
+<li><code>=</code> gleich</li>
+<li><code>&lt;&gt;</code> ungleich</li>
+<li><code>&gt;</code> größer als</li>
+<li><code>&lt;</code> kleiner als</li>
+<li><code>&gt;=</code> größer oder gleich</li>
+<li><code>&lt;=</code> kleiner oder gleich</li>
+</ul>
+<p>Beispiele:</p>
+<ul>
+<li><code>"Baumart" = 'Fichte'</code></li>
+<li><code>"Bodentyp" = 'Redzina'</code></li>
+<li><code>"Vorrat_m3_ha" &gt; 120</code></li>
+</ul>
+<p>Mit diesen Operatoren lassen sich einfache thematische Abfragen direkt formulieren. Sie prüfen immer genau eine Bedingung.</p>
 </section>
 <section id="logische-operatoren" class="level2">
 <h2 class="anchored" data-anchor-id="logische-operatoren">Logische Operatoren</h2>
-<section id="die-logische-verknüpfung-and" class="level3">
-<h3 class="anchored" data-anchor-id="die-logische-verknüpfung-and">Die logische Verknüpfung AND</h3>
+<p>Sobald mehrere Bedingungen gemeinsam ausgewertet werden sollen, kommen <strong>logische Operatoren</strong> ins Spiel. Sie verknüpfen einzelne Aussagen zu komplexeren Auswahlregeln.</p>
+<section id="and" class="level3">
+<h3 class="anchored" data-anchor-id="and">AND</h3>
+<p><code>AND</code> bedeutet: <strong>Beide Bedingungen müssen erfüllt sein.</strong></p>
+<p>Beispiel:</p>
+<p><code>"Baumart" = 'Lärche' AND "Vorrat_m3_ha" &gt; 110</code></p>
+<p>Diese Abfrage wählt nur solche Parzellen aus, die <strong>gleichzeitig</strong> Lärchenbestände sind und einen Vorrat über 110 m³/ha haben.</p>
+</section>
+<section id="or" class="level3">
+<h3 class="anchored" data-anchor-id="or">OR</h3>
+<p><code>OR</code> bedeutet: <strong>Mindestens eine der Bedingungen muss erfüllt sein.</strong></p>
+<p>Beispiel:</p>
+<p><code>"Baumart" = 'Lärche' OR "Vorrat_m3_ha" &gt; 110</code></p>
+<p>Damit werden alle Parzellen ausgewählt, die entweder Lärche tragen oder einen Vorrat über 110 m³/ha besitzen.</p>
+</section>
+<section id="not" class="level3">
+<h3 class="anchored" data-anchor-id="not">NOT</h3>
+<p><code>NOT</code> negiert eine Bedingung.</p>
+<p>Beispiel:</p>
+<p><code>NOT ("Bodentyp" = 'Redzina')</code></p>
+<p>Diese Abfrage wählt alle Parzellen aus, deren Bodentyp <strong>nicht</strong> Redzina ist.</p>
+</section>
+<section id="xor" class="level3">
+<h3 class="anchored" data-anchor-id="xor">XOR</h3>
+<p><code>XOR</code> bedeutet: <strong>Genau eine</strong> der beiden Bedingungen ist erfüllt, aber <strong>nicht beide gleichzeitig</strong>.</p>
+<p>Beispiel:</p>
+<p><code>(("Baumart" = 'Lärche') OR ("Vorrat_m3_ha" &gt; 110)) AND NOT (("Baumart" = 'Lärche') AND ("Vorrat_m3_ha" &gt; 110))</code></p>
+<p>Didaktisch ist XOR nützlich, um exklusive Auswahlregeln zu verdeutlichen. In der Praxis wird häufiger mit Kombinationen aus <code>AND</code>, <code>OR</code> und <code>NOT</code> gearbeitet.</p>
+<p>Die folgende Abbildung fasst die wichtigsten logischen Operatoren in QGIS zusammen und zeigt ihre Wirkung auf die Auswahl.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../assets/images/unit03/and_ex.jpg" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-07: Die logische Verknüpfung AND , <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
+<p><img src="../assets/images/unit03/logische_operatoren_qgis.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 03-06: Logische Operatoren in QGIS. AND, OR, NOT und XOR verknüpfen Bedingungen auf unterschiedliche Weise und erzeugen dadurch jeweils andere Auswahlen in Karte und Attributtabelle.</figcaption>
 </figure>
 </div>
 </section>
-<section id="die-logische-verknüpfung-or" class="level3">
-<h3 class="anchored" data-anchor-id="die-logische-verknüpfung-or">Die logische Verknüpfung OR</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/images/unit03/or_ex.jpg" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-08: Die logische Verknüpfung OR , <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
-</figure>
-</div>
 </section>
-<section id="die-logische-verknüpfung-xor" class="level3">
-<h3 class="anchored" data-anchor-id="die-logische-verknüpfung-xor">Die logische Verknüpfung XOR</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="..assets/images/unit03/xor_ex.jpg&quot;" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-08: Die logische Verknüpfung XOR , <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
-</figure>
-</div>
-</section>
-<section id="die-logische-verknüpfung-not" class="level3">
-<h3 class="anchored" data-anchor-id="die-logische-verknüpfung-not">Die logische Verknüpfung NOT</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/images/unit03/not_ex.jpg" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-08: Die logische Verknüpfung NOT , <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
-</figure>
-</div>
-</section>
-<section id="verschachtelte-logische-operatoren" class="level3">
-<h3 class="anchored" data-anchor-id="verschachtelte-logische-operatoren">Verschachtelte logische Operatoren</h3>
-<p>Für die im Folgenden dargestellten verschachtelten logischen Operatoren gelten die folgenden Angaben:</p>
+<section id="klammern-und-prioritäten" class="level2">
+<h2 class="anchored" data-anchor-id="klammern-und-prioritäten">Klammern und Prioritäten</h2>
+<p>Bei komplexeren Abfragen ist die <strong>Reihenfolge der Auswertung</strong> entscheidend. Klammern legen fest, welche Bedingungen zuerst zusammengefasst werden. Ohne Klammern kann derselbe Ausdruck zu einem anderen Ergebnis führen.</p>
+<p>In QGIS gilt für logische Operatoren in der Regel folgende Priorität:</p>
+<ol type="1">
+<li><code>NOT</code></li>
+<li><code>AND</code></li>
+<li><code>OR</code></li>
+</ol>
+<p>Deshalb sollte bei kombinierten Ausdrücken mit mehreren logischen Operatoren möglichst immer mit <strong>Klammern</strong> gearbeitet werden.</p>
+<p>Beispiel:</p>
 <ul>
-<li>Kreis 1: Baumart = “Lärche</li>
-<li>Kreis 2: Vorrat &gt; 110 m<sup>3</sup>/ha</li>
-<li>Kreis 3: Überschirmung &gt; 80%.</li>
+<li><p>Ohne Klammern:<br>
+<code>"Baumart" = 'Lärche' AND "Vorrat_m3_ha" &gt; 110 OR "Bodentyp" = 'Podzol'</code></p></li>
+<li><p>Mit Klammern:<br>
+<code>"Baumart" = 'Lärche' AND ("Vorrat_m3_ha" &gt; 110 OR "Bodentyp" = 'Podzol')</code></p></li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/images/unit03/nestedoperators.png" class="img-fluid figure-img"></p>
-<figcaption>Abbildung 03-09: Verschachtelte logische Operatoren , <span class="citation" data-cites="gitta2005">GITTA (<a href="#ref-gitta2005" role="doc-biblioref">2005-2016</a>)</span></figcaption>
-</figure>
-</div>
+<p>Beide Ausdrücke sehen ähnlich aus, führen aber nicht zwingend zur selben Auswahl.</p>
 </section>
+<section id="kernpunkt" class="level2">
+<h2 class="anchored" data-anchor-id="kernpunkt">Kernpunkt</h2>
+<p>Thematische Abfragen in QGIS bestehen nicht einfach aus „Befehlen“, sondern aus der <strong>Übersetzung fachlicher Fragen in Attributbedingungen und logische Verknüpfungen</strong>. Entscheidend ist daher, die Abfrage inhaltlich sauber zu formulieren und das Ergebnis anschließend in Karte und Tabelle zu kontrollieren.</p>
 </section>
 <section id="übung" class="level2">
 <h2 class="anchored" data-anchor-id="übung">Übung</h2>
@@ -821,26 +842,23 @@ background-size: cover;
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Betrachten Sie die folgende SQL-Abfrage:</p>
-<p><code>Select * from Parzelle where (Dichte &gt; 80% and Vorrat &gt; AVER(Parzelle.Vorrat)) or Baumart = „Lärche“</code></p>
+<p>Betrachten Sie den folgenden QGIS-Ausdruck:</p>
+<p><code>("Überschirmung" &gt; 80 AND "Vorrat_m3_ha" &gt; 110) OR "Baumart" = 'Lärche'</code></p>
 <ul>
-<li>Wie viele Operatoren können Sie identifizieren?</li>
-<li>Formulieren Sie die Abfrage in einen normalen Fragetext um.</li>
-<li>Ist es möglich, die Abfrage anders zu formulieren, um dasselbe Ergebnis zu erhalten?</li>
+<li>Wie viele <strong>Vergleichsoperatoren</strong> können Sie identifizieren?</li>
+<li>Wie viele <strong>logische Operatoren</strong> kommen vor?</li>
+<li>Formulieren Sie den Ausdruck in eine normale fachliche Frage um.</li>
+<li>Welche Objekte würden ausgewählt: nur sehr dichte Bestände, nur Lärchenbestände oder eine Kombination aus beidem?</li>
+<li>Wie würde sich das Ergebnis ändern, wenn zusätzliche Klammern gesetzt würden?</li>
 </ul>
 </div>
 </div>
 </div>
 
 
-
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-gitta2005" class="csl-entry" role="listitem">
-GITTA. 2005-2016. <span>„Overview of available modules [online]“</span>. 2005-2016. <a href="http://www.gitta.info/website/en/html/modules_overview.html">http://www.gitta.info/website/en/html/modules_overview.html</a>.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <div class="footer-banner">
 
     <a href="https://gisma-courses.github.io/gc/" target="_blank">GISMA (2026)</a> |
