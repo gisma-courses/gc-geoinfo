@@ -741,7 +741,7 @@ window.Quarto = {
   <li><a href="#einzugsgebiete-als-flächenhafte-ableitung" id="toc-einzugsgebiete-als-flächenhafte-ableitung" class="nav-link" data-scroll-target="#einzugsgebiete-als-flächenhafte-ableitung">Einzugsgebiete als flächenhafte Ableitung</a></li>
   <li><a href="#anwendungen-geomorphometrischer-ableitungen" id="toc-anwendungen-geomorphometrischer-ableitungen" class="nav-link" data-scroll-target="#anwendungen-geomorphometrischer-ableitungen">Anwendungen geomorphometrischer Ableitungen</a></li>
   <li><a href="#interpretation-und-grenzen" id="toc-interpretation-und-grenzen" class="nav-link" data-scroll-target="#interpretation-und-grenzen">Interpretation und Grenzen</a></li>
-  <li><a href="#anschluss-an-die-rasterbasierte-reliefhydrologie" id="toc-anschluss-an-die-rasterbasierte-reliefhydrologie" class="nav-link" data-scroll-target="#anschluss-an-die-rasterbasierte-reliefhydrologie">Anschluss an die rasterbasierte Reliefhydrologie</a></li>
+  <li><a href="#anschluss-an-die-folgenden-einheiten" id="toc-anschluss-an-die-folgenden-einheiten" class="nav-link" data-scroll-target="#anschluss-an-die-folgenden-einheiten">Anschluss an die folgenden Einheiten</a></li>
   <li><a href="#übung" id="toc-übung" class="nav-link" data-scroll-target="#übung">Übung</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit04/unit04-04.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
@@ -779,7 +779,7 @@ window.Quarto = {
 <p><span class="math display">\[
 \tan(\beta) = \frac{\Delta z}{d}
 \]</span></p>
-<p>Dabei ist <span class="math display">\[\Delta z\]</span> der Höhenunterschied und <span class="math display">\[d\]</span> die horizontale Entfernung. Je größer der Höhenunterschied bei gleicher Distanz ist, desto steiler ist die Fläche.</p>
+<p>Dabei ist <span class="math inline">\(\Delta z\)</span> der Höhenunterschied und <span class="math inline">\(d\)</span> die horizontale Entfernung. Je größer der Höhenunterschied bei gleicher Distanz ist, desto steiler ist die Fläche.</p>
 <p>Die Exposition beschreibt die Richtung des stärksten Gefälles. Sie gibt also an, wohin eine geneigte Fläche ausgerichtet ist. In der Praxis wird sie meist als Himmelsrichtung oder Winkel angegeben. Eine südexponierte Fläche hat andere Strahlungs- und Temperaturbedingungen als eine nordexponierte Fläche.</p>
 <p>Die Kurvatur beschreibt, ob eine Geländeoberfläche eher gewölbt, flach oder eingemuldet ist. Konvexe Bereiche können Rücken oder Kuppen anzeigen, konkave Bereiche dagegen Mulden, Sammelräume oder potenzielle Abflusskonzentrationen. Je nach Fragestellung wird zwischen verschiedenen Kurvaturformen unterschieden, etwa Profil- und Plankurvatur.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -831,10 +831,13 @@ window.Quarto = {
 <p>Besonders wichtig ist der Maßstab. Ein grobes Höhenmodell kann großräumige Geländeformen gut zeigen, aber kleine Gräben, Böschungen oder Geländekanten verlieren. Ein sehr feines Höhenmodell zeigt lokale Details, kann aber zugleich stärker durch Messrauschen, Vegetationsreste oder Artefakte geprägt sein.</p>
 <p>Außerdem beschreibt ein DGM in der Regel die Geländeoberfläche, nicht unbedingt Gebäude, Baumkronen oder andere Oberflächenobjekte. Für Sichtbarkeit, Mikroklima oder urbane Fragestellungen kann deshalb ein digitales Oberflächenmodell erforderlich sein. Die Aussagekraft einer Ableitung hängt also davon ab, ob das verwendete Modell zur Frage passt.</p>
 </section>
-<section id="anschluss-an-die-rasterbasierte-reliefhydrologie" class="level2">
-<h2 class="anchored" data-anchor-id="anschluss-an-die-rasterbasierte-reliefhydrologie">Anschluss an die rasterbasierte Reliefhydrologie</h2>
-<p>Die hier dargestellten Ableitungen führen bis zur Idee gerichteter und flächenhafter Geländeprozesse: Lokale Gefälle bestimmen Richtungen, Falllinien beschreiben Pfade, und Einzugsgebiete fassen Flächen mit gemeinsamem Auslass zusammen.</p>
-<p>In der anschließenden Einheit zur rasterbasierten Reliefhydrologie wird diese Logik formalisiert. Dort erhält jede Rasterzelle eine lokale Fließrichtung. Daraus entstehen Akkumulationsraster, potenzielle Gerinne, Einzugsgebiete und hydrologische Indexraster. Der Übergang ist damit konsequent: Aus Höhe wird Gefälle, aus Gefälle wird Richtung, aus Richtungen werden räumliche Prozessmuster.</p>
+<section id="anschluss-an-die-folgenden-einheiten" class="level2">
+<h2 class="anchored" data-anchor-id="anschluss-an-die-folgenden-einheiten">Anschluss an die folgenden Einheiten</h2>
+<p>Die hier dargestellten Ableitungen zeigen, wie aus einem Höhenraster mehr wird als eine Höhenkarte. Aus Höhenunterschieden entstehen lokale Geländeparameter wie Neigung, Exposition und Kurvatur. Entlang von Linien können Profile, Pauschalgefälle und Falllinien abgeleitet werden. Aus gerichteten Beziehungen können schließlich flächenhafte Einheiten wie Einzugsgebiete entstehen.</p>
+<p>Die folgenden beiden Einheiten greifen diese Logik auf und führen sie in zwei unterschiedliche Richtungen weiter.</p>
+<p>In der Einheit <strong>Sichtbarkeitsanalyse als räumliche Ableitung</strong> steht die Frage im Mittelpunkt, ob zwischen einem Beobachtungspunkt und einem Zielpunkt eine freie Sichtlinie besteht. Ausgangspunkt ist also eine linienhafte Beziehung im Geländeprofil. Wird dieser Sichtlinientest für viele Zielpunkte wiederholt, entsteht daraus ein flächenhaftes Sichtfeld. Die Einheit zeigt damit, wie aus Höhenprofilen und Sichtlinien eine räumliche Aussage über sichtbare und verdeckte Bereiche abgeleitet wird.</p>
+<p>In der Einheit <strong>Prozessbasierte Ableitungen aus Höhenrastern</strong> wird die Falllinienlogik formalisiert. Jede Rasterzelle erhält eine lokale Fließrichtung. Aus diesen Richtungen entstehen Akkumulationsraster, potenzielle Gerinne, Einzugsgebiete und hydrologische Indexraster. Diese Einheit zeigt damit, wie aus lokalen Gefällen gerichtete und akkumulative Prozessmuster im Raster abgeleitet werden.</p>
+<p>Beide Einheiten vertiefen denselben Grundgedanken: Ein DGM speichert zunächst nur Höhe. Räumliche Analyse entsteht erst, wenn aus Höhenunterschieden Beziehungen abgeleitet werden — als Sichtlinie, als Profil, als Falllinie, als Sichtfeld, als Einzugsgebiet oder als prozessbezogenes Rastermuster.</p>
 </section>
 <section id="übung" class="level2">
 <h2 class="anchored" data-anchor-id="übung">Übung</h2>
