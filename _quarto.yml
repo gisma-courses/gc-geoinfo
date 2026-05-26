@@ -96,8 +96,8 @@ website:
             #  text: Voronoi Polygone
             - href: unit04/unit04-03.qmd
               text: Informationsloser Raum
-            #- href: unit04/unit04-04.qmd
-            #  text: Digitale Geländemodelle
+            - href: unit04/unit04-04.qmd
+              text: Digitale Geländemodelle
             - href: unit04/unit04-05.qmd
               text: Sichtweite und Sichtfeld
             - href: unit04/unit04-06.qmd
