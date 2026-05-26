@@ -1425,7 +1425,7 @@
     "text": "Leitfrage der Sitzung\nRäumliche Entscheidungsfindung beginnt dort, wo mehrere räumliche Kriterien nicht nur analysiert, sondern bewertet, gewichtet und miteinander kombiniert werden.\nräumliche Frage → Kriterien → Standardisierung → Gewichtung → Kombination → Interpretation\n\nDie Karte ist dabei kein neutrales Ergebnis. Sie ist die räumliche Form einer begründeten Bewertungslogik.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1436,7 +1436,7 @@
     "text": "Lernziele\nNach der Sitzung sollten Sie erklären können,\n\nwarum Eignungs- und Kostenkarten Entscheidungsmodelle sind,\nwie räumliche Kriterien operationalisiert und standardisiert werden,\nwie boolesche und gewichtete Verschneidungen funktionieren,\nwarum Gewichte fachliche Annahmen sichtbar machen,\nwie aus einer Eignungskarte Zielkonflikte und Kostenfragen entstehen,\nwelche Aussagegrenzen solche Karten besitzen.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1447,7 +1447,7 @@
     "text": "Warum räumliche Entscheidung?\nViele Planungsfragen sind räumlich und konfliktgeladen:\n\nWo ist eine Fläche geeignet, ohne andere Ziele stark zu verletzen?\n\n\nEin GIS kann solche Entscheidungen nicht ersetzen. Es kann aber Kriterien, Annahmen und Zielkonflikte räumlich sichtbar machen.\n\n\nEntscheidend ist nicht nur, welche Karte entsteht, sondern welche Annahmen in der Karte stecken.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1458,7 +1458,7 @@
     "text": "Von Analyse zu Bewertung\nIn Unit04 ging es vor allem um Ableitungen:\nPunktdaten → Interpolationsfläche\nHöhenraster → Sichtfeld oder Fließrichtung\nDistanzen → Nähe- oder Kostenoberflächen\n\nIn Unit05 werden diese Ableitungen bewertet:\nNähe → günstig oder ungünstig?\nHangneigung → geeignet oder problematisch?\nLandnutzung → Kriterium, Ausschluss oder Widerstand?",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1469,7 +1469,7 @@
     "text": "Eignungsanalyse\nEine Eignungsanalyse sucht Räume, die eine Kombination bestimmter Eigenschaften erfüllen.\n\nWaldnähe + Siedlungsferne + geringe Versiegelung + geeignete Reliefbedingungen → potenzielle Eignung\n\n\nEine Eignungskarte zeigt nicht „die Wahrheit“, sondern das Ergebnis einer räumlichen Bewertungsregel.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1480,7 +1480,7 @@
     "text": "Eignung und Vulnerabilität\n\n\n\nEignung\nHohe Werte bedeuten meist:\n\n\n\nhier passt die Fläche gut zum Ziel.\n\n\n\n\n\nBeispiel: potenziell geeigneter Standort, Habitat, Nutzung, Korridor.\n\n\nVulnerabilität / Gefahr\nHohe Werte bedeuten meist:\n\n\n\n\n\nhier ist die Fläche stärker betroffen oder gefährdet.\n\n\n\nBeispiel: Lawinengefahr, Überflutungsrisiko, Erosionsanfälligkeit.\n\n\n\n\nDie Richtung der Skala muss vor der Kombination eindeutig sein.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1491,7 +1491,7 @@
     "text": "Wildkatzen im Marburger Uniwald\n\n \n\n\nDie Beobachtungen begründen das Beispiel. Die folgende Eignungsanalyse ist trotzdem keine Nachweiskarte und kein validiertes Habitatmodell.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1502,7 +1502,7 @@
     "text": "Ausgangsfrage Wildkatze\nDie fachliche Frage lautet nicht:\n\nWo wurde eine Wildkatze fotografiert?\n\nsondern:\n\nWo könnten innerhalb des Untersuchungsraums Flächen liegen, die nach ausgewählten Kriterien eher geeignet oder eher ungeeignet sind?\n\n\nAus Beobachtung wird Modellfrage. Aus Modellfrage wird Kriterienlogik.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1513,7 +1513,7 @@
     "text": "Kriterienmodell\nFür das Beispiel werden Kriterien als Proxys genutzt:\n\n\n\nGünstig\nWalddichte / Deckung\nSiedlungsferne\ngeeignete Reliefbedingungen\n\n\nAusschluss oder Abwertung\nversiegelte Flächen\nstark bebaute Bereiche\nstörungsnahe Bereiche\n\n\n\n\nDie Kriterien sind bewusst vereinfacht. Sie zeigen die GIS-Logik, nicht die vollständige Autoökologie der Wildkatze.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1524,7 +1524,7 @@
     "text": "Von Kriterium zu Rasterwert\nEine Multikriterienanalyse braucht gemeinsame Skalen.\n\nRohdaten → räumlicher Parameter → Reklassifikation → standardisierter Kriterienwert\n\nBeispiel:\nSiedlungen → Distanz zur nächsten Siedlung → Störungsklassen → Eignungswert 0…1\n\nErst dadurch können unterschiedliche Kriterien miteinander verrechnet werden.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1535,7 +1535,7 @@
     "text": "Boolesche Verschneidung\n\n\nBei boolescher Verschneidung gilt oft: Ein Ausschlusskriterium reicht, um eine Fläche aus dem Ergebnis zu entfernen.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1546,7 +1546,7 @@
     "text": "Boolesche Logik\nWenn zwei Kriterien nur 0 oder 1 annehmen, kann Eignung als harte Bedingung formuliert werden:\n\\[\nE = K_1 \\times K_2\n\\]\n\nNur wenn beide Kriterien erfüllt sind, bleibt die Fläche geeignet.\n\n\nVorteil: klar und transparent. Nachteil: hart, unempfindlich gegenüber Abstufungen.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1557,7 +1557,7 @@
     "text": "Ranglisten statt Ausschluss\nStatt harte Ausschlüsse zu erzeugen, können Kriterienwerte addiert werden:\n\\[\nR = K_1 + K_2\n\\]\n\nDas Ergebnis ist keine Ja/Nein-Karte mehr, sondern eine einfache Rangfolge.\n\n\nDamit beginnt der Übergang zur gewichteten Eignungsschätzung.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1568,7 +1568,7 @@
     "text": "Von boolesch zu gewichtet\nViele räumliche Entscheidungen sind nicht hart binär.\nEine Fläche kann gering, mittel oder hoch geeignet sein. Dann werden Kriterien standardisiert und gewichtet kombiniert.\n\\[\nE = \\sum_i w_i \\cdot K_i\n\\]\nmit\n\\[\n\\sum_i w_i = 1\n\\]",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1579,7 +1579,7 @@
     "text": "Gewichtete Kriterienaddition\n\n\nGewichtung macht eine fachliche Entscheidung sichtbar: Nicht jedes Kriterium zählt gleich stark.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1590,7 +1590,7 @@
     "text": "Beispielgewichte\nFür das Wildkatzenbeispiel könnte eine einfache Gewichtung lauten:\nWalddichte        0.40\nSiedlungsdistanz 0.30\nHangneigung      0.20\nExposition       0.10\n\nDie Gewichte ergeben zusammen 1 und können direkt im Rasterrechner verwendet werden.\n\n\nWichtig ist nicht, dass diese Gewichte „objektiv wahr“ sind. Wichtig ist, dass sie begründet und dokumentiert werden.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1601,7 +1601,7 @@
     "text": "Rasterrechner als Modellformel\n(\n  \"walddichte_idx@1\" * 0.40 +\n  \"siedlungsdistanz_idx@1\" * 0.30 +\n  \"hangneigung_idx@1\" * 0.20 +\n  \"exposition_idx@1\" * 0.10\n)\n*\n\"einschraenkung_mask@1\"\n\nDer Ausdruck ist die technische Form der Bewertungslogik.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1612,7 +1612,7 @@
     "text": "Einschränkungsmaske\nEine Maske entscheidet, welche Flächen überhaupt bewertbar bleiben.\n1 = Fläche bleibt im Modell\n0 = Fläche wird ausgeschlossen\n\nBeispiele: versiegelte Flächen, Gebäude, Wasserflächen, rechtliche Ausschlussgebiete.\n\n\nEine Maske ist keine Gewichtung. Sie verändert den Möglichkeitsraum des Modells.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1623,7 +1623,7 @@
     "text": "Interpretation der Eignungskarte\nEine Eignungskarte muss doppelt gelesen werden:\n\n\n\nWas sie zeigt\nräumliche Verteilung der modellierten Eignung\nrelative Unterschiede zwischen Flächen\nFolgen der gewählten Kriterien und Gewichte\n\n\nWas sie nicht zeigt\ntatsächliche Wildkatzenpräsenz\nvalidierte Habitatqualität\nvollständige ökologische Realität",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1634,7 +1634,7 @@
     "text": "AHP: Gewichte systematischer herleiten\nDer Analytic Hierarchy Process ersetzt keine fachliche Entscheidung.\nEr macht sie strukturierter:\nKriterien paarweise vergleichen\n→ Vergleichsmatrix erzeugen\n→ Gewichte berechnen\n→ Konsistenz prüfen\n\nAHP hilft bei der Dokumentation von Gewichtungen, macht aber unsichere Kriterien nicht automatisch belastbar.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1645,7 +1645,7 @@
     "text": "Paarvergleich\nBeispielhafte Frage im AHP:\n\nIst Walddichte wichtiger als Siedlungsnähe?\n\n\nBewertungsskala:\n1 = gleich wichtig\n3 = etwas wichtiger\n5 = deutlich wichtiger\n7 = sehr stark wichtiger\n9 = extrem wichtiger\n\n\nAus vielen Paarvergleichen entsteht eine Gewichtung.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1656,7 +1656,7 @@
     "text": "Von MCE zu MOE\nEine Multi Criteria Evaluation bewertet mehrere Kriterien für ein Ziel.\nZiel: Wildkatzenhabitat\nKriterien: Walddichte, Siedlungsferne, Hangneigung, Exposition\n→ eine Eignungskarte\n\nEine Multi Objective Evaluation vergleicht mehrere Ziele.\nWildkatzenhabitat | Erholung | Forstwirtschaft\n→ mehrere Eignungskarten und mögliche Zielkonflikte",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1667,7 +1667,7 @@
     "text": "Multi-Objective Evaluation\n\n\nMOE macht sichtbar, wo Flächen eindeutig einem Ziel zugeordnet werden können und wo konkurrierende Eignungen auftreten.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1678,7 +1678,7 @@
     "text": "Zielkonflikte als Ergebnis\nEin Konflikt ist kein Modellfehler.\n\nhohe Eignung für Wildkatze + hohe Eignung für Erholung → planerischer Zielkonflikt\n\n\nGerade Konfliktflächen sind relevant, weil dort fachliche oder politische Abwägung notwendig wird.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1689,7 +1689,7 @@
     "text": "Von Eignung zu Kosten\nEignung fragt:\n\nWo ist etwas geeignet?\n\nKostenanalyse fragt:\n\nWie aufwendig ist es, ein Ziel zu erreichen oder eine Verbindung herzustellen?\n\n\nBeide arbeiten mit Rasteroberflächen, aber die Bedeutung der Werte ist umgekehrt.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1700,7 +1700,7 @@
     "text": "Kostenanalyse auf Werteoberflächen\n\n\nHohe Werte bedeuten hier nicht „gut“, sondern hohen Aufwand, Widerstand oder geringe Durchlässigkeit.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1711,7 +1711,7 @@
     "text": "Kostenoberfläche\nEine Kostenoberfläche kombiniert mehrere Kostentreiber:\n\\[\nK = K_1 \\cdot w_1 + K_2 \\cdot w_2 + K_3 \\cdot w_3 + \\dots + K_n \\cdot w_n\n\\]\n\nBeispiel:\n\\[\nK = \\text{Hangneigung} \\cdot 0.4 + \\text{Landnutzung} \\cdot 0.4 + \\text{Siedlungsnähe} \\cdot 0.2\n\\]",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1722,7 +1722,7 @@
     "text": "Kumulative Kosten\nAuf einer Kostenoberfläche zählt nicht die Luftlinie, sondern der aufsummierte Aufwand entlang eines Pfades.\n\\[\nC_{\\text{Pfad}} = \\sum_i K_i\n\\]\n\nDer minimale Kostenpfad ist der Pfad mit der geringsten aufsummierten Kostenlast:\n\\[\nC_{\\text{min}} = \\min \\left( \\sum_i K_i \\right)\n\\]",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1733,7 +1733,7 @@
     "text": "Wildkatze: Eignung und Verbindung\nFür das Wildkatzenbeispiel verschiebt die Kostenanalyse die Frage:\nEignungskarte:\nWo liegen potenziell geeignete Lebensräume?\n\nKostenoberfläche:\nWie gut sind diese Lebensräume miteinander verbunden?\n\nEine Fläche kann geeignet sein, aber durch Barrieren schlecht erreichbar oder stark isoliert.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1744,7 +1744,7 @@
     "text": "Konzeptuelle Umsetzung in QGIS\nDer Workflow bleibt eine Modellkette:\nKostentreiber auswählen\n→ Daten auf Raster bringen\n→ Werte in Kosten übersetzen\n→ Kostenraster gewichten und kombinieren\n→ kumulative Kosten oder Kostenpfade berechnen\n→ Ergebnis interpretieren\n\nTypische Werkzeuge: Rasterisieren, Hangneigung, Rasterdistanz, Reklassifikation, Rasterrechner, r.cost, r.walk, Least-cost path.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1755,7 +1755,7 @@
     "text": "Zentrale Unterscheidung\n\n\n\nEignung\nhoher Wert = gut geeignet\nFrage: Wo passt die Fläche zum Ziel?\n\n\nKosten\nhoher Wert = hoher Widerstand\nFrage: Wie aufwendig ist Bewegung oder Verbindung?\n\n\n\n\nVor jeder Kombination muss klar sein, welche Richtung die Werte haben.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1766,7 +1766,7 @@
     "text": "Ergebnis und Aussagegrenze\nEignungs- und Kostenkarten sind Entscheidungsunterstützung.\nSie liefern keine automatische Entscheidung.\n\nSie zeigen:\nDaten + Kriterien + Gewichtung + Ausschlussregeln + Modellannahmen\nals räumliches Ergebnis.\n\n\nEine gute Karte macht Annahmen sichtbar, statt sie zu verstecken.",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1777,7 +1777,7 @@
     "text": "Zusammenfassung\nUnit05 verbindet vier Ebenen:\nEignung\n→ Welche Flächen passen zu einem Ziel?\n\nGewichtung\n→ Welche Kriterien zählen stärker?\n\nZielkonflikt\n→ Wo konkurrieren mehrere Ziele?\n\nKosten\n→ Wie durchlässig oder widerständig ist der Raum?",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1788,7 +1788,7 @@
     "text": "Arbeitsauftrag\nWählen Sie für ein kleines GIS-Projekt eine räumliche Entscheidungsfrage.\nFormulieren Sie dazu:\nZiel\nKriterien\nSkalenrichtung\nGewichtung oder Ausschlusslogik\nerwartete Karte\nzentrale Aussagegrenze\n\nDer wichtigste Satz der Dokumentation lautet: Warum führt genau diese Kriterienlogik zu genau dieser Karte?",
     "crumbs": [
       "Foliensätze zu den Readern",
-      "Eigenungen, Entscheidungen und Kosten"
+      "Eignungen, Entscheidungen und Kosten"
     ]
   },
   {

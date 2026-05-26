@@ -141,7 +141,7 @@ website:
             - href: slides/unit04_raeumliche_ableitungen.qmd
               text: Räumliche Ableitungen               
             - href: slides/unit05_raeumliche_bewertung_entscheidung.qmd
-              text: Eigenungen, Entscheidungen und Kosten
+              text: Eignungen, Entscheidungen und Kosten
 
 execute:
   freeze: auto
