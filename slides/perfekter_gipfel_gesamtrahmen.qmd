@@ -1,6 +1,6 @@
 ---
 title: "Der perfekte Gipfel"
-subtitle: "Problemlösung, Modellbildung und GIS-Umsetzung dokumentieren"
+subtitle: "Problemlösung dokumentieren: von der Idee zum nachvollziehbaren GIS-Workflow"
 author: Chris Reudenbach
 format:
   revealjs:
@@ -19,7 +19,7 @@ lang: de
 <style>
 .reveal .slides section { text-align: left; }
 .reveal h2 { letter-spacing: -0.02em; }
-.reveal .big { font-size: 1.32em; line-height: 1.25; }
+.reveal .big { font-size: 1.30em; line-height: 1.25; }
 .reveal .small { font-size: .72em; color: #475569; }
 .reveal .center { text-align: center; }
 .reveal .fullfig {
@@ -42,21 +42,22 @@ lang: de
   left: 4%;
   bottom: 5%;
   width: 54%;
-  background: rgba(255,255,255,.92);
+  background: rgba(255,255,255,.93);
   border-left: 8px solid #2e7d32;
   padding: .6em .8em;
   font-size: .72em;
   box-shadow: 0 8px 28px rgba(0,0,0,.18);
 }
 .reveal .overlay-note.right { left: auto; right: 4%; }
-.reveal .overlay-note.wide { width: 72%; }
+.reveal .overlay-note.top { bottom: auto; top: 11%; }
+.reveal .overlay-note.wide { width: 74%; }
 .reveal .keyline {
   border-left: 8px solid #1f6f5b;
   padding-left: .8em;
   margin-top: .8em;
 }
 .reveal .process {
-  font-size: 1.2em;
+  font-size: 1.16em;
   line-height: 1.55;
   padding: .7em .9em;
   border: 2px solid #1f6f5b;
@@ -69,32 +70,45 @@ lang: de
   background: #f8fafc;
   border: 1.5px solid #cbd5e1;
 }
+.reveal .docgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .65em;
+  font-size: .84em;
+}
+.reveal .doccard {
+  border: 1.5px solid #cbd5e1;
+  border-radius: 14px;
+  background: #f8fafc;
+  padding: .55em .7em;
+}
+.reveal .doccard strong { color: #0b2b68; }
 .reveal code { font-size: .88em; }
 </style>
 ```
 
-## Warum dieses Beispiel?
+## Worum es hier geht
 
-Der „perfekte Gipfel“ ist kein fertiges GIS-Problem. Er beginnt als unscharfe Alltagsfrage und muss erst in messbare räumliche Kriterien übersetzt werden.
+Der „perfekte Gipfel“ ist ein gutes Beispiel für ein kleines GIS-Projekt, weil die Frage zunächst unscharf ist.
 
-::: {.fragment .keyline}
-Das Beispiel zeigt den gesamten Rahmen eines kleinen GIS-Projekts: Problem verstehen, Frage schärfen, Kriterien bilden, Daten auswählen, Operationen planen, Umsetzung dokumentieren und Ergebnisgrenzen benennen.
+::: {.fragment .process}
+Aus einer Idee wird erst dann ein Projekt, wenn dokumentiert ist, wie sie in Kriterien, Daten, Operationen und Ergebnisgrenzen übersetzt wurde.
 :::
 
-## Vom Problem zur Handlung
+::: {.fragment .keyline}
+Die Folien sind deshalb nicht als Programmierbeispiel gedacht, sondern als Beispiel für **Problemklärung und Workflow-Dokumentation**.
+:::
+
+## Dokumentationsrahmen
+
+Für jedes GIS-Projekt muss die gleiche Kette lesbar bleiben:
 
 ```text
-Problem / Interesse
-→ Fragestellung
-→ fachliche Kriterien
-→ Datenmodell
-→ GIS-Operationen
-→ Ergebnis
-→ Interpretation und Grenze
+Problem → Projektfrage → Kriterium → Datenbasis → Operation → Ergebnislayer → Aussagegrenze
 ```
 
 ::: {.fragment .keyline}
-Nicht das Werkzeug steht am Anfang, sondern die Entscheidung, welche räumliche Eigenschaft überhaupt bestimmt werden soll.
+Die Dokumentation beschreibt nicht jede Mausbewegung. Sie beschreibt die fachlich entscheidenden Übersetzungsschritte.
 :::
 
 ## Ausgangspunkt: Was ist ein „perfekter Gipfel“?
@@ -104,131 +118,159 @@ Nicht das Werkzeug steht am Anfang, sondern die Entscheidung, welche räumliche 
 :::
 
 ::: {.fragment .overlay-note .wide}
-Die Ausgangsfrage ist absichtlich unscharf. Genau daran lässt sich zeigen, wie aus einem sprachlichen Qualitätsurteil ein räumlich berechenbares Problem wird.
+Dokumentationspunkt: Die Ausgangsidee ist ein Qualitätsurteil. Vor der GIS-Umsetzung muss geklärt werden, welche räumlichen Eigenschaften dieses Urteil tragen sollen.
 :::
 
-## Erste Zerlegung des Problems
+## Von der Idee zur Projektfrage
 
-Ein Gipfel wirkt nicht nur durch seine absolute Höhe.
+Aus „perfekter Gipfel“ wird keine GIS-Analyse. Eine bearbeitbare Frage braucht eine messbare Zielrichtung.
+
+::: {.fragment .process}
+Welche Gipfel sind nach Höhe, Dominanz, Prominenz und Eigenständigkeit besonders ausgeprägt?
+:::
+
+::: {.fragment .keyline}
+Das ist der erste dokumentierbare Schritt: Die Alltagsformulierung wird in eine räumliche Analysefrage übersetzt.
+:::
+
+## Kriterien statt Bauchgefühl
 
 ::: {layout-ncol="2" layout-valign="center"}
 
 ![](../assets/images/pp/agis-concept1.png){.tallfig}
 
 ::: {.framebox}
-Entscheidend werden mehrere räumliche Eigenschaften:
+Aus dem Begriff entstehen Kriterien:
 
 ```text
-Höhe und Position
+Höhe / Position
 Dominanz
 Prominenz / Schartenhöhe
 Eigenständigkeit
 ```
 
+Nicht alle Kriterien sind direkt im DGM gespeichert. Einige müssen abgeleitet werden.
 :::
 
 :::
 
 ::: {.fragment .overlay-note .wide}
-Das ist der erste methodische Schritt: Ein unpräziser Begriff wird in prüfbare Kriterien zerlegt.
+Dokumentationspunkt: Für jedes Kriterium muss festgehalten werden, welche Datenbasis und welche Ableitungslogik verwendet wird.
 :::
 
-## Formale Abstraktion
+## Formale Definition als Entscheidung
 
 ![](../assets/images/pp/formel.png){.fullfig}
 
 ::: {.fragment .overlay-note .right}
-Die Formel ist nicht der Anfang des Projekts. Sie ist das Ergebnis einer begrifflichen Entscheidung: Welche Eigenschaften zählen und wie werden sie verrechnet?
+Eine Formel ist keine neutrale Wahrheit. Sie dokumentiert, welche Eigenschaften in die Bewertung eingehen und wie sie gewichtet bzw. verrechnet werden.
 :::
 
-## Vom Begriff zum Modell
+## Modellbildung dokumentieren
 
 ::: {layout-ncol="2" layout-valign="center"}
 
 ![](../assets/images/pp/agis-concept2.png){.fullfig}
 
 ::: {.framebox}
-Für ein GIS-Projekt muss geklärt werden:
+Für die Methodennotiz reicht die technische Formel nicht.
+
+Dokumentiert werden muss:
 
 ```text
-Welche Objekte?      → Gipfelpunkte
-Welche Fläche?       → Höhenmodell
-Welche Beziehungen?  → Distanz, Höhe, Verbindung, Trennung
-Welche Ausgabe?      → Rang, Prominenz, Eigenständigkeit
+Objekte: Gipfelpunkte
+Fläche: Höhenmodell
+Beziehungen: Distanz, Trennung, Verbindung
+Produkt: Prominenz / Eigenständigkeit
 ```
-
 :::
 
 :::
 
-## Problemlösung als dokumentierbarer Prozess
+## Problemlösung als Arbeitsprotokoll
 
 ![](../assets/images/pp/slide1png.png){.fullfig}
 
 ::: {.fragment .overlay-note}
-Die Folie gehört in den Projektrahmen: Sie macht sichtbar, dass GIS-Arbeit nicht nur Bedienung ist, sondern Problemlösung unter technischen und fachlichen Randbedingungen.
+Diese Folie wird im Kurs als Dokumentationsfolie gelesen: Welche Teilprobleme entstehen, welche Entscheidungen werden getroffen, welche Zwischenergebnisse müssen gesichert werden?
 :::
 
-## Das Problemlösungs-Handwerk
+## Vom Problem zu Arbeitspaketen
 
 ![](../assets/images/pp/slide2png.png){.fullfig}
 
 ::: {.fragment .overlay-note .right}
-Für die Dokumentation zählt nicht jede Mausbewegung. Dokumentiert werden die entscheidenden Übersetzungen: Kriterium, Datenbasis, Operation, Parameter und Ergebnislayer.
+Nicht alles muss automatisiert werden. Wichtig ist, dass die relevanten Arbeitspakete benannt werden: Datenprüfung, Kriteriendefinition, Operation, Kontrolle, Ergebnisinterpretation.
 :::
 
-## Drei Umsetzungsformen
-
-::: {layout-ncol="3"}
-
-### Interaktiv
-
-QGIS-Werkzeuge, visuelle Prüfung, schnelle Varianten.
-
-### Kommandozeile
-
-Wiederholbare Aufrufe, Parameter werden sichtbar.
-
-### Skript
-
-Workflow wird reproduzierbar, variierbar und dokumentierbar.
-
-:::
-
-::: {.fragment .keyline}
-Die drei Formen sind keine Hierarchie von „richtig“ und „falsch“. Sie unterscheiden sich vor allem darin, wie gut der Arbeitsweg wiederholbar und überprüfbar wird.
-:::
-
-## Interaktives GI-Handwerk
+## Umsetzung dokumentieren: interaktiv
 
 ![](../assets/images/pp/slide3.png){.fullfig}
 
 ::: {.fragment .overlay-note}
-Interaktive Arbeit ist für Exploration stark. Für eine Abgabe muss aber festgehalten werden, welche Schritte wirklich zum Ergebnis geführt haben.
+Interaktive Arbeit ist zulässig. Dokumentiert werden aber die stabilen Schritte: Werkzeug, Eingangsdaten, zentrale Parameter, Ausgabe und fachlicher Zweck.
 :::
 
-## Kommandozeilen-GI-Handwerk
+## Umsetzung dokumentieren: reproduzierbare Befehle
 
 ![](../assets/images/pp/slide4.png){.fullfig}
 
 ::: {.fragment .overlay-note .right}
-Die Kommandozeile macht Parameter expliziter. Dadurch wird der Schritt leichter überprüfbar als eine rein visuelle Bediensequenz.
+Kommandozeilen oder kopierte Processing-Aufrufe sind hier kein Programmierziel. Sie sind ein Mittel, um Parameter und Dateipfade eindeutig zu sichern.
 :::
 
-## Programmierung für Nicht-Programmierer*innen
+## Umsetzung dokumentieren: Ablauf statt Code
 
 ![](../assets/images/pp/slide5.png){.fullfig}
 
 ::: {.fragment .overlay-note}
-Skripte sind hier kein Selbstzweck. Sie sichern eine nachvollziehbare Folge von Verarbeitungsschritten.
+Wenn Skripte verwendet werden, dann als dokumentierte Ablaufbeschreibung. Entscheidend bleibt: Welche Entscheidung wird umgesetzt und welcher Ergebnislayer entsteht?
 :::
 
-## Übersetzung in technische GI-Erfordernisse
+## Übersetzung in GIS-Anforderungen
 
 ![](../assets/images/pp/slide6.png){.fullfig}
 
 ::: {.fragment .overlay-note .wide}
-Hier liegt der Kern der Projektarbeit: Die fachliche Frage wird in Datenstrukturen, Operationen, Parameter und Ergebnisprodukte übersetzt.
+Hier liegt der Kern der Dokumentation: Fachliche Begriffe werden in Datenstrukturen, Raster-/Vektoroperationen, Parameter und Zwischenergebnisse übersetzt.
+:::
+
+## Dokumentationsschema für einen Hauptschritt
+
+Ein Hauptschritt sollte knapp, aber vollständig dokumentiert werden.
+
+::: {.docgrid}
+
+::: {.doccard}
+<strong>Zweck</strong><br>
+Welches Kriterium oder Teilproblem wird bearbeitet?
+:::
+
+::: {.doccard}
+<strong>Datenbasis</strong><br>
+Welche Eingangsdaten werden verwendet?
+:::
+
+::: {.doccard}
+<strong>Operation</strong><br>
+Welche GIS-Operation wird eingesetzt?
+:::
+
+::: {.doccard}
+<strong>Parameter</strong><br>
+Welche Schwellenwerte, Toleranzen oder Abbruchkriterien gelten?
+:::
+
+::: {.doccard}
+<strong>Ausgabe</strong><br>
+Welcher Layer oder Wert entsteht?
+:::
+
+::: {.doccard}
+<strong>Grenze</strong><br>
+Wovon hängt die Aussagekraft ab?
+:::
+
 :::
 
 ## Wie soll das gehen?
@@ -236,7 +278,7 @@ Hier liegt der Kern der Projektarbeit: Die fachliche Frage wird in Datenstruktur
 ![](../assets/images/pp/slide7.png){.fullfig}
 
 ::: {.fragment .overlay-note .right}
-Ein komplexes Problem wird nicht „auf einmal“ gelöst. Es wird in Teilentscheidungen zerlegt, die einzeln prüfbar und dokumentierbar sind.
+Ein komplexes Problem wird dokumentierbar, wenn es in prüfbare Zwischenschritte zerlegt wird. Die Dokumentation folgt dieser Zerlegung.
 :::
 
 ## Beispiel: Prominenz durch Fluten denken
@@ -244,80 +286,98 @@ Ein komplexes Problem wird nicht „auf einmal“ gelöst. Es wird in Teilentsch
 ![](../assets/images/pp/flood0.png){.fullfig}
 
 ::: {.fragment .overlay-note .wide}
-Prominenz lässt sich als Trennungsproblem im Relief verstehen: Bei welchem „Flutniveau“ bleibt der aktuelle Gipfel noch als eigene Einheit von anderen Gipfeln getrennt?
+Dokumentationspunkt: Die fachliche Idee lautet nicht „wir benutzen ein Tool“, sondern: Wir variieren ein Flutniveau und prüfen, wann der aktuelle Gipfel mit anderen Gipfeln verbunden wird.
 :::
 
-## Suchstrategie statt stumpfer Wiederholung
+## Suchstrategie festhalten
 
 ![](../assets/images/pp/flood1.png){.fullfig}
 
 ::: {.fragment .overlay-note}
-Der erste naive Lösungsweg wäre schrittweises Fluten. Effizienter ist eine Suchstrategie, die den Höhenbereich systematisch eingrenzt.
+Der naive Weg wäre schrittweises Fluten. Die dokumentierte Verbesserung ist eine Suchstrategie, die den relevanten Höhenbereich systematisch eingrenzt.
 :::
 
-## Binäre Suche und Abbruchkriterium
+## Abbruchkriterium dokumentieren
 
 ![](../assets/images/pp/flood2.png){.fullfig}
 
 ::: {.fragment .overlay-note .right}
-Die Umsetzung braucht ein Abbruchkriterium. Genau solche Entscheidungen gehören in die Workflow-Dokumentation: Wie genau genug ist genau genug?
+Für die Aussagekraft ist nicht nur das Ergebnis wichtig, sondern auch: Wann wurde die Suche beendet und welche Genauigkeit wurde akzeptiert?
 :::
 
-## Dokumentation am Beispiel „Prominenz“
+## Beispiel einer Methodennotiz
 
 ```text
-Projektfrage:
+Fragestellung:
 Wie eigenständig ist ein Gipfel im Verhältnis zu benachbarten Gipfeln?
-
-Datenbasis:
-Digitales Höhenmodell und Gipfelpunkte.
 
 Kriterium:
 Prominenz / Schartenhöhe.
 
+Datenbasis:
+Digitales Höhenmodell und Gipfelpunkte.
+
 Operationelle Idee:
-Flutniveau variieren und prüfen, wann Gipfelbereiche verbunden werden.
+Flutniveau variieren und Verbindung der Gipfeleinheiten prüfen.
 
-Umsetzung:
-Iteratives Fluten, effizienter über binäre Suche.
+Suchstrategie:
+Höhenbereich durch binäre Suche eingrenzen.
 
-Ergebnis:
-Schwellenhöhe bzw. Prominenzwert.
+Abbruchkriterium:
+Suche endet bei definierter Höhentoleranz.
 
-Grenze:
-Ergebnis hängt von DEM-Auflösung, Gipfelerkennung und Abbruchkriterium ab.
+Aussagegrenze:
+DEM-Auflösung, Gipfelerkennung und Toleranz beeinflussen den Wert.
 ```
 
-## Anschluss an das Mini-Projektpaket
-
-Das Beispiel zeigt, was Studierende für ihre eigenen Projekte leisten sollen:
+## Was davon ins eigene Projekt gehört
 
 ::: {.process}
-Fragestellung schärfen → Kriterien ableiten → Daten wählen → Operationen planen → Umsetzung dokumentieren → Ergebnis kritisch begrenzen
+Projektfrage schärfen → Kriterien ableiten → Daten wählen → Hauptschritte planen → Parameter begründen → Ergebnislayer sichern → Aussagegrenze benennen
 :::
 
 ::: {.fragment .keyline}
-Die Workflow-Dokumentation ist keine vollständige History. Sie hält die fachlich entscheidenden Schritte fest.
+Das Gipfelbeispiel ist nur komplexer als viele Kursprojekte. Die Dokumentationslogik ist dieselbe.
 :::
 
-## Übertrag auf eigene GIS-Projekte
+## Nicht dokumentieren: vollständige History
 
-Ein eigenes Mini-Projekt muss nicht algorithmisch so komplex sein. Die Struktur ist aber dieselbe:
+Eine Workflow-Dokumentation ist kein Mitschnitt jeder Bedienhandlung.
+
+Dokumentiert werden nur Hauptschritte, die das Ergebnis fachlich verändern.
 
 ```text
-Siedlungsferne      → Distanzraster     → Reklassifikation
-Hangneigung         → DGM-Ableitung      → Eignungsklasse
-Waldanteil          → Landbedeckung      → Flächenkriterium
-Schutzgebiet        → Overlay / Maske    → Ausschluss oder Kontext
+nicht: Layer verschoben, Stil getestet, Ansicht gezoomt
+sondern: Distanz berechnet, reklassifiziert, gewichtet, maskiert, kombiniert
 ```
 
 ::: {.fragment .keyline}
-Wichtig ist nicht die Anzahl der Werkzeuge, sondern die begründete Kette zwischen Frage, Kriterium, Operation und Ergebnis.
+Die Leitfrage lautet: Könnte eine andere Person den methodischen Weg fachlich nachvollziehen?
+:::
+
+## Übertrag auf einfache GIS-Projekte
+
+```text
+Siedlungsferne
+→ Distanz zur Siedlung
+→ Reklassifikation
+→ Störungskriterium
+→ Beitrag zur Eignungskarte
+
+Hangneigung
+→ DGM-Ableitung
+→ Klassenbildung
+→ Reliefkriterium
+→ Beitrag zur Eignungskarte
+```
+
+::: {.fragment .keyline}
+Auch einfache Projekte brauchen keine lange History, sondern eine begründete Kette zwischen Frage, Kriterium, Operation und Ergebnis.
 :::
 
 ## Prüfregel für die Dokumentation
 
-Für jeden Hauptschritt muss eine fremde Person verstehen können:
+Für jeden Hauptschritt sollte eine fremde Person erkennen können:
 
 ```text
 Warum dieser Schritt?
@@ -329,5 +389,5 @@ Welche Aussagegrenze?
 ```
 
 ::: {.fragment .big .keyline}
-Das Gipfelbeispiel ist deshalb kein Sonderfall, sondern ein gutes Muster: Es zeigt, wie aus einer unscharfen Idee ein dokumentierbarer GIS-Workflow wird.
+Das Ziel ist nicht Programmierung. Das Ziel ist nachvollziehbare GIS-Arbeit.
 :::
