@@ -58,7 +58,7 @@ website:
           #    text: A6 - Die Projektarbeit
         - text: "---"
         - text: "---"
-        - section: Reader Geographische Raumkonzept
+        - section: Reader Geographische Raumkonzepte
           contents:
             - unit01/unit01-01.qmd
             - unit01/unit01-02.qmd
@@ -130,14 +130,18 @@ website:
         #     - href: unit06/unit06-03.qmd
         #       text: Das Exposé
         # - text: "---"
-        - section: Folien
+        - section: Foliensätze zu den Readern
           contents:
-            - href: slides/w-01-slides.qmd
-              text: Raumkonzepte
-            - href: slides/w-02-slides.qmd
-              text: Relationen und Abfragen
-            # - href: slides/w-05-slides.qmd
-            #   text: Dekonstruktion von Fragestellungen
+            - href: slides/unit01_geographischer_raum.qmd
+              text: Geographische Raumkonzepte
+            - href: slides/unit02_gi_raumkonzepte.qmd
+              text: GI Raumkonzepte
+            - href: slides/unit03_abfragen_vektordaten.qmd
+              text: Vektordaten
+            - href: slides/unit04_raeumliche_ableitungen.qmd
+              text: Räumliche Ableitungen               
+            - href: slides/unit05_raeumliche_bewertung_entscheidung.qmd
+              text: Eigenungen, Entscheidungen und Kosten
 
 execute:
   freeze: auto
