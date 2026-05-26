@@ -901,7 +901,7 @@
     "section": "",
     "text": "Die Beantwortung der Frage „Was sind Geodaten bzw. Geodaten?“ ist trotz der bisherigen Erläuterungen nicht wirklich greifbar. Die Abstraktion erscheint bisher willkürlich und nicht nachvollziehbar.\nGeodaten bzw. geographische Daten (singl. Daten) liefern räumlich fixierte, maschinenlesbare Konstrukte aus Zeichen, Bildern oder Funktionen, die mit entsprechenden Interpretationsregeln zu Informationen werden. Da Daten Interpretationsregeln benötigen, um zu Informationen zu werden, müssen wir dieses Wissen nur noch mit dem Ziel einer geographischen Darstellung der Welt verknüpfen.",
     "crumbs": [
-      "Reader Geographische Raumkonzept",
+      "Reader Geographische Raumkonzepte",
       "Kodierung der Welt durch Geodatensätze"
     ]
   },
@@ -912,7 +912,7 @@
     "section": "Was sind Geodaten?",
     "text": "Was sind Geodaten?\nDie zentrale Frage lautet: Was ist spezifisch geographisch und wie können wir diese geographischen Ableitungen der Wirklichkeit vornehmen? Ein typisches Beispiel für Geodaten ist in der folgenden Aussage kodiert:\nDie Temperatur am Flughafen Havanna betrug am Donnerstag, den 17.09.2009 um 08:00 Uhr Ortszeit 23,0°C. Die Koordinaten sind: 22° 59′ 21″ N, 82° 24′ 33″ W, 64 m über dem Meeresspiegel..\nWenn wir diese Aussage analysieren, finden wir alle wesentlichen Elemente der geographischen Darstellung eines Objekts der realen Welt. Die Aussage verbindet den Raum (Koordinaten und Höhe) mit der Zeit (Datum/Zeitangabe) und der Eigenschaft bzw. dem Attribut der Lufttemperatur. Zusätzlich werden dem so definierten Ort weitere Eigenschaften zugeordnet: Havanna und Flughafen. Aus dieser Aussage kann schließlich folgendes geographisches Datum gebildet werden:\n\n\n\n\n\n\nHinweisKodierter Geodatensatz\n\n\n\n22° 59′ 21″ N; 82° 24′ 33″ W; 64 m ü. NN; 8.00 Uhr LT; Havanna Airport; 23.0 C°\n\n\nGeodaten verknüpfen also räumlich eindeutig lokalisierte Objekte mit mindestens einer Merkmalsausprägung. Diese „Datenprimitive“ können natürlich beliebig komplex werden und darüber hinaus direkt oder auch indirekt miteinander in Beziehung gesetzt oder voneinander abgeleitet werden. Auch scheinbar nicht-geographische Aussagen wie\n„Der K2 hat die schwierigste einfachste Bestreigungsroute eines Achttausenders.“\nkönnen in eine geographische Angabe umgewandelt werden. Dazu sind weitere Kenntnisse bzw. Kodierungsregeln notwendig. So muss man wissen, dass K2 der international bekanntere Name des Lambha Pahar, des zweithöchsten Berges der Erde, ist. Man muss auch wissen dass der Name die geographische Koordinate des Gipfel kodiert und dass „Normalroute“ im Alpinistenjargon „die am häufigsten begangene und in der Regel einfachste Besteigung“ bedeutet. Diese Interpretation wird somit zum geographischen Datum:\n\n\n\n\n\n\nHinweisKodierter Geodatensatz\n\n\n\n35° 53′ 0″ N; 76° 31′ 0″ O; Lambha Pahar; K2; &gt;8000 m ü. NN; schwierigste Normalroute 8000+",
     "crumbs": [
-      "Reader Geographische Raumkonzept",
+      "Reader Geographische Raumkonzepte",
       "Kodierung der Welt durch Geodatensätze"
     ]
   },
@@ -923,7 +923,7 @@
     "section": "Eigenschaften von Raumobjekten",
     "text": "Eigenschaften von Raumobjekten\nBereits an diesen beiden Beispielen wird deutlich, dass die Eigenschaften von Raumobjekten nahezu beliebige Ausprägungen haben können. Einige dieser Ausprägungen können physischer Natur sein oder beschreiben soziologische Aspekte, verweisen auf Eigentumsrechte, sind fortlaufende Nummern etc. Sie können Orte (z.B. Adressen) oder Räume (z.B. bestimmte Postleitzahlen) identifizieren. Sie können Maßzahlen sein (z.B. Einwohner/Fläche) oder kategoriale Ausprägungen haben (beliebte Kneipe, unbeliebte Kneipe). Da es in den Wissenschaften üblich ist, mit Werten, Attributen und deren Ausprägungen zu arbeiten, sind diese auch im Bereich der Geographischen Informationssysteme bekannt. Die Skalenniveaus sind bereits aus der Statistik bekannt und werden als Nominal-, Ordinal- und Kardinalskala bezeichnet. Sind Merkmalsausprägungen zeitabhängig, werden sie als zyklisch bezeichnet.\nSo einfach Geodaten erzeugt werden können, so sehr stoßen wir auf ein bekanntes Problem. Es ist zwar beeindruckend, die Temperatur am Flughafen von Havanna um 8:00 Uhr Ortszeit am 17.09.2009 als Repräsentation des Wetters zur Verfügung zu haben. Aber wie gut beschreibt diese Darstellung des Wetters den Durchzug eines Hurrikans um 8.15 Uhr am selben Tag?",
     "crumbs": [
-      "Reader Geographische Raumkonzept",
+      "Reader Geographische Raumkonzepte",
       "Kodierung der Welt durch Geodatensätze"
     ]
   },
@@ -934,7 +934,7 @@
     "section": "Das Problem der Abstraktion",
     "text": "Das Problem der Abstraktion\nDie Welt ist im Prinzip beliebig komplex. Unsere Computer hingegen sind in ihren Möglichkeiten, Merkmalsausprägungen zu verarbeiten und zu speichern, extrem endlich! Die Möglichkeiten unseres Gehirns liegen irgendwo dazwischen. Folglich kann aufgrund der mentalen und technischen Begrenztheit nur eine äußerst begrenzte Anzahl von Merkmalsausprägungen in die Repräsentation der realen Welt eingehen. Daraus ergibt sich die Notwendigkeit einer gezielten Vereinfachung der realen Welt. Um bei der Entwicklung geographischer Darstellungen einen objektivierbaren Rahmen für diese Vereinfachungen zu haben, werden diese immer skalenorientiert auf der räumlichen und Zeitskala durchgeführt.",
     "crumbs": [
-      "Reader Geographische Raumkonzept",
+      "Reader Geographische Raumkonzepte",
       "Kodierung der Welt durch Geodatensätze"
     ]
   },
@@ -945,7 +945,7 @@
     "section": "Daten sind abstrahierte Wirklichkeit",
     "text": "Daten sind abstrahierte Wirklichkeit\nAufgrund der Vielzahl von Reduktionsmöglichkeiten bei der Beschreibung der Erde gibt es innerhalb der GI eine unüberschaubare Vielzahl von Konzepten und Vorgehensweisen für diesen Prozess. Die Frage nach einer sinnvollen, validen und angemessenen Vereinfachung von Darstellungen der realen Welt wird uns immer wieder beschäftigen. Dennoch können die beiden folgenden Definitionen als allgemeingültig angesehen werden.\n\n\n\n\n\n\n\nGeodaten sind Merkmalsausprägungen, die für einen bestimmten Zweck Geoobjekte (diskrete Objekte oder kontinuierliche Raumeigenschaften) zweckorientiert charakterisieren.\nGeoobjekte sind immer Repräsentationen real existierender Objekte, die durch eine Lage im Raum direkt (z.B. durch Koordinaten = Geometrie) oder indirekt (z.B. durch Beziehungen = Topologie) referenzierbar (= lokalisierbar) sind. Sie sind immer formale Kodierungen der Eigenschaften und der zugehörigen Interpretation (= Information) dieser realen Objekte (vgl. Abb. 01-08).\n\n\n\n\n\n\n\nAbbildung 01-08: Schematische Strukturierung eines Geoobjekts in räumliche, dynamische und inhaltliche Aspekte (GIS.MA 2009)",
     "crumbs": [
-      "Reader Geographische Raumkonzept",
+      "Reader Geographische Raumkonzepte",
       "Kodierung der Welt durch Geodatensätze"
     ]
   },
@@ -956,7 +956,7 @@
     "section": "Übung",
     "text": "Übung\n\n\n\n\n\n\nVersuchen Sie, diese sehr abstrakte Sicht auf räumliche Daten und Informationen im (GIS-)Alltag wiederzufinden. Besuchen Sie die folgenden Websites\n\nÖffentliche Toiletten in Australien\nAktuelle Wasserstände der Lahn\nLufthygiene-Messstation Bad Arolsen\nKilometrierung der Bundesautobahnen\n\nReflektieren Sie anhand der folgenden Leitfragen:\n\nWelche Merkmalsausprägungen werden genannt (evtl. auch welche nicht)?\nIst die Abstraktion für die mutmaßliche Zielsetzung sinnvoll?\nIst der geographische Aspekt für Sie erkennbar?\nGibt es formale bzw. inhaltliche Unterschiede in der geographischen Darstellung der Lufthygiene-Messstation Bad Arolsen und des Cineplex Marburg?",
     "crumbs": [
-      "Reader Geographische Raumkonzept",
+      "Reader Geographische Raumkonzepte",
       "Kodierung der Welt durch Geodatensätze"
     ]
   },
@@ -967,7 +967,7 @@
     "section": "",
     "text": "Die Annäherung an die Thematik der Geographischen Informationssysteme (GIS) erscheint dem Einsteiger vor dem Hintergrund der vielfältigen Verwendung des Begriffs und vor allem vor dem Hintergrund der vielfältigen und unterschiedlich komplexen Anwendungen unübersichtlich. Dies beginnt bereits bei den Begriffen “Geographie” und “geographisch”, die mit der Wahrnehmung, dem Verständnis und der Beschreibung der Erde bzw. der Erdoberfläche verbunden sind. Damit rückt -vielleicht unerwartet- die fachliche Beschreibung der Erde, also eine abstrahierte kognitive Welterfahrung, in den Mittelpunkt einer ersten Beschäftigung mit GIS. Für den Umgang mit Informationssystemen in der Geographie sollten Sie zunächst einige Grundkonzepte der Wahrnehmung und Abstraktion sowie der Kommunikation geographischer Welterfahrung kennen und verstehen.",
     "crumbs": [
-      "Reader Geographische Raumkonzept",
+      "Reader Geographische Raumkonzepte",
       "Geographie - räumliche Interpretation der Welt"
     ]
   },
@@ -978,7 +978,7 @@
     "section": "Kartographie als Abbild der Erde",
     "text": "Kartographie als Abbild der Erde\nNach allgemeinem Verständnis ist die Karte ein orientiertes, verkleinertes, geebnetes Grundrissbild eines Ausschnitts der Erdoberfläche, das die Gesamtheit oder eine begrenzte Auswahl der für diesen Ausschnitt bedeutsamen Erscheinungen wiedergibt (Bartelme 2005). Lehmann spricht die dieser Definition zugrunde liegende Problematik folgendermaßen an: “Karten geben kein Abbild der Wirklichkeit, sondern nur die Möglichkeit, sich die Wirklichkeit vorzustellen […]. Sie sprechen eine eigene Sprache, die übersetzt werden will” (Lehmann 1952, 73). Integriert man diese Auffassung in eine geographische Definition der Karte, so ist sie\n\nein Bild der Erde\neine Darstellung der als *wesentlich empfundenen Phänomene\nein Produkt der Kartographie, das je nach Zielsetzung und den als wesentlich erkannten Erscheinungen adäquate Darstellungsverfahren anwendet",
     "crumbs": [
-      "Reader Geographische Raumkonzept",
+      "Reader Geographische Raumkonzepte",
       "Geographie - räumliche Interpretation der Welt"
     ]
   },
@@ -989,7 +989,7 @@
     "section": "Intention von Karten",
     "text": "Intention von Karten\nUm diesen Zusammenhang an einem Beispiel zu verdeutlichen, betrachten wir die berühmte “Kosmographie” des Ptolemäus (vgl. Abb. 01-01), erstmals gedruckt um 1410 in Italien, hier die Ulmer “Druckausgabe” von Lienhart (2020).\n\n\n\nAbbildung 01-01: Weltkarte des Ptolemäus. Die hier gezeigte Weltkarte ist mit den zwölf Winden illustriert und eine der 32 Karten aus der „Cosmographia“ die von Lienhart Holle aus Ulm am 6. Juli 1482 herausgegeben wurde. Dies war die erste gedruckte Kartenausgabe nördlich der Alpen . (Quelle: Lienhart (2020))\n\n\nSie kann als ein frühes, idealtypisches Beispiel für die oben definierten Eigenschaften einer Karte angesehen werden. Dargestellt ist das zu dieser Zeit gültige europäische Weltbild. Wenige Jahre später wurde dieses Weltbild durch Kolumbus und seine Entdeckungsreisen revolutioniert und grundlegend korrigiert.\nMonmonier sagt in diesem Zusammenhang: “that maps, like speeches and paintings, are authored collections of information and also subject to distortions arising from ignorance, greed, ideological blindness, or malice […]”. (Monmonier 1991). Hier wird deutlich, wie sehr die Abstraktion von (räumlicher) Realität von der Intention des Senders und der Kodierung bzw. Rekodierung durch den Empfänger abhängt.",
     "crumbs": [
-      "Reader Geographische Raumkonzept",
+      "Reader Geographische Raumkonzepte",
       "Geographie - räumliche Interpretation der Welt"
     ]
   },
@@ -1000,7 +1000,7 @@
     "section": "Geographische Abstraktion",
     "text": "Geographische Abstraktion\nSchauen wir uns in unserer Alltagswelt um, so stellen wir fest, dass - über welchen Medienkanal auch immer - ein zunehmender Teil unserer Information, unserer Kommunikation und unseres Wissens auf digitalen, medial aufbereiteten Daten basiert. Die allgegenwärtigen Schlagworte der Informationsgesellschaft und des Informationszeitalters bringen diese Wahrnehmung eindrucksvoll auf den Punkt.\nTrotz einer durchaus kontroversen und uneinheitlichen Diskussion dieser Begriffe kann davon ausgegangen werden, dass der Umgang mit globalen Daten-, Informations- und Wissensnetzwerken gerade für eine Disziplin wie die Geographie von elementarer Bedeutung ist. Die stetige Zunahme neuer Sensoren in Raum und Zeit, die hochaufgelöste und weltweit verfügbare Daten liefern, erzwingt einen organisierten und strukturierten Umgang mit diesen Daten. Gleichzeitig ergibt sich aus der Existenz der Daten die Notwendigkeit, diese möglichst zeitnah zu filtern, zu analysieren und zu interpretieren, d.h. in Information umzuwandeln. Vor diesem Hintergrund erhält der Informationsbegriff eine neue Dimension. Um zu Informationen zu gelangen, reicht es nicht aus, in Daten zu ertrinken. Wir benötigen Interpretationsregeln und Analysewerkzeuge, um aus Daten Informationen oder Wissen zu generieren.\nGeographische oder räumliche Darstellungen sind die Grundlage für die wissenschaftliche Interpretation raum-zeitlicher Aspekte der realen Welt. In der Wissenschaft ist es üblich, hierfür als gesichert geltende Regeln (Axiome) zu verwenden. Eines der wohl bekanntesten wurde von Waldo Tobler formuliert: “Alles ist mit allem verbunden, aber nahe Dinge sind mehr verbunden als ferne Dinge” (Tobler 1970). Es wird oft als “erstes geographisches Gesetz” zitiert. Wie sehr es auch andere Auffassungen geben kann, zeigt z.B. Benno Werlen in seinem handlungszentrierten Ansatz, der darauf hinweist, dass nicht nur reale Nachbarschaftsbeziehungen von Objekten oder Merkmalsausprägungen Raumkonstruktionen ermöglichen, sondern dass Räume z.B. auch durch handelnde Menschen, die nicht notwendigerweise in räumlicher Nachbarschaft agieren, sozial konstruiert werden können (vgl. z.B. Werlen (1993)).\n\n\n\nAbbildung 01-02: Die Interpretation der perzipierten „realen Welt“ sowie die Entwicklung geeigneter Strategien für den praxistauglichen Umgang (=Abstraktion) mit dieser Welt, findet mit dem Hilfsmittel der Modellbildung statt. (Reudenbach (2025-2026))\n\n\nNicht nur in der naturwissenschaftlich-quantitativ orientierten Darstellung der Welt gilt der Nachbarschaftsbegriff nach Tobler nur für bestimmte Zusammenhänge. So ist z.B. die Stickstoffkonzentration in der Atmosphäre relativ homogen und kontinuierlich (und entspricht damit dem Toblerschen Axiom), während z.B. geologisch kontinuierliche Einheiten auf Kontinentalplatten oder Störungen von einem Meter zum nächsten Nachbarschaftsbeziehungen geradezu konterkarieren. Ähnliches gilt für andere Zusammenhänge, wie z.B. die Verteilung von Währungen innerhalb der EU oder auch die Regelung von Steuerangelegenheiten, die in der Regel an administrative Grenzen gebunden ist, obwohl auf beiden Seiten Menschen leben, die Steuern zahlen.",
     "crumbs": [
-      "Reader Geographische Raumkonzept",
+      "Reader Geographische Raumkonzepte",
       "Geographie - räumliche Interpretation der Welt"
     ]
   },
@@ -1011,7 +1011,7 @@
     "section": "Geographische Modellierung",
     "text": "Geographische Modellierung\nDie Zusammenhänge der realen Welt sind in der Regel so komplex, dass sie nur in generalisierter Form verständlich dargestellt oder analysiert werden können. Schon im Alltag konstruieren wir ständig kognitive Modelle, um unsere Wahrnehmung der Welt zu vereinfachen (Rasch 2006). Auch in den Wissenschaften ist diese Erfahrung bekannt. So notiert der Physiker Bridgman bereits 1927: “I believe that the model is a useful and indeed unescapable tool of thought, in that it enables us to think about the unfamiliar in terms of the familiar” (Bridgman 1927), während der Modellierer Rivet 1972 schlicht behauptet: “The history of mankind is the history of model building” (Rivett 1972).\nDie Wahrnehmung und Interpretation der „realen Welt“ sowie die Entwicklung geeigneter Strategien für den praktischen Umgang mit dieser Welt erfolgt mit den Mitteln der Abstraktion und Kommunikation (= Modellbildung) (vgl. Abb. 01-02). Die angewandten Abstraktionsstrategien sind widersprüchlich und vielfältig, da Kontextabhängigkeit und Zielsetzung des Abstrahierenden einen wesentlichen Einfluss auf die Ergebnisse ausüben (“Methode Götterblick”, vgl. auch Eckmüllner (2007)).\nDas heißt, die gewählte Abstraktion der räumlichen Welt ist aus wissenschaftlicher Sicht bestenfalls nachvollziehbar und transparent, aber niemals wahr. Die logische Gültigkeit der Abstraktion garantiert auch nicht die Gültigkeit der abgeleiteten oder allgemeinen Aussagen. Es kann also nicht bewiesen werden, ob das konstruierte Modell der Realität entspricht. Allenfalls kann die Gültigkeit für den definierten Zweck nachgewiesen werden, niemals aber die Wahrheit (Bossel 2004).\nTrotz dieser enormen Einschränkungen werden Darstellungen des Raumes ständig und dringend benötigt, um raumbezogene Informationen nachvollziehbar zu dokumentieren, zu analysieren und zu kommunizieren. Oft sind mehrere oder variable Repräsentationen notwendig, um die Realität hinreichend genau abzubilden.\nWer Raumkompetenz erwerben will, muss alle genannten Aspekte berücksichtigen, keineswegs nur die softwarespezifischen. Wissenschaftstheoretisch betrachtet sind GIS in der Geographie ein Methodenverbund, um raum-zeitliche Zusammenhänge nachvollziehbar und reproduzierbar zu konstruieren.",
     "crumbs": [
-      "Reader Geographische Raumkonzept",
+      "Reader Geographische Raumkonzepte",
       "Geographie - räumliche Interpretation der Welt"
     ]
   },
@@ -1022,7 +1022,7 @@
     "section": "GI in der universitären Geographie",
     "text": "GI in der universitären Geographie\nWenn wir also GI-Systeme als Werkzeuge definieren, die nach den Regeln der Informationsverarbeitung zu bedienen und zu nutzen sind, dann müssen wir einen Weg finden, geographisch so widersprüchliche Raumvorstellungen nachvollziehbar und reproduzierbar zu definieren und zu integrieren.",
     "crumbs": [
-      "Reader Geographische Raumkonzept",
+      "Reader Geographische Raumkonzepte",
       "Geographie - räumliche Interpretation der Welt"
     ]
   },
@@ -1033,7 +1033,7 @@
     "section": "Übung",
     "text": "Übung\n\n\n\n\n\n\nVersuchen Sie, die Relevanz von GI in der universitären Lehre und Forschung in der Geographie einzuordnen. Besuchen Sie dazu eine Auswahl geographischer Institute im Internet.\n\nVersuchen Sie, die Bedeutung von GI im Rahmen der o.g. Vorüberlegungen konkret für Ihren Studiengang und die angebotenen Lehrveranstaltungen einzuordnen.\nSchauen Sie sich stichprobenartig an, wie Raum und Zeit in den Publikationen von Wissenschaftlerinnen (Berufsgeographinnen) aufgefasst wird. Welche GI-relevanten Inhalte können Sie identifizieren?\nWie sehen Sie die Integration von GI-Methodik in Ihrem Fachgebiet?\nNennen Sie einige geographische Fragestellungen, die ohne GI-Methoden auskommen.",
     "crumbs": [
-      "Reader Geographische Raumkonzept",
+      "Reader Geographische Raumkonzepte",
       "Geographie - räumliche Interpretation der Welt"
     ]
   },
@@ -1199,168 +1199,785 @@
     "text": "Wie geht das schneller - Binäre Suche Abbruchkriterium"
   },
   {
-    "objectID": "slides/w-01-slides.html#lernziele-raumkonzepte",
-    "href": "slides/w-01-slides.html#lernziele-raumkonzepte",
-    "title": "Raumkonzepte",
-    "section": "Lernziele Raumkonzepte",
-    "text": "Lernziele Raumkonzepte\n\nden alltäglichen Umgang mit geographischer Abstraktion reflektieren\nverstehen, dass die reale Welt durch Daten repräsentiert wird\nverstehen, dass der kontinuierliche und mehrskalige reale Raum durch diskrete Objekte im Raum repräsentiert wird\nVerständnis für die Kodierung von Geodaten durch technische Datenkonzepte und digitale Datenformate.\nBegriffe und Definitionen",
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#leitfrage-der-sitzung",
+    "href": "slides/unit04_raeumliche_ableitungen.html#leitfrage-der-sitzung",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Leitfrage der Sitzung",
+    "text": "Leitfrage der Sitzung\nRäumliche Analyse beginnt dort, wo aus vorhandenen Daten neue räumliche Informationen abgeleitet werden.\nDaten → Annahmen → Operationen → neue räumliche Information → Interpretation\nDer Kern der Sitzung ist deshalb:\n\nWie werden aus Punktmessungen, Höhenrastern und Modellannahmen nachvollziehbare räumliche Ableitungen?",
     "crumbs": [
-      "Folien",
-      "Raumkonzepte"
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
     ]
   },
   {
-    "objectID": "slides/w-01-slides.html#koordinatensysteme",
-    "href": "slides/w-01-slides.html#koordinatensysteme",
-    "title": "Raumkonzepte",
-    "section": "Koordinatensysteme",
-    "text": "Koordinatensysteme\n\n\n\n\n\n\n2D kartesisches Koordinatensystem (@bolino)\n\n\n\n\n\n\n\n3D kartesisches Koordinatensystem (@sakurambo)",
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#lernziele",
+    "href": "slides/unit04_raeumliche_ableitungen.html#lernziele",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Lernziele",
+    "text": "Lernziele\nNach der Sitzung sollten Sie erklären können,\n\nwarum räumliche Analyse mehr ist als eine Abfrage,\nwie aus Punktdaten flächenhafte Schätzungen entstehen,\nwarum Interpolation immer eine Modellentscheidung ist,\nwie aus Höhenrastern lokale und gerichtete Geländeinformationen abgeleitet werden,\nwie Sichtbarkeit und Reliefhydrologie aus Höhenmodellen berechnet werden,\nwarum jedes Analyseergebnis über Datenbasis, Maßstab, Parameter und Annahmen interpretiert werden muss.",
     "crumbs": [
-      "Folien",
-      "Raumkonzepte"
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
     ]
   },
   {
-    "objectID": "slides/w-01-slides.html#raumdimensionen",
-    "href": "slides/w-01-slides.html#raumdimensionen",
-    "title": "Raumkonzepte",
-    "section": "Raumdimensionen",
-    "text": "Raumdimensionen\n\n\n\nDimensionalität von Geoobjekten (verändert nach @bartelme2006",
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#von-der-abfrage-zur-analyse",
+    "href": "slides/unit04_raeumliche_ableitungen.html#von-der-abfrage-zur-analyse",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Von der Abfrage zur Analyse",
+    "text": "Von der Abfrage zur Analyse\nEine Abfrage fragt meist:\n\nWelche vorhandenen Objekte erfüllen eine Bedingung?\n\nEine räumliche Analyse fragt dagegen:\n\nWelche neue räumliche Information kann aus vorhandenen Daten, Annahmen und Regeln erzeugt werden?\n\n\nAuswahl → markiert vorhandene Daten\nAnalyse → erzeugt neue Datenebenen oder Rasterwerte",
     "crumbs": [
-      "Folien",
-      "Raumkonzepte"
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
     ]
   },
   {
-    "objectID": "slides/w-01-slides.html#die-topologie-oder-lage-im-raum",
-    "href": "slides/w-01-slides.html#die-topologie-oder-lage-im-raum",
-    "title": "Raumkonzepte",
-    "section": "Die Topologie oder Lage im Raum",
-    "text": "Die Topologie oder Lage im Raum\n\n\n\nTagesliniennetzplan der Stadtwerke Marburg, (@swm)",
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#räumliche-analyse-ist-begründete-transformation",
+    "href": "slides/unit04_raeumliche_ableitungen.html#räumliche-analyse-ist-begründete-transformation",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Räumliche Analyse ist begründete Transformation",
+    "text": "Räumliche Analyse ist begründete Transformation\nAus räumlichen Daten werden neue Informationen:\nPunktmessungen → Interpolationsfläche\nHöhenwerte → Neigung, Sichtfeld, Fließrichtung\nDistanzen → Nähezonen oder Kostenoberflächen\nKriterien → Eignungs- oder Konfliktkarte\n\nEntscheidend ist nicht nur, welches Werkzeug verwendet wurde, sondern welche Annahme damit in die Analyse eingebaut wird.",
     "crumbs": [
-      "Folien",
-      "Raumkonzepte"
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
     ]
   },
   {
-    "objectID": "slides/w-01-slides.html#datenmodelle",
-    "href": "slides/w-01-slides.html#datenmodelle",
-    "title": "Raumkonzepte",
-    "section": "Datenmodelle",
-    "text": "Datenmodelle\n\n\n\nAusschnitt der realen Welt und die schematische Repräsentation als Raster- bzw. Vektordatenmodell, (@gisma)",
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#zwei-richtungen-räumlicher-analyse",
+    "href": "slides/unit04_raeumliche_ableitungen.html#zwei-richtungen-räumlicher-analyse",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Zwei Richtungen räumlicher Analyse",
+    "text": "Zwei Richtungen räumlicher Analyse\n\n\n\nRäumliche Ableitung\nAus vorhandenen Daten entstehen neue räumliche Informationen.\n\n\nBeispiele: Voronoi-Flächen, Interpolation, Reliefparameter, Sichtfelder, Flow Accumulation.\n\n\n\n\nRäumliche Bewertung\nMehrere räumliche Informationen werden standardisiert, gewichtet und kombiniert.\n\n\nBeispiele: Eignungskarten, Multikriterienanalyse, Kostenoberflächen.",
     "crumbs": [
-      "Folien",
-      "Raumkonzepte"
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
     ]
   },
   {
-    "objectID": "slides/w-01-slides.html#raster--und-vektordatenmodell",
-    "href": "slides/w-01-slides.html#raster--und-vektordatenmodell",
-    "title": "Raumkonzepte",
-    "section": "Raster- und Vektordatenmodell",
-    "text": "Raster- und Vektordatenmodell\n\n\n\n\n\n\n@gisma\n\n\n\n\n\n\n\n@gisma",
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#räumliche-analyse-in-der-geographie",
+    "href": "slides/unit04_raeumliche_ableitungen.html#räumliche-analyse-in-der-geographie",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Räumliche Analyse in der Geographie",
+    "text": "Räumliche Analyse in der Geographie\nRäumliche Analyse ist älter als GIS-Software.\nViele Verfahren der quantitativen Raumanalyse und räumlichen Statistik wurden entwickelt, bevor digitale GI-Systeme breit verfügbar waren (vgl. Berry und Marble 1968).\n\nMit GIS wurden diese Verfahren praktisch integrierbar: Datenerfassung, Datenverwaltung, Analyse und Visualisierung liegen in einer gemeinsamen Arbeitsumgebung.\n\n\nEine Karte ist nicht deshalb aussagekräftig, weil sie mit GIS erzeugt wurde. Aussagekräftig wird sie erst durch begründete Daten, Methode, Maßstab und Interpretation.",
     "crumbs": [
-      "Folien",
-      "Raumkonzepte"
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
     ]
   },
   {
-    "objectID": "slides/w-01-slides.html#explizite-raumkoordinaten-im-rasterdatenmodell",
-    "href": "slides/w-01-slides.html#explizite-raumkoordinaten-im-rasterdatenmodell",
-    "title": "Raumkonzepte",
-    "section": "Explizite Raumkoordinaten im Rasterdatenmodell",
-    "text": "Explizite Raumkoordinaten im Rasterdatenmodell\n\n\n\nDas implizite Raumkonzept der Zeilen- und Spaltenzählung (Laufvariablen) und das explizite Zuweisen mit Hilfe des Kartesischen Koordinatensystems für einen Rasterdatensatz, @gisma",
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#rasterbasierte-ableitungen",
+    "href": "slides/unit04_raeumliche_ableitungen.html#rasterbasierte-ableitungen",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Rasterbasierte Ableitungen",
+    "text": "Rasterbasierte Ableitungen\nRasterdaten beschreiben den Raum als regelmäßiges Zellgitter.\nJede Zelle enthält einen Wert:\nHöhe | Temperatur | Landbedeckung | Entfernung | Eignung\n\nRasteranalyse verändert, kombiniert oder interpretiert diese Zellwerte und erzeugt daraus neue räumliche Informationen.",
     "crumbs": [
-      "Folien",
-      "Raumkonzepte"
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
     ]
   },
   {
-    "objectID": "slides/w-01-slides.html#die-zeit",
-    "href": "slides/w-01-slides.html#die-zeit",
-    "title": "Raumkonzepte",
-    "section": "Die Zeit",
-    "text": "Die Zeit\n\n\n\n\n@gisma",
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#voronoi-polygone-als-nähemodell",
+    "href": "slides/unit04_raeumliche_ableitungen.html#voronoi-polygone-als-nähemodell",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Voronoi-Polygone als Nähemodell",
+    "text": "Voronoi-Polygone als Nähemodell\nVoronoi-Polygone teilen einen Raum so auf, dass jede Fläche genau einem Ausgangspunkt zugeordnet wird.\nInnerhalb einer Fläche liegt jeder Ort näher am zugehörigen Punkt als an jedem anderen Punkt.\n\nVoronoi ist ein geometrisches Nullmodell: gleichförmiger Raum, keine Barrieren, keine Topographie, keine Wegkosten, keine Prozessinformation.",
     "crumbs": [
-      "Folien",
-      "Raumkonzepte"
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
     ]
   },
   {
-    "objectID": "slides/w-01-slides.html#der-ort",
-    "href": "slides/w-01-slides.html#der-ort",
-    "title": "Raumkonzepte",
-    "section": "Der Ort",
-    "text": "Der Ort\n\n\n\n@gisma",
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#voronoi-konstruktion",
+    "href": "slides/unit04_raeumliche_ableitungen.html#voronoi-konstruktion",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Voronoi-Konstruktion",
+    "text": "Voronoi-Konstruktion\n\n\nDie Grenzen liegen dort, wo zwei benachbarte Punkte gleich weit entfernt sind. So wird aus Punktlage eine flächige Zuordnung.",
     "crumbs": [
-      "Folien",
-      "Raumkonzepte"
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
     ]
   },
   {
-    "objectID": "slides/w-01-slides.html#raum-zeit-kodierung---orte-und-namen",
-    "href": "slides/w-01-slides.html#raum-zeit-kodierung---orte-und-namen",
-    "title": "Raumkonzepte",
-    "section": "Raum-Zeit-Kodierung - Orte und Namen",
-    "text": "Raum-Zeit-Kodierung - Orte und Namen",
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#voronoi-schweiz-beispiel",
+    "href": "slides/unit04_raeumliche_ableitungen.html#voronoi-schweiz-beispiel",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Voronoi: Schweiz-Beispiel",
+    "text": "Voronoi: Schweiz-Beispiel\n\n\nJede Fläche wird der nächstgelegenen Niederschlagsstation zugeordnet. Das ist keine klimatologische Modellierung, sondern eine Zuordnung nach euklidischer Distanz.",
     "crumbs": [
-      "Folien",
-      "Raumkonzepte"
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
     ]
   },
   {
-    "objectID": "slides/w-01-slides.html#raum-zeit-kodierung---lineare-metrische-lokalisierung",
-    "href": "slides/w-01-slides.html#raum-zeit-kodierung---lineare-metrische-lokalisierung",
-    "title": "Raumkonzepte",
-    "section": "Raum-Zeit-Kodierung - Lineare metrische Lokalisierung",
-    "text": "Raum-Zeit-Kodierung - Lineare metrische Lokalisierung\n\n\n\nPannenort nördlich von Holtau, @gisma",
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#interpolation-punktmessungen-zur-fläche",
+    "href": "slides/unit04_raeumliche_ableitungen.html#interpolation-punktmessungen-zur-fläche",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Interpolation: Punktmessungen zur Fläche",
+    "text": "Interpolation: Punktmessungen zur Fläche\n\n\nInterpolation schätzt Werte zwischen bekannten Messpunkten. Die Fläche ist kein Messwert, sondern ein Modellprodukt.",
     "crumbs": [
-      "Folien",
-      "Raumkonzepte"
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
     ]
   },
   {
-    "objectID": "slides/w-01-slides.html#raum-zeit-kodierung--geometrisch-exakte-maßstäbliche-darstellung",
-    "href": "slides/w-01-slides.html#raum-zeit-kodierung--geometrisch-exakte-maßstäbliche-darstellung",
-    "title": "Raumkonzepte",
-    "section": "Raum-Zeit-Kodierung -Geometrisch exakte maßstäbliche Darstellung",
-    "text": "Raum-Zeit-Kodierung -Geometrisch exakte maßstäbliche Darstellung\n\n\n\nHistorischer Katasterplan von Bukowsko 1906. @silas",
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#was-interpolation-voraussetzt",
+    "href": "slides/unit04_raeumliche_ableitungen.html#was-interpolation-voraussetzt",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Was Interpolation voraussetzt",
+    "text": "Was Interpolation voraussetzt\n\n\nEntscheidend sind nicht nur Methode und Software, sondern Repräsentativität, räumliche Verteilung, Homogenität und Anzahl der Messpunkte.",
     "crumbs": [
-      "Folien",
-      "Raumkonzepte"
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
     ]
   },
   {
-    "objectID": "slides/w-01-slides.html#raum-zeit-kodierung---geographische-koordinaten",
-    "href": "slides/w-01-slides.html#raum-zeit-kodierung---geographische-koordinaten",
-    "title": "Raumkonzepte",
-    "section": "Raum-Zeit-Kodierung - Geographische Koordinaten",
-    "text": "Raum-Zeit-Kodierung - Geographische Koordinaten\n\n\n\n\n\n\nDarstellung eines Rotationsellipsoid, @gisma verändert nach @augpi\n\n\n\n\n\n\n\nBestimmung geographischer Koordinaten auf einem Rotationsellipsoid, @enix",
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#interpolation-als-modellentscheidung",
+    "href": "slides/unit04_raeumliche_ableitungen.html#interpolation-als-modellentscheidung",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Interpolation als Modellentscheidung",
+    "text": "Interpolation als Modellentscheidung\n\n\nDieselben Punktdaten können unterschiedliche Flächen erzeugen. Jede Methode übersetzt Nähe, Glättung und räumliche Abhängigkeit anders.",
     "crumbs": [
-      "Folien",
-      "Raumkonzepte"
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
     ]
   },
   {
-    "objectID": "assets/templates/journals-examples-default.html",
-    "href": "assets/templates/journals-examples-default.html",
-    "title": "Skalen in Geographie und Ökologie\nEine unendliche Geschichte",
-    "section": "",
-    "text": "Die Ökologie befasst sich mit der Frage, wie Organismen miteinander und mit ihrer Umwelt interagieren. Skalen und Prozesse sind zwei grundlegende Konzepte in der Ökologie, die verwendet werden, um ökologische Muster und Dynamik zu verstehen.\nSkalen in der Ökologie beziehen sich auf die räumlichen und zeitlichen Dimensionen ökologischer Phänomene. Ökologische Phänomene treten in verschiedenen Maßstäben auf, die von einzelnen Organismen bis zu ganzen Ökosystemen und von Sekunden bis zu Jahrtausenden reichen. Das Verständnis der geeigneten Skala ist entscheidend für das Verständnis der ökologischen Prozesse, die innerhalb dieser Skala ablaufen. Die Wahl eines geeigneten Maßstabs beeinflusst auch die Genauigkeit und Präzision ökologischer Daten und die Interpretation ökologischer Muster.\nProzesse in der Ökologie beziehen sich auf die biologischen und physikalischen Mechanismen, die ökologischen Phänomenen zugrunde liegen. Ökologische Prozesse treten in verschiedenen Maßstäben auf, die von der molekularen Ebene bis zur Landschaftsebene reichen. Zu den ökologischen Prozessen gehören biotische Interaktionen wie Konkurrenz, Räuber und Gegenseitigkeit sowie abiotische Interaktionen wie Klima, Nährstoffkreislauf und Störungen. Das Verständnis der zugrundeliegenden Prozesse ist unerlässlich für die Vorhersage, wie ökologische Systeme auf veränderte Bedingungen reagieren werden, und für die Entwicklung wirksamer Erhaltungs- und Bewirtschaftungsstrategien.\nInsgesamt sind Größenordnungen und Prozesse wesentliche Konzepte in der Ökologie, die dazu dienen, die komplexen Wechselwirkungen zwischen Organismen und ihrer Umwelt zu verstehen."
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#globale-und-lokale-interpolation",
+    "href": "slides/unit04_raeumliche_ableitungen.html#globale-und-lokale-interpolation",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Globale und lokale Interpolation",
+    "text": "Globale und lokale Interpolation\n\n\nGlobale Verfahren betonen großräumige Trends. Lokale Verfahren reagieren stärker auf Nachbarschaften und Punktverteilung.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
   },
   {
-    "objectID": "assets/templates/journals-examples-default.html#diskussion",
-    "href": "assets/templates/journals-examples-default.html#diskussion",
-    "title": "Skalen in Geographie und Ökologie\nEine unendliche Geschichte",
-    "section": "4.1 Diskussion",
-    "text": "4.1 Diskussion\nJa, es gibt in der Geographie mehrere Theorien, die sich auf die Auswirkungen der Zeit auf den Maßstab beziehen. Eine der bekanntesten ist das Konzept des zeitlichen Maßstabs, das von dem Geographen David Harvey entwickelt wurde. Nach Harvey bezieht sich der zeitliche Maßstab auf die Länge der Zeit, über die ein Phänomen beobachtet werden kann, und er ist ein wichtiger Faktor für das Verständnis der räumlichen Beziehungen und Muster, die in einem bestimmten geografischen Kontext bestehen. Darüber hinaus argumentiert Harvey, dass der zeitliche Maßstab, in dem Daten erhoben und analysiert werden, einen erheblichen Einfluss auf die Schlussfolgerungen haben kann, die aus den Daten gezogen werden können.\nEine weitere Theorie, die sich auf die Auswirkungen der Zeit auf den Maßstab bezieht, ist das von dem Geographen David Harvey und anderen entwickelte Konzept der Zeit-Raum-Kompression. Diese Theorie besagt, dass Fortschritte in Technologie und Kommunikation zu einer Kompression von Zeit und Raum geführt haben, wodurch die Welt kleiner und vernetzter erscheint. Infolgedessen können geografische Phänomene von Faktoren beeinflusst werden, die in verschiedenen räumlichen und zeitlichen Maßstäben existieren, und es ist wichtig, diese Faktoren bei der Analyse und Interpretation von geografischen Daten zu berücksichtigen.\nInsgesamt verdeutlichen die Theorien zu den Auswirkungen der Zeit auf den Maßstab in der Geographie die komplexen und dynamischen Beziehungen zwischen räumlichen und zeitlichen Phänomenen und die Bedeutung der Berücksichtigung dieser Beziehungen in geographischen Analysen (Harvey 1996)."
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#exakt-und-nicht-exakt",
+    "href": "slides/unit04_raeumliche_ableitungen.html#exakt-und-nicht-exakt",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Exakt und nicht-exakt",
+    "text": "Exakt und nicht-exakt\n\n\nExakt bedeutet: Die Oberfläche trifft die Messpunkte. Nicht-exakt bedeutet: Die Oberfläche glättet und kann Unsicherheit berücksichtigen.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
   },
   {
-    "objectID": "assets/templates/journals-examples-default.html#schlussfolgerungen",
-    "href": "assets/templates/journals-examples-default.html#schlussfolgerungen",
-    "title": "Skalen in Geographie und Ökologie\nEine unendliche Geschichte",
-    "section": "4.2 Schlussfolgerungen",
-    "text": "4.2 Schlussfolgerungen\nZeit-Raum-Kompression ist ein Konzept, das von mehreren Geographen entwickelt und ausgearbeitet wurde, darunter David Harvey, Doreen Massey und Henri Lefebvre. Im Kern bezieht sich die Zeit-Raum-Kompression auf die Idee, dass Fortschritte in der Transport- und Kommunikationstechnologie ein Gefühl des “Schrumpfens” in Bezug auf die Zeit und den Raum geschaffen haben, die für soziale und wirtschaftliche Interaktionen erforderlich sind.\nDie Zeit-Raum-Kompression manifestiert sich unter anderem in der zunehmenden Geschwindigkeit und Leichtigkeit von Transport und Kommunikation. Flugreisen, Hochgeschwindigkeitszüge und das Internet haben es beispielsweise möglich gemacht, Waren, Menschen und Informationen in relativ kurzer Zeit über große Entfernungen zu transportieren. Dies hat zu einer Verwischung der traditionellen räumlichen Grenzen und zur Entstehung globaler Netzwerke für Austausch und Interaktion geführt.\nDie Verdichtung von Zeit und Raum ist jedoch kein neutraler oder einheitlicher Prozess, und seine Auswirkungen werden von verschiedenen Menschen und an verschiedenen Orten unterschiedlich empfunden. So kann die zunehmende Geschwindigkeit des globalen Handels einigen Menschen und Gemeinschaften zugute kommen, während sie anderen schadet, und die Intensivierung globaler Netzwerke kann bei einigen Menschen zu einem Gefühl der Dislokation oder Desorientierung führen.\nInsgesamt ist die Zeit-Raum-Kompression ein wichtiges Konzept in der Geografie, weil es hilft zu erklären, wie die räumlichen Beziehungen und Muster, die in einem bestimmten geografischen Kontext bestehen, durch technologischen Wandel und Globalisierung geformt und verändert werden."
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#niederschlagsflächen-vergleichen",
+    "href": "slides/unit04_raeumliche_ableitungen.html#niederschlagsflächen-vergleichen",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Niederschlagsflächen vergleichen",
+    "text": "Niederschlagsflächen vergleichen\n\n\nBei Niederschlag muss die Topographie mitgelesen werden: Höhe, Luv/Lee, Täler und Stationsverteilung entscheiden, ob eine Fläche plausibel wirkt.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#digitale-geländemodelle",
+    "href": "slides/unit04_raeumliche_ableitungen.html#digitale-geländemodelle",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Digitale Geländemodelle",
+    "text": "Digitale Geländemodelle\nEin DGM speichert zunächst nur Höhe.\nRäumliche Analyse beginnt, wenn aus Höhenwerten neue Informationen abgeleitet werden:\nHöhe → Neigung → Exposition → Kurvatur → Profil → Falllinie → Einzugsgebiet\n\nDas DGM ist damit kein Endprodukt, sondern ein Ausgangspunkt für Geländeinterpretation.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#dgm-von-höhe-zu-information",
+    "href": "slides/unit04_raeumliche_ableitungen.html#dgm-von-höhe-zu-information",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "DGM: von Höhe zu Information",
+    "text": "DGM: von Höhe zu Information\n\n\nAus derselben Höhenoberfläche entstehen unterschiedliche Ableitungen: lokale Geländeparameter, Linieninformationen und flächenhafte Einheiten.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#lokale-geländeparameter",
+    "href": "slides/unit04_raeumliche_ableitungen.html#lokale-geländeparameter",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Lokale Geländeparameter",
+    "text": "Lokale Geländeparameter\n\n\nNeigung, Exposition und Kurvatur entstehen aus Höhenunterschieden in der Nachbarschaft einer Rasterzelle.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#profile-pauschalgefälle-und-falllinien",
+    "href": "slides/unit04_raeumliche_ableitungen.html#profile-pauschalgefälle-und-falllinien",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Profile, Pauschalgefälle und Falllinien",
+    "text": "Profile, Pauschalgefälle und Falllinien\n\n\nProfile beschreiben Höhenverläufe, Pauschalgefälle mittlere Neigung, Falllinien gerichtete Pfade entlang des stärksten Gefälles.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#anwendungen-geomorphometrischer-ableitungen",
+    "href": "slides/unit04_raeumliche_ableitungen.html#anwendungen-geomorphometrischer-ableitungen",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Anwendungen geomorphometrischer Ableitungen",
+    "text": "Anwendungen geomorphometrischer Ableitungen\n\n\nGeomorphometrische Ableitungen sind keine bloßen Zusatzkarten. Sie übersetzen Höhe in planungs-, prozess- und standortbezogene Information.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#anschluss-sichtbarkeit-und-reliefhydrologie",
+    "href": "slides/unit04_raeumliche_ableitungen.html#anschluss-sichtbarkeit-und-reliefhydrologie",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Anschluss: Sichtbarkeit und Reliefhydrologie",
+    "text": "Anschluss: Sichtbarkeit und Reliefhydrologie\nDie DGM-Ableitungen führen in zwei Richtungen weiter:\n\n\n\nSichtbarkeit\nHöhenprofil und Sichtlinie entscheiden, ob ein Zielpunkt sichtbar ist.\n\n\nViele Sichtlinien ergeben ein Sichtfeld.\n\n\n\n\nReliefhydrologie\nLokale Gefälle werden zu Fließrichtungen.\n\n\nAus Richtungen entstehen Akkumulations- und Indexraster.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#sichtbarkeit-als-ableitung",
+    "href": "slides/unit04_raeumliche_ableitungen.html#sichtbarkeit-als-ableitung",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Sichtbarkeit als Ableitung",
+    "text": "Sichtbarkeit als Ableitung\nSichtbarkeit ist keine Eigenschaft eines Punktes allein.\nSie ist eine Beziehung zwischen:\nBeobachtungspunkt + Zielpunkt + Gelände dazwischen\n\nEin Ziel ist sichtbar, wenn die Sichtlinie nicht durch Gelände blockiert wird.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#grundprinzip-der-sichtbarkeitsanalyse",
+    "href": "slides/unit04_raeumliche_ableitungen.html#grundprinzip-der-sichtbarkeitsanalyse",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Grundprinzip der Sichtbarkeitsanalyse",
+    "text": "Grundprinzip der Sichtbarkeitsanalyse\n\n\nSichtbarkeit wird entlang einer Sichtlinie geprüft: Wird die Linie vom Gelände geschnitten, ist der Zielpunkt verdeckt.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#geländeprofil-und-horizont",
+    "href": "slides/unit04_raeumliche_ableitungen.html#geländeprofil-und-horizont",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Geländeprofil und Horizont",
+    "text": "Geländeprofil und Horizont\n\n\nEin Punkt ist sichtbar, wenn sein Vertikalwinkel über dem bisher gespeicherten Horizont liegt.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#vom-zielpunkt-zum-sichtfeld",
+    "href": "slides/unit04_raeumliche_ableitungen.html#vom-zielpunkt-zum-sichtfeld",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Vom Zielpunkt zum Sichtfeld",
+    "text": "Vom Zielpunkt zum Sichtfeld\n\n\nEin Sichtfeld entsteht, wenn der Sichtlinientest für viele Zielpunkte oder Rasterzellen wiederholt wird.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#raster-tin-und-profilgewinnung",
+    "href": "slides/unit04_raeumliche_ableitungen.html#raster-tin-und-profilgewinnung",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Raster, TIN und Profilgewinnung",
+    "text": "Raster, TIN und Profilgewinnung\n\n\nRaster und TIN unterscheiden sich in der Profilgewinnung. Der Sichtlinientest bleibt konzeptionell gleich.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#grenzen-der-sichtbarkeitsanalyse",
+    "href": "slides/unit04_raeumliche_ableitungen.html#grenzen-der-sichtbarkeitsanalyse",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Grenzen der Sichtbarkeitsanalyse",
+    "text": "Grenzen der Sichtbarkeitsanalyse\n\n\nDas Ergebnis hängt von DGM/DSM, Auflösung, Beobachterhöhe, Zielhöhe und realen Hindernissen ab.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#sichtbarkeit-ist-nicht-wahrnehmung",
+    "href": "slides/unit04_raeumliche_ableitungen.html#sichtbarkeit-ist-nicht-wahrnehmung",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Sichtbarkeit ist nicht Wahrnehmung",
+    "text": "Sichtbarkeit ist nicht Wahrnehmung\nEin Sichtfeld zeigt berechnete geometrische Sichtbarkeit.\nEs zeigt nicht automatisch:\nErkennbarkeit | Aufmerksamkeit | Vegetationsdeckung | Funkabdeckung | atmosphärische Sicht\n\nEin Sichtfeld ist eine berechnete Sichtbarkeitsannahme, keine direkte Beobachtung.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#prozessbasierte-ableitungen-aus-höhenrastern",
+    "href": "slides/unit04_raeumliche_ableitungen.html#prozessbasierte-ableitungen-aus-höhenrastern",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Prozessbasierte Ableitungen aus Höhenrastern",
+    "text": "Prozessbasierte Ableitungen aus Höhenrastern\nReliefhydrologische Ableitungen nutzen eine einfache Annahme:\n\nWasser folgt dem lokalen Gefälle.\n\n\nDaraus entstehen Fließrichtungsraster, Akkumulationsraster, potenzielle Gerinne und hydrologische Indexraster.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#d8-lokale-fließrichtung",
+    "href": "slides/unit04_raeumliche_ableitungen.html#d8-lokale-fließrichtung",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "D8: lokale Fließrichtung",
+    "text": "D8: lokale Fließrichtung\n\n\nD8 ordnet jeder Rasterzelle genau eine lokale Abflussrichtung zu. Das Ergebnis ist ein Richtungsraster, kein Gewässernetz.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#d8-gefälleformel",
+    "href": "slides/unit04_raeumliche_ableitungen.html#d8-gefälleformel",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "D8-Gefälleformel",
+    "text": "D8-Gefälleformel\nFür jede Nachbarzelle wird das lokale Gefälle berechnet:\n\\[\n\\tan(\\beta) = \\frac{\\Delta z}{d}\n\\]\nbzw.\n\\[\n\\beta = \\arctan\\left(\\frac{\\Delta z}{d}\\right)\n\\]\n\nDirekte Nachbarn haben die Distanz \\[d=a\\], diagonale Nachbarn \\[d=a\\sqrt{2}\\].",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#flow-accumulation-als-rasterwert",
+    "href": "slides/unit04_raeumliche_ableitungen.html#flow-accumulation-als-rasterwert",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Flow Accumulation als Rasterwert",
+    "text": "Flow Accumulation als Rasterwert\n\n\nFlow Accumulation ist ein Zellwert-Raster. Hohe Werte erscheinen als intensivere Rasterzellen, nicht als dicker werdende Flusslinien.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#akkumulation-rekursive-logik",
+    "href": "slides/unit04_raeumliche_ableitungen.html#akkumulation-rekursive-logik",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Akkumulation: rekursive Logik",
+    "text": "Akkumulation: rekursive Logik\nDer akkumulierte Wert einer Zelle setzt sich aus Eigenbeitrag und oberliegenden Beiträgen zusammen:\n\\[\nS(c_i) = s(c_i) + \\sum_u S(c_u)\n\\]\n\nGerinne entstehen erst durch Schwellenwertbildung auf diesem Raster, nicht als Primäroutput des Algorithmus.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#topographischer-feuchteindex",
+    "href": "slides/unit04_raeumliche_ableitungen.html#topographischer-feuchteindex",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Topographischer Feuchteindex",
+    "text": "Topographischer Feuchteindex\n\n\nDer TWI kombiniert beitragende Fläche und Hangneigung. Er zeigt potenziell feuchtere Reliefpositionen, keinen gemessenen Bodenwassergehalt.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#twi-formel",
+    "href": "slides/unit04_raeumliche_ableitungen.html#twi-formel",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "TWI-Formel",
+    "text": "TWI-Formel\n\\[\nTWI = \\ln\\left(\\frac{A_s}{\\tan \\beta}\\right)\n\\]\n\nDer Index wird größer bei viel oberliegender beitragender Fläche und geringer lokaler Hangneigung.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#spi-und-sti",
+    "href": "slides/unit04_raeumliche_ableitungen.html#spi-und-sti",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "SPI und STI",
+    "text": "SPI und STI\n\n\nSPI und STI nutzen Zufluss und Hangneigung, gewichten sie aber anders. Beide sind Indexraster, keine beobachteten Erosionskarten.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#spi-und-sti-formeln",
+    "href": "slides/unit04_raeumliche_ableitungen.html#spi-und-sti-formeln",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "SPI und STI: Formeln",
+    "text": "SPI und STI: Formeln\n\\[\nSPI = A_s \\cdot \\tan \\beta\n\\]\n\\[\nSTI =\n\\left(\\frac{A_s}{22.13}\\right)^{0.6}\n\\cdot\n\\left(\\frac{\\sin \\beta}{0.0896}\\right)^{1.3}\n\\]\n\nÄhnliche Muster entstehen, weil beide Indizes stark von beitragender Fläche und konzentriertem Abfluss geprägt werden.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#maximale-fließweglänge",
+    "href": "slides/unit04_raeumliche_ableitungen.html#maximale-fließweglänge",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Maximale Fließweglänge",
+    "text": "Maximale Fließweglänge\n\n\nGespeichert wird der längste flussaufwärts gelegene Weg bis zu einer Zelle, nicht die Summe aller Fließwege.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#gemeinsame-logik-der-einheit",
+    "href": "slides/unit04_raeumliche_ableitungen.html#gemeinsame-logik-der-einheit",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Gemeinsame Logik der Einheit",
+    "text": "Gemeinsame Logik der Einheit\nAlle Beispiele folgen derselben Grundstruktur:\nPrimärdaten → Modellannahme → Operation → neues räumliches Produkt → Interpretation\n\nVoronoi: Punktlage → Näheannahme → Zuordnungsflächen\nInterpolation: Punktwerte → Schätzmodell → Oberfläche\nDGM: Höhe → lokale Ableitung → Geländeparameter\nSichtbarkeit: Höhe → Sichtlinie → Sichtfeld\nReliefhydrologie: Höhe → Gefälle → Prozessraster",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#prüfregel-für-räumliche-ableitungen",
+    "href": "slides/unit04_raeumliche_ableitungen.html#prüfregel-für-räumliche-ableitungen",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Prüfregel für räumliche Ableitungen",
+    "text": "Prüfregel für räumliche Ableitungen\nBei jeder räumlichen Ableitung muss gefragt werden:\nWelche Ausgangsdaten?\nWelche Annahme?\nWelche Operation?\nWelche Parameter?\nWelches Ergebnisprodukt?\nWelche Aussagegrenze?\n\nEine GIS-Analyse ist erst fachlich belastbar, wenn genau diese Kette transparent bleibt.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#übung-ableitungen-vergleichen",
+    "href": "slides/unit04_raeumliche_ableitungen.html#übung-ableitungen-vergleichen",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Übung: Ableitungen vergleichen",
+    "text": "Übung: Ableitungen vergleichen\nWählen Sie drei Beispiele aus der Einheit und vergleichen Sie:\nVoronoi | Interpolation | DGM-Parameter | Sichtfeld | Flow Accumulation | TWI/SPI/STI\nBeschreiben Sie jeweils:\n\nwelche Ausgangsdaten verwendet werden,\nwelche Annahme die Methode trifft,\nwelches neue räumliche Produkt entsteht,\nwelche Grenze die Interpretation hat.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit04_raeumliche_ableitungen.html#abschluss",
+    "href": "slides/unit04_raeumliche_ableitungen.html#abschluss",
+    "title": "Räumliche Ableitungen aus Geodaten",
+    "section": "Abschluss",
+    "text": "Abschluss\nRäumliche Analyse erzeugt keine automatische Wahrheit.\nSie erzeugt nachvollziehbare, aber annahmenabhängige räumliche Ableitungen.\n\nDer fachliche Kern liegt nicht im Werkzeug, sondern in der begründeten Übersetzung von Frage, Daten, Operation und Interpretation.\n\n\n\n\n\nBerry, Brian Joe Lobley, und Duane Francis Marble. 1968. Spatial analysis: a reader in statistical geography.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Räumliche Ableitungen"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#leitfrage-der-sitzung",
+    "href": "slides/unit02_gi_raumkonzepte.html#leitfrage-der-sitzung",
+    "title": "Raumkonzepte",
+    "section": "Leitfrage der Sitzung",
+    "text": "Leitfrage der Sitzung\nGIS bildet nicht einfach „die Welt“ ab.\nGIS übersetzt Ausschnitte der realen Welt in Modelle, Datenstrukturen und Koordinatenbezüge.\nRealwelt → Abstraktion → Datenmodell → Koordinatenbezug → Analyse\nDer Kern der Sitzung ist deshalb nicht ein einzelnes Werkzeug, sondern die Frage:\n\nWie wird Raum so codiert, dass er digital gespeichert, kombiniert, gemessen und analysiert werden kann?",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#lernziele",
+    "href": "slides/unit02_gi_raumkonzepte.html#lernziele",
+    "title": "Raumkonzepte",
+    "section": "Lernziele",
+    "text": "Lernziele\nNach der Sitzung sollten Sie erklären können,\n\nwarum Geodaten immer Repräsentationen und nicht die reale Welt selbst sind,\nwie diskrete Geoobjekte und kontinuierliche Raumphänomene unterschieden werden,\nwelche Rolle Geometrie, Dimension und Topologie in GIS spielen,\nwie Raster- und Vektordatenmodelle Raum unterschiedlich codieren,\nwarum Koordinaten nur mit Bezugssystem, Datum und Projektion eindeutig interpretierbar sind.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#abstraktion-von-der-realwelt-zum-modell",
+    "href": "slides/unit02_gi_raumkonzepte.html#abstraktion-von-der-realwelt-zum-modell",
+    "title": "Raumkonzepte",
+    "section": "Abstraktion: von der Realwelt zum Modell",
+    "text": "Abstraktion: von der Realwelt zum Modell\nWenn wir reale Welt in Karten oder GI-Systemen abbilden, müssen wir auswählen und vereinfachen.\nEin Modell ist dabei keine Verfälschung, sondern eine zweckgebundene Repräsentation.\nWas interessiert uns?\nWelche Eigenschaften brauchen wir?\nWelche Details dürfen wir weglassen?\nWelche Datenstruktur kann das abbilden?",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#modellierung-heißt-zielgerichtet-reduzieren",
+    "href": "slides/unit02_gi_raumkonzepte.html#modellierung-heißt-zielgerichtet-reduzieren",
+    "title": "Raumkonzepte",
+    "section": "Modellierung heißt: Zielgerichtet reduzieren",
+    "text": "Modellierung heißt: Zielgerichtet reduzieren\n\n\n\n\n\n\nEine reale Situation kann als Vektormodell, Rastermodell oder Kombination aus beiden repräsentiert werden.\nDie Wahl hängt nicht nur vom Objekt ab, sondern von der Fragestellung.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#diskrete-objekte-und-raumkontinua",
+    "href": "slides/unit02_gi_raumkonzepte.html#diskrete-objekte-und-raumkontinua",
+    "title": "Raumkonzepte",
+    "section": "Diskrete Objekte und Raumkontinua",
+    "text": "Diskrete Objekte und Raumkontinua\nGIS muss zwei Grundformen räumlicher Phänomene abbilden:\n\n\n\nDiskrete Geoobjekte\nStraßen, Gebäude, Messstationen, Schutzgebiete.\n\n\nSie werden häufig als Punkte, Linien oder Flächen modelliert.\n\n\n\n\nRaumkontinua\nHöhe, Temperatur, Niederschlag, Strahlung, Schadstoffkonzentration.\n\n\nSie werden häufig als Raster oder kontinuierliche Felder modelliert.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#raum-im-gis-koordinaten",
+    "href": "slides/unit02_gi_raumkonzepte.html#raum-im-gis-koordinaten",
+    "title": "Raumkonzepte",
+    "section": "Raum im GIS: Koordinaten",
+    "text": "Raum im GIS: Koordinaten\nDer Raum in GIS wird für viele Operationen als euklidischer Raum behandelt.\nPositionen werden über Koordinaten bestimmbar:\n\n\n\n\n\n\n2D-Koordinatensystem\n\n\n\n\n\n\n\n3D-Koordinatensystem",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#dimensionen-von-geoobjekten",
+    "href": "slides/unit02_gi_raumkonzepte.html#dimensionen-von-geoobjekten",
+    "title": "Raumkonzepte",
+    "section": "Dimensionen von Geoobjekten",
+    "text": "Dimensionen von Geoobjekten\n\n\n\n\n\n\nDimensionalität von Geoobjekten\n\n\n\n\n\n0D: Punkte, z. B. Messstationen\n1D: Linien, z. B. Straßen oder Flüsse\n2D: Flächen, z. B. Stadtgebiete\n3D: Körper, z. B. Gebäude oder Grundwasserkörper\n\nZusätzlich kommen Attribute und Zeit als weitere Informationsdimensionen hinzu.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#topologie-relative-lage-statt-exakter-form",
+    "href": "slides/unit02_gi_raumkonzepte.html#topologie-relative-lage-statt-exakter-form",
+    "title": "Raumkonzepte",
+    "section": "Topologie: relative Lage statt exakter Form",
+    "text": "Topologie: relative Lage statt exakter Form\nTopologie beschreibt räumliche Beziehungen unabhängig von exakter metrischer Form.\nBeispiele:\nverbunden | benachbart | innerhalb | berührt | schneidet | getrennt\n\n\n\n\n\n\nEin Liniennetzplan ist topologisch nützlich, obwohl er geometrisch nicht maßstäblich ist.\nFür Routing zählt nicht nur „wo“, sondern auch „was ist womit verbunden?“",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#geometrie-dimension-und-topologie-gehören-zusammen",
+    "href": "slides/unit02_gi_raumkonzepte.html#geometrie-dimension-und-topologie-gehören-zusammen",
+    "title": "Raumkonzepte",
+    "section": "Geometrie, Dimension und Topologie gehören zusammen",
+    "text": "Geometrie, Dimension und Topologie gehören zusammen\nEine Kreuzung in der Karte ist nicht automatisch eine Verbindung im Netzwerk.\nEine Brücke kann geometrisch wie eine Kreuzung aussehen, topologisch aber keine Verbindung sein.\nGeometrie: Wo liegt etwas?\nDimension: Welche räumliche Ordnung hat es?\nTopologie: Wie ist es mit anderen Objekten verbunden?",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#datenmodelle-als-technische-raumkonzepte",
+    "href": "slides/unit02_gi_raumkonzepte.html#datenmodelle-als-technische-raumkonzepte",
+    "title": "Raumkonzepte",
+    "section": "Datenmodelle als technische Raumkonzepte",
+    "text": "Datenmodelle als technische Raumkonzepte\nDatenmodelle übersetzen geographische Abstraktion in digitale Struktur.\nSie legen fest,\n\nwelche Objekte oder Felder gespeichert werden,\nwelche Geometrie verwendet wird,\nwie Attribute zugeordnet werden,\nwelche Operationen sinnvoll möglich sind.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#vektordatenmodell",
+    "href": "slides/unit02_gi_raumkonzepte.html#vektordatenmodell",
+    "title": "Raumkonzepte",
+    "section": "Vektordatenmodell",
+    "text": "Vektordatenmodell\n\n\n\n\n\n\nIm Vektormodell wird Raum aus Punkten, Linien und Polygonen aufgebaut.\nEs eignet sich besonders für diskrete Geoobjekte: Gebäude, Straßen, Flurstücke, Schutzgebiete.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#rasterdatenmodell",
+    "href": "slides/unit02_gi_raumkonzepte.html#rasterdatenmodell",
+    "title": "Raumkonzepte",
+    "section": "Rasterdatenmodell",
+    "text": "Rasterdatenmodell\n\n\n\n\n\n\nIm Rastermodell wird Raum in regelmäßige Zellen zerlegt.\nJede Zelle trägt einen Wert.\nDas eignet sich besonders für kontinuierliche Phänomene: Höhe, Temperatur, Niederschlag, Landoberfläche.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#raster-impliziter-und-expliziter-raumbezug",
+    "href": "slides/unit02_gi_raumkonzepte.html#raster-impliziter-und-expliziter-raumbezug",
+    "title": "Raumkonzepte",
+    "section": "Raster: impliziter und expliziter Raumbezug",
+    "text": "Raster: impliziter und expliziter Raumbezug\n\n\n\n\n\n\nRasterzellen besitzen zunächst einen impliziten Raumbezug über Zeile und Spalte.\nGeographisch nutzbar werden sie erst durch explizite Georeferenzierung: Ursprung, Zellgröße, Koordinatensystem und Projektion.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#raum-zeit-kodierung",
+    "href": "slides/unit02_gi_raumkonzepte.html#raum-zeit-kodierung",
+    "title": "Raumkonzepte",
+    "section": "Raum-Zeit-Kodierung",
+    "text": "Raum-Zeit-Kodierung\nGIS-Daten verknüpfen mindestens drei Ebenen:\nOrt + Zeit + Attribut\nBeispiel:\nMessstation A\nam 15.06.2026 um 14:00 Uhr\nTemperatur = 31,2 °C\nOhne Ort ist der Messwert nicht räumlich analysierbar. Ohne Zeit ist er nicht dynamisch interpretierbar. Ohne Attribut gibt es nichts zu analysieren.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#zeit-als-ordnungssystem",
+    "href": "slides/unit02_gi_raumkonzepte.html#zeit-als-ordnungssystem",
+    "title": "Raumkonzepte",
+    "section": "Zeit als Ordnungssystem",
+    "text": "Zeit als Ordnungssystem\n\n\n\nZeit wird in GIS meist linear codiert: Zeitpunkte, Zeitintervalle, Zeitreihen.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#orte-können-unterschiedlich-codiert-werden",
+    "href": "slides/unit02_gi_raumkonzepte.html#orte-können-unterschiedlich-codiert-werden",
+    "title": "Raumkonzepte",
+    "section": "Orte können unterschiedlich codiert werden",
+    "text": "Orte können unterschiedlich codiert werden\nNicht jede räumliche Referenz ist eine Koordinate.\n\n\n\nSemantische Referenzierung\nOrtsnamen, Adressen, Verwaltungseinheiten.\n\n\nMetrische Referenzierung\nKoordinaten, lineare Referenzierung, Katastergeometrien.\n\n\n\nDie Genauigkeit und Nutzbarkeit hängt vom Zweck ab.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#namen-und-orte",
+    "href": "slides/unit02_gi_raumkonzepte.html#namen-und-orte",
+    "title": "Raumkonzepte",
+    "section": "Namen und Orte",
+    "text": "Namen und Orte\n\n\n\n\n\n\nOrtsnamen sind verständlich, aber nicht eindeutig genug für viele GIS-Analysen.\nGleiche Namen, mehrsprachige Namen, historische Namen oder lokale Schreibweisen können unterschiedliche Orte bezeichnen.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#lineare-referenzierung",
+    "href": "slides/unit02_gi_raumkonzepte.html#lineare-referenzierung",
+    "title": "Raumkonzepte",
+    "section": "Lineare Referenzierung",
+    "text": "Lineare Referenzierung\n\n\n\n\n\n\nPannenort nördlich von Holtau\n\n\n\n\nEine Position kann auch entlang einer Linie codiert werden:\nStraße A7, Kilometer 213,4\nFluss Lahn, Pegel bei km 124\nDas ist für Verkehrs- und Leitungsnetze oft sinnvoller als reine x/y-Koordinaten.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#kataster-und-geometrisch-exakte-lage",
+    "href": "slides/unit02_gi_raumkonzepte.html#kataster-und-geometrisch-exakte-lage",
+    "title": "Raumkonzepte",
+    "section": "Kataster und geometrisch exakte Lage",
+    "text": "Kataster und geometrisch exakte Lage\n\n\n\n\n\n\nHistorischer Katasterplan Bukowsko 1906\n\n\n\n\nKatasterpläne codieren Eigentum, Grenzen und Flurstücke geometrisch und administrativ.\nSie sind nicht nur Kartenbilder, sondern rechtlich und technisch strukturierte Raumdaten.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#geographische-koordinaten",
+    "href": "slides/unit02_gi_raumkonzepte.html#geographische-koordinaten",
+    "title": "Raumkonzepte",
+    "section": "Geographische Koordinaten",
+    "text": "Geographische Koordinaten\nGeographische Koordinaten beschreiben Positionen auf einer gekrümmten Bezugsfläche.\nBreite = Winkel nördlich/südlich des Äquators\nLänge  = Winkel östlich/westlich des Nullmeridians",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#ellipsoid-geoid-und-datum",
+    "href": "slides/unit02_gi_raumkonzepte.html#ellipsoid-geoid-und-datum",
+    "title": "Raumkonzepte",
+    "section": "Ellipsoid, Geoid und Datum",
+    "text": "Ellipsoid, Geoid und Datum\nKoordinaten sind nie einfach nur Zahlen.\nSie beziehen sich auf ein geodätisches Modell der Erde.\n\n\n\n\n\n\n\nEllipsoid: mathematisch geglättete Bezugsfläche\nGeoid: physikalische Höhen- und Schwerereferenz\nDatum / Referenzsystem: legt Bezug und Lagerung fest",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#globales-und-regionales-bezugssystem",
+    "href": "slides/unit02_gi_raumkonzepte.html#globales-und-regionales-bezugssystem",
+    "title": "Raumkonzepte",
+    "section": "Globales und regionales Bezugssystem",
+    "text": "Globales und regionales Bezugssystem\n\n\n\n\n\n\nEin globales Referenzsystem passt die Erde insgesamt an.\nEin regionales Datum kann für ein Gebiet besser passen.\nDeshalb können ähnliche Koordinaten in unterschiedlichen Bezugssystemen verschiedene Orte meinen.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#projektionen-von-der-erde-zur-karte",
+    "href": "slides/unit02_gi_raumkonzepte.html#projektionen-von-der-erde-zur-karte",
+    "title": "Raumkonzepte",
+    "section": "Projektionen: von der Erde zur Karte",
+    "text": "Projektionen: von der Erde zur Karte\nGeographische Koordinaten liegen auf einer gekrümmten Bezugsfläche.\nViele GIS-Analysen brauchen aber ebene x/y-Koordinaten.\nDatum / Referenzsystem → Ellipsoid → Projektion → Rechtswert / Hochwert",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#kartenprojektionen-erzeugen-immer-verzerrungen",
+    "href": "slides/unit02_gi_raumkonzepte.html#kartenprojektionen-erzeugen-immer-verzerrungen",
+    "title": "Raumkonzepte",
+    "section": "Kartenprojektionen erzeugen immer Verzerrungen",
+    "text": "Kartenprojektionen erzeugen immer Verzerrungen\n\n\n\n\n\n\nKeine Projektion ist gleichzeitig überall längentreu, flächentreu und winkeltreu.\nDie passende Projektion hängt von der Fragestellung ab.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#warum-das-in-qgis-wichtig-ist",
+    "href": "slides/unit02_gi_raumkonzepte.html#warum-das-in-qgis-wichtig-ist",
+    "title": "Raumkonzepte",
+    "section": "Warum das in QGIS wichtig ist",
+    "text": "Warum das in QGIS wichtig ist\nQGIS kann Layer mit unterschiedlichen Bezugssystemen oft gemeinsam anzeigen.\nDas heißt aber nicht automatisch, dass Messungen und Analysen korrekt sind.\nWGS 84\n= Breite/Länge in Grad\n\nETRS89 / UTM Zone 32N\n= Rechtswert/Hochwert in Metern\nFür Distanzen, Flächen und Rasteranalysen sind metrische Projektionen meist notwendig.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#grad-oder-meter",
+    "href": "slides/unit02_gi_raumkonzepte.html#grad-oder-meter",
+    "title": "Raumkonzepte",
+    "section": "Grad oder Meter?",
+    "text": "Grad oder Meter?\n\n\n\nGeographische Koordinaten\n50.81, 8.77\nEinheit: Grad\ntypisch: GPS, Webdaten\n\n\nProjizierte Koordinaten\n477000, 5630000\nEinheit: Meter\ntypisch: lokale Analyse\n\n\n\nDie Zahlenform allein reicht nicht. Entscheidend ist der vollständige CRS-Bezug.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#abschluss-kontrollierte-raumcodierung",
+    "href": "slides/unit02_gi_raumkonzepte.html#abschluss-kontrollierte-raumcodierung",
+    "title": "Raumkonzepte",
+    "section": "Abschluss: kontrollierte Raumcodierung",
+    "text": "Abschluss: kontrollierte Raumcodierung\nGIS-Arbeit bedeutet kontrollierte Übersetzung:\nRealwelt\n→ Modell\n→ Datenmodell\n→ Geometrie / Topologie / Dimension\n→ Koordinatenbezug\n→ Projektion\n→ Analyse\n→ Interpretation\nDer zentrale Satz:\n\nGeodaten sind nicht einfach Daten über Raum. Sie sind technisch und fachlich codierte Raumrepräsentationen.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit02_gi_raumkonzepte.html#arbeitsauftrag",
+    "href": "slides/unit02_gi_raumkonzepte.html#arbeitsauftrag",
+    "title": "Raumkonzepte",
+    "section": "Arbeitsauftrag",
+    "text": "Arbeitsauftrag\nWählen Sie ein Ihnen bekanntes Beispiel aus QGIS oder einer Webkarte.\nBeschreiben Sie kurz:\n\nWelches Phänomen wird repräsentiert?\nHandelt es sich eher um diskrete Geoobjekte oder ein Raumkontinuum?\nWelches Datenmodell liegt nahe: Raster oder Vektor?\nWelche Rolle spielen Koordinaten, Projektion und Topologie?\nWelche Information geht durch die Abstraktion verloren?",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "GI Raumkonzepte"
+    ]
   },
   {
     "objectID": "index.html",
@@ -1393,146 +2010,1014 @@
     ]
   },
   {
-    "objectID": "slides/w-02-slides.html#lernziele-fragen-und-antworten",
-    "href": "slides/w-02-slides.html#lernziele-fragen-und-antworten",
-    "title": "Relationen und Abfragen",
-    "section": "Lernziele Fragen und Antworten",
-    "text": "Lernziele Fragen und Antworten\n\nVerständnis räumlicher Datenmodelle in GIS: Modellieren von Vektordaten und Attributen.\nAbfragetypen und -techniken: Erlernen von thematischen, geometrischen und topologischen Abfragen.\nVergleichs- und logische Operatoren: Formulierung komplexer Abfragen zur Identifizierung spezifischer Objekte.\nPraktische GIS-Anwendung: Durchführung von Abfragen, Datenanalyse und visuelle Darstellung der Ergebnisse.",
+    "objectID": "assets/templates/journals-examples-default.html",
+    "href": "assets/templates/journals-examples-default.html",
+    "title": "Skalen in Geographie und Ökologie\nEine unendliche Geschichte",
+    "section": "",
+    "text": "Die Ökologie befasst sich mit der Frage, wie Organismen miteinander und mit ihrer Umwelt interagieren. Skalen und Prozesse sind zwei grundlegende Konzepte in der Ökologie, die verwendet werden, um ökologische Muster und Dynamik zu verstehen.\nSkalen in der Ökologie beziehen sich auf die räumlichen und zeitlichen Dimensionen ökologischer Phänomene. Ökologische Phänomene treten in verschiedenen Maßstäben auf, die von einzelnen Organismen bis zu ganzen Ökosystemen und von Sekunden bis zu Jahrtausenden reichen. Das Verständnis der geeigneten Skala ist entscheidend für das Verständnis der ökologischen Prozesse, die innerhalb dieser Skala ablaufen. Die Wahl eines geeigneten Maßstabs beeinflusst auch die Genauigkeit und Präzision ökologischer Daten und die Interpretation ökologischer Muster.\nProzesse in der Ökologie beziehen sich auf die biologischen und physikalischen Mechanismen, die ökologischen Phänomenen zugrunde liegen. Ökologische Prozesse treten in verschiedenen Maßstäben auf, die von der molekularen Ebene bis zur Landschaftsebene reichen. Zu den ökologischen Prozessen gehören biotische Interaktionen wie Konkurrenz, Räuber und Gegenseitigkeit sowie abiotische Interaktionen wie Klima, Nährstoffkreislauf und Störungen. Das Verständnis der zugrundeliegenden Prozesse ist unerlässlich für die Vorhersage, wie ökologische Systeme auf veränderte Bedingungen reagieren werden, und für die Entwicklung wirksamer Erhaltungs- und Bewirtschaftungsstrategien.\nInsgesamt sind Größenordnungen und Prozesse wesentliche Konzepte in der Ökologie, die dazu dienen, die komplexen Wechselwirkungen zwischen Organismen und ihrer Umwelt zu verstehen."
+  },
+  {
+    "objectID": "assets/templates/journals-examples-default.html#diskussion",
+    "href": "assets/templates/journals-examples-default.html#diskussion",
+    "title": "Skalen in Geographie und Ökologie\nEine unendliche Geschichte",
+    "section": "4.1 Diskussion",
+    "text": "4.1 Diskussion\nJa, es gibt in der Geographie mehrere Theorien, die sich auf die Auswirkungen der Zeit auf den Maßstab beziehen. Eine der bekanntesten ist das Konzept des zeitlichen Maßstabs, das von dem Geographen David Harvey entwickelt wurde. Nach Harvey bezieht sich der zeitliche Maßstab auf die Länge der Zeit, über die ein Phänomen beobachtet werden kann, und er ist ein wichtiger Faktor für das Verständnis der räumlichen Beziehungen und Muster, die in einem bestimmten geografischen Kontext bestehen. Darüber hinaus argumentiert Harvey, dass der zeitliche Maßstab, in dem Daten erhoben und analysiert werden, einen erheblichen Einfluss auf die Schlussfolgerungen haben kann, die aus den Daten gezogen werden können.\nEine weitere Theorie, die sich auf die Auswirkungen der Zeit auf den Maßstab bezieht, ist das von dem Geographen David Harvey und anderen entwickelte Konzept der Zeit-Raum-Kompression. Diese Theorie besagt, dass Fortschritte in Technologie und Kommunikation zu einer Kompression von Zeit und Raum geführt haben, wodurch die Welt kleiner und vernetzter erscheint. Infolgedessen können geografische Phänomene von Faktoren beeinflusst werden, die in verschiedenen räumlichen und zeitlichen Maßstäben existieren, und es ist wichtig, diese Faktoren bei der Analyse und Interpretation von geografischen Daten zu berücksichtigen.\nInsgesamt verdeutlichen die Theorien zu den Auswirkungen der Zeit auf den Maßstab in der Geographie die komplexen und dynamischen Beziehungen zwischen räumlichen und zeitlichen Phänomenen und die Bedeutung der Berücksichtigung dieser Beziehungen in geographischen Analysen (Harvey 1996)."
+  },
+  {
+    "objectID": "assets/templates/journals-examples-default.html#schlussfolgerungen",
+    "href": "assets/templates/journals-examples-default.html#schlussfolgerungen",
+    "title": "Skalen in Geographie und Ökologie\nEine unendliche Geschichte",
+    "section": "4.2 Schlussfolgerungen",
+    "text": "4.2 Schlussfolgerungen\nZeit-Raum-Kompression ist ein Konzept, das von mehreren Geographen entwickelt und ausgearbeitet wurde, darunter David Harvey, Doreen Massey und Henri Lefebvre. Im Kern bezieht sich die Zeit-Raum-Kompression auf die Idee, dass Fortschritte in der Transport- und Kommunikationstechnologie ein Gefühl des “Schrumpfens” in Bezug auf die Zeit und den Raum geschaffen haben, die für soziale und wirtschaftliche Interaktionen erforderlich sind.\nDie Zeit-Raum-Kompression manifestiert sich unter anderem in der zunehmenden Geschwindigkeit und Leichtigkeit von Transport und Kommunikation. Flugreisen, Hochgeschwindigkeitszüge und das Internet haben es beispielsweise möglich gemacht, Waren, Menschen und Informationen in relativ kurzer Zeit über große Entfernungen zu transportieren. Dies hat zu einer Verwischung der traditionellen räumlichen Grenzen und zur Entstehung globaler Netzwerke für Austausch und Interaktion geführt.\nDie Verdichtung von Zeit und Raum ist jedoch kein neutraler oder einheitlicher Prozess, und seine Auswirkungen werden von verschiedenen Menschen und an verschiedenen Orten unterschiedlich empfunden. So kann die zunehmende Geschwindigkeit des globalen Handels einigen Menschen und Gemeinschaften zugute kommen, während sie anderen schadet, und die Intensivierung globaler Netzwerke kann bei einigen Menschen zu einem Gefühl der Dislokation oder Desorientierung führen.\nInsgesamt ist die Zeit-Raum-Kompression ein wichtiges Konzept in der Geografie, weil es hilft zu erklären, wie die räumlichen Beziehungen und Muster, die in einem bestimmten geografischen Kontext bestehen, durch technologischen Wandel und Globalisierung geformt und verändert werden."
+  },
+  {
+    "objectID": "slides/unit01_geographischer_raum.html#leitfrage-der-sitzung",
+    "href": "slides/unit01_geographischer_raum.html#leitfrage-der-sitzung",
+    "title": "Geographischer Raum",
+    "section": "Leitfrage der Sitzung",
+    "text": "Leitfrage der Sitzung\nGIS beginnt nicht mit Software.\nGIS beginnt mit der Frage, wie räumliche Wirklichkeit so abstrahiert, codiert und interpretiert wird, dass sie digital bearbeitbar wird.\nWahrnehmung → Abstraktion → Geodatensatz → Analyse → Interpretation\nDer Kern der Sitzung ist deshalb:\n\nWie wird aus räumlicher Erfahrung eine formale Geoinformation?",
     "crumbs": [
-      "Folien",
-      "Relationen und Abfragen"
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
     ]
   },
   {
-    "objectID": "slides/w-02-slides.html#koordinatensysteme",
-    "href": "slides/w-02-slides.html#koordinatensysteme",
-    "title": "Relationen und Abfragen",
-    "section": "Koordinatensysteme",
-    "text": "Koordinatensysteme\n\n\n\n\n\n\nNicht-manipulativen GI-Abfragen, GITTA 2005",
+    "objectID": "slides/unit01_geographischer_raum.html#lernziele",
+    "href": "slides/unit01_geographischer_raum.html#lernziele",
+    "title": "Geographischer Raum",
+    "section": "Lernziele",
+    "text": "Lernziele\nNach der Sitzung sollten Sie erklären können,\n\nwarum GIS immer mit Abstraktion und Modellbildung arbeitet,\nwarum Karten und Geodaten keine direkten Abbilder der Wirklichkeit sind,\nwie diskrete Objekte und kontinuierliche Felder unterschieden werden,\nwelche Rolle Raum, Zeit und Attribute in Geodaten spielen,\nwarum Geodaten immer zweck-, maßstabs- und interpretationsabhängig sind.",
     "crumbs": [
-      "Folien",
-      "Relationen und Abfragen"
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
     ]
   },
   {
-    "objectID": "slides/w-02-slides.html#operatoren",
-    "href": "slides/w-02-slides.html#operatoren",
-    "title": "Relationen und Abfragen",
-    "section": "Operatoren",
-    "text": "Operatoren\n\nVergleichsoperatoren\nArithmetische Operatoren\nLogische Operatoren",
+    "objectID": "slides/unit01_geographischer_raum.html#raum-ist-relevant",
+    "href": "slides/unit01_geographischer_raum.html#raum-ist-relevant",
+    "title": "Geographischer Raum",
+    "section": "Raum ist relevant",
+    "text": "Raum ist relevant\nRäumliche Fragen entstehen nicht erst in GIS.\nSie sind Teil alltäglicher Orientierung, Planung und Entscheidung:\n\n\n\nAlltag\nWelchen Weg nehme ich?\n\n\nWo ist der nächste Bahnhof?\n\n\n\n\nWie erreiche ich ein Ziel möglichst schnell?\n\n\nPlanung und Analyse\nWo entsteht Infrastruktur?\n\n\n\n\nWelche Standorte sind geeignet?\n\n\nWelche Muster treten räumlich gehäuft auf?\n\n\n\nGIS macht solche räumlichen Fragen formal bearbeitbar.",
     "crumbs": [
-      "Folien",
-      "Relationen und Abfragen"
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
     ]
   },
   {
-    "objectID": "slides/w-02-slides.html#vergleichsoperator",
-    "href": "slides/w-02-slides.html#vergleichsoperator",
-    "title": "Relationen und Abfragen",
-    "section": "Vergleichsoperator",
-    "text": "Vergleichsoperator\n\n\n\nVergleichsoperator\nBedeutung\n\n\n\n\n=\nEQ (gleich)\n\n\n&gt;\nGT (größer)\n\n\n&gt;=\nGE (größer gleich)\n\n\n&lt;\nLT (kleiner)\n\n\n&lt; =\nLE (kleiner gleich)\n\n\n&lt;&gt;\nNE (ungleich)",
+    "objectID": "slides/unit01_geographischer_raum.html#geographische-kompetenz",
+    "href": "slides/unit01_geographischer_raum.html#geographische-kompetenz",
+    "title": "Geographischer Raum",
+    "section": "Geographische Kompetenz",
+    "text": "Geographische Kompetenz\nViele räumliche Probleme lösen wir intuitiv.\nGIS zwingt dazu, diese Intuition explizit zu machen:\nWas ist der relevante Raum?\nWelche Objekte oder Felder interessieren?\nWelche Eigenschaften werden gespeichert?\nWelche Beziehungen sind wichtig?\nWelche Vereinfachungen sind zulässig?\nGeographische Kompetenz bedeutet hier: räumliche Fragen in überprüfbare Daten- und Analysekonzepte zu übersetzen.",
     "crumbs": [
-      "Folien",
-      "Relationen und Abfragen"
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
     ]
   },
   {
-    "objectID": "slides/w-02-slides.html#arithmetische-operatorendatenmodelle",
-    "href": "slides/w-02-slides.html#arithmetische-operatorendatenmodelle",
-    "title": "Relationen und Abfragen",
-    "section": "Arithmetische OperatorenDatenmodelle",
-    "text": "Arithmetische OperatorenDatenmodelle\nDie arithmetischen Operatoren werden für numerische Attribute verwendet. Gängige sind:\n\nMultiplikation *\nDivision /\nAddition +\nSubtraktion -,\nExponent exp\nModulo-Operator %",
+    "objectID": "slides/unit01_geographischer_raum.html#karte-bild-oder-modell",
+    "href": "slides/unit01_geographischer_raum.html#karte-bild-oder-modell",
+    "title": "Geographischer Raum",
+    "section": "Karte: Bild oder Modell?",
+    "text": "Karte: Bild oder Modell?\nEine Karte ist kein neutrales Abbild der Wirklichkeit.\nSie zeigt eine Auswahl, Vereinfachung und symbolische Übersetzung eines Ausschnitts der Erdoberfläche.\n\n\n\n\n\n\nWeltkarte des Ptolemäus\n\n\n\n\nKarten zeigen nicht einfach, „wie die Welt ist“.\nSie zeigen, wie ein Ausschnitt der Welt unter bestimmten Annahmen, Interessen und Darstellungsregeln verständlich gemacht wird.",
     "crumbs": [
-      "Folien",
-      "Relationen und Abfragen"
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
     ]
   },
   {
-    "objectID": "slides/w-02-slides.html#logische-operatoren",
-    "href": "slides/w-02-slides.html#logische-operatoren",
-    "title": "Relationen und Abfragen",
-    "section": "Logische Operatoren",
-    "text": "Logische Operatoren\n\n\n\n\n\n\nDie vier Booleschen Operatoren, GITTA 2005",
+    "objectID": "slides/unit01_geographischer_raum.html#kartographie-als-abstraktion",
+    "href": "slides/unit01_geographischer_raum.html#kartographie-als-abstraktion",
+    "title": "Geographischer Raum",
+    "section": "Kartographie als Abstraktion",
+    "text": "Kartographie als Abstraktion\nNach klassischer Definition ist eine Karte ein orientiertes, verkleinertes und geebnetes Grundrissbild eines Ausschnitts der Erdoberfläche.\nDie wichtige Einschränkung ist: Sie zeigt nicht alles, sondern das als wesentlich Ausgewählte.\nAusschnitt → Auswahl → Vereinfachung → Symbolisierung → Interpretation\nKarten müssen deshalb gelesen werden wie Modelle: mit Blick auf Zweck, Auswahl, Maßstab und Darstellungsregeln.",
     "crumbs": [
-      "Folien",
-      "Relationen und Abfragen"
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
     ]
   },
   {
-    "objectID": "slides/w-02-slides.html#beliebige-kombination-von-operatoren",
-    "href": "slides/w-02-slides.html#beliebige-kombination-von-operatoren",
-    "title": "Relationen und Abfragen",
-    "section": "Beliebige Kombination von Operatoren",
-    "text": "Beliebige Kombination von Operatoren\n\n\n\n\n\n\n\n\n\n\n\nGITTA 2005",
+    "objectID": "slides/unit01_geographischer_raum.html#intention-und-verzerrung",
+    "href": "slides/unit01_geographischer_raum.html#intention-und-verzerrung",
+    "title": "Geographischer Raum",
+    "section": "Intention und Verzerrung",
+    "text": "Intention und Verzerrung\nKarten sind autorisierte und gestaltete Informationssammlungen.\nSie können durch Unwissen, Interessen, Ideologie oder technische Begrenzungen verzerrt sein (vgl. Monmonier 1991).\nDas gilt auch für digitale Karten und Web-GIS.\n\nDigitale Darstellung macht eine Karte nicht automatisch objektiv.",
     "crumbs": [
-      "Folien",
-      "Relationen und Abfragen"
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
     ]
   },
   {
-    "objectID": "slides/w-02-slides.html#verschachtelte-logische-abfragen",
-    "href": "slides/w-02-slides.html#verschachtelte-logische-abfragen",
-    "title": "Relationen und Abfragen",
-    "section": "Verschachtelte logische Abfragen",
-    "text": "Verschachtelte logische Abfragen\n\n\n\n\nKreis 1: Baumart = “Lärche\nKreis 2: Vorrat &gt; 110 m3/ha\nKreis 3: Überschirmung &gt; 80%.\n\n\n\n\n\n\n\nWeitere Beipiele",
+    "objectID": "slides/unit01_geographischer_raum.html#geographische-abstraktion",
+    "href": "slides/unit01_geographischer_raum.html#geographische-abstraktion",
+    "title": "Geographischer Raum",
+    "section": "Geographische Abstraktion",
+    "text": "Geographische Abstraktion\nGeographie arbeitet mit räumlicher Interpretation der Welt.\nDazu müssen reale Situationen in Modelle übersetzt werden.\n\n\n\n\n\n\nEin Modell ist keine Kopie der Wirklichkeit.\nEs ist eine zweckgebundene Konstruktion, mit der bestimmte Eigenschaften bearbeitbar werden.",
     "crumbs": [
-      "Folien",
-      "Relationen und Abfragen"
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
     ]
   },
   {
-    "objectID": "slides/w-02-slides.html#geometrische-abfragen",
-    "href": "slides/w-02-slides.html#geometrische-abfragen",
-    "title": "Relationen und Abfragen",
+    "objectID": "slides/unit01_geographischer_raum.html#daten-brauchen-interpretationsregeln",
+    "href": "slides/unit01_geographischer_raum.html#daten-brauchen-interpretationsregeln",
+    "title": "Geographischer Raum",
+    "section": "Daten brauchen Interpretationsregeln",
+    "text": "Daten brauchen Interpretationsregeln\nDaten sind noch keine Information.\nInformation entsteht erst, wenn Daten mit Bedeutung, Kontext und Interpretationsregeln verbunden werden.\nDaten + Kontext + Regeln → Information\nFür GIS heißt das:\nKoordinate + Zeit + Attribut + Bedeutung → Geoinformation",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit01_geographischer_raum.html#tobler-und-räumliche-nähe",
+    "href": "slides/unit01_geographischer_raum.html#tobler-und-räumliche-nähe",
+    "title": "Geographischer Raum",
+    "section": "Tobler und räumliche Nähe",
+    "text": "Tobler und räumliche Nähe\nEin wichtiges Grundmuster räumlicher Analyse ist Nachbarschaft.\nToblers erstes Gesetz lautet sinngemäß:\n\nAlles hängt mit allem zusammen, aber nahe Dinge hängen stärker zusammen als entfernte Dinge (Tobler 1970).\n\nDas ist für viele physisch-räumliche Phänomene nützlich, aber nicht universal.\nSoziale, administrative, politische oder technische Räume können anders funktionieren.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit01_geographischer_raum.html#räume-sind-nicht-nur-container",
+    "href": "slides/unit01_geographischer_raum.html#räume-sind-nicht-nur-container",
+    "title": "Geographischer Raum",
+    "section": "Räume sind nicht nur Container",
+    "text": "Räume sind nicht nur Container\nRäume können durch Nähe, durch Grenzen, durch Handlungen, durch Namen oder durch Zuständigkeiten entstehen.\nBenno Werlen betont etwa, dass Räume auch sozial durch Handeln konstruiert werden können (vgl. Werlen 1993).\nDamit ist Raum in GIS nie nur ein leerer Behälter.\nEr ist immer auch ein Ergebnis von Modellierung und Deutung.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit01_geographischer_raum.html#diskrete-objekte-und-kontinuierliche-felder",
+    "href": "slides/unit01_geographischer_raum.html#diskrete-objekte-und-kontinuierliche-felder",
+    "title": "Geographischer Raum",
+    "section": "Diskrete Objekte und kontinuierliche Felder",
+    "text": "Diskrete Objekte und kontinuierliche Felder\nGIS muss zwei Grundformen räumlicher Phänomene abbilden.\n\n\n\nDiskrete Geoobjekte\nGebäude, Straßen, Flurstücke, Messstationen.\n\n\nSie lassen sich abgrenzen, zählen und mit Geometrien modellieren.\n\n\n\n\nKontinuierliche Felder\nHöhe, Temperatur, Niederschlag, Konzentrationen.\n\n\nSie variieren räumlich kontinuierlich und werden häufig als Raster beschrieben.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit01_geographischer_raum.html#beispiel-fränkische-schweiz",
+    "href": "slides/unit01_geographischer_raum.html#beispiel-fränkische-schweiz",
+    "title": "Geographischer Raum",
+    "section": "Beispiel: Fränkische Schweiz",
+    "text": "Beispiel: Fränkische Schweiz\nEin Raum wie die „Fränkische Schweiz“ ist nicht einfach gegeben.\nEr kann landschaftlich, touristisch, kulturell, morphologisch oder administrativ anders abgegrenzt werden.\n\n\n\n\n\n\nDigitales Geländemodell der Fränkischen Schweiz\n\n\n\n\nDie Frage ist nicht nur: Wo liegt dieser Raum?\nSondern auch: Nach welcher Logik wird er abgegrenzt?",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit01_geographischer_raum.html#diskretisierung-kontinua-werden-bearbeitbar",
+    "href": "slides/unit01_geographischer_raum.html#diskretisierung-kontinua-werden-bearbeitbar",
+    "title": "Geographischer Raum",
+    "section": "Diskretisierung: Kontinua werden bearbeitbar",
+    "text": "Diskretisierung: Kontinua werden bearbeitbar\nKontinuierliche Phänomene müssen für GIS häufig in diskrete Einheiten überführt werden.\nEin Höhenfeld wird zum Raster.\nEine Landnutzung wird zu Polygonen.\nEin unscharfer Landschaftsraum wird durch Grenzen oder Klassifikationen operationalisiert.\nkontinuierliche Wirklichkeit → diskrete Repräsentation → digitale Analyse",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit01_geographischer_raum.html#maßstab-und-zweck-entscheiden",
+    "href": "slides/unit01_geographischer_raum.html#maßstab-und-zweck-entscheiden",
+    "title": "Geographischer Raum",
+    "section": "Maßstab und Zweck entscheiden",
+    "text": "Maßstab und Zweck entscheiden\nOb etwas als Objekt oder Feld modelliert wird, hängt von Fragestellung und Maßstab ab.\nEin Wald kann sein:\nPolygon im Landnutzungsdatensatz\nRasterklasse in einem Satellitenbild\nHabitatfläche in einem Modell\nVerwaltungseinheit im Forstkataster\nDie Repräsentation ist nicht „wahr“ oder „falsch“, sondern mehr oder weniger passend zum Zweck.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit01_geographischer_raum.html#was-sind-geodaten",
+    "href": "slides/unit01_geographischer_raum.html#was-sind-geodaten",
+    "title": "Geographischer Raum",
+    "section": "Was sind Geodaten?",
+    "text": "Was sind Geodaten?\nGeodaten sind maschinenlesbare, räumlich referenzierte Repräsentationen.\nSie verbinden mindestens:\nOrt + Attribut\nhäufig zusätzlich:\nOrt + Zeit + Attribut + Bedeutung\nEin Geodatensatz ist deshalb nie nur eine Zahlentabelle. Er trägt immer einen räumlichen Bezug und eine Interpretationsregel.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit01_geographischer_raum.html#beispiel-wetterangabe-als-geodatum",
+    "href": "slides/unit01_geographischer_raum.html#beispiel-wetterangabe-als-geodatum",
+    "title": "Geographischer Raum",
+    "section": "Beispiel: Wetterangabe als Geodatum",
+    "text": "Beispiel: Wetterangabe als Geodatum\nAussage:\n\nDie Temperatur am Flughafen Havanna betrug am 17.09.2009 um 08:00 Uhr Ortszeit 23,0 °C.\n\nAls Geodatum codiert:\n22° 59′ 21″ N\n82° 24′ 33″ W\n64 m ü. NN\n17.09.2009, 08:00 Uhr LT\nHavanna Airport\nTemperatur = 23,0 °C\nErst die Verbindung aus Ort, Zeit und Attribut macht die Angabe geographisch auswertbar.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit01_geographischer_raum.html#namen-sind-auch-kodierungen",
+    "href": "slides/unit01_geographischer_raum.html#namen-sind-auch-kodierungen",
+    "title": "Geographischer Raum",
+    "section": "Namen sind auch Kodierungen",
+    "text": "Namen sind auch Kodierungen\nAuch scheinbar nicht-geographische Aussagen können geographisch werden.\nBeispiel:\nK2\n= Name eines Berges\n= Verweis auf einen Gipfel\n= Koordinate\n= Höhe\n= kulturell und alpinistisch codierte Bedeutung\nGeodaten entstehen also nicht nur durch Koordinaten, sondern auch durch Namens-, Objekt- und Bedeutungsregeln.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit01_geographischer_raum.html#geoobjekt-raum-zeit-und-inhalt",
+    "href": "slides/unit01_geographischer_raum.html#geoobjekt-raum-zeit-und-inhalt",
+    "title": "Geographischer Raum",
+    "section": "Geoobjekt: Raum, Zeit und Inhalt",
+    "text": "Geoobjekt: Raum, Zeit und Inhalt\nEin Geoobjekt verbindet räumliche, zeitliche und thematische Information.\n\n\n\n\n\n\nSchematische Struktur eines Geoobjekts\n\n\n\n\nEin Geoobjekt ist nicht das reale Objekt.\nEs ist eine formale Repräsentation des Objekts für einen bestimmten Zweck.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit01_geographischer_raum.html#eigenschaften-von-geoobjekten",
+    "href": "slides/unit01_geographischer_raum.html#eigenschaften-von-geoobjekten",
+    "title": "Geographischer Raum",
+    "section": "Eigenschaften von Geoobjekten",
+    "text": "Eigenschaften von Geoobjekten\nAttribute können sehr unterschiedlich sein:\nName | Höhe | Temperatur | Eigentum | Nutzung | Kategorie | Zeitstempel | Zustand\nSie können nominal, ordinal, metrisch oder zeitlich strukturiert sein.\nEntscheidend ist: Attribute werden nicht einfach gesammelt, sondern für eine Fragestellung ausgewählt.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit01_geographischer_raum.html#das-problem-der-abstraktion",
+    "href": "slides/unit01_geographischer_raum.html#das-problem-der-abstraktion",
+    "title": "Geographischer Raum",
+    "section": "Das Problem der Abstraktion",
+    "text": "Das Problem der Abstraktion\nDie Welt ist beliebig komplex.\nComputer speichern aber nur formal definierte Merkmale.\nDeshalb muss jede geographische Repräsentation reduzieren:\nWas wird aufgenommen?\nWas wird weggelassen?\nWelche Skala gilt?\nFür welchen Zweck reicht die Vereinfachung?\nAbstraktion ist damit kein Fehler, sondern Voraussetzung für Analyse.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit01_geographischer_raum.html#daten-sind-abstrahierte-wirklichkeit",
+    "href": "slides/unit01_geographischer_raum.html#daten-sind-abstrahierte-wirklichkeit",
+    "title": "Geographischer Raum",
+    "section": "Daten sind abstrahierte Wirklichkeit",
+    "text": "Daten sind abstrahierte Wirklichkeit\nGeodaten charakterisieren Geoobjekte oder räumliche Felder zweckorientiert.\nSie sind formale Kodierungen von Eigenschaften und Interpretationen realer Objekte oder Phänomene.\nDer entscheidende Satz:\n\nGeodaten sind nicht die räumliche Wirklichkeit. Sie sind eine begründete, formale und begrenzte Repräsentation dieser Wirklichkeit.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit01_geographischer_raum.html#von-gi-zu-gis",
+    "href": "slides/unit01_geographischer_raum.html#von-gi-zu-gis",
+    "title": "Geographischer Raum",
+    "section": "Von GI zu GIS",
+    "text": "Von GI zu GIS\nGeoinformation entsteht aus räumlich strukturierter Abstraktion.\nGeographische Informationssysteme stellen dafür technische Werkzeuge bereit:\nDaten erfassen\nDaten strukturieren\nDaten analysieren\nDaten visualisieren\nDaten interpretieren\nGIS ist damit nicht nur Auskunftssystem, sondern ein Werkzeug zur kontrollierten Konstruktion räumlicher Information.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit01_geographischer_raum.html#abschluss-kontrollierte-abstraktion",
+    "href": "slides/unit01_geographischer_raum.html#abschluss-kontrollierte-abstraktion",
+    "title": "Geographischer Raum",
+    "section": "Abschluss: kontrollierte Abstraktion",
+    "text": "Abschluss: kontrollierte Abstraktion\nGIS-Arbeit heißt, räumliche Wirklichkeit bewusst zu übersetzen.\nRealwelt\n→ Wahrnehmung\n→ Auswahl\n→ Modell\n→ Geodaten\n→ Analyse\n→ Interpretation\nDer zentrale Punkt:\n\nJede GIS-Analyse steht und fällt mit der Qualität ihrer Abstraktion.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit01_geographischer_raum.html#arbeitsauftrag",
+    "href": "slides/unit01_geographischer_raum.html#arbeitsauftrag",
+    "title": "Geographischer Raum",
+    "section": "Arbeitsauftrag",
+    "text": "Arbeitsauftrag\nBetrachten Sie ein Luftbild oder eine Webkarte eines bekannten Ortes.\nBeschreiben Sie kurz:\n\nWelche Objekte oder Felder werden erkennbar?\nWelche Eigenschaften würden Sie als Attribute speichern?\nWelche Repräsentation liegt nahe: Punkt, Linie, Polygon oder Raster?\nWelche Informationen gehen durch die Abstraktion verloren?\nFür welche Fragestellung wäre Ihre Modellierung geeignet?\n\n\n\n\n\nLuftbild Sanspareil\n\n\n\n\n\n\n\nMonmonier, M. 1991. How to Lie with Maps. Chicago.\n\n\nTobler, W. R. 1970. „A Computer Movie Simulating Urban Growth in the Detroit Region“. Economic Geography 46 (234).\n\n\nWerlen, B. 1993. „Gibt es eine Geographie ohne Raum? Zum Verhältnis von traditioneller Geographie und zeitgenössischen Gesellschaften“. Erdkunde 47 (241).",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Geographische Raumkonzepte"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#leitfrage-der-sitzung",
+    "href": "slides/unit03_abfragen_vektordaten.html#leitfrage-der-sitzung",
+    "title": "GIS-Abfragen",
+    "section": "Leitfrage der Sitzung",
+    "text": "Leitfrage der Sitzung\nGIS-Abfragen sind keine reinen Werkzeugklicks.\nSie übersetzen eine fachliche Frage in Bedingungen, Operatoren und räumliche Beziehungen.\nFachliche Frage → Datenmodell → Attribute / Geometrie / Topologie → Auswahl → Interpretation\nDer Kern der Sitzung ist deshalb:\n\nWie formuliere ich eine räumliche Frage so, dass ein GIS sie nachvollziehbar auswerten kann?",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#lernziele",
+    "href": "slides/unit03_abfragen_vektordaten.html#lernziele",
+    "title": "GIS-Abfragen",
+    "section": "Lernziele",
+    "text": "Lernziele\nNach der Sitzung sollten Sie erklären können,\n\nwie thematische, geometrische und topologische Abfragen unterschieden werden,\nwarum Attributtabelle und Geometrie in GIS gemeinsam ausgewertet werden,\nwie Vergleichs-, arithmetische und logische Operatoren Bedingungen formulieren,\nwarum Distanz, Fläche und Puffer vom Datenmodell abhängen,\nwie topologische Operatoren fachliche Lagebeziehungen übersetzen,\nweshalb Abfrageergebnisse immer geprüft und interpretiert werden müssen.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#abfragen-beginnen-mit-relationen",
+    "href": "slides/unit03_abfragen_vektordaten.html#abfragen-beginnen-mit-relationen",
+    "title": "GIS-Abfragen",
+    "section": "Abfragen beginnen mit Relationen",
+    "text": "Abfragen beginnen mit Relationen\nGIS-Daten bestehen im Vektormodell aus Geometrie und Attributen.\nDie Attributtabelle organisiert die semantische Information in Feldern, Datensätzen und Werten.\nObjektgeometrie + Attributwerte → Abfragefähige Relation\nEine Abfrage prüft also nicht „die Welt“, sondern die modellierten Daten.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#drei-grundtypen-von-abfragen",
+    "href": "slides/unit03_abfragen_vektordaten.html#drei-grundtypen-von-abfragen",
+    "title": "GIS-Abfragen",
+    "section": "Drei Grundtypen von Abfragen",
+    "text": "Drei Grundtypen von Abfragen\n\n\n\n\n\n\nThematisch\nWelche Objekte erfüllen Attributbedingungen?\nGeometrisch\nWelche Objekte erfüllen Messbedingungen: Distanz, Fläche, Länge, Puffer?\nTopologisch\nWelche Objekte stehen in einer bestimmten Lagebeziehung?",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#direkte-abfrage-oder-neue-datenebene",
+    "href": "slides/unit03_abfragen_vektordaten.html#direkte-abfrage-oder-neue-datenebene",
+    "title": "GIS-Abfragen",
+    "section": "Direkte Abfrage oder neue Datenebene?",
+    "text": "Direkte Abfrage oder neue Datenebene?\nEine Auswahl verändert die Ausgangsdaten zunächst nicht.\nSie markiert, filtert oder zeigt nur bestimmte Objekte.\nEine neue Datenebene entsteht erst, wenn das Ergebnis gespeichert, gepuffert, verschnitten, rasterisiert oder weiterverarbeitet wird.\nAuswahl → Information\nAnalyseoperation → neuer Layer / neues Raster",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#operatoren-die-sprache-der-abfrage",
+    "href": "slides/unit03_abfragen_vektordaten.html#operatoren-die-sprache-der-abfrage",
+    "title": "GIS-Abfragen",
+    "section": "Operatoren: die Sprache der Abfrage",
+    "text": "Operatoren: die Sprache der Abfrage\nOperatoren legen fest, wie Bedingungen formuliert werden.\nBaumart = 'Lärche'\nVorrat_m3_ha &gt; 110\nBaumart = 'Lärche' AND Vorrat_m3_ha &gt; 110\n\n\nVergleichsoperatoren prüfen Werte.\nArithmetische Operatoren berechnen neue Kennwerte.\nLogische Operatoren verknüpfen Bedingungen.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#auswahloperatoren-im-überblick",
+    "href": "slides/unit03_abfragen_vektordaten.html#auswahloperatoren-im-überblick",
+    "title": "GIS-Abfragen",
+    "section": "Auswahloperatoren im Überblick",
+    "text": "Auswahloperatoren im Überblick",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#thematische-abfragen",
+    "href": "slides/unit03_abfragen_vektordaten.html#thematische-abfragen",
+    "title": "GIS-Abfragen",
+    "section": "Thematische Abfragen",
+    "text": "Thematische Abfragen\nThematische Abfragen wählen Objekte anhand ihrer Attributwerte aus.\nDie Geometrie bleibt erhalten, aber nur Objekte mit passenden Attributen werden ausgewählt.\n\n\n\n\n\n\nBeispiele:\n\"Baumart\" = 'Fichte'\n\"Bodentyp\" = 'Redzina'\n\"Vorrat_m3_ha\" &gt; 120\nDie Auswahl muss in Karte und Tabelle konsistent sein.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#von-der-fachlichen-frage-zur-qgis-abfrage",
+    "href": "slides/unit03_abfragen_vektordaten.html#von-der-fachlichen-frage-zur-qgis-abfrage",
+    "title": "GIS-Abfragen",
+    "section": "Von der fachlichen Frage zur QGIS-Abfrage",
+    "text": "Von der fachlichen Frage zur QGIS-Abfrage\nEine gute Abfrage beginnt nicht mit Syntax, sondern mit Übersetzung.\nWas möchte ich wissen?\n→ Welche Attribute brauche ich?\n→ Welche Bedingungen passen?\n→ Wie lautet der QGIS-Ausdruck?\n→ Welche Objekte werden ausgewählt?\n→ Was bedeutet das Ergebnis?",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#fachliche-frage-ausdruck",
+    "href": "slides/unit03_abfragen_vektordaten.html#fachliche-frage-ausdruck",
+    "title": "GIS-Abfragen",
+    "section": "Fachliche Frage → Ausdruck",
+    "text": "Fachliche Frage → Ausdruck",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#logische-operatoren-in-qgis",
+    "href": "slides/unit03_abfragen_vektordaten.html#logische-operatoren-in-qgis",
+    "title": "GIS-Abfragen",
+    "section": "Logische Operatoren in QGIS",
+    "text": "Logische Operatoren in QGIS\n\n\n\n\n\n\nAND verengt die Auswahl.\nOR erweitert die Auswahl.\nNOT schließt Bedingungstreffer aus.\nXOR erlaubt genau eine von zwei Bedingungen.\nKlammern legen fest, welche Bedingungen zusammengehören.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#klammern-sind-fachlich-relevant",
+    "href": "slides/unit03_abfragen_vektordaten.html#klammern-sind-fachlich-relevant",
+    "title": "GIS-Abfragen",
+    "section": "Klammern sind fachlich relevant",
+    "text": "Klammern sind fachlich relevant\nZwei Ausdrücke können dieselben Bedingungen enthalten und trotzdem unterschiedliche Ergebnisse liefern.\nBaumart = 'Lärche' AND Vorrat &gt; 110 OR Bodentyp = 'Podzol'\nist nicht dasselbe wie:\nBaumart = 'Lärche' AND (Vorrat &gt; 110 OR Bodentyp = 'Podzol')\n\nOhne Klammern entscheidet die Operatorpriorität. Mit Klammern entscheiden Sie bewusst.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#geometrische-abfragen",
+    "href": "slides/unit03_abfragen_vektordaten.html#geometrische-abfragen",
+    "title": "GIS-Abfragen",
     "section": "Geometrische Abfragen",
-    "text": "Geometrische Abfragen\n\n\n\n\n\n\nEuklidische Distanz Vektordatenmodell\n\n\n\n\n\n\n\nEuklidische Distanz Rasterdatenmodells, GITTA 2005",
+    "text": "Geometrische Abfragen\nGeometrische Abfragen messen Eigenschaften oder Distanzen von Geometrien.\nSie beantworten Fragen wie:\nWie weit ist Objekt A von Objekt B entfernt?\nWie groß ist eine Fläche?\nWie lang ist eine Linie?\nWelche Objekte liegen innerhalb eines Puffers?",
     "crumbs": [
-      "Folien",
-      "Relationen und Abfragen"
+      "Foliensätze zu den Readern",
+      "Vektordaten"
     ]
   },
   {
-    "objectID": "slides/w-02-slides.html#distanzzonen-distanzpuffer-und-distanztransformation",
-    "href": "slides/w-02-slides.html#distanzzonen-distanzpuffer-und-distanztransformation",
-    "title": "Relationen und Abfragen",
-    "section": "Distanzzonen: Distanzpuffer und Distanztransformation",
-    "text": "Distanzzonen: Distanzpuffer und Distanztransformation\n\n\n\nPufferkonzept @gitta2005",
+    "objectID": "slides/unit03_abfragen_vektordaten.html#geometrische-abfragen-in-qgis",
+    "href": "slides/unit03_abfragen_vektordaten.html#geometrische-abfragen-in-qgis",
+    "title": "GIS-Abfragen",
+    "section": "Geometrische Abfragen in QGIS",
+    "text": "Geometrische Abfragen in QGIS",
     "crumbs": [
-      "Folien",
-      "Relationen und Abfragen"
+      "Foliensätze zu den Readern",
+      "Vektordaten"
     ]
   },
   {
-    "objectID": "slides/w-02-slides.html#topologische-abfragen",
-    "href": "slides/w-02-slides.html#topologische-abfragen",
-    "title": "Relationen und Abfragen",
+    "objectID": "slides/unit03_abfragen_vektordaten.html#distanz-und-ausdehnung-hängen-vom-datenmodell-ab",
+    "href": "slides/unit03_abfragen_vektordaten.html#distanz-und-ausdehnung-hängen-vom-datenmodell-ab",
+    "title": "GIS-Abfragen",
+    "section": "Distanz und Ausdehnung hängen vom Datenmodell ab",
+    "text": "Distanz und Ausdehnung hängen vom Datenmodell ab\n\n\n\n\n\n\nIm Vektormodell werden Geometrien direkt gemessen.\nIm Rastermodell hängt das Ergebnis von Zellgröße, Nachbarschaftsregel und Klassifikation ab.\nEine Distanz ist deshalb nicht nur eine Zahl, sondern auch eine Modellentscheidung.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#puffer-und-distanzzonen",
+    "href": "slides/unit03_abfragen_vektordaten.html#puffer-und-distanzzonen",
+    "title": "GIS-Abfragen",
+    "section": "Puffer und Distanzzonen",
+    "text": "Puffer und Distanzzonen\nPuffer übersetzen Nähe in eine Fläche.\nObjekt → Abstandswert → Distanzzone\nIm Vektormodell entsteht eine Puffergeometrie.\nIm Rastermodell entsteht meist ein Distanzwert pro Zelle.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#distanzzonen-und-puffer",
+    "href": "slides/unit03_abfragen_vektordaten.html#distanzzonen-und-puffer",
+    "title": "GIS-Abfragen",
+    "section": "Distanzzonen und Puffer",
+    "text": "Distanzzonen und Puffer",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#geometrische-abfragen-prüfen",
+    "href": "slides/unit03_abfragen_vektordaten.html#geometrische-abfragen-prüfen",
+    "title": "GIS-Abfragen",
+    "section": "Geometrische Abfragen prüfen",
+    "text": "Geometrische Abfragen prüfen\nGeometrische Ergebnisse wirken oft eindeutig, sind aber abhängig von Parametern.\nZu prüfen sind insbesondere:\nWelches Koordinatensystem?\nWelche Einheit?\nWelche Zellgröße?\nWelche Pufferdistanz?\nEinseitig oder beidseitig?\nVektor- oder Rasterlogik?",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#topologische-abfragen",
+    "href": "slides/unit03_abfragen_vektordaten.html#topologische-abfragen",
+    "title": "GIS-Abfragen",
     "section": "Topologische Abfragen",
-    "text": "Topologische Abfragen\n\n\n\nAbbildung 03-19: Topologische Beziehungen von Vektordaten unterschiedlicher Dimension , @gitta2005",
+    "text": "Topologische Abfragen\nTopologische Abfragen prüfen Lagebeziehungen zwischen Geometrien.\nSie fragen nicht: „Wie weit?“\nSondern: „Wie liegt etwas zu etwas anderem?“\ninnerhalb | berührt | schneidet | überlappt | enthält | getrennt",
     "crumbs": [
-      "Folien",
-      "Relationen und Abfragen"
+      "Foliensätze zu den Readern",
+      "Vektordaten"
     ]
   },
   {
-    "objectID": "slides/w-02-slides.html#topologische-abfragen-beispiel-2d",
-    "href": "slides/w-02-slides.html#topologische-abfragen-beispiel-2d",
-    "title": "Relationen und Abfragen",
-    "section": "Topologische Abfragen Beispiel 2D",
-    "text": "Topologische Abfragen Beispiel 2D\n\n\n\nTopologische Abfragen von Vektordaten unterschiedlicher Dimension, GITTA 2005",
+    "objectID": "slides/unit03_abfragen_vektordaten.html#grundmuster-topologischer-beziehungen",
+    "href": "slides/unit03_abfragen_vektordaten.html#grundmuster-topologischer-beziehungen",
+    "title": "GIS-Abfragen",
+    "section": "Grundmuster topologischer Beziehungen",
+    "text": "Grundmuster topologischer Beziehungen",
     "crumbs": [
-      "Folien",
-      "Relationen und Abfragen"
+      "Foliensätze zu den Readern",
+      "Vektordaten"
     ]
   },
   {
-    "objectID": "slides/w-02-slides.html#zusammenfassung",
-    "href": "slides/w-02-slides.html#zusammenfassung",
-    "title": "Relationen und Abfragen",
+    "objectID": "slides/unit03_abfragen_vektordaten.html#topologie-ist-geometrietypabhängig",
+    "href": "slides/unit03_abfragen_vektordaten.html#topologie-ist-geometrietypabhängig",
+    "title": "GIS-Abfragen",
+    "section": "Topologie ist geometrietypabhängig",
+    "text": "Topologie ist geometrietypabhängig\nEin Punkt kann in einer Fläche liegen oder auf deren Rand liegen.\nEine Linie kann eine Fläche schneiden oder vollständig innerhalb verlaufen.\nZwei Flächen können getrennt sein, sich berühren, überlappen oder ineinander enthalten sein.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#beziehungen-zwischen-geometrietypen",
+    "href": "slides/unit03_abfragen_vektordaten.html#beziehungen-zwischen-geometrietypen",
+    "title": "GIS-Abfragen",
+    "section": "Beziehungen zwischen Geometrietypen",
+    "text": "Beziehungen zwischen Geometrietypen",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#topologische-abfragen-in-qgis",
+    "href": "slides/unit03_abfragen_vektordaten.html#topologische-abfragen-in-qgis",
+    "title": "GIS-Abfragen",
+    "section": "Topologische Abfragen in QGIS",
+    "text": "Topologische Abfragen in QGIS\n\n\n\n\n\n\nDieselben Eingangsdaten können je nach Operator unterschiedliche Objekte auswählen.\nvollständig im Wald\nschneidet den Waldrand\nSchwerpunkt im Wald\nDas sind verschiedene fachliche Aussagen.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#operator-fachlich-wählen",
+    "href": "slides/unit03_abfragen_vektordaten.html#operator-fachlich-wählen",
+    "title": "GIS-Abfragen",
+    "section": "Operator fachlich wählen",
+    "text": "Operator fachlich wählen\nDer häufigste Fehler ist, intersects als Allzwecklösung zu verwenden.\n„liegt vollständig innerhalb“ ≠ „schneidet irgendwie“\nWer wissen will, ob Gebäude vollständig im Wald liegen, braucht einen strengeren Operator als für Gebäude, die den Waldrand schneiden.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#geometrisch-oder-topologisch",
+    "href": "slides/unit03_abfragen_vektordaten.html#geometrisch-oder-topologisch",
+    "title": "GIS-Abfragen",
+    "section": "Geometrisch oder topologisch?",
+    "text": "Geometrisch oder topologisch?\n\n\n\nGeometrisch\nWie weit liegt ein Gebäude vom Wald entfernt?\nWie groß ist ein Flurstück?\nWie lang ist ein Gewässerabschnitt?\n\n\nTopologisch\nLiegt ein Gebäude im Wald?\nBerührt ein Flurstück eine Straße?\nSchneidet ein Gewässer ein Schutzgebiet?",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#kombinierte-gis-abfragen",
+    "href": "slides/unit03_abfragen_vektordaten.html#kombinierte-gis-abfragen",
+    "title": "GIS-Abfragen",
+    "section": "Kombinierte GIS-Abfragen",
+    "text": "Kombinierte GIS-Abfragen\nKomplexe GIS-Fragen verbinden häufig mehrere Abfragetypen.\nAttributbedingung\n+ Distanzbedingung\n+ topologische Lagebeziehung\nBeispiel:\n\nWelche Waldflächen liegen innerhalb des Untersuchungsgebiets, sind größer als 2 ha und weniger als 200 m von einer Straße entfernt?",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#kombinierte-abfragen-als-workflow",
+    "href": "slides/unit03_abfragen_vektordaten.html#kombinierte-abfragen-als-workflow",
+    "title": "GIS-Abfragen",
+    "section": "Kombinierte Abfragen als Workflow",
+    "text": "Kombinierte Abfragen als Workflow",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#übung-geometrische-abfragen",
+    "href": "slides/unit03_abfragen_vektordaten.html#übung-geometrische-abfragen",
+    "title": "GIS-Abfragen",
+    "section": "Übung: geometrische Abfragen",
+    "text": "Übung: geometrische Abfragen",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#übung-topologische-beziehungen",
+    "href": "slides/unit03_abfragen_vektordaten.html#übung-topologische-beziehungen",
+    "title": "GIS-Abfragen",
+    "section": "Übung: topologische Beziehungen",
+    "text": "Übung: topologische Beziehungen",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#arbeitsauftrag",
+    "href": "slides/unit03_abfragen_vektordaten.html#arbeitsauftrag",
+    "title": "GIS-Abfragen",
+    "section": "Arbeitsauftrag",
+    "text": "Arbeitsauftrag\nFormulieren Sie für eine eigene kleine GIS-Frage:\n\neine thematische Bedingung,\neine geometrische Bedingung,\neine topologische Bedingung,\neinen kombinierten QGIS-Ausdruck oder Workflow.\n\n\nEntscheidend ist nicht die Länge des Ausdrucks, sondern ob die Bedingungen zur fachlichen Frage passen.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit03_abfragen_vektordaten.html#kernpunkt",
+    "href": "slides/unit03_abfragen_vektordaten.html#kernpunkt",
+    "title": "GIS-Abfragen",
+    "section": "Kernpunkt",
+    "text": "Kernpunkt\nGIS-Abfragen sind die Übersetzung fachlicher Fragen in Datenbedingungen.\nAttributwert → thematische Abfrage\nDistanz / Fläche / Länge → geometrische Abfrage\nLagebeziehung → topologische Abfrage\nEine korrekte Abfrage ist deshalb nicht nur syntaktisch gültig, sondern fachlich passend.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Vektordaten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#leitfrage-der-sitzung",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#leitfrage-der-sitzung",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Leitfrage der Sitzung",
+    "text": "Leitfrage der Sitzung\nRäumliche Entscheidungsfindung beginnt dort, wo mehrere räumliche Kriterien nicht nur analysiert, sondern bewertet, gewichtet und miteinander kombiniert werden.\nräumliche Frage → Kriterien → Standardisierung → Gewichtung → Kombination → Interpretation\n\nDie Karte ist dabei kein neutrales Ergebnis. Sie ist die räumliche Form einer begründeten Bewertungslogik.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#lernziele",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#lernziele",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Lernziele",
+    "text": "Lernziele\nNach der Sitzung sollten Sie erklären können,\n\nwarum Eignungs- und Kostenkarten Entscheidungsmodelle sind,\nwie räumliche Kriterien operationalisiert und standardisiert werden,\nwie boolesche und gewichtete Verschneidungen funktionieren,\nwarum Gewichte fachliche Annahmen sichtbar machen,\nwie aus einer Eignungskarte Zielkonflikte und Kostenfragen entstehen,\nwelche Aussagegrenzen solche Karten besitzen.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#warum-räumliche-entscheidung",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#warum-räumliche-entscheidung",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Warum räumliche Entscheidung?",
+    "text": "Warum räumliche Entscheidung?\nViele Planungsfragen sind räumlich und konfliktgeladen:\n\nWo ist eine Fläche geeignet, ohne andere Ziele stark zu verletzen?\n\n\nEin GIS kann solche Entscheidungen nicht ersetzen. Es kann aber Kriterien, Annahmen und Zielkonflikte räumlich sichtbar machen.\n\n\nEntscheidend ist nicht nur, welche Karte entsteht, sondern welche Annahmen in der Karte stecken.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#von-analyse-zu-bewertung",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#von-analyse-zu-bewertung",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Von Analyse zu Bewertung",
+    "text": "Von Analyse zu Bewertung\nIn Unit04 ging es vor allem um Ableitungen:\nPunktdaten → Interpolationsfläche\nHöhenraster → Sichtfeld oder Fließrichtung\nDistanzen → Nähe- oder Kostenoberflächen\n\nIn Unit05 werden diese Ableitungen bewertet:\nNähe → günstig oder ungünstig?\nHangneigung → geeignet oder problematisch?\nLandnutzung → Kriterium, Ausschluss oder Widerstand?",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#eignungsanalyse",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#eignungsanalyse",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Eignungsanalyse",
+    "text": "Eignungsanalyse\nEine Eignungsanalyse sucht Räume, die eine Kombination bestimmter Eigenschaften erfüllen.\n\nWaldnähe + Siedlungsferne + geringe Versiegelung + geeignete Reliefbedingungen → potenzielle Eignung\n\n\nEine Eignungskarte zeigt nicht „die Wahrheit“, sondern das Ergebnis einer räumlichen Bewertungsregel.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#eignung-und-vulnerabilität",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#eignung-und-vulnerabilität",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Eignung und Vulnerabilität",
+    "text": "Eignung und Vulnerabilität\n\n\n\nEignung\nHohe Werte bedeuten meist:\n\n\n\nhier passt die Fläche gut zum Ziel.\n\n\n\n\n\nBeispiel: potenziell geeigneter Standort, Habitat, Nutzung, Korridor.\n\n\nVulnerabilität / Gefahr\nHohe Werte bedeuten meist:\n\n\n\n\n\nhier ist die Fläche stärker betroffen oder gefährdet.\n\n\n\nBeispiel: Lawinengefahr, Überflutungsrisiko, Erosionsanfälligkeit.\n\n\n\n\nDie Richtung der Skala muss vor der Kombination eindeutig sein.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#wildkatzen-im-marburger-uniwald",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#wildkatzen-im-marburger-uniwald",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Wildkatzen im Marburger Uniwald",
+    "text": "Wildkatzen im Marburger Uniwald\n\n \n\n\nDie Beobachtungen begründen das Beispiel. Die folgende Eignungsanalyse ist trotzdem keine Nachweiskarte und kein validiertes Habitatmodell.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#ausgangsfrage-wildkatze",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#ausgangsfrage-wildkatze",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Ausgangsfrage Wildkatze",
+    "text": "Ausgangsfrage Wildkatze\nDie fachliche Frage lautet nicht:\n\nWo wurde eine Wildkatze fotografiert?\n\nsondern:\n\nWo könnten innerhalb des Untersuchungsraums Flächen liegen, die nach ausgewählten Kriterien eher geeignet oder eher ungeeignet sind?\n\n\nAus Beobachtung wird Modellfrage. Aus Modellfrage wird Kriterienlogik.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#kriterienmodell",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#kriterienmodell",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Kriterienmodell",
+    "text": "Kriterienmodell\nFür das Beispiel werden Kriterien als Proxys genutzt:\n\n\n\nGünstig\nWalddichte / Deckung\nSiedlungsferne\ngeeignete Reliefbedingungen\n\n\nAusschluss oder Abwertung\nversiegelte Flächen\nstark bebaute Bereiche\nstörungsnahe Bereiche\n\n\n\n\nDie Kriterien sind bewusst vereinfacht. Sie zeigen die GIS-Logik, nicht die vollständige Autoökologie der Wildkatze.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#von-kriterium-zu-rasterwert",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#von-kriterium-zu-rasterwert",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Von Kriterium zu Rasterwert",
+    "text": "Von Kriterium zu Rasterwert\nEine Multikriterienanalyse braucht gemeinsame Skalen.\n\nRohdaten → räumlicher Parameter → Reklassifikation → standardisierter Kriterienwert\n\nBeispiel:\nSiedlungen → Distanz zur nächsten Siedlung → Störungsklassen → Eignungswert 0…1\n\nErst dadurch können unterschiedliche Kriterien miteinander verrechnet werden.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#boolesche-verschneidung",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#boolesche-verschneidung",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Boolesche Verschneidung",
+    "text": "Boolesche Verschneidung\n\n\nBei boolescher Verschneidung gilt oft: Ein Ausschlusskriterium reicht, um eine Fläche aus dem Ergebnis zu entfernen.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#boolesche-logik",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#boolesche-logik",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Boolesche Logik",
+    "text": "Boolesche Logik\nWenn zwei Kriterien nur 0 oder 1 annehmen, kann Eignung als harte Bedingung formuliert werden:\n\\[\nE = K_1 \\times K_2\n\\]\n\nNur wenn beide Kriterien erfüllt sind, bleibt die Fläche geeignet.\n\n\nVorteil: klar und transparent. Nachteil: hart, unempfindlich gegenüber Abstufungen.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#ranglisten-statt-ausschluss",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#ranglisten-statt-ausschluss",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Ranglisten statt Ausschluss",
+    "text": "Ranglisten statt Ausschluss\nStatt harte Ausschlüsse zu erzeugen, können Kriterienwerte addiert werden:\n\\[\nR = K_1 + K_2\n\\]\n\nDas Ergebnis ist keine Ja/Nein-Karte mehr, sondern eine einfache Rangfolge.\n\n\nDamit beginnt der Übergang zur gewichteten Eignungsschätzung.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#von-boolesch-zu-gewichtet",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#von-boolesch-zu-gewichtet",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Von boolesch zu gewichtet",
+    "text": "Von boolesch zu gewichtet\nViele räumliche Entscheidungen sind nicht hart binär.\nEine Fläche kann gering, mittel oder hoch geeignet sein. Dann werden Kriterien standardisiert und gewichtet kombiniert.\n\\[\nE = \\sum_i w_i \\cdot K_i\n\\]\nmit\n\\[\n\\sum_i w_i = 1\n\\]",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#gewichtete-kriterienaddition",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#gewichtete-kriterienaddition",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Gewichtete Kriterienaddition",
+    "text": "Gewichtete Kriterienaddition\n\n\nGewichtung macht eine fachliche Entscheidung sichtbar: Nicht jedes Kriterium zählt gleich stark.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#beispielgewichte",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#beispielgewichte",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Beispielgewichte",
+    "text": "Beispielgewichte\nFür das Wildkatzenbeispiel könnte eine einfache Gewichtung lauten:\nWalddichte        0.40\nSiedlungsdistanz 0.30\nHangneigung      0.20\nExposition       0.10\n\nDie Gewichte ergeben zusammen 1 und können direkt im Rasterrechner verwendet werden.\n\n\nWichtig ist nicht, dass diese Gewichte „objektiv wahr“ sind. Wichtig ist, dass sie begründet und dokumentiert werden.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#rasterrechner-als-modellformel",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#rasterrechner-als-modellformel",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Rasterrechner als Modellformel",
+    "text": "Rasterrechner als Modellformel\n(\n  \"walddichte_idx@1\" * 0.40 +\n  \"siedlungsdistanz_idx@1\" * 0.30 +\n  \"hangneigung_idx@1\" * 0.20 +\n  \"exposition_idx@1\" * 0.10\n)\n*\n\"einschraenkung_mask@1\"\n\nDer Ausdruck ist die technische Form der Bewertungslogik.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#einschränkungsmaske",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#einschränkungsmaske",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Einschränkungsmaske",
+    "text": "Einschränkungsmaske\nEine Maske entscheidet, welche Flächen überhaupt bewertbar bleiben.\n1 = Fläche bleibt im Modell\n0 = Fläche wird ausgeschlossen\n\nBeispiele: versiegelte Flächen, Gebäude, Wasserflächen, rechtliche Ausschlussgebiete.\n\n\nEine Maske ist keine Gewichtung. Sie verändert den Möglichkeitsraum des Modells.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#interpretation-der-eignungskarte",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#interpretation-der-eignungskarte",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Interpretation der Eignungskarte",
+    "text": "Interpretation der Eignungskarte\nEine Eignungskarte muss doppelt gelesen werden:\n\n\n\nWas sie zeigt\nräumliche Verteilung der modellierten Eignung\nrelative Unterschiede zwischen Flächen\nFolgen der gewählten Kriterien und Gewichte\n\n\nWas sie nicht zeigt\ntatsächliche Wildkatzenpräsenz\nvalidierte Habitatqualität\nvollständige ökologische Realität",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#ahp-gewichte-systematischer-herleiten",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#ahp-gewichte-systematischer-herleiten",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "AHP: Gewichte systematischer herleiten",
+    "text": "AHP: Gewichte systematischer herleiten\nDer Analytic Hierarchy Process ersetzt keine fachliche Entscheidung.\nEr macht sie strukturierter:\nKriterien paarweise vergleichen\n→ Vergleichsmatrix erzeugen\n→ Gewichte berechnen\n→ Konsistenz prüfen\n\nAHP hilft bei der Dokumentation von Gewichtungen, macht aber unsichere Kriterien nicht automatisch belastbar.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#paarvergleich",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#paarvergleich",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Paarvergleich",
+    "text": "Paarvergleich\nBeispielhafte Frage im AHP:\n\nIst Walddichte wichtiger als Siedlungsnähe?\n\n\nBewertungsskala:\n1 = gleich wichtig\n3 = etwas wichtiger\n5 = deutlich wichtiger\n7 = sehr stark wichtiger\n9 = extrem wichtiger\n\n\nAus vielen Paarvergleichen entsteht eine Gewichtung.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#von-mce-zu-moe",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#von-mce-zu-moe",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Von MCE zu MOE",
+    "text": "Von MCE zu MOE\nEine Multi Criteria Evaluation bewertet mehrere Kriterien für ein Ziel.\nZiel: Wildkatzenhabitat\nKriterien: Walddichte, Siedlungsferne, Hangneigung, Exposition\n→ eine Eignungskarte\n\nEine Multi Objective Evaluation vergleicht mehrere Ziele.\nWildkatzenhabitat | Erholung | Forstwirtschaft\n→ mehrere Eignungskarten und mögliche Zielkonflikte",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#multi-objective-evaluation",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#multi-objective-evaluation",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Multi-Objective Evaluation",
+    "text": "Multi-Objective Evaluation\n\n\nMOE macht sichtbar, wo Flächen eindeutig einem Ziel zugeordnet werden können und wo konkurrierende Eignungen auftreten.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#zielkonflikte-als-ergebnis",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#zielkonflikte-als-ergebnis",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Zielkonflikte als Ergebnis",
+    "text": "Zielkonflikte als Ergebnis\nEin Konflikt ist kein Modellfehler.\n\nhohe Eignung für Wildkatze + hohe Eignung für Erholung → planerischer Zielkonflikt\n\n\nGerade Konfliktflächen sind relevant, weil dort fachliche oder politische Abwägung notwendig wird.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#von-eignung-zu-kosten",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#von-eignung-zu-kosten",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Von Eignung zu Kosten",
+    "text": "Von Eignung zu Kosten\nEignung fragt:\n\nWo ist etwas geeignet?\n\nKostenanalyse fragt:\n\nWie aufwendig ist es, ein Ziel zu erreichen oder eine Verbindung herzustellen?\n\n\nBeide arbeiten mit Rasteroberflächen, aber die Bedeutung der Werte ist umgekehrt.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#kostenanalyse-auf-werteoberflächen",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#kostenanalyse-auf-werteoberflächen",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Kostenanalyse auf Werteoberflächen",
+    "text": "Kostenanalyse auf Werteoberflächen\n\n\nHohe Werte bedeuten hier nicht „gut“, sondern hohen Aufwand, Widerstand oder geringe Durchlässigkeit.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#kostenoberfläche",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#kostenoberfläche",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Kostenoberfläche",
+    "text": "Kostenoberfläche\nEine Kostenoberfläche kombiniert mehrere Kostentreiber:\n\\[\nK = K_1 \\cdot w_1 + K_2 \\cdot w_2 + K_3 \\cdot w_3 + \\dots + K_n \\cdot w_n\n\\]\n\nBeispiel:\n\\[\nK = \\text{Hangneigung} \\cdot 0.4 + \\text{Landnutzung} \\cdot 0.4 + \\text{Siedlungsnähe} \\cdot 0.2\n\\]",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#kumulative-kosten",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#kumulative-kosten",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Kumulative Kosten",
+    "text": "Kumulative Kosten\nAuf einer Kostenoberfläche zählt nicht die Luftlinie, sondern der aufsummierte Aufwand entlang eines Pfades.\n\\[\nC_{\\text{Pfad}} = \\sum_i K_i\n\\]\n\nDer minimale Kostenpfad ist der Pfad mit der geringsten aufsummierten Kostenlast:\n\\[\nC_{\\text{min}} = \\min \\left( \\sum_i K_i \\right)\n\\]",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#wildkatze-eignung-und-verbindung",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#wildkatze-eignung-und-verbindung",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Wildkatze: Eignung und Verbindung",
+    "text": "Wildkatze: Eignung und Verbindung\nFür das Wildkatzenbeispiel verschiebt die Kostenanalyse die Frage:\nEignungskarte:\nWo liegen potenziell geeignete Lebensräume?\n\nKostenoberfläche:\nWie gut sind diese Lebensräume miteinander verbunden?\n\nEine Fläche kann geeignet sein, aber durch Barrieren schlecht erreichbar oder stark isoliert.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#konzeptuelle-umsetzung-in-qgis",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#konzeptuelle-umsetzung-in-qgis",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Konzeptuelle Umsetzung in QGIS",
+    "text": "Konzeptuelle Umsetzung in QGIS\nDer Workflow bleibt eine Modellkette:\nKostentreiber auswählen\n→ Daten auf Raster bringen\n→ Werte in Kosten übersetzen\n→ Kostenraster gewichten und kombinieren\n→ kumulative Kosten oder Kostenpfade berechnen\n→ Ergebnis interpretieren\n\nTypische Werkzeuge: Rasterisieren, Hangneigung, Rasterdistanz, Reklassifikation, Rasterrechner, r.cost, r.walk, Least-cost path.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#zentrale-unterscheidung",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#zentrale-unterscheidung",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Zentrale Unterscheidung",
+    "text": "Zentrale Unterscheidung\n\n\n\nEignung\nhoher Wert = gut geeignet\nFrage: Wo passt die Fläche zum Ziel?\n\n\nKosten\nhoher Wert = hoher Widerstand\nFrage: Wie aufwendig ist Bewegung oder Verbindung?\n\n\n\n\nVor jeder Kombination muss klar sein, welche Richtung die Werte haben.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#ergebnis-und-aussagegrenze",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#ergebnis-und-aussagegrenze",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Ergebnis und Aussagegrenze",
+    "text": "Ergebnis und Aussagegrenze\nEignungs- und Kostenkarten sind Entscheidungsunterstützung.\nSie liefern keine automatische Entscheidung.\n\nSie zeigen:\nDaten + Kriterien + Gewichtung + Ausschlussregeln + Modellannahmen\nals räumliches Ergebnis.\n\n\nEine gute Karte macht Annahmen sichtbar, statt sie zu verstecken.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#zusammenfassung",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#zusammenfassung",
+    "title": "Räumliche Bewertung und Entscheidung",
     "section": "Zusammenfassung",
-    "text": "Zusammenfassung\n\nNutzung des relationalen Datenmodells für strukturierte Datenspeicherung.\nEinsatz von formalen Abfragesprachen für inhaltliche und räumliche Analysen.\nVerwendung von Operatoren und speziellen abgeleiteten Operatoren wie Distanzpuffer.",
+    "text": "Zusammenfassung\nUnit05 verbindet vier Ebenen:\nEignung\n→ Welche Flächen passen zu einem Ziel?\n\nGewichtung\n→ Welche Kriterien zählen stärker?\n\nZielkonflikt\n→ Wo konkurrieren mehrere Ziele?\n\nKosten\n→ Wie durchlässig oder widerständig ist der Raum?",
     "crumbs": [
-      "Folien",
-      "Relationen und Abfragen"
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
+    ]
+  },
+  {
+    "objectID": "slides/unit05_raeumliche_bewertung_entscheidung.html#arbeitsauftrag",
+    "href": "slides/unit05_raeumliche_bewertung_entscheidung.html#arbeitsauftrag",
+    "title": "Räumliche Bewertung und Entscheidung",
+    "section": "Arbeitsauftrag",
+    "text": "Arbeitsauftrag\nWählen Sie für ein kleines GIS-Projekt eine räumliche Entscheidungsfrage.\nFormulieren Sie dazu:\nZiel\nKriterien\nSkalenrichtung\nGewichtung oder Ausschlusslogik\nerwartete Karte\nzentrale Aussagegrenze\n\nDer wichtigste Satz der Dokumentation lautet: Warum führt genau diese Kriterienlogik zu genau dieser Karte?",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Eigenungen, Entscheidungen und Kosten"
     ]
   },
   {
@@ -1731,7 +3216,7 @@
     "section": "",
     "text": "Es klingt banal: Wenn man morgens zur Universität geht, bewegt man sich im Raum. Wenn Sie zu Hause vom Schreibtisch aufstehen und in die Küche gehen, bewegen Sie sich im Raum. Aber auch wenn wir Sie fragen, wo Sie gestern waren, bewegen Sie sich höchstwahrscheinlich in Gedanken durch den von Ihnen wahrgenommenen Raum. &lt;Kurzum: Wir alle leben im Raum, alle unsere Aktivitäten finden im Raum statt und auch unsere Wahrnehmung der Welt ist stark räumlich geprägt und, wenn wir es genau nehmen, entlang einer Zeitlinie organisiert. Es ist daher nicht verwunderlich, dass nicht nur in der Geographie das Verständnis räumlich und zeitlich wirksamer Prozesse eine wichtige Rolle spielt.",
     "crumbs": [
-      "Reader Geographische Raumkonzept",
+      "Reader Geographische Raumkonzepte",
       "Raum braucht einen Geltungsbereich"
     ]
   },
@@ -1742,7 +3227,7 @@
     "section": "Raum ist relevant",
     "text": "Raum ist relevant\nRaum ist also etwas sehr Reales und raumrelevante Probleme müssen daher von jedem (all)täglich gelöst werden. Viele dieser Lösungen sind so alltäglich, dass man sie kaum noch wahrnimmt. So ist z.B. die Frage, welchen Weg wir mit welchem Fahrzeug wählen, um optimal zur Arbeit, zum Sport oder nach Hause zu kommen, ein typisches, komplexes Problem, dessen Lösung wir (scheinbar) intuitiv finden. Dass diese Intuition meist eine andere ist als die freundliche Stimme des Navigationssystems, zeigt nur, wie subjektiv diese Lösung sein kann.\nFragen, die räumliche Aspekte beinhalten, werden oft geographisch zugeordnet. Hier einige Beispiele:\n\nDie Planung der räumlichen Verteilung von Infrastruktur ist ein geographisches Problem, bei dem viele Interessen im Raum aufeinander abgestimmt werden müssen: Wo baue ich für eine Region (eine bestimmte Anzahl von Menschen) eine Einrichtung (Supermarkt, Schwimmbad…)?\nGeographische Fragestellungen werden bei der Analyse oder Prognose von wirtschaftlichen oder soziodemographischen Zusammenhängen bearbeitet: Welche sozioökonomischen Parameter sind räumlich geclustert? Gibt es einen räumlichen oder zeitlichen Zusammenhang zwischen Strukturschwäche und ungünstiger wirtschaftlicher Entwicklung?\nDie Organisation und Planung von Logistik ist eine Frage der räumlichen Problemlösung: Auf welchem Weg erreiche ich als Auslieferungsfahrer meine Kunden am effizientesten?\nDas Management von Liegenschaften in der Verwaltung (Kataster), in der Landwirtschaft (Precision Farming) und in der Forstwirtschaft ist eng mit vielfältigen geographischen Fragestellungen verbunden.\nKonventionelle und moderne Informationssysteme bieten Lösungen für typische geographische Fragestellungen: Wie komme ich als Tourist zu meinem Hotel, zum Strand oder zum Kletterfelsen?",
     "crumbs": [
-      "Reader Geographische Raumkonzept",
+      "Reader Geographische Raumkonzepte",
       "Raum braucht einen Geltungsbereich"
     ]
   },
@@ -1753,7 +3238,7 @@
     "section": "Geographische Kompetenzen",
     "text": "Geographische Kompetenzen\nViele unserer alltäglichen Handlungen hängen offensichtlich von Problemlösungsstrategien ab, die geographische Kompetenzen erfordern. Natürlich sind nicht alle Problemstellungen so anwendungsorientiert, wie die Beispiele vermuten lassen, aber eine Unterscheidung zwischen Grundlagenforschung und angewandter Forschung ist im Hinblick auf die Technologie der Geographischen Informationssysteme in der Regel nicht sinnvoll, da beiden die gleichen informationstechnischen Konzepte zugrunde liegen und lediglich unterschiedliche Ziele verfolgt werden.",
     "crumbs": [
-      "Reader Geographische Raumkonzept",
+      "Reader Geographische Raumkonzepte",
       "Raum braucht einen Geltungsbereich"
     ]
   },
@@ -1764,7 +3249,7 @@
     "section": "Lernziele",
     "text": "Lernziele\nDie Lernziele des ersten Readers sind\n\nReflexion des alltäglichen Umgangs mit Geographischen Informationssystemen (GIS)\nEinführung in Begriffe und Definitionen\nEinführung in die Kommunikationskonzepte von GI in der Geographie",
     "crumbs": [
-      "Reader Geographische Raumkonzept",
+      "Reader Geographische Raumkonzepte",
       "Raum braucht einen Geltungsbereich"
     ]
   },
@@ -1775,7 +3260,7 @@
     "section": "",
     "text": "Wie können wir in der Geographie die Abstraktion unserer Interpretation der Welt am einfachsten und effizientesten umsetzen? Grundsätzlich kann die geographische Darstellung des Raumes mit Hilfe von zwei unterschiedlichen Konzepten erfolgen: Zum einen können eindeutige Objekte, sogenannte diskrete Geoobjekte, identifiziert werden, dem gegenüber steht das Konzept kontinuierlicher Räume oder Felder. Grundsätzlich sind diskrete (Geo-)Objekte alles, was in irgendeiner Weise abgegrenzt und gezählt werden kann. Also z.B. Autos, Häuser, Fußgänger, Blumen, Bären, Fußballplätze und so weiter. Felder hingegen beschreiben kontinuierliche, raum-zeitlich veränderliche Attributwerte oder Merkmalsausprägungen von Räumen (z.B. Lufttemperatur, Einwohner / Hektar).\nBeginnen wir mit einem geographischen Raumbegriff, der uns aus dem Alltagswissen vertraut ist. So kennen viele die Region Fränkische Schweiz. Mit solchen Raumentitäten verbinden wir eine mehr oder weniger diffuse, aber abgegrenzte räumliche Ausdehnung (Region) oder die Vorstellung einer Landschaft (vgl. Abb. 01-03). Häufig werden solchen als Einheit wahrgenommenen Räumen auch Attribute wie kulinarische, kulturelle oder freizeitorientierte Aspekte zugeordnet. So ist die Fränkische Schweiz nicht nur für ihre Weine und Biere bekannt, sondern beispielsweise auch für ihre Osterbrunnen (vgl. Abb. 01-04) oder ihr touristisches Potenzial.\nEin weiteres sehr anschauliches Beispiel für solche räumlichen Übergänge ist das Relief (vgl. Abb. 01-05), da die Erdoberfläche nahezu kontinuierlich unterschiedliche Höhen aufweist. Die räumliche Verteilung dieses Merkmals variiert ständig. Versucht man vor diesem Hintergrund eine räumliche Abgrenzung der Fränkischen Schweiz, so können nicht nur die religiösen oder kulinarischen Vorlieben der Bevölkerung, sondern z.B. auch die morphologischen oder edaphischen Eigenschaften der von ihr besiedelten Erdoberfläche räumlich inhomogen verteilt sein. Die Karte der Fränkischen Schweiz (vgl. Abb. 01-06) versucht dies durch ein radiales Verblassen der Farben im Randbereich zu symbolisieren, ohne jedoch zu verdeutlichen, wie diese Abgrenzung zustande kommt.",
     "crumbs": [
-      "Reader Geographische Raumkonzept",
+      "Reader Geographische Raumkonzepte",
       "Objekte im Raum"
     ]
   },
@@ -1786,7 +3271,7 @@
     "section": "Diskrete und kontinuierliche Objekte in GI-Systemen",
     "text": "Diskrete und kontinuierliche Objekte in GI-Systemen\nDiskrete Objekte zeichnen sich durch eine eindeutige räumliche Abgrenzbarkeit aus, während räumlich kontinuierliche Ausprägungen zunächst keine eindeutige objektbezogene räumliche Abgrenzbarkeit aufweisen. Diese Regel hängt von der Betrachtungs- bzw. Interessenskala ab. Hinzu kommt, dass die binäre Logik der EDV-gerechten Datenverarbeitung eine Abgrenzung der Informationen notwendig macht. In der Praxis der Geoinformationssysteme werden daher auch kontinuierliche Felder als räumlich abgegrenzte Objekte behandelt, d.h. sie werden - unter Berücksichtigung eines für die Fragestellung geeigneten Maßstabs - in diskrete Raumeinheiten zerlegt. Der wesentliche Unterschied zum Konzept der diskreten Objekte im leeren Raum besteht darin, dass diese mit bekannter Lage in einem ansonsten leeren Raum existieren, während die in diskrete Objekte zerlegten Kontinua diesen Raum lückenlos und überschneidungsfrei mit ihren Eigenschaften abbilden und beschreiben.",
     "crumbs": [
-      "Reader Geographische Raumkonzept",
+      "Reader Geographische Raumkonzepte",
       "Objekte im Raum"
     ]
   },
@@ -1797,7 +3282,7 @@
     "section": "Übung",
     "text": "Übung\n\n\n\n\n\n\nBetrachten Sie das folgende Luftbild (Abb. 01-07) und überlegen Sie, wie Sie diesen Raum darstellen würden. Notieren Sie die folgenden Merkmale:\n\nLandnutzung in Form von Landnutzungstypen\nStraßennetz\nBebaute Fläche\n\n\n\n\nAbbildung 01-07: Luftbild des Felsengarten Sanspareil (Fränkische Schweiz) als Beispiel eines zu repäsentierenden Wirklichkeitsauschnitts. Es wird vernachlässigt, dass ein Luftbild selbst bereits eine Repräsentation der Wahrnehmung des Fotografen ist. (Quelle: Presse03 (2009))",
     "crumbs": [
-      "Reader Geographische Raumkonzept",
+      "Reader Geographische Raumkonzepte",
       "Objekte im Raum"
     ]
   },
@@ -1808,7 +3293,7 @@
     "section": "",
     "text": "Die kurze Einführung sollte Sie für die erkenntnis- und wissenschaftstheoretischen Grundgedanken räumlicher Abstraktionskonzepte in der Geographie sensibilisieren.\nJenseits aller konkurrierenden Begriffe und Definitionen können GI-Methoden als Werkzeuge zur Umsetzung eines zeitgemäßen raum-zeitlich strukturierten, abstrahierenden und reproduzierenden Denkens in der Geographie bezeichnet werden.\nGI beantwortet also nicht nur Fragen im Sinne eines “einfachen” Auskunftssystems, sondern vielmehr wird räumliche Wirklichkeit für Planung, für Analysen, für Erkenntnisgewinn im Daten und Konzepten generiert/gedacht.\nDie dafür notwendigen Abstraktionskonzepte stammen aus der Informatik und der Erkenntnistheorie. Sie sind transparent und nachvollziehbar und damit überprüfbar. Geoinformationssysteme in ihrer ganzen Vielfalt bestimmen zunehmend unsere alltägliche Wahrnehmung und Interpretation der Welt. Die Geographie betrachtet dies seit Beginn ihrer akademischen Existenz als ihre Kernkompetenz.\nOhne den Einsatz von GI-Techniken und -Wissen wird eine gesellschaftsrelevante und zeitgemäße Geographie in Zukunft kaum sinnvoll betrieben werden können.",
     "crumbs": [
-      "Reader Geographische Raumkonzept",
+      "Reader Geographische Raumkonzepte",
       "Zusammenfassung – Geographischer Raum"
     ]
   },
