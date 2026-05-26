@@ -143,6 +143,9 @@ website:
               text: Räumliche Ableitungen               
             - href: slides/unit05_raeumliche_bewertung_entscheidung.qmd
               text: Eignungen, Entscheidungen und Kosten
+            - href: slides/perfekter_gipfel_gesamtrahmen.qmd
+              text: Der perfekte Gipfel - ein Projekt Modell
+
 
 execute:
   freeze: auto
