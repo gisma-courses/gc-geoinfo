@@ -730,14 +730,14 @@ background-size: cover;
    
   <ul>
   <li><a href="#warum-dokumentation-in-qgis-wichtig-ist" id="toc-warum-dokumentation-in-qgis-wichtig-ist" class="nav-link active" data-scroll-target="#warum-dokumentation-in-qgis-wichtig-ist">Warum Dokumentation in QGIS wichtig ist</a></li>
-  <li><a href="#drei-ebenen-der-dokumentation" id="toc-drei-ebenen-der-dokumentation" class="nav-link" data-scroll-target="#drei-ebenen-der-dokumentation">Drei Ebenen der Dokumentation</a></li>
+  <li><a href="#was-dokumentiert-werden-muss" id="toc-was-dokumentiert-werden-muss" class="nav-link" data-scroll-target="#was-dokumentiert-werden-muss">Was dokumentiert werden muss</a></li>
+  <li><a href="#von-der-projektfrage-zum-werkzeugschritt" id="toc-von-der-projektfrage-zum-werkzeugschritt" class="nav-link" data-scroll-target="#von-der-projektfrage-zum-werkzeugschritt">Von der Projektfrage zum Werkzeugschritt</a></li>
   <li><a href="#verarbeitungsverlauf" id="toc-verarbeitungsverlauf" class="nav-link" data-scroll-target="#verarbeitungsverlauf">Verarbeitungsverlauf</a></li>
-  <li><a href="#grafischer-modellierer-modelldesigner" id="toc-grafischer-modellierer-modelldesigner" class="nav-link" data-scroll-target="#grafischer-modellierer-modelldesigner">Grafischer Modellierer / Modelldesigner</a></li>
-  <li><a href="#verarbeitungsskripte" id="toc-verarbeitungsskripte" class="nav-link" data-scroll-target="#verarbeitungsskripte">Verarbeitungsskripte</a></li>
-  <li><a href="#projektdatei-und-layouts" id="toc-projektdatei-und-layouts" class="nav-link" data-scroll-target="#projektdatei-und-layouts">Projektdatei und Layouts</a></li>
-  <li><a href="#mindeststandard-für-eine-dokumentierte-gis-analyse" id="toc-mindeststandard-für-eine-dokumentierte-gis-analyse" class="nav-link" data-scroll-target="#mindeststandard-für-eine-dokumentierte-gis-analyse">Mindeststandard für eine dokumentierte GIS-Analyse</a></li>
-  <li><a href="#beispiel-dokumentation-eines-reklassifikationsschritts" id="toc-beispiel-dokumentation-eines-reklassifikationsschritts" class="nav-link" data-scroll-target="#beispiel-dokumentation-eines-reklassifikationsschritts">Beispiel: Dokumentation eines Reklassifikationsschritts</a></li>
-  <li><a href="#beispiel-dokumentation-eines-rasterrechner-ausdrucks" id="toc-beispiel-dokumentation-eines-rasterrechner-ausdrucks" class="nav-link" data-scroll-target="#beispiel-dokumentation-eines-rasterrechner-ausdrucks">Beispiel: Dokumentation eines Rasterrechner-Ausdrucks</a></li>
+  <li><a href="#grafischer-modellierer-und-skripte" id="toc-grafischer-modellierer-und-skripte" class="nav-link" data-scroll-target="#grafischer-modellierer-und-skripte">Grafischer Modellierer und Skripte</a></li>
+  <li><a href="#projektdatei-und-datenstruktur" id="toc-projektdatei-und-datenstruktur" class="nav-link" data-scroll-target="#projektdatei-und-datenstruktur">Projektdatei und Datenstruktur</a></li>
+  <li><a href="#methodennotiz" id="toc-methodennotiz" class="nav-link" data-scroll-target="#methodennotiz">Methodennotiz</a></li>
+  <li><a href="#beispiel-reklassifikation-dokumentieren" id="toc-beispiel-reklassifikation-dokumentieren" class="nav-link" data-scroll-target="#beispiel-reklassifikation-dokumentieren">Beispiel: Reklassifikation dokumentieren</a></li>
+  <li><a href="#beispiel-rasterrechner-ausdruck-dokumentieren" id="toc-beispiel-rasterrechner-ausdruck-dokumentieren" class="nav-link" data-scroll-target="#beispiel-rasterrechner-ausdruck-dokumentieren">Beispiel: Rasterrechner-Ausdruck dokumentieren</a></li>
   <li><a href="#empfohlener-workflow-für-die-übung" id="toc-empfohlener-workflow-für-die-übung" class="nav-link" data-scroll-target="#empfohlener-workflow-für-die-übung">Empfohlener Workflow für die Übung</a></li>
   <li><a href="#weiterführende-qgis-dokumentation" id="toc-weiterführende-qgis-dokumentation" class="nav-link" data-scroll-target="#weiterführende-qgis-dokumentation">Weiterführende QGIS-Dokumentation</a></li>
   </ul>
@@ -751,368 +751,124 @@ background-size: cover;
 
 
 
+<p>Dokumentation beginnt nicht erst bei QGIS. Sie setzt eine Projektfrage voraus. Ohne Projektfrage bleibt eine Werkzeugliste fachlich leer: Man sieht dann vielleicht, dass ein Distanzraster berechnet, ein Layer reklassifiziert oder ein Rasterrechner-Ausdruck ausgeführt wurde, aber nicht, warum dieser Schritt für das Projekt notwendig war.</p>
+<p>Die Projektentwicklung klärt daher zuerst:</p>
+<blockquote class="blockquote">
+<p>Welche räumliche Frage soll bearbeitet werden?</p>
+</blockquote>
+<p>Die QGIS-Dokumentation klärt danach:</p>
+<blockquote class="blockquote">
+<p>Wie wurde diese Frage in Daten, Kriterien, Werkzeuge, Parameter und Ergebnislayer übersetzt?</p>
+</blockquote>
+<p>Beide Seiten gehören zusammen. Die Projektseite entwickelt die fachliche Logik. Diese Seite zeigt, wie die technische Umsetzung und die methodischen Entscheidungen nachvollziehbar festgehalten werden.</p>
 <section id="warum-dokumentation-in-qgis-wichtig-ist" class="level2">
 <h2 class="anchored" data-anchor-id="warum-dokumentation-in-qgis-wichtig-ist">Warum Dokumentation in QGIS wichtig ist</h2>
-<p>Bei einer Multikriterienanalyse entsteht das Ergebnis nicht durch einen einzelnen Arbeitsschritt. Die Karte ist das Ergebnis vieler Entscheidungen: Welche Eingangsdaten wurden verwendet? Wie wurden sie zugeschnitten, rasterisiert, reklassifiziert, gewichtet und miteinander verrechnet? Welche Zellgröße wurde gewählt? Welche Flächen wurden ausgeschlossen? Welche Schwellenwerte wurden gesetzt?</p>
-<p>Genau deshalb reicht es nicht, am Ende nur die fertige Karte abzugeben. Eine Eignungskarte, eine Kostenoberfläche oder eine Konfliktkarte ist nur dann fachlich nachvollziehbar, wenn auch der Weg dorthin dokumentiert ist.</p>
-<p>QGIS bietet dafür mehrere Möglichkeiten:</p>
-<ul>
-<li>den <strong>Verarbeitungsverlauf</strong> als Protokoll ausgeführter Werkzeuge,</li>
-<li>den <strong>grafischen Modellierer / Modelldesigner</strong> für wiederholbare Verarbeitungsketten,</li>
-<li><strong>Verarbeitungsskripte</strong> für automatisierte und textlich dokumentierte Workflows,</li>
-<li>die <strong>Projektdatei</strong> mit Layern, Symbolisierung, Layouts und Datenquellen,</li>
-<li>ergänzende <strong>Methodennotizen</strong>, in denen fachliche Entscheidungen begründet werden.</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled" title="Kernidee">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Hinweis</span>Kernidee
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Dokumentation bedeutet nicht nur: „Welche Knöpfe wurden gedrückt?“ Entscheidend ist, welche fachlichen Entscheidungen in den GIS-Workflow eingebaut wurden. Bei einer Multikriterienanalyse betrifft das vor allem Kriterienauswahl, Reklassifikation, Gewichtung, Einschränkungen und Interpretation.</p>
-</div>
-</div>
+<p>Bei einer GIS-Analyse entsteht das Ergebnis selten durch einen einzelnen Arbeitsschritt. Eine Eignungskarte, eine Kostenoberfläche oder eine Konfliktkarte ist das Ergebnis vieler Entscheidungen: Welche Eingangsdaten wurden verwendet? Wie wurden sie zugeschnitten, rasterisiert, reklassifiziert, gewichtet und miteinander verrechnet? Welche Zellgröße wurde gewählt? Welche Flächen wurden ausgeschlossen? Welche Schwellenwerte wurden gesetzt?</p>
+<p>Deshalb reicht es nicht, am Ende nur die fertige Karte abzugeben. Fachlich nachvollziehbar ist eine Analyse erst dann, wenn auch der Weg zur Karte dokumentiert ist.</p>
+<p>Dokumentation bedeutet dabei nicht nur, die verwendeten Werkzeuge aufzuschreiben. Entscheidend ist, welche fachlichen Entscheidungen in den GIS-Workflow eingebaut wurden. Bei einer Multikriterienanalyse betrifft das vor allem Kriterienauswahl, Reklassifikation, Gewichtung, Einschränkungen und Interpretation.</p>
 </section>
-<section id="drei-ebenen-der-dokumentation" class="level2">
-<h2 class="anchored" data-anchor-id="drei-ebenen-der-dokumentation">Drei Ebenen der Dokumentation</h2>
-<p>QGIS kann Arbeitsabläufe auf unterschiedlichen Ebenen dokumentieren. Diese Ebenen ersetzen sich nicht gegenseitig, sondern ergänzen sich.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Ebene</th>
-<th>Was wird dokumentiert?</th>
-<th>Stärke</th>
-<th>Grenze</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Verarbeitungsverlauf</td>
-<td>ausgeführte Processing-Werkzeuge mit Parametern</td>
-<td>schnell verfügbar, gut für Einzelwerkzeuge</td>
-<td>dokumentiert nicht automatisch alle manuellen Entscheidungen</td>
-</tr>
-<tr class="even">
-<td>Grafischer Modellierer</td>
-<td>Verarbeitungskette aus mehreren Werkzeugen</td>
-<td>gut für wiederholbare Workflows</td>
-<td>fachliche Begründung muss zusätzlich erklärt werden</td>
-</tr>
-<tr class="odd">
-<td>Skript</td>
-<td>vollständige Verarbeitung als Code</td>
-<td>sehr reproduzierbar und versionierbar</td>
-<td>setzt mehr technisches Verständnis voraus</td>
-</tr>
-<tr class="even">
-<td>Projektdatei</td>
-<td>Layer, Darstellungen, Layouts, Datenquellen</td>
-<td>wichtig für Kartendarstellung und Abgabe</td>
-<td>ersetzt kein Methodenprotokoll</td>
-</tr>
-<tr class="odd">
-<td>Methodentext</td>
-<td>Kriterien, Schwellenwerte, Gewichte, Interpretation</td>
-<td>fachlich zentral</td>
-<td>muss bewusst geschrieben werden</td>
-</tr>
-</tbody>
-</table>
+<section id="was-dokumentiert-werden-muss" class="level2">
+<h2 class="anchored" data-anchor-id="was-dokumentiert-werden-muss">Was dokumentiert werden muss</h2>
+<p>Eine QGIS-Analyse besteht aus zwei Ebenen. Die erste Ebene ist technisch: Welche Werkzeuge wurden mit welchen Parametern ausgeführt? Die zweite Ebene ist fachlich: Warum wurden genau diese Daten, Kriterien, Schwellenwerte und Gewichtungen gewählt?</p>
+<p>Beide Ebenen müssen zusammen dokumentiert werden. Ein Verarbeitungsverlauf zeigt, was technisch passiert ist. Er erklärt aber nicht automatisch, warum ein bestimmter Schwellenwert sinnvoll ist oder warum ein Kriterium höher gewichtet wurde als ein anderes.</p>
+<p>Für eine dokumentierte Analyse sind deshalb drei Bausteine wichtig:</p>
+<ol type="1">
+<li><strong>Verarbeitungsverlauf:</strong> Welche Werkzeuge wurden ausgeführt?</li>
+<li><strong>Modell, Skript oder Projektstruktur:</strong> Wie lässt sich der Ablauf wiederholen?</li>
+<li><strong>Methodennotiz:</strong> Welche fachlichen Entscheidungen wurden getroffen und warum?</li>
+</ol>
+</section>
+<section id="von-der-projektfrage-zum-werkzeugschritt" class="level2">
+<h2 class="anchored" data-anchor-id="von-der-projektfrage-zum-werkzeugschritt">Von der Projektfrage zum Werkzeugschritt</h2>
+<p>Auch ein kleines GIS-Projekt besteht fast nie aus einem einzelnen Werkzeug. Schon eine einfache Eignungsanalyse verbindet mehrere Schritte: Daten werden zugeschnitten, vereinheitlicht, in Raster überführt, reklassifiziert, gewichtet, maskiert und schließlich dargestellt. Jeder dieser Schritte verändert die Daten und damit auch die Aussage der späteren Karte.</p>
+<p>Ob ein Schritt sinnvoll ist, lässt sich aber nicht allein am Werkzeug erkennen. Entscheidend ist die Projektfrage. Ohne sie bleibt unklar, warum ein Abstand berechnet, eine Hangneigung klassifiziert, eine Fläche ausgeschlossen oder ein Kriterium stärker gewichtet wurde.</p>
+<p>Ein Beispiel: Das Werkzeug <code>Nähe / Rasterdistanz</code> erzeugt zunächst nur eine Distanzfläche. Fachlich bedeutsam wird diese Distanzfläche erst durch die Fragestellung. In einer Habitatmodellierung kann große Siedlungsferne als günstiger Standortfaktor interpretiert werden. In einer Erreichbarkeitsanalyse kann dieselbe Entfernung dagegen als Nachteil gelten. Das Werkzeug ist identisch, aber die fachliche Bedeutung ist eine andere.</p>
+<p>Dokumentation muss deshalb nicht nur die Werkzeugfolge beschreiben, sondern die Verbindung zwischen Projektfrage und Verarbeitungsschritt sichtbar machen:</p>
+<pre class="text"><code>Projektfrage → Kriterium → GIS-Operation → Parameter → Ergebnislayer → Interpretation</code></pre>
 </section>
 <section id="verarbeitungsverlauf" class="level2">
 <h2 class="anchored" data-anchor-id="verarbeitungsverlauf">Verarbeitungsverlauf</h2>
-<p>Der <strong>Verarbeitungsverlauf</strong> protokolliert Werkzeuge, die über die QGIS-Verarbeitungswerkzeuge ausgeführt wurden. Dazu gehören zum Beispiel <code>Rasterisieren</code>, <code>Hangneigung</code>, <code>Rasterrechner</code>, <code>Reklassifizieren nach Tabelle</code> oder <code>Nähe / Rasterdistanz</code>.</p>
-<p>Der Verlauf ist besonders nützlich, wenn ein einzelner Schritt nachvollzogen oder wiederholt werden soll. Viele Einträge lassen sich erneut öffnen, sodass die verwendeten Parameter sichtbar werden. Außerdem können Verarbeitungsschritte als Python-Befehl oder als <code>qgis_process</code>-Befehl kopiert werden.</p>
-<p>Typische Nutzung:</p>
-<ol type="1">
-<li>Werkzeug ausführen.</li>
-<li>Verarbeitungsverlauf öffnen.</li>
-<li>Eintrag kontrollieren.</li>
-<li>Parameter in das Methodenprotokoll übernehmen.</li>
-<li>Bei Bedarf Befehl als Python- oder <code>qgis_process</code>-Befehl kopieren.</li>
-</ol>
-<div class="callout callout-style-default callout-warning callout-titled" title="Grenze des Verarbeitungsverlaufs">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warnung</span>Grenze des Verarbeitungsverlaufs
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Der Verarbeitungsverlauf ist kein vollständiges Forschungstagebuch. Er dokumentiert vor allem ausgeführte Processing-Werkzeuge. Manuelle Entscheidungen wie Layerauswahl, visuelle Kontrolle, Umbenennungen, Symbolisierung, Interpretation oder die fachliche Begründung von Schwellenwerten müssen zusätzlich beschrieben werden.</p>
-</div>
-</div>
-<p>Für eine Multikriterienanalyse sollten aus dem Verlauf mindestens folgende Informationen übernommen werden:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Dokumentationspunkt</th>
-<th>Beispiel</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Werkzeugname</td>
-<td><code>Reklassifizieren nach Tabelle</code></td>
-</tr>
-<tr class="even">
-<td>Eingangsdaten</td>
-<td><code>siedlungsdistanz.tif</code></td>
-</tr>
-<tr class="odd">
-<td>Parameter</td>
-<td>Distanzklassen und Zielwerte</td>
-</tr>
-<tr class="even">
-<td>Ausgabe</td>
-<td><code>siedlungsdistanz_idx.tif</code></td>
-</tr>
-<tr class="odd">
-<td>Zweck</td>
-<td>Standardisierung des Störungskriteriums</td>
-</tr>
-<tr class="even">
-<td>fachliche Annahme</td>
-<td>größere Siedlungsferne = höhere Eignung</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="grafischer-modellierer-modelldesigner" class="level2">
-<h2 class="anchored" data-anchor-id="grafischer-modellierer-modelldesigner">Grafischer Modellierer / Modelldesigner</h2>
-<p>Der <strong>grafische Modellierer</strong> ist sinnvoll, wenn mehrere Verarbeitungsschritte immer wieder in derselben Reihenfolge ausgeführt werden sollen. Aus einzelnen Werkzeugen wird ein Modell gebaut. Dieses Modell kann gespeichert, erneut ausgeführt und auf andere Eingangsdaten angewendet werden.</p>
-<p>Für die Wildkatzenanalyse könnte ein Modell zum Beispiel folgende Schritte enthalten:</p>
-<ol type="1">
-<li>DGM zuschneiden.</li>
-<li>Hangneigung berechnen.</li>
-<li>Exposition berechnen.</li>
-<li>Siedlungsflächen rasterisieren.</li>
-<li>Distanz zur Siedlung berechnen.</li>
-<li>Kriterien reklassifizieren.</li>
-<li>Kriterien gewichten und addieren.</li>
-<li>Einschränkungsmaske anwenden.</li>
-<li>Eignungskarte ausgeben.</li>
-</ol>
-<p>Der Vorteil liegt darin, dass die Verarbeitungskette sichtbar wird. Das Modell zeigt nicht nur das Ergebnis, sondern auch die logische Abfolge der Analyse.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Didaktischer Vorteil">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Hinweis</span>Didaktischer Vorteil
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Der grafische Modellierer ist besonders geeignet, um Schülerinnen und Studierenden zu zeigen, dass eine GIS-Karte aus einer Kette nachvollziehbarer Operationen entsteht. Die Karte erscheint dann nicht als fertiges Bild, sondern als Ergebnis eines dokumentierten Modells.</p>
-</div>
-</div>
-<p>Ein Modell sollte immer zusätzlich beschrieben werden:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Modellelement</th>
-<th>Dokumentation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Eingaben</td>
-<td>Welche Layer werden benötigt?</td>
-</tr>
-<tr class="even">
-<td>Verarbeitungsschritte</td>
-<td>Welche Werkzeuge werden in welcher Reihenfolge genutzt?</td>
-</tr>
-<tr class="odd">
-<td>Parameter</td>
-<td>Welche Zellgröße, Schwellenwerte und Klassengrenzen werden verwendet?</td>
-</tr>
-<tr class="even">
-<td>Ausgaben</td>
-<td>Welche Raster oder Vektordaten entstehen?</td>
-</tr>
-<tr class="odd">
-<td>fachliche Begründung</td>
-<td>Warum sind diese Schritte für die Fragestellung sinnvoll?</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="verarbeitungsskripte" class="level2">
-<h2 class="anchored" data-anchor-id="verarbeitungsskripte">Verarbeitungsskripte</h2>
-<p>Skripte sind die stärkste Form der technischen Reproduzierbarkeit. Ein Skript beschreibt den Ablauf nicht grafisch, sondern als Code. In QGIS können Processing-Werkzeuge auch über Python beziehungsweise PyQGIS aufgerufen werden.</p>
-<p>Ein Verarbeitungsschritt kann dann zum Beispiel so aussehen:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>processing.run(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"gdal:slope"</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    {</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"INPUT"</span>: <span class="st">"dgm.tif"</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"BAND"</span>: <span class="dv">1</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"SCALE"</span>: <span class="dv">1</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"AS_PERCENT"</span>: <span class="va">False</span>,</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"OUTPUT"</span>: <span class="st">"hangneigung.tif"</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Für den Einstieg ist es nicht notwendig, alle Arbeitsschritte selbst zu programmieren. Ein praktischer Zwischenweg ist:</p>
-<ol type="1">
-<li>Werkzeug zunächst normal in QGIS ausführen.</li>
-<li>Befehl aus dem Verarbeitungsverlauf kopieren.</li>
-<li>Befehl in ein Skript übernehmen.</li>
-<li>Dateipfade, Parameter und Ausgaben sauber benennen.</li>
-<li>Skript zusammen mit dem Projekt ablegen.</li>
-</ol>
-<p>Skripte sind besonders nützlich, wenn ein Workflow mehrfach mit anderen Daten, anderen Gebieten oder anderen Gewichtungen ausgeführt werden soll.</p>
-</section>
-<section id="projektdatei-und-layouts" class="level2">
-<h2 class="anchored" data-anchor-id="projektdatei-und-layouts">Projektdatei und Layouts</h2>
-<p>Die QGIS-Projektdatei dokumentiert einen anderen Teil des Workflows. Sie speichert unter anderem, welche Layer eingebunden sind, wie sie dargestellt werden, welche Kartenlayouts angelegt wurden und auf welche Datenquellen verwiesen wird.</p>
-<p>Für eine Abgabe sollte die Projektdatei deshalb nicht zufällig entstehen, sondern bewusst organisiert werden:</p>
+<p>Der QGIS-Verarbeitungsverlauf protokolliert Werkzeuge, die über die Processing-Werkzeuge ausgeführt wurden. Dazu gehören zum Beispiel <code>Rasterisieren</code>, <code>Hangneigung</code>, <code>Rasterrechner</code>, <code>Reklassifizieren nach Tabelle</code> oder <code>Nähe / Rasterdistanz</code>.</p>
+<p>Der Verlauf ist besonders nützlich, wenn einzelne Schritte nachvollzogen oder wiederholt werden sollen. Viele Einträge lassen sich erneut öffnen, sodass die verwendeten Parameter sichtbar werden. Außerdem können Verarbeitungsschritte als Python-Befehl oder als <code>qgis_process</code>-Befehl kopiert werden.</p>
+<p>Für ein Methodenprotokoll sollten aus dem Verlauf vor allem diese Informationen übernommen werden:</p>
 <ul>
-<li>sinnvolle Layernamen verwenden,</li>
-<li>temporäre Layer vermeiden,</li>
-<li>Zwischenergebnisse eindeutig benennen,</li>
-<li>finale Ergebnisse in einem eigenen Ordner speichern,</li>
-<li>Symbolisierung nachvollziehbar gestalten,</li>
-<li>Layouts mit Titel, Legende, Maßstab, Nordpfeil, Quellen und Datum versehen.</li>
+<li>Werkzeugname,</li>
+<li>Eingangsdaten,</li>
+<li>zentrale Parameter,</li>
+<li>Ausgabedatei,</li>
+<li>Zweck des Schritts,</li>
+<li>fachliche Annahme hinter dem Schritt.</li>
 </ul>
-<div class="callout callout-style-default callout-warning callout-titled" title="Temporäre Dateien vermeiden">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warnung</span>Temporäre Dateien vermeiden
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Viele QGIS-Werkzeuge erzeugen standardmäßig temporäre Ausgaben. Für eine dokumentierte Analyse sollten wichtige Zwischenergebnisse und Endergebnisse immer explizit gespeichert werden. Sonst lässt sich der Workflow später oft nicht mehr vollständig nachvollziehen.</p>
-</div>
-</div>
+<p>Der Verarbeitungsverlauf ersetzt aber kein vollständiges Methodenprotokoll. Manuelle Entscheidungen wie Layerauswahl, visuelle Kontrolle, Umbenennungen, Symbolisierung oder die Begründung von Schwellenwerten müssen zusätzlich beschrieben werden.</p>
 </section>
-<section id="mindeststandard-für-eine-dokumentierte-gis-analyse" class="level2">
-<h2 class="anchored" data-anchor-id="mindeststandard-für-eine-dokumentierte-gis-analyse">Mindeststandard für eine dokumentierte GIS-Analyse</h2>
-<p>Für die Praxisübung reicht ein kompakter Dokumentationsstandard. Ziel ist nicht, jede Mausbewegung zu protokollieren, sondern die fachlich und technisch entscheidenden Schritte nachvollziehbar zu machen.</p>
-<p>Eine gute Dokumentation enthält mindestens:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 21%">
-<col style="width: 78%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Bestandteil</th>
-<th>Leitfrage</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Fragestellung</td>
-<td>Was soll mit der Analyse beantwortet werden?</td>
-</tr>
-<tr class="even">
-<td>Eingangsdaten</td>
-<td>Welche Daten wurden verwendet?</td>
-</tr>
-<tr class="odd">
-<td>Raumbezug</td>
-<td>Welche Projektion, Zellgröße und Ausdehnung wurden gewählt?</td>
-</tr>
-<tr class="even">
-<td>Kriterien</td>
-<td>Welche räumlichen Kriterien gehen ein?</td>
-</tr>
-<tr class="odd">
-<td>Reklassifikation</td>
-<td>Wie wurden Rohdaten in Eignungs- oder Kostenwerte übersetzt?</td>
-</tr>
-<tr class="even">
-<td>Gewichtung</td>
-<td>Welche Gewichte wurden verwendet und warum?</td>
-</tr>
-<tr class="odd">
-<td>Einschränkungen</td>
-<td>Welche Flächen wurden ausgeschlossen oder abgewertet?</td>
-</tr>
-<tr class="even">
-<td>Werkzeuge</td>
-<td>Welche QGIS-Werkzeuge wurden genutzt?</td>
-</tr>
-<tr class="odd">
-<td>Ausgaben</td>
-<td>Welche Ergebnisdateien wurden erzeugt?</td>
-</tr>
-<tr class="even">
-<td>Interpretation</td>
-<td>Was zeigt die Karte und was zeigt sie nicht?</td>
-</tr>
-</tbody>
-</table>
+<section id="grafischer-modellierer-und-skripte" class="level2">
+<h2 class="anchored" data-anchor-id="grafischer-modellierer-und-skripte">Grafischer Modellierer und Skripte</h2>
+<p>Der grafische Modellierer ist sinnvoll, wenn mehrere Verarbeitungsschritte immer wieder in derselben Reihenfolge ausgeführt werden sollen. Aus einzelnen Werkzeugen wird ein Modell gebaut. Dieses Modell kann gespeichert, erneut ausgeführt und auf andere Eingangsdaten angewendet werden.</p>
+<p>Für eine Multikriterienanalyse könnte ein Modell zum Beispiel folgende Schritte enthalten:</p>
+<ol type="1">
+<li>Eingangsdaten zuschneiden.</li>
+<li>Rasterdaten auf gemeinsame Zellgröße bringen.</li>
+<li>Kriterien berechnen.</li>
+<li>Kriterien reklassifizieren.</li>
+<li>Kriterien gewichten und verrechnen.</li>
+<li>Einschränkungsmaske anwenden.</li>
+<li>Ergebnisraster speichern.</li>
+</ol>
+<p>Der Vorteil liegt darin, dass die Verarbeitungskette sichtbar wird. Die Karte erscheint dann nicht als fertiges Bild, sondern als Ergebnis eines nachvollziehbaren Ablaufs.</p>
+<p>Skripte gehen einen Schritt weiter. Sie beschreiben den Ablauf nicht grafisch, sondern als Code. Das ist besonders stark, wenn ein Workflow mehrfach mit anderen Daten, anderen Gebieten oder anderen Gewichtungen ausgeführt werden soll.</p>
+<p>Ein einzelner Verarbeitungsschritt kann zum Beispiel so dokumentiert werden:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>processing.run(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"gdal:slope"</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"INPUT"</span>: <span class="st">"dgm.tif"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"BAND"</span>: <span class="dv">1</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"SCALE"</span>: <span class="dv">1</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"AS_PERCENT"</span>: <span class="va">False</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"OUTPUT"</span>: <span class="st">"hangneigung.tif"</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Für den Einstieg ist es nicht notwendig, einen vollständigen Workflow selbst zu programmieren. Ein praktikabler Zwischenweg ist, Werkzeuge zunächst normal in QGIS auszuführen, den Befehl aus dem Verarbeitungsverlauf zu kopieren und die wichtigsten Schritte in einem kurzen Skript oder Methodenprotokoll zu sichern.</p>
 </section>
-<section id="beispiel-dokumentation-eines-reklassifikationsschritts" class="level2">
-<h2 class="anchored" data-anchor-id="beispiel-dokumentation-eines-reklassifikationsschritts">Beispiel: Dokumentation eines Reklassifikationsschritts</h2>
-<p>Ein einzelner Schritt könnte im Methodenprotokoll so dokumentiert werden:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 15%">
-<col style="width: 84%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Punkt</th>
-<th>Eintrag</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Ziel</td>
-<td>Standardisierung der Siedlungsnähe</td>
-</tr>
-<tr class="even">
-<td>Eingangsdaten</td>
-<td><code>siedlungsdistanz.tif</code></td>
-</tr>
-<tr class="odd">
-<td>Werkzeug</td>
-<td><code>Reklassifizieren nach Tabelle</code></td>
-</tr>
-<tr class="even">
-<td>Regel</td>
-<td>0–100 m = 0; 100–300 m = 0.3; 300–600 m = 0.6; &gt; 600 m = 1</td>
-</tr>
-<tr class="odd">
-<td>Ausgabe</td>
-<td><code>siedlungsdistanz_idx.tif</code></td>
-</tr>
-<tr class="even">
-<td>Begründung</td>
-<td>Siedlungsnahe Bereiche werden wegen höherer Störung geringer bewertet</td>
-</tr>
-<tr class="odd">
-<td>Unsicherheit</td>
-<td>Schwellenwerte sind didaktisch gesetzt und nicht lokal validiert</td>
-</tr>
-</tbody>
-</table>
+<section id="projektdatei-und-datenstruktur" class="level2">
+<h2 class="anchored" data-anchor-id="projektdatei-und-datenstruktur">Projektdatei und Datenstruktur</h2>
+<p>Die QGIS-Projektdatei dokumentiert einen anderen Teil des Workflows. Sie speichert, welche Layer eingebunden sind, wie sie dargestellt werden, welche Layouts angelegt wurden und auf welche Datenquellen verwiesen wird.</p>
+<p>Für eine Abgabe sollte die Projektdatei deshalb bewusst organisiert werden. Rohdaten sollten unverändert bleiben. Zwischenergebnisse und finale Ergebnisse sollten mit sprechenden Namen gespeichert werden. Temporäre Layer sollten vermieden werden, wenn sie für die Analyse wichtig sind. Kartenlayouts brauchen Titel, Legende, Maßstab, Quellenangabe und Datum.</p>
+<p>Eine saubere Projektstruktur ist kein formaler Zusatz. Sie entscheidet darüber, ob eine Analyse später noch verstanden, geprüft oder verändert werden kann.</p>
 </section>
-<section id="beispiel-dokumentation-eines-rasterrechner-ausdrucks" class="level2">
-<h2 class="anchored" data-anchor-id="beispiel-dokumentation-eines-rasterrechner-ausdrucks">Beispiel: Dokumentation eines Rasterrechner-Ausdrucks</h2>
-<p>Auch der Rasterrechner-Ausdruck sollte nicht nur ausgeführt, sondern dokumentiert werden:</p>
+<section id="methodennotiz" class="level2">
+<h2 class="anchored" data-anchor-id="methodennotiz">Methodennotiz</h2>
+<p>Die Methodennotiz erklärt die fachlichen Entscheidungen. Sie sollte knapp sein, aber die zentralen Annahmen offenlegen.</p>
+<p>Für eine Multikriterienanalyse gehören dazu:</p>
+<ul>
+<li>Fragestellung,</li>
+<li>Eingangsdaten,</li>
+<li>Raumbezug, Projektion, Zellgröße und Ausdehnung,</li>
+<li>verwendete Kriterien,</li>
+<li>Reklassifikationsregeln,</li>
+<li>Gewichtungen,</li>
+<li>Ausschluss- oder Einschränkungsflächen,</li>
+<li>verwendete Werkzeuge,</li>
+<li>Ergebnisdateien,</li>
+<li>Grenzen der Interpretation.</li>
+</ul>
+<p>Wichtig ist nicht, jede Mausbewegung zu protokollieren. Wichtig ist, dass eine andere Person nachvollziehen kann, warum aus den Eingangsdaten genau dieses Ergebnis entstanden ist.</p>
+</section>
+<section id="beispiel-reklassifikation-dokumentieren" class="level2">
+<h2 class="anchored" data-anchor-id="beispiel-reklassifikation-dokumentieren">Beispiel: Reklassifikation dokumentieren</h2>
+<p>Ein Reklassifikationsschritt sollte nicht nur als Werkzeugaufruf erscheinen. Er braucht eine kurze fachliche Begründung.</p>
+<p>Beispiel:</p>
+<pre class="text"><code>Ziel: Standardisierung der Siedlungsnähe
+Eingangsdaten: siedlungsdistanz.tif
+Werkzeug: Reklassifizieren nach Tabelle
+Regel: 0–100 m = 0; 100–300 m = 0.3; 300–600 m = 0.6; &gt; 600 m = 1
+Ausgabe: siedlungsdistanz_idx.tif
+Begründung: Siedlungsnahe Bereiche werden wegen höherer Störung geringer bewertet.
+Unsicherheit: Die Schwellenwerte sind didaktisch gesetzt und nicht lokal validiert.</code></pre>
+<p>Damit ist der Schritt technisch und fachlich lesbar. Man sieht nicht nur, was gerechnet wurde, sondern auch, welche Annahme in die Analyse eingegangen ist.</p>
+</section>
+<section id="beispiel-rasterrechner-ausdruck-dokumentieren" class="level2">
+<h2 class="anchored" data-anchor-id="beispiel-rasterrechner-ausdruck-dokumentieren">Beispiel: Rasterrechner-Ausdruck dokumentieren</h2>
+<p>Auch ein Rasterrechner-Ausdruck sollte nicht nur ausgeführt, sondern gesichert und erklärt werden:</p>
 <pre class="qgis"><code>(
   "walddichte_idx@1" * 0.40 +
   "siedlungsdistanz_idx@1" * 0.30 +
@@ -1121,78 +877,25 @@ background-size: cover;
 )
 *
 "einschraenkung_mask@1"</code></pre>
-<p>Dazu gehört eine kurze Erklärung:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 32%">
-<col style="width: 67%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Element</th>
-<th>Bedeutung</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>walddichte_idx</code></td>
-<td>standardisierte Walddichte</td>
-</tr>
-<tr class="even">
-<td><code>siedlungsdistanz_idx</code></td>
-<td>standardisierte Entfernung zur Siedlung</td>
-</tr>
-<tr class="odd">
-<td><code>hangneigung_idx</code></td>
-<td>standardisierte Hangneigung</td>
-</tr>
-<tr class="even">
-<td><code>exposition_idx</code></td>
-<td>standardisierte Exposition</td>
-</tr>
-<tr class="odd">
-<td><code>einschraenkung_mask</code></td>
-<td>Ausschluss oder Abwertung versiegelter Flächen</td>
-</tr>
-<tr class="even">
-<td>Gewichte</td>
-<td>relative Bedeutung der Kriterien</td>
-</tr>
-<tr class="odd">
-<td>Ergebnis</td>
-<td>potenzielle Eignung zwischen 0 und 1</td>
-</tr>
-</tbody>
-</table>
+<p>Der Ausdruck kombiniert standardisierte Kriterien zu einer Eignungsfläche. Die Gewichte drücken aus, welche Kriterien in diesem Modell stärker oder schwächer zählen. Die Einschränkungsmaske sorgt dafür, dass ungeeignete Flächen ausgeschlossen oder abgewertet werden.</p>
+<p>Eine Dokumentation muss daher nicht nur den Ausdruck enthalten, sondern auch erklären, warum diese Kriterien und Gewichte verwendet wurden.</p>
 </section>
 <section id="empfohlener-workflow-für-die-übung" class="level2">
 <h2 class="anchored" data-anchor-id="empfohlener-workflow-für-die-übung">Empfohlener Workflow für die Übung</h2>
-<p>Für die Kursübung ist folgender Ablauf sinnvoll:</p>
+<p>Für die Kursübung reicht ein kompakter Dokumentationsstandard:</p>
 <ol type="1">
 <li>Projektordner anlegen.</li>
 <li>Rohdaten unverändert speichern.</li>
 <li>QGIS-Projekt früh speichern.</li>
-<li>Alle Zwischenergebnisse mit sprechenden Namen speichern.</li>
+<li>Zwischenergebnisse mit sprechenden Namen speichern.</li>
 <li>Verarbeitungsschritte über den Verlauf kontrollieren.</li>
-<li>Wiederkehrende Abläufe im grafischen Modellierer abbilden.</li>
-<li>Zentrale Rasterrechner-Ausdrücke in das Methodenprotokoll kopieren.</li>
-<li>Kriterien, Schwellenwerte und Gewichte fachlich begründen.</li>
+<li>Wiederkehrende Abläufe im Modellierer oder Skript sichern.</li>
+<li>Rasterrechner-Ausdrücke in das Methodenprotokoll kopieren.</li>
+<li>Kriterien, Schwellenwerte und Gewichte kurz begründen.</li>
 <li>Ergebnislayout erstellen.</li>
-<li>Grenzen der Analyse explizit benennen.</li>
+<li>Grenzen der Analyse benennen.</li>
 </ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Merksatz">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Hinweis</span>Merksatz
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Reproduzierbarkeit in QGIS entsteht nicht automatisch durch die Software. Sie entsteht durch die Kombination aus gespeicherten Daten, nachvollziehbaren Werkzeugparametern, sauber benannten Ausgaben, Modell oder Skript und einem kurzen fachlichen Methodenprotokoll.</p>
-</div>
-</div>
+<p>Reproduzierbarkeit entsteht nicht automatisch durch QGIS. Sie entsteht durch die Verbindung aus gespeicherten Daten, nachvollziehbaren Werkzeugparametern, sauber benannten Ausgaben und einer kurzen fachlichen Begründung.</p>
 </section>
 <section id="weiterführende-qgis-dokumentation" class="level2">
 <h2 class="anchored" data-anchor-id="weiterführende-qgis-dokumentation">Weiterführende QGIS-Dokumentation</h2>
