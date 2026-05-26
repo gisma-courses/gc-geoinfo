@@ -9,6 +9,19 @@ lang: de
 comments: false
 ---
 
+
+Dokumentation beginnt nicht erst bei QGIS. Sie setzt eine Projektfrage voraus. Ohne Projektfrage bleibt eine Werkzeugliste fachlich leer: Man sieht dann vielleicht, dass ein Distanzraster berechnet, ein Layer reklassifiziert oder ein Rasterrechner-Ausdruck ausgeführt wurde, aber nicht, warum dieser Schritt für das Projekt notwendig war.
+
+Die Projektentwicklung klärt daher zuerst:
+
+> Welche räumliche Frage soll bearbeitet werden?
+
+Die QGIS-Dokumentation klärt danach:
+
+> Wie wurde diese Frage in Daten, Kriterien, Werkzeuge, Parameter und Ergebnislayer übersetzt?
+
+Beide Seiten gehören zusammen. Die Projektseite entwickelt die fachliche Logik. Diese Seite zeigt, wie die technische Umsetzung und die methodischen Entscheidungen nachvollziehbar festgehalten werden.
+
 ## Warum Dokumentation in QGIS wichtig ist
 
 Bei einer GIS-Analyse entsteht das Ergebnis selten durch einen einzelnen Arbeitsschritt. Eine Eignungskarte, eine Kostenoberfläche oder eine Konfliktkarte ist das Ergebnis vieler Entscheidungen: Welche Eingangsdaten wurden verwendet? Wie wurden sie zugeschnitten, rasterisiert, reklassifiziert, gewichtet und miteinander verrechnet? Welche Zellgröße wurde gewählt? Welche Flächen wurden ausgeschlossen? Welche Schwellenwerte wurden gesetzt?

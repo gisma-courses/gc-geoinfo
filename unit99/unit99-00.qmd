@@ -1,0 +1,183 @@
+---
+title: Ein kleines GIS-Projekt entwickeln und dokumentieren
+title-block-banner: ../assets/images/06-splash.jpg
+title-block-banner-color: black
+
+bibliography: ../assets/geoinfo.bib
+
+lang: de
+comments: false
+---
+
+## Projektarbeit beginnt nicht mit QGIS
+
+Ein GIS-Projekt beginnt nicht mit einem Werkzeug, sondern mit einer Frage. Das klingt banal, ist aber der zentrale Unterschied zwischen einer Übung und einer eigenen Projektarbeit. In einer Übung ist meistens klar, welcher Arbeitsschritt als Nächstes kommt. In einem Projekt muss dieser Zusammenhang erst hergestellt werden.
+
+Die Aufgabe besteht deshalb nicht einfach darin, möglichst viele Werkzeuge zu benutzen. Entscheidend ist, ob aus einer räumlichen Frage ein nachvollziehbarer Arbeitsweg entsteht. Dafür müssen Thema, Daten, Kriterien, Methoden und Ergebnis zueinander passen.
+
+Ein Thema ist dabei noch keine Projektfrage. „Wildkatze im Marburger Universitätswald“ beschreibt ein Interessengebiet. Eine bearbeitbare GIS-Frage wäre dagegen:
+
+> Welche Bereiche im Marburger Universitätswald weisen nach ausgewählten Habitatkriterien ein hohes Lebensraumpotenzial für die Wildkatze auf?
+
+Diese zweite Formulierung ist enger, aber stärker. Sie enthält einen Raum, ein Phänomen, eine Bewertungsrichtung und den Hinweis, dass räumliche Kriterien ausgewertet werden sollen. Erst dadurch wird erkennbar, welche Daten und Arbeitsschritte sinnvoll sein könnten.
+
+## Projektentwicklung ist eine Schleife
+
+Ein Projekt entwickelt sich selten geradeaus. Am Anfang steht eine Idee. Dann wird geprüft, welche Daten verfügbar sind. Danach verändert sich oft die Frage. Anschließend werden Methoden getestet, Zwischenergebnisse geprüft und die Fragestellung erneut geschärft.
+
+Das ist kein Scheitern, sondern normale Projektarbeit. Eine gute Projektfrage entsteht meistens nicht vor der Arbeit, sondern durch die erste ernsthafte Beschäftigung mit Daten und Methoden.
+
+Der Arbeitsprozess sieht eher so aus:
+
+```text
+Idee
+  ↓
+erste Projektfrage
+  ↓
+Datenprüfung
+  ↓
+methodische Übersetzung
+  ↓
+Zwischenergebnis
+  ↓
+Überarbeitung der Frage
+  ↓
+dokumentierter Workflow
+  ↓
+interpretierbares Ergebnis
+```
+
+Wichtig ist, dass diese Schleife nicht beliebig bleibt. Jede Überarbeitung muss begründet werden: Die Frage wird enger, weil Daten fehlen. Ein Kriterium wird ersetzt, weil es nicht sinnvoll operationalisierbar ist. Ein Werkzeug wird gewechselt, weil es eine andere räumliche Aussage erzeugt als erwartet.
+
+## Die Projektfrage steuert den Workflow
+
+Auch ein kleines GIS-Projekt besteht fast nie aus einem einzelnen Werkzeug. Daten werden zugeschnitten, umprojiziert, rasterisiert, reklassifiziert, gewichtet, überlagert und kartographisch dargestellt. Diese Schritte sind aber nur dann nachvollziehbar, wenn klar ist, welche fachliche Entscheidung dahinter steht.
+
+Ein Distanzraster ist dafür ein gutes Beispiel. Das Werkzeug `Nähe / Rasterdistanz` erzeugt zunächst nur eine Entfernung zu einem Objekt. Ob diese Entfernung positiv oder negativ bewertet wird, hängt vollständig von der Projektfrage ab. In einer Habitatmodellierung kann große Siedlungsferne günstig sein. In einer Erreichbarkeitsanalyse kann dieselbe Entfernung ungünstig sein.
+
+Das Werkzeug ist also nicht die Methode. Die Methode entsteht erst durch die fachliche Einbettung des Werkzeugs.
+
+```text
+Projektfrage → Kriterium → GIS-Operation → Parameter → Ergebnislayer → Interpretation
+```
+
+Diese Kette sollte bei jedem wichtigen Arbeitsschritt sichtbar bleiben. Sonst entsteht nur eine Werkzeugfolge, aber kein nachvollziehbares Projekt.
+
+## Das Mini-Exposé als Arbeitskompass
+
+Ein Mini-Exposé ist kein bürokratisches Formular. Es ist ein kurzer Arbeitskompass. Es zwingt dazu, die eigene Idee so weit zu klären, dass andere verstehen können, was untersucht werden soll und wie daraus eine GIS-Analyse werden kann.
+
+Ein gutes Mini-Exposé beantwortet im Kern fünf Fragen:
+
+Was ist das räumliche Problem?
+Welche konkrete Projektfrage soll bearbeitet werden?
+Welche Daten und Kriterien werden dafür benötigt?
+Wie wird die Frage methodisch in GIS-Schritte übersetzt?
+Was kann das Ergebnis zeigen — und was nicht?
+
+Diese Fragen müssen nicht auf zwei Seiten perfekt beantwortet sein. Sie müssen aber so klar beantwortet sein, dass das Projekt nicht in beliebige Werkzeugtests zerfällt.
+
+Ein kurzer Entwurf kann zum Beispiel so aussehen:
+
+```text
+Arbeitstitel:
+Potenzielle Wildkatzenlebensräume im Marburger Universitätswald
+
+Problem:
+Die Wildkatze benötigt strukturreiche, störungsarme und vernetzte Lebensräume. Für das Untersuchungsgebiet soll geprüft werden, welche Teilflächen auf Grundlage verfügbarer Geodaten potenziell geeignet erscheinen.
+
+Projektfrage:
+Welche Bereiche im Untersuchungsgebiet weisen unter Berücksichtigung von Waldanteil, Siedlungsdistanz, Verkehrsferne und Reliefbedingungen ein hohes Lebensraumpotenzial auf?
+
+GIS-Übersetzung:
+Landbedeckung wird zur Ableitung von Wald- und Offenlandanteilen genutzt. Siedlungen und Straßen werden in Distanzflächen übersetzt. Das DGM liefert Hangneigung oder Reliefposition. Die Kriterien werden reklassifiziert, gewichtet und zu einer Eignungsfläche kombiniert.
+
+Erwartetes Ergebnis:
+Eine Karte potenzieller Eignungsräume sowie eine kurze Interpretation, welche Bereiche besonders geeignet erscheinen und wo die Aussage unsicher bleibt.
+
+Grenze:
+Die Karte zeigt potenzielle Eignung auf Basis ausgewählter Kriterien. Sie weist keine tatsächliche Wildkatzenpräsenz nach.
+```
+
+Das ist absichtlich kein fertiger Bericht. Es ist eine belastbare Projektskizze. Sie kann während der Arbeit verändert werden, aber jede Veränderung sollte nachvollziehbar bleiben.
+
+## Dokumentation während der Arbeit
+
+Dokumentation beginnt nicht am Ende. Sie läuft neben der Analyse her. Sonst ist später oft nicht mehr rekonstruierbar, warum ein bestimmter Layer entstanden ist, welche Parameter verwendet wurden oder weshalb ein Kriterium anders bewertet wurde.
+
+Für jeden wichtigen Verarbeitungsschritt reicht eine kurze Notiz. Entscheidend ist nicht die Länge, sondern die Verbindung zwischen Werkzeug und Projektfrage.
+
+```text
+Schritt:
+Distanz zur nächsten Siedlung berechnet
+
+Werkzeug:
+Nähe / Rasterdistanz
+
+Eingangsdaten:
+siedlungen.gpkg
+
+Ausgabe:
+dist_siedlung.tif
+
+Fachlicher Zweck:
+Ableitung des Störungskriteriums
+
+Annahme:
+größere Siedlungsferne erhöht die potenzielle Habitateignung
+
+Grenze:
+keine direkte Beobachtung tatsächlicher Störung
+```
+
+So wird aus einem QGIS-Schritt ein dokumentierter methodischer Schritt. Eine andere Person kann nicht nur sehen, was gerechnet wurde, sondern auch, warum es gerechnet wurde.
+
+## Ergebnis und Aussagegrenze
+
+Am Ende steht nicht einfach „die Karte“. Eine GIS-Karte ist nur dann ein Ergebnis, wenn ihre Entstehung und ihre Aussagegrenze verstanden werden.
+
+Eine Eignungskarte zeigt zum Beispiel keine Wahrheit im Gelände. Sie zeigt das Ergebnis einer modellierten Bewertung. Diese Bewertung hängt von Daten, Kriterien, Klassengrenzen, Gewichtungen und Ausschlussregeln ab. Genau deshalb muss die Interpretation immer zwei Dinge leisten: Sie muss sagen, was die Karte zeigt, und sie muss sagen, was sie nicht zeigen kann.
+
+Ein gutes Projektergebnis besteht daher aus drei Teilen: der Karte, einer kurzen Methodennotiz und einer kritischen Interpretation. Erst zusammen ergeben sie eine nachvollziehbare GIS-Analyse.
+
+## Arbeitsfassung für das eigene Projekt
+
+Für den Start reicht eine kurze Arbeitsfassung. Sie sollte nicht wie ein Formular abgearbeitet werden, sondern als wiederkehrender Prüfrahmen dienen.
+
+```text
+Mein Thema ist ...
+
+Die räumliche Projektfrage lautet ...
+
+Ich untersuche den Raum ...
+
+Die wichtigsten Kriterien sind ...
+
+Diese Daten brauche ich dafür ...
+
+Aus den Daten leite ich folgende GIS-Layer ab ...
+
+Diese Arbeitsschritte sind geplant ...
+
+Das erwartete Ergebnis ist ...
+
+Die wichtigste Grenze der Analyse ist ...
+```
+
+Diese Arbeitsfassung darf sich ändern. Sie soll sich sogar ändern, wenn Datenlage, Methodenprüfung oder Zwischenergebnisse zeigen, dass die erste Idee zu breit, zu unklar oder nicht bearbeitbar war.
+
+Ein kleines GIS-Projekt ist keine lineare Werkzeugübung. Es ist eine begründete Übersetzung einer räumlichen Frage in Daten, Kriterien, GIS-Operationen und Interpretation. Gute Dokumentation hält genau diese Übersetzung fest.
+
+## vom Projektentwurf zur QGIS-Dokumentation
+
+Sobald aus der Projektfrage ein konkreter GIS-Workflow wird, reicht die Projektskizze allein nicht mehr aus. Dann muss dokumentiert werden, welche Werkzeuge, Parameter, Zwischenergebnisse und fachlichen Entscheidungen tatsächlich verwendet wurden.
+
+Die Projektseite klärt also vor allem die inhaltliche Richtung:
+
+> Was will ich untersuchen, warum ist das sinnvoll, und wie übersetze ich die Frage in räumliche Kriterien?
+
+Die QGIS-Dokumentation setzt an der nächsten Stelle an:
+
+> Wie halte ich fest, welche Verarbeitungsschritte daraus entstanden sind und warum sie für die Projektfrage notwendig waren?
+
+Die technische und methodische Dokumentation des eigentlichen Workflows wird deshalb auf der Seite **Dokumentation und Reproduzierbarkeit in QGIS** behandelt.

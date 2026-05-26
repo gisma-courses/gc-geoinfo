@@ -383,7 +383,7 @@ background-size: cover;
   <li><a href="#prüfungsleistung" id="toc-prüfungsleistung" class="nav-link" data-scroll-target="#prüfungsleistung">Prüfungsleistung</a></li>
   <li><a href="#format-der-studentischen-anwendungssitzungen" id="toc-format-der-studentischen-anwendungssitzungen" class="nav-link" data-scroll-target="#format-der-studentischen-anwendungssitzungen">Format der studentischen Anwendungssitzungen</a>
   <ul class="collapse">
-  <li><a href="#bestandteile-des-mini-projektpakets" id="toc-bestandteile-des-mini-projektpakets" class="nav-link" data-scroll-target="#bestandteile-des-mini-projektpakets">Bestandteile des Mini-Projektpakets</a></li>
+  <li><a href="#bestandteile-des-projektpakets" id="toc-bestandteile-des-projektpakets" class="nav-link" data-scroll-target="#bestandteile-des-projektpakets">Bestandteile des Projektpakets</a></li>
   </ul></li>
   <li><a href="#gewichtung-und-fachliche-anforderungen" id="toc-gewichtung-und-fachliche-anforderungen" class="nav-link" data-scroll-target="#gewichtung-und-fachliche-anforderungen">Gewichtung und fachliche Anforderungen</a></li>
   <li><a href="#bewertungskriterien" id="toc-bewertungskriterien" class="nav-link" data-scroll-target="#bewertungskriterien">Bewertungskriterien</a>
@@ -654,52 +654,80 @@ background-size: cover;
 </div>
 </div>
 </div>
-<section id="bestandteile-des-mini-projektpakets" class="level3">
-<h3 class="anchored" data-anchor-id="bestandteile-des-mini-projektpakets">Bestandteile des Mini-Projektpakets</h3>
-<section id="projektskizze-und-qgis-projekt" class="level4">
-<h4 class="anchored" data-anchor-id="projektskizze-und-qgis-projekt">1. Projektskizze und QGIS-Projekt</h4>
-<p>Abzugeben ist eine <strong>1–2-seitige Projektskizze</strong> einzureichen. Diese enthält:</p>
-<ul>
-<li>Titel des Projekts,</li>
-<li>Fragestellung,</li>
-<li>Untersuchungsraum,</li>
-<li>Datensatz bzw. Datengrundlage,</li>
-<li>Kriterien bzw. Analysevariablen,</li>
-<li>erwartete Aussagekraft,</li>
-<li>voraussichtlichen Workflow.</li>
-</ul>
-<p>Abzugeben ist ein lauffähiges QGIS-Projekt mit:</p>
-<ul>
-<li>sauber benannten Layern,</li>
-<li>nachvollziehbarer Datenorganisation,</li>
-<li>erkennbarer Analyseabfolge,</li>
-<li>sinnvoll strukturierten Ausgaben,</li>
-<li>und einem insgesamt verständlichen Workflow.</li>
-</ul>
+<section id="bestandteile-des-projektpakets" class="level3">
+<h3 class="anchored" data-anchor-id="bestandteile-des-projektpakets">Bestandteile des Projektpakets</h3>
+<p>Das Mini-Projektpaket besteht aus drei Teilen: <strong>Projektskizze</strong>, <strong>QGIS-Projekt</strong> und <strong>Präsentation</strong>. Ergänzend wird eine kurze <strong>Workflow-Dokumentation</strong> abgegeben. Diese Dokumentation ist kein vollständiger QGIS-Verlauf und keine Auflistung jeder Mausbewegung. Sie soll nur die fachlich entscheidenden Verarbeitungsschritte nachvollziehbar machen.</p>
+<section id="projektskizze" class="level4">
+<h4 class="anchored" data-anchor-id="projektskizze">Projektskizze</h4>
+<p>Die Projektskizze umfasst etwa <strong>2–3 Seiten</strong> bzw. ungefähr <strong>900–1400 Wörter</strong>. Zusätzlich kann eine einfache Workflow-Grafik oder ein Ablaufdiagramm eingefügt werden. Die Skizze ist noch kein fertiger Bericht, sondern ein Arbeitsplan: Sie soll zeigen, dass aus einer Projektidee eine bearbeitbare GIS-Frage geworden ist.</p>
+<p>Die Projektskizze muss vor allem drei Dinge leisten. Erstens muss die räumliche Fragestellung klar sein. Zweitens muss erkennbar werden, welche Daten und Kriterien zur Bearbeitung dieser Frage verwendet werden. Drittens muss nachvollziehbar sein, wie diese Kriterien in konkrete GIS-Schritte übersetzt werden.</p>
+<p>Eine ausreichende Projektskizze beantwortet deshalb in kurzer Form:</p>
+<pre class="text"><code>Was ist die räumliche Projektfrage?
+Warum ist diese Frage relevant?
+Welcher Raum wird untersucht?
+Welche Daten werden verwendet?
+Welche Kriterien oder Analysevariablen werden daraus abgeleitet?
+Welche GIS-Operationen sind geplant?
+Welche Art von Ergebnis soll entstehen?
+Was kann dieses Ergebnis voraussichtlich zeigen – und was nicht?</code></pre>
+<p>Der wichtigste Teil ist die Übersetzung von Frage zu Methode. Eine Formulierung wie „Die Daten werden in QGIS analysiert“ reicht nicht. Es muss konkreter werden, zum Beispiel:</p>
+<pre class="text"><code>Siedlungsflächen
+→ Distanz zur nächsten Siedlung
+→ Rasterdistanz / Nähe
+→ Reklassifikation in Störungsklassen
+→ Kriterium: Siedlungsferne
+→ Beitrag zur Eignungskarte</code></pre>
+<p>Die Projektskizze beschreibt den geplanten Weg. Sie darf sich während der Arbeit verändern, aber die spätere Abgabe muss erkennen lassen, warum Änderungen vorgenommen wurden.</p>
+</section>
+<section id="qgis-projekt" class="level4">
+<h4 class="anchored" data-anchor-id="qgis-projekt">QGIS-Projekt</h4>
+<p>Abzugeben ist ein lauffähiges QGIS-Projekt. Es muss nicht jeden Arbeitsschritt automatisch reproduzieren, aber es muss so organisiert sein, dass die Analyse nachvollziehbar bleibt.</p>
+<p>Erwartet wird kein perfektes professionelles Projektarchiv, sondern eine klare Arbeitsstruktur. Rohdaten, bearbeitete Daten, Zwischenergebnisse und Endergebnisse sollen unterscheidbar sein. Layernamen sollen sprechend sein. Keine temporären Layer. Eine andere Person soll das Projekt öffnen und erkennen können: Was waren Eingangsdaten, was sind abgeleitete Kriterien, was ist das finale Ergebnis?</p>
+<p>Als Mindeststandard gilt:</p>
+<pre class="text"><code>Rohdaten bleiben unverändert.
+Wichtige Zwischenergebnisse sind gespeichert.
+Layernamen beschreiben den Inhalt.
+Das finale Ergebnis ist eindeutig erkennbar.
+Keine temporäre Layer.</code></pre>
+</section>
+<section id="workflow-dokumentation" class="level4">
+<h4 class="anchored" data-anchor-id="workflow-dokumentation">Workflow-Dokumentation</h4>
+<p>Die Workflow-Dokumentation umfasst <strong>die zentralen Hauptschritte</strong>. Sie ist bewusst knapp. Sie soll nicht den gesamten QGIS-Verarbeitungsverlauf abschreiben.</p>
+<p>Dokumentiert werden nur Schritte, die für das Ergebnis fachlich wichtig sind: zum Beispiel Zuschnitt, Projektion, Rasterisierung, Distanzberechnung, Reklassifikation, Gewichtung, Overlay, Maskierung oder Rasterrechner-Ausdruck. Kleine Hilfsschritte wie Layer umbenennen, Symbolisierung testen oder Ansichten verschieben gehören nicht hinein.</p>
+<p>Für jeden Hauptschritt reicht ein kurzer Block:</p>
+<pre class="text"><code>Schritt:
+Distanz zur nächsten Siedlung berechnet.
+
+Werkzeug / Operation:
+Nähe / Rasterdistanz.
+
+Eingangsdaten:
+siedlungen.gpkg.
+
+Ausgabe:
+dist_siedlung.tif.
+
+Fachlicher Zweck:
+Ableitung des Störungskriteriums.
+
+Annahme:
+Größere Siedlungsferne erhöht die potenzielle Habitateignung.
+
+Grenze:
+Die Distanz ist nur ein Proxy für Störung, keine direkte Beobachtung.</code></pre>
+<p>Damit ist der Schritt reproduzierbar und fachlich lesbar. Entscheidend ist nicht die Länge, sondern die Verbindung zwischen Werkzeug und Projektfrage.</p>
+<p>Das QGIS-Protokoll kann als Hilfe verwendet und zusätzlich im Projekt mit eingereicht werden. Es ersetzt aber nicht die kondensierte Workflow-Dokumentation, die herausstellt welche dieser Schritte wirklich zum Ergebnis gehören und warum sie für die Fragestellung notwendig waren.</p>
 </section>
 <section id="präsentation" class="level4">
-<h4 class="anchored" data-anchor-id="präsentation">2. Präsentation</h4>
-<p>Die Präsentation dokumentiert und begründet das Projekt in verdichteter Form. Sie soll mindestens folgende Elemente enthalten:</p>
-<ul>
-<li>Problemstellung,</li>
-<li>räumliche Fragestellung,</li>
-<li>verwendete Datengrundlagen,</li>
-<li>methodisches Vorgehen,</li>
-<li>Ergebnisse,</li>
-<li>kritische Reflexion der Aussagekraft und Grenzen.</li>
-</ul>
-<p>Die Präsentation kann ein Foliensatz oder ein Miniposter/Cheat-sheet etc sein.</p>
-</section>
-<section id="kurze-workflow-dokumentation" class="level4">
-<h4 class="anchored" data-anchor-id="kurze-workflow-dokumentation">3. Kurze Workflow-Dokumentation</h4>
-<p>Die Workflow-Dokumentation dient der Reproduzierbarkeit. Sie soll knapp, aber konkret darlegen,</p>
-<ul>
-<li>welche Daten verwendet wurden,</li>
-<li>welche Verarbeitungsschritte durchgeführt wurden,</li>
-<li>welche Annahmen und Schwellenwerte gesetzt wurden,</li>
-<li>und wie das Ergebnis zustande kam.</li>
-</ul>
-<p>In der Regel kann diese aus dem QGIS Protokoll abgeleitet werden.</p>
+<h4 class="anchored" data-anchor-id="präsentation">Präsentation</h4>
+<p>Die Präsentation fasst das Projekt verdichtet zusammen. Richtwert sind <strong>5 bis (maximal!) 10 Minuten</strong>, etwa <strong>3–5 Folien</strong> oder ein vergleichbares Miniposter bzw. Cheat-Sheet. Die Präsentation soll nicht alle technischen Details zeigen, sondern die Projektlogik erklären.</p>
+<p>Sie sollte deutlich machen:</p>
+<pre class="text"><code>Welche Frage wurde untersucht?
+Welche Daten und Kriterien wurden verwendet?
+Wie wurde daraus ein GIS-Workflow?
+Was zeigt das Ergebnis?
+Wo liegen die Grenzen der Aussage?</code></pre>
+<p>Die Präsentation ist keine Software-Demonstration. Sie ist die begründete Darstellung eines kleinen GIS-Projekts.</p>
 </section>
 </section>
 </section>
@@ -777,7 +805,7 @@ background-size: cover;
 <li><strong>Präsentation</strong> als PDF</li>
 <li><strong>Exposé</strong> als PDF</li>
 <li><strong>Workflow-Dokumentation</strong> als PDF</li>
-<li><strong>QGIS-Projekt</strong> als komprimierter Projektordner oder in der von der Kursleitung vorgegebenen Form</li>
+<li><strong>QGIS-Projekt</strong> als <a href="../unit09/unit09-05.html">komprimierter Projektordner</a></li>
 </ul>
 </section>
 <section id="benennung" class="level3">
@@ -809,7 +837,7 @@ background-size: cover;
 <section id="formale-anforderungen" class="level2">
 <h2 class="anchored" data-anchor-id="formale-anforderungen">Formale Anforderungen</h2>
 <p>Die schriftlichen Bestandteile sind als <strong>PDF-Dateien</strong> einzureichen. Achten Sie auf eine saubere sprachliche und formale Ausarbeitung. In allen schriftlichen Dokumenten müssen Name und Matrikelnummer eindeutig angegeben sein.</p>
-<p>Empfohlen wird folgendes Schema in der Kopfzeile:</p>
+<p>Nutzen Sie zwingend folgendes Schema in der Kopfzeile:</p>
 <p><code>Nachname, Vorname, Matrikelnummer</code></p>
 </section>
 <section id="kurszeiten" class="level2">

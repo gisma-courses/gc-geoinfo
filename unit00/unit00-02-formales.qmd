@@ -127,53 +127,111 @@ Geeignete Aktivierungsformen sind zum Beispiel:
 Die studentischen Sitzungen sind ausdrücklich **nicht** als reine Ergebnisvorträge gedacht. Erwartet wird eine kleine fachliche Lehr-Lern-Einheit mit erkennbarem Übungscharakter.
 :::
 
-### Bestandteile des Mini-Projektpakets
 
-#### 1. Projektskizze und QGIS-Projekt
+### Bestandteile des Projektpakets
 
-Abzugeben  ist eine **1–2-seitige Projektskizze** einzureichen. Diese enthält:
+Das Mini-Projektpaket besteht aus drei Teilen: **Projektskizze**, **QGIS-Projekt** und **Präsentation**. Ergänzend wird eine kurze **Workflow-Dokumentation** abgegeben. Diese Dokumentation ist kein vollständiger QGIS-Verlauf und keine Auflistung jeder Mausbewegung. Sie soll nur die fachlich entscheidenden Verarbeitungsschritte nachvollziehbar machen.
 
--   Titel des Projekts,
--   Fragestellung,
--   Untersuchungsraum,
--   Datensatz bzw. Datengrundlage,
--   Kriterien bzw. Analysevariablen,
--   erwartete Aussagekraft,
--   voraussichtlichen Workflow.
+#### Projektskizze
+
+Die Projektskizze umfasst etwa **2–3 Seiten** bzw. ungefähr **900–1400 Wörter**. Zusätzlich kann eine einfache Workflow-Grafik oder ein Ablaufdiagramm eingefügt werden. Die Skizze ist noch kein fertiger Bericht, sondern ein Arbeitsplan: Sie soll zeigen, dass aus einer Projektidee eine bearbeitbare GIS-Frage geworden ist.
+
+Die Projektskizze muss vor allem drei Dinge leisten. Erstens muss die räumliche Fragestellung klar sein. Zweitens muss erkennbar werden, welche Daten und Kriterien zur Bearbeitung dieser Frage verwendet werden. Drittens muss nachvollziehbar sein, wie diese Kriterien in konkrete GIS-Schritte übersetzt werden.
+
+Eine ausreichende Projektskizze beantwortet deshalb in kurzer Form:
+
+```text
+Was ist die räumliche Projektfrage?
+Warum ist diese Frage relevant?
+Welcher Raum wird untersucht?
+Welche Daten werden verwendet?
+Welche Kriterien oder Analysevariablen werden daraus abgeleitet?
+Welche GIS-Operationen sind geplant?
+Welche Art von Ergebnis soll entstehen?
+Was kann dieses Ergebnis voraussichtlich zeigen – und was nicht?
+```
+
+Der wichtigste Teil ist die Übersetzung von Frage zu Methode. Eine Formulierung wie „Die Daten werden in QGIS analysiert“ reicht nicht. Es muss konkreter werden, zum Beispiel:
+
+```text
+Siedlungsflächen
+→ Distanz zur nächsten Siedlung
+→ Rasterdistanz / Nähe
+→ Reklassifikation in Störungsklassen
+→ Kriterium: Siedlungsferne
+→ Beitrag zur Eignungskarte
+```
+
+Die Projektskizze beschreibt den geplanten Weg. Sie darf sich während der Arbeit verändern, aber die spätere Abgabe muss erkennen lassen, warum Änderungen vorgenommen wurden.
+
+#### QGIS-Projekt
+
+Abzugeben ist ein lauffähiges QGIS-Projekt. Es muss nicht jeden Arbeitsschritt automatisch reproduzieren, aber es muss so organisiert sein, dass die Analyse nachvollziehbar bleibt.
+
+Erwartet wird kein perfektes professionelles Projektarchiv, sondern eine klare Arbeitsstruktur. Rohdaten, bearbeitete Daten, Zwischenergebnisse und Endergebnisse sollen unterscheidbar sein. Layernamen sollen sprechend sein. Keine temporären Layer. Eine andere Person soll das Projekt öffnen und erkennen können: Was waren Eingangsdaten, was sind abgeleitete Kriterien, was ist das finale Ergebnis?
+
+Als Mindeststandard gilt:
+
+```text
+Rohdaten bleiben unverändert.
+Wichtige Zwischenergebnisse sind gespeichert.
+Layernamen beschreiben den Inhalt.
+Das finale Ergebnis ist eindeutig erkennbar.
+Keine temporäre Layer.
+```
+
+#### Workflow-Dokumentation
+
+Die Workflow-Dokumentation umfasst **die zentralen Hauptschritte**. Sie ist bewusst knapp. Sie soll nicht den gesamten QGIS-Verarbeitungsverlauf abschreiben.
+
+Dokumentiert werden nur Schritte, die für das Ergebnis fachlich wichtig sind: zum Beispiel Zuschnitt, Projektion, Rasterisierung, Distanzberechnung, Reklassifikation, Gewichtung, Overlay, Maskierung oder Rasterrechner-Ausdruck. Kleine Hilfsschritte wie Layer umbenennen, Symbolisierung testen oder Ansichten verschieben gehören nicht hinein.
+
+Für jeden Hauptschritt reicht ein kurzer Block:
+
+```text
+Schritt:
+Distanz zur nächsten Siedlung berechnet.
+
+Werkzeug / Operation:
+Nähe / Rasterdistanz.
+
+Eingangsdaten:
+siedlungen.gpkg.
+
+Ausgabe:
+dist_siedlung.tif.
+
+Fachlicher Zweck:
+Ableitung des Störungskriteriums.
+
+Annahme:
+Größere Siedlungsferne erhöht die potenzielle Habitateignung.
+
+Grenze:
+Die Distanz ist nur ein Proxy für Störung, keine direkte Beobachtung.
+```
+
+Damit ist der Schritt reproduzierbar und fachlich lesbar. Entscheidend ist nicht die Länge, sondern die Verbindung zwischen Werkzeug und Projektfrage.
+
+Das QGIS-Protokoll kann als Hilfe verwendet und zusätzlich im Projekt mit eingereicht  werden. Es ersetzt aber nicht die kondensierte Workflow-Dokumentation, die herausstellt welche dieser Schritte wirklich zum Ergebnis gehören und warum sie für die Fragestellung notwendig waren.
+
+#### Präsentation
+
+Die Präsentation fasst das Projekt verdichtet zusammen. Richtwert sind **5 bis (maximal!) 10 Minuten**, etwa **3–5 Folien** oder ein vergleichbares Miniposter bzw. Cheat-Sheet. Die Präsentation soll nicht alle technischen Details zeigen, sondern die Projektlogik erklären.
+
+Sie sollte deutlich machen:
+
+```text
+Welche Frage wurde untersucht?
+Welche Daten und Kriterien wurden verwendet?
+Wie wurde daraus ein GIS-Workflow?
+Was zeigt das Ergebnis?
+Wo liegen die Grenzen der Aussage?
+```
+
+Die Präsentation ist keine Software-Demonstration. Sie ist die begründete Darstellung eines kleinen GIS-Projekts.
 
 
-Abzugeben ist ein lauffähiges QGIS-Projekt mit:
-
--   sauber benannten Layern,
--   nachvollziehbarer Datenorganisation,
--   erkennbarer Analyseabfolge,
--   sinnvoll strukturierten Ausgaben,
--   und einem insgesamt verständlichen Workflow.
-
-#### 2. Präsentation
-
-Die Präsentation dokumentiert und begründet das Projekt in verdichteter Form. Sie soll mindestens folgende Elemente enthalten:
-
--   Problemstellung,
--   räumliche Fragestellung,
--   verwendete Datengrundlagen,
--   methodisches Vorgehen,
--   Ergebnisse,
--   kritische Reflexion der Aussagekraft und Grenzen.
-
-Die Präsentation kann ein Foliensatz oder ein Miniposter/Cheat-sheet etc sein.
-
-
-#### 3. Kurze Workflow-Dokumentation
-
-Die Workflow-Dokumentation dient der Reproduzierbarkeit. Sie soll knapp, aber konkret darlegen,
-
--   welche Daten verwendet wurden,
--   welche Verarbeitungsschritte durchgeführt wurden,
--   welche Annahmen und Schwellenwerte gesetzt wurden,
--   und wie das Ergebnis zustande kam.
-
-In der Regel kann diese aus dem QGIS Protokoll abgeleitet werden.
 
 ## Gewichtung und fachliche Anforderungen
 
@@ -239,7 +297,7 @@ Die Abgabe erfolgt fristgerecht über den [Kursbereich der Lernplattform PUM Ili
 -   **Präsentation** als PDF
 -   **Exposé** als PDF
 -   **Workflow-Dokumentation** als PDF
--   **QGIS-Projekt** als komprimierter Projektordner oder in der von der Kursleitung vorgegebenen Form
+-   **QGIS-Projekt** als [komprimierter Projektordner](../unit09/unit09-05.qmd) 
 
 ### Benennung
 
@@ -262,7 +320,7 @@ Geben Sie ausschließlich die überprüfte Endfassung ab. Kontrollieren Sie insb
 
 Die schriftlichen Bestandteile sind als **PDF-Dateien** einzureichen. Achten Sie auf eine saubere sprachliche und formale Ausarbeitung. In allen schriftlichen Dokumenten müssen Name und Matrikelnummer eindeutig angegeben sein.
 
-Empfohlen wird folgendes Schema in der Kopfzeile:
+Nutzen Sie zwingend folgendes Schema in der Kopfzeile:
 
 `Nachname, Vorname, Matrikelnummer`
 
