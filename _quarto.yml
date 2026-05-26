@@ -129,7 +129,8 @@ website:
         #       text: Wie entwickle ich ein Projekt?
         #     - href: unit06/unit06-03.qmd
         #       text: Das Exposé
-        # - text: "---"
+        - text: "---"
+        - text: "---"
         - section: Foliensätze zu den Readern
           contents:
             - href: slides/unit01_geographischer_raum.qmd
