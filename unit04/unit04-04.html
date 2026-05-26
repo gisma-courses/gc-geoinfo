@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>unit04-04 – Grundlagenkurs GI-S (QGIS)</title>
+<title>Digitale Geländemodelle – Von der Höhe zur abgeleiteten Information – Grundlagenkurs GI-S (QGIS)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -60,19 +60,37 @@ ul.task-list li input[type="checkbox"] {
     "s"
   ],
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
   }
 }</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: black;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: black;
+background-image: url(../assets/images/splash_L03.png);
+background-size: cover;
+      }
+</style>
 <style>
   .footer-wrapper {
     position: relative;
@@ -102,13 +120,50 @@ ul.task-list li input[type="checkbox"] {
 
 </style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../css/styles.css">
-<meta property="og:title" content="unit04-04 – Grundlagenkurs GI-S (QGIS)">
+<meta property="og:title" content="Digitale Geländemodelle – Von der Höhe zur abgeleiteten Information – Grundlagenkurs GI-S (QGIS)">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit04/dgm.png">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
-<meta name="twitter:title" content="unit04-04 – Grundlagenkurs GI-S (QGIS)">
+<meta property="og:image:height" content="1086">
+<meta property="og:image:width" content="1448">
+<meta name="twitter:title" content="Digitale Geländemodelle – Von der Höhe zur abgeleiteten Information – Grundlagenkurs GI-S (QGIS)">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://gisma-courses.github.io/gc-geoinfo/assets/images/unit04/dgm.png">
 <meta name="twitter:creator" content="@gisma">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="1086">
+<meta name="twitter:image-width" content="1448">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -276,7 +331,7 @@ ul.task-list li input[type="checkbox"] {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -288,8 +343,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Grundlagenkurs GI-S (QGIS)</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Suchen"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -319,23 +374,39 @@ ul.task-list li input[type="checkbox"] {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Dunkelmodus umschalten"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">unit04-04</h1>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Digitale Geländemodelle – Von der Höhe zur abgeleiteten Information</h1>
         </a>     
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title d-none d-lg-block">Digitale Geländemodelle – Von der Höhe zur abgeleiteten Information</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -352,7 +423,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Arbeitsblätter</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -395,7 +466,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Reader Geographische Raumkonzept</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -437,7 +508,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">Reader GI Raumkonzepte</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -485,7 +556,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Reader Vektordaten &amp; Attributtabellen</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -527,7 +598,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Reader Räumliche Ableitungen aus Geodaten</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -575,7 +646,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
  <span class="menu-text">Reader Räumliche Kriterien, Eignung und Entscheidung</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -617,7 +688,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
  <span class="menu-text">Reader Automatisierung von Arbeitsabläufen in QGIS</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -634,7 +705,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
  <span class="menu-text">Folien</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -658,34 +729,121 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhalt</h2>
+   
+  <ul>
+  <li><a href="#von-der-höhe-zur-abgeleiteten-information" id="toc-von-der-höhe-zur-abgeleiteten-information" class="nav-link active" data-scroll-target="#von-der-höhe-zur-abgeleiteten-information">Von der Höhe zur abgeleiteten Information</a></li>
+  <li><a href="#geomorphometrie-gelände-quantitativ-beschreiben" id="toc-geomorphometrie-gelände-quantitativ-beschreiben" class="nav-link" data-scroll-target="#geomorphometrie-gelände-quantitativ-beschreiben">Geomorphometrie: Gelände quantitativ beschreiben</a></li>
+  <li><a href="#lokale-reliefparameter" id="toc-lokale-reliefparameter" class="nav-link" data-scroll-target="#lokale-reliefparameter">Lokale Reliefparameter</a></li>
+  <li><a href="#profile-pauschalgefälle-und-falllinien" id="toc-profile-pauschalgefälle-und-falllinien" class="nav-link" data-scroll-target="#profile-pauschalgefälle-und-falllinien">Profile, Pauschalgefälle und Falllinien</a></li>
+  <li><a href="#einzugsgebiete-als-flächenhafte-ableitung" id="toc-einzugsgebiete-als-flächenhafte-ableitung" class="nav-link" data-scroll-target="#einzugsgebiete-als-flächenhafte-ableitung">Einzugsgebiete als flächenhafte Ableitung</a></li>
+  <li><a href="#anwendungen-geomorphometrischer-ableitungen" id="toc-anwendungen-geomorphometrischer-ableitungen" class="nav-link" data-scroll-target="#anwendungen-geomorphometrischer-ableitungen">Anwendungen geomorphometrischer Ableitungen</a></li>
+  <li><a href="#interpretation-und-grenzen" id="toc-interpretation-und-grenzen" class="nav-link" data-scroll-target="#interpretation-und-grenzen">Interpretation und Grenzen</a></li>
+  <li><a href="#anschluss-an-die-rasterbasierte-reliefhydrologie" id="toc-anschluss-an-die-rasterbasierte-reliefhydrologie" class="nav-link" data-scroll-target="#anschluss-an-die-rasterbasierte-reliefhydrologie">Anschluss an die rasterbasierte Reliefhydrologie</a></li>
+  <li><a href="#übung" id="toc-übung" class="nav-link" data-scroll-target="#übung">Übung</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit04/unit04-04.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title d-none d-lg-block">unit04-04</h1>
+
+
+
+
+<section id="von-der-höhe-zur-abgeleiteten-information" class="level2">
+<h2 class="anchored" data-anchor-id="von-der-höhe-zur-abgeleiteten-information">Von der Höhe zur abgeleiteten Information</h2>
+<p>Digitale Geländemodelle sind eine zentrale Datengrundlage der räumlichen Analyse. Im Rastermodell enthält jede Zelle zunächst nur eine direkte Information: die Höhe. Aus dieser einfachen Höheninformation lassen sich jedoch zahlreiche weitere räumliche Informationen ableiten. Ein DGM ist deshalb nicht nur eine Höhenkarte, sondern ein Ausgangsdatensatz für geomorphometrische, hydrologische, planerische und ökologische Analysen.</p>
+<p>Der entscheidende Gedanke ist die Unterscheidung zwischen gespeicherter und abgeleiteter Information. Die Höhe ist im DGM explizit vorhanden. Neigung, Exposition, Kurvatur, Profile, Falllinien oder Einzugsgebiete sind dagegen nicht direkt gespeichert. Sie entstehen erst durch mathematische oder geometrische Operationen auf den Höhenwerten.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit04/dgm.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 04-01: Digitale Geländemodelle als Ausgangspunkt räumlicher Ableitungen. Aus der primären Höheninformation werden Profile, lokale Reliefparameter, Falllinien, Einzugsgebiete und weitere Geländeinformationen abgeleitet.</figcaption>
+</figure>
 </div>
+<p>Diese Einheit zeigt diese Ableitungslogik an einfachen Beispielen. Im Mittelpunkt stehen nicht einzelne QGIS-Werkzeuge, sondern die Frage, welche zusätzliche Information aus einem Höhenraster gewonnen werden kann und welche Annahmen dabei in die Analyse eingehen.</p>
+</section>
+<section id="geomorphometrie-gelände-quantitativ-beschreiben" class="level2">
+<h2 class="anchored" data-anchor-id="geomorphometrie-gelände-quantitativ-beschreiben">Geomorphometrie: Gelände quantitativ beschreiben</h2>
+<p>Geomorphometrie beschäftigt sich mit der quantitativen Beschreibung und Analyse der Erdoberfläche. Sie übersetzt Geländeformen in messbare Parameter. Dazu gehören vor allem Neigung, Exposition und Kurvatur. Diese Größen sind in vielen Anwendungen wichtig, weil sie Standortbedingungen, Prozessrichtungen und räumliche Unterschiede im Gelände beschreiben.</p>
+<p>Neigung beeinflusst beispielsweise Abflussgeschwindigkeit, Erosionspotenzial, Erreichbarkeit und Gefährdung durch Massenbewegungen. Exposition beschreibt, in welche Richtung ein Hang ausgerichtet ist, und kann deshalb für Mikroklima, Vegetation, Schneeschmelze oder Strahlungshaushalt relevant sein. Kurvatur beschreibt die Krümmung einer Geländeoberfläche und hilft, Rücken, Mulden, Kuppen oder konkave Sammelbereiche zu unterscheiden.</p>
+<p>Damit wird aus Höhe eine analytische Oberfläche. Das DGM wird nicht mehr nur betrachtet, sondern in messbare Eigenschaften der Geländeform übersetzt.</p>
+</section>
+<section id="lokale-reliefparameter" class="level2">
+<h2 class="anchored" data-anchor-id="lokale-reliefparameter">Lokale Reliefparameter</h2>
+<p>Lokale Reliefparameter entstehen aus der Nachbarschaft einer Rasterzelle. Häufig wird dafür ein 3×3-Fenster betrachtet: Die mittlere Zelle wird mit den acht umliegenden Zellen verglichen. Aus den Höhenunterschieden in dieser Nachbarschaft lässt sich eine lokale Oberfläche schätzen. Aus dieser Oberfläche können Neigung, Exposition und Kurvatur abgeleitet werden.</p>
+<p>Die Neigung beschreibt, wie stark die Oberfläche an einer Stelle ansteigt oder abfällt. Sie ist damit ein Maß für die Steilheit des Geländes. Formal lässt sich die Neigung als Verhältnis von Höhenänderung zu horizontaler Distanz verstehen:</p>
+<p><span class="math display">\[
+\tan(\beta) = \frac{\Delta z}{d}
+\]</span></p>
+<p>Dabei ist <span class="math display">\[\Delta z\]</span> der Höhenunterschied und <span class="math display">\[d\]</span> die horizontale Entfernung. Je größer der Höhenunterschied bei gleicher Distanz ist, desto steiler ist die Fläche.</p>
+<p>Die Exposition beschreibt die Richtung des stärksten Gefälles. Sie gibt also an, wohin eine geneigte Fläche ausgerichtet ist. In der Praxis wird sie meist als Himmelsrichtung oder Winkel angegeben. Eine südexponierte Fläche hat andere Strahlungs- und Temperaturbedingungen als eine nordexponierte Fläche.</p>
+<p>Die Kurvatur beschreibt, ob eine Geländeoberfläche eher gewölbt, flach oder eingemuldet ist. Konvexe Bereiche können Rücken oder Kuppen anzeigen, konkave Bereiche dagegen Mulden, Sammelräume oder potenzielle Abflusskonzentrationen. Je nach Fragestellung wird zwischen verschiedenen Kurvaturformen unterschieden, etwa Profil- und Plankurvatur.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit04/parameter.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 04-02: Lokale Geländeparameter aus dem Raster. Neigung, Exposition und Kurvatur entstehen aus Höhenunterschieden in der unmittelbaren Nachbarschaft einer Rasterzelle.</figcaption>
+</figure>
+</div>
+<p>Wichtig ist: Diese Parameter sind lokale Ableitungen. Sie beschreiben nicht das gesamte Gelände, sondern die unmittelbare Umgebung einer Zelle oder eines Punktes. Deshalb hängen sie stark von der Auflösung des DGM und von der Größe des verwendeten Analysefensters ab.</p>
+</section>
+<section id="profile-pauschalgefälle-und-falllinien" class="level2">
+<h2 class="anchored" data-anchor-id="profile-pauschalgefälle-und-falllinien">Profile, Pauschalgefälle und Falllinien</h2>
+<p>Neben lokalen Parametern können aus einem DGM auch linienhafte Informationen abgeleitet werden. Ein Höhenprofil beschreibt die Höhenverteilung entlang einer Linie zwischen zwei Punkten. Dazu werden die Höhenwerte entlang dieser Linie aus dem DGM extrahiert und als Profil dargestellt.</p>
+<p>Profile sind besonders nützlich, wenn Gelände entlang einer konkreten Verbindung untersucht werden soll. Das kann eine geplante Straße, ein Wanderweg, eine Sichtlinie, eine Leitungstrasse oder ein Geländeschnitt durch ein Tal sein. Das Profil zeigt, wo die Strecke ansteigt, wo sie abfällt und wo starke Reliefwechsel auftreten.</p>
+<p>Das Pauschalgefälle ist eine stark vereinfachte Ableitung aus einem Profil. Es beschreibt die mittlere Neigung zwischen zwei Punkten. Dabei werden lokale Zwischenformen geglättet: Eine Strecke kann im Detail viele kleine Gegensteigungen, Mulden oder Kuppen enthalten, während das Pauschalgefälle nur die Gesamtdifferenz zwischen Anfangs- und Endpunkt berücksichtigt.</p>
+<p><span class="math display">\[
+\text{Pauschalgefälle} = \frac{\Delta z}{\Delta d}
+\]</span></p>
+<p>Diese Größe ist einfach zu berechnen und für erste Einschätzungen nützlich. Sie ersetzt aber keine detaillierte Profilanalyse, weil sie lokale Steilabschnitte oder Hindernisse überdecken kann.</p>
+<p>Eine Falllinie beschreibt dagegen den Weg des stärksten Gefälles ausgehend von einem Punkt. Sie folgt also nicht der kürzesten geometrischen Verbindung, sondern der Richtung, in der die Höhe lokal am stärksten abnimmt. Damit wird aus der lokalen Gefälleinformation ein gerichteter Pfad.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit04/profile.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 04-03: Profile und Linienableitungen aus dem DGM. Höhenprofil, Pauschalgefälle und Falllinie beschreiben unterschiedliche linienhafte Informationen aus derselben Höhenoberfläche.</figcaption>
+</figure>
+</div>
+<p>Die Falllinie ist konzeptionell wichtig, weil sie den Übergang von reiner Geländeform zu Prozessrichtung bildet. Wasser, Steine oder andere gravitationsgesteuerte Bewegungen folgen nicht automatisch einer geraden Linie, sondern einer durch das Relief vorgegebenen Richtung. Genau diese Idee wird in der rasterbasierten Reliefhydrologie später formalisiert.</p>
+</section>
+<section id="einzugsgebiete-als-flächenhafte-ableitung" class="level2">
+<h2 class="anchored" data-anchor-id="einzugsgebiete-als-flächenhafte-ableitung">Einzugsgebiete als flächenhafte Ableitung</h2>
+<p>Wenn einzelne Falllinien verknüpft werden, entsteht eine flächenhafte Logik. Ein Wassereinzugsgebiet umfasst alle Flächen, deren oberflächlicher Abfluss zu einem gemeinsamen Auslasspunkt gelangt. Es ist damit keine direkt im DGM gespeicherte Fläche, sondern eine abgeleitete Raumeinheit.</p>
+<p>Die Grundidee ist einfach: Von jeder Zelle aus wird bestimmt, wohin Wasser dem Gefälle folgend abfließen würde. Alle Zellen, deren Abflussweg denselben Auslass erreicht, gehören zum selben Einzugsgebiet. Damit entsteht aus lokalen Höhenunterschieden eine größere räumliche Struktur.</p>
+<p>Einzugsgebiete sind für hydrologische, geomorphologische und landschaftsökologische Anwendungen wichtig. Sie strukturieren Abfluss, Stofftransport, Sedimentbewegung und viele Formen räumlicher Kopplung im Gelände. Gleichzeitig hängt ihre Abgrenzung von der Qualität des Höhenmodells, der Rasterauflösung und der Behandlung von Senken oder flachen Bereichen ab.</p>
+</section>
+<section id="anwendungen-geomorphometrischer-ableitungen" class="level2">
+<h2 class="anchored" data-anchor-id="anwendungen-geomorphometrischer-ableitungen">Anwendungen geomorphometrischer Ableitungen</h2>
+<p>Aus Geländemodellen abgeleitete Informationen werden in sehr unterschiedlichen Anwendungsfeldern genutzt. In der Vegetationsgeographie können Neigung und Exposition Hinweise auf Standortbedingungen, Strahlungshaushalt oder Feuchtegradienten geben. In der Naturgefahrenanalyse werden Steilheit, Reliefposition und Abflusswege zur Bewertung von Lawinen, Steinschlag, Erosion oder Sturzprozessen eingesetzt. In der Hydrologie dienen Falllinien und Einzugsgebiete als Grundlage für Abfluss- und Sammelprozesse. In Planung und Infrastruktur können Profile, Sichtlinien und Geländeparameter bei Trassenwahl, Standortbewertung oder Sichtbarkeitsanalysen helfen.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/unit04/dgm_wozu.png" class="img-fluid figure-img"></p>
+<figcaption>Abbildung 04-04: Typische Anwendungen geomorphometrischer Ableitungen. Geländemodelle liefern die Grundlage für Standortanalyse, Naturgefahrenbewertung, Hydrologie, Sichtbarkeit und Planung.</figcaption>
+</figure>
+</div>
+<p>Die gleiche Geländeableitung kann je nach Fragestellung unterschiedlich interpretiert werden. Eine hohe Neigung kann in einer Habitatmodellierung ein Ausschlusskriterium sein, in einer Naturgefahrenanalyse dagegen ein Hinweis auf erhöhtes Prozesspotenzial. Entscheidend ist also nicht nur die Berechnung, sondern die fachliche Einbettung des Parameters.</p>
+</section>
+<section id="interpretation-und-grenzen" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation-und-grenzen">Interpretation und Grenzen</h2>
+<p>Geländeableitungen wirken oft objektiv, weil sie aus numerischen Höhenwerten berechnet werden. Trotzdem sind sie modellabhängig. Die verwendete Rasterauflösung, die Herkunft des DGM, die Glättung, die Interpolationsmethode, die Behandlung von Senken und die Wahl des Analysefensters beeinflussen das Ergebnis.</p>
+<p>Besonders wichtig ist der Maßstab. Ein grobes Höhenmodell kann großräumige Geländeformen gut zeigen, aber kleine Gräben, Böschungen oder Geländekanten verlieren. Ein sehr feines Höhenmodell zeigt lokale Details, kann aber zugleich stärker durch Messrauschen, Vegetationsreste oder Artefakte geprägt sein.</p>
+<p>Außerdem beschreibt ein DGM in der Regel die Geländeoberfläche, nicht unbedingt Gebäude, Baumkronen oder andere Oberflächenobjekte. Für Sichtbarkeit, Mikroklima oder urbane Fragestellungen kann deshalb ein digitales Oberflächenmodell erforderlich sein. Die Aussagekraft einer Ableitung hängt also davon ab, ob das verwendete Modell zur Frage passt.</p>
+</section>
+<section id="anschluss-an-die-rasterbasierte-reliefhydrologie" class="level2">
+<h2 class="anchored" data-anchor-id="anschluss-an-die-rasterbasierte-reliefhydrologie">Anschluss an die rasterbasierte Reliefhydrologie</h2>
+<p>Die hier dargestellten Ableitungen führen bis zur Idee gerichteter und flächenhafter Geländeprozesse: Lokale Gefälle bestimmen Richtungen, Falllinien beschreiben Pfade, und Einzugsgebiete fassen Flächen mit gemeinsamem Auslass zusammen.</p>
+<p>In der anschließenden Einheit zur rasterbasierten Reliefhydrologie wird diese Logik formalisiert. Dort erhält jede Rasterzelle eine lokale Fließrichtung. Daraus entstehen Akkumulationsraster, potenzielle Gerinne, Einzugsgebiete und hydrologische Indexraster. Der Übergang ist damit konsequent: Aus Höhe wird Gefälle, aus Gefälle wird Richtung, aus Richtungen werden räumliche Prozessmuster.</p>
+</section>
+<section id="übung" class="level2">
+<h2 class="anchored" data-anchor-id="übung">Übung</h2>
+<p>Laden Sie ein DGM in QGIS und leiten Sie daraus mindestens zwei Geländeparameter ab, zum Beispiel Neigung und Exposition. Wählen Sie zusätzlich eine Linie durch das Untersuchungsgebiet und erzeugen Sie ein Höhenprofil.</p>
+<p>Beschreiben Sie anschließend knapp, welche Information direkt im DGM gespeichert war und welche Information erst durch die Ableitung entstanden ist. Vergleichen Sie außerdem, ob Neigung, Exposition und Profil dieselbe Geländeform unterschiedlich sichtbar machen.</p>
+<p>Zum Abschluss formulieren Sie für einen der abgeleiteten Parameter eine mögliche Anwendung und eine Grenze der Interpretation.</p>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
+</section>
 
 </main> <!-- /main -->
 <div class="footer-banner">
@@ -734,12 +892,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Kopiert");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Kopiert");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
@@ -1131,4 +1289,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit04/unit04-04.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/gisma-courses/gc-geoinfo/edit/master/unit04/unit04-04.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/gisma-courses/gc-geoinfo/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></div></div></footer></body></html>
