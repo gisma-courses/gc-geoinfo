@@ -4,7 +4,7 @@
     "href": "unit99/unit99-01.html",
     "title": "Dokumentation und Reproduzierbarkeit in QGIS",
     "section": "",
-    "text": "Bei einer Multikriterienanalyse entsteht das Ergebnis nicht durch einen einzelnen Arbeitsschritt. Die Karte ist das Ergebnis vieler Entscheidungen: Welche Eingangsdaten wurden verwendet? Wie wurden sie zugeschnitten, rasterisiert, reklassifiziert, gewichtet und miteinander verrechnet? Welche Zellgröße wurde gewählt? Welche Flächen wurden ausgeschlossen? Welche Schwellenwerte wurden gesetzt?\nGenau deshalb reicht es nicht, am Ende nur die fertige Karte abzugeben. Eine Eignungskarte, eine Kostenoberfläche oder eine Konfliktkarte ist nur dann fachlich nachvollziehbar, wenn auch der Weg dorthin dokumentiert ist.\nQGIS bietet dafür mehrere Möglichkeiten:\n\nden Verarbeitungsverlauf als Protokoll ausgeführter Werkzeuge,\nden grafischen Modellierer / Modelldesigner für wiederholbare Verarbeitungsketten,\nVerarbeitungsskripte für automatisierte und textlich dokumentierte Workflows,\ndie Projektdatei mit Layern, Symbolisierung, Layouts und Datenquellen,\nergänzende Methodennotizen, in denen fachliche Entscheidungen begründet werden.\n\n\n\n\n\n\n\nHinweisKernidee\n\n\n\nDokumentation bedeutet nicht nur: „Welche Knöpfe wurden gedrückt?“ Entscheidend ist, welche fachlichen Entscheidungen in den GIS-Workflow eingebaut wurden. Bei einer Multikriterienanalyse betrifft das vor allem Kriterienauswahl, Reklassifikation, Gewichtung, Einschränkungen und Interpretation.",
+    "text": "Bei einer GIS-Analyse entsteht das Ergebnis selten durch einen einzelnen Arbeitsschritt. Eine Eignungskarte, eine Kostenoberfläche oder eine Konfliktkarte ist das Ergebnis vieler Entscheidungen: Welche Eingangsdaten wurden verwendet? Wie wurden sie zugeschnitten, rasterisiert, reklassifiziert, gewichtet und miteinander verrechnet? Welche Zellgröße wurde gewählt? Welche Flächen wurden ausgeschlossen? Welche Schwellenwerte wurden gesetzt?\nDeshalb reicht es nicht, am Ende nur die fertige Karte abzugeben. Fachlich nachvollziehbar ist eine Analyse erst dann, wenn auch der Weg zur Karte dokumentiert ist.\nDokumentation bedeutet dabei nicht nur, die verwendeten Werkzeuge aufzuschreiben. Entscheidend ist, welche fachlichen Entscheidungen in den GIS-Workflow eingebaut wurden. Bei einer Multikriterienanalyse betrifft das vor allem Kriterienauswahl, Reklassifikation, Gewichtung, Einschränkungen und Interpretation.",
     "crumbs": [
       "Reader Automatisierung von Arbeitsabläufen in QGIS ",
       "Dokumentation und Reproduzierbarkeit in QGIS"
@@ -15,7 +15,7 @@
     "href": "unit99/unit99-01.html#warum-dokumentation-in-qgis-wichtig-ist",
     "title": "Dokumentation und Reproduzierbarkeit in QGIS",
     "section": "",
-    "text": "Bei einer Multikriterienanalyse entsteht das Ergebnis nicht durch einen einzelnen Arbeitsschritt. Die Karte ist das Ergebnis vieler Entscheidungen: Welche Eingangsdaten wurden verwendet? Wie wurden sie zugeschnitten, rasterisiert, reklassifiziert, gewichtet und miteinander verrechnet? Welche Zellgröße wurde gewählt? Welche Flächen wurden ausgeschlossen? Welche Schwellenwerte wurden gesetzt?\nGenau deshalb reicht es nicht, am Ende nur die fertige Karte abzugeben. Eine Eignungskarte, eine Kostenoberfläche oder eine Konfliktkarte ist nur dann fachlich nachvollziehbar, wenn auch der Weg dorthin dokumentiert ist.\nQGIS bietet dafür mehrere Möglichkeiten:\n\nden Verarbeitungsverlauf als Protokoll ausgeführter Werkzeuge,\nden grafischen Modellierer / Modelldesigner für wiederholbare Verarbeitungsketten,\nVerarbeitungsskripte für automatisierte und textlich dokumentierte Workflows,\ndie Projektdatei mit Layern, Symbolisierung, Layouts und Datenquellen,\nergänzende Methodennotizen, in denen fachliche Entscheidungen begründet werden.\n\n\n\n\n\n\n\nHinweisKernidee\n\n\n\nDokumentation bedeutet nicht nur: „Welche Knöpfe wurden gedrückt?“ Entscheidend ist, welche fachlichen Entscheidungen in den GIS-Workflow eingebaut wurden. Bei einer Multikriterienanalyse betrifft das vor allem Kriterienauswahl, Reklassifikation, Gewichtung, Einschränkungen und Interpretation.",
+    "text": "Bei einer GIS-Analyse entsteht das Ergebnis selten durch einen einzelnen Arbeitsschritt. Eine Eignungskarte, eine Kostenoberfläche oder eine Konfliktkarte ist das Ergebnis vieler Entscheidungen: Welche Eingangsdaten wurden verwendet? Wie wurden sie zugeschnitten, rasterisiert, reklassifiziert, gewichtet und miteinander verrechnet? Welche Zellgröße wurde gewählt? Welche Flächen wurden ausgeschlossen? Welche Schwellenwerte wurden gesetzt?\nDeshalb reicht es nicht, am Ende nur die fertige Karte abzugeben. Fachlich nachvollziehbar ist eine Analyse erst dann, wenn auch der Weg zur Karte dokumentiert ist.\nDokumentation bedeutet dabei nicht nur, die verwendeten Werkzeuge aufzuschreiben. Entscheidend ist, welche fachlichen Entscheidungen in den GIS-Workflow eingebaut wurden. Bei einer Multikriterienanalyse betrifft das vor allem Kriterienauswahl, Reklassifikation, Gewichtung, Einschränkungen und Interpretation.",
     "crumbs": [
       "Reader Automatisierung von Arbeitsabläufen in QGIS ",
       "Dokumentation und Reproduzierbarkeit in QGIS"
@@ -37,7 +37,7 @@
     "href": "unit99/unit99-01.html#verarbeitungsverlauf",
     "title": "Dokumentation und Reproduzierbarkeit in QGIS",
     "section": "Verarbeitungsverlauf",
-    "text": "Verarbeitungsverlauf\nDer Verarbeitungsverlauf protokolliert Werkzeuge, die über die QGIS-Verarbeitungswerkzeuge ausgeführt wurden. Dazu gehören zum Beispiel Rasterisieren, Hangneigung, Rasterrechner, Reklassifizieren nach Tabelle oder Nähe / Rasterdistanz.\nDer Verlauf ist besonders nützlich, wenn ein einzelner Schritt nachvollzogen oder wiederholt werden soll. Viele Einträge lassen sich erneut öffnen, sodass die verwendeten Parameter sichtbar werden. Außerdem können Verarbeitungsschritte als Python-Befehl oder als qgis_process-Befehl kopiert werden.\nTypische Nutzung:\n\nWerkzeug ausführen.\nVerarbeitungsverlauf öffnen.\nEintrag kontrollieren.\nParameter in das Methodenprotokoll übernehmen.\nBei Bedarf Befehl als Python- oder qgis_process-Befehl kopieren.\n\n\n\n\n\n\n\nWarnungGrenze des Verarbeitungsverlaufs\n\n\n\nDer Verarbeitungsverlauf ist kein vollständiges Forschungstagebuch. Er dokumentiert vor allem ausgeführte Processing-Werkzeuge. Manuelle Entscheidungen wie Layerauswahl, visuelle Kontrolle, Umbenennungen, Symbolisierung, Interpretation oder die fachliche Begründung von Schwellenwerten müssen zusätzlich beschrieben werden.\n\n\nFür eine Multikriterienanalyse sollten aus dem Verlauf mindestens folgende Informationen übernommen werden:\n\n\n\nDokumentationspunkt\nBeispiel\n\n\n\n\nWerkzeugname\nReklassifizieren nach Tabelle\n\n\nEingangsdaten\nsiedlungsdistanz.tif\n\n\nParameter\nDistanzklassen und Zielwerte\n\n\nAusgabe\nsiedlungsdistanz_idx.tif\n\n\nZweck\nStandardisierung des Störungskriteriums\n\n\nfachliche Annahme\ngrößere Siedlungsferne = höhere Eignung",
+    "text": "Verarbeitungsverlauf\nDer QGIS-Verarbeitungsverlauf protokolliert Werkzeuge, die über die Processing-Werkzeuge ausgeführt wurden. Dazu gehören zum Beispiel Rasterisieren, Hangneigung, Rasterrechner, Reklassifizieren nach Tabelle oder Nähe / Rasterdistanz.\nDer Verlauf ist besonders nützlich, wenn einzelne Schritte nachvollzogen oder wiederholt werden sollen. Viele Einträge lassen sich erneut öffnen, sodass die verwendeten Parameter sichtbar werden. Außerdem können Verarbeitungsschritte als Python-Befehl oder als qgis_process-Befehl kopiert werden.\nFür ein Methodenprotokoll sollten aus dem Verlauf vor allem diese Informationen übernommen werden:\n\nWerkzeugname,\nEingangsdaten,\nzentrale Parameter,\nAusgabedatei,\nZweck des Schritts,\nfachliche Annahme hinter dem Schritt.\n\nDer Verarbeitungsverlauf ersetzt aber kein vollständiges Methodenprotokoll. Manuelle Entscheidungen wie Layerauswahl, visuelle Kontrolle, Umbenennungen, Symbolisierung oder die Begründung von Schwellenwerten müssen zusätzlich beschrieben werden.",
     "crumbs": [
       "Reader Automatisierung von Arbeitsabläufen in QGIS ",
       "Dokumentation und Reproduzierbarkeit in QGIS"
@@ -114,7 +114,7 @@
     "href": "unit99/unit99-01.html#empfohlener-workflow-für-die-übung",
     "title": "Dokumentation und Reproduzierbarkeit in QGIS",
     "section": "Empfohlener Workflow für die Übung",
-    "text": "Empfohlener Workflow für die Übung\nFür die Kursübung ist folgender Ablauf sinnvoll:\n\nProjektordner anlegen.\nRohdaten unverändert speichern.\nQGIS-Projekt früh speichern.\nAlle Zwischenergebnisse mit sprechenden Namen speichern.\nVerarbeitungsschritte über den Verlauf kontrollieren.\nWiederkehrende Abläufe im grafischen Modellierer abbilden.\nZentrale Rasterrechner-Ausdrücke in das Methodenprotokoll kopieren.\nKriterien, Schwellenwerte und Gewichte fachlich begründen.\nErgebnislayout erstellen.\nGrenzen der Analyse explizit benennen.\n\n\n\n\n\n\n\nHinweisMerksatz\n\n\n\nReproduzierbarkeit in QGIS entsteht nicht automatisch durch die Software. Sie entsteht durch die Kombination aus gespeicherten Daten, nachvollziehbaren Werkzeugparametern, sauber benannten Ausgaben, Modell oder Skript und einem kurzen fachlichen Methodenprotokoll.",
+    "text": "Empfohlener Workflow für die Übung\nFür die Kursübung reicht ein kompakter Dokumentationsstandard:\n\nProjektordner anlegen.\nRohdaten unverändert speichern.\nQGIS-Projekt früh speichern.\nZwischenergebnisse mit sprechenden Namen speichern.\nVerarbeitungsschritte über den Verlauf kontrollieren.\nWiederkehrende Abläufe im Modellierer oder Skript sichern.\nRasterrechner-Ausdrücke in das Methodenprotokoll kopieren.\nKriterien, Schwellenwerte und Gewichte kurz begründen.\nErgebnislayout erstellen.\nGrenzen der Analyse benennen.\n\nReproduzierbarkeit entsteht nicht automatisch durch QGIS. Sie entsteht durch die Verbindung aus gespeicherten Daten, nachvollziehbaren Werkzeugparametern, sauber benannten Ausgaben und einer kurzen fachlichen Begründung.",
     "crumbs": [
       "Reader Automatisierung von Arbeitsabläufen in QGIS ",
       "Dokumentation und Reproduzierbarkeit in QGIS"
@@ -2935,5 +2935,82 @@
     "title": "Coming Soon",
     "section": "",
     "text": "coming soon"
+  },
+  {
+    "objectID": "unit99/unit99-01.html#was-dokumentiert-werden-muss",
+    "href": "unit99/unit99-01.html#was-dokumentiert-werden-muss",
+    "title": "Dokumentation und Reproduzierbarkeit in QGIS",
+    "section": "Was dokumentiert werden muss",
+    "text": "Was dokumentiert werden muss\nEine QGIS-Analyse besteht aus zwei Ebenen. Die erste Ebene ist technisch: Welche Werkzeuge wurden mit welchen Parametern ausgeführt? Die zweite Ebene ist fachlich: Warum wurden genau diese Daten, Kriterien, Schwellenwerte und Gewichtungen gewählt?\nBeide Ebenen müssen zusammen dokumentiert werden. Ein Verarbeitungsverlauf zeigt, was technisch passiert ist. Er erklärt aber nicht automatisch, warum ein bestimmter Schwellenwert sinnvoll ist oder warum ein Kriterium höher gewichtet wurde als ein anderes.\nFür eine dokumentierte Analyse sind deshalb drei Bausteine wichtig:\n\nVerarbeitungsverlauf: Welche Werkzeuge wurden ausgeführt?\nModell, Skript oder Projektstruktur: Wie lässt sich der Ablauf wiederholen?\nMethodennotiz: Welche fachlichen Entscheidungen wurden getroffen und warum?",
+    "crumbs": [
+      "Reader Automatisierung von Arbeitsabläufen in QGIS ",
+      "Dokumentation und Reproduzierbarkeit in QGIS"
+    ]
+  },
+  {
+    "objectID": "unit99/unit99-01.html#von-der-projektfrage-zum-werkzeugschritt",
+    "href": "unit99/unit99-01.html#von-der-projektfrage-zum-werkzeugschritt",
+    "title": "Dokumentation und Reproduzierbarkeit in QGIS",
+    "section": "Von der Projektfrage zum Werkzeugschritt",
+    "text": "Von der Projektfrage zum Werkzeugschritt\nAuch ein kleines GIS-Projekt besteht fast nie aus einem einzelnen Werkzeug. Schon eine einfache Eignungsanalyse verbindet mehrere Schritte: Daten werden zugeschnitten, vereinheitlicht, in Raster überführt, reklassifiziert, gewichtet, maskiert und schließlich dargestellt. Jeder dieser Schritte verändert die Daten und damit auch die Aussage der späteren Karte.\nOb ein Schritt sinnvoll ist, lässt sich aber nicht allein am Werkzeug erkennen. Entscheidend ist die Projektfrage. Ohne sie bleibt unklar, warum ein Abstand berechnet, eine Hangneigung klassifiziert, eine Fläche ausgeschlossen oder ein Kriterium stärker gewichtet wurde.\nEin Beispiel: Das Werkzeug Nähe / Rasterdistanz erzeugt zunächst nur eine Distanzfläche. Fachlich bedeutsam wird diese Distanzfläche erst durch die Fragestellung. In einer Habitatmodellierung kann große Siedlungsferne als günstiger Standortfaktor interpretiert werden. In einer Erreichbarkeitsanalyse kann dieselbe Entfernung dagegen als Nachteil gelten. Das Werkzeug ist identisch, aber die fachliche Bedeutung ist eine andere.\nDokumentation muss deshalb nicht nur die Werkzeugfolge beschreiben, sondern die Verbindung zwischen Projektfrage und Verarbeitungsschritt sichtbar machen:\nProjektfrage → Kriterium → GIS-Operation → Parameter → Ergebnislayer → Interpretation",
+    "crumbs": [
+      "Reader Automatisierung von Arbeitsabläufen in QGIS ",
+      "Dokumentation und Reproduzierbarkeit in QGIS"
+    ]
+  },
+  {
+    "objectID": "unit99/unit99-01.html#grafischer-modellierer-und-skripte",
+    "href": "unit99/unit99-01.html#grafischer-modellierer-und-skripte",
+    "title": "Dokumentation und Reproduzierbarkeit in QGIS",
+    "section": "Grafischer Modellierer und Skripte",
+    "text": "Grafischer Modellierer und Skripte\nDer grafische Modellierer ist sinnvoll, wenn mehrere Verarbeitungsschritte immer wieder in derselben Reihenfolge ausgeführt werden sollen. Aus einzelnen Werkzeugen wird ein Modell gebaut. Dieses Modell kann gespeichert, erneut ausgeführt und auf andere Eingangsdaten angewendet werden.\nFür eine Multikriterienanalyse könnte ein Modell zum Beispiel folgende Schritte enthalten:\n\nEingangsdaten zuschneiden.\nRasterdaten auf gemeinsame Zellgröße bringen.\nKriterien berechnen.\nKriterien reklassifizieren.\nKriterien gewichten und verrechnen.\nEinschränkungsmaske anwenden.\nErgebnisraster speichern.\n\nDer Vorteil liegt darin, dass die Verarbeitungskette sichtbar wird. Die Karte erscheint dann nicht als fertiges Bild, sondern als Ergebnis eines nachvollziehbaren Ablaufs.\nSkripte gehen einen Schritt weiter. Sie beschreiben den Ablauf nicht grafisch, sondern als Code. Das ist besonders stark, wenn ein Workflow mehrfach mit anderen Daten, anderen Gebieten oder anderen Gewichtungen ausgeführt werden soll.\nEin einzelner Verarbeitungsschritt kann zum Beispiel so dokumentiert werden:\nprocessing.run(\n    \"gdal:slope\",\n    {\n        \"INPUT\": \"dgm.tif\",\n        \"BAND\": 1,\n        \"SCALE\": 1,\n        \"AS_PERCENT\": False,\n        \"OUTPUT\": \"hangneigung.tif\"\n    }\n)\nFür den Einstieg ist es nicht notwendig, einen vollständigen Workflow selbst zu programmieren. Ein praktikabler Zwischenweg ist, Werkzeuge zunächst normal in QGIS auszuführen, den Befehl aus dem Verarbeitungsverlauf zu kopieren und die wichtigsten Schritte in einem kurzen Skript oder Methodenprotokoll zu sichern.",
+    "crumbs": [
+      "Reader Automatisierung von Arbeitsabläufen in QGIS ",
+      "Dokumentation und Reproduzierbarkeit in QGIS"
+    ]
+  },
+  {
+    "objectID": "unit99/unit99-01.html#projektdatei-und-datenstruktur",
+    "href": "unit99/unit99-01.html#projektdatei-und-datenstruktur",
+    "title": "Dokumentation und Reproduzierbarkeit in QGIS",
+    "section": "Projektdatei und Datenstruktur",
+    "text": "Projektdatei und Datenstruktur\nDie QGIS-Projektdatei dokumentiert einen anderen Teil des Workflows. Sie speichert, welche Layer eingebunden sind, wie sie dargestellt werden, welche Layouts angelegt wurden und auf welche Datenquellen verwiesen wird.\nFür eine Abgabe sollte die Projektdatei deshalb bewusst organisiert werden. Rohdaten sollten unverändert bleiben. Zwischenergebnisse und finale Ergebnisse sollten mit sprechenden Namen gespeichert werden. Temporäre Layer sollten vermieden werden, wenn sie für die Analyse wichtig sind. Kartenlayouts brauchen Titel, Legende, Maßstab, Quellenangabe und Datum.\nEine saubere Projektstruktur ist kein formaler Zusatz. Sie entscheidet darüber, ob eine Analyse später noch verstanden, geprüft oder verändert werden kann.",
+    "crumbs": [
+      "Reader Automatisierung von Arbeitsabläufen in QGIS ",
+      "Dokumentation und Reproduzierbarkeit in QGIS"
+    ]
+  },
+  {
+    "objectID": "unit99/unit99-01.html#methodennotiz",
+    "href": "unit99/unit99-01.html#methodennotiz",
+    "title": "Dokumentation und Reproduzierbarkeit in QGIS",
+    "section": "Methodennotiz",
+    "text": "Methodennotiz\nDie Methodennotiz erklärt die fachlichen Entscheidungen. Sie sollte knapp sein, aber die zentralen Annahmen offenlegen.\nFür eine Multikriterienanalyse gehören dazu:\n\nFragestellung,\nEingangsdaten,\nRaumbezug, Projektion, Zellgröße und Ausdehnung,\nverwendete Kriterien,\nReklassifikationsregeln,\nGewichtungen,\nAusschluss- oder Einschränkungsflächen,\nverwendete Werkzeuge,\nErgebnisdateien,\nGrenzen der Interpretation.\n\nWichtig ist nicht, jede Mausbewegung zu protokollieren. Wichtig ist, dass eine andere Person nachvollziehen kann, warum aus den Eingangsdaten genau dieses Ergebnis entstanden ist.",
+    "crumbs": [
+      "Reader Automatisierung von Arbeitsabläufen in QGIS ",
+      "Dokumentation und Reproduzierbarkeit in QGIS"
+    ]
+  },
+  {
+    "objectID": "unit99/unit99-01.html#beispiel-reklassifikation-dokumentieren",
+    "href": "unit99/unit99-01.html#beispiel-reklassifikation-dokumentieren",
+    "title": "Dokumentation und Reproduzierbarkeit in QGIS",
+    "section": "Beispiel: Reklassifikation dokumentieren",
+    "text": "Beispiel: Reklassifikation dokumentieren\nEin Reklassifikationsschritt sollte nicht nur als Werkzeugaufruf erscheinen. Er braucht eine kurze fachliche Begründung.\nBeispiel:\nZiel: Standardisierung der Siedlungsnähe\nEingangsdaten: siedlungsdistanz.tif\nWerkzeug: Reklassifizieren nach Tabelle\nRegel: 0–100 m = 0; 100–300 m = 0.3; 300–600 m = 0.6; &gt; 600 m = 1\nAusgabe: siedlungsdistanz_idx.tif\nBegründung: Siedlungsnahe Bereiche werden wegen höherer Störung geringer bewertet.\nUnsicherheit: Die Schwellenwerte sind didaktisch gesetzt und nicht lokal validiert.\nDamit ist der Schritt technisch und fachlich lesbar. Man sieht nicht nur, was gerechnet wurde, sondern auch, welche Annahme in die Analyse eingegangen ist.",
+    "crumbs": [
+      "Reader Automatisierung von Arbeitsabläufen in QGIS ",
+      "Dokumentation und Reproduzierbarkeit in QGIS"
+    ]
+  },
+  {
+    "objectID": "unit99/unit99-01.html#beispiel-rasterrechner-ausdruck-dokumentieren",
+    "href": "unit99/unit99-01.html#beispiel-rasterrechner-ausdruck-dokumentieren",
+    "title": "Dokumentation und Reproduzierbarkeit in QGIS",
+    "section": "Beispiel: Rasterrechner-Ausdruck dokumentieren",
+    "text": "Beispiel: Rasterrechner-Ausdruck dokumentieren\nAuch ein Rasterrechner-Ausdruck sollte nicht nur ausgeführt, sondern gesichert und erklärt werden:\n(\n  \"walddichte_idx@1\" * 0.40 +\n  \"siedlungsdistanz_idx@1\" * 0.30 +\n  \"hangneigung_idx@1\" * 0.20 +\n  \"exposition_idx@1\" * 0.10\n)\n*\n\"einschraenkung_mask@1\"\nDer Ausdruck kombiniert standardisierte Kriterien zu einer Eignungsfläche. Die Gewichte drücken aus, welche Kriterien in diesem Modell stärker oder schwächer zählen. Die Einschränkungsmaske sorgt dafür, dass ungeeignete Flächen ausgeschlossen oder abgewertet werden.\nEine Dokumentation muss daher nicht nur den Ausdruck enthalten, sondern auch erklären, warum diese Kriterien und Gewichte verwendet wurden.",
+    "crumbs": [
+      "Reader Automatisierung von Arbeitsabläufen in QGIS ",
+      "Dokumentation und Reproduzierbarkeit in QGIS"
+    ]
   }
 ]
