@@ -197,10 +197,10 @@
     }
   </style>
 <meta property="og:title" content="Der perfekte Gipfel – Grundlagenkurs GI-S (QGIS)">
-<meta property="og:description" content="Problemlösung, Modellbildung und GIS-Umsetzung dokumentieren">
+<meta property="og:description" content="Problemlösung dokumentieren: von der Idee zum nachvollziehbaren GIS-Workflow">
 <meta property="og:site_name" content="Grundlagenkurs GI-S (QGIS)">
 <meta name="twitter:title" content="Der perfekte Gipfel – Grundlagenkurs GI-S (QGIS)">
-<meta name="twitter:description" content="Problemlösung, Modellbildung und GIS-Umsetzung dokumentieren">
+<meta name="twitter:description" content="Problemlösung dokumentieren: von der Idee zum nachvollziehbaren GIS-Workflow">
 <meta name="twitter:creator" content="@gisma">
 <meta name="twitter:card" content="summary">
 </head>
@@ -210,7 +210,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Der perfekte Gipfel</h1>
-  <p class="subtitle">Problemlösung, Modellbildung und GIS-Umsetzung dokumentieren</p>
+  <p class="subtitle">Problemlösung dokumentieren: von der Idee zum nachvollziehbaren GIS-Workflow</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -226,7 +226,7 @@ Chris Reudenbach
 <style>
 .reveal .slides section { text-align: left; }
 .reveal h2 { letter-spacing: -0.02em; }
-.reveal .big { font-size: 1.32em; line-height: 1.25; }
+.reveal .big { font-size: 1.30em; line-height: 1.25; }
 .reveal .small { font-size: .72em; color: #475569; }
 .reveal .center { text-align: center; }
 .reveal .fullfig {
@@ -249,21 +249,22 @@ Chris Reudenbach
   left: 4%;
   bottom: 5%;
   width: 54%;
-  background: rgba(255,255,255,.92);
+  background: rgba(255,255,255,.93);
   border-left: 8px solid #2e7d32;
   padding: .6em .8em;
   font-size: .72em;
   box-shadow: 0 8px 28px rgba(0,0,0,.18);
 }
 .reveal .overlay-note.right { left: auto; right: 4%; }
-.reveal .overlay-note.wide { width: 72%; }
+.reveal .overlay-note.top { bottom: auto; top: 11%; }
+.reveal .overlay-note.wide { width: 74%; }
 .reveal .keyline {
   border-left: 8px solid #1f6f5b;
   padding-left: .8em;
   margin-top: .8em;
 }
 .reveal .process {
-  font-size: 1.2em;
+  font-size: 1.16em;
   line-height: 1.55;
   padding: .7em .9em;
   border: 2px solid #1f6f5b;
@@ -276,27 +277,38 @@ Chris Reudenbach
   background: #f8fafc;
   border: 1.5px solid #cbd5e1;
 }
+.reveal .docgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .65em;
+  font-size: .84em;
+}
+.reveal .doccard {
+  border: 1.5px solid #cbd5e1;
+  border-radius: 14px;
+  background: #f8fafc;
+  padding: .55em .7em;
+}
+.reveal .doccard strong { color: #0b2b68; }
 .reveal code { font-size: .88em; }
 </style>
 </section>
-<section id="warum-dieses-beispiel" class="slide level2">
-<h2>Warum dieses Beispiel?</h2>
-<p>Der „perfekte Gipfel“ ist kein fertiges GIS-Problem. Er beginnt als unscharfe Alltagsfrage und muss erst in messbare räumliche Kriterien übersetzt werden.</p>
+<section id="worum-es-hier-geht" class="slide level2">
+<h2>Worum es hier geht</h2>
+<p>Der „perfekte Gipfel“ ist ein gutes Beispiel für ein kleines GIS-Projekt, weil die Frage zunächst unscharf ist.</p>
+<div class="fragment process">
+<p>Aus einer Idee wird erst dann ein Projekt, wenn dokumentiert ist, wie sie in Kriterien, Daten, Operationen und Ergebnisgrenzen übersetzt wurde.</p>
+</div>
 <div class="fragment keyline">
-<p>Das Beispiel zeigt den gesamten Rahmen eines kleinen GIS-Projekts: Problem verstehen, Frage schärfen, Kriterien bilden, Daten auswählen, Operationen planen, Umsetzung dokumentieren und Ergebnisgrenzen benennen.</p>
+<p>Die Folien sind deshalb nicht als Programmierbeispiel gedacht, sondern als Beispiel für <strong>Problemklärung und Workflow-Dokumentation</strong>.</p>
 </div>
 </section>
-<section id="vom-problem-zur-handlung" class="slide level2">
-<h2>Vom Problem zur Handlung</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>Problem / Interesse</span>
-<span id="cb1-2"><a></a>→ Fragestellung</span>
-<span id="cb1-3"><a></a>→ fachliche Kriterien</span>
-<span id="cb1-4"><a></a>→ Datenmodell</span>
-<span id="cb1-5"><a></a>→ GIS-Operationen</span>
-<span id="cb1-6"><a></a>→ Ergebnis</span>
-<span id="cb1-7"><a></a>→ Interpretation und Grenze</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="dokumentationsrahmen" class="slide level2">
+<h2>Dokumentationsrahmen</h2>
+<p>Für jedes GIS-Projekt muss die gleiche Kette lesbar bleiben:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>Problem → Projektfrage → Kriterium → Datenbasis → Operation → Ergebnislayer → Aussagegrenze</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment keyline">
-<p>Nicht das Werkzeug steht am Anfang, sondern die Entscheidung, welche räumliche Eigenschaft überhaupt bestimmt werden soll.</p>
+<p>Die Dokumentation beschreibt nicht jede Mausbewegung. Sie beschreibt die fachlich entscheidenden Übersetzungsschritte.</p>
 </div>
 </section>
 <section id="ausgangspunkt-was-ist-ein-perfekter-gipfel" class="slide level2">
@@ -305,201 +317,229 @@ Chris Reudenbach
 <p><a href="../assets/pdf/DAV_Panorama_2_2012.pdf"><img data-src="../assets/images/pp/agis-workflow1.png" class="tallfig"></a></p>
 </div>
 <div class="fragment overlay-note wide">
-<p>Die Ausgangsfrage ist absichtlich unscharf. Genau daran lässt sich zeigen, wie aus einem sprachlichen Qualitätsurteil ein räumlich berechenbares Problem wird.</p>
+<p>Dokumentationspunkt: Die Ausgangsidee ist ein Qualitätsurteil. Vor der GIS-Umsetzung muss geklärt werden, welche räumlichen Eigenschaften dieses Urteil tragen sollen.</p>
 </div>
 </section>
-<section id="erste-zerlegung-des-problems" class="slide level2">
-<h2>Erste Zerlegung des Problems</h2>
-<p>Ein Gipfel wirkt nicht nur durch seine absolute Höhe.</p>
+<section id="von-der-idee-zur-projektfrage" class="slide level2">
+<h2>Von der Idee zur Projektfrage</h2>
+<p>Aus „perfekter Gipfel“ wird keine GIS-Analyse. Eine bearbeitbare Frage braucht eine messbare Zielrichtung.</p>
+<div class="fragment process">
+<p>Welche Gipfel sind nach Höhe, Dominanz, Prominenz und Eigenständigkeit besonders ausgeprägt?</p>
+</div>
+<div class="fragment keyline">
+<p>Das ist der erste dokumentierbare Schritt: Die Alltagsformulierung wird in eine räumliche Analysefrage übersetzt.</p>
+</div>
+</section>
+<section id="kriterien-statt-bauchgefühl" class="slide level2">
+<h2>Kriterien statt Bauchgefühl</h2>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row quarto-layout-valign-center">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><a href="../assets/images/pp/agis-concept1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="../assets/images/pp/agis-concept1.png" class="tallfig"></a></p>
 </div>
 <div class="framebox quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>Entscheidend werden mehrere räumliche Eigenschaften:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>Höhe und Position</span>
+<p>Aus dem Begriff entstehen Kriterien:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>Höhe / Position</span>
 <span id="cb2-2"><a></a>Dominanz</span>
 <span id="cb2-3"><a></a>Prominenz / Schartenhöhe</span>
 <span id="cb2-4"><a></a>Eigenständigkeit</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Nicht alle Kriterien sind direkt im DGM gespeichert. Einige müssen abgeleitet werden.</p>
 </div>
 </div>
 </div>
 <div class="fragment overlay-note wide">
-<p>Das ist der erste methodische Schritt: Ein unpräziser Begriff wird in prüfbare Kriterien zerlegt.</p>
+<p>Dokumentationspunkt: Für jedes Kriterium muss festgehalten werden, welche Datenbasis und welche Ableitungslogik verwendet wird.</p>
 </div>
 </section>
-<section id="formale-abstraktion" class="slide level2">
-<h2>Formale Abstraktion</h2>
+<section id="formale-definition-als-entscheidung" class="slide level2">
+<h2>Formale Definition als Entscheidung</h2>
 <p><a href="../assets/images/pp/formel.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="../assets/images/pp/formel.png" class="fullfig"></a></p>
 <div class="fragment overlay-note right">
-<p>Die Formel ist nicht der Anfang des Projekts. Sie ist das Ergebnis einer begrifflichen Entscheidung: Welche Eigenschaften zählen und wie werden sie verrechnet?</p>
+<p>Eine Formel ist keine neutrale Wahrheit. Sie dokumentiert, welche Eigenschaften in die Bewertung eingehen und wie sie gewichtet bzw. verrechnet werden.</p>
 </div>
 </section>
-<section id="vom-begriff-zum-modell" class="slide level2">
-<h2>Vom Begriff zum Modell</h2>
+<section id="modellbildung-dokumentieren" class="slide level2">
+<h2>Modellbildung dokumentieren</h2>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row quarto-layout-valign-center">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><a href="../assets/images/pp/agis-concept2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="../assets/images/pp/agis-concept2.png" class="fullfig"></a></p>
 </div>
 <div class="framebox quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>Für ein GIS-Projekt muss geklärt werden:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>Welche Objekte?      → Gipfelpunkte</span>
-<span id="cb3-2"><a></a>Welche Fläche?       → Höhenmodell</span>
-<span id="cb3-3"><a></a>Welche Beziehungen?  → Distanz, Höhe, Verbindung, Trennung</span>
-<span id="cb3-4"><a></a>Welche Ausgabe?      → Rang, Prominenz, Eigenständigkeit</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Für die Methodennotiz reicht die technische Formel nicht.</p>
+<p>Dokumentiert werden muss:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>Objekte: Gipfelpunkte</span>
+<span id="cb3-2"><a></a>Fläche: Höhenmodell</span>
+<span id="cb3-3"><a></a>Beziehungen: Distanz, Trennung, Verbindung</span>
+<span id="cb3-4"><a></a>Produkt: Prominenz / Eigenständigkeit</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 </section>
-<section id="problemlösung-als-dokumentierbarer-prozess" class="slide level2">
-<h2>Problemlösung als dokumentierbarer Prozess</h2>
+<section id="problemlösung-als-arbeitsprotokoll" class="slide level2">
+<h2>Problemlösung als Arbeitsprotokoll</h2>
 <p><a href="../assets/images/pp/slide1png.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img data-src="../assets/images/pp/slide1png.png" class="fullfig"></a></p>
 <div class="fragment overlay-note">
-<p>Die Folie gehört in den Projektrahmen: Sie macht sichtbar, dass GIS-Arbeit nicht nur Bedienung ist, sondern Problemlösung unter technischen und fachlichen Randbedingungen.</p>
+<p>Diese Folie wird im Kurs als Dokumentationsfolie gelesen: Welche Teilprobleme entstehen, welche Entscheidungen werden getroffen, welche Zwischenergebnisse müssen gesichert werden?</p>
 </div>
 </section>
-<section id="das-problemlösungs-handwerk" class="slide level2">
-<h2>Das Problemlösungs-Handwerk</h2>
+<section id="vom-problem-zu-arbeitspaketen" class="slide level2">
+<h2>Vom Problem zu Arbeitspaketen</h2>
 <p><a href="../assets/images/pp/slide2png.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img data-src="../assets/images/pp/slide2png.png" class="fullfig"></a></p>
 <div class="fragment overlay-note right">
-<p>Für die Dokumentation zählt nicht jede Mausbewegung. Dokumentiert werden die entscheidenden Übersetzungen: Kriterium, Datenbasis, Operation, Parameter und Ergebnislayer.</p>
+<p>Nicht alles muss automatisiert werden. Wichtig ist, dass die relevanten Arbeitspakete benannt werden: Datenprüfung, Kriteriendefinition, Operation, Kontrolle, Ergebnisinterpretation.</p>
 </div>
 </section>
-<section id="drei-umsetzungsformen" class="slide level2">
-<h2>Drei Umsetzungsformen</h2>
-<div class="quarto-layout-panel" data-layout-ncol="3">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<p><strong>Interaktiv</strong></p>
-<p>QGIS-Werkzeuge, visuelle Prüfung, schnelle Varianten.</p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<p><strong>Kommandozeile</strong></p>
-<p>Wiederholbare Aufrufe, Parameter werden sichtbar.</p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<p><strong>Skript</strong></p>
-<p>Workflow wird reproduzierbar, variierbar und dokumentierbar.</p>
-</div>
-</div>
-</div>
-<div class="fragment keyline">
-<p>Die drei Formen sind keine Hierarchie von „richtig“ und „falsch“. Sie unterscheiden sich vor allem darin, wie gut der Arbeitsweg wiederholbar und überprüfbar wird.</p>
-</div>
-</section>
-<section id="interaktives-gi-handwerk" class="slide level2">
-<h2>Interaktives GI-Handwerk</h2>
+<section id="umsetzung-dokumentieren-interaktiv" class="slide level2">
+<h2>Umsetzung dokumentieren: interaktiv</h2>
 <p><a href="../assets/images/pp/slide3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img data-src="../assets/images/pp/slide3.png" class="fullfig"></a></p>
 <div class="fragment overlay-note">
-<p>Interaktive Arbeit ist für Exploration stark. Für eine Abgabe muss aber festgehalten werden, welche Schritte wirklich zum Ergebnis geführt haben.</p>
+<p>Interaktive Arbeit ist zulässig. Dokumentiert werden aber die stabilen Schritte: Werkzeug, Eingangsdaten, zentrale Parameter, Ausgabe und fachlicher Zweck.</p>
 </div>
 </section>
-<section id="kommandozeilen-gi-handwerk" class="slide level2">
-<h2>Kommandozeilen-GI-Handwerk</h2>
+<section id="umsetzung-dokumentieren-reproduzierbare-befehle" class="slide level2">
+<h2>Umsetzung dokumentieren: reproduzierbare Befehle</h2>
 <p><a href="../assets/images/pp/slide4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img data-src="../assets/images/pp/slide4.png" class="fullfig"></a></p>
 <div class="fragment overlay-note right">
-<p>Die Kommandozeile macht Parameter expliziter. Dadurch wird der Schritt leichter überprüfbar als eine rein visuelle Bediensequenz.</p>
+<p>Kommandozeilen oder kopierte Processing-Aufrufe sind hier kein Programmierziel. Sie sind ein Mittel, um Parameter und Dateipfade eindeutig zu sichern.</p>
 </div>
 </section>
-<section id="programmierung-für-nicht-programmiererinnen" class="slide level2">
-<h2>Programmierung für Nicht-Programmierer*innen</h2>
+<section id="umsetzung-dokumentieren-ablauf-statt-code" class="slide level2">
+<h2>Umsetzung dokumentieren: Ablauf statt Code</h2>
 <p><a href="../assets/images/pp/slide5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img data-src="../assets/images/pp/slide5.png" class="fullfig"></a></p>
 <div class="fragment overlay-note">
-<p>Skripte sind hier kein Selbstzweck. Sie sichern eine nachvollziehbare Folge von Verarbeitungsschritten.</p>
+<p>Wenn Skripte verwendet werden, dann als dokumentierte Ablaufbeschreibung. Entscheidend bleibt: Welche Entscheidung wird umgesetzt und welcher Ergebnislayer entsteht?</p>
 </div>
 </section>
-<section id="übersetzung-in-technische-gi-erfordernisse" class="slide level2">
-<h2>Übersetzung in technische GI-Erfordernisse</h2>
+<section id="übersetzung-in-gis-anforderungen" class="slide level2">
+<h2>Übersetzung in GIS-Anforderungen</h2>
 <p><a href="../assets/images/pp/slide6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img data-src="../assets/images/pp/slide6.png" class="fullfig"></a></p>
 <div class="fragment overlay-note wide">
-<p>Hier liegt der Kern der Projektarbeit: Die fachliche Frage wird in Datenstrukturen, Operationen, Parameter und Ergebnisprodukte übersetzt.</p>
+<p>Hier liegt der Kern der Dokumentation: Fachliche Begriffe werden in Datenstrukturen, Raster-/Vektoroperationen, Parameter und Zwischenergebnisse übersetzt.</p>
+</div>
+</section>
+<section id="dokumentationsschema-für-einen-hauptschritt" class="slide level2">
+<h2>Dokumentationsschema für einen Hauptschritt</h2>
+<p>Ein Hauptschritt sollte knapp, aber vollständig dokumentiert werden.</p>
+<div class="docgrid">
+<div class="doccard">
+<p><strong>Zweck</strong><br> Welches Kriterium oder Teilproblem wird bearbeitet?</p>
+</div>
+<div class="doccard">
+<p><strong>Datenbasis</strong><br> Welche Eingangsdaten werden verwendet?</p>
+</div>
+<div class="doccard">
+<p><strong>Operation</strong><br> Welche GIS-Operation wird eingesetzt?</p>
+</div>
+<div class="doccard">
+<p><strong>Parameter</strong><br> Welche Schwellenwerte, Toleranzen oder Abbruchkriterien gelten?</p>
+</div>
+<div class="doccard">
+<p><strong>Ausgabe</strong><br> Welcher Layer oder Wert entsteht?</p>
+</div>
+<div class="doccard">
+<p><strong>Grenze</strong><br> Wovon hängt die Aussagekraft ab?</p>
+</div>
 </div>
 </section>
 <section id="wie-soll-das-gehen" class="slide level2">
 <h2>Wie soll das gehen?</h2>
 <p><a href="../assets/images/pp/slide7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img data-src="../assets/images/pp/slide7.png" class="fullfig"></a></p>
 <div class="fragment overlay-note right">
-<p>Ein komplexes Problem wird nicht „auf einmal“ gelöst. Es wird in Teilentscheidungen zerlegt, die einzeln prüfbar und dokumentierbar sind.</p>
+<p>Ein komplexes Problem wird dokumentierbar, wenn es in prüfbare Zwischenschritte zerlegt wird. Die Dokumentation folgt dieser Zerlegung.</p>
 </div>
 </section>
 <section id="beispiel-prominenz-durch-fluten-denken" class="slide level2">
 <h2>Beispiel: Prominenz durch Fluten denken</h2>
 <p><a href="../assets/images/pp/flood0.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img data-src="../assets/images/pp/flood0.png" class="fullfig"></a></p>
 <div class="fragment overlay-note wide">
-<p>Prominenz lässt sich als Trennungsproblem im Relief verstehen: Bei welchem „Flutniveau“ bleibt der aktuelle Gipfel noch als eigene Einheit von anderen Gipfeln getrennt?</p>
+<p>Dokumentationspunkt: Die fachliche Idee lautet nicht „wir benutzen ein Tool“, sondern: Wir variieren ein Flutniveau und prüfen, wann der aktuelle Gipfel mit anderen Gipfeln verbunden wird.</p>
 </div>
 </section>
-<section id="suchstrategie-statt-stumpfer-wiederholung" class="slide level2">
-<h2>Suchstrategie statt stumpfer Wiederholung</h2>
+<section id="suchstrategie-festhalten" class="slide level2">
+<h2>Suchstrategie festhalten</h2>
 <p><a href="../assets/images/pp/flood1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img data-src="../assets/images/pp/flood1.png" class="fullfig"></a></p>
 <div class="fragment overlay-note">
-<p>Der erste naive Lösungsweg wäre schrittweises Fluten. Effizienter ist eine Suchstrategie, die den Höhenbereich systematisch eingrenzt.</p>
+<p>Der naive Weg wäre schrittweises Fluten. Die dokumentierte Verbesserung ist eine Suchstrategie, die den relevanten Höhenbereich systematisch eingrenzt.</p>
 </div>
 </section>
-<section id="binäre-suche-und-abbruchkriterium" class="slide level2">
-<h2>Binäre Suche und Abbruchkriterium</h2>
+<section id="abbruchkriterium-dokumentieren" class="slide level2">
+<h2>Abbruchkriterium dokumentieren</h2>
 <p><a href="../assets/images/pp/flood2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img data-src="../assets/images/pp/flood2.png" class="fullfig"></a></p>
 <div class="fragment overlay-note right">
-<p>Die Umsetzung braucht ein Abbruchkriterium. Genau solche Entscheidungen gehören in die Workflow-Dokumentation: Wie genau genug ist genau genug?</p>
+<p>Für die Aussagekraft ist nicht nur das Ergebnis wichtig, sondern auch: Wann wurde die Suche beendet und welche Genauigkeit wurde akzeptiert?</p>
 </div>
 </section>
-<section id="dokumentation-am-beispiel-prominenz" class="slide level2">
-<h2>Dokumentation am Beispiel „Prominenz“</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>Projektfrage:</span>
+<section id="beispiel-einer-methodennotiz" class="slide level2">
+<h2>Beispiel einer Methodennotiz</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>Fragestellung:</span>
 <span id="cb4-2"><a></a>Wie eigenständig ist ein Gipfel im Verhältnis zu benachbarten Gipfeln?</span>
 <span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a>Datenbasis:</span>
-<span id="cb4-5"><a></a>Digitales Höhenmodell und Gipfelpunkte.</span>
+<span id="cb4-4"><a></a>Kriterium:</span>
+<span id="cb4-5"><a></a>Prominenz / Schartenhöhe.</span>
 <span id="cb4-6"><a></a></span>
-<span id="cb4-7"><a></a>Kriterium:</span>
-<span id="cb4-8"><a></a>Prominenz / Schartenhöhe.</span>
+<span id="cb4-7"><a></a>Datenbasis:</span>
+<span id="cb4-8"><a></a>Digitales Höhenmodell und Gipfelpunkte.</span>
 <span id="cb4-9"><a></a></span>
 <span id="cb4-10"><a></a>Operationelle Idee:</span>
-<span id="cb4-11"><a></a>Flutniveau variieren und prüfen, wann Gipfelbereiche verbunden werden.</span>
+<span id="cb4-11"><a></a>Flutniveau variieren und Verbindung der Gipfeleinheiten prüfen.</span>
 <span id="cb4-12"><a></a></span>
-<span id="cb4-13"><a></a>Umsetzung:</span>
-<span id="cb4-14"><a></a>Iteratives Fluten, effizienter über binäre Suche.</span>
+<span id="cb4-13"><a></a>Suchstrategie:</span>
+<span id="cb4-14"><a></a>Höhenbereich durch binäre Suche eingrenzen.</span>
 <span id="cb4-15"><a></a></span>
-<span id="cb4-16"><a></a>Ergebnis:</span>
-<span id="cb4-17"><a></a>Schwellenhöhe bzw. Prominenzwert.</span>
+<span id="cb4-16"><a></a>Abbruchkriterium:</span>
+<span id="cb4-17"><a></a>Suche endet bei definierter Höhentoleranz.</span>
 <span id="cb4-18"><a></a></span>
-<span id="cb4-19"><a></a>Grenze:</span>
-<span id="cb4-20"><a></a>Ergebnis hängt von DEM-Auflösung, Gipfelerkennung und Abbruchkriterium ab.</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-19"><a></a>Aussagegrenze:</span>
+<span id="cb4-20"><a></a>DEM-Auflösung, Gipfelerkennung und Toleranz beeinflussen den Wert.</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="anschluss-an-das-mini-projektpaket" class="slide level2">
-<h2>Anschluss an das Mini-Projektpaket</h2>
-<p>Das Beispiel zeigt, was Studierende für ihre eigenen Projekte leisten sollen:</p>
+<section id="was-davon-ins-eigene-projekt-gehört" class="slide level2">
+<h2>Was davon ins eigene Projekt gehört</h2>
 <div class="process">
-<p>Fragestellung schärfen → Kriterien ableiten → Daten wählen → Operationen planen → Umsetzung dokumentieren → Ergebnis kritisch begrenzen</p>
+<p>Projektfrage schärfen → Kriterien ableiten → Daten wählen → Hauptschritte planen → Parameter begründen → Ergebnislayer sichern → Aussagegrenze benennen</p>
 </div>
 <div class="fragment keyline">
-<p>Die Workflow-Dokumentation ist keine vollständige History. Sie hält die fachlich entscheidenden Schritte fest.</p>
+<p>Das Gipfelbeispiel ist nur komplexer als viele Kursprojekte. Die Dokumentationslogik ist dieselbe.</p>
 </div>
 </section>
-<section id="übertrag-auf-eigene-gis-projekte" class="slide level2">
-<h2>Übertrag auf eigene GIS-Projekte</h2>
-<p>Ein eigenes Mini-Projekt muss nicht algorithmisch so komplex sein. Die Struktur ist aber dieselbe:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>Siedlungsferne      → Distanzraster     → Reklassifikation</span>
-<span id="cb5-2"><a></a>Hangneigung         → DGM-Ableitung      → Eignungsklasse</span>
-<span id="cb5-3"><a></a>Waldanteil          → Landbedeckung      → Flächenkriterium</span>
-<span id="cb5-4"><a></a>Schutzgebiet        → Overlay / Maske    → Ausschluss oder Kontext</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="nicht-dokumentieren-vollständige-history" class="slide level2">
+<h2>Nicht dokumentieren: vollständige History</h2>
+<p>Eine Workflow-Dokumentation ist kein Mitschnitt jeder Bedienhandlung.</p>
+<p>Dokumentiert werden nur Hauptschritte, die das Ergebnis fachlich verändern.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>nicht: Layer verschoben, Stil getestet, Ansicht gezoomt</span>
+<span id="cb5-2"><a></a>sondern: Distanz berechnet, reklassifiziert, gewichtet, maskiert, kombiniert</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment keyline">
-<p>Wichtig ist nicht die Anzahl der Werkzeuge, sondern die begründete Kette zwischen Frage, Kriterium, Operation und Ergebnis.</p>
+<p>Die Leitfrage lautet: Könnte eine andere Person den methodischen Weg fachlich nachvollziehen?</p>
+</div>
+</section>
+<section id="übertrag-auf-einfache-gis-projekte" class="slide level2">
+<h2>Übertrag auf einfache GIS-Projekte</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a>Siedlungsferne</span>
+<span id="cb6-2"><a></a>→ Distanz zur Siedlung</span>
+<span id="cb6-3"><a></a>→ Reklassifikation</span>
+<span id="cb6-4"><a></a>→ Störungskriterium</span>
+<span id="cb6-5"><a></a>→ Beitrag zur Eignungskarte</span>
+<span id="cb6-6"><a></a></span>
+<span id="cb6-7"><a></a>Hangneigung</span>
+<span id="cb6-8"><a></a>→ DGM-Ableitung</span>
+<span id="cb6-9"><a></a>→ Klassenbildung</span>
+<span id="cb6-10"><a></a>→ Reliefkriterium</span>
+<span id="cb6-11"><a></a>→ Beitrag zur Eignungskarte</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment keyline">
+<p>Auch einfache Projekte brauchen keine lange History, sondern eine begründete Kette zwischen Frage, Kriterium, Operation und Ergebnis.</p>
 </div>
 </section>
 <section id="prüfregel-für-die-dokumentation" class="slide level2">
 <h2>Prüfregel für die Dokumentation</h2>
-<p>Für jeden Hauptschritt muss eine fremde Person verstehen können:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a>Warum dieser Schritt?</span>
-<span id="cb6-2"><a></a>Welche Daten?</span>
-<span id="cb6-3"><a></a>Welche Operation?</span>
-<span id="cb6-4"><a></a>Welche Parameter?</span>
-<span id="cb6-5"><a></a>Welcher Ergebnislayer?</span>
-<span id="cb6-6"><a></a>Welche Aussagegrenze?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Für jeden Hauptschritt sollte eine fremde Person erkennen können:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a></a>Warum dieser Schritt?</span>
+<span id="cb7-2"><a></a>Welche Daten?</span>
+<span id="cb7-3"><a></a>Welche Operation?</span>
+<span id="cb7-4"><a></a>Welche Parameter?</span>
+<span id="cb7-5"><a></a>Welcher Ergebnislayer?</span>
+<span id="cb7-6"><a></a>Welche Aussagegrenze?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment big keyline">
-<p>Das Gipfelbeispiel ist deshalb kein Sonderfall, sondern ein gutes Muster: Es zeigt, wie aus einer unscharfen Idee ein dokumentierbarer GIS-Workflow wird.</p>
+<p>Das Ziel ist nicht Programmierung. Das Ziel ist nachvollziehbare GIS-Arbeit.</p>
 </div>
 
 

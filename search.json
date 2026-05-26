@@ -1980,22 +1980,22 @@
     ]
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#warum-dieses-beispiel",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#warum-dieses-beispiel",
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#worum-es-hier-geht",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#worum-es-hier-geht",
     "title": "Der perfekte Gipfel",
-    "section": "Warum dieses Beispiel?",
-    "text": "Warum dieses Beispiel?\nDer „perfekte Gipfel“ ist kein fertiges GIS-Problem. Er beginnt als unscharfe Alltagsfrage und muss erst in messbare räumliche Kriterien übersetzt werden.\n\nDas Beispiel zeigt den gesamten Rahmen eines kleinen GIS-Projekts: Problem verstehen, Frage schärfen, Kriterien bilden, Daten auswählen, Operationen planen, Umsetzung dokumentieren und Ergebnisgrenzen benennen.",
+    "section": "Worum es hier geht",
+    "text": "Worum es hier geht\nDer „perfekte Gipfel“ ist ein gutes Beispiel für ein kleines GIS-Projekt, weil die Frage zunächst unscharf ist.\n\nAus einer Idee wird erst dann ein Projekt, wenn dokumentiert ist, wie sie in Kriterien, Daten, Operationen und Ergebnisgrenzen übersetzt wurde.\n\n\nDie Folien sind deshalb nicht als Programmierbeispiel gedacht, sondern als Beispiel für Problemklärung und Workflow-Dokumentation.",
     "crumbs": [
       "Foliensätze zu den Readern",
       "Der perfekte Gipfel - ein Projekt Modell"
     ]
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#vom-problem-zur-handlung",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#vom-problem-zur-handlung",
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#dokumentationsrahmen",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#dokumentationsrahmen",
     "title": "Der perfekte Gipfel",
-    "section": "Vom Problem zur Handlung",
-    "text": "Vom Problem zur Handlung\nProblem / Interesse\n→ Fragestellung\n→ fachliche Kriterien\n→ Datenmodell\n→ GIS-Operationen\n→ Ergebnis\n→ Interpretation und Grenze\n\nNicht das Werkzeug steht am Anfang, sondern die Entscheidung, welche räumliche Eigenschaft überhaupt bestimmt werden soll.",
+    "section": "Dokumentationsrahmen",
+    "text": "Dokumentationsrahmen\nFür jedes GIS-Projekt muss die gleiche Kette lesbar bleiben:\nProblem → Projektfrage → Kriterium → Datenbasis → Operation → Ergebnislayer → Aussagegrenze\n\nDie Dokumentation beschreibt nicht jede Mausbewegung. Sie beschreibt die fachlich entscheidenden Übersetzungsschritte.",
     "crumbs": [
       "Foliensätze zu den Readern",
       "Der perfekte Gipfel - ein Projekt Modell"
@@ -2006,117 +2006,128 @@
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#ausgangspunkt-was-ist-ein-perfekter-gipfel",
     "title": "Der perfekte Gipfel",
     "section": "Ausgangspunkt: Was ist ein „perfekter Gipfel“?",
-    "text": "Ausgangspunkt: Was ist ein „perfekter Gipfel“?\n\n\n\n\nDie Ausgangsfrage ist absichtlich unscharf. Genau daran lässt sich zeigen, wie aus einem sprachlichen Qualitätsurteil ein räumlich berechenbares Problem wird.",
+    "text": "Ausgangspunkt: Was ist ein „perfekter Gipfel“?\n\n\n\n\nDokumentationspunkt: Die Ausgangsidee ist ein Qualitätsurteil. Vor der GIS-Umsetzung muss geklärt werden, welche räumlichen Eigenschaften dieses Urteil tragen sollen.",
     "crumbs": [
       "Foliensätze zu den Readern",
       "Der perfekte Gipfel - ein Projekt Modell"
     ]
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#erste-zerlegung-des-problems",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#erste-zerlegung-des-problems",
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#von-der-idee-zur-projektfrage",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#von-der-idee-zur-projektfrage",
     "title": "Der perfekte Gipfel",
-    "section": "Erste Zerlegung des Problems",
-    "text": "Erste Zerlegung des Problems\nEin Gipfel wirkt nicht nur durch seine absolute Höhe.\n\n\n\n\n\n\nEntscheidend werden mehrere räumliche Eigenschaften:\nHöhe und Position\nDominanz\nProminenz / Schartenhöhe\nEigenständigkeit\n\n\n\n\nDas ist der erste methodische Schritt: Ein unpräziser Begriff wird in prüfbare Kriterien zerlegt.",
+    "section": "Von der Idee zur Projektfrage",
+    "text": "Von der Idee zur Projektfrage\nAus „perfekter Gipfel“ wird keine GIS-Analyse. Eine bearbeitbare Frage braucht eine messbare Zielrichtung.\n\nWelche Gipfel sind nach Höhe, Dominanz, Prominenz und Eigenständigkeit besonders ausgeprägt?\n\n\nDas ist der erste dokumentierbare Schritt: Die Alltagsformulierung wird in eine räumliche Analysefrage übersetzt.",
     "crumbs": [
       "Foliensätze zu den Readern",
       "Der perfekte Gipfel - ein Projekt Modell"
     ]
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#formale-abstraktion",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#formale-abstraktion",
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#kriterien-statt-bauchgefühl",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#kriterien-statt-bauchgefühl",
     "title": "Der perfekte Gipfel",
-    "section": "Formale Abstraktion",
-    "text": "Formale Abstraktion\n\n\nDie Formel ist nicht der Anfang des Projekts. Sie ist das Ergebnis einer begrifflichen Entscheidung: Welche Eigenschaften zählen und wie werden sie verrechnet?",
+    "section": "Kriterien statt Bauchgefühl",
+    "text": "Kriterien statt Bauchgefühl\n\n\n\n\n\n\nAus dem Begriff entstehen Kriterien:\nHöhe / Position\nDominanz\nProminenz / Schartenhöhe\nEigenständigkeit\nNicht alle Kriterien sind direkt im DGM gespeichert. Einige müssen abgeleitet werden.\n\n\n\n\nDokumentationspunkt: Für jedes Kriterium muss festgehalten werden, welche Datenbasis und welche Ableitungslogik verwendet wird.",
     "crumbs": [
       "Foliensätze zu den Readern",
       "Der perfekte Gipfel - ein Projekt Modell"
     ]
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#vom-begriff-zum-modell",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#vom-begriff-zum-modell",
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#formale-definition-als-entscheidung",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#formale-definition-als-entscheidung",
     "title": "Der perfekte Gipfel",
-    "section": "Vom Begriff zum Modell",
-    "text": "Vom Begriff zum Modell\n\n\n\n\n\n\nFür ein GIS-Projekt muss geklärt werden:\nWelche Objekte?      → Gipfelpunkte\nWelche Fläche?       → Höhenmodell\nWelche Beziehungen?  → Distanz, Höhe, Verbindung, Trennung\nWelche Ausgabe?      → Rang, Prominenz, Eigenständigkeit",
+    "section": "Formale Definition als Entscheidung",
+    "text": "Formale Definition als Entscheidung\n\n\nEine Formel ist keine neutrale Wahrheit. Sie dokumentiert, welche Eigenschaften in die Bewertung eingehen und wie sie gewichtet bzw. verrechnet werden.",
     "crumbs": [
       "Foliensätze zu den Readern",
       "Der perfekte Gipfel - ein Projekt Modell"
     ]
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#problemlösung-als-dokumentierbarer-prozess",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#problemlösung-als-dokumentierbarer-prozess",
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#modellbildung-dokumentieren",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#modellbildung-dokumentieren",
     "title": "Der perfekte Gipfel",
-    "section": "Problemlösung als dokumentierbarer Prozess",
-    "text": "Problemlösung als dokumentierbarer Prozess\n\n\nDie Folie gehört in den Projektrahmen: Sie macht sichtbar, dass GIS-Arbeit nicht nur Bedienung ist, sondern Problemlösung unter technischen und fachlichen Randbedingungen.",
+    "section": "Modellbildung dokumentieren",
+    "text": "Modellbildung dokumentieren\n\n\n\n\n\n\nFür die Methodennotiz reicht die technische Formel nicht.\nDokumentiert werden muss:\nObjekte: Gipfelpunkte\nFläche: Höhenmodell\nBeziehungen: Distanz, Trennung, Verbindung\nProdukt: Prominenz / Eigenständigkeit",
     "crumbs": [
       "Foliensätze zu den Readern",
       "Der perfekte Gipfel - ein Projekt Modell"
     ]
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#das-problemlösungs-handwerk",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#das-problemlösungs-handwerk",
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#problemlösung-als-arbeitsprotokoll",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#problemlösung-als-arbeitsprotokoll",
     "title": "Der perfekte Gipfel",
-    "section": "Das Problemlösungs-Handwerk",
-    "text": "Das Problemlösungs-Handwerk\n\n\nFür die Dokumentation zählt nicht jede Mausbewegung. Dokumentiert werden die entscheidenden Übersetzungen: Kriterium, Datenbasis, Operation, Parameter und Ergebnislayer.",
+    "section": "Problemlösung als Arbeitsprotokoll",
+    "text": "Problemlösung als Arbeitsprotokoll\n\n\nDiese Folie wird im Kurs als Dokumentationsfolie gelesen: Welche Teilprobleme entstehen, welche Entscheidungen werden getroffen, welche Zwischenergebnisse müssen gesichert werden?",
     "crumbs": [
       "Foliensätze zu den Readern",
       "Der perfekte Gipfel - ein Projekt Modell"
     ]
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#drei-umsetzungsformen",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#drei-umsetzungsformen",
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#vom-problem-zu-arbeitspaketen",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#vom-problem-zu-arbeitspaketen",
     "title": "Der perfekte Gipfel",
-    "section": "Drei Umsetzungsformen",
-    "text": "Drei Umsetzungsformen\n\n\n\nInteraktiv\nQGIS-Werkzeuge, visuelle Prüfung, schnelle Varianten.\n\n\nKommandozeile\nWiederholbare Aufrufe, Parameter werden sichtbar.\n\n\nSkript\nWorkflow wird reproduzierbar, variierbar und dokumentierbar.\n\n\n\n\nDie drei Formen sind keine Hierarchie von „richtig“ und „falsch“. Sie unterscheiden sich vor allem darin, wie gut der Arbeitsweg wiederholbar und überprüfbar wird.",
+    "section": "Vom Problem zu Arbeitspaketen",
+    "text": "Vom Problem zu Arbeitspaketen\n\n\nNicht alles muss automatisiert werden. Wichtig ist, dass die relevanten Arbeitspakete benannt werden: Datenprüfung, Kriteriendefinition, Operation, Kontrolle, Ergebnisinterpretation.",
     "crumbs": [
       "Foliensätze zu den Readern",
       "Der perfekte Gipfel - ein Projekt Modell"
     ]
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#interaktives-gi-handwerk",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#interaktives-gi-handwerk",
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-interaktiv",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-interaktiv",
     "title": "Der perfekte Gipfel",
-    "section": "Interaktives GI-Handwerk",
-    "text": "Interaktives GI-Handwerk\n\n\nInteraktive Arbeit ist für Exploration stark. Für eine Abgabe muss aber festgehalten werden, welche Schritte wirklich zum Ergebnis geführt haben.",
+    "section": "Umsetzung dokumentieren: interaktiv",
+    "text": "Umsetzung dokumentieren: interaktiv\n\n\nInteraktive Arbeit ist zulässig. Dokumentiert werden aber die stabilen Schritte: Werkzeug, Eingangsdaten, zentrale Parameter, Ausgabe und fachlicher Zweck.",
     "crumbs": [
       "Foliensätze zu den Readern",
       "Der perfekte Gipfel - ein Projekt Modell"
     ]
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#kommandozeilen-gi-handwerk",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#kommandozeilen-gi-handwerk",
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-reproduzierbare-befehle",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-reproduzierbare-befehle",
     "title": "Der perfekte Gipfel",
-    "section": "Kommandozeilen-GI-Handwerk",
-    "text": "Kommandozeilen-GI-Handwerk\n\n\nDie Kommandozeile macht Parameter expliziter. Dadurch wird der Schritt leichter überprüfbar als eine rein visuelle Bediensequenz.",
+    "section": "Umsetzung dokumentieren: reproduzierbare Befehle",
+    "text": "Umsetzung dokumentieren: reproduzierbare Befehle\n\n\nKommandozeilen oder kopierte Processing-Aufrufe sind hier kein Programmierziel. Sie sind ein Mittel, um Parameter und Dateipfade eindeutig zu sichern.",
     "crumbs": [
       "Foliensätze zu den Readern",
       "Der perfekte Gipfel - ein Projekt Modell"
     ]
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#programmierung-für-nicht-programmiererinnen",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#programmierung-für-nicht-programmiererinnen",
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-ablauf-statt-code",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-ablauf-statt-code",
     "title": "Der perfekte Gipfel",
-    "section": "Programmierung für Nicht-Programmierer*innen",
-    "text": "Programmierung für Nicht-Programmierer*innen\n\n\nSkripte sind hier kein Selbstzweck. Sie sichern eine nachvollziehbare Folge von Verarbeitungsschritten.",
+    "section": "Umsetzung dokumentieren: Ablauf statt Code",
+    "text": "Umsetzung dokumentieren: Ablauf statt Code\n\n\nWenn Skripte verwendet werden, dann als dokumentierte Ablaufbeschreibung. Entscheidend bleibt: Welche Entscheidung wird umgesetzt und welcher Ergebnislayer entsteht?",
     "crumbs": [
       "Foliensätze zu den Readern",
       "Der perfekte Gipfel - ein Projekt Modell"
     ]
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#übersetzung-in-technische-gi-erfordernisse",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#übersetzung-in-technische-gi-erfordernisse",
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#übersetzung-in-gis-anforderungen",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#übersetzung-in-gis-anforderungen",
     "title": "Der perfekte Gipfel",
-    "section": "Übersetzung in technische GI-Erfordernisse",
-    "text": "Übersetzung in technische GI-Erfordernisse\n\n\nHier liegt der Kern der Projektarbeit: Die fachliche Frage wird in Datenstrukturen, Operationen, Parameter und Ergebnisprodukte übersetzt.",
+    "section": "Übersetzung in GIS-Anforderungen",
+    "text": "Übersetzung in GIS-Anforderungen\n\n\nHier liegt der Kern der Dokumentation: Fachliche Begriffe werden in Datenstrukturen, Raster-/Vektoroperationen, Parameter und Zwischenergebnisse übersetzt.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Der perfekte Gipfel - ein Projekt Modell"
+    ]
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#dokumentationsschema-für-einen-hauptschritt",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#dokumentationsschema-für-einen-hauptschritt",
+    "title": "Der perfekte Gipfel",
+    "section": "Dokumentationsschema für einen Hauptschritt",
+    "text": "Dokumentationsschema für einen Hauptschritt\nEin Hauptschritt sollte knapp, aber vollständig dokumentiert werden.\n\n\nZweck Welches Kriterium oder Teilproblem wird bearbeitet?\n\n\nDatenbasis Welche Eingangsdaten werden verwendet?\n\n\nOperation Welche GIS-Operation wird eingesetzt?\n\n\nParameter Welche Schwellenwerte, Toleranzen oder Abbruchkriterien gelten?\n\n\nAusgabe Welcher Layer oder Wert entsteht?\n\n\nGrenze Wovon hängt die Aussagekraft ab?",
     "crumbs": [
       "Foliensätze zu den Readern",
       "Der perfekte Gipfel - ein Projekt Modell"
@@ -2127,7 +2138,7 @@
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#wie-soll-das-gehen",
     "title": "Der perfekte Gipfel",
     "section": "Wie soll das gehen?",
-    "text": "Wie soll das gehen?\n\n\nEin komplexes Problem wird nicht „auf einmal“ gelöst. Es wird in Teilentscheidungen zerlegt, die einzeln prüfbar und dokumentierbar sind.",
+    "text": "Wie soll das gehen?\n\n\nEin komplexes Problem wird dokumentierbar, wenn es in prüfbare Zwischenschritte zerlegt wird. Die Dokumentation folgt dieser Zerlegung.",
     "crumbs": [
       "Foliensätze zu den Readern",
       "Der perfekte Gipfel - ein Projekt Modell"
@@ -2138,62 +2149,73 @@
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#beispiel-prominenz-durch-fluten-denken",
     "title": "Der perfekte Gipfel",
     "section": "Beispiel: Prominenz durch Fluten denken",
-    "text": "Beispiel: Prominenz durch Fluten denken\n\n\nProminenz lässt sich als Trennungsproblem im Relief verstehen: Bei welchem „Flutniveau“ bleibt der aktuelle Gipfel noch als eigene Einheit von anderen Gipfeln getrennt?",
+    "text": "Beispiel: Prominenz durch Fluten denken\n\n\nDokumentationspunkt: Die fachliche Idee lautet nicht „wir benutzen ein Tool“, sondern: Wir variieren ein Flutniveau und prüfen, wann der aktuelle Gipfel mit anderen Gipfeln verbunden wird.",
     "crumbs": [
       "Foliensätze zu den Readern",
       "Der perfekte Gipfel - ein Projekt Modell"
     ]
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#suchstrategie-statt-stumpfer-wiederholung",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#suchstrategie-statt-stumpfer-wiederholung",
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#suchstrategie-festhalten",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#suchstrategie-festhalten",
     "title": "Der perfekte Gipfel",
-    "section": "Suchstrategie statt stumpfer Wiederholung",
-    "text": "Suchstrategie statt stumpfer Wiederholung\n\n\nDer erste naive Lösungsweg wäre schrittweises Fluten. Effizienter ist eine Suchstrategie, die den Höhenbereich systematisch eingrenzt.",
+    "section": "Suchstrategie festhalten",
+    "text": "Suchstrategie festhalten\n\n\nDer naive Weg wäre schrittweises Fluten. Die dokumentierte Verbesserung ist eine Suchstrategie, die den relevanten Höhenbereich systematisch eingrenzt.",
     "crumbs": [
       "Foliensätze zu den Readern",
       "Der perfekte Gipfel - ein Projekt Modell"
     ]
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#binäre-suche-und-abbruchkriterium",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#binäre-suche-und-abbruchkriterium",
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#abbruchkriterium-dokumentieren",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#abbruchkriterium-dokumentieren",
     "title": "Der perfekte Gipfel",
-    "section": "Binäre Suche und Abbruchkriterium",
-    "text": "Binäre Suche und Abbruchkriterium\n\n\nDie Umsetzung braucht ein Abbruchkriterium. Genau solche Entscheidungen gehören in die Workflow-Dokumentation: Wie genau genug ist genau genug?",
+    "section": "Abbruchkriterium dokumentieren",
+    "text": "Abbruchkriterium dokumentieren\n\n\nFür die Aussagekraft ist nicht nur das Ergebnis wichtig, sondern auch: Wann wurde die Suche beendet und welche Genauigkeit wurde akzeptiert?",
     "crumbs": [
       "Foliensätze zu den Readern",
       "Der perfekte Gipfel - ein Projekt Modell"
     ]
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#dokumentation-am-beispiel-prominenz",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#dokumentation-am-beispiel-prominenz",
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#beispiel-einer-methodennotiz",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#beispiel-einer-methodennotiz",
     "title": "Der perfekte Gipfel",
-    "section": "Dokumentation am Beispiel „Prominenz“",
-    "text": "Dokumentation am Beispiel „Prominenz“\nProjektfrage:\nWie eigenständig ist ein Gipfel im Verhältnis zu benachbarten Gipfeln?\n\nDatenbasis:\nDigitales Höhenmodell und Gipfelpunkte.\n\nKriterium:\nProminenz / Schartenhöhe.\n\nOperationelle Idee:\nFlutniveau variieren und prüfen, wann Gipfelbereiche verbunden werden.\n\nUmsetzung:\nIteratives Fluten, effizienter über binäre Suche.\n\nErgebnis:\nSchwellenhöhe bzw. Prominenzwert.\n\nGrenze:\nErgebnis hängt von DEM-Auflösung, Gipfelerkennung und Abbruchkriterium ab.",
+    "section": "Beispiel einer Methodennotiz",
+    "text": "Beispiel einer Methodennotiz\nFragestellung:\nWie eigenständig ist ein Gipfel im Verhältnis zu benachbarten Gipfeln?\n\nKriterium:\nProminenz / Schartenhöhe.\n\nDatenbasis:\nDigitales Höhenmodell und Gipfelpunkte.\n\nOperationelle Idee:\nFlutniveau variieren und Verbindung der Gipfeleinheiten prüfen.\n\nSuchstrategie:\nHöhenbereich durch binäre Suche eingrenzen.\n\nAbbruchkriterium:\nSuche endet bei definierter Höhentoleranz.\n\nAussagegrenze:\nDEM-Auflösung, Gipfelerkennung und Toleranz beeinflussen den Wert.",
     "crumbs": [
       "Foliensätze zu den Readern",
       "Der perfekte Gipfel - ein Projekt Modell"
     ]
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#anschluss-an-das-mini-projektpaket",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#anschluss-an-das-mini-projektpaket",
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#was-davon-ins-eigene-projekt-gehört",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#was-davon-ins-eigene-projekt-gehört",
     "title": "Der perfekte Gipfel",
-    "section": "Anschluss an das Mini-Projektpaket",
-    "text": "Anschluss an das Mini-Projektpaket\nDas Beispiel zeigt, was Studierende für ihre eigenen Projekte leisten sollen:\n\nFragestellung schärfen → Kriterien ableiten → Daten wählen → Operationen planen → Umsetzung dokumentieren → Ergebnis kritisch begrenzen\n\n\nDie Workflow-Dokumentation ist keine vollständige History. Sie hält die fachlich entscheidenden Schritte fest.",
+    "section": "Was davon ins eigene Projekt gehört",
+    "text": "Was davon ins eigene Projekt gehört\n\nProjektfrage schärfen → Kriterien ableiten → Daten wählen → Hauptschritte planen → Parameter begründen → Ergebnislayer sichern → Aussagegrenze benennen\n\n\nDas Gipfelbeispiel ist nur komplexer als viele Kursprojekte. Die Dokumentationslogik ist dieselbe.",
     "crumbs": [
       "Foliensätze zu den Readern",
       "Der perfekte Gipfel - ein Projekt Modell"
     ]
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#übertrag-auf-eigene-gis-projekte",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#übertrag-auf-eigene-gis-projekte",
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#nicht-dokumentieren-vollständige-history",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#nicht-dokumentieren-vollständige-history",
     "title": "Der perfekte Gipfel",
-    "section": "Übertrag auf eigene GIS-Projekte",
-    "text": "Übertrag auf eigene GIS-Projekte\nEin eigenes Mini-Projekt muss nicht algorithmisch so komplex sein. Die Struktur ist aber dieselbe:\nSiedlungsferne      → Distanzraster     → Reklassifikation\nHangneigung         → DGM-Ableitung      → Eignungsklasse\nWaldanteil          → Landbedeckung      → Flächenkriterium\nSchutzgebiet        → Overlay / Maske    → Ausschluss oder Kontext\n\nWichtig ist nicht die Anzahl der Werkzeuge, sondern die begründete Kette zwischen Frage, Kriterium, Operation und Ergebnis.",
+    "section": "Nicht dokumentieren: vollständige History",
+    "text": "Nicht dokumentieren: vollständige History\nEine Workflow-Dokumentation ist kein Mitschnitt jeder Bedienhandlung.\nDokumentiert werden nur Hauptschritte, die das Ergebnis fachlich verändern.\nnicht: Layer verschoben, Stil getestet, Ansicht gezoomt\nsondern: Distanz berechnet, reklassifiziert, gewichtet, maskiert, kombiniert\n\nDie Leitfrage lautet: Könnte eine andere Person den methodischen Weg fachlich nachvollziehen?",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Der perfekte Gipfel - ein Projekt Modell"
+    ]
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#übertrag-auf-einfache-gis-projekte",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#übertrag-auf-einfache-gis-projekte",
+    "title": "Der perfekte Gipfel",
+    "section": "Übertrag auf einfache GIS-Projekte",
+    "text": "Übertrag auf einfache GIS-Projekte\nSiedlungsferne\n→ Distanz zur Siedlung\n→ Reklassifikation\n→ Störungskriterium\n→ Beitrag zur Eignungskarte\n\nHangneigung\n→ DGM-Ableitung\n→ Klassenbildung\n→ Reliefkriterium\n→ Beitrag zur Eignungskarte\n\nAuch einfache Projekte brauchen keine lange History, sondern eine begründete Kette zwischen Frage, Kriterium, Operation und Ergebnis.",
     "crumbs": [
       "Foliensätze zu den Readern",
       "Der perfekte Gipfel - ein Projekt Modell"
@@ -2204,7 +2226,7 @@
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#prüfregel-für-die-dokumentation",
     "title": "Der perfekte Gipfel",
     "section": "Prüfregel für die Dokumentation",
-    "text": "Prüfregel für die Dokumentation\nFür jeden Hauptschritt muss eine fremde Person verstehen können:\nWarum dieser Schritt?\nWelche Daten?\nWelche Operation?\nWelche Parameter?\nWelcher Ergebnislayer?\nWelche Aussagegrenze?\n\nDas Gipfelbeispiel ist deshalb kein Sonderfall, sondern ein gutes Muster: Es zeigt, wie aus einer unscharfen Idee ein dokumentierbarer GIS-Workflow wird.",
+    "text": "Prüfregel für die Dokumentation\nFür jeden Hauptschritt sollte eine fremde Person erkennen können:\nWarum dieser Schritt?\nWelche Daten?\nWelche Operation?\nWelche Parameter?\nWelcher Ergebnislayer?\nWelche Aussagegrenze?\n\nDas Ziel ist nicht Programmierung. Das Ziel ist nachvollziehbare GIS-Arbeit.",
     "crumbs": [
       "Foliensätze zu den Readern",
       "Der perfekte Gipfel - ein Projekt Modell"
