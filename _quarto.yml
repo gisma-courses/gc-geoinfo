@@ -145,6 +145,8 @@ website:
               text: Eignungen, Entscheidungen und Kosten
             - href: slides/perfekter_gipfel_gesamtrahmen.qmd
               text: Der perfekte Gipfel - ein Projekt Modell
+            - href: slides/marburg_dom1_viewshed_revealj.qmd
+              text: Viewshed
 
 
 execute:
