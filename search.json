@@ -2233,27 +2233,6 @@
     ]
   },
   {
-    "objectID": "assets/templates/journals-examples-default.html",
-    "href": "assets/templates/journals-examples-default.html",
-    "title": "Skalen in Geographie und Ökologie\nEine unendliche Geschichte",
-    "section": "",
-    "text": "Die Ökologie befasst sich mit der Frage, wie Organismen miteinander und mit ihrer Umwelt interagieren. Skalen und Prozesse sind zwei grundlegende Konzepte in der Ökologie, die verwendet werden, um ökologische Muster und Dynamik zu verstehen.\nSkalen in der Ökologie beziehen sich auf die räumlichen und zeitlichen Dimensionen ökologischer Phänomene. Ökologische Phänomene treten in verschiedenen Maßstäben auf, die von einzelnen Organismen bis zu ganzen Ökosystemen und von Sekunden bis zu Jahrtausenden reichen. Das Verständnis der geeigneten Skala ist entscheidend für das Verständnis der ökologischen Prozesse, die innerhalb dieser Skala ablaufen. Die Wahl eines geeigneten Maßstabs beeinflusst auch die Genauigkeit und Präzision ökologischer Daten und die Interpretation ökologischer Muster.\nProzesse in der Ökologie beziehen sich auf die biologischen und physikalischen Mechanismen, die ökologischen Phänomenen zugrunde liegen. Ökologische Prozesse treten in verschiedenen Maßstäben auf, die von der molekularen Ebene bis zur Landschaftsebene reichen. Zu den ökologischen Prozessen gehören biotische Interaktionen wie Konkurrenz, Räuber und Gegenseitigkeit sowie abiotische Interaktionen wie Klima, Nährstoffkreislauf und Störungen. Das Verständnis der zugrundeliegenden Prozesse ist unerlässlich für die Vorhersage, wie ökologische Systeme auf veränderte Bedingungen reagieren werden, und für die Entwicklung wirksamer Erhaltungs- und Bewirtschaftungsstrategien.\nInsgesamt sind Größenordnungen und Prozesse wesentliche Konzepte in der Ökologie, die dazu dienen, die komplexen Wechselwirkungen zwischen Organismen und ihrer Umwelt zu verstehen."
-  },
-  {
-    "objectID": "assets/templates/journals-examples-default.html#diskussion",
-    "href": "assets/templates/journals-examples-default.html#diskussion",
-    "title": "Skalen in Geographie und Ökologie\nEine unendliche Geschichte",
-    "section": "4.1 Diskussion",
-    "text": "4.1 Diskussion\nJa, es gibt in der Geographie mehrere Theorien, die sich auf die Auswirkungen der Zeit auf den Maßstab beziehen. Eine der bekanntesten ist das Konzept des zeitlichen Maßstabs, das von dem Geographen David Harvey entwickelt wurde. Nach Harvey bezieht sich der zeitliche Maßstab auf die Länge der Zeit, über die ein Phänomen beobachtet werden kann, und er ist ein wichtiger Faktor für das Verständnis der räumlichen Beziehungen und Muster, die in einem bestimmten geografischen Kontext bestehen. Darüber hinaus argumentiert Harvey, dass der zeitliche Maßstab, in dem Daten erhoben und analysiert werden, einen erheblichen Einfluss auf die Schlussfolgerungen haben kann, die aus den Daten gezogen werden können.\nEine weitere Theorie, die sich auf die Auswirkungen der Zeit auf den Maßstab bezieht, ist das von dem Geographen David Harvey und anderen entwickelte Konzept der Zeit-Raum-Kompression. Diese Theorie besagt, dass Fortschritte in Technologie und Kommunikation zu einer Kompression von Zeit und Raum geführt haben, wodurch die Welt kleiner und vernetzter erscheint. Infolgedessen können geografische Phänomene von Faktoren beeinflusst werden, die in verschiedenen räumlichen und zeitlichen Maßstäben existieren, und es ist wichtig, diese Faktoren bei der Analyse und Interpretation von geografischen Daten zu berücksichtigen.\nInsgesamt verdeutlichen die Theorien zu den Auswirkungen der Zeit auf den Maßstab in der Geographie die komplexen und dynamischen Beziehungen zwischen räumlichen und zeitlichen Phänomenen und die Bedeutung der Berücksichtigung dieser Beziehungen in geographischen Analysen (Harvey 1996)."
-  },
-  {
-    "objectID": "assets/templates/journals-examples-default.html#schlussfolgerungen",
-    "href": "assets/templates/journals-examples-default.html#schlussfolgerungen",
-    "title": "Skalen in Geographie und Ökologie\nEine unendliche Geschichte",
-    "section": "4.2 Schlussfolgerungen",
-    "text": "4.2 Schlussfolgerungen\nZeit-Raum-Kompression ist ein Konzept, das von mehreren Geographen entwickelt und ausgearbeitet wurde, darunter David Harvey, Doreen Massey und Henri Lefebvre. Im Kern bezieht sich die Zeit-Raum-Kompression auf die Idee, dass Fortschritte in der Transport- und Kommunikationstechnologie ein Gefühl des “Schrumpfens” in Bezug auf die Zeit und den Raum geschaffen haben, die für soziale und wirtschaftliche Interaktionen erforderlich sind.\nDie Zeit-Raum-Kompression manifestiert sich unter anderem in der zunehmenden Geschwindigkeit und Leichtigkeit von Transport und Kommunikation. Flugreisen, Hochgeschwindigkeitszüge und das Internet haben es beispielsweise möglich gemacht, Waren, Menschen und Informationen in relativ kurzer Zeit über große Entfernungen zu transportieren. Dies hat zu einer Verwischung der traditionellen räumlichen Grenzen und zur Entstehung globaler Netzwerke für Austausch und Interaktion geführt.\nDie Verdichtung von Zeit und Raum ist jedoch kein neutraler oder einheitlicher Prozess, und seine Auswirkungen werden von verschiedenen Menschen und an verschiedenen Orten unterschiedlich empfunden. So kann die zunehmende Geschwindigkeit des globalen Handels einigen Menschen und Gemeinschaften zugute kommen, während sie anderen schadet, und die Intensivierung globaler Netzwerke kann bei einigen Menschen zu einem Gefühl der Dislokation oder Desorientierung führen.\nInsgesamt ist die Zeit-Raum-Kompression ein wichtiges Konzept in der Geografie, weil es hilft zu erklären, wie die räumlichen Beziehungen und Muster, die in einem bestimmten geografischen Kontext bestehen, durch technologischen Wandel und Globalisierung geformt und verändert werden."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Grundlagen der räumlichen Analyse",
@@ -2282,6 +2261,132 @@
     "crumbs": [
       "Grundlagen der räumlichen Analyse"
     ]
+  },
+  {
+    "objectID": "assets/templates/journals-examples-default.html",
+    "href": "assets/templates/journals-examples-default.html",
+    "title": "Skalen in Geographie und Ökologie\nEine unendliche Geschichte",
+    "section": "",
+    "text": "Die Ökologie befasst sich mit der Frage, wie Organismen miteinander und mit ihrer Umwelt interagieren. Skalen und Prozesse sind zwei grundlegende Konzepte in der Ökologie, die verwendet werden, um ökologische Muster und Dynamik zu verstehen.\nSkalen in der Ökologie beziehen sich auf die räumlichen und zeitlichen Dimensionen ökologischer Phänomene. Ökologische Phänomene treten in verschiedenen Maßstäben auf, die von einzelnen Organismen bis zu ganzen Ökosystemen und von Sekunden bis zu Jahrtausenden reichen. Das Verständnis der geeigneten Skala ist entscheidend für das Verständnis der ökologischen Prozesse, die innerhalb dieser Skala ablaufen. Die Wahl eines geeigneten Maßstabs beeinflusst auch die Genauigkeit und Präzision ökologischer Daten und die Interpretation ökologischer Muster.\nProzesse in der Ökologie beziehen sich auf die biologischen und physikalischen Mechanismen, die ökologischen Phänomenen zugrunde liegen. Ökologische Prozesse treten in verschiedenen Maßstäben auf, die von der molekularen Ebene bis zur Landschaftsebene reichen. Zu den ökologischen Prozessen gehören biotische Interaktionen wie Konkurrenz, Räuber und Gegenseitigkeit sowie abiotische Interaktionen wie Klima, Nährstoffkreislauf und Störungen. Das Verständnis der zugrundeliegenden Prozesse ist unerlässlich für die Vorhersage, wie ökologische Systeme auf veränderte Bedingungen reagieren werden, und für die Entwicklung wirksamer Erhaltungs- und Bewirtschaftungsstrategien.\nInsgesamt sind Größenordnungen und Prozesse wesentliche Konzepte in der Ökologie, die dazu dienen, die komplexen Wechselwirkungen zwischen Organismen und ihrer Umwelt zu verstehen."
+  },
+  {
+    "objectID": "assets/templates/journals-examples-default.html#diskussion",
+    "href": "assets/templates/journals-examples-default.html#diskussion",
+    "title": "Skalen in Geographie und Ökologie\nEine unendliche Geschichte",
+    "section": "4.1 Diskussion",
+    "text": "4.1 Diskussion\nJa, es gibt in der Geographie mehrere Theorien, die sich auf die Auswirkungen der Zeit auf den Maßstab beziehen. Eine der bekanntesten ist das Konzept des zeitlichen Maßstabs, das von dem Geographen David Harvey entwickelt wurde. Nach Harvey bezieht sich der zeitliche Maßstab auf die Länge der Zeit, über die ein Phänomen beobachtet werden kann, und er ist ein wichtiger Faktor für das Verständnis der räumlichen Beziehungen und Muster, die in einem bestimmten geografischen Kontext bestehen. Darüber hinaus argumentiert Harvey, dass der zeitliche Maßstab, in dem Daten erhoben und analysiert werden, einen erheblichen Einfluss auf die Schlussfolgerungen haben kann, die aus den Daten gezogen werden können.\nEine weitere Theorie, die sich auf die Auswirkungen der Zeit auf den Maßstab bezieht, ist das von dem Geographen David Harvey und anderen entwickelte Konzept der Zeit-Raum-Kompression. Diese Theorie besagt, dass Fortschritte in Technologie und Kommunikation zu einer Kompression von Zeit und Raum geführt haben, wodurch die Welt kleiner und vernetzter erscheint. Infolgedessen können geografische Phänomene von Faktoren beeinflusst werden, die in verschiedenen räumlichen und zeitlichen Maßstäben existieren, und es ist wichtig, diese Faktoren bei der Analyse und Interpretation von geografischen Daten zu berücksichtigen.\nInsgesamt verdeutlichen die Theorien zu den Auswirkungen der Zeit auf den Maßstab in der Geographie die komplexen und dynamischen Beziehungen zwischen räumlichen und zeitlichen Phänomenen und die Bedeutung der Berücksichtigung dieser Beziehungen in geographischen Analysen (Harvey 1996)."
+  },
+  {
+    "objectID": "assets/templates/journals-examples-default.html#schlussfolgerungen",
+    "href": "assets/templates/journals-examples-default.html#schlussfolgerungen",
+    "title": "Skalen in Geographie und Ökologie\nEine unendliche Geschichte",
+    "section": "4.2 Schlussfolgerungen",
+    "text": "4.2 Schlussfolgerungen\nZeit-Raum-Kompression ist ein Konzept, das von mehreren Geographen entwickelt und ausgearbeitet wurde, darunter David Harvey, Doreen Massey und Henri Lefebvre. Im Kern bezieht sich die Zeit-Raum-Kompression auf die Idee, dass Fortschritte in der Transport- und Kommunikationstechnologie ein Gefühl des “Schrumpfens” in Bezug auf die Zeit und den Raum geschaffen haben, die für soziale und wirtschaftliche Interaktionen erforderlich sind.\nDie Zeit-Raum-Kompression manifestiert sich unter anderem in der zunehmenden Geschwindigkeit und Leichtigkeit von Transport und Kommunikation. Flugreisen, Hochgeschwindigkeitszüge und das Internet haben es beispielsweise möglich gemacht, Waren, Menschen und Informationen in relativ kurzer Zeit über große Entfernungen zu transportieren. Dies hat zu einer Verwischung der traditionellen räumlichen Grenzen und zur Entstehung globaler Netzwerke für Austausch und Interaktion geführt.\nDie Verdichtung von Zeit und Raum ist jedoch kein neutraler oder einheitlicher Prozess, und seine Auswirkungen werden von verschiedenen Menschen und an verschiedenen Orten unterschiedlich empfunden. So kann die zunehmende Geschwindigkeit des globalen Handels einigen Menschen und Gemeinschaften zugute kommen, während sie anderen schadet, und die Intensivierung globaler Netzwerke kann bei einigen Menschen zu einem Gefühl der Dislokation oder Desorientierung führen.\nInsgesamt ist die Zeit-Raum-Kompression ein wichtiges Konzept in der Geografie, weil es hilft zu erklären, wie die räumlichen Beziehungen und Muster, die in einem bestimmten geografischen Kontext bestehen, durch technologischen Wandel und Globalisierung geformt und verändert werden."
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#projektfrage",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#projektfrage",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "section": "Projektfrage",
+    "text": "Projektfrage\nWelche Bereiche der Lahnwiese sind von drei Beobachtungspunkten aus sichtbar?\nUntersucht werden:\n\nWege entlang der Lahn\nWiesenflächen\nBrückenumfeld\nBaum- und Uferkanten\n\nZiel ist keine Sicherheitsaussage, sondern eine modellierte Analyse geometrischer Einsehbarkeit."
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#untersuchungsraum",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#untersuchungsraum",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "section": "Untersuchungsraum",
+    "text": "Untersuchungsraum\nRaum: Lahnwiese Marburg\nDer Bereich ist geeignet, weil dort mehrere Sichtbarrieren zusammenkommen:\n\noffene Wiesenflächen\nBaumkronen und Ufervegetation\nBrücken und Böschungen\nangrenzende Gebäude- und Stadtkanten\n\nDadurch entstehen gut sichtbare Bereiche und mögliche tote Winkel."
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#daten-und-werkzeuge",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#daten-und-werkzeuge",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "section": "Daten und Werkzeuge",
+    "text": "Daten und Werkzeuge\nPrimärdaten\n\nDOM1 Hessen für Marburg\n\nKontextdaten\n\nOSM-Wege\nOSM-Gebäude\nOSM-Grünflächen\n\nWerkzeuge\n\nQGIS\nGRASS r.viewshed\noptional: Div. Plugins"
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#gesamtworkflow",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#gesamtworkflow",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "section": "Gesamtworkflow",
+    "text": "Gesamtworkflow\nDOM1-ZIP herunterladen\n        ↓\nDOM1-Kacheln in QGIS laden\n        ↓\nCRS prüfen: EPSG:25832\n        ↓\nKacheln mosaikieren\n        ↓\nauf Lahnwiese zuschneiden\n        ↓\n3 Beobachtungspunkte setzen\n        ↓\nr.viewshed je Punkt berechnen\n        ↓\nSichtfelder addieren\n        ↓\ntote Winkel ableiten\n        ↓\nKarten + Methodenkritik"
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#crs-prüfen",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#crs-prüfen",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "section": "CRS prüfen",
+    "text": "CRS prüfen\nFür Viewshed muss das Raster metrisch projiziert sein.\nFür Marburg sinnvoll:\nEPSG:25832\nETRS89 / UTM Zone 32N\nKlickweg:\n\nRechtsklick auf Raster\nEigenschaften\nInformation\nKBS / CRS prüfen\n\nWenn nötig:\nRaster → Projektionen → Warpen / Reprojizieren\nZiel-KBS: EPSG:25832"
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#dom1-laden-und-mosaikieren",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#dom1-laden-und-mosaikieren",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "section": "DOM1 laden und mosaikieren",
+    "text": "DOM1 laden und mosaikieren\nDOM1-ZIP entpacken.\nRaster laden:\nLayer → Layer hinzufügen → Rasterlayer hinzufügen\nDann Mosaik erstellen:\nRaster → Sonstiges → Zusammenführen\nEingabe:\n\nalle DOM1-Kacheln\n\nAusgabe:\nDOM1_Lahnwiese_Mosaik.tif"
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#untersuchungsgebiet-zuschneiden",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#untersuchungsgebiet-zuschneiden",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "section": "Untersuchungsgebiet zuschneiden",
+    "text": "Untersuchungsgebiet zuschneiden\nAOI-Polygon um die Lahnwiese anlegen.\nDann:\nRaster → Extraktion → Raster nach Maskenlayer zuschneiden\nEingabe:\nDOM1_Lahnwiese_Mosaik.tif\nMaske:\nAOI_Lahnwiese\nAusgabe:\nDOM1_Lahnwiese_clip.tif\nKontrolle:\nHillshade erzeugen und prüfen, ob Brücken, Bäume und Gebäudekanten sichtbar sind."
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#beobachtungspunkte-anlegen",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#beobachtungspunkte-anlegen",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "section": "Beobachtungspunkte anlegen",
+    "text": "Beobachtungspunkte anlegen\nNeuen Punktlayer erstellen:\nLayer → Layer erstellen → Neuer GeoPackage-Layer\nEinstellungen:\n\nGeometrie: Punkt\nCRS: EPSG:25832\n\nFelder:\n\nid, name typ, obs_h, target_h, radius_m, begründung"
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#drei-beobachtungspunkte",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#drei-beobachtungspunkte",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "section": "Drei Beobachtungspunkte",
+    "text": "Drei Beobachtungspunkte\nP01: Brücke, Erhöhte Querung mit Überblick, P02: Zentraler Weg Bodennaher Alltagsblick entlang der Lahnwiese, P03: Randpunkt Baum- oder Gebäudekante als Test für Abschirmung.\nStandardwerte:\n\nBeobachterhöhe: 1,70 m\nZielhöhe: 1,50 m\nRadius: 300 m"
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#drei-viewshed-werkzeuge-in-qgis",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#drei-viewshed-werkzeuge-in-qgis",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "section": "Drei Viewshed-Werkzeuge in QGIS",
+    "text": "Drei Viewshed-Werkzeuge in QGIS\n\n\n\nWerkzeug\nRolle im Projekt\nGeeignet für\n\n\n\n\nQGIS-Core / GDAL Viewshed\neingebautes Processing-Werkzeug\nerster Einzelpunkt-Test\n\n\nGRASS r.viewshed\nGRASS-Werkzeug über QGIS\nrobuste Einzelpunkt-Viewsheds\n\n\nVisibility Analysis Plugin\nzusätzliches Plugin\nmehrere Punkte, kumulative Sichtbarkeit, Intervisibility\n\n\n\nManuals:\nGRASS r.viewshed Manual\nVisibility Analysis Plugin Manual"
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#qgis-processing-viewshed",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#qgis-processing-viewshed",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "section": "QGIS-Processing: Viewshed",
+    "text": "QGIS-Processing: Viewshed\nOhne Zusatzplugin nutzen wir das eingebaundene Processing-Werkzeug:\nVerarbeitung → Werkzeugkiste → GDAL → Raster miscellaneous → Viewshed\nParameter:\n\nHöhenraster: DOM1_Lahnwiese_clip.tif\nBeobachter-X: X-Koordinate von P01\nBeobachter-Y: Y-Koordinate von P01\nBeobachterhöhe: 1,70\nZielhöhe: 1,50\nMaximaldistanz: 300\nAusgabe: viewshed_P01.tif\n\nFür P02 und P03 wiederholen."
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#grass-r.viewshed-ausführen",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#grass-r.viewshed-ausführen",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "section": "GRASS r.viewshed ausführen",
+    "text": "GRASS r.viewshed ausführen\nWerkzeug öffnen:\nVerarbeitung → Werkzeugkiste → r.viewshed\nFalls GRASS fehlt:\nEinstellungen → Optionen → Verarbeitung → Anbieter → GRASS GIS aktivieren\nParameter:\n\nHöhenraster: DOM1_Lahnwiese_clip.tif\nBeobachterkoordinate: X/Y von P01\nBeobachterhöhe: 1,70\nZielhöhe: 1,50\nmaximale Distanz: 300\nAusgabe: viewshed_P01.tif\n\nFür P02 und P03 wiederholen."
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#sichtfelder-überlagern",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#sichtfelder-überlagern",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "section": "Sichtfelder überlagern",
+    "text": "Sichtfelder überlagern\nRasterrechner öffnen:\nRaster → Rasterrechner\nAusdruck:\nviewshed_P01 + viewshed_P02 + viewshed_P03\nAusgabe:\nsichtbarkeit_summe.tif"
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#interpretation",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#interpretation",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "section": "Interpretation:",
+    "text": "Interpretation:\n\n0 = von keinem Punkt sichtbar\n1 = von einem Punkt sichtbar\n2 = von zwei Punkten sichtbar\n3 = von drei Punkten sichtbar\n\nTote Winkel:\nsichtbarkeit_summe = 0\nAusgabe:\ntote_winkel_lahnwiese.tif"
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#ergebnis",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#ergebnis",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "section": "Ergebnis",
+    "text": "Ergebnis\nErgebnisprodukte:\n\nKarte der drei Beobachtungspunkte\nKarte der kumulierten Sichtbarkeit\nKarte der toten Winkel\nkurze Methodenkritik"
   },
   {
     "objectID": "slides/unit01_geographischer_raum.html#leitfrage-der-sitzung",
