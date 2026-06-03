@@ -2410,107 +2410,167 @@
   {
     "objectID": "slides/marburg_dom1_viewshed_revealjs.html#projektfrage",
     "href": "slides/marburg_dom1_viewshed_revealjs.html#projektfrage",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
     "section": "Projektfrage",
-    "text": "Projektfrage\nWelche Bereiche der Lahnwiese sind von drei Beobachtungspunkten aus sichtbar?\nUntersucht werden:\n\nWege entlang der Lahn\nWiesenflächen\nBrückenumfeld\nBaum- und Uferkanten\n\nZiel ist keine Sicherheitsaussage, sondern eine modellierte Analyse geometrischer Einsehbarkeit."
+    "text": "Projektfrage\nWelche Bereiche der Lahnwiese sind von drei Beobachtungspunkten aus sichtbar?\nUntersucht werden:\n\nWege entlang der Lahn\nWiesenflächen\nBrückenumfeld\nBaum- und Uferkanten\n\nZiel ist keine Sicherheitsaussage, sondern eine modellierte Analyse geometrischer Einsehbarkeit.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
   },
   {
     "objectID": "slides/marburg_dom1_viewshed_revealjs.html#untersuchungsraum",
     "href": "slides/marburg_dom1_viewshed_revealjs.html#untersuchungsraum",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
     "section": "Untersuchungsraum",
-    "text": "Untersuchungsraum\nRaum: Lahnwiese Marburg\nDer Bereich ist geeignet, weil dort mehrere Sichtbarrieren zusammenkommen:\n\noffene Wiesenflächen\nBaumkronen und Ufervegetation\nBrücken und Böschungen\nangrenzende Gebäude- und Stadtkanten\n\nDadurch entstehen gut sichtbare Bereiche und mögliche tote Winkel."
+    "text": "Untersuchungsraum\nRaum: Lahnwiese Marburg\nDer Bereich ist geeignet, weil dort mehrere Sichtbarrieren zusammenkommen:\n\noffene Wiesenflächen\nBaumkronen und Ufervegetation\nBrücken und Böschungen\nangrenzende Gebäude- und Stadtkanten\n\nDadurch entstehen gut sichtbare Bereiche und mögliche tote Winkel.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
   },
   {
     "objectID": "slides/marburg_dom1_viewshed_revealjs.html#daten-und-werkzeuge",
     "href": "slides/marburg_dom1_viewshed_revealjs.html#daten-und-werkzeuge",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
     "section": "Daten und Werkzeuge",
-    "text": "Daten und Werkzeuge\nPrimärdaten\n\nDOM1 Hessen für Marburg\n\nKontextdaten\n\nOSM-Wege\nOSM-Gebäude\nOSM-Grünflächen\n\nWerkzeuge\n\nQGIS\nGRASS r.viewshed\noptional: Div. Plugins"
+    "text": "Daten und Werkzeuge\nPrimärdaten\n\nDOM1 Hessen für Marburg\n\nKontextdaten\n\nOSM-Wege\nOSM-Gebäude\nOSM-Grünflächen\n\nWerkzeuge\n\nQGIS\nGRASS r.viewshed\noptional: Div. Plugins",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
   },
   {
     "objectID": "slides/marburg_dom1_viewshed_revealjs.html#gesamtworkflow",
     "href": "slides/marburg_dom1_viewshed_revealjs.html#gesamtworkflow",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
     "section": "Gesamtworkflow",
-    "text": "Gesamtworkflow\nDOM1-ZIP herunterladen\n        ↓\nDOM1-Kacheln in QGIS laden\n        ↓\nCRS prüfen: EPSG:25832\n        ↓\nKacheln mosaikieren\n        ↓\nauf Lahnwiese zuschneiden\n        ↓\n3 Beobachtungspunkte setzen\n        ↓\nr.viewshed je Punkt berechnen\n        ↓\nSichtfelder addieren\n        ↓\ntote Winkel ableiten\n        ↓\nKarten + Methodenkritik"
+    "text": "Gesamtworkflow\nDOM1-ZIP herunterladen\n        ↓\nDOM1-Kacheln in QGIS laden\n        ↓\nCRS prüfen: EPSG:25832\n        ↓\nKacheln mosaikieren\n        ↓\nauf Lahnwiese zuschneiden\n        ↓\n3 Beobachtungspunkte setzen\n        ↓\nr.viewshed je Punkt berechnen\n        ↓\nSichtfelder addieren\n        ↓\ntote Winkel ableiten\n        ↓\nKarten + Methodenkritik",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
   },
   {
     "objectID": "slides/marburg_dom1_viewshed_revealjs.html#crs-prüfen",
     "href": "slides/marburg_dom1_viewshed_revealjs.html#crs-prüfen",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
     "section": "CRS prüfen",
-    "text": "CRS prüfen\nFür Viewshed muss das Raster metrisch projiziert sein.\nFür Marburg sinnvoll:\nEPSG:25832\nETRS89 / UTM Zone 32N\nKlickweg:\n\nRechtsklick auf Raster\nEigenschaften\nInformation\nKBS / CRS prüfen\n\nWenn nötig:\nRaster → Projektionen → Warpen / Reprojizieren\nZiel-KBS: EPSG:25832"
+    "text": "CRS prüfen\nFür Viewshed muss das Raster metrisch projiziert sein.\nFür Marburg sinnvoll:\nEPSG:25832\nETRS89 / UTM Zone 32N\nKlickweg:\n\nRechtsklick auf Raster\nEigenschaften\nInformation\nKBS / CRS prüfen\n\nWenn nötig:\nRaster → Projektionen → Warpen / Reprojizieren\nZiel-KBS: EPSG:25832",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
   },
   {
     "objectID": "slides/marburg_dom1_viewshed_revealjs.html#dom1-laden-und-mosaikieren",
     "href": "slides/marburg_dom1_viewshed_revealjs.html#dom1-laden-und-mosaikieren",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
     "section": "DOM1 laden und mosaikieren",
-    "text": "DOM1 laden und mosaikieren\nDOM1-ZIP entpacken.\nRaster laden:\nLayer → Layer hinzufügen → Rasterlayer hinzufügen\nDann Mosaik erstellen:\nRaster → Sonstiges → Zusammenführen\nEingabe:\n\nalle DOM1-Kacheln\n\nAusgabe:\nDOM1_Lahnwiese_Mosaik.tif"
+    "text": "DOM1 laden und mosaikieren\nDOM1-ZIP entpacken.\nRaster laden:\nLayer → Layer hinzufügen → Rasterlayer hinzufügen\nDann Mosaik erstellen:\nRaster → Sonstiges → Zusammenführen\nEingabe:\n\nalle DOM1-Kacheln\n\nAusgabe:\nDOM1_Lahnwiese_Mosaik.tif",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
   },
   {
     "objectID": "slides/marburg_dom1_viewshed_revealjs.html#untersuchungsgebiet-zuschneiden",
     "href": "slides/marburg_dom1_viewshed_revealjs.html#untersuchungsgebiet-zuschneiden",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
     "section": "Untersuchungsgebiet zuschneiden",
-    "text": "Untersuchungsgebiet zuschneiden\nAOI-Polygon um die Lahnwiese anlegen.\nDann:\nRaster → Extraktion → Raster nach Maskenlayer zuschneiden\nEingabe:\nDOM1_Lahnwiese_Mosaik.tif\nMaske:\nAOI_Lahnwiese\nAusgabe:\nDOM1_Lahnwiese_clip.tif\nKontrolle:\nHillshade erzeugen und prüfen, ob Brücken, Bäume und Gebäudekanten sichtbar sind."
+    "text": "Untersuchungsgebiet zuschneiden\nAOI-Polygon um die Lahnwiese anlegen.\nDann:\nRaster → Extraktion → Raster nach Maskenlayer zuschneiden\nEingabe:\nDOM1_Lahnwiese_Mosaik.tif\nMaske:\nAOI_Lahnwiese\nAusgabe:\nDOM1_Lahnwiese_clip.tif\nKontrolle:\nHillshade erzeugen und prüfen, ob Brücken, Bäume und Gebäudekanten sichtbar sind.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
   },
   {
     "objectID": "slides/marburg_dom1_viewshed_revealjs.html#beobachtungspunkte-anlegen",
     "href": "slides/marburg_dom1_viewshed_revealjs.html#beobachtungspunkte-anlegen",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
     "section": "Beobachtungspunkte anlegen",
-    "text": "Beobachtungspunkte anlegen\nNeuen Punktlayer erstellen:\nLayer → Layer erstellen → Neuer GeoPackage-Layer\nEinstellungen:\n\nGeometrie: Punkt\nCRS: EPSG:25832\n\nFelder:\n\nid, name typ, obs_h, target_h, radius_m, begründung"
+    "text": "Beobachtungspunkte anlegen\nNeuen Punktlayer erstellen:\nLayer → Layer erstellen → Neuer GeoPackage-Layer\nEinstellungen:\n\nGeometrie: Punkt\nCRS: EPSG:25832\n\nFelder:\n\nid, name typ, obs_h, target_h, radius_m, begründung",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
   },
   {
     "objectID": "slides/marburg_dom1_viewshed_revealjs.html#drei-beobachtungspunkte",
     "href": "slides/marburg_dom1_viewshed_revealjs.html#drei-beobachtungspunkte",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
     "section": "Drei Beobachtungspunkte",
-    "text": "Drei Beobachtungspunkte\nP01: Brücke, Erhöhte Querung mit Überblick, P02: Zentraler Weg Bodennaher Alltagsblick entlang der Lahnwiese, P03: Randpunkt Baum- oder Gebäudekante als Test für Abschirmung.\nStandardwerte:\n\nBeobachterhöhe: 1,70 m\nZielhöhe: 1,50 m\nRadius: 300 m"
+    "text": "Drei Beobachtungspunkte\nP01: Brücke, Erhöhte Querung mit Überblick, P02: Zentraler Weg Bodennaher Alltagsblick entlang der Lahnwiese, P03: Randpunkt Baum- oder Gebäudekante als Test für Abschirmung.\nStandardwerte:\n\nBeobachterhöhe: 1,70 m\nZielhöhe: 1,50 m\nRadius: 300 m",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
   },
   {
     "objectID": "slides/marburg_dom1_viewshed_revealjs.html#drei-viewshed-werkzeuge-in-qgis",
     "href": "slides/marburg_dom1_viewshed_revealjs.html#drei-viewshed-werkzeuge-in-qgis",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
     "section": "Drei Viewshed-Werkzeuge in QGIS",
-    "text": "Drei Viewshed-Werkzeuge in QGIS\n\n\n\nWerkzeug\nRolle im Projekt\nGeeignet für\n\n\n\n\nQGIS-Core / GDAL Viewshed\neingebautes Processing-Werkzeug\nerster Einzelpunkt-Test\n\n\nGRASS r.viewshed\nGRASS-Werkzeug über QGIS\nrobuste Einzelpunkt-Viewsheds\n\n\nVisibility Analysis Plugin\nzusätzliches Plugin\nmehrere Punkte, kumulative Sichtbarkeit, Intervisibility\n\n\n\nManuals:\nGRASS r.viewshed Manual\nVisibility Analysis Plugin Manual"
+    "text": "Drei Viewshed-Werkzeuge in QGIS\n\n\n\nWerkzeug\nRolle im Projekt\nGeeignet für\n\n\n\n\nQGIS-Core / GDAL Viewshed\neingebautes Processing-Werkzeug\nerster Einzelpunkt-Test\n\n\nGRASS r.viewshed\nGRASS-Werkzeug über QGIS\nrobuste Einzelpunkt-Viewsheds\n\n\nVisibility Analysis Plugin\nzusätzliches Plugin\nmehrere Punkte, kumulative Sichtbarkeit, Intervisibility\n\n\n\nManuals:\nGRASS r.viewshed Manual\nVisibility Analysis Plugin Manual",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
   },
   {
     "objectID": "slides/marburg_dom1_viewshed_revealjs.html#qgis-processing-viewshed",
     "href": "slides/marburg_dom1_viewshed_revealjs.html#qgis-processing-viewshed",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
     "section": "QGIS-Processing: Viewshed",
-    "text": "QGIS-Processing: Viewshed\nOhne Zusatzplugin nutzen wir das eingebaundene Processing-Werkzeug:\nVerarbeitung → Werkzeugkiste → GDAL → Raster miscellaneous → Viewshed\nParameter:\n\nHöhenraster: DOM1_Lahnwiese_clip.tif\nBeobachter-X: X-Koordinate von P01\nBeobachter-Y: Y-Koordinate von P01\nBeobachterhöhe: 1,70\nZielhöhe: 1,50\nMaximaldistanz: 300\nAusgabe: viewshed_P01.tif\n\nFür P02 und P03 wiederholen."
+    "text": "QGIS-Processing: Viewshed\nOhne Zusatzplugin nutzen wir das eingebaundene Processing-Werkzeug:\nVerarbeitung → Werkzeugkiste → GDAL → Raster miscellaneous → Viewshed\nParameter:\n\nHöhenraster: DOM1_Lahnwiese_clip.tif\nBeobachter-X: X-Koordinate von P01\nBeobachter-Y: Y-Koordinate von P01\nBeobachterhöhe: 1,70\nZielhöhe: 1,50\nMaximaldistanz: 300\nAusgabe: viewshed_P01.tif\n\nFür P02 und P03 wiederholen.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
   },
   {
     "objectID": "slides/marburg_dom1_viewshed_revealjs.html#grass-r.viewshed-ausführen",
     "href": "slides/marburg_dom1_viewshed_revealjs.html#grass-r.viewshed-ausführen",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
     "section": "GRASS r.viewshed ausführen",
-    "text": "GRASS r.viewshed ausführen\nWerkzeug öffnen:\nVerarbeitung → Werkzeugkiste → r.viewshed\nFalls GRASS fehlt:\nEinstellungen → Optionen → Verarbeitung → Anbieter → GRASS GIS aktivieren\nParameter:\n\nHöhenraster: DOM1_Lahnwiese_clip.tif\nBeobachterkoordinate: X/Y von P01\nBeobachterhöhe: 1,70\nZielhöhe: 1,50\nmaximale Distanz: 300\nAusgabe: viewshed_P01.tif\n\nFür P02 und P03 wiederholen."
+    "text": "GRASS r.viewshed ausführen\nWerkzeug öffnen:\nVerarbeitung → Werkzeugkiste → r.viewshed\nFalls GRASS fehlt:\nEinstellungen → Optionen → Verarbeitung → Anbieter → GRASS GIS aktivieren\nParameter:\n\nHöhenraster: DOM1_Lahnwiese_clip.tif\nBeobachterkoordinate: X/Y von P01\nBeobachterhöhe: 1,70\nZielhöhe: 1,50\nmaximale Distanz: 300\nAusgabe: viewshed_P01.tif\n\nFür P02 und P03 wiederholen.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
   },
   {
     "objectID": "slides/marburg_dom1_viewshed_revealjs.html#sichtfelder-überlagern",
     "href": "slides/marburg_dom1_viewshed_revealjs.html#sichtfelder-überlagern",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
     "section": "Sichtfelder überlagern",
-    "text": "Sichtfelder überlagern\nRasterrechner öffnen:\nRaster → Rasterrechner\nAusdruck:\nviewshed_P01 + viewshed_P02 + viewshed_P03\nAusgabe:\nsichtbarkeit_summe.tif"
+    "text": "Sichtfelder überlagern\nRasterrechner öffnen:\nRaster → Rasterrechner\nAusdruck:\nviewshed_P01 + viewshed_P02 + viewshed_P03\nAusgabe:\nsichtbarkeit_summe.tif",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
   },
   {
     "objectID": "slides/marburg_dom1_viewshed_revealjs.html#interpretation",
     "href": "slides/marburg_dom1_viewshed_revealjs.html#interpretation",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
     "section": "Interpretation:",
-    "text": "Interpretation:\n\n0 = von keinem Punkt sichtbar\n1 = von einem Punkt sichtbar\n2 = von zwei Punkten sichtbar\n3 = von drei Punkten sichtbar\n\nTote Winkel:\nsichtbarkeit_summe = 0\nAusgabe:\ntote_winkel_lahnwiese.tif"
+    "text": "Interpretation:\n\n0 = von keinem Punkt sichtbar\n1 = von einem Punkt sichtbar\n2 = von zwei Punkten sichtbar\n3 = von drei Punkten sichtbar\n\nTote Winkel:\nsichtbarkeit_summe = 0\nAusgabe:\ntote_winkel_lahnwiese.tif",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
   },
   {
     "objectID": "slides/marburg_dom1_viewshed_revealjs.html#ergebnis",
     "href": "slides/marburg_dom1_viewshed_revealjs.html#ergebnis",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
     "section": "Ergebnis",
-    "text": "Ergebnis\nErgebnisprodukte:\n\nKarte der drei Beobachtungspunkte\nKarte der kumulierten Sichtbarkeit\nKarte der toten Winkel\nkurze Methodenkritik"
+    "text": "Ergebnis\nErgebnisprodukte:\n\nKarte der drei Beobachtungspunkte\nKarte der kumulierten Sichtbarkeit\nKarte der toten Winkel\nkurze Methodenkritik",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
   },
   {
     "objectID": "assets/templates/journals-examples-default.html",

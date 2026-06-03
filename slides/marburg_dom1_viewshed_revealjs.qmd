@@ -1,11 +1,17 @@
 ---
-title: "Sichtachsen und tote Winkel an der Lahnwiese"
-subtitle: "DOM1-basierte Viewshed-Analyse mit QGIS"
+title: "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS"
+subtitle: "Ersatzsitzung Thema 2"
 format:
   revealjs:
     theme: [metropolis.scss]
+    toc: false
+    toc-depth: 2
+    chalkboard: true
+    menu: false
     slide-number: true
-    incremental: false
+lightbox: true
+bibliography: ../assets/geoinfo.bib
+lang: de
 ---
 
 ## Projektfrage
