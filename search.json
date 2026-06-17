@@ -2043,308 +2043,109 @@
     ]
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#worum-es-hier-geht",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#worum-es-hier-geht",
-    "title": "Der perfekte Gipfel",
-    "section": "Worum es hier geht",
-    "text": "Worum es hier geht\nDer „perfekte Gipfel“ ist ein gutes Beispiel für ein kleines GIS-Projekt, weil die Frage zunächst unscharf ist.\n\nAus einer Idee wird erst dann ein Projekt, wenn dokumentiert ist, wie sie in Kriterien, Daten, Operationen und Ergebnisgrenzen übersetzt wurde.\n\n\nDie Folien sind deshalb nicht als Programmierbeispiel gedacht, sondern als Beispiel für Problemklärung und Workflow-Dokumentation.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
+    "objectID": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-projekt-öffnen",
+    "href": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-projekt-öffnen",
+    "title": "Räume der Überlagerung",
+    "section": "Technik: Projekt öffnen",
+    "text": "Technik: Projekt öffnen\nQGIS öffnen.\nosm_ueberlagerung.gpkg laden.\nBenötigte Layer:\n\nstudy_area\ngrid_100m\nbuildings\ngreen_areas\npressure_points\n\nProjekt-CRS prüfen: metrisch, z. B. EPSG:25832."
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#dokumentationsrahmen",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#dokumentationsrahmen",
-    "title": "Der perfekte Gipfel",
-    "section": "Dokumentationsrahmen",
-    "text": "Dokumentationsrahmen\nFür jedes GIS-Projekt muss die gleiche Kette lesbar bleiben:\nProblem → Projektfrage → Kriterium → Datenbasis → Operation → Ergebnislayer → Aussagegrenze\n\nDie Dokumentation beschreibt nicht jede Mausbewegung. Sie beschreibt die fachlich entscheidenden Übersetzungsschritte.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
+    "objectID": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-layer-prüfen",
+    "href": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-layer-prüfen",
+    "title": "Räume der Überlagerung",
+    "section": "Technik: Layer prüfen",
+    "text": "Technik: Layer prüfen\nVor dem Rechnen prüfen:\n\nRaster liegt im Untersuchungsgebiet.\nZellen sind ca. 100 × 100 m groß.\nbuildings enthält Flächen.\ngreen_areas enthält Flächen.\npressure_points enthält Punkte."
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#ausgangspunkt-was-ist-ein-perfekter-gipfel",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#ausgangspunkt-was-ist-ein-perfekter-gipfel",
-    "title": "Der perfekte Gipfel",
-    "section": "Ausgangspunkt: Was ist ein „perfekter Gipfel“?",
-    "text": "Ausgangspunkt: Was ist ein „perfekter Gipfel“?\n\n\n\n\nDokumentationspunkt: Die Ausgangsidee ist ein Qualitätsurteil. Vor der GIS-Umsetzung muss geklärt werden, welche räumlichen Eigenschaften dieses Urteil tragen sollen.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
+    "objectID": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-fehlende-layer-sichern",
+    "href": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-fehlende-layer-sichern",
+    "title": "Räume der Überlagerung",
+    "section": "Technik: fehlende Layer sichern",
+    "text": "Technik: fehlende Layer sichern\nRechtsklick auf Layer → Exportieren → Objekte speichern als…\n\nFormat: GeoPackage\nDatei: osm_ueberlagerung.gpkg\nLayername: exakt wie in der Tabelle\nCRS: Projekt-CRS\n\nDanach mit study_area clippen."
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#von-der-idee-zur-projektfrage",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#von-der-idee-zur-projektfrage",
-    "title": "Der perfekte Gipfel",
-    "section": "Von der Idee zur Projektfrage",
-    "text": "Von der Idee zur Projektfrage\nAus „perfekter Gipfel“ wird keine GIS-Analyse. Eine bearbeitbare Frage braucht eine messbare Zielrichtung.\n\nWelche Gipfel sind nach Höhe, Dominanz, Prominenz und Eigenständigkeit besonders ausgeprägt?\n\n\nDas ist der erste dokumentierbare Schritt: Die Alltagsformulierung wird in eine räumliche Analysefrage übersetzt.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
+    "objectID": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-osm-layer-herstellen",
+    "href": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-osm-layer-herstellen",
+    "title": "Räume der Überlagerung",
+    "section": "Technik: OSM-Layer herstellen",
+    "text": "Technik: OSM-Layer herstellen\nQuickOSM-Abfragen:\nbuilding = *\nleisure = park\nlanduse = grass\nnatural = wood\namenity = *\nshop = *\nhighway = bus_stop\nGebäude und Grünflächen: Polygone behalten.\nNutzungsorte: Punkte behalten; Flächen bei Bedarf zu Zentroiden umwandeln."
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#kriterien-statt-bauchgefühl",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#kriterien-statt-bauchgefühl",
-    "title": "Der perfekte Gipfel",
-    "section": "Kriterien statt Bauchgefühl",
-    "text": "Kriterien statt Bauchgefühl\n\n\n\n\n\n\nAus dem Begriff entstehen Kriterien:\nHöhe / Position\nDominanz\nProminenz / Schartenhöhe\nEigenständigkeit\nNicht alle Kriterien sind direkt im DGM gespeichert. Einige müssen abgeleitet werden.\n\n\n\n\nDokumentationspunkt: Für jedes Kriterium muss festgehalten werden, welche Datenbasis und welche Ableitungslogik verwendet wird.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
+    "objectID": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-b_count-berechnen",
+    "href": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-b_count-berechnen",
+    "title": "Räume der Überlagerung",
+    "section": "Technik: B_count berechnen",
+    "text": "Technik: B_count berechnen\nWerkzeug: Attribute nach Position verknüpfen (Zusammenfassung)\n\nEingabelayer: grid_100m\nJoin-Layer: buildings\nPrädikat: intersects\nZusammenfassung: count\nErgebnis: grid_B"
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#formale-definition-als-entscheidung",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#formale-definition-als-entscheidung",
-    "title": "Der perfekte Gipfel",
-    "section": "Formale Definition als Entscheidung",
-    "text": "Formale Definition als Entscheidung\n\n\nEine Formel ist keine neutrale Wahrheit. Sie dokumentiert, welche Eigenschaften in die Bewertung eingehen und wie sie gewichtet bzw. verrechnet werden.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
+    "objectID": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-g_dist-berechnen",
+    "href": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-g_dist-berechnen",
+    "title": "Räume der Überlagerung",
+    "section": "Technik: G_dist berechnen",
+    "text": "Technik: G_dist berechnen\nWerkzeug: Attribute nach nächstem Nachbarn verknüpfen\n\nEingabelayer: grid_B\nJoin-Layer: green_areas\nnächste Nachbarn: 1\nDistanzfeld erzeugen\nErgebnis: grid_BG\n\nEinheit: Meter."
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#modellbildung-dokumentieren",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#modellbildung-dokumentieren",
-    "title": "Der perfekte Gipfel",
-    "section": "Modellbildung dokumentieren",
-    "text": "Modellbildung dokumentieren\n\n\n\n\n\n\nFür die Methodennotiz reicht die technische Formel nicht.\nDokumentiert werden muss:\nObjekte: Gipfelpunkte\nFläche: Höhenmodell\nBeziehungen: Distanz, Trennung, Verbindung\nProdukt: Prominenz / Eigenständigkeit",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
+    "objectID": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-n_count-berechnen",
+    "href": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-n_count-berechnen",
+    "title": "Räume der Überlagerung",
+    "section": "Technik: N_count berechnen",
+    "text": "Technik: N_count berechnen\nWerkzeug: Punkte in Polygon zählen\n\nPolygonlayer: grid_BG\nPunktlayer: pressure_points\nZählfeld: N_count\nErgebnis: grid_BGN"
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#problemlösung-als-arbeitsprotokoll",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#problemlösung-als-arbeitsprotokoll",
-    "title": "Der perfekte Gipfel",
-    "section": "Problemlösung als Arbeitsprotokoll",
-    "text": "Problemlösung als Arbeitsprotokoll\n\n\nDiese Folie wird im Kurs als Dokumentationsfolie gelesen: Welche Teilprobleme entstehen, welche Entscheidungen werden getroffen, welche Zwischenergebnisse müssen gesichert werden?",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
+    "objectID": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-score-felder-anlegen",
+    "href": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-score-felder-anlegen",
+    "title": "Räume der Überlagerung",
+    "section": "Technik: Score-Felder anlegen",
+    "text": "Technik: Score-Felder anlegen\nFeldrechner öffnen.\nNeue Ganzzahlfelder: B, G, N\nB:\nCASE WHEN \"B_count\" &lt;= 5 THEN 0\nWHEN \"B_count\" &lt;= 20 THEN 1\nELSE 2 END\n\nG:\nCASE WHEN \"G_dist\" &lt;= 100 THEN 0\nWHEN \"G_dist\" &lt;= 250 THEN 1\nELSE 2 END\n\nN:\nCASE WHEN \"N_count\" = 0 THEN 0\nWHEN \"N_count\" &lt;= 3 THEN 1\nELSE 2 END"
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#vom-problem-zu-arbeitspaketen",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#vom-problem-zu-arbeitspaketen",
-    "title": "Der perfekte Gipfel",
-    "section": "Vom Problem zu Arbeitspaketen",
-    "text": "Vom Problem zu Arbeitspaketen\n\n\nNicht alles muss automatisiert werden. Wichtig ist, dass die relevanten Arbeitspakete benannt werden: Datenprüfung, Kriteriendefinition, Operation, Kontrolle, Ergebnisinterpretation.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
+    "objectID": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-feld-k-berechnen",
+    "href": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-feld-k-berechnen",
+    "title": "Räume der Überlagerung",
+    "section": "Technik: Feld K berechnen",
+    "text": "Technik: Feld K berechnen\nFeldrechner öffnen.\nNeues Ganzzahlfeld: K\n\"B\" + \"G\" + \"N\"\nErgebnis speichern."
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-interaktiv",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-interaktiv",
-    "title": "Der perfekte Gipfel",
-    "section": "Umsetzung dokumentieren: interaktiv",
-    "text": "Umsetzung dokumentieren: interaktiv\n\n\nInteraktive Arbeit ist zulässig. Dokumentiert werden aber die stabilen Schritte: Werkzeug, Eingangsdaten, zentrale Parameter, Ausgabe und fachlicher Zweck.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
+    "objectID": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-symbolisierung",
+    "href": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-symbolisierung",
+    "title": "Räume der Überlagerung",
+    "section": "Technik: Symbolisierung",
+    "text": "Technik: Symbolisierung\nLayer-Eigenschaften → Symbolisierung\n\nDarstellung: Abgestuft\nSpalte: K\nKlassen: 0–1, 2–4, 5–6\nhohe Klasse = starke Überlagerung\n\nLegende verständlich benennen."
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-reproduzierbare-befehle",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-reproduzierbare-befehle",
-    "title": "Der perfekte Gipfel",
-    "section": "Umsetzung dokumentieren: reproduzierbare Befehle",
-    "text": "Umsetzung dokumentieren: reproduzierbare Befehle\n\n\nKommandozeilen oder kopierte Processing-Aufrufe sind hier kein Programmierziel. Sie sind ein Mittel, um Parameter und Dateipfade eindeutig zu sichern.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
+    "objectID": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-textvorlage",
+    "href": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-textvorlage",
+    "title": "Räume der Überlagerung",
+    "section": "Technik: Textvorlage",
+    "text": "Technik: Textvorlage\n\nDas Untersuchungsgebiet umfasst …\nGebäude werden als Proxy für … genutzt.\nGrünferne wird über … erfasst.\nNutzungsdruck wird über … angenähert.\nAuffällig ist …, fragwürdig bleibt …\n\nMaximal fünf Sätze."
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-ablauf-statt-code",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-ablauf-statt-code",
-    "title": "Der perfekte Gipfel",
-    "section": "Umsetzung dokumentieren: Ablauf statt Code",
-    "text": "Umsetzung dokumentieren: Ablauf statt Code\n\n\nWenn Skripte verwendet werden, dann als dokumentierte Ablaufbeschreibung. Entscheidend bleibt: Welche Entscheidung wird umgesetzt und welcher Ergebnislayer entsteht?",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
+    "objectID": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-plausibilitätscheck",
+    "href": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-plausibilitätscheck",
+    "title": "Räume der Überlagerung",
+    "section": "Technik: Plausibilitätscheck",
+    "text": "Technik: Plausibilitätscheck\nEine Rasterzelle mit hohem K auswählen.\nDann:\n\nBasiskarte ansehen.\nLayer einzeln ein- und ausschalten.\nPlausibel oder Artefakt entscheiden.\nUnsicherheit notieren."
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#übersetzung-in-gis-anforderungen",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#übersetzung-in-gis-anforderungen",
-    "title": "Der perfekte Gipfel",
-    "section": "Übersetzung in GIS-Anforderungen",
-    "text": "Übersetzung in GIS-Anforderungen\n\n\nHier liegt der Kern der Dokumentation: Fachliche Begriffe werden in Datenstrukturen, Raster-/Vektoroperationen, Parameter und Zwischenergebnisse übersetzt.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
+    "objectID": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-kartenexport",
+    "href": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-kartenexport",
+    "title": "Räume der Überlagerung",
+    "section": "Technik: Kartenexport",
+    "text": "Technik: Kartenexport\nLayout-Manager öffnen.\nElemente:\n\nKarte\nTitel\nLegende für K\nMaßstab\nfünf Sätze als Textfeld\n\nExport: PDF oder PNG."
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#dokumentationsschema-für-einen-hauptschritt",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#dokumentationsschema-für-einen-hauptschritt",
-    "title": "Der perfekte Gipfel",
-    "section": "Dokumentationsschema für einen Hauptschritt",
-    "text": "Dokumentationsschema für einen Hauptschritt\nEin Hauptschritt sollte knapp, aber vollständig dokumentiert werden.\n\n\nZweck Welches Kriterium oder Teilproblem wird bearbeitet?\n\n\nDatenbasis Welche Eingangsdaten werden verwendet?\n\n\nOperation Welche GIS-Operation wird eingesetzt?\n\n\nParameter Welche Schwellenwerte, Toleranzen oder Abbruchkriterien gelten?\n\n\nAusgabe Welcher Layer oder Wert entsteht?\n\n\nGrenze Wovon hängt die Aussagekraft ab?",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
+    "objectID": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-datenwege",
+    "href": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-datenwege",
+    "title": "Räume der Überlagerung",
+    "section": "Technik: Datenwege",
+    "text": "Technik: Datenwege\nFür diese Übung genügt OSM.\n\nQuickOSM: schnell, Overpass-abhängig\nGeofabrik: stabiler Regionaldownload\nBBBike: eigener Ausschnitt\nUrban Atlas: optional, nicht nötig"
   },
   {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#wie-soll-das-gehen",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#wie-soll-das-gehen",
-    "title": "Der perfekte Gipfel",
-    "section": "Wie soll das gehen?",
-    "text": "Wie soll das gehen?\n\n\nEin komplexes Problem wird dokumentierbar, wenn es in prüfbare Zwischenschritte zerlegt wird. Die Dokumentation folgt dieser Zerlegung.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
-  },
-  {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#beispiel-prominenz-durch-fluten-denken",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#beispiel-prominenz-durch-fluten-denken",
-    "title": "Der perfekte Gipfel",
-    "section": "Beispiel: Prominenz durch Fluten denken",
-    "text": "Beispiel: Prominenz durch Fluten denken\n\n\nDokumentationspunkt: Die fachliche Idee lautet nicht „wir benutzen ein Tool“, sondern: Wir variieren ein Flutniveau und prüfen, wann der aktuelle Gipfel mit anderen Gipfeln verbunden wird.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
-  },
-  {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#suchstrategie-festhalten",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#suchstrategie-festhalten",
-    "title": "Der perfekte Gipfel",
-    "section": "Suchstrategie festhalten",
-    "text": "Suchstrategie festhalten\n\n\nDer naive Weg wäre schrittweises Fluten. Die dokumentierte Verbesserung ist eine Suchstrategie, die den relevanten Höhenbereich systematisch eingrenzt.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
-  },
-  {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#abbruchkriterium-dokumentieren",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#abbruchkriterium-dokumentieren",
-    "title": "Der perfekte Gipfel",
-    "section": "Abbruchkriterium dokumentieren",
-    "text": "Abbruchkriterium dokumentieren\n\n\nFür die Aussagekraft ist nicht nur das Ergebnis wichtig, sondern auch: Wann wurde die Suche beendet und welche Genauigkeit wurde akzeptiert?",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
-  },
-  {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#beispiel-einer-methodennotiz",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#beispiel-einer-methodennotiz",
-    "title": "Der perfekte Gipfel",
-    "section": "Beispiel einer Methodennotiz",
-    "text": "Beispiel einer Methodennotiz\nFragestellung:\nWie eigenständig ist ein Gipfel im Verhältnis zu benachbarten Gipfeln?\n\nKriterium:\nProminenz / Schartenhöhe.\n\nDatenbasis:\nDigitales Höhenmodell und Gipfelpunkte.\n\nOperationelle Idee:\nFlutniveau variieren und Verbindung der Gipfeleinheiten prüfen.\n\nSuchstrategie:\nHöhenbereich durch binäre Suche eingrenzen.\n\nAbbruchkriterium:\nSuche endet bei definierter Höhentoleranz.\n\nAussagegrenze:\nDEM-Auflösung, Gipfelerkennung und Toleranz beeinflussen den Wert.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
-  },
-  {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#was-davon-ins-eigene-projekt-gehört",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#was-davon-ins-eigene-projekt-gehört",
-    "title": "Der perfekte Gipfel",
-    "section": "Was davon ins eigene Projekt gehört",
-    "text": "Was davon ins eigene Projekt gehört\n\nProjektfrage schärfen → Kriterien ableiten → Daten wählen → Hauptschritte planen → Parameter begründen → Ergebnislayer sichern → Aussagegrenze benennen\n\n\nDas Gipfelbeispiel ist nur komplexer als viele Kursprojekte. Die Dokumentationslogik ist dieselbe.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
-  },
-  {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#nicht-dokumentieren-vollständige-history",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#nicht-dokumentieren-vollständige-history",
-    "title": "Der perfekte Gipfel",
-    "section": "Nicht dokumentieren: vollständige History",
-    "text": "Nicht dokumentieren: vollständige History\nEine Workflow-Dokumentation ist kein Mitschnitt jeder Bedienhandlung.\nDokumentiert werden nur Hauptschritte, die das Ergebnis fachlich verändern.\nnicht: Layer verschoben, Stil getestet, Ansicht gezoomt\nsondern: Distanz berechnet, reklassifiziert, gewichtet, maskiert, kombiniert\n\nDie Leitfrage lautet: Könnte eine andere Person den methodischen Weg fachlich nachvollziehen?",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
-  },
-  {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#übertrag-auf-einfache-gis-projekte",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#übertrag-auf-einfache-gis-projekte",
-    "title": "Der perfekte Gipfel",
-    "section": "Übertrag auf einfache GIS-Projekte",
-    "text": "Übertrag auf einfache GIS-Projekte\nSiedlungsferne\n→ Distanz zur Siedlung\n→ Reklassifikation\n→ Störungskriterium\n→ Beitrag zur Eignungskarte\n\nHangneigung\n→ DGM-Ableitung\n→ Klassenbildung\n→ Reliefkriterium\n→ Beitrag zur Eignungskarte\n\nAuch einfache Projekte brauchen keine lange History, sondern eine begründete Kette zwischen Frage, Kriterium, Operation und Ergebnis.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
-  },
-  {
-    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#prüfregel-für-die-dokumentation",
-    "href": "slides/perfekter_gipfel_gesamtrahmen.html#prüfregel-für-die-dokumentation",
-    "title": "Der perfekte Gipfel",
-    "section": "Prüfregel für die Dokumentation",
-    "text": "Prüfregel für die Dokumentation\nFür jeden Hauptschritt sollte eine fremde Person erkennen können:\nWarum dieser Schritt?\nWelche Daten?\nWelche Operation?\nWelche Parameter?\nWelcher Ergebnislayer?\nWelche Aussagegrenze?\n\nDas Ziel ist nicht Programmierung. Das Ziel ist nachvollziehbare GIS-Arbeit.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Der perfekte Gipfel - ein Projekt Modell"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Grundlagen der räumlichen Analyse",
-    "section": "",
-    "text": "Grundlagenkurs der räumlichen Analyse im Bachelor Geographie (B.Sc.) an der Philipps-Universität Marburg.\nRaum-zeitliche Daten und deren Verarbeitung, Analyse und Darstellung sind wissenschaftliche Grundelemente der Geographie. Sie ermöglichen es, reale Räume nicht nur zu beschreiben, sondern räumliche Muster, Beziehungen, Prozesse und Entscheidungen nachvollziehbar zu untersuchen. Analysen bilden damit eine Grundlage für Erkenntnisgewinn in Forschung und Praxis; Karten, Diagramme, Modelle und andere Geomedien sind zentrale Mittel, um diese Erkenntnisse zu kommunizieren.\nDaten, Datenanalyse und die Modellierung räumlicher Zusammenhänge sind daher integraler Bestandteil geographischen Arbeitens. Der grundlegende Umgang mit Geodaten, ihre Aufbereitung, visuelle Erkundung, Analyse und Präsentation stellt eine zentrale Kernkompetenz für das Berufsbild der Geographin und des Geographen dar.\nDer Kurs führt in grundlegende Konzepte und Methoden der Geoinformatik ein. Im Mittelpunkt stehen nicht einzelne Softwarefunktionen, sondern die fachlich begründete Arbeit mit räumlichen Daten: Raumkonzepte, Datenmodelle, Koordinaten und Projektionen, Vektor- und Rasterdaten, Attribut- und Raumabfragen, digitale Geländemodelle, Sichtfeld- und Ableitungsanalysen, Multikriterienanalysen sowie die Entwicklung reproduzierbarer Workflows.",
-    "crumbs": [
-      "Grundlagen der räumlichen Analyse"
-    ]
-  },
-  {
-    "objectID": "index.html#lernziele",
-    "href": "index.html#lernziele",
-    "title": "Grundlagen der räumlichen Analyse",
-    "section": "Lernziele",
-    "text": "Lernziele\nAm Ende dieses Moduls sind die Studierenden in der Lage,\n\ngrundlegende räumliche Datentypen zu klassifizieren, zu kategorisieren und angemessen zu visualisieren,\nausgewählte Faktoren, Funktionen und Prozesse in realen Räumen mit Hilfe von Geodaten darzustellen, zu beschreiben und zu erklären,\ngrundlegende räumliche Analysen von Raster- und Vektordaten durchzuführen,\nräumliche Fragestellungen in geeignete GIS-Operationen zu übersetzen,\neine eigenständige Analyse zu entwickeln und in Form einer kleinen wissenschaftlichen Studie nachvollziehbar zu kommunizieren.",
-    "crumbs": [
-      "Grundlagen der räumlichen Analyse"
-    ]
-  },
-  {
-    "objectID": "index.html#arbeitsverständnis",
-    "href": "index.html#arbeitsverständnis",
-    "title": "Grundlagen der räumlichen Analyse",
-    "section": "Arbeitsverständnis",
-    "text": "Arbeitsverständnis\nMein Selbstverständnis als Kursleiter ist das eines Coaches. Ich kann Ihnen die Arbeit mit Raum, Daten und Methoden nicht abnehmen. Ich kann meine Erfahrung, meine Perspektive und meine Kritik einbringen; lernen, üben, entscheiden und begründen müssen Sie selbst.\nDamit dieser Weg für Sie erfolgreich werden kann, müssen Sie kritisch reflektieren, was ich einbringe, was Sie in Diskussionen mit Ihren Kommilitoninnen und Kommilitonen lernen, was Sie lesen, was Sie ausprobieren und was Sie glauben, sicher verstanden zu haben. Bildung hängt zu einem großen Teil davon ab, was Sie selbst investieren. Wenn Sie nicht deutlich mehr tun, als nur anwesend zu sein, können Sie davon ausgehen, dass dieser Kurs für Sie Zeitverschwendung ist.\nWissenschaftliches Arbeiten bedeutet, auf der Arbeit anderer aufzubauen, eigene Wege zu prüfen, Fehler zu erkennen, neu anzusetzen und Ergebnisse nachvollziehbar zu begründen. Also fangen Sie an: Denken Sie, reflektieren und diskutieren Sie, laufen Sie in Sackgassen, beginnen Sie erneut, sammeln und vergleichen Sie Erfahrungen und entwickeln Sie Ihre eigene Art, mit Raum, Daten und Wissen zu arbeiten.",
-    "crumbs": [
-      "Grundlagen der räumlichen Analyse"
-    ]
-  },
-  {
-    "objectID": "assets/templates/journals-examples-default.html",
-    "href": "assets/templates/journals-examples-default.html",
-    "title": "Skalen in Geographie und Ökologie\nEine unendliche Geschichte",
-    "section": "",
-    "text": "Die Ökologie befasst sich mit der Frage, wie Organismen miteinander und mit ihrer Umwelt interagieren. Skalen und Prozesse sind zwei grundlegende Konzepte in der Ökologie, die verwendet werden, um ökologische Muster und Dynamik zu verstehen.\nSkalen in der Ökologie beziehen sich auf die räumlichen und zeitlichen Dimensionen ökologischer Phänomene. Ökologische Phänomene treten in verschiedenen Maßstäben auf, die von einzelnen Organismen bis zu ganzen Ökosystemen und von Sekunden bis zu Jahrtausenden reichen. Das Verständnis der geeigneten Skala ist entscheidend für das Verständnis der ökologischen Prozesse, die innerhalb dieser Skala ablaufen. Die Wahl eines geeigneten Maßstabs beeinflusst auch die Genauigkeit und Präzision ökologischer Daten und die Interpretation ökologischer Muster.\nProzesse in der Ökologie beziehen sich auf die biologischen und physikalischen Mechanismen, die ökologischen Phänomenen zugrunde liegen. Ökologische Prozesse treten in verschiedenen Maßstäben auf, die von der molekularen Ebene bis zur Landschaftsebene reichen. Zu den ökologischen Prozessen gehören biotische Interaktionen wie Konkurrenz, Räuber und Gegenseitigkeit sowie abiotische Interaktionen wie Klima, Nährstoffkreislauf und Störungen. Das Verständnis der zugrundeliegenden Prozesse ist unerlässlich für die Vorhersage, wie ökologische Systeme auf veränderte Bedingungen reagieren werden, und für die Entwicklung wirksamer Erhaltungs- und Bewirtschaftungsstrategien.\nInsgesamt sind Größenordnungen und Prozesse wesentliche Konzepte in der Ökologie, die dazu dienen, die komplexen Wechselwirkungen zwischen Organismen und ihrer Umwelt zu verstehen."
-  },
-  {
-    "objectID": "assets/templates/journals-examples-default.html#diskussion",
-    "href": "assets/templates/journals-examples-default.html#diskussion",
-    "title": "Skalen in Geographie und Ökologie\nEine unendliche Geschichte",
-    "section": "4.1 Diskussion",
-    "text": "4.1 Diskussion\nJa, es gibt in der Geographie mehrere Theorien, die sich auf die Auswirkungen der Zeit auf den Maßstab beziehen. Eine der bekanntesten ist das Konzept des zeitlichen Maßstabs, das von dem Geographen David Harvey entwickelt wurde. Nach Harvey bezieht sich der zeitliche Maßstab auf die Länge der Zeit, über die ein Phänomen beobachtet werden kann, und er ist ein wichtiger Faktor für das Verständnis der räumlichen Beziehungen und Muster, die in einem bestimmten geografischen Kontext bestehen. Darüber hinaus argumentiert Harvey, dass der zeitliche Maßstab, in dem Daten erhoben und analysiert werden, einen erheblichen Einfluss auf die Schlussfolgerungen haben kann, die aus den Daten gezogen werden können.\nEine weitere Theorie, die sich auf die Auswirkungen der Zeit auf den Maßstab bezieht, ist das von dem Geographen David Harvey und anderen entwickelte Konzept der Zeit-Raum-Kompression. Diese Theorie besagt, dass Fortschritte in Technologie und Kommunikation zu einer Kompression von Zeit und Raum geführt haben, wodurch die Welt kleiner und vernetzter erscheint. Infolgedessen können geografische Phänomene von Faktoren beeinflusst werden, die in verschiedenen räumlichen und zeitlichen Maßstäben existieren, und es ist wichtig, diese Faktoren bei der Analyse und Interpretation von geografischen Daten zu berücksichtigen.\nInsgesamt verdeutlichen die Theorien zu den Auswirkungen der Zeit auf den Maßstab in der Geographie die komplexen und dynamischen Beziehungen zwischen räumlichen und zeitlichen Phänomenen und die Bedeutung der Berücksichtigung dieser Beziehungen in geographischen Analysen (Harvey 1996)."
-  },
-  {
-    "objectID": "assets/templates/journals-examples-default.html#schlussfolgerungen",
-    "href": "assets/templates/journals-examples-default.html#schlussfolgerungen",
-    "title": "Skalen in Geographie und Ökologie\nEine unendliche Geschichte",
-    "section": "4.2 Schlussfolgerungen",
-    "text": "4.2 Schlussfolgerungen\nZeit-Raum-Kompression ist ein Konzept, das von mehreren Geographen entwickelt und ausgearbeitet wurde, darunter David Harvey, Doreen Massey und Henri Lefebvre. Im Kern bezieht sich die Zeit-Raum-Kompression auf die Idee, dass Fortschritte in der Transport- und Kommunikationstechnologie ein Gefühl des “Schrumpfens” in Bezug auf die Zeit und den Raum geschaffen haben, die für soziale und wirtschaftliche Interaktionen erforderlich sind.\nDie Zeit-Raum-Kompression manifestiert sich unter anderem in der zunehmenden Geschwindigkeit und Leichtigkeit von Transport und Kommunikation. Flugreisen, Hochgeschwindigkeitszüge und das Internet haben es beispielsweise möglich gemacht, Waren, Menschen und Informationen in relativ kurzer Zeit über große Entfernungen zu transportieren. Dies hat zu einer Verwischung der traditionellen räumlichen Grenzen und zur Entstehung globaler Netzwerke für Austausch und Interaktion geführt.\nDie Verdichtung von Zeit und Raum ist jedoch kein neutraler oder einheitlicher Prozess, und seine Auswirkungen werden von verschiedenen Menschen und an verschiedenen Orten unterschiedlich empfunden. So kann die zunehmende Geschwindigkeit des globalen Handels einigen Menschen und Gemeinschaften zugute kommen, während sie anderen schadet, und die Intensivierung globaler Netzwerke kann bei einigen Menschen zu einem Gefühl der Dislokation oder Desorientierung führen.\nInsgesamt ist die Zeit-Raum-Kompression ein wichtiges Konzept in der Geografie, weil es hilft zu erklären, wie die räumlichen Beziehungen und Muster, die in einem bestimmten geografischen Kontext bestehen, durch technologischen Wandel und Globalisierung geformt und verändert werden."
+    "objectID": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-navigation",
+    "href": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-navigation",
+    "title": "Räume der Überlagerung",
+    "section": "Technik: Navigation",
+    "text": "Technik: Navigation\nIn dieser Präsentation:\n\nPfeil rechts/links: Hauptfolien\nPfeil runter: technische Folie\nPfeil hoch: zurück\nEsc: Übersicht\n\nKeine Klickfelder nötig."
   },
   {
     "objectID": "slides/marburg_dom1_viewshed_revealjs.html#projektfrage",
@@ -2510,6 +2311,495 @@
       "Foliensätze zu den Readern",
       "Viewshed Analyse"
     ]
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm.html#technik-projekt-öffnen",
+    "href": "slides/laermausbreitung_osm.html#technik-projekt-öffnen",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Projekt öffnen",
+    "text": "Technik: Projekt öffnen\nQGIS öffnen.\nWerkzeug / Menü:\n\nLayer → Layer hinzufügen → Vektorlayer hinzufügen\nDatei: osm_ueberlagerung.gpkg\n\nBenötigte Layer:\n\nstudy_area\ngrid_100m\npressure_points\nnoise_roads\n\nProjekt-CRS: EPSG:25832.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Lärmausbreitung"
+    ]
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm.html#technik-bedeutung-der-kürzel",
+    "href": "slides/laermausbreitung_osm.html#technik-bedeutung-der-kürzel",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Bedeutung der Kürzel",
+    "text": "Technik: Bedeutung der Kürzel\nDie Kürzel stehen für deutsche Begriffe:\n\n\n\nKürzel\nBedeutung\nQGIS-Feld\n\n\n\n\nQ\nQuellenwert der Straße\nQ\n\n\nD\nDistanzwert zur Straße\nD\n\n\nR\nRelevanzwert der Nutzung\nR\n\n\nLK\nLärm-Konfliktindex\nLK\n\n\n\nMerksatz:\nLärm-Konflikt = Quelle + Distanz + Nutzung",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Lärmausbreitung"
+    ]
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm.html#technik-grundmodell",
+    "href": "slides/laermausbreitung_osm.html#technik-grundmodell",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Grundmodell",
+    "text": "Technik: Grundmodell\nDiese Übung berechnet keine dB-Werte.\nDie QGIS-Operationen sind:\n\nStraßen auswählen\nStraßen bewerten\nAbstand zum Raster berechnen\nPunkte im Raster zählen\nIndexfeld berechnen\n\nWichtig: Das Ergebnis ist eine Suchkarte, keine Lärmkarte.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Lärmausbreitung"
+    ]
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm.html#technik-fehlenden-straßenlayer-erzeugen",
+    "href": "slides/laermausbreitung_osm.html#technik-fehlenden-straßenlayer-erzeugen",
+    "title": "Lärmausbreitung",
+    "section": "Technik: fehlenden Straßenlayer erzeugen",
+    "text": "Technik: fehlenden Straßenlayer erzeugen\nWenn noise_roads fehlt:\nMenü / Werkzeug:\n\nVektor → QuickOSM → QuickOSM\n\nAbfrage:\nKey: highway\nValue: *\nIn: Canvas extent\nNur Linien behalten.\nDanach:\n\nVerarbeitung → Werkzeugkiste → Nach Ausdruck extrahieren\nAusgabe als noise_roads speichern.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Lärmausbreitung"
+    ]
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm.html#technik-ausdruck-für-straßenfilter",
+    "href": "slides/laermausbreitung_osm.html#technik-ausdruck-für-straßenfilter",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Ausdruck für Straßenfilter",
+    "text": "Technik: Ausdruck für Straßenfilter\nWerkzeug:\n\nVerarbeitung → Werkzeugkiste → Nach Ausdruck extrahieren\n\nEingabelayer: OSM-highway-Linien\nAusdruck:\n\"highway\" IN (\n  'trunk',\n  'primary',\n  'secondary',\n  'tertiary',\n  'residential'\n)\nDanach:\n\nVerarbeitung → Werkzeugkiste → Zuschneiden\nOverlay-Layer: study_area",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Lärmausbreitung"
+    ]
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm.html#technik-feld-q-berechnen",
+    "href": "slides/laermausbreitung_osm.html#technik-feld-q-berechnen",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Feld Q berechnen",
+    "text": "Technik: Feld Q berechnen\nWerkzeug / Menü:\n\nAttributtabelle von noise_roads öffnen\nFeldrechner öffnen\nNeues Feld anlegen\n\nFeld:\nName: Q\nTyp: Ganzzahl\nAusdruck:\nCASE\nWHEN \"highway\" IN ('trunk','primary') THEN 2\nWHEN \"highway\" IN ('secondary','tertiary') THEN 1\nELSE 0\nEND",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Lärmausbreitung"
+    ]
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm.html#technik-nächste-straße-verknüpfen",
+    "href": "slides/laermausbreitung_osm.html#technik-nächste-straße-verknüpfen",
+    "title": "Lärmausbreitung",
+    "section": "Technik: nächste Straße verknüpfen",
+    "text": "Technik: nächste Straße verknüpfen\nWerkzeug:\n\nVerarbeitung → Werkzeugkiste → Attribute nach nächstem Nachbarn verknüpfen\n\nEinstellungen:\n\n\n\nParameter\nWert\n\n\n\n\nEingabelayer\ngrid_100m\n\n\nJoin-Layer\nnoise_roads\n\n\nMaximale Anzahl nächster Nachbarn\n1\n\n\nzu übernehmendes Feld\nQ\n\n\nDistanzfeld\nroad_dist\n\n\nAusgabe\ngrid_road\n\n\n\nEinheit: Meter.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Lärmausbreitung"
+    ]
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm.html#technik-feld-d-berechnen",
+    "href": "slides/laermausbreitung_osm.html#technik-feld-d-berechnen",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Feld D berechnen",
+    "text": "Technik: Feld D berechnen\nWerkzeug / Menü:\n\nAttributtabelle von grid_road öffnen\nFeldrechner öffnen\nNeues Feld anlegen\n\nFeld:\nName: D\nTyp: Ganzzahl\nAusdruck:\nCASE\nWHEN \"road_dist\" &lt;= 50 THEN 2\nWHEN \"road_dist\" &lt;= 150 THEN 1\nELSE 0\nEND",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Lärmausbreitung"
+    ]
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm.html#technik-punkte-im-raster-zählen",
+    "href": "slides/laermausbreitung_osm.html#technik-punkte-im-raster-zählen",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Punkte im Raster zählen",
+    "text": "Technik: Punkte im Raster zählen\nWerkzeug:\n\nVerarbeitung → Werkzeugkiste → Punkte in Polygon zählen\n\nEinstellungen:\n\n\n\nParameter\nWert\n\n\n\n\nPolygone\ngrid_road\n\n\nPunkte\npressure_points\n\n\nZählfeldname\nR_count\n\n\nAusgabe\ngrid_noise\n\n\n\nDas Ergebnis enthält die Anzahl der Nutzungsorte je Rasterzelle.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Lärmausbreitung"
+    ]
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm.html#technik-feld-r-berechnen",
+    "href": "slides/laermausbreitung_osm.html#technik-feld-r-berechnen",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Feld R berechnen",
+    "text": "Technik: Feld R berechnen\nWerkzeug / Menü:\n\nAttributtabelle von grid_noise öffnen\nFeldrechner öffnen\nNeues Feld anlegen\n\nFeld:\nName: R\nTyp: Ganzzahl\nAusdruck:\nCASE\nWHEN \"R_count\" = 0 THEN 0\nWHEN \"R_count\" &lt;= 3 THEN 1\nELSE 2\nEND",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Lärmausbreitung"
+    ]
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm.html#technik-feld-lk-berechnen",
+    "href": "slides/laermausbreitung_osm.html#technik-feld-lk-berechnen",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Feld LK berechnen",
+    "text": "Technik: Feld LK berechnen\nWerkzeug / Menü:\n\nAttributtabelle von grid_noise öffnen\nFeldrechner öffnen\nNeues Feld anlegen\n\nFeld:\nName: LK\nTyp: Ganzzahl\nAusdruck:\ncoalesce(\"Q\",0) + coalesce(\"D\",0) + coalesce(\"R\",0)\ncoalesce() verhindert leere Werte im Index.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Lärmausbreitung"
+    ]
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm.html#technik-symbolisierung",
+    "href": "slides/laermausbreitung_osm.html#technik-symbolisierung",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Symbolisierung",
+    "text": "Technik: Symbolisierung\nMenü / Dialog:\n\nRechtsklick auf grid_noise\nEigenschaften → Symbolisierung\n\nEinstellungen:\n\n\n\nEinstellung\nWert\n\n\n\n\nDarstellung\nAbgestuft\n\n\nWert\nLK\n\n\nKlassen\n3\n\n\nMethode\nmanuell oder gleiches Intervall\n\n\n\nKlassen sinnvoll benennen:\n\n0–1 gering\n2–4 mittel\n5–6 hoch",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Lärmausbreitung"
+    ]
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm.html#technik-textvorlage",
+    "href": "slides/laermausbreitung_osm.html#technik-textvorlage",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Textvorlage",
+    "text": "Technik: Textvorlage\nTextbaustein:\n\nDas Untersuchungsgebiet umfasst …\nQ beschreibt …\nD beschreibt …\nR beschreibt …\nUnsicher bleibt …\n\nMaximal fünf Sätze.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Lärmausbreitung"
+    ]
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm.html#technik-plausibilitätscheck",
+    "href": "slides/laermausbreitung_osm.html#technik-plausibilitätscheck",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Plausibilitätscheck",
+    "text": "Technik: Plausibilitätscheck\nWerkzeuge / Dialoge:\n\nObjekte abfragen\nAttributtabelle öffnen\nBasiskarte einblenden\n\nAblauf:\n\nRasterzelle mit hohem LK anklicken.\nQ, D, R prüfen.\nStraße und Nutzungsorte visuell kontrollieren.\nPlausibel oder Artefakt notieren.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Lärmausbreitung"
+    ]
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm.html#technik-navigation",
+    "href": "slides/laermausbreitung_osm.html#technik-navigation",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Navigation",
+    "text": "Technik: Navigation\nNavigation:\n\nPfeil rechts/links: Hauptfolien\nPfeil runter: technische Folie\nPfeil hoch: zurück\nEsc: Übersicht\n\nDie technischen Folien liegen jeweils direkt unter der Hauptfolie.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Lärmausbreitung"
+    ]
+  },
+  {
+    "objectID": "assets/templates/journals-examples-default.html",
+    "href": "assets/templates/journals-examples-default.html",
+    "title": "Skalen in Geographie und Ökologie\nEine unendliche Geschichte",
+    "section": "",
+    "text": "Die Ökologie befasst sich mit der Frage, wie Organismen miteinander und mit ihrer Umwelt interagieren. Skalen und Prozesse sind zwei grundlegende Konzepte in der Ökologie, die verwendet werden, um ökologische Muster und Dynamik zu verstehen.\nSkalen in der Ökologie beziehen sich auf die räumlichen und zeitlichen Dimensionen ökologischer Phänomene. Ökologische Phänomene treten in verschiedenen Maßstäben auf, die von einzelnen Organismen bis zu ganzen Ökosystemen und von Sekunden bis zu Jahrtausenden reichen. Das Verständnis der geeigneten Skala ist entscheidend für das Verständnis der ökologischen Prozesse, die innerhalb dieser Skala ablaufen. Die Wahl eines geeigneten Maßstabs beeinflusst auch die Genauigkeit und Präzision ökologischer Daten und die Interpretation ökologischer Muster.\nProzesse in der Ökologie beziehen sich auf die biologischen und physikalischen Mechanismen, die ökologischen Phänomenen zugrunde liegen. Ökologische Prozesse treten in verschiedenen Maßstäben auf, die von der molekularen Ebene bis zur Landschaftsebene reichen. Zu den ökologischen Prozessen gehören biotische Interaktionen wie Konkurrenz, Räuber und Gegenseitigkeit sowie abiotische Interaktionen wie Klima, Nährstoffkreislauf und Störungen. Das Verständnis der zugrundeliegenden Prozesse ist unerlässlich für die Vorhersage, wie ökologische Systeme auf veränderte Bedingungen reagieren werden, und für die Entwicklung wirksamer Erhaltungs- und Bewirtschaftungsstrategien.\nInsgesamt sind Größenordnungen und Prozesse wesentliche Konzepte in der Ökologie, die dazu dienen, die komplexen Wechselwirkungen zwischen Organismen und ihrer Umwelt zu verstehen."
+  },
+  {
+    "objectID": "assets/templates/journals-examples-default.html#diskussion",
+    "href": "assets/templates/journals-examples-default.html#diskussion",
+    "title": "Skalen in Geographie und Ökologie\nEine unendliche Geschichte",
+    "section": "4.1 Diskussion",
+    "text": "4.1 Diskussion\nJa, es gibt in der Geographie mehrere Theorien, die sich auf die Auswirkungen der Zeit auf den Maßstab beziehen. Eine der bekanntesten ist das Konzept des zeitlichen Maßstabs, das von dem Geographen David Harvey entwickelt wurde. Nach Harvey bezieht sich der zeitliche Maßstab auf die Länge der Zeit, über die ein Phänomen beobachtet werden kann, und er ist ein wichtiger Faktor für das Verständnis der räumlichen Beziehungen und Muster, die in einem bestimmten geografischen Kontext bestehen. Darüber hinaus argumentiert Harvey, dass der zeitliche Maßstab, in dem Daten erhoben und analysiert werden, einen erheblichen Einfluss auf die Schlussfolgerungen haben kann, die aus den Daten gezogen werden können.\nEine weitere Theorie, die sich auf die Auswirkungen der Zeit auf den Maßstab bezieht, ist das von dem Geographen David Harvey und anderen entwickelte Konzept der Zeit-Raum-Kompression. Diese Theorie besagt, dass Fortschritte in Technologie und Kommunikation zu einer Kompression von Zeit und Raum geführt haben, wodurch die Welt kleiner und vernetzter erscheint. Infolgedessen können geografische Phänomene von Faktoren beeinflusst werden, die in verschiedenen räumlichen und zeitlichen Maßstäben existieren, und es ist wichtig, diese Faktoren bei der Analyse und Interpretation von geografischen Daten zu berücksichtigen.\nInsgesamt verdeutlichen die Theorien zu den Auswirkungen der Zeit auf den Maßstab in der Geographie die komplexen und dynamischen Beziehungen zwischen räumlichen und zeitlichen Phänomenen und die Bedeutung der Berücksichtigung dieser Beziehungen in geographischen Analysen (Harvey 1996)."
+  },
+  {
+    "objectID": "assets/templates/journals-examples-default.html#schlussfolgerungen",
+    "href": "assets/templates/journals-examples-default.html#schlussfolgerungen",
+    "title": "Skalen in Geographie und Ökologie\nEine unendliche Geschichte",
+    "section": "4.2 Schlussfolgerungen",
+    "text": "4.2 Schlussfolgerungen\nZeit-Raum-Kompression ist ein Konzept, das von mehreren Geographen entwickelt und ausgearbeitet wurde, darunter David Harvey, Doreen Massey und Henri Lefebvre. Im Kern bezieht sich die Zeit-Raum-Kompression auf die Idee, dass Fortschritte in der Transport- und Kommunikationstechnologie ein Gefühl des “Schrumpfens” in Bezug auf die Zeit und den Raum geschaffen haben, die für soziale und wirtschaftliche Interaktionen erforderlich sind.\nDie Zeit-Raum-Kompression manifestiert sich unter anderem in der zunehmenden Geschwindigkeit und Leichtigkeit von Transport und Kommunikation. Flugreisen, Hochgeschwindigkeitszüge und das Internet haben es beispielsweise möglich gemacht, Waren, Menschen und Informationen in relativ kurzer Zeit über große Entfernungen zu transportieren. Dies hat zu einer Verwischung der traditionellen räumlichen Grenzen und zur Entstehung globaler Netzwerke für Austausch und Interaktion geführt.\nDie Verdichtung von Zeit und Raum ist jedoch kein neutraler oder einheitlicher Prozess, und seine Auswirkungen werden von verschiedenen Menschen und an verschiedenen Orten unterschiedlich empfunden. So kann die zunehmende Geschwindigkeit des globalen Handels einigen Menschen und Gemeinschaften zugute kommen, während sie anderen schadet, und die Intensivierung globaler Netzwerke kann bei einigen Menschen zu einem Gefühl der Dislokation oder Desorientierung führen.\nInsgesamt ist die Zeit-Raum-Kompression ein wichtiges Konzept in der Geografie, weil es hilft zu erklären, wie die räumlichen Beziehungen und Muster, die in einem bestimmten geografischen Kontext bestehen, durch technologischen Wandel und Globalisierung geformt und verändert werden."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Grundlagen der räumlichen Analyse",
+    "section": "",
+    "text": "Grundlagenkurs der räumlichen Analyse im Bachelor Geographie (B.Sc.) an der Philipps-Universität Marburg.\nRaum-zeitliche Daten und deren Verarbeitung, Analyse und Darstellung sind wissenschaftliche Grundelemente der Geographie. Sie ermöglichen es, reale Räume nicht nur zu beschreiben, sondern räumliche Muster, Beziehungen, Prozesse und Entscheidungen nachvollziehbar zu untersuchen. Analysen bilden damit eine Grundlage für Erkenntnisgewinn in Forschung und Praxis; Karten, Diagramme, Modelle und andere Geomedien sind zentrale Mittel, um diese Erkenntnisse zu kommunizieren.\nDaten, Datenanalyse und die Modellierung räumlicher Zusammenhänge sind daher integraler Bestandteil geographischen Arbeitens. Der grundlegende Umgang mit Geodaten, ihre Aufbereitung, visuelle Erkundung, Analyse und Präsentation stellt eine zentrale Kernkompetenz für das Berufsbild der Geographin und des Geographen dar.\nDer Kurs führt in grundlegende Konzepte und Methoden der Geoinformatik ein. Im Mittelpunkt stehen nicht einzelne Softwarefunktionen, sondern die fachlich begründete Arbeit mit räumlichen Daten: Raumkonzepte, Datenmodelle, Koordinaten und Projektionen, Vektor- und Rasterdaten, Attribut- und Raumabfragen, digitale Geländemodelle, Sichtfeld- und Ableitungsanalysen, Multikriterienanalysen sowie die Entwicklung reproduzierbarer Workflows.",
+    "crumbs": [
+      "Grundlagen der räumlichen Analyse"
+    ]
+  },
+  {
+    "objectID": "index.html#lernziele",
+    "href": "index.html#lernziele",
+    "title": "Grundlagen der räumlichen Analyse",
+    "section": "Lernziele",
+    "text": "Lernziele\nAm Ende dieses Moduls sind die Studierenden in der Lage,\n\ngrundlegende räumliche Datentypen zu klassifizieren, zu kategorisieren und angemessen zu visualisieren,\nausgewählte Faktoren, Funktionen und Prozesse in realen Räumen mit Hilfe von Geodaten darzustellen, zu beschreiben und zu erklären,\ngrundlegende räumliche Analysen von Raster- und Vektordaten durchzuführen,\nräumliche Fragestellungen in geeignete GIS-Operationen zu übersetzen,\neine eigenständige Analyse zu entwickeln und in Form einer kleinen wissenschaftlichen Studie nachvollziehbar zu kommunizieren.",
+    "crumbs": [
+      "Grundlagen der räumlichen Analyse"
+    ]
+  },
+  {
+    "objectID": "index.html#arbeitsverständnis",
+    "href": "index.html#arbeitsverständnis",
+    "title": "Grundlagen der räumlichen Analyse",
+    "section": "Arbeitsverständnis",
+    "text": "Arbeitsverständnis\nMein Selbstverständnis als Kursleiter ist das eines Coaches. Ich kann Ihnen die Arbeit mit Raum, Daten und Methoden nicht abnehmen. Ich kann meine Erfahrung, meine Perspektive und meine Kritik einbringen; lernen, üben, entscheiden und begründen müssen Sie selbst.\nDamit dieser Weg für Sie erfolgreich werden kann, müssen Sie kritisch reflektieren, was ich einbringe, was Sie in Diskussionen mit Ihren Kommilitoninnen und Kommilitonen lernen, was Sie lesen, was Sie ausprobieren und was Sie glauben, sicher verstanden zu haben. Bildung hängt zu einem großen Teil davon ab, was Sie selbst investieren. Wenn Sie nicht deutlich mehr tun, als nur anwesend zu sein, können Sie davon ausgehen, dass dieser Kurs für Sie Zeitverschwendung ist.\nWissenschaftliches Arbeiten bedeutet, auf der Arbeit anderer aufzubauen, eigene Wege zu prüfen, Fehler zu erkennen, neu anzusetzen und Ergebnisse nachvollziehbar zu begründen. Also fangen Sie an: Denken Sie, reflektieren und diskutieren Sie, laufen Sie in Sackgassen, beginnen Sie erneut, sammeln und vergleichen Sie Erfahrungen und entwickeln Sie Ihre eigene Art, mit Raum, Daten und Wissen zu arbeiten.",
+    "crumbs": [
+      "Grundlagen der räumlichen Analyse"
+    ]
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-projekt-öffnen",
+    "href": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-projekt-öffnen",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Projekt öffnen",
+    "text": "Technik: Projekt öffnen\nQGIS öffnen.\nosm_ueberlagerung.gpkg laden.\nBenötigte Layer:\n\nstudy_area\ngrid_100m\npressure_points\nzusätzlich: noise_roads\n\nProjekt-CRS prüfen: metrisch, z. B. EPSG:25832."
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-layer-prüfen",
+    "href": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-layer-prüfen",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Layer prüfen",
+    "text": "Technik: Layer prüfen\nVor dem Rechnen prüfen:\n\nRaster liegt im Untersuchungsgebiet.\nZellen sind ca. 100 × 100 m groß.\nnoise_roads enthält Linien.\npressure_points enthält Punkte.\n\nWenn noise_roads fehlt: aus OSM-Straßen herstellen."
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-grundmodell",
+    "href": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-grundmodell",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Grundmodell",
+    "text": "Technik: Grundmodell\nDie Übung berechnet keine dB-Werte.\nModelliert wird ein Verdachtsraum:\nStraßentyp + Nähe + Nutzungsorte\nGebäude, Verkehrsmengen, Topographie und Wind bleiben Kontrollfragen."
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-datenwege",
+    "href": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-datenwege",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Datenwege",
+    "text": "Technik: Datenwege\nOSM reicht für diese Übung.\nStabile Wege:\n\nvorbereitete Datei: osm_ueberlagerung.gpkg\nGeofabrik: Regionaldownload\nBBBike: eigener Ausschnitt\nQuickOSM: schneller Live-Download"
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-noise_roads-herstellen",
+    "href": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-noise_roads-herstellen",
+    "title": "Lärmausbreitung",
+    "section": "Technik: noise_roads herstellen",
+    "text": "Technik: noise_roads herstellen\nQuickOSM-Abfragen oder Filter auf OSM-Linien:\nhighway IN (\n  'trunk',\n  'primary',\n  'secondary',\n  'tertiary',\n  'residential'\n)\nNur Linien behalten.\nMit study_area clippen."
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-feld-q-anlegen",
+    "href": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-feld-q-anlegen",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Feld Q anlegen",
+    "text": "Technik: Feld Q anlegen\nFeldrechner in noise_roads.\nNeues Ganzzahlfeld: Q\nCASE\nWHEN \"highway\" IN ('trunk','primary') THEN 2\nWHEN \"highway\" IN ('secondary','tertiary') THEN 1\nELSE 0\nEND\nSpeichern."
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-nächste-straße",
+    "href": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-nächste-straße",
+    "title": "Lärmausbreitung",
+    "section": "Technik: nächste Straße",
+    "text": "Technik: nächste Straße\nWerkzeug: Attribute nach nächstem Nachbarn verknüpfen\n\nEingabelayer: grid_100m\nJoin-Layer: noise_roads\nnächste Nachbarn: 1\nzu übernehmendes Feld: Q\nDistanzfeld erzeugen: road_dist\nErgebnis: grid_road\n\nEinheit: Meter."
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-feld-d-anlegen",
+    "href": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-feld-d-anlegen",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Feld D anlegen",
+    "text": "Technik: Feld D anlegen\nFeldrechner in grid_road.\nNeues Ganzzahlfeld: D\nCASE\nWHEN \"road_dist\" &lt;= 50 THEN 2\nWHEN \"road_dist\" &lt;= 150 THEN 1\nELSE 0\nEND\nSchwellenwerte sind Modellentscheidungen."
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-punkte-zählen",
+    "href": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-punkte-zählen",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Punkte zählen",
+    "text": "Technik: Punkte zählen\nWerkzeug: Punkte in Polygon zählen\n\nPolygonlayer: grid_road\nPunktlayer: pressure_points\nZählfeld: R_count\nErgebnis: grid_noise"
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-feld-r-anlegen",
+    "href": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-feld-r-anlegen",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Feld R anlegen",
+    "text": "Technik: Feld R anlegen\nFeldrechner in grid_noise.\nNeues Ganzzahlfeld: R\nCASE\nWHEN \"R_count\" = 0 THEN 0\nWHEN \"R_count\" &lt;= 3 THEN 1\nELSE 2\nEND"
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-feld-lk-berechnen",
+    "href": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-feld-lk-berechnen",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Feld LK berechnen",
+    "text": "Technik: Feld LK berechnen\nFeldrechner öffnen.\nNeues Ganzzahlfeld: LK\ncoalesce(\"Q\",0) + coalesce(\"D\",0) + coalesce(\"R\",0)\nErgebnis speichern."
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-symbolisierung",
+    "href": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-symbolisierung",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Symbolisierung",
+    "text": "Technik: Symbolisierung\nLayer-Eigenschaften → Symbolisierung\n\nDarstellung: Abgestuft\nSpalte: LK\nKlassen: 0–1, 2–4, 5–6\nhohe Klasse = starker Konfliktverdacht\n\nLegende verständlich benennen."
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-textvorlage",
+    "href": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-textvorlage",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Textvorlage",
+    "text": "Technik: Textvorlage\n\nDas Untersuchungsgebiet umfasst …\nStraßen werden als Proxy für … genutzt.\nAusbreitung wird über … angenähert.\nRelevanz wird über … erfasst.\nAuffällig ist …, fragwürdig bleibt …\n\nMaximal fünf Sätze."
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-plausibilitätscheck",
+    "href": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-plausibilitätscheck",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Plausibilitätscheck",
+    "text": "Technik: Plausibilitätscheck\nEine Rasterzelle mit hohem LK auswählen.\nDann:\n\nBasiskarte ansehen.\nnoise_roads und pressure_points einzeln prüfen.\nGebäuderiegel und Grünflächen visuell kontrollieren.\nPlausibel oder Artefakt entscheiden.\nUnsicherheit notieren."
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-kartenexport",
+    "href": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-kartenexport",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Kartenexport",
+    "text": "Technik: Kartenexport\nLayout-Manager öffnen.\nElemente:\n\nKarte\nTitel\nLegende für LK\nMaßstab\nfünf Sätze als Textfeld\n\nExport: PDF oder PNG."
+  },
+  {
+    "objectID": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-navigation",
+    "href": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-navigation",
+    "title": "Lärmausbreitung",
+    "section": "Technik: Navigation",
+    "text": "Technik: Navigation\nIn dieser Präsentation:\n\nPfeil rechts/links: Hauptfolien\nPfeil runter: technische Folie\nPfeil hoch: zurück\nEsc: Übersicht\n\nKeine Klickfelder nötig."
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#worum-es-hier-geht",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#worum-es-hier-geht",
+    "title": "Der perfekte Gipfel",
+    "section": "Worum es hier geht",
+    "text": "Worum es hier geht\nDer „perfekte Gipfel“ ist ein gutes Beispiel für ein kleines GIS-Projekt, weil die Frage zunächst unscharf ist.\n\nAus einer Idee wird erst dann ein Projekt, wenn dokumentiert ist, wie sie in Kriterien, Daten, Operationen und Ergebnisgrenzen übersetzt wurde.\n\n\nDie Folien sind deshalb nicht als Programmierbeispiel gedacht, sondern als Beispiel für Problemklärung und Workflow-Dokumentation."
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#dokumentationsrahmen",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#dokumentationsrahmen",
+    "title": "Der perfekte Gipfel",
+    "section": "Dokumentationsrahmen",
+    "text": "Dokumentationsrahmen\nFür jedes GIS-Projekt muss die gleiche Kette lesbar bleiben:\nProblem → Projektfrage → Kriterium → Datenbasis → Operation → Ergebnislayer → Aussagegrenze\n\nDie Dokumentation beschreibt nicht jede Mausbewegung. Sie beschreibt die fachlich entscheidenden Übersetzungsschritte."
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#ausgangspunkt-was-ist-ein-perfekter-gipfel",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#ausgangspunkt-was-ist-ein-perfekter-gipfel",
+    "title": "Der perfekte Gipfel",
+    "section": "Ausgangspunkt: Was ist ein „perfekter Gipfel“?",
+    "text": "Ausgangspunkt: Was ist ein „perfekter Gipfel“?\n\n\n\n\nDokumentationspunkt: Die Ausgangsidee ist ein Qualitätsurteil. Vor der GIS-Umsetzung muss geklärt werden, welche räumlichen Eigenschaften dieses Urteil tragen sollen."
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#von-der-idee-zur-projektfrage",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#von-der-idee-zur-projektfrage",
+    "title": "Der perfekte Gipfel",
+    "section": "Von der Idee zur Projektfrage",
+    "text": "Von der Idee zur Projektfrage\nAus „perfekter Gipfel“ wird keine GIS-Analyse. Eine bearbeitbare Frage braucht eine messbare Zielrichtung.\n\nWelche Gipfel sind nach Höhe, Dominanz, Prominenz und Eigenständigkeit besonders ausgeprägt?\n\n\nDas ist der erste dokumentierbare Schritt: Die Alltagsformulierung wird in eine räumliche Analysefrage übersetzt."
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#kriterien-statt-bauchgefühl",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#kriterien-statt-bauchgefühl",
+    "title": "Der perfekte Gipfel",
+    "section": "Kriterien statt Bauchgefühl",
+    "text": "Kriterien statt Bauchgefühl\n\n\n\n\n\n\nAus dem Begriff entstehen Kriterien:\nHöhe / Position\nDominanz\nProminenz / Schartenhöhe\nEigenständigkeit\nNicht alle Kriterien sind direkt im DGM gespeichert. Einige müssen abgeleitet werden.\n\n\n\n\nDokumentationspunkt: Für jedes Kriterium muss festgehalten werden, welche Datenbasis und welche Ableitungslogik verwendet wird."
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#formale-definition-als-entscheidung",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#formale-definition-als-entscheidung",
+    "title": "Der perfekte Gipfel",
+    "section": "Formale Definition als Entscheidung",
+    "text": "Formale Definition als Entscheidung\n\n\nEine Formel ist keine neutrale Wahrheit. Sie dokumentiert, welche Eigenschaften in die Bewertung eingehen und wie sie gewichtet bzw. verrechnet werden."
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#modellbildung-dokumentieren",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#modellbildung-dokumentieren",
+    "title": "Der perfekte Gipfel",
+    "section": "Modellbildung dokumentieren",
+    "text": "Modellbildung dokumentieren\n\n\n\n\n\n\nFür die Methodennotiz reicht die technische Formel nicht.\nDokumentiert werden muss:\nObjekte: Gipfelpunkte\nFläche: Höhenmodell\nBeziehungen: Distanz, Trennung, Verbindung\nProdukt: Prominenz / Eigenständigkeit"
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#problemlösung-als-arbeitsprotokoll",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#problemlösung-als-arbeitsprotokoll",
+    "title": "Der perfekte Gipfel",
+    "section": "Problemlösung als Arbeitsprotokoll",
+    "text": "Problemlösung als Arbeitsprotokoll\n\n\nDiese Folie wird im Kurs als Dokumentationsfolie gelesen: Welche Teilprobleme entstehen, welche Entscheidungen werden getroffen, welche Zwischenergebnisse müssen gesichert werden?"
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#vom-problem-zu-arbeitspaketen",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#vom-problem-zu-arbeitspaketen",
+    "title": "Der perfekte Gipfel",
+    "section": "Vom Problem zu Arbeitspaketen",
+    "text": "Vom Problem zu Arbeitspaketen\n\n\nNicht alles muss automatisiert werden. Wichtig ist, dass die relevanten Arbeitspakete benannt werden: Datenprüfung, Kriteriendefinition, Operation, Kontrolle, Ergebnisinterpretation."
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-interaktiv",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-interaktiv",
+    "title": "Der perfekte Gipfel",
+    "section": "Umsetzung dokumentieren: interaktiv",
+    "text": "Umsetzung dokumentieren: interaktiv\n\n\nInteraktive Arbeit ist zulässig. Dokumentiert werden aber die stabilen Schritte: Werkzeug, Eingangsdaten, zentrale Parameter, Ausgabe und fachlicher Zweck."
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-reproduzierbare-befehle",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-reproduzierbare-befehle",
+    "title": "Der perfekte Gipfel",
+    "section": "Umsetzung dokumentieren: reproduzierbare Befehle",
+    "text": "Umsetzung dokumentieren: reproduzierbare Befehle\n\n\nKommandozeilen oder kopierte Processing-Aufrufe sind hier kein Programmierziel. Sie sind ein Mittel, um Parameter und Dateipfade eindeutig zu sichern."
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-ablauf-statt-code",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-ablauf-statt-code",
+    "title": "Der perfekte Gipfel",
+    "section": "Umsetzung dokumentieren: Ablauf statt Code",
+    "text": "Umsetzung dokumentieren: Ablauf statt Code\n\n\nWenn Skripte verwendet werden, dann als dokumentierte Ablaufbeschreibung. Entscheidend bleibt: Welche Entscheidung wird umgesetzt und welcher Ergebnislayer entsteht?"
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#übersetzung-in-gis-anforderungen",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#übersetzung-in-gis-anforderungen",
+    "title": "Der perfekte Gipfel",
+    "section": "Übersetzung in GIS-Anforderungen",
+    "text": "Übersetzung in GIS-Anforderungen\n\n\nHier liegt der Kern der Dokumentation: Fachliche Begriffe werden in Datenstrukturen, Raster-/Vektoroperationen, Parameter und Zwischenergebnisse übersetzt."
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#dokumentationsschema-für-einen-hauptschritt",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#dokumentationsschema-für-einen-hauptschritt",
+    "title": "Der perfekte Gipfel",
+    "section": "Dokumentationsschema für einen Hauptschritt",
+    "text": "Dokumentationsschema für einen Hauptschritt\nEin Hauptschritt sollte knapp, aber vollständig dokumentiert werden.\n\n\nZweck Welches Kriterium oder Teilproblem wird bearbeitet?\n\n\nDatenbasis Welche Eingangsdaten werden verwendet?\n\n\nOperation Welche GIS-Operation wird eingesetzt?\n\n\nParameter Welche Schwellenwerte, Toleranzen oder Abbruchkriterien gelten?\n\n\nAusgabe Welcher Layer oder Wert entsteht?\n\n\nGrenze Wovon hängt die Aussagekraft ab?"
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#wie-soll-das-gehen",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#wie-soll-das-gehen",
+    "title": "Der perfekte Gipfel",
+    "section": "Wie soll das gehen?",
+    "text": "Wie soll das gehen?\n\n\nEin komplexes Problem wird dokumentierbar, wenn es in prüfbare Zwischenschritte zerlegt wird. Die Dokumentation folgt dieser Zerlegung."
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#beispiel-prominenz-durch-fluten-denken",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#beispiel-prominenz-durch-fluten-denken",
+    "title": "Der perfekte Gipfel",
+    "section": "Beispiel: Prominenz durch Fluten denken",
+    "text": "Beispiel: Prominenz durch Fluten denken\n\n\nDokumentationspunkt: Die fachliche Idee lautet nicht „wir benutzen ein Tool“, sondern: Wir variieren ein Flutniveau und prüfen, wann der aktuelle Gipfel mit anderen Gipfeln verbunden wird."
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#suchstrategie-festhalten",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#suchstrategie-festhalten",
+    "title": "Der perfekte Gipfel",
+    "section": "Suchstrategie festhalten",
+    "text": "Suchstrategie festhalten\n\n\nDer naive Weg wäre schrittweises Fluten. Die dokumentierte Verbesserung ist eine Suchstrategie, die den relevanten Höhenbereich systematisch eingrenzt."
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#abbruchkriterium-dokumentieren",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#abbruchkriterium-dokumentieren",
+    "title": "Der perfekte Gipfel",
+    "section": "Abbruchkriterium dokumentieren",
+    "text": "Abbruchkriterium dokumentieren\n\n\nFür die Aussagekraft ist nicht nur das Ergebnis wichtig, sondern auch: Wann wurde die Suche beendet und welche Genauigkeit wurde akzeptiert?"
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#beispiel-einer-methodennotiz",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#beispiel-einer-methodennotiz",
+    "title": "Der perfekte Gipfel",
+    "section": "Beispiel einer Methodennotiz",
+    "text": "Beispiel einer Methodennotiz\nFragestellung:\nWie eigenständig ist ein Gipfel im Verhältnis zu benachbarten Gipfeln?\n\nKriterium:\nProminenz / Schartenhöhe.\n\nDatenbasis:\nDigitales Höhenmodell und Gipfelpunkte.\n\nOperationelle Idee:\nFlutniveau variieren und Verbindung der Gipfeleinheiten prüfen.\n\nSuchstrategie:\nHöhenbereich durch binäre Suche eingrenzen.\n\nAbbruchkriterium:\nSuche endet bei definierter Höhentoleranz.\n\nAussagegrenze:\nDEM-Auflösung, Gipfelerkennung und Toleranz beeinflussen den Wert."
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#was-davon-ins-eigene-projekt-gehört",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#was-davon-ins-eigene-projekt-gehört",
+    "title": "Der perfekte Gipfel",
+    "section": "Was davon ins eigene Projekt gehört",
+    "text": "Was davon ins eigene Projekt gehört\n\nProjektfrage schärfen → Kriterien ableiten → Daten wählen → Hauptschritte planen → Parameter begründen → Ergebnislayer sichern → Aussagegrenze benennen\n\n\nDas Gipfelbeispiel ist nur komplexer als viele Kursprojekte. Die Dokumentationslogik ist dieselbe."
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#nicht-dokumentieren-vollständige-history",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#nicht-dokumentieren-vollständige-history",
+    "title": "Der perfekte Gipfel",
+    "section": "Nicht dokumentieren: vollständige History",
+    "text": "Nicht dokumentieren: vollständige History\nEine Workflow-Dokumentation ist kein Mitschnitt jeder Bedienhandlung.\nDokumentiert werden nur Hauptschritte, die das Ergebnis fachlich verändern.\nnicht: Layer verschoben, Stil getestet, Ansicht gezoomt\nsondern: Distanz berechnet, reklassifiziert, gewichtet, maskiert, kombiniert\n\nDie Leitfrage lautet: Könnte eine andere Person den methodischen Weg fachlich nachvollziehen?"
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#übertrag-auf-einfache-gis-projekte",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#übertrag-auf-einfache-gis-projekte",
+    "title": "Der perfekte Gipfel",
+    "section": "Übertrag auf einfache GIS-Projekte",
+    "text": "Übertrag auf einfache GIS-Projekte\nSiedlungsferne\n→ Distanz zur Siedlung\n→ Reklassifikation\n→ Störungskriterium\n→ Beitrag zur Eignungskarte\n\nHangneigung\n→ DGM-Ableitung\n→ Klassenbildung\n→ Reliefkriterium\n→ Beitrag zur Eignungskarte\n\nAuch einfache Projekte brauchen keine lange History, sondern eine begründete Kette zwischen Frage, Kriterium, Operation und Ergebnis."
+  },
+  {
+    "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#prüfregel-für-die-dokumentation",
+    "href": "slides/perfekter_gipfel_gesamtrahmen.html#prüfregel-für-die-dokumentation",
+    "title": "Der perfekte Gipfel",
+    "section": "Prüfregel für die Dokumentation",
+    "text": "Prüfregel für die Dokumentation\nFür jeden Hauptschritt sollte eine fremde Person erkennen können:\nWarum dieser Schritt?\nWelche Daten?\nWelche Operation?\nWelche Parameter?\nWelcher Ergebnislayer?\nWelche Aussagegrenze?\n\nDas Ziel ist nicht Programmierung. Das Ziel ist nachvollziehbare GIS-Arbeit."
   },
   {
     "objectID": "slides/unit01_geographischer_raum.html#leitfrage-der-sitzung",
