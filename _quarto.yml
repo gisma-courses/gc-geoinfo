@@ -143,8 +143,8 @@ website:
               text: Räumliche Ableitungen               
             - href: slides/unit05_raeumliche_bewertung_entscheidung.qmd
               text: Eignungen, Entscheidungen und Kosten
-            - href: slides/perfekter_gipfel_gesamtrahmen.qmd
-              text: Der perfekte Gipfel - ein Projekt Modell
+            - href: slides/laermausbreitung_osm.qmd
+              text: Lärmausbreitung
             - href: slides/marburg_dom1_viewshed_revealjs.qmd
               text: Viewshed Analyse
 

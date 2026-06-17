@@ -13,3 +13,5 @@ unit04-04.qmd
 
 **/*.quarto_ipynb
 .positai
+
+/.luarc.json

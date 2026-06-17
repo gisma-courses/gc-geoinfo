@@ -14,10 +14,10 @@ Die studentische Sitzung ist keine reine Präsentation, sondern eine Übungssitz
 
 Erwartet wird eine Verbindung aus:
 
-1.   kurzer Einführung in Problem und Raumfrage (max. 5 Minuten),
-2.   kompakter Darstellung des QGIS-Projekts (max. 10 Minuten),
-3.   aktivierendem Übungs- oder Diskussionsanteil (max. 60 Minuten),
-4.   gemeinsamer Auswertung und kritischer Reflexion (max. 15 Minuten).
+1.  kurzer Einführung in Problem und Raumfrage (max. 5 Minuten),
+2.  kompakter Darstellung des QGIS-Projekts (max. 10 Minuten),
+3.  aktivierendem Übungs- oder Diskussionsanteil (max. 60 Minuten),
+4.  gemeinsamer Auswertung und kritischer Reflexion (max. 15 Minuten).
 
 ::: {.callout-important appearance="simple" icon="false"}
 Nicht ausreichend ist eine lineare Folienpräsentation mit kurzer Fragerunde. Erwartet wird eine erkennbare Arbeits- und Beteiligungsphase.
@@ -53,7 +53,6 @@ Im Zentrum der Sitzung steht ein aktiver Arbeitsanteil. Geeignet sind zum Beispi
 
 Zum Abschluss werden Ergebnisse, Grenzen, Unsicherheiten und mögliche Alternativen gemeinsam eingeordnet.
 
-
 ## Rolle des QGIS-Projekts
 
 Das QGIS-Projekt soll so vorbereitet sein, dass es in der Sitzung als nachvollziehbare Arbeitsgrundlage dient. Im Idealfall soll sichtbar werden,
@@ -63,13 +62,9 @@ Das QGIS-Projekt soll so vorbereitet sein, dass es in der Sitzung als nachvollzi
 -   welche Analyseentscheidungen getroffen wurden,
 -   und wie daraus ein Ergebnis entstanden ist.
 
-
 Da es sich um ein Work-in-Progress-Projekt handelt, muss die Sitzung kein vollständig abgeschlossenes Ergebnis präsentieren. Sie kann vielmehr auch dazu dienen, besondere Problembereiche, methodische Schwierigkeiten und offene Fragen zum Gegenstand der gemeinsamen Arbeit zu machen. Voraussetzung ist, dass diese Punkte aus dem bisherigen Projektverlauf heraus entwickelt werden. Es soll also erkennbar werden, welche Schritte bereits unternommen wurden, welche Lösungsansätze getestet wurden, an welchen Stellen Probleme aufgetreten sind und warum diese bislang nicht zufriedenstellend gelöst werden konnten.
 
-
 Die Sitzung ist zwingend **anwendungsbasiert** und nicht nur **folienbasiert** sein.
-
-
 
 ## Bewertung der Sitzungsgestaltung
 
@@ -79,4 +74,3 @@ Bewertet wird nicht nur die fachliche Qualität, sondern auch,
 -   ob die Teilnehmenden sinnvoll aktiviert werden,
 -   ob Probleme, Daten, Methode und Ergebnis verständlich vermittelt werden,
 -   und ob Grenzen und Unsicherheiten kritisch reflektiert werden.
-
