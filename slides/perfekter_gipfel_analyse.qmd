@@ -1,17 +1,8 @@
 ---
 title: "Der perfekte Gipfel"
 subtitle: "Explizite Annahmen, implizite Regeln und offene Festlegungen"
-lang: de
-format:
-  pdf:
-    pdf-engine: xelatex
-    documentclass: article
-    papersize: a4
-    fontsize: 10pt
-    geometry: margin=20mm
-    toc: false
-  html:
-    toc: false
+title-block-banner: ../assets/images/splash_L03.png
+title-block-banner-color: black
 ---
 
 Grundlage: Christian Rauch, „Der perfekte Gipfel“, *DAV Panorama* 2/2012, S. 112–117. Die Analyse unterscheidet ausdrücklich genannte Festlegungen von mathematischen Konsequenzen und fehlenden Begründungen.
