@@ -147,6 +147,13 @@ website:
               text: Lärmausbreitung
             - href: slides/marburg_dom1_viewshed_revealjs.qmd
               text: Viewshed Analyse
+        - section: Addon Perfekter Gipfel 
+          contents:
+            - href: slides/perfekter_gipfel_gesamtrahmen.qmd
+              text: Der Perfekte Gipfel - Das Konzept
+            - href: slides/perfekter_gipfel_analyse.qmd
+              text: Der Perfekte Gipfel - Die Analyse               
+              
 
 
 execute:

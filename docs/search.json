@@ -2412,161 +2412,253 @@
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#worum-es-hier-geht",
     "title": "Der perfekte Gipfel",
     "section": "Worum es hier geht",
-    "text": "Worum es hier geht\nDer „perfekte Gipfel“ ist ein gutes Beispiel für ein GIS-Projekt, weil die Frage typisch qualitativ ist, jedoch quasi-naturwissenschaftlich begründet erscheint.\n\nAus einer Fragestellung wird erst dann wissenschaftlich belastbare Studie, wenn dokumentiert ist, wie sie in Kriterien, Daten, Operationen und Ergebnisgrenzen übersetzt wurde."
+    "text": "Worum es hier geht\nDer „perfekte Gipfel“ ist ein gutes Beispiel für ein GIS-Projekt, weil die Frage typisch qualitativ ist, jedoch quasi-naturwissenschaftlich begründet erscheint.\n\nAus einer Fragestellung wird erst dann wissenschaftlich belastbare Studie, wenn dokumentiert ist, wie sie in Kriterien, Daten, Operationen und Ergebnisgrenzen übersetzt wurde.",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#dokumentationsrahmen",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#dokumentationsrahmen",
     "title": "Der perfekte Gipfel",
     "section": "Dokumentationsrahmen",
-    "text": "Dokumentationsrahmen\nFür jedes (GI)-Projekt muss die gleiche Kette eingehalten werden:\nProblem → Projektfrage → Kriterium → Datenbasis → Operation → Ergebnislayer → Aussagegrenze"
+    "text": "Dokumentationsrahmen\nFür jedes (GI)-Projekt muss die gleiche Kette eingehalten werden:\nProblem → Projektfrage → Kriterium → Datenbasis → Operation → Ergebnislayer → Aussagegrenze",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#ausgangspunkt-was-ist-ein-perfekter-gipfel",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#ausgangspunkt-was-ist-ein-perfekter-gipfel",
     "title": "Der perfekte Gipfel",
     "section": "Ausgangspunkt: Was ist ein „perfekter Gipfel“?",
-    "text": "Ausgangspunkt: Was ist ein „perfekter Gipfel“?\n\n\n\n\nDie Ausgangsidee ist ein Qualitätsurteil. Vor der methodischen, technischen GIS-Umsetzung muss zwingend geklärt werden, welche fachlichen und räumlichen Eigenschaften dieses Urteil reproduzierbar bestimmen sollen."
+    "text": "Ausgangspunkt: Was ist ein „perfekter Gipfel“?\n\n\n\n\nDie Ausgangsidee ist ein Qualitätsurteil. Vor der methodischen, technischen GIS-Umsetzung muss zwingend geklärt werden, welche fachlichen und räumlichen Eigenschaften dieses Urteil reproduzierbar bestimmen sollen.",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#von-der-idee-zur-projektfrage",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#von-der-idee-zur-projektfrage",
     "title": "Der perfekte Gipfel",
     "section": "Von der Idee zur Projektfrage",
-    "text": "Von der Idee zur Projektfrage\nWas ist beim „perfekten Gipfel“ die zu bearbeitende Frage und was sind messbare Parameter.\n\nExtrahiere aus dem Artikel die Definitionen die benannt werden: Gipfel, Höhe, Dominanz, Prominenz, Eigenständigkeit…?\n\n\nDas ist der erste dokumentierbare Schritt: Die Alltagsformulierung wird in eine räumliche Analysefrage übersetzt."
+    "text": "Von der Idee zur Projektfrage\nWas ist beim „perfekten Gipfel“ die zu bearbeitende Frage und was sind messbare Parameter.\n\nExtrahiere aus dem Artikel die Definitionen die benannt werden: Gipfel, Höhe, Dominanz, Prominenz, Eigenständigkeit…?\n\n\nDas ist der erste dokumentierbare Schritt: Die Alltagsformulierung wird in eine räumliche Analysefrage übersetzt.",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#kriterien-statt-bauchgefühl",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#kriterien-statt-bauchgefühl",
     "title": "Der perfekte Gipfel",
     "section": "Kriterien statt Bauchgefühl",
-    "text": "Kriterien statt Bauchgefühl\n\n\n\n\n\n\nAus der Analyse entstehen Kriterien:\nHöhe \nPosition\nDominanz\nProminenz \nSchartenhöhe\nEigenständigkeit\nNicht alle Kriterien sind direkt als Daten aus dem DGM Verfügbar. Einige müssen abgeleitet werden.\n\n\n\n\nFür jedes Kriterium muss festgehalten werden, welche Datenbasis und welche Ableitungslogik verwendet wird."
+    "text": "Kriterien statt Bauchgefühl\n\n\n\n\n\n\nAus der Analyse entstehen Kriterien:\nHöhe \nPosition\nDominanz\nProminenz \nSchartenhöhe\nEigenständigkeit\nNicht alle Kriterien sind direkt als Daten aus dem DGM Verfügbar. Einige müssen abgeleitet werden.\n\n\n\n\nFür jedes Kriterium muss festgehalten werden, welche Datenbasis und welche Ableitungslogik verwendet wird.",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#formale-definition-als-entscheidung",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#formale-definition-als-entscheidung",
     "title": "Der perfekte Gipfel",
     "section": "Formale Definition als Entscheidung",
-    "text": "Formale Definition als Entscheidung\n\n\nEine Formel dokumentiert, welche Eigenschaften in die Bewertung eingehen und wie sie gewichtet bzw. verrechnet werden. Formeln sind kritisierbar!"
+    "text": "Formale Definition als Entscheidung\n\n\nEine Formel dokumentiert, welche Eigenschaften in die Bewertung eingehen und wie sie gewichtet bzw. verrechnet werden. Formeln sind kritisierbar!",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#modellbildung-dokumentieren",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#modellbildung-dokumentieren",
     "title": "Der perfekte Gipfel",
     "section": "Modellbildung dokumentieren",
-    "text": "Modellbildung dokumentieren\n\n\n\n\n\n\nAls Methodendokumentation genügt die (technische) Formel nicht.\nDokumentiert werden muss:\nObjekte: Gipfelpunkte\nFläche: Höhenmodell\nBeziehungen: Distanz, Trennung, Verbindung\nProdukt: Prominenz / Eigenständigkeit"
+    "text": "Modellbildung dokumentieren\n\n\n\n\n\n\nAls Methodendokumentation genügt die (technische) Formel nicht.\nDokumentiert werden muss:\nObjekte: Gipfelpunkte\nFläche: Höhenmodell\nBeziehungen: Distanz, Trennung, Verbindung\nProdukt: Prominenz / Eigenständigkeit",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#problemlösung-als-arbeitsprotokoll",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#problemlösung-als-arbeitsprotokoll",
     "title": "Der perfekte Gipfel",
     "section": "Problemlösung als Arbeitsprotokoll",
-    "text": "Problemlösung als Arbeitsprotokoll\n\n\nWelche Teilprobleme entstehen, welche Entscheidungen werden getroffen, welche Zwischenergebnisse müssen gesichert werden?"
+    "text": "Problemlösung als Arbeitsprotokoll\n\n\nWelche Teilprobleme entstehen, welche Entscheidungen werden getroffen, welche Zwischenergebnisse müssen gesichert werden?",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#vom-problem-zu-arbeitspaketen",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#vom-problem-zu-arbeitspaketen",
     "title": "Der perfekte Gipfel",
     "section": "Vom Problem zu Arbeitspaketen",
-    "text": "Vom Problem zu Arbeitspaketen\n\n\nNicht alles muss automatisiert werden. Wichtig ist, dass die relevanten Arbeitspakete benannt werden: Datenprüfung, Kriteriendefinition, Operation, Kontrolle, Ergebnisinterpretation."
+    "text": "Vom Problem zu Arbeitspaketen\n\n\nNicht alles muss automatisiert werden. Wichtig ist, dass die relevanten Arbeitspakete benannt werden: Datenprüfung, Kriteriendefinition, Operation, Kontrolle, Ergebnisinterpretation.",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-interaktiv",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-interaktiv",
     "title": "Der perfekte Gipfel",
     "section": "Umsetzung dokumentieren: interaktiv",
-    "text": "Umsetzung dokumentieren: interaktiv\n\n\nInteraktive Arbeit ist zulässig. Dokumentiert werden aber die stabilen Schritte: Werkzeug, Eingangsdaten, zentrale Parameter, Ausgabe und fachlicher Zweck."
+    "text": "Umsetzung dokumentieren: interaktiv\n\n\nInteraktive Arbeit ist zulässig. Dokumentiert werden aber die stabilen Schritte: Werkzeug, Eingangsdaten, zentrale Parameter, Ausgabe und fachlicher Zweck.",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-reproduzierbare-befehle",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-reproduzierbare-befehle",
     "title": "Der perfekte Gipfel",
     "section": "Umsetzung dokumentieren: reproduzierbare Befehle",
-    "text": "Umsetzung dokumentieren: reproduzierbare Befehle\n\n\nKommandozeilen oder kopierte Processing-Aufrufe sind kein Programmierziel. Sie sind ein Mittel, um Parameter und Dateipfade eindeutig zu sichern."
+    "text": "Umsetzung dokumentieren: reproduzierbare Befehle\n\n\nKommandozeilen oder kopierte Processing-Aufrufe sind kein Programmierziel. Sie sind ein Mittel, um Parameter und Dateipfade eindeutig zu sichern.",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-ablauf-statt-code",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-ablauf-statt-code",
     "title": "Der perfekte Gipfel",
     "section": "Umsetzung dokumentieren: Ablauf statt Code",
-    "text": "Umsetzung dokumentieren: Ablauf statt Code\n\n\nWenn Skripte verwendet werden, dann als dokumentierte Ablaufbeschreibung. Entscheidend bleibt: Welche Entscheidung wird umgesetzt und welcher Ergebnislayer entsteht?"
+    "text": "Umsetzung dokumentieren: Ablauf statt Code\n\n\nWenn Skripte verwendet werden, dann als dokumentierte Ablaufbeschreibung. Entscheidend bleibt: Welche Entscheidung wird umgesetzt und welcher Ergebnislayer entsteht?",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#übersetzung-in-gis-anforderungen",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#übersetzung-in-gis-anforderungen",
     "title": "Der perfekte Gipfel",
     "section": "Übersetzung in GIS-Anforderungen",
-    "text": "Übersetzung in GIS-Anforderungen\n\n\nHier liegt der Kern der Dokumentation: Fachliche Begriffe werden in Datenstrukturen, Raster-/Vektoroperationen, Parameter und Zwischenergebnisse übersetzt."
+    "text": "Übersetzung in GIS-Anforderungen\n\n\nHier liegt der Kern der Dokumentation: Fachliche Begriffe werden in Datenstrukturen, Raster-/Vektoroperationen, Parameter und Zwischenergebnisse übersetzt.",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#dokumentationsschema-für-einen-hauptschritt",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#dokumentationsschema-für-einen-hauptschritt",
     "title": "Der perfekte Gipfel",
     "section": "Dokumentationsschema für einen Hauptschritt",
-    "text": "Dokumentationsschema für einen Hauptschritt\nEin Hauptschritt sollte knapp, aber vollständig dokumentiert werden.\n\n\nZweck Welches Kriterium oder Teilproblem wird bearbeitet?\n\n\nDatenbasis Welche Eingangsdaten werden verwendet?\n\n\nOperation Welche GIS-Operation wird eingesetzt?\n\n\nParameter Welche Schwellenwerte, Toleranzen oder Abbruchkriterien gelten?\n\n\nAusgabe Welcher Layer oder Wert entsteht?\n\n\nGrenze Wovon hängt die Aussagekraft ab?"
+    "text": "Dokumentationsschema für einen Hauptschritt\nEin Hauptschritt sollte knapp, aber vollständig dokumentiert werden.\n\n\nZweck Welches Kriterium oder Teilproblem wird bearbeitet?\n\n\nDatenbasis Welche Eingangsdaten werden verwendet?\n\n\nOperation Welche GIS-Operation wird eingesetzt?\n\n\nParameter Welche Schwellenwerte, Toleranzen oder Abbruchkriterien gelten?\n\n\nAusgabe Welcher Layer oder Wert entsteht?\n\n\nGrenze Wovon hängt die Aussagekraft ab?",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#wie-soll-das-gehen",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#wie-soll-das-gehen",
     "title": "Der perfekte Gipfel",
     "section": "Wie soll das gehen?",
-    "text": "Wie soll das gehen?\n\n\nEin komplexes Problem wird dokumentierbar, wenn es in prüfbare Zwischenschritte zerlegt wird. Die Dokumentation folgt dieser Zerlegung."
+    "text": "Wie soll das gehen?\n\n\nEin komplexes Problem wird dokumentierbar, wenn es in prüfbare Zwischenschritte zerlegt wird. Die Dokumentation folgt dieser Zerlegung.",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#beispiel-prominenz-durch-fluten-denken",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#beispiel-prominenz-durch-fluten-denken",
     "title": "Der perfekte Gipfel",
     "section": "Beispiel: Prominenz durch Fluten denken",
-    "text": "Beispiel: Prominenz durch Fluten denken\n\n\nDokumentationspunkt: Die fachliche Idee lautet nicht „wir benutzen ein Tool“, sondern: Wir variieren ein Flutniveau und prüfen, wann der aktuelle Gipfel mit anderen Gipfeln verbunden wird."
+    "text": "Beispiel: Prominenz durch Fluten denken\n\n\nDokumentationspunkt: Die fachliche Idee lautet nicht „wir benutzen ein Tool“, sondern: Wir variieren ein Flutniveau und prüfen, wann der aktuelle Gipfel mit anderen Gipfeln verbunden wird.",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#suchstrategie-festhalten",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#suchstrategie-festhalten",
     "title": "Der perfekte Gipfel",
     "section": "Suchstrategie festhalten",
-    "text": "Suchstrategie festhalten\n\n\nDer naive Weg wäre schrittweises Fluten. Die dokumentierte Verbesserung ist eine Suchstrategie, die den relevanten Höhenbereich systematisch eingrenzt."
+    "text": "Suchstrategie festhalten\n\n\nDer naive Weg wäre schrittweises Fluten. Die dokumentierte Verbesserung ist eine Suchstrategie, die den relevanten Höhenbereich systematisch eingrenzt.",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#abbruchkriterium-dokumentieren",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#abbruchkriterium-dokumentieren",
     "title": "Der perfekte Gipfel",
     "section": "Abbruchkriterium dokumentieren",
-    "text": "Abbruchkriterium dokumentieren\n\n\nFür die Aussagekraft ist nicht nur das Ergebnis wichtig, sondern auch: Wann wurde die Suche beendet und welche Genauigkeit wurde akzeptiert?"
+    "text": "Abbruchkriterium dokumentieren\n\n\nFür die Aussagekraft ist nicht nur das Ergebnis wichtig, sondern auch: Wann wurde die Suche beendet und welche Genauigkeit wurde akzeptiert?",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#beispiel-einer-methodennotiz",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#beispiel-einer-methodennotiz",
     "title": "Der perfekte Gipfel",
     "section": "Beispiel einer Methodennotiz",
-    "text": "Beispiel einer Methodennotiz\nFragestellung:\nWie eigenständig ist ein Gipfel im Verhältnis zu benachbarten Gipfeln?\n\nKriterium:\nProminenz / Schartenhöhe.\n\nDatenbasis:\nDigitales Höhenmodell und Gipfelpunkte.\n\nOperationelle Idee:\nFlutniveau variieren und Verbindung der Gipfeleinheiten prüfen.\n\nSuchstrategie:\nHöhenbereich durch binäre Suche eingrenzen.\n\nAbbruchkriterium:\nSuche endet bei definierter Höhentoleranz.\n\nAussagegrenze:\nDEM-Auflösung, Gipfelerkennung und Toleranz beeinflussen den Wert."
+    "text": "Beispiel einer Methodennotiz\nFragestellung:\nWie eigenständig ist ein Gipfel im Verhältnis zu benachbarten Gipfeln?\n\nKriterium:\nProminenz / Schartenhöhe.\n\nDatenbasis:\nDigitales Höhenmodell und Gipfelpunkte.\n\nOperationelle Idee:\nFlutniveau variieren und Verbindung der Gipfeleinheiten prüfen.\n\nSuchstrategie:\nHöhenbereich durch binäre Suche eingrenzen.\n\nAbbruchkriterium:\nSuche endet bei definierter Höhentoleranz.\n\nAussagegrenze:\nDEM-Auflösung, Gipfelerkennung und Toleranz beeinflussen den Wert.",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#was-davon-ins-eigene-projekt-gehört",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#was-davon-ins-eigene-projekt-gehört",
     "title": "Der perfekte Gipfel",
     "section": "Was davon ins eigene Projekt gehört",
-    "text": "Was davon ins eigene Projekt gehört\n\nProjektfrage schärfen → Kriterien ableiten → Daten wählen → Hauptschritte planen → Parameter begründen → Ergebnislayer sichern → Aussagegrenze benennen\n\n\nDas Gipfelbeispiel ist nur komplexer als viele Kursprojekte. Die Dokumentationslogik ist dieselbe."
+    "text": "Was davon ins eigene Projekt gehört\n\nProjektfrage schärfen → Kriterien ableiten → Daten wählen → Hauptschritte planen → Parameter begründen → Ergebnislayer sichern → Aussagegrenze benennen\n\n\nDas Gipfelbeispiel ist nur komplexer als viele Kursprojekte. Die Dokumentationslogik ist dieselbe.",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#nicht-dokumentieren-vollständige-history",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#nicht-dokumentieren-vollständige-history",
     "title": "Der perfekte Gipfel",
     "section": "Nicht dokumentieren: vollständige History",
-    "text": "Nicht dokumentieren: vollständige History\nEine Workflow-Dokumentation ist kein Mitschnitt jeder Bedienhandlung.\nDokumentiert werden nur Hauptschritte, die das Ergebnis fachlich verändern.\nnicht: Layer verschoben, Stil getestet, Ansicht gezoomt\nsondern: Distanz berechnet, reklassifiziert, gewichtet, maskiert, kombiniert\n\nDie Leitfrage lautet: Könnte eine andere Person den methodischen Weg fachlich nachvollziehen?"
+    "text": "Nicht dokumentieren: vollständige History\nEine Workflow-Dokumentation ist kein Mitschnitt jeder Bedienhandlung.\nDokumentiert werden nur Hauptschritte, die das Ergebnis fachlich verändern.\nnicht: Layer verschoben, Stil getestet, Ansicht gezoomt\nsondern: Distanz berechnet, reklassifiziert, gewichtet, maskiert, kombiniert\n\nDie Leitfrage lautet: Könnte eine andere Person den methodischen Weg fachlich nachvollziehen?",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#übertrag-auf-einfache-gis-projekte",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#übertrag-auf-einfache-gis-projekte",
     "title": "Der perfekte Gipfel",
     "section": "Übertrag auf einfache GIS-Projekte",
-    "text": "Übertrag auf einfache GIS-Projekte\nSiedlungsferne\n→ Distanz zur Siedlung\n→ Reklassifikation\n→ Störungskriterium\n→ Beitrag zur Eignungskarte\n\nHangneigung\n→ DGM-Ableitung\n→ Klassenbildung\n→ Reliefkriterium\n→ Beitrag zur Eignungskarte\n\nAuch einfache Projekte brauchen keine lange History, sondern eine begründete Kette zwischen Frage, Kriterium, Operation und Ergebnis."
+    "text": "Übertrag auf einfache GIS-Projekte\nSiedlungsferne\n→ Distanz zur Siedlung\n→ Reklassifikation\n→ Störungskriterium\n→ Beitrag zur Eignungskarte\n\nHangneigung\n→ DGM-Ableitung\n→ Klassenbildung\n→ Reliefkriterium\n→ Beitrag zur Eignungskarte\n\nAuch einfache Projekte brauchen keine lange History, sondern eine begründete Kette zwischen Frage, Kriterium, Operation und Ergebnis.",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#prüfregel-für-die-dokumentation",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#prüfregel-für-die-dokumentation",
     "title": "Der perfekte Gipfel",
     "section": "Prüfregel für die Dokumentation",
-    "text": "Prüfregel für die Dokumentation\nFür jeden Hauptschritt sollte eine fremde Person erkennen können:\nWarum dieser Schritt?\nWelche Daten?\nWelche Operation?\nWelche Parameter?\nWelcher Ergebnislayer?\nWelche Aussagegrenze?\n\nDas Ziel ist nicht Programmierung. Das Ziel ist nachvollziehbare GIS-Arbeit."
+    "text": "Prüfregel für die Dokumentation\nFür jeden Hauptschritt sollte eine fremde Person erkennen können:\nWarum dieser Schritt?\nWelche Daten?\nWelche Operation?\nWelche Parameter?\nWelcher Ergebnislayer?\nWelche Aussagegrenze?\n\nDas Ziel ist nicht Programmierung. Das Ziel ist nachvollziehbare GIS-Arbeit.",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Das Konzept"
+    ]
   },
   {
     "objectID": "slides/marburg_dom1_viewshed_revealjs.html#projektfrage",
@@ -3115,35 +3207,55 @@
     "href": "slides/perfekter_gipfel_analyse.html",
     "title": "Der perfekte Gipfel",
     "section": "",
-    "text": "Grundlage: Christian Rauch, „Der perfekte Gipfel“, DAV Panorama 2/2012, S. 112–117. Die Analyse unterscheidet ausdrücklich genannte Festlegungen von mathematischen Konsequenzen und fehlenden Begründungen."
+    "text": "Grundlage: Christian Rauch, „Der perfekte Gipfel“, DAV Panorama 2/2012, S. 112–117. Die Analyse unterscheidet ausdrücklich genannte Festlegungen von mathematischen Konsequenzen und fehlenden Begründungen.",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Die Analyse"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_analyse.html#expliziter-block",
     "href": "slides/perfekter_gipfel_analyse.html#expliziter-block",
     "title": "Der perfekte Gipfel",
     "section": "1. Expliziter Block",
-    "text": "1. Expliziter Block\nDie folgenden Größen und Rechenschritte werden im Artikel beschrieben; die symbolische Schreibweise fasst sie zusammen.\n\n\n\n\n\n\n\nQualitative Annahme / Festlegung\nÜbersetzung in eine Regel\n\n\n\n\nEin Berg ist eigenständig, wenn er die maßgebliche Verbindungsscharte zu höherem Gelände deutlich überragt.\nProminenz: \\(p=h-h_s\\), mit Gipfelhöhe \\(h\\) und Schartenhöhe \\(h_s\\).\n\n\nEin Berg ist eigenständig, wenn höheres Gelände weit entfernt liegt.\nDominanz \\(d\\): horizontale Entfernung zum nächstgelegenen höheren Gelände.\n\n\nMeereshöhe und relative Prominenz sollen einbezogen werden.\nVerhältnisse \\(h/H\\) und \\(p/h\\), mit \\(H=8848\\,\\mathrm{m}\\) als Referenzhöhe des Artikels.\n\n\nDominanz wird auf eine Referenzentfernung bezogen.\n\\(d/D\\), mit \\(D=100\\,000\\,\\mathrm{m}\\).\n\n\nGroße und kleine Berge sollen „fair“ vergleichbar sein.\nLogarithmierung aller drei Verhältnisse zur Basis 2.\n\n\nDie Komponenten ergeben einen Eigenständigkeitswert.\nNegative Summe der Logarithmen, geteilt durch 3. Kleineres \\(E\\) bedeutet größere Eigenständigkeit.\n\n\nDominanz über 100 km bringt keinen zusätzlichen Vorteil.\nFür \\(d&gt;D\\) entfällt der Dominanzterm im Formelkasten.\n\n\nZahlenwerte erhalten qualitative Kategorien.\nZwischen 0 und 1: „Weltberge“; zwischen 1 und 2: „Hauptberge eines Kontinents“; über 6: kaum eigenständiger Gipfel.\n\n\n\nDie im Artikel angegebene Formel lautet mit den obigen Referenzgrößen:\n\\[\nE=\\begin{cases}\n-\\dfrac{1}{3}\\left[\\log_2\\left(\\dfrac{h}{H}\\right)+\\log_2\\left(\\dfrac{d}{D}\\right)+\\log_2\\left(\\dfrac{p}{h}\\right)\\right],&d&lt;D,\\\\[6pt]\n-\\dfrac{1}{3}\\left[\\log_2\\left(\\dfrac{h}{H}\\right)+\\log_2\\left(\\dfrac{p}{h}\\right)\\right],&d&gt;D.\n\\end{cases}\n\\]"
+    "text": "1. Expliziter Block\nDie folgenden Größen und Rechenschritte werden im Artikel beschrieben; die symbolische Schreibweise fasst sie zusammen.\n\n\n\n\n\n\n\nQualitative Annahme / Festlegung\nÜbersetzung in eine Regel\n\n\n\n\nEin Berg ist eigenständig, wenn er die maßgebliche Verbindungsscharte zu höherem Gelände deutlich überragt.\nProminenz: \\(p=h-h_s\\), mit Gipfelhöhe \\(h\\) und Schartenhöhe \\(h_s\\).\n\n\nEin Berg ist eigenständig, wenn höheres Gelände weit entfernt liegt.\nDominanz \\(d\\): horizontale Entfernung zum nächstgelegenen höheren Gelände.\n\n\nMeereshöhe und relative Prominenz sollen einbezogen werden.\nVerhältnisse \\(h/H\\) und \\(p/h\\), mit \\(H=8848\\,\\mathrm{m}\\) als Referenzhöhe des Artikels.\n\n\nDominanz wird auf eine Referenzentfernung bezogen.\n\\(d/D\\), mit \\(D=100\\,000\\,\\mathrm{m}\\).\n\n\nGroße und kleine Berge sollen „fair“ vergleichbar sein.\nLogarithmierung aller drei Verhältnisse zur Basis 2.\n\n\nDie Komponenten ergeben einen Eigenständigkeitswert.\nNegative Summe der Logarithmen, geteilt durch 3. Kleineres \\(E\\) bedeutet größere Eigenständigkeit.\n\n\nDominanz über 100 km bringt keinen zusätzlichen Vorteil.\nFür \\(d&gt;D\\) entfällt der Dominanzterm im Formelkasten.\n\n\nZahlenwerte erhalten qualitative Kategorien.\nZwischen 0 und 1: „Weltberge“; zwischen 1 und 2: „Hauptberge eines Kontinents“; über 6: kaum eigenständiger Gipfel.\n\n\n\nDie im Artikel angegebene Formel lautet mit den obigen Referenzgrößen:\n\\[\nE=\\begin{cases}\n-\\dfrac{1}{3}\\left[\\log_2\\left(\\dfrac{h}{H}\\right)+\\log_2\\left(\\dfrac{d}{D}\\right)+\\log_2\\left(\\dfrac{p}{h}\\right)\\right],&d&lt;D,\\\\[6pt]\n-\\dfrac{1}{3}\\left[\\log_2\\left(\\dfrac{h}{H}\\right)+\\log_2\\left(\\dfrac{p}{h}\\right)\\right],&d&gt;D.\n\\end{cases}\n\\]",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Die Analyse"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_analyse.html#begründete-vereinfachung-der-formel",
     "href": "slides/perfekter_gipfel_analyse.html#begründete-vereinfachung-der-formel",
     "title": "Der perfekte Gipfel",
     "section": "2. Begründete Vereinfachung der Formel",
-    "text": "2. Begründete Vereinfachung der Formel\nDie Formel enthält drei Terme, aber keine drei unabhängig wirksamen Eigenschaften. Die Meereshöhe steht einmal im Zähler und einmal im Nenner. Mit der Produktregel der Logarithmen folgt:\n\\[\n\\log_2\\left(\\frac{h}{H}\\right)+\\log_2\\left(\\frac{p}{h}\\right)\n=\\log_2\\left(\\frac{h}{H}\\cdot\\frac{p}{h}\\right)\n=\\log_2\\left(\\frac{p}{H}\\right).\n\\]\nDamit lässt sich das Modell zusammenfassen als:\n\\[\n\\boxed{E=-\\frac{1}{3}\\log_2\\left[\\frac{p}{H}\\cdot\\min\\left(\\frac{d}{D},1\\right)\\right]}.\n\\]\nDiese Schreibweise ergänzt den im Druck ausgelassenen Fall \\(d=D\\) durch den gemeinsamen Grenzwert beider Zweige.\nWarum sich die Höhe aufhebt: Bei gleicher Prominenz verdoppelt eine Verdopplung der Meereshöhe den Höhenterm vor der Logarithmierung, halbiert aber die relative Prominenz. Beide Wirkungen gleichen sich exakt aus.\n\n\n\nGröße\nBerg A\nBerg B\n\n\n\n\nMeereshöhe \\(h\\)\n2000 m\n4000 m\n\n\nMaßgebliche Schartenhöhe \\(h_s\\)\n1000 m\n3000 m\n\n\nProminenz \\(p=h-h_s\\)\n1000 m\n1000 m\n\n\nRelative Prominenz \\(p/h\\)\n0,50\n0,25\n\n\nProdukt \\((h/H)\\cdot(p/h)\\)\n\\(1000/8848\\)\n\\(1000/8848\\)\n\n\n\nBei gleicher Dominanz erhalten beide Berge denselben E-Wert. Die Höhe bleibt zur Berechnung der Prominenz erforderlich, liefert aber keinen zusätzlichen Beitrag neben ihr. Wirksam sind Prominenz und begrenzte Dominanz; damit ist keine statistische Unabhängigkeit dieser Größen behauptet."
+    "text": "2. Begründete Vereinfachung der Formel\nDie Formel enthält drei Terme, aber keine drei unabhängig wirksamen Eigenschaften. Die Meereshöhe steht einmal im Zähler und einmal im Nenner. Mit der Produktregel der Logarithmen folgt:\n\\[\n\\log_2\\left(\\frac{h}{H}\\right)+\\log_2\\left(\\frac{p}{h}\\right)\n=\\log_2\\left(\\frac{h}{H}\\cdot\\frac{p}{h}\\right)\n=\\log_2\\left(\\frac{p}{H}\\right).\n\\]\nDamit lässt sich das Modell zusammenfassen als:\n\\[\n\\boxed{E=-\\frac{1}{3}\\log_2\\left[\\frac{p}{H}\\cdot\\min\\left(\\frac{d}{D},1\\right)\\right]}.\n\\]\nDiese Schreibweise ergänzt den im Druck ausgelassenen Fall \\(d=D\\) durch den gemeinsamen Grenzwert beider Zweige.\nWarum sich die Höhe aufhebt: Bei gleicher Prominenz verdoppelt eine Verdopplung der Meereshöhe den Höhenterm vor der Logarithmierung, halbiert aber die relative Prominenz. Beide Wirkungen gleichen sich exakt aus.\n\n\n\nGröße\nBerg A\nBerg B\n\n\n\n\nMeereshöhe \\(h\\)\n2000 m\n4000 m\n\n\nMaßgebliche Schartenhöhe \\(h_s\\)\n1000 m\n3000 m\n\n\nProminenz \\(p=h-h_s\\)\n1000 m\n1000 m\n\n\nRelative Prominenz \\(p/h\\)\n0,50\n0,25\n\n\nProdukt \\((h/H)\\cdot(p/h)\\)\n\\(1000/8848\\)\n\\(1000/8848\\)\n\n\n\nBei gleicher Dominanz erhalten beide Berge denselben E-Wert. Die Höhe bleibt zur Berechnung der Prominenz erforderlich, liefert aber keinen zusätzlichen Beitrag neben ihr. Wirksam sind Prominenz und begrenzte Dominanz; damit ist keine statistische Unabhängigkeit dieser Größen behauptet.",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Die Analyse"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_analyse.html#impliziter-block",
     "href": "slides/perfekter_gipfel_analyse.html#impliziter-block",
     "title": "Der perfekte Gipfel",
     "section": "3. Impliziter Block",
-    "text": "3. Impliziter Block\nDie folgenden Regeln stecken in der Formel, werden im Artikel aber nicht ausdrücklich begründet oder als Konsequenz herausgearbeitet.\n\n\n\n\n\n\n\nImplizite Annahme / Konsequenz\nMathematische Bedeutung\n\n\n\n\nDie drei Logarithmen werden zunächst gleichgewichtet.\nJeder erhält den Faktor \\(1/3\\); wegen der Kürzung entstehen daraus keine drei eigenständigen Beiträge.\n\n\nUnterschiedliche Berggestalten können gleich bewertet werden.\nGleiches \\(p\\) und \\(d\\) ergeben denselben E-Wert, unabhängig von der übrigen Gestalt.\n\n\nProminenz und Dominanz können sich ausgleichen.\nUnterhalb von 100 km zählt \\(p\\cdot d\\): doppelte Prominenz gleicht halbierte Dominanz aus.\n\n\nVerhältnisänderungen sind maßgeblich.\nVerdopplung von \\(p\\) verbessert \\(E\\) um \\(1/3\\); für \\(d\\) gilt dies, solange die 100-km-Grenze nicht überschritten wird.\n\n\nAb 100 km entscheidet nur noch die Prominenz.\nDann gilt \\(E=-\\frac13\\log_2(p/H)\\).\n\n\nEigenständigkeit wird auf eine Rangfolge reduziert.\nMehrere Merkmale werden in einer einzigen Zahl zusammengeführt.\n\n\nKlassengrenzen sind gesetzte Bewertungen.\nDie Formel begründet keine natürlichen Übergänge bei \\(E=1\\), \\(2\\) oder \\(6\\)."
+    "text": "3. Impliziter Block\nDie folgenden Regeln stecken in der Formel, werden im Artikel aber nicht ausdrücklich begründet oder als Konsequenz herausgearbeitet.\n\n\n\n\n\n\n\nImplizite Annahme / Konsequenz\nMathematische Bedeutung\n\n\n\n\nDie drei Logarithmen werden zunächst gleichgewichtet.\nJeder erhält den Faktor \\(1/3\\); wegen der Kürzung entstehen daraus keine drei eigenständigen Beiträge.\n\n\nUnterschiedliche Berggestalten können gleich bewertet werden.\nGleiches \\(p\\) und \\(d\\) ergeben denselben E-Wert, unabhängig von der übrigen Gestalt.\n\n\nProminenz und Dominanz können sich ausgleichen.\nUnterhalb von 100 km zählt \\(p\\cdot d\\): doppelte Prominenz gleicht halbierte Dominanz aus.\n\n\nVerhältnisänderungen sind maßgeblich.\nVerdopplung von \\(p\\) verbessert \\(E\\) um \\(1/3\\); für \\(d\\) gilt dies, solange die 100-km-Grenze nicht überschritten wird.\n\n\nAb 100 km entscheidet nur noch die Prominenz.\nDann gilt \\(E=-\\frac13\\log_2(p/H)\\).\n\n\nEigenständigkeit wird auf eine Rangfolge reduziert.\nMehrere Merkmale werden in einer einzigen Zahl zusammengeführt.\n\n\nKlassengrenzen sind gesetzte Bewertungen.\nDie Formel begründet keine natürlichen Übergänge bei \\(E=1\\), \\(2\\) oder \\(6\\).",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Die Analyse"
+    ]
   },
   {
     "objectID": "slides/perfekter_gipfel_analyse.html#fehlender-block",
     "href": "slides/perfekter_gipfel_analyse.html#fehlender-block",
     "title": "Der perfekte Gipfel",
     "section": "4. Fehlender Block",
-    "text": "4. Fehlender Block\n\n\n\n\n\n\n\nFehlende Festlegung\nWas offenbleibt\n\n\n\n\nBegründung und Überprüfung der Modellentscheidungen\nWarum sind logarithmische Verknüpfung, Gewichtung und die 100-km-Grenze angemessen? Die behauptete Fairness wird nicht belegt.\n\n\nVollständige Klassifikationsregeln\nDie Einteilung zwischen \\(E=2\\) und \\(E=6\\) bleibt unvollständig; die genaue Zuordnung der Klassengrenzen ist nicht geregelt.\n\n\n\nEinordnung: Prominenz und Dominanz sind geometrisch definierte Größen. Ihre Verknüpfung, Begrenzung und Übersetzung in Kategorien sind zusätzliche Bewertungsentscheidungen."
+    "text": "4. Fehlender Block\n\n\n\n\n\n\n\nFehlende Festlegung\nWas offenbleibt\n\n\n\n\nBegründung und Überprüfung der Modellentscheidungen\nWarum sind logarithmische Verknüpfung, Gewichtung und die 100-km-Grenze angemessen? Die behauptete Fairness wird nicht belegt.\n\n\nVollständige Klassifikationsregeln\nDie Einteilung zwischen \\(E=2\\) und \\(E=6\\) bleibt unvollständig; die genaue Zuordnung der Klassengrenzen ist nicht geregelt.\n\n\n\nEinordnung: Prominenz und Dominanz sind geometrisch definierte Größen. Ihre Verknüpfung, Begrenzung und Übersetzung in Kategorien sind zusätzliche Bewertungsentscheidungen.",
+    "crumbs": [
+      "Addon Perfekter Gipfel",
+      "Der Perfekte Gipfel - Die Analyse"
+    ]
   },
   {
     "objectID": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-projekt-öffnen",
