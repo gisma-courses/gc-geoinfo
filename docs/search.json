@@ -2569,6 +2569,171 @@
     "text": "Prüfregel für die Dokumentation\nFür jeden Hauptschritt sollte eine fremde Person erkennen können:\nWarum dieser Schritt?\nWelche Daten?\nWelche Operation?\nWelche Parameter?\nWelcher Ergebnislayer?\nWelche Aussagegrenze?\n\nDas Ziel ist nicht Programmierung. Das Ziel ist nachvollziehbare GIS-Arbeit."
   },
   {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#projektfrage",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#projektfrage",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
+    "section": "Projektfrage",
+    "text": "Projektfrage\nWelche Bereiche der Lahnwiese sind von drei Beobachtungspunkten aus sichtbar?\nUntersucht werden:\n\nWege entlang der Lahn\nWiesenflächen\nBrückenumfeld\nBaum- und Uferkanten\n\nZiel ist keine Sicherheitsaussage, sondern eine modellierte Analyse geometrischer Einsehbarkeit.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#untersuchungsraum",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#untersuchungsraum",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
+    "section": "Untersuchungsraum",
+    "text": "Untersuchungsraum\nRaum: Lahnwiese Marburg\nDer Bereich ist geeignet, weil dort mehrere Sichtbarrieren zusammenkommen:\n\noffene Wiesenflächen\nBaumkronen und Ufervegetation\nBrücken und Böschungen\nangrenzende Gebäude- und Stadtkanten\n\nDadurch entstehen gut sichtbare Bereiche und mögliche tote Winkel.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#daten-und-werkzeuge",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#daten-und-werkzeuge",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
+    "section": "Daten und Werkzeuge",
+    "text": "Daten und Werkzeuge\nPrimärdaten\n\nDOM1 Hessen für Marburg\n\nKontextdaten\n\nOSM-Wege\nOSM-Gebäude\nOSM-Grünflächen\n\nWerkzeuge\n\nQGIS\nGRASS r.viewshed\noptional: Div. Plugins",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#gesamtworkflow",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#gesamtworkflow",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
+    "section": "Gesamtworkflow",
+    "text": "Gesamtworkflow\nDOM1-ZIP herunterladen\n        ↓\nDOM1-Kacheln in QGIS laden\n        ↓\nCRS prüfen: EPSG:25832\n        ↓\nKacheln mosaikieren\n        ↓\nauf Lahnwiese zuschneiden\n        ↓\n3 Beobachtungspunkte setzen\n        ↓\nr.viewshed je Punkt berechnen\n        ↓\nSichtfelder addieren\n        ↓\ntote Winkel ableiten\n        ↓\nKarten + Methodenkritik",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#crs-prüfen",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#crs-prüfen",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
+    "section": "CRS prüfen",
+    "text": "CRS prüfen\nFür Viewshed muss das Raster metrisch projiziert sein.\nFür Marburg sinnvoll:\nEPSG:25832\nETRS89 / UTM Zone 32N\nKlickweg:\n\nRechtsklick auf Raster\nEigenschaften\nInformation\nKBS / CRS prüfen\n\nWenn nötig:\nRaster → Projektionen → Warpen / Reprojizieren\nZiel-KBS: EPSG:25832",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#dom1-laden-und-mosaikieren",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#dom1-laden-und-mosaikieren",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
+    "section": "DOM1 laden und mosaikieren",
+    "text": "DOM1 laden und mosaikieren\nDOM1-ZIP entpacken.\nRaster laden:\nLayer → Layer hinzufügen → Rasterlayer hinzufügen\nDann Mosaik erstellen:\nRaster → Sonstiges → Zusammenführen\nEingabe:\n\nalle DOM1-Kacheln\n\nAusgabe:\nDOM1_Lahnwiese_Mosaik.tif",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#untersuchungsgebiet-zuschneiden",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#untersuchungsgebiet-zuschneiden",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
+    "section": "Untersuchungsgebiet zuschneiden",
+    "text": "Untersuchungsgebiet zuschneiden\nAOI-Polygon um die Lahnwiese anlegen.\nDann:\nRaster → Extraktion → Raster nach Maskenlayer zuschneiden\nEingabe:\nDOM1_Lahnwiese_Mosaik.tif\nMaske:\nAOI_Lahnwiese\nAusgabe:\nDOM1_Lahnwiese_clip.tif\nKontrolle:\nHillshade erzeugen und prüfen, ob Brücken, Bäume und Gebäudekanten sichtbar sind.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#beobachtungspunkte-anlegen",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#beobachtungspunkte-anlegen",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
+    "section": "Beobachtungspunkte anlegen",
+    "text": "Beobachtungspunkte anlegen\nNeuen Punktlayer erstellen:\nLayer → Layer erstellen → Neuer GeoPackage-Layer\nEinstellungen:\n\nGeometrie: Punkt\nCRS: EPSG:25832\n\nFelder:\n\nid, name typ, obs_h, target_h, radius_m, begründung",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#drei-beobachtungspunkte",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#drei-beobachtungspunkte",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
+    "section": "Drei Beobachtungspunkte",
+    "text": "Drei Beobachtungspunkte\nP01: Brücke, Erhöhte Querung mit Überblick, P02: Zentraler Weg Bodennaher Alltagsblick entlang der Lahnwiese, P03: Randpunkt Baum- oder Gebäudekante als Test für Abschirmung.\nStandardwerte:\n\nBeobachterhöhe: 1,70 m\nZielhöhe: 1,50 m\nRadius: 300 m",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#drei-viewshed-werkzeuge-in-qgis",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#drei-viewshed-werkzeuge-in-qgis",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
+    "section": "Drei Viewshed-Werkzeuge in QGIS",
+    "text": "Drei Viewshed-Werkzeuge in QGIS\n\n\n\nWerkzeug\nRolle im Projekt\nGeeignet für\n\n\n\n\nQGIS-Core / GDAL Viewshed\neingebautes Processing-Werkzeug\nerster Einzelpunkt-Test\n\n\nGRASS r.viewshed\nGRASS-Werkzeug über QGIS\nrobuste Einzelpunkt-Viewsheds\n\n\nVisibility Analysis Plugin\nzusätzliches Plugin\nmehrere Punkte, kumulative Sichtbarkeit, Intervisibility\n\n\n\nManuals:\nGRASS r.viewshed Manual\nVisibility Analysis Plugin Manual",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#qgis-processing-viewshed",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#qgis-processing-viewshed",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
+    "section": "QGIS-Processing: Viewshed",
+    "text": "QGIS-Processing: Viewshed\nOhne Zusatzplugin nutzen wir das eingebaundene Processing-Werkzeug:\nVerarbeitung → Werkzeugkiste → GDAL → Raster miscellaneous → Viewshed\nParameter:\n\nHöhenraster: DOM1_Lahnwiese_clip.tif\nBeobachter-X: X-Koordinate von P01\nBeobachter-Y: Y-Koordinate von P01\nBeobachterhöhe: 1,70\nZielhöhe: 1,50\nMaximaldistanz: 300\nAusgabe: viewshed_P01.tif\n\nFür P02 und P03 wiederholen.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#grass-r.viewshed-ausführen",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#grass-r.viewshed-ausführen",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
+    "section": "GRASS r.viewshed ausführen",
+    "text": "GRASS r.viewshed ausführen\nWerkzeug öffnen:\nVerarbeitung → Werkzeugkiste → r.viewshed\nFalls GRASS fehlt:\nEinstellungen → Optionen → Verarbeitung → Anbieter → GRASS GIS aktivieren\nParameter:\n\nHöhenraster: DOM1_Lahnwiese_clip.tif\nBeobachterkoordinate: X/Y von P01\nBeobachterhöhe: 1,70\nZielhöhe: 1,50\nmaximale Distanz: 300\nAusgabe: viewshed_P01.tif\n\nFür P02 und P03 wiederholen.",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#sichtfelder-überlagern",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#sichtfelder-überlagern",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
+    "section": "Sichtfelder überlagern",
+    "text": "Sichtfelder überlagern\nRasterrechner öffnen:\nRaster → Rasterrechner\nAusdruck:\nviewshed_P01 + viewshed_P02 + viewshed_P03\nAusgabe:\nsichtbarkeit_summe.tif",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#interpretation",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#interpretation",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
+    "section": "Interpretation:",
+    "text": "Interpretation:\n\n0 = von keinem Punkt sichtbar\n1 = von einem Punkt sichtbar\n2 = von zwei Punkten sichtbar\n3 = von drei Punkten sichtbar\n\nTote Winkel:\nsichtbarkeit_summe = 0\nAusgabe:\ntote_winkel_lahnwiese.tif",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
+  },
+  {
+    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#ergebnis",
+    "href": "slides/marburg_dom1_viewshed_revealjs.html#ergebnis",
+    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
+    "section": "Ergebnis",
+    "text": "Ergebnis\nErgebnisprodukte:\n\nKarte der drei Beobachtungspunkte\nKarte der kumulierten Sichtbarkeit\nKarte der toten Winkel\nkurze Methodenkritik",
+    "crumbs": [
+      "Foliensätze zu den Readern",
+      "Viewshed Analyse"
+    ]
+  },
+  {
     "objectID": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-projekt-öffnen",
     "href": "slides/laermausbreitung_osm_studierende_vertikal.html#technik-projekt-öffnen",
     "title": "Lärmausbreitung",
@@ -2897,169 +3062,88 @@
     ]
   },
   {
-    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#projektfrage",
-    "href": "slides/marburg_dom1_viewshed_revealjs.html#projektfrage",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
-    "section": "Projektfrage",
-    "text": "Projektfrage\nWelche Bereiche der Lahnwiese sind von drei Beobachtungspunkten aus sichtbar?\nUntersucht werden:\n\nWege entlang der Lahn\nWiesenflächen\nBrückenumfeld\nBaum- und Uferkanten\n\nZiel ist keine Sicherheitsaussage, sondern eine modellierte Analyse geometrischer Einsehbarkeit.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Viewshed Analyse"
-    ]
+    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#technik-quelle",
+    "href": "slides/laermkarte_hessen_matrix_revealjs.html#technik-quelle",
+    "title": "Strategische Lärmkarte Hessen",
+    "section": "Technik / Quelle",
+    "text": "Technik / Quelle\nAmtliche Grundlage:\n\n\nBImSchV\n\nEU-Umgebungslärmrichtlinie\nHLNUG Umgebungslärmkartierung 2022\n\nHessen:\n\nzentrale Modellumgebung: ODEN\nRechenkern: ODEN/LimA V2022\nVerfahren: BUB, BUF, BEB"
   },
   {
-    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#untersuchungsraum",
-    "href": "slides/marburg_dom1_viewshed_revealjs.html#untersuchungsraum",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
-    "section": "Untersuchungsraum",
-    "text": "Untersuchungsraum\nRaum: Lahnwiese Marburg\nDer Bereich ist geeignet, weil dort mehrere Sichtbarrieren zusammenkommen:\n\noffene Wiesenflächen\nBaumkronen und Ufervegetation\nBrücken und Böschungen\nangrenzende Gebäude- und Stadtkanten\n\nDadurch entstehen gut sichtbare Bereiche und mögliche tote Winkel.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Viewshed Analyse"
-    ]
+    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#lesart-der-matrix",
+    "href": "slides/laermkarte_hessen_matrix_revealjs.html#lesart-der-matrix",
+    "title": "Strategische Lärmkarte Hessen",
+    "section": "Lesart der Matrix",
+    "text": "Lesart der Matrix\nDie Karte entsteht nicht aus einem einfachen Puffer.\nJeder Schritt verändert die Aussage:\n\nQuellenwahl bestimmt, was überhaupt vorkommt.\nEmission bestimmt die Stärke.\nAusbreitung bestimmt die räumliche Wirkung.\nImmission bestimmt die Kartenwerte.\nBetroffenheit bestimmt die Statistik."
   },
   {
-    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#daten-und-werkzeuge",
-    "href": "slides/marburg_dom1_viewshed_revealjs.html#daten-und-werkzeuge",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
-    "section": "Daten und Werkzeuge",
-    "text": "Daten und Werkzeuge\nPrimärdaten\n\nDOM1 Hessen für Marburg\n\nKontextdaten\n\nOSM-Wege\nOSM-Gebäude\nOSM-Grünflächen\n\nWerkzeuge\n\nQGIS\nGRASS r.viewshed\noptional: Div. Plugins",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Viewshed Analyse"
-    ]
+    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#einordnung",
+    "href": "slides/laermkarte_hessen_matrix_revealjs.html#einordnung",
+    "title": "Strategische Lärmkarte Hessen",
+    "section": "Einordnung",
+    "text": "Einordnung\nDiese Parameter fehlen in einer OSM-only-Übung weitgehend.\nOSM liefert meist:\n\nStraßentyp\nGeometrie\nteils Geschwindigkeit\nteils Oberfläche\n\nDaher kann OSM nur einen Lärmverdacht modellieren."
   },
   {
-    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#gesamtworkflow",
-    "href": "slides/marburg_dom1_viewshed_revealjs.html#gesamtworkflow",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
-    "section": "Gesamtworkflow",
-    "text": "Gesamtworkflow\nDOM1-ZIP herunterladen\n        ↓\nDOM1-Kacheln in QGIS laden\n        ↓\nCRS prüfen: EPSG:25832\n        ↓\nKacheln mosaikieren\n        ↓\nauf Lahnwiese zuschneiden\n        ↓\n3 Beobachtungspunkte setzen\n        ↓\nr.viewshed je Punkt berechnen\n        ↓\nSichtfelder addieren\n        ↓\ntote Winkel ableiten\n        ↓\nKarten + Methodenkritik",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Viewshed Analyse"
-    ]
+    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#unterschied-zur-kursübung",
+    "href": "slides/laermkarte_hessen_matrix_revealjs.html#unterschied-zur-kursübung",
+    "title": "Strategische Lärmkarte Hessen",
+    "section": "Unterschied zur Kursübung",
+    "text": "Unterschied zur Kursübung\nAmtlich:\nAkustische Ausbreitung mit Gelände, Gebäuden, Reflexion\nKursmodell:\nStraßentyp + Distanz + Nutzung\nDas Kursmodell ist ein Suchmodell."
   },
   {
-    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#crs-prüfen",
-    "href": "slides/marburg_dom1_viewshed_revealjs.html#crs-prüfen",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
-    "section": "CRS prüfen",
-    "text": "CRS prüfen\nFür Viewshed muss das Raster metrisch projiziert sein.\nFür Marburg sinnvoll:\nEPSG:25832\nETRS89 / UTM Zone 32N\nKlickweg:\n\nRechtsklick auf Raster\nEigenschaften\nInformation\nKBS / CRS prüfen\n\nWenn nötig:\nRaster → Projektionen → Warpen / Reprojizieren\nZiel-KBS: EPSG:25832",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Viewshed Analyse"
-    ]
+    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#pegelbänder",
+    "href": "slides/laermkarte_hessen_matrix_revealjs.html#pegelbänder",
+    "title": "Strategische Lärmkarte Hessen",
+    "section": "Pegelbänder",
+    "text": "Pegelbänder\nPflichtdarstellung nach 34. BImSchV:\n\nLDEN ab 55 dB(A)\nLNight ab 50 dB(A)\noptional LNight ab 45 dB(A)\n\nDie Karte zeigt Pegelbänder.\nSie zeigt keine Momentanlautstärke."
   },
   {
-    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#dom1-laden-und-mosaikieren",
-    "href": "slides/marburg_dom1_viewshed_revealjs.html#dom1-laden-und-mosaikieren",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
-    "section": "DOM1 laden und mosaikieren",
-    "text": "DOM1 laden und mosaikieren\nDOM1-ZIP entpacken.\nRaster laden:\nLayer → Layer hinzufügen → Rasterlayer hinzufügen\nDann Mosaik erstellen:\nRaster → Sonstiges → Zusammenführen\nEingabe:\n\nalle DOM1-Kacheln\n\nAusgabe:\nDOM1_Lahnwiese_Mosaik.tif",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Viewshed Analyse"
-    ]
+    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#oden",
+    "href": "slides/laermkarte_hessen_matrix_revealjs.html#oden",
+    "title": "Strategische Lärmkarte Hessen",
+    "section": "ODEN",
+    "text": "ODEN\nODEN ist der Web-Service Lärm des HLNUG.\nFunktion:\n\nEingangsdaten prüfen\nModelldaten editieren\nLärmberechnungen durchführen\nMaßnahmen simulieren\n\nBeispiel:\n\nGeschwindigkeitsreduzierung\nLärmschutzwand"
   },
   {
-    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#untersuchungsgebiet-zuschneiden",
-    "href": "slides/marburg_dom1_viewshed_revealjs.html#untersuchungsgebiet-zuschneiden",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
-    "section": "Untersuchungsgebiet zuschneiden",
-    "text": "Untersuchungsgebiet zuschneiden\nAOI-Polygon um die Lahnwiese anlegen.\nDann:\nRaster → Extraktion → Raster nach Maskenlayer zuschneiden\nEingabe:\nDOM1_Lahnwiese_Mosaik.tif\nMaske:\nAOI_Lahnwiese\nAusgabe:\nDOM1_Lahnwiese_clip.tif\nKontrolle:\nHillshade erzeugen und prüfen, ob Brücken, Bäume und Gebäudekanten sichtbar sind.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Viewshed Analyse"
-    ]
+    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#merksatz",
+    "href": "slides/laermkarte_hessen_matrix_revealjs.html#merksatz",
+    "title": "Strategische Lärmkarte Hessen",
+    "section": "Merksatz",
+    "text": "Merksatz\nDie OSM-Karte ist keine Lärmkarte.\nSie zeigt:\nWo könnten Lärmquelle, Nähe und Nutzung zusammentreffen?\nNicht:\nWie laut ist es dort in dB(A)?"
   },
   {
-    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#beobachtungspunkte-anlegen",
-    "href": "slides/marburg_dom1_viewshed_revealjs.html#beobachtungspunkte-anlegen",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
-    "section": "Beobachtungspunkte anlegen",
-    "text": "Beobachtungspunkte anlegen\nNeuen Punktlayer erstellen:\nLayer → Layer erstellen → Neuer GeoPackage-Layer\nEinstellungen:\n\nGeometrie: Punkt\nCRS: EPSG:25832\n\nFelder:\n\nid, name typ, obs_h, target_h, radius_m, begründung",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Viewshed Analyse"
-    ]
+    "objectID": "slides/perfekter_gipfel_analyse.html",
+    "href": "slides/perfekter_gipfel_analyse.html",
+    "title": "Der perfekte Gipfel",
+    "section": "",
+    "text": "Grundlage: Christian Rauch, „Der perfekte Gipfel“, DAV Panorama 2/2012, S. 112–117. Die Analyse unterscheidet ausdrücklich genannte Festlegungen von mathematischen Konsequenzen und fehlenden Begründungen."
   },
   {
-    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#drei-beobachtungspunkte",
-    "href": "slides/marburg_dom1_viewshed_revealjs.html#drei-beobachtungspunkte",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
-    "section": "Drei Beobachtungspunkte",
-    "text": "Drei Beobachtungspunkte\nP01: Brücke, Erhöhte Querung mit Überblick, P02: Zentraler Weg Bodennaher Alltagsblick entlang der Lahnwiese, P03: Randpunkt Baum- oder Gebäudekante als Test für Abschirmung.\nStandardwerte:\n\nBeobachterhöhe: 1,70 m\nZielhöhe: 1,50 m\nRadius: 300 m",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Viewshed Analyse"
-    ]
+    "objectID": "slides/perfekter_gipfel_analyse.html#expliziter-block",
+    "href": "slides/perfekter_gipfel_analyse.html#expliziter-block",
+    "title": "Der perfekte Gipfel",
+    "section": "1. Expliziter Block",
+    "text": "1. Expliziter Block\nDie folgenden Größen und Rechenschritte werden im Artikel beschrieben; die symbolische Schreibweise fasst sie zusammen.\n\n\n\n\n\n\n\nQualitative Annahme / Festlegung\nÜbersetzung in eine Regel\n\n\n\n\nEin Berg ist eigenständig, wenn er die maßgebliche Verbindungsscharte zu höherem Gelände deutlich überragt.\nProminenz: \\(p=h-h_s\\), mit Gipfelhöhe \\(h\\) und Schartenhöhe \\(h_s\\).\n\n\nEin Berg ist eigenständig, wenn höheres Gelände weit entfernt liegt.\nDominanz \\(d\\): horizontale Entfernung zum nächstgelegenen höheren Gelände.\n\n\nMeereshöhe und relative Prominenz sollen einbezogen werden.\nVerhältnisse \\(h/H\\) und \\(p/h\\), mit \\(H=8848\\,\\mathrm{m}\\) als Referenzhöhe des Artikels.\n\n\nDominanz wird auf eine Referenzentfernung bezogen.\n\\(d/D\\), mit \\(D=100\\,000\\,\\mathrm{m}\\).\n\n\nGroße und kleine Berge sollen „fair“ vergleichbar sein.\nLogarithmierung aller drei Verhältnisse zur Basis 2.\n\n\nDie Komponenten ergeben einen Eigenständigkeitswert.\nNegative Summe der Logarithmen, geteilt durch 3. Kleineres \\(E\\) bedeutet größere Eigenständigkeit.\n\n\nDominanz über 100 km bringt keinen zusätzlichen Vorteil.\nFür \\(d&gt;D\\) entfällt der Dominanzterm im Formelkasten.\n\n\nZahlenwerte erhalten qualitative Kategorien.\nZwischen 0 und 1: „Weltberge“; zwischen 1 und 2: „Hauptberge eines Kontinents“; über 6: kaum eigenständiger Gipfel.\n\n\n\nDie im Artikel angegebene Formel lautet mit den obigen Referenzgrößen:\n\\[\nE=\\begin{cases}\n-\\dfrac{1}{3}\\left[\\log_2\\left(\\dfrac{h}{H}\\right)+\\log_2\\left(\\dfrac{d}{D}\\right)+\\log_2\\left(\\dfrac{p}{h}\\right)\\right],&d&lt;D,\\\\[6pt]\n-\\dfrac{1}{3}\\left[\\log_2\\left(\\dfrac{h}{H}\\right)+\\log_2\\left(\\dfrac{p}{h}\\right)\\right],&d&gt;D.\n\\end{cases}\n\\]"
   },
   {
-    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#drei-viewshed-werkzeuge-in-qgis",
-    "href": "slides/marburg_dom1_viewshed_revealjs.html#drei-viewshed-werkzeuge-in-qgis",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
-    "section": "Drei Viewshed-Werkzeuge in QGIS",
-    "text": "Drei Viewshed-Werkzeuge in QGIS\n\n\n\nWerkzeug\nRolle im Projekt\nGeeignet für\n\n\n\n\nQGIS-Core / GDAL Viewshed\neingebautes Processing-Werkzeug\nerster Einzelpunkt-Test\n\n\nGRASS r.viewshed\nGRASS-Werkzeug über QGIS\nrobuste Einzelpunkt-Viewsheds\n\n\nVisibility Analysis Plugin\nzusätzliches Plugin\nmehrere Punkte, kumulative Sichtbarkeit, Intervisibility\n\n\n\nManuals:\nGRASS r.viewshed Manual\nVisibility Analysis Plugin Manual",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Viewshed Analyse"
-    ]
+    "objectID": "slides/perfekter_gipfel_analyse.html#begründete-vereinfachung-der-formel",
+    "href": "slides/perfekter_gipfel_analyse.html#begründete-vereinfachung-der-formel",
+    "title": "Der perfekte Gipfel",
+    "section": "2. Begründete Vereinfachung der Formel",
+    "text": "2. Begründete Vereinfachung der Formel\nDie Formel enthält drei Terme, aber keine drei unabhängig wirksamen Eigenschaften. Die Meereshöhe steht einmal im Zähler und einmal im Nenner. Mit der Produktregel der Logarithmen folgt:\n\\[\n\\log_2\\left(\\frac{h}{H}\\right)+\\log_2\\left(\\frac{p}{h}\\right)\n=\\log_2\\left(\\frac{h}{H}\\cdot\\frac{p}{h}\\right)\n=\\log_2\\left(\\frac{p}{H}\\right).\n\\]\nDamit lässt sich das Modell zusammenfassen als:\n\\[\n\\boxed{E=-\\frac{1}{3}\\log_2\\left[\\frac{p}{H}\\cdot\\min\\left(\\frac{d}{D},1\\right)\\right]}.\n\\]\nDiese Schreibweise ergänzt den im Druck ausgelassenen Fall \\(d=D\\) durch den gemeinsamen Grenzwert beider Zweige.\nWarum sich die Höhe aufhebt: Bei gleicher Prominenz verdoppelt eine Verdopplung der Meereshöhe den Höhenterm vor der Logarithmierung, halbiert aber die relative Prominenz. Beide Wirkungen gleichen sich exakt aus.\n\n\n\nGröße\nBerg A\nBerg B\n\n\n\n\nMeereshöhe \\(h\\)\n2000 m\n4000 m\n\n\nMaßgebliche Schartenhöhe \\(h_s\\)\n1000 m\n3000 m\n\n\nProminenz \\(p=h-h_s\\)\n1000 m\n1000 m\n\n\nRelative Prominenz \\(p/h\\)\n0,50\n0,25\n\n\nProdukt \\((h/H)\\cdot(p/h)\\)\n\\(1000/8848\\)\n\\(1000/8848\\)\n\n\n\nBei gleicher Dominanz erhalten beide Berge denselben E-Wert. Die Höhe bleibt zur Berechnung der Prominenz erforderlich, liefert aber keinen zusätzlichen Beitrag neben ihr. Wirksam sind Prominenz und begrenzte Dominanz; damit ist keine statistische Unabhängigkeit dieser Größen behauptet."
   },
   {
-    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#qgis-processing-viewshed",
-    "href": "slides/marburg_dom1_viewshed_revealjs.html#qgis-processing-viewshed",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
-    "section": "QGIS-Processing: Viewshed",
-    "text": "QGIS-Processing: Viewshed\nOhne Zusatzplugin nutzen wir das eingebaundene Processing-Werkzeug:\nVerarbeitung → Werkzeugkiste → GDAL → Raster miscellaneous → Viewshed\nParameter:\n\nHöhenraster: DOM1_Lahnwiese_clip.tif\nBeobachter-X: X-Koordinate von P01\nBeobachter-Y: Y-Koordinate von P01\nBeobachterhöhe: 1,70\nZielhöhe: 1,50\nMaximaldistanz: 300\nAusgabe: viewshed_P01.tif\n\nFür P02 und P03 wiederholen.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Viewshed Analyse"
-    ]
+    "objectID": "slides/perfekter_gipfel_analyse.html#impliziter-block",
+    "href": "slides/perfekter_gipfel_analyse.html#impliziter-block",
+    "title": "Der perfekte Gipfel",
+    "section": "3. Impliziter Block",
+    "text": "3. Impliziter Block\nDie folgenden Regeln stecken in der Formel, werden im Artikel aber nicht ausdrücklich begründet oder als Konsequenz herausgearbeitet.\n\n\n\n\n\n\n\nImplizite Annahme / Konsequenz\nMathematische Bedeutung\n\n\n\n\nDie drei Logarithmen werden zunächst gleichgewichtet.\nJeder erhält den Faktor \\(1/3\\); wegen der Kürzung entstehen daraus keine drei eigenständigen Beiträge.\n\n\nUnterschiedliche Berggestalten können gleich bewertet werden.\nGleiches \\(p\\) und \\(d\\) ergeben denselben E-Wert, unabhängig von der übrigen Gestalt.\n\n\nProminenz und Dominanz können sich ausgleichen.\nUnterhalb von 100 km zählt \\(p\\cdot d\\): doppelte Prominenz gleicht halbierte Dominanz aus.\n\n\nVerhältnisänderungen sind maßgeblich.\nVerdopplung von \\(p\\) verbessert \\(E\\) um \\(1/3\\); für \\(d\\) gilt dies, solange die 100-km-Grenze nicht überschritten wird.\n\n\nAb 100 km entscheidet nur noch die Prominenz.\nDann gilt \\(E=-\\frac13\\log_2(p/H)\\).\n\n\nEigenständigkeit wird auf eine Rangfolge reduziert.\nMehrere Merkmale werden in einer einzigen Zahl zusammengeführt.\n\n\nKlassengrenzen sind gesetzte Bewertungen.\nDie Formel begründet keine natürlichen Übergänge bei \\(E=1\\), \\(2\\) oder \\(6\\)."
   },
   {
-    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#grass-r.viewshed-ausführen",
-    "href": "slides/marburg_dom1_viewshed_revealjs.html#grass-r.viewshed-ausführen",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
-    "section": "GRASS r.viewshed ausführen",
-    "text": "GRASS r.viewshed ausführen\nWerkzeug öffnen:\nVerarbeitung → Werkzeugkiste → r.viewshed\nFalls GRASS fehlt:\nEinstellungen → Optionen → Verarbeitung → Anbieter → GRASS GIS aktivieren\nParameter:\n\nHöhenraster: DOM1_Lahnwiese_clip.tif\nBeobachterkoordinate: X/Y von P01\nBeobachterhöhe: 1,70\nZielhöhe: 1,50\nmaximale Distanz: 300\nAusgabe: viewshed_P01.tif\n\nFür P02 und P03 wiederholen.",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Viewshed Analyse"
-    ]
-  },
-  {
-    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#sichtfelder-überlagern",
-    "href": "slides/marburg_dom1_viewshed_revealjs.html#sichtfelder-überlagern",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
-    "section": "Sichtfelder überlagern",
-    "text": "Sichtfelder überlagern\nRasterrechner öffnen:\nRaster → Rasterrechner\nAusdruck:\nviewshed_P01 + viewshed_P02 + viewshed_P03\nAusgabe:\nsichtbarkeit_summe.tif",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Viewshed Analyse"
-    ]
-  },
-  {
-    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#interpretation",
-    "href": "slides/marburg_dom1_viewshed_revealjs.html#interpretation",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
-    "section": "Interpretation:",
-    "text": "Interpretation:\n\n0 = von keinem Punkt sichtbar\n1 = von einem Punkt sichtbar\n2 = von zwei Punkten sichtbar\n3 = von drei Punkten sichtbar\n\nTote Winkel:\nsichtbarkeit_summe = 0\nAusgabe:\ntote_winkel_lahnwiese.tif",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Viewshed Analyse"
-    ]
-  },
-  {
-    "objectID": "slides/marburg_dom1_viewshed_revealjs.html#ergebnis",
-    "href": "slides/marburg_dom1_viewshed_revealjs.html#ergebnis",
-    "title": "Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS",
-    "section": "Ergebnis",
-    "text": "Ergebnis\nErgebnisprodukte:\n\nKarte der drei Beobachtungspunkte\nKarte der kumulierten Sichtbarkeit\nKarte der toten Winkel\nkurze Methodenkritik",
-    "crumbs": [
-      "Foliensätze zu den Readern",
-      "Viewshed Analyse"
-    ]
+    "objectID": "slides/perfekter_gipfel_analyse.html#fehlender-block",
+    "href": "slides/perfekter_gipfel_analyse.html#fehlender-block",
+    "title": "Der perfekte Gipfel",
+    "section": "4. Fehlender Block",
+    "text": "4. Fehlender Block\n\n\n\n\n\n\n\nFehlende Festlegung\nWas offenbleibt\n\n\n\n\nBegründung und Überprüfung der Modellentscheidungen\nWarum sind logarithmische Verknüpfung, Gewichtung und die 100-km-Grenze angemessen? Die behauptete Fairness wird nicht belegt.\n\n\nVollständige Klassifikationsregeln\nDie Einteilung zwischen \\(E=2\\) und \\(E=6\\) bleibt unvollständig; die genaue Zuordnung der Klassengrenzen ist nicht geregelt.\n\n\n\nEinordnung: Prominenz und Dominanz sind geometrisch definierte Größen. Ihre Verknüpfung, Begrenzung und Übersetzung in Kategorien sind zusätzliche Bewertungsentscheidungen."
   },
   {
     "objectID": "slides/raeume_der_ueberlagerung_studierende_vertikal_fixed.html#technik-projekt-öffnen",
@@ -5364,61 +5448,5 @@
     "title": "Ein kleines GIS-Projekt entwickeln und dokumentieren",
     "section": "vom Projektentwurf zur QGIS-Dokumentation",
     "text": "vom Projektentwurf zur QGIS-Dokumentation\nSobald aus der Projektfrage ein konkreter GIS-Workflow wird, reicht die Projektskizze allein nicht mehr aus. Dann muss dokumentiert werden, welche Werkzeuge, Parameter, Zwischenergebnisse und fachlichen Entscheidungen tatsächlich verwendet wurden.\nDie Projektseite klärt also vor allem die inhaltliche Richtung:\n\nWas will ich untersuchen, warum ist das sinnvoll, und wie übersetze ich die Frage in räumliche Kriterien?\n\nDie QGIS-Dokumentation setzt an der nächsten Stelle an:\n\nWie halte ich fest, welche Verarbeitungsschritte daraus entstanden sind und warum sie für die Projektfrage notwendig waren?\n\nDie technische und methodische Dokumentation des eigentlichen Workflows wird deshalb auf der Seite Dokumentation und Reproduzierbarkeit in QGIS behandelt."
-  },
-  {
-    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#technik-quelle",
-    "href": "slides/laermkarte_hessen_matrix_revealjs.html#technik-quelle",
-    "title": "Strategische Lärmkarte Hessen",
-    "section": "Technik / Quelle",
-    "text": "Technik / Quelle\nAmtliche Grundlage:\n\n\nBImSchV\n\nEU-Umgebungslärmrichtlinie\nHLNUG Umgebungslärmkartierung 2022\n\nHessen:\n\nzentrale Modellumgebung: ODEN\nRechenkern: ODEN/LimA V2022\nVerfahren: BUB, BUF, BEB"
-  },
-  {
-    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#lesart-der-matrix",
-    "href": "slides/laermkarte_hessen_matrix_revealjs.html#lesart-der-matrix",
-    "title": "Strategische Lärmkarte Hessen",
-    "section": "Lesart der Matrix",
-    "text": "Lesart der Matrix\nDie Karte entsteht nicht aus einem einfachen Puffer.\nJeder Schritt verändert die Aussage:\n\nQuellenwahl bestimmt, was überhaupt vorkommt.\nEmission bestimmt die Stärke.\nAusbreitung bestimmt die räumliche Wirkung.\nImmission bestimmt die Kartenwerte.\nBetroffenheit bestimmt die Statistik."
-  },
-  {
-    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#einordnung",
-    "href": "slides/laermkarte_hessen_matrix_revealjs.html#einordnung",
-    "title": "Strategische Lärmkarte Hessen",
-    "section": "Einordnung",
-    "text": "Einordnung\nDiese Parameter fehlen in einer OSM-only-Übung weitgehend.\nOSM liefert meist:\n\nStraßentyp\nGeometrie\nteils Geschwindigkeit\nteils Oberfläche\n\nDaher kann OSM nur einen Lärmverdacht modellieren."
-  },
-  {
-    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#unterschied-zur-kursübung",
-    "href": "slides/laermkarte_hessen_matrix_revealjs.html#unterschied-zur-kursübung",
-    "title": "Strategische Lärmkarte Hessen",
-    "section": "Unterschied zur Kursübung",
-    "text": "Unterschied zur Kursübung\nAmtlich:\nAkustische Ausbreitung mit Gelände, Gebäuden, Reflexion\nKursmodell:\nStraßentyp + Distanz + Nutzung\nDas Kursmodell ist ein Suchmodell."
-  },
-  {
-    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#pegelbänder",
-    "href": "slides/laermkarte_hessen_matrix_revealjs.html#pegelbänder",
-    "title": "Strategische Lärmkarte Hessen",
-    "section": "Pegelbänder",
-    "text": "Pegelbänder\nPflichtdarstellung nach 34. BImSchV:\n\nLDEN ab 55 dB(A)\nLNight ab 50 dB(A)\noptional LNight ab 45 dB(A)\n\nDie Karte zeigt Pegelbänder.\nSie zeigt keine Momentanlautstärke."
-  },
-  {
-    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#oden",
-    "href": "slides/laermkarte_hessen_matrix_revealjs.html#oden",
-    "title": "Strategische Lärmkarte Hessen",
-    "section": "ODEN",
-    "text": "ODEN\nODEN ist der Web-Service Lärm des HLNUG.\nFunktion:\n\nEingangsdaten prüfen\nModelldaten editieren\nLärmberechnungen durchführen\nMaßnahmen simulieren\n\nBeispiel:\n\nGeschwindigkeitsreduzierung\nLärmschutzwand"
-  },
-  {
-    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#merksatz",
-    "href": "slides/laermkarte_hessen_matrix_revealjs.html#merksatz",
-    "title": "Strategische Lärmkarte Hessen",
-    "section": "Merksatz",
-    "text": "Merksatz\nDie OSM-Karte ist keine Lärmkarte.\nSie zeigt:\nWo könnten Lärmquelle, Nähe und Nutzung zusammentreffen?\nNicht:\nWie laut ist es dort in dB(A)?"
-  },
-  {
-    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#für-die-übung",
-    "href": "slides/laermkarte_hessen_matrix_revealjs.html#für-die-übung",
-    "title": "Strategische Lärmkarte Hessen",
-    "section": "Für die Übung",
-    "text": "Für die Übung\nDie beste Webseite zum Zeigen ist der Lärmviewer Hessen.\nDie beste Webseite zum Erklären ist die HLNUG-Seite zur Umgebungslärmkartierung 2022.\nDer beste technische Hintergrund ist der Abschlussbericht Umgebungslärmkartierung Hessen 2022."
   }
 ]

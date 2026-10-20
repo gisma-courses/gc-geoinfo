@@ -1,0 +1,94 @@
+---
+title: "Der perfekte Gipfel"
+subtitle: "Explizite Annahmen, implizite Regeln und offene Festlegungen"
+lang: de
+format:
+  pdf:
+    pdf-engine: xelatex
+    documentclass: article
+    papersize: a4
+    fontsize: 10pt
+    geometry: margin=20mm
+    toc: false
+  html:
+    toc: false
+---
+
+Grundlage: Christian Rauch, „Der perfekte Gipfel“, *DAV Panorama* 2/2012, S. 112–117. Die Analyse unterscheidet ausdrücklich genannte Festlegungen von mathematischen Konsequenzen und fehlenden Begründungen.
+
+## 1. Expliziter Block
+
+Die folgenden Größen und Rechenschritte werden im Artikel beschrieben; die symbolische Schreibweise fasst sie zusammen.
+
+| Qualitative Annahme / Festlegung | Übersetzung in eine Regel |
+|:---|:---|
+| Ein Berg ist eigenständig, wenn er die maßgebliche Verbindungsscharte zu höherem Gelände deutlich überragt. | Prominenz: $p=h-h_s$, mit Gipfelhöhe $h$ und Schartenhöhe $h_s$. |
+| Ein Berg ist eigenständig, wenn höheres Gelände weit entfernt liegt. | Dominanz $d$: horizontale Entfernung zum nächstgelegenen höheren Gelände. |
+| Meereshöhe und relative Prominenz sollen einbezogen werden. | Verhältnisse $h/H$ und $p/h$, mit $H=8848\,\mathrm{m}$ als Referenzhöhe des Artikels. |
+| Dominanz wird auf eine Referenzentfernung bezogen. | $d/D$, mit $D=100\,000\,\mathrm{m}$. |
+| Große und kleine Berge sollen „fair“ vergleichbar sein. | Logarithmierung aller drei Verhältnisse zur Basis 2. |
+| Die Komponenten ergeben einen Eigenständigkeitswert. | Negative Summe der Logarithmen, geteilt durch 3. Kleineres $E$ bedeutet größere Eigenständigkeit. |
+| Dominanz über 100 km bringt keinen zusätzlichen Vorteil. | Für $d>D$ entfällt der Dominanzterm im Formelkasten. |
+| Zahlenwerte erhalten qualitative Kategorien. | Zwischen 0 und 1: „Weltberge“; zwischen 1 und 2: „Hauptberge eines Kontinents“; über 6: kaum eigenständiger Gipfel. |
+
+Die im Artikel angegebene Formel lautet mit den obigen Referenzgrößen:
+
+$$
+E=\begin{cases}
+-\dfrac{1}{3}\left[\log_2\left(\dfrac{h}{H}\right)+\log_2\left(\dfrac{d}{D}\right)+\log_2\left(\dfrac{p}{h}\right)\right],&d<D,\\[6pt]
+-\dfrac{1}{3}\left[\log_2\left(\dfrac{h}{H}\right)+\log_2\left(\dfrac{p}{h}\right)\right],&d>D.
+\end{cases}
+$$
+
+## 2. Begründete Vereinfachung der Formel
+
+Die Formel enthält drei Terme, aber **keine drei unabhängig wirksamen Eigenschaften**. Die Meereshöhe steht einmal im Zähler und einmal im Nenner. Mit der Produktregel der Logarithmen folgt:
+
+$$
+\log_2\left(\frac{h}{H}\right)+\log_2\left(\frac{p}{h}\right)
+=\log_2\left(\frac{h}{H}\cdot\frac{p}{h}\right)
+=\log_2\left(\frac{p}{H}\right).
+$$
+
+Damit lässt sich das Modell zusammenfassen als:
+
+$$
+\boxed{E=-\frac{1}{3}\log_2\left[\frac{p}{H}\cdot\min\left(\frac{d}{D},1\right)\right]}.
+$$
+
+Diese Schreibweise ergänzt den im Druck ausgelassenen Fall $d=D$ durch den gemeinsamen Grenzwert beider Zweige.
+
+**Warum sich die Höhe aufhebt:** Bei gleicher Prominenz verdoppelt eine Verdopplung der Meereshöhe den Höhenterm vor der Logarithmierung, halbiert aber die relative Prominenz. Beide Wirkungen gleichen sich exakt aus.
+
+| Größe | Berg A | Berg B |
+|:---|---:|---:|
+| Meereshöhe $h$ | 2000 m | 4000 m |
+| Maßgebliche Schartenhöhe $h_s$ | 1000 m | 3000 m |
+| Prominenz $p=h-h_s$ | 1000 m | 1000 m |
+| Relative Prominenz $p/h$ | 0,50 | 0,25 |
+| Produkt $(h/H)\cdot(p/h)$ | $1000/8848$ | $1000/8848$ |
+
+Bei gleicher Dominanz erhalten beide Berge **denselben E-Wert**. Die Höhe bleibt zur Berechnung der Prominenz erforderlich, liefert aber keinen zusätzlichen Beitrag neben ihr. Wirksam sind **Prominenz und begrenzte Dominanz**; damit ist keine statistische Unabhängigkeit dieser Größen behauptet.
+
+## 3. Impliziter Block
+
+Die folgenden Regeln stecken in der Formel, werden im Artikel aber nicht ausdrücklich begründet oder als Konsequenz herausgearbeitet.
+
+| Implizite Annahme / Konsequenz | Mathematische Bedeutung |
+|:---|:---|
+| Die drei Logarithmen werden zunächst gleichgewichtet. | Jeder erhält den Faktor $1/3$; wegen der Kürzung entstehen daraus keine drei eigenständigen Beiträge. |
+| Unterschiedliche Berggestalten können gleich bewertet werden. | Gleiches $p$ und $d$ ergeben denselben E-Wert, unabhängig von der übrigen Gestalt. |
+| Prominenz und Dominanz können sich ausgleichen. | Unterhalb von 100 km zählt $p\cdot d$: doppelte Prominenz gleicht halbierte Dominanz aus. |
+| Verhältnisänderungen sind maßgeblich. | Verdopplung von $p$ verbessert $E$ um $1/3$; für $d$ gilt dies, solange die 100-km-Grenze nicht überschritten wird. |
+| Ab 100 km entscheidet nur noch die Prominenz. | Dann gilt $E=-\frac13\log_2(p/H)$. |
+| Eigenständigkeit wird auf eine Rangfolge reduziert. | Mehrere Merkmale werden in einer einzigen Zahl zusammengeführt. |
+| Klassengrenzen sind gesetzte Bewertungen. | Die Formel begründet keine natürlichen Übergänge bei $E=1$, $2$ oder $6$. |
+
+## 4. Fehlender Block
+
+| Fehlende Festlegung | Was offenbleibt |
+|:---|:---|
+| Begründung und Überprüfung der Modellentscheidungen | Warum sind logarithmische Verknüpfung, Gewichtung und die 100-km-Grenze angemessen? Die behauptete Fairness wird nicht belegt. |
+| Vollständige Klassifikationsregeln | Die Einteilung zwischen $E=2$ und $E=6$ bleibt unvollständig; die genaue Zuordnung der Klassengrenzen ist nicht geregelt. |
+
+**Einordnung:** Prominenz und Dominanz sind geometrisch definierte Größen. Ihre Verknüpfung, Begrenzung und Übersetzung in Kategorien sind zusätzliche Bewertungsentscheidungen.
