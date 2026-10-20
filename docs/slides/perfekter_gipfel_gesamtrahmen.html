@@ -292,21 +292,15 @@ Chris Reudenbach
 </section>
 <section id="worum-es-hier-geht" class="slide level2">
 <h2>Worum es hier geht</h2>
-<p>Der „perfekte Gipfel“ ist ein gutes Beispiel für ein kleines GIS-Projekt, weil die Frage zunächst unscharf ist.</p>
+<p>Der „perfekte Gipfel“ ist ein gutes Beispiel für ein GIS-Projekt, weil die Frage typisch qualitativ ist, jedoch quasi-naturwissenschaftlich begründet erscheint.</p>
 <div class="fragment process">
-<p>Aus einer Idee wird erst dann ein Projekt, wenn dokumentiert ist, wie sie in Kriterien, Daten, Operationen und Ergebnisgrenzen übersetzt wurde.</p>
-</div>
-<div class="fragment keyline">
-<p>Die Folien sind deshalb nicht als Programmierbeispiel gedacht, sondern als Beispiel für <strong>Problemklärung und Workflow-Dokumentation</strong>.</p>
+<p>Aus einer Fragestellung wird erst dann wissenschaftlich belastbare Studie, wenn dokumentiert ist, wie sie in Kriterien, Daten, Operationen und Ergebnisgrenzen übersetzt wurde.</p>
 </div>
 </section>
 <section id="dokumentationsrahmen" class="slide level2">
 <h2>Dokumentationsrahmen</h2>
-<p>Für jedes GIS-Projekt muss die gleiche Kette lesbar bleiben:</p>
+<p>Für jedes (GI)-Projekt muss die gleiche Kette eingehalten werden:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>Problem → Projektfrage → Kriterium → Datenbasis → Operation → Ergebnislayer → Aussagegrenze</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="fragment keyline">
-<p>Die Dokumentation beschreibt nicht jede Mausbewegung. Sie beschreibt die fachlich entscheidenden Übersetzungsschritte.</p>
-</div>
 </section>
 <section id="ausgangspunkt-was-ist-ein-perfekter-gipfel" class="slide level2">
 <h2>Ausgangspunkt: Was ist ein „perfekter Gipfel“?</h2>
@@ -314,14 +308,14 @@ Chris Reudenbach
 <p><a href="../assets/pdf/DAV_Panorama_2_2012.pdf"><img data-src="../assets/images/pp/agis-workflow1.png" class="tallfig"></a></p>
 </div>
 <div class="fragment overlay-note wide">
-<p>Dokumentationspunkt: Die Ausgangsidee ist ein Qualitätsurteil. Vor der GIS-Umsetzung muss geklärt werden, welche räumlichen Eigenschaften dieses Urteil tragen sollen.</p>
+<p>Die Ausgangsidee ist ein <em>Qualitätsurteil</em>. Vor der methodischen, technischen GIS-Umsetzung muss zwingend geklärt werden, welche fachlichen und räumlichen Eigenschaften dieses Urteil reproduzierbar bestimmen sollen.</p>
 </div>
 </section>
 <section id="von-der-idee-zur-projektfrage" class="slide level2">
 <h2>Von der Idee zur Projektfrage</h2>
-<p>Aus „perfekter Gipfel“ wird keine GIS-Analyse. Eine bearbeitbare Frage braucht eine messbare Zielrichtung.</p>
+<p>Was ist beim „perfekten Gipfel“ die zu bearbeitende Frage und was sind messbare Parameter.</p>
 <div class="fragment process">
-<p>Welche Gipfel sind nach Höhe, Dominanz, Prominenz und Eigenständigkeit besonders ausgeprägt?</p>
+<p>Extrahiere aus dem Artikel die Definitionen die benannt werden: Gipfel, Höhe, Dominanz, Prominenz, Eigenständigkeit…?</p>
 </div>
 <div class="fragment keyline">
 <p>Das ist der erste dokumentierbare Schritt: Die Alltagsformulierung wird in eine räumliche Analysefrage übersetzt.</p>
@@ -335,24 +329,26 @@ Chris Reudenbach
 <p><a href="../assets/images/pp/agis-concept1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="../assets/images/pp/agis-concept1.png" class="tallfig"></a></p>
 </div>
 <div class="framebox quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>Aus dem Begriff entstehen Kriterien:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>Höhe / Position</span>
-<span id="cb2-2"><a></a>Dominanz</span>
-<span id="cb2-3"><a></a>Prominenz / Schartenhöhe</span>
-<span id="cb2-4"><a></a>Eigenständigkeit</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Nicht alle Kriterien sind direkt im DGM gespeichert. Einige müssen abgeleitet werden.</p>
+<p>Aus der Analyse entstehen Kriterien:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>Höhe </span>
+<span id="cb2-2"><a></a>Position</span>
+<span id="cb2-3"><a></a>Dominanz</span>
+<span id="cb2-4"><a></a>Prominenz </span>
+<span id="cb2-5"><a></a>Schartenhöhe</span>
+<span id="cb2-6"><a></a>Eigenständigkeit</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Nicht alle Kriterien sind direkt als Daten aus dem DGM Verfügbar. Einige müssen abgeleitet werden.</p>
 </div>
 </div>
 </div>
 <div class="fragment overlay-note wide">
-<p>Dokumentationspunkt: Für jedes Kriterium muss festgehalten werden, welche Datenbasis und welche Ableitungslogik verwendet wird.</p>
+<p>Für jedes Kriterium muss festgehalten werden, welche Datenbasis und welche Ableitungslogik verwendet wird.</p>
 </div>
 </section>
 <section id="formale-definition-als-entscheidung" class="slide level2">
 <h2>Formale Definition als Entscheidung</h2>
 <p><a href="../assets/images/pp/formel.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="../assets/images/pp/formel.png" class="fullfig"></a></p>
 <div class="fragment overlay-note right">
-<p>Eine Formel ist keine neutrale Wahrheit. Sie dokumentiert, welche Eigenschaften in die Bewertung eingehen und wie sie gewichtet bzw. verrechnet werden.</p>
+<p>Eine Formel dokumentiert, welche Eigenschaften in die Bewertung eingehen und wie sie gewichtet bzw. verrechnet werden. Formeln sind kritisierbar!</p>
 </div>
 </section>
 <section id="modellbildung-dokumentieren" class="slide level2">
@@ -363,7 +359,7 @@ Chris Reudenbach
 <p><a href="../assets/images/pp/agis-concept2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="../assets/images/pp/agis-concept2.png" class="fullfig"></a></p>
 </div>
 <div class="framebox quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>Für die Methodennotiz reicht die technische Formel nicht.</p>
+<p>Als Methodendokumentation genügt die (technische) Formel nicht.</p>
 <p>Dokumentiert werden muss:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>Objekte: Gipfelpunkte</span>
 <span id="cb3-2"><a></a>Fläche: Höhenmodell</span>
@@ -377,7 +373,7 @@ Chris Reudenbach
 <h2>Problemlösung als Arbeitsprotokoll</h2>
 <p><a href="../assets/images/pp/slide1png.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img data-src="../assets/images/pp/slide1png.png" class="fullfig"></a></p>
 <div class="fragment overlay-note">
-<p>Diese Folie wird im Kurs als Dokumentationsfolie gelesen: Welche Teilprobleme entstehen, welche Entscheidungen werden getroffen, welche Zwischenergebnisse müssen gesichert werden?</p>
+<p>Welche Teilprobleme entstehen, welche Entscheidungen werden getroffen, welche Zwischenergebnisse müssen gesichert werden?</p>
 </div>
 </section>
 <section id="vom-problem-zu-arbeitspaketen" class="slide level2">
@@ -398,7 +394,7 @@ Chris Reudenbach
 <h2>Umsetzung dokumentieren: reproduzierbare Befehle</h2>
 <p><a href="../assets/images/pp/slide4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img data-src="../assets/images/pp/slide4.png" class="fullfig"></a></p>
 <div class="fragment overlay-note right">
-<p>Kommandozeilen oder kopierte Processing-Aufrufe sind hier kein Programmierziel. Sie sind ein Mittel, um Parameter und Dateipfade eindeutig zu sichern.</p>
+<p>Kommandozeilen oder kopierte Processing-Aufrufe sind kein Programmierziel. Sie sind ein Mittel, um Parameter und Dateipfade eindeutig zu sichern.</p>
 </div>
 </section>
 <section id="umsetzung-dokumentieren-ablauf-statt-code" class="slide level2">

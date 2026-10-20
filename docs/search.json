@@ -2412,56 +2412,56 @@
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#worum-es-hier-geht",
     "title": "Der perfekte Gipfel",
     "section": "Worum es hier geht",
-    "text": "Worum es hier geht\nDer „perfekte Gipfel“ ist ein gutes Beispiel für ein kleines GIS-Projekt, weil die Frage zunächst unscharf ist.\n\nAus einer Idee wird erst dann ein Projekt, wenn dokumentiert ist, wie sie in Kriterien, Daten, Operationen und Ergebnisgrenzen übersetzt wurde.\n\n\nDie Folien sind deshalb nicht als Programmierbeispiel gedacht, sondern als Beispiel für Problemklärung und Workflow-Dokumentation."
+    "text": "Worum es hier geht\nDer „perfekte Gipfel“ ist ein gutes Beispiel für ein GIS-Projekt, weil die Frage typisch qualitativ ist, jedoch quasi-naturwissenschaftlich begründet erscheint.\n\nAus einer Fragestellung wird erst dann wissenschaftlich belastbare Studie, wenn dokumentiert ist, wie sie in Kriterien, Daten, Operationen und Ergebnisgrenzen übersetzt wurde."
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#dokumentationsrahmen",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#dokumentationsrahmen",
     "title": "Der perfekte Gipfel",
     "section": "Dokumentationsrahmen",
-    "text": "Dokumentationsrahmen\nFür jedes GIS-Projekt muss die gleiche Kette lesbar bleiben:\nProblem → Projektfrage → Kriterium → Datenbasis → Operation → Ergebnislayer → Aussagegrenze\n\nDie Dokumentation beschreibt nicht jede Mausbewegung. Sie beschreibt die fachlich entscheidenden Übersetzungsschritte."
+    "text": "Dokumentationsrahmen\nFür jedes (GI)-Projekt muss die gleiche Kette eingehalten werden:\nProblem → Projektfrage → Kriterium → Datenbasis → Operation → Ergebnislayer → Aussagegrenze"
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#ausgangspunkt-was-ist-ein-perfekter-gipfel",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#ausgangspunkt-was-ist-ein-perfekter-gipfel",
     "title": "Der perfekte Gipfel",
     "section": "Ausgangspunkt: Was ist ein „perfekter Gipfel“?",
-    "text": "Ausgangspunkt: Was ist ein „perfekter Gipfel“?\n\n\n\n\nDokumentationspunkt: Die Ausgangsidee ist ein Qualitätsurteil. Vor der GIS-Umsetzung muss geklärt werden, welche räumlichen Eigenschaften dieses Urteil tragen sollen."
+    "text": "Ausgangspunkt: Was ist ein „perfekter Gipfel“?\n\n\n\n\nDie Ausgangsidee ist ein Qualitätsurteil. Vor der methodischen, technischen GIS-Umsetzung muss zwingend geklärt werden, welche fachlichen und räumlichen Eigenschaften dieses Urteil reproduzierbar bestimmen sollen."
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#von-der-idee-zur-projektfrage",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#von-der-idee-zur-projektfrage",
     "title": "Der perfekte Gipfel",
     "section": "Von der Idee zur Projektfrage",
-    "text": "Von der Idee zur Projektfrage\nAus „perfekter Gipfel“ wird keine GIS-Analyse. Eine bearbeitbare Frage braucht eine messbare Zielrichtung.\n\nWelche Gipfel sind nach Höhe, Dominanz, Prominenz und Eigenständigkeit besonders ausgeprägt?\n\n\nDas ist der erste dokumentierbare Schritt: Die Alltagsformulierung wird in eine räumliche Analysefrage übersetzt."
+    "text": "Von der Idee zur Projektfrage\nWas ist beim „perfekten Gipfel“ die zu bearbeitende Frage und was sind messbare Parameter.\n\nExtrahiere aus dem Artikel die Definitionen die benannt werden: Gipfel, Höhe, Dominanz, Prominenz, Eigenständigkeit…?\n\n\nDas ist der erste dokumentierbare Schritt: Die Alltagsformulierung wird in eine räumliche Analysefrage übersetzt."
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#kriterien-statt-bauchgefühl",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#kriterien-statt-bauchgefühl",
     "title": "Der perfekte Gipfel",
     "section": "Kriterien statt Bauchgefühl",
-    "text": "Kriterien statt Bauchgefühl\n\n\n\n\n\n\nAus dem Begriff entstehen Kriterien:\nHöhe / Position\nDominanz\nProminenz / Schartenhöhe\nEigenständigkeit\nNicht alle Kriterien sind direkt im DGM gespeichert. Einige müssen abgeleitet werden.\n\n\n\n\nDokumentationspunkt: Für jedes Kriterium muss festgehalten werden, welche Datenbasis und welche Ableitungslogik verwendet wird."
+    "text": "Kriterien statt Bauchgefühl\n\n\n\n\n\n\nAus der Analyse entstehen Kriterien:\nHöhe \nPosition\nDominanz\nProminenz \nSchartenhöhe\nEigenständigkeit\nNicht alle Kriterien sind direkt als Daten aus dem DGM Verfügbar. Einige müssen abgeleitet werden.\n\n\n\n\nFür jedes Kriterium muss festgehalten werden, welche Datenbasis und welche Ableitungslogik verwendet wird."
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#formale-definition-als-entscheidung",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#formale-definition-als-entscheidung",
     "title": "Der perfekte Gipfel",
     "section": "Formale Definition als Entscheidung",
-    "text": "Formale Definition als Entscheidung\n\n\nEine Formel ist keine neutrale Wahrheit. Sie dokumentiert, welche Eigenschaften in die Bewertung eingehen und wie sie gewichtet bzw. verrechnet werden."
+    "text": "Formale Definition als Entscheidung\n\n\nEine Formel dokumentiert, welche Eigenschaften in die Bewertung eingehen und wie sie gewichtet bzw. verrechnet werden. Formeln sind kritisierbar!"
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#modellbildung-dokumentieren",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#modellbildung-dokumentieren",
     "title": "Der perfekte Gipfel",
     "section": "Modellbildung dokumentieren",
-    "text": "Modellbildung dokumentieren\n\n\n\n\n\n\nFür die Methodennotiz reicht die technische Formel nicht.\nDokumentiert werden muss:\nObjekte: Gipfelpunkte\nFläche: Höhenmodell\nBeziehungen: Distanz, Trennung, Verbindung\nProdukt: Prominenz / Eigenständigkeit"
+    "text": "Modellbildung dokumentieren\n\n\n\n\n\n\nAls Methodendokumentation genügt die (technische) Formel nicht.\nDokumentiert werden muss:\nObjekte: Gipfelpunkte\nFläche: Höhenmodell\nBeziehungen: Distanz, Trennung, Verbindung\nProdukt: Prominenz / Eigenständigkeit"
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#problemlösung-als-arbeitsprotokoll",
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#problemlösung-als-arbeitsprotokoll",
     "title": "Der perfekte Gipfel",
     "section": "Problemlösung als Arbeitsprotokoll",
-    "text": "Problemlösung als Arbeitsprotokoll\n\n\nDiese Folie wird im Kurs als Dokumentationsfolie gelesen: Welche Teilprobleme entstehen, welche Entscheidungen werden getroffen, welche Zwischenergebnisse müssen gesichert werden?"
+    "text": "Problemlösung als Arbeitsprotokoll\n\n\nWelche Teilprobleme entstehen, welche Entscheidungen werden getroffen, welche Zwischenergebnisse müssen gesichert werden?"
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#vom-problem-zu-arbeitspaketen",
@@ -2482,7 +2482,7 @@
     "href": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-reproduzierbare-befehle",
     "title": "Der perfekte Gipfel",
     "section": "Umsetzung dokumentieren: reproduzierbare Befehle",
-    "text": "Umsetzung dokumentieren: reproduzierbare Befehle\n\n\nKommandozeilen oder kopierte Processing-Aufrufe sind hier kein Programmierziel. Sie sind ein Mittel, um Parameter und Dateipfade eindeutig zu sichern."
+    "text": "Umsetzung dokumentieren: reproduzierbare Befehle\n\n\nKommandozeilen oder kopierte Processing-Aufrufe sind kein Programmierziel. Sie sind ein Mittel, um Parameter und Dateipfade eindeutig zu sichern."
   },
   {
     "objectID": "slides/perfekter_gipfel_gesamtrahmen.html#umsetzung-dokumentieren-ablauf-statt-code",
@@ -5364,5 +5364,61 @@
     "title": "Ein kleines GIS-Projekt entwickeln und dokumentieren",
     "section": "vom Projektentwurf zur QGIS-Dokumentation",
     "text": "vom Projektentwurf zur QGIS-Dokumentation\nSobald aus der Projektfrage ein konkreter GIS-Workflow wird, reicht die Projektskizze allein nicht mehr aus. Dann muss dokumentiert werden, welche Werkzeuge, Parameter, Zwischenergebnisse und fachlichen Entscheidungen tatsächlich verwendet wurden.\nDie Projektseite klärt also vor allem die inhaltliche Richtung:\n\nWas will ich untersuchen, warum ist das sinnvoll, und wie übersetze ich die Frage in räumliche Kriterien?\n\nDie QGIS-Dokumentation setzt an der nächsten Stelle an:\n\nWie halte ich fest, welche Verarbeitungsschritte daraus entstanden sind und warum sie für die Projektfrage notwendig waren?\n\nDie technische und methodische Dokumentation des eigentlichen Workflows wird deshalb auf der Seite Dokumentation und Reproduzierbarkeit in QGIS behandelt."
+  },
+  {
+    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#technik-quelle",
+    "href": "slides/laermkarte_hessen_matrix_revealjs.html#technik-quelle",
+    "title": "Strategische Lärmkarte Hessen",
+    "section": "Technik / Quelle",
+    "text": "Technik / Quelle\nAmtliche Grundlage:\n\n\nBImSchV\n\nEU-Umgebungslärmrichtlinie\nHLNUG Umgebungslärmkartierung 2022\n\nHessen:\n\nzentrale Modellumgebung: ODEN\nRechenkern: ODEN/LimA V2022\nVerfahren: BUB, BUF, BEB"
+  },
+  {
+    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#lesart-der-matrix",
+    "href": "slides/laermkarte_hessen_matrix_revealjs.html#lesart-der-matrix",
+    "title": "Strategische Lärmkarte Hessen",
+    "section": "Lesart der Matrix",
+    "text": "Lesart der Matrix\nDie Karte entsteht nicht aus einem einfachen Puffer.\nJeder Schritt verändert die Aussage:\n\nQuellenwahl bestimmt, was überhaupt vorkommt.\nEmission bestimmt die Stärke.\nAusbreitung bestimmt die räumliche Wirkung.\nImmission bestimmt die Kartenwerte.\nBetroffenheit bestimmt die Statistik."
+  },
+  {
+    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#einordnung",
+    "href": "slides/laermkarte_hessen_matrix_revealjs.html#einordnung",
+    "title": "Strategische Lärmkarte Hessen",
+    "section": "Einordnung",
+    "text": "Einordnung\nDiese Parameter fehlen in einer OSM-only-Übung weitgehend.\nOSM liefert meist:\n\nStraßentyp\nGeometrie\nteils Geschwindigkeit\nteils Oberfläche\n\nDaher kann OSM nur einen Lärmverdacht modellieren."
+  },
+  {
+    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#unterschied-zur-kursübung",
+    "href": "slides/laermkarte_hessen_matrix_revealjs.html#unterschied-zur-kursübung",
+    "title": "Strategische Lärmkarte Hessen",
+    "section": "Unterschied zur Kursübung",
+    "text": "Unterschied zur Kursübung\nAmtlich:\nAkustische Ausbreitung mit Gelände, Gebäuden, Reflexion\nKursmodell:\nStraßentyp + Distanz + Nutzung\nDas Kursmodell ist ein Suchmodell."
+  },
+  {
+    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#pegelbänder",
+    "href": "slides/laermkarte_hessen_matrix_revealjs.html#pegelbänder",
+    "title": "Strategische Lärmkarte Hessen",
+    "section": "Pegelbänder",
+    "text": "Pegelbänder\nPflichtdarstellung nach 34. BImSchV:\n\nLDEN ab 55 dB(A)\nLNight ab 50 dB(A)\noptional LNight ab 45 dB(A)\n\nDie Karte zeigt Pegelbänder.\nSie zeigt keine Momentanlautstärke."
+  },
+  {
+    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#oden",
+    "href": "slides/laermkarte_hessen_matrix_revealjs.html#oden",
+    "title": "Strategische Lärmkarte Hessen",
+    "section": "ODEN",
+    "text": "ODEN\nODEN ist der Web-Service Lärm des HLNUG.\nFunktion:\n\nEingangsdaten prüfen\nModelldaten editieren\nLärmberechnungen durchführen\nMaßnahmen simulieren\n\nBeispiel:\n\nGeschwindigkeitsreduzierung\nLärmschutzwand"
+  },
+  {
+    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#merksatz",
+    "href": "slides/laermkarte_hessen_matrix_revealjs.html#merksatz",
+    "title": "Strategische Lärmkarte Hessen",
+    "section": "Merksatz",
+    "text": "Merksatz\nDie OSM-Karte ist keine Lärmkarte.\nSie zeigt:\nWo könnten Lärmquelle, Nähe und Nutzung zusammentreffen?\nNicht:\nWie laut ist es dort in dB(A)?"
+  },
+  {
+    "objectID": "slides/laermkarte_hessen_matrix_revealjs.html#für-die-übung",
+    "href": "slides/laermkarte_hessen_matrix_revealjs.html#für-die-übung",
+    "title": "Strategische Lärmkarte Hessen",
+    "section": "Für die Übung",
+    "text": "Für die Übung\nDie beste Webseite zum Zeigen ist der Lärmviewer Hessen.\nDie beste Webseite zum Erklären ist die HLNUG-Seite zur Umgebungslärmkartierung 2022.\nDer beste technische Hintergrund ist der Abschlussbericht Umgebungslärmkartierung Hessen 2022."
   }
 ]

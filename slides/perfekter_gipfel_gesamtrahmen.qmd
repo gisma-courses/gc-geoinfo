@@ -89,27 +89,19 @@ lang: de
 
 ## Worum es hier geht
 
-Der „perfekte Gipfel“ ist ein gutes Beispiel für ein kleines GIS-Projekt, weil die Frage zunächst unscharf ist.
+Der „perfekte Gipfel“ ist ein gutes Beispiel für ein GIS-Projekt, weil die Frage typisch qualitativ ist, jedoch quasi-naturwissenschaftlich begründet erscheint.
 
 ::: {.fragment .process}
-Aus einer Idee wird erst dann ein Projekt, wenn dokumentiert ist, wie sie in Kriterien, Daten, Operationen und Ergebnisgrenzen übersetzt wurde.
-:::
-
-::: {.fragment .keyline}
-Die Folien sind deshalb nicht als Programmierbeispiel gedacht, sondern als Beispiel für **Problemklärung und Workflow-Dokumentation**.
+Aus einer Fragestellung wird erst dann wissenschaftlich belastbare Studie, wenn dokumentiert ist, wie sie in Kriterien, Daten, Operationen und Ergebnisgrenzen übersetzt wurde.
 :::
 
 ## Dokumentationsrahmen
 
-Für jedes GIS-Projekt muss die gleiche Kette lesbar bleiben:
+Für jedes (GI)-Projekt muss die gleiche Kette eingehalten werden:
 
 ```text
 Problem → Projektfrage → Kriterium → Datenbasis → Operation → Ergebnislayer → Aussagegrenze
 ```
-
-::: {.fragment .keyline}
-Die Dokumentation beschreibt nicht jede Mausbewegung. Sie beschreibt die fachlich entscheidenden Übersetzungsschritte.
-:::
 
 ## Ausgangspunkt: Was ist ein „perfekter Gipfel“?
 
@@ -118,15 +110,15 @@ Die Dokumentation beschreibt nicht jede Mausbewegung. Sie beschreibt die fachlic
 :::
 
 ::: {.fragment .overlay-note .wide}
-Dokumentationspunkt: Die Ausgangsidee ist ein Qualitätsurteil. Vor der GIS-Umsetzung muss geklärt werden, welche räumlichen Eigenschaften dieses Urteil tragen sollen.
+Die Ausgangsidee ist ein *Qualitätsurteil*. Vor der methodischen, technischen GIS-Umsetzung muss zwingend geklärt werden, welche fachlichen und räumlichen Eigenschaften dieses Urteil reproduzierbar bestimmen sollen.
 :::
 
 ## Von der Idee zur Projektfrage
 
-Aus „perfekter Gipfel“ wird keine GIS-Analyse. Eine bearbeitbare Frage braucht eine messbare Zielrichtung.
+Was ist beim „perfekten Gipfel“ die zu bearbeitende Frage und was sind messbare Parameter.
 
 ::: {.fragment .process}
-Welche Gipfel sind nach Höhe, Dominanz, Prominenz und Eigenständigkeit besonders ausgeprägt?
+Extrahiere aus dem Artikel die Definitionen die benannt werden: Gipfel, Höhe, Dominanz, Prominenz, Eigenständigkeit...?
 :::
 
 ::: {.fragment .keyline}
@@ -140,22 +132,24 @@ Das ist der erste dokumentierbare Schritt: Die Alltagsformulierung wird in eine 
 ![](../assets/images/pp/agis-concept1.png){.tallfig}
 
 ::: {.framebox}
-Aus dem Begriff entstehen Kriterien:
+Aus der Analyse entstehen Kriterien:
 
 ```text
-Höhe / Position
+Höhe 
+Position
 Dominanz
-Prominenz / Schartenhöhe
+Prominenz 
+Schartenhöhe
 Eigenständigkeit
 ```
 
-Nicht alle Kriterien sind direkt im DGM gespeichert. Einige müssen abgeleitet werden.
+Nicht alle Kriterien sind direkt als Daten aus dem DGM Verfügbar. Einige müssen abgeleitet werden.
 :::
 
 :::
 
 ::: {.fragment .overlay-note .wide}
-Dokumentationspunkt: Für jedes Kriterium muss festgehalten werden, welche Datenbasis und welche Ableitungslogik verwendet wird.
+Für jedes Kriterium muss festgehalten werden, welche Datenbasis und welche Ableitungslogik verwendet wird.
 :::
 
 ## Formale Definition als Entscheidung
@@ -163,7 +157,7 @@ Dokumentationspunkt: Für jedes Kriterium muss festgehalten werden, welche Daten
 ![](../assets/images/pp/formel.png){.fullfig}
 
 ::: {.fragment .overlay-note .right}
-Eine Formel ist keine neutrale Wahrheit. Sie dokumentiert, welche Eigenschaften in die Bewertung eingehen und wie sie gewichtet bzw. verrechnet werden.
+Eine Formel dokumentiert, welche Eigenschaften in die Bewertung eingehen und wie sie gewichtet bzw. verrechnet werden. Formeln sind kritisierbar!
 :::
 
 ## Modellbildung dokumentieren
@@ -173,7 +167,7 @@ Eine Formel ist keine neutrale Wahrheit. Sie dokumentiert, welche Eigenschaften 
 ![](../assets/images/pp/agis-concept2.png){.fullfig}
 
 ::: {.framebox}
-Für die Methodennotiz reicht die technische Formel nicht.
+Als Methodendokumentation genügt die (technische) Formel nicht.
 
 Dokumentiert werden muss:
 
@@ -192,7 +186,7 @@ Produkt: Prominenz / Eigenständigkeit
 ![](../assets/images/pp/slide1png.png){.fullfig}
 
 ::: {.fragment .overlay-note}
-Diese Folie wird im Kurs als Dokumentationsfolie gelesen: Welche Teilprobleme entstehen, welche Entscheidungen werden getroffen, welche Zwischenergebnisse müssen gesichert werden?
+Welche Teilprobleme entstehen, welche Entscheidungen werden getroffen, welche Zwischenergebnisse müssen gesichert werden?
 :::
 
 ## Vom Problem zu Arbeitspaketen
@@ -216,7 +210,7 @@ Interaktive Arbeit ist zulässig. Dokumentiert werden aber die stabilen Schritte
 ![](../assets/images/pp/slide4.png){.fullfig}
 
 ::: {.fragment .overlay-note .right}
-Kommandozeilen oder kopierte Processing-Aufrufe sind hier kein Programmierziel. Sie sind ein Mittel, um Parameter und Dateipfade eindeutig zu sichern.
+Kommandozeilen oder kopierte Processing-Aufrufe sind kein Programmierziel. Sie sind ein Mittel, um Parameter und Dateipfade eindeutig zu sichern.
 :::
 
 ## Umsetzung dokumentieren: Ablauf statt Code
