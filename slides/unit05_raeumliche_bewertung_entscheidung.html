@@ -7,11 +7,11 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+  <meta name="generator" content="quarto-1.10.19">
 
   <meta name="author" content="Chris Reudenbach">
   <title>Grundlagenkurs GI-S (QGIS) – Räumliche Bewertung und Entscheidung</title>
@@ -24,10 +24,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -215,7 +218,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Chris Reudenbach 
+Chris Reudenbach
 </div>
 </div>
 </div>
@@ -276,7 +279,7 @@ Chris Reudenbach
 <section id="leitfrage-der-sitzung" class="slide level2">
 <h2>Leitfrage der Sitzung</h2>
 <p>Räumliche Entscheidungsfindung beginnt dort, wo mehrere räumliche Kriterien nicht nur analysiert, sondern <strong>bewertet, gewichtet und miteinander kombiniert</strong> werden.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>räumliche Frage → Kriterien → Standardisierung → Gewichtung → Kombination → Interpretation</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a aria-label="1"></a>räumliche Frage → Kriterien → Standardisierung → Gewichtung → Kombination → Interpretation</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment keyline">
 <p>Die Karte ist dabei kein neutrales Ergebnis. Sie ist die räumliche Form einer begründeten Bewertungslogik.</p>
 </div>
@@ -309,14 +312,14 @@ Chris Reudenbach
 <section id="von-analyse-zu-bewertung" class="slide level2">
 <h2>Von Analyse zu Bewertung</h2>
 <p>In Unit04 ging es vor allem um Ableitungen:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>Punktdaten → Interpolationsfläche</span>
-<span id="cb2-2"><a></a>Höhenraster → Sichtfeld oder Fließrichtung</span>
-<span id="cb2-3"><a></a>Distanzen → Nähe- oder Kostenoberflächen</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a aria-label="1"></a>Punktdaten → Interpolationsfläche</span>
+<span id="cb2-2"><a aria-label="2"></a>Höhenraster → Sichtfeld oder Fließrichtung</span>
+<span id="cb2-3"><a aria-label="3"></a>Distanzen → Nähe- oder Kostenoberflächen</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p>In Unit05 werden diese Ableitungen bewertet:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>Nähe → günstig oder ungünstig?</span>
-<span id="cb3-2"><a></a>Hangneigung → geeignet oder problematisch?</span>
-<span id="cb3-3"><a></a>Landnutzung → Kriterium, Ausschluss oder Widerstand?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a aria-label="1"></a>Nähe → günstig oder ungünstig?</span>
+<span id="cb3-2"><a aria-label="2"></a>Hangneigung → geeignet oder problematisch?</span>
+<span id="cb3-3"><a aria-label="3"></a>Landnutzung → Kriterium, Ausschluss oder Widerstand?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="eignungsanalyse" class="slide level2">
@@ -420,7 +423,7 @@ störungsnahe Bereiche</p>
 <p>Rohdaten → räumlicher Parameter → Reklassifikation → standardisierter Kriterienwert</p>
 </div>
 <p>Beispiel:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>Siedlungen → Distanz zur nächsten Siedlung → Störungsklassen → Eignungswert 0…1</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a aria-label="1"></a>Siedlungen → Distanz zur nächsten Siedlung → Störungsklassen → Eignungswert 0…1</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p>Erst dadurch können unterschiedliche Kriterien miteinander verrechnet werden.</p>
 </div>
@@ -480,10 +483,10 @@ E = \sum_i w_i \cdot K_i
 <section id="beispielgewichte" class="slide level2">
 <h2>Beispielgewichte</h2>
 <p>Für das Wildkatzenbeispiel könnte eine einfache Gewichtung lauten:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>Walddichte        0.40</span>
-<span id="cb5-2"><a></a>Siedlungsdistanz 0.30</span>
-<span id="cb5-3"><a></a>Hangneigung      0.20</span>
-<span id="cb5-4"><a></a>Exposition       0.10</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a aria-label="1"></a>Walddichte        0.40</span>
+<span id="cb5-2"><a aria-label="2"></a>Siedlungsdistanz 0.30</span>
+<span id="cb5-3"><a aria-label="3"></a>Hangneigung      0.20</span>
+<span id="cb5-4"><a aria-label="4"></a>Exposition       0.10</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p>Die Gewichte ergeben zusammen 1 und können direkt im Rasterrechner verwendet werden.</p>
 </div>
@@ -493,14 +496,14 @@ E = \sum_i w_i \cdot K_i
 </section>
 <section id="rasterrechner-als-modellformel" class="slide level2">
 <h2>Rasterrechner als Modellformel</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource qgis number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a>(</span>
-<span id="cb6-2"><a></a>  "walddichte_idx@1" * 0.40 +</span>
-<span id="cb6-3"><a></a>  "siedlungsdistanz_idx@1" * 0.30 +</span>
-<span id="cb6-4"><a></a>  "hangneigung_idx@1" * 0.20 +</span>
-<span id="cb6-5"><a></a>  "exposition_idx@1" * 0.10</span>
-<span id="cb6-6"><a></a>)</span>
-<span id="cb6-7"><a></a>*</span>
-<span id="cb6-8"><a></a>"einschraenkung_mask@1"</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource qgis number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a aria-label="1"></a>(</span>
+<span id="cb6-2"><a aria-label="2"></a>  "walddichte_idx@1" * 0.40 +</span>
+<span id="cb6-3"><a aria-label="3"></a>  "siedlungsdistanz_idx@1" * 0.30 +</span>
+<span id="cb6-4"><a aria-label="4"></a>  "hangneigung_idx@1" * 0.20 +</span>
+<span id="cb6-5"><a aria-label="5"></a>  "exposition_idx@1" * 0.10</span>
+<span id="cb6-6"><a aria-label="6"></a>)</span>
+<span id="cb6-7"><a aria-label="7"></a>*</span>
+<span id="cb6-8"><a aria-label="8"></a>"einschraenkung_mask@1"</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment keyline">
 <p>Der Ausdruck ist die technische Form der Bewertungslogik.</p>
 </div>
@@ -508,8 +511,8 @@ E = \sum_i w_i \cdot K_i
 <section id="einschränkungsmaske" class="slide level2">
 <h2>Einschränkungsmaske</h2>
 <p>Eine Maske entscheidet, welche Flächen überhaupt bewertbar bleiben.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a></a>1 = Fläche bleibt im Modell</span>
-<span id="cb7-2"><a></a>0 = Fläche wird ausgeschlossen</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a aria-label="1"></a>1 = Fläche bleibt im Modell</span>
+<span id="cb7-2"><a aria-label="2"></a>0 = Fläche wird ausgeschlossen</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p>Beispiele: versiegelte Flächen, Gebäude, Wasserflächen, rechtliche Ausschlussgebiete.</p>
 </div>
@@ -541,10 +544,10 @@ vollständige ökologische Realität</p>
 <h2>AHP: Gewichte systematischer herleiten</h2>
 <p>Der Analytic Hierarchy Process ersetzt keine fachliche Entscheidung.</p>
 <p>Er macht sie strukturierter:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a></a>Kriterien paarweise vergleichen</span>
-<span id="cb8-2"><a></a>→ Vergleichsmatrix erzeugen</span>
-<span id="cb8-3"><a></a>→ Gewichte berechnen</span>
-<span id="cb8-4"><a></a>→ Konsistenz prüfen</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a aria-label="1"></a>Kriterien paarweise vergleichen</span>
+<span id="cb8-2"><a aria-label="2"></a>→ Vergleichsmatrix erzeugen</span>
+<span id="cb8-3"><a aria-label="3"></a>→ Gewichte berechnen</span>
+<span id="cb8-4"><a aria-label="4"></a>→ Konsistenz prüfen</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment keyline">
 <p>AHP hilft bei der Dokumentation von Gewichtungen, macht aber unsichere Kriterien nicht automatisch belastbar.</p>
 </div>
@@ -557,11 +560,11 @@ vollständige ökologische Realität</p>
 </blockquote>
 <div class="fragment">
 <p>Bewertungsskala:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a></a>1 = gleich wichtig</span>
-<span id="cb9-2"><a></a>3 = etwas wichtiger</span>
-<span id="cb9-3"><a></a>5 = deutlich wichtiger</span>
-<span id="cb9-4"><a></a>7 = sehr stark wichtiger</span>
-<span id="cb9-5"><a></a>9 = extrem wichtiger</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a aria-label="1"></a>1 = gleich wichtig</span>
+<span id="cb9-2"><a aria-label="2"></a>3 = etwas wichtiger</span>
+<span id="cb9-3"><a aria-label="3"></a>5 = deutlich wichtiger</span>
+<span id="cb9-4"><a aria-label="4"></a>7 = sehr stark wichtiger</span>
+<span id="cb9-5"><a aria-label="5"></a>9 = extrem wichtiger</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
 <p>Aus vielen Paarvergleichen entsteht eine Gewichtung.</p>
@@ -570,13 +573,13 @@ vollständige ökologische Realität</p>
 <section id="von-mce-zu-moe" class="slide level2">
 <h2>Von MCE zu MOE</h2>
 <p>Eine Multi Criteria Evaluation bewertet mehrere Kriterien für <strong>ein Ziel</strong>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a></a>Ziel: Wildkatzenhabitat</span>
-<span id="cb10-2"><a></a>Kriterien: Walddichte, Siedlungsferne, Hangneigung, Exposition</span>
-<span id="cb10-3"><a></a>→ eine Eignungskarte</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a aria-label="1"></a>Ziel: Wildkatzenhabitat</span>
+<span id="cb10-2"><a aria-label="2"></a>Kriterien: Walddichte, Siedlungsferne, Hangneigung, Exposition</span>
+<span id="cb10-3"><a aria-label="3"></a>→ eine Eignungskarte</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p>Eine Multi Objective Evaluation vergleicht mehrere Ziele.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a></a>Wildkatzenhabitat | Erholung | Forstwirtschaft</span>
-<span id="cb11-2"><a></a>→ mehrere Eignungskarten und mögliche Zielkonflikte</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a aria-label="1"></a>Wildkatzenhabitat | Erholung | Forstwirtschaft</span>
+<span id="cb11-2"><a aria-label="2"></a>→ mehrere Eignungskarten und mögliche Zielkonflikte</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="multi-objective-evaluation" class="slide level2">
@@ -646,11 +649,11 @@ C_{\text{min}} = \min \left( \sum_i K_i \right)
 <section id="wildkatze-eignung-und-verbindung" class="slide level2">
 <h2>Wildkatze: Eignung und Verbindung</h2>
 <p>Für das Wildkatzenbeispiel verschiebt die Kostenanalyse die Frage:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a></a>Eignungskarte:</span>
-<span id="cb12-2"><a></a>Wo liegen potenziell geeignete Lebensräume?</span>
-<span id="cb12-3"><a></a></span>
-<span id="cb12-4"><a></a>Kostenoberfläche:</span>
-<span id="cb12-5"><a></a>Wie gut sind diese Lebensräume miteinander verbunden?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a aria-label="1"></a>Eignungskarte:</span>
+<span id="cb12-2"><a aria-label="2"></a>Wo liegen potenziell geeignete Lebensräume?</span>
+<span id="cb12-3"><a aria-label="3"></a></span>
+<span id="cb12-4"><a aria-label="4"></a>Kostenoberfläche:</span>
+<span id="cb12-5"><a aria-label="5"></a>Wie gut sind diese Lebensräume miteinander verbunden?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment keyline">
 <p>Eine Fläche kann geeignet sein, aber durch Barrieren schlecht erreichbar oder stark isoliert.</p>
 </div>
@@ -658,12 +661,12 @@ C_{\text{min}} = \min \left( \sum_i K_i \right)
 <section id="konzeptuelle-umsetzung-in-qgis" class="slide level2">
 <h2>Konzeptuelle Umsetzung in QGIS</h2>
 <p>Der Workflow bleibt eine Modellkette:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a></a>Kostentreiber auswählen</span>
-<span id="cb13-2"><a></a>→ Daten auf Raster bringen</span>
-<span id="cb13-3"><a></a>→ Werte in Kosten übersetzen</span>
-<span id="cb13-4"><a></a>→ Kostenraster gewichten und kombinieren</span>
-<span id="cb13-5"><a></a>→ kumulative Kosten oder Kostenpfade berechnen</span>
-<span id="cb13-6"><a></a>→ Ergebnis interpretieren</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a aria-label="1"></a>Kostentreiber auswählen</span>
+<span id="cb13-2"><a aria-label="2"></a>→ Daten auf Raster bringen</span>
+<span id="cb13-3"><a aria-label="3"></a>→ Werte in Kosten übersetzen</span>
+<span id="cb13-4"><a aria-label="4"></a>→ Kostenraster gewichten und kombinieren</span>
+<span id="cb13-5"><a aria-label="5"></a>→ kumulative Kosten oder Kostenpfade berechnen</span>
+<span id="cb13-6"><a aria-label="6"></a>→ Ergebnis interpretieren</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p>Typische Werkzeuge: Rasterisieren, Hangneigung, Rasterdistanz, Reklassifikation, Rasterrechner, <code>r.cost</code>, <code>r.walk</code>, Least-cost path.</p>
 </div>
@@ -694,7 +697,7 @@ Frage: Wie aufwendig ist Bewegung oder Verbindung?</p>
 <p>Sie liefern keine automatische Entscheidung.</p>
 <div class="fragment">
 <p>Sie zeigen:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a></a>Daten + Kriterien + Gewichtung + Ausschlussregeln + Modellannahmen</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a aria-label="1"></a>Daten + Kriterien + Gewichtung + Ausschlussregeln + Modellannahmen</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>als räumliches Ergebnis.</p>
 </div>
 <div class="fragment keyline">
@@ -704,28 +707,28 @@ Frage: Wie aufwendig ist Bewegung oder Verbindung?</p>
 <section id="zusammenfassung" class="slide level2">
 <h2>Zusammenfassung</h2>
 <p>Unit05 verbindet vier Ebenen:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1"><a></a>Eignung</span>
-<span id="cb15-2"><a></a>→ Welche Flächen passen zu einem Ziel?</span>
-<span id="cb15-3"><a></a></span>
-<span id="cb15-4"><a></a>Gewichtung</span>
-<span id="cb15-5"><a></a>→ Welche Kriterien zählen stärker?</span>
-<span id="cb15-6"><a></a></span>
-<span id="cb15-7"><a></a>Zielkonflikt</span>
-<span id="cb15-8"><a></a>→ Wo konkurrieren mehrere Ziele?</span>
-<span id="cb15-9"><a></a></span>
-<span id="cb15-10"><a></a>Kosten</span>
-<span id="cb15-11"><a></a>→ Wie durchlässig oder widerständig ist der Raum?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1"><a aria-label="1"></a>Eignung</span>
+<span id="cb15-2"><a aria-label="2"></a>→ Welche Flächen passen zu einem Ziel?</span>
+<span id="cb15-3"><a aria-label="3"></a></span>
+<span id="cb15-4"><a aria-label="4"></a>Gewichtung</span>
+<span id="cb15-5"><a aria-label="5"></a>→ Welche Kriterien zählen stärker?</span>
+<span id="cb15-6"><a aria-label="6"></a></span>
+<span id="cb15-7"><a aria-label="7"></a>Zielkonflikt</span>
+<span id="cb15-8"><a aria-label="8"></a>→ Wo konkurrieren mehrere Ziele?</span>
+<span id="cb15-9"><a aria-label="9"></a></span>
+<span id="cb15-10"><a aria-label="10"></a>Kosten</span>
+<span id="cb15-11"><a aria-label="11"></a>→ Wie durchlässig oder widerständig ist der Raum?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="arbeitsauftrag" class="slide level2">
 <h2>Arbeitsauftrag</h2>
 <p>Wählen Sie für ein kleines GIS-Projekt eine räumliche Entscheidungsfrage.</p>
 <p>Formulieren Sie dazu:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb16-1"><a></a>Ziel</span>
-<span id="cb16-2"><a></a>Kriterien</span>
-<span id="cb16-3"><a></a>Skalenrichtung</span>
-<span id="cb16-4"><a></a>Gewichtung oder Ausschlusslogik</span>
-<span id="cb16-5"><a></a>erwartete Karte</span>
-<span id="cb16-6"><a></a>zentrale Aussagegrenze</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb16-1"><a aria-label="1"></a>Ziel</span>
+<span id="cb16-2"><a aria-label="2"></a>Kriterien</span>
+<span id="cb16-3"><a aria-label="3"></a>Skalenrichtung</span>
+<span id="cb16-4"><a aria-label="4"></a>Gewichtung oder Ausschlusslogik</span>
+<span id="cb16-5"><a aria-label="5"></a>erwartete Karte</span>
+<span id="cb16-6"><a aria-label="6"></a>zentrale Aussagegrenze</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment keyline">
 <p>Der wichtigste Satz der Dokumentation lautet: Warum führt genau diese Kriterienlogik zu genau dieser Karte?</p>
 </div>

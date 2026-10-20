@@ -7,11 +7,11 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+  <meta name="generator" content="quarto-1.10.19">
 
   <meta name="author" content="Chris Reudenbach">
   <title>Grundlagenkurs GI-S (QGIS) – GIS-Abfragen</title>
@@ -24,10 +24,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -215,7 +218,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Chris Reudenbach 
+Chris Reudenbach
 </div>
 </div>
 </div>
@@ -225,7 +228,7 @@ Chris Reudenbach
 <h2>Leitfrage der Sitzung</h2>
 <p>GIS-Abfragen sind keine reinen Werkzeugklicks.</p>
 <p>Sie übersetzen eine fachliche Frage in Bedingungen, Operatoren und räumliche Beziehungen.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>Fachliche Frage → Datenmodell → Attribute / Geometrie / Topologie → Auswahl → Interpretation</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a aria-label="1"></a>Fachliche Frage → Datenmodell → Attribute / Geometrie / Topologie → Auswahl → Interpretation</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Der Kern der Sitzung ist deshalb:</p>
 <blockquote>
 <p>Wie formuliere ich eine räumliche Frage so, dass ein GIS sie nachvollziehbar auswerten kann?</p>
@@ -247,7 +250,7 @@ Chris Reudenbach
 <h2>Abfragen beginnen mit Relationen</h2>
 <p>GIS-Daten bestehen im Vektormodell aus Geometrie und Attributen.</p>
 <p>Die Attributtabelle organisiert die semantische Information in Feldern, Datensätzen und Werten.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>Objektgeometrie + Attributwerte → Abfragefähige Relation</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a aria-label="1"></a>Objektgeometrie + Attributwerte → Abfragefähige Relation</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Eine Abfrage prüft also nicht „die Welt“, sondern die modellierten Daten.</p>
 </section>
 <section id="drei-grundtypen-von-abfragen" class="slide level2">
@@ -273,15 +276,15 @@ Welche Objekte stehen in einer bestimmten Lagebeziehung?</p>
 <p>Eine Auswahl verändert die Ausgangsdaten zunächst nicht.</p>
 <p>Sie markiert, filtert oder zeigt nur bestimmte Objekte.</p>
 <p>Eine neue Datenebene entsteht erst, wenn das Ergebnis gespeichert, gepuffert, verschnitten, rasterisiert oder weiterverarbeitet wird.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>Auswahl → Information</span>
-<span id="cb3-2"><a></a>Analyseoperation → neuer Layer / neues Raster</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a aria-label="1"></a>Auswahl → Information</span>
+<span id="cb3-2"><a aria-label="2"></a>Analyseoperation → neuer Layer / neues Raster</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="operatoren-die-sprache-der-abfrage" class="slide level2">
 <h2>Operatoren: die Sprache der Abfrage</h2>
 <p>Operatoren legen fest, wie Bedingungen formuliert werden.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>Baumart = 'Lärche'</span>
-<span id="cb4-2"><a></a>Vorrat_m3_ha &gt; 110</span>
-<span id="cb4-3"><a></a>Baumart = 'Lärche' AND Vorrat_m3_ha &gt; 110</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a aria-label="1"></a>Baumart = 'Lärche'</span>
+<span id="cb4-2"><a aria-label="2"></a>Vorrat_m3_ha &gt; 110</span>
+<span id="cb4-3"><a aria-label="3"></a>Baumart = 'Lärche' AND Vorrat_m3_ha &gt; 110</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <ul>
 <li>Vergleichsoperatoren prüfen Werte.</li>
@@ -305,9 +308,9 @@ Welche Objekte stehen in einer bestimmten Lagebeziehung?</p>
 </div>
 <div class="fragment quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p>Beispiele:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>"Baumart" = 'Fichte'</span>
-<span id="cb5-2"><a></a>"Bodentyp" = 'Redzina'</span>
-<span id="cb5-3"><a></a>"Vorrat_m3_ha" &gt; 120</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a aria-label="1"></a>"Baumart" = 'Fichte'</span>
+<span id="cb5-2"><a aria-label="2"></a>"Bodentyp" = 'Redzina'</span>
+<span id="cb5-3"><a aria-label="3"></a>"Vorrat_m3_ha" &gt; 120</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Die Auswahl muss in Karte und Tabelle konsistent sein.</p>
 </div>
 </div>
@@ -316,12 +319,12 @@ Welche Objekte stehen in einer bestimmten Lagebeziehung?</p>
 <section id="von-der-fachlichen-frage-zur-qgis-abfrage" class="slide level2">
 <h2>Von der fachlichen Frage zur QGIS-Abfrage</h2>
 <p>Eine gute Abfrage beginnt nicht mit Syntax, sondern mit Übersetzung.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a>Was möchte ich wissen?</span>
-<span id="cb6-2"><a></a>→ Welche Attribute brauche ich?</span>
-<span id="cb6-3"><a></a>→ Welche Bedingungen passen?</span>
-<span id="cb6-4"><a></a>→ Wie lautet der QGIS-Ausdruck?</span>
-<span id="cb6-5"><a></a>→ Welche Objekte werden ausgewählt?</span>
-<span id="cb6-6"><a></a>→ Was bedeutet das Ergebnis?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a aria-label="1"></a>Was möchte ich wissen?</span>
+<span id="cb6-2"><a aria-label="2"></a>→ Welche Attribute brauche ich?</span>
+<span id="cb6-3"><a aria-label="3"></a>→ Welche Bedingungen passen?</span>
+<span id="cb6-4"><a aria-label="4"></a>→ Wie lautet der QGIS-Ausdruck?</span>
+<span id="cb6-5"><a aria-label="5"></a>→ Welche Objekte werden ausgewählt?</span>
+<span id="cb6-6"><a aria-label="6"></a>→ Was bedeutet das Ergebnis?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="fachliche-frage-ausdruck" class="slide level2">
 <h2>Fachliche Frage → Ausdruck</h2>
@@ -347,9 +350,9 @@ Welche Objekte stehen in einer bestimmten Lagebeziehung?</p>
 <section id="klammern-sind-fachlich-relevant" class="slide level2">
 <h2>Klammern sind fachlich relevant</h2>
 <p>Zwei Ausdrücke können dieselben Bedingungen enthalten und trotzdem unterschiedliche Ergebnisse liefern.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a></a>Baumart = 'Lärche' AND Vorrat &gt; 110 OR Bodentyp = 'Podzol'</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a aria-label="1"></a>Baumart = 'Lärche' AND Vorrat &gt; 110 OR Bodentyp = 'Podzol'</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>ist nicht dasselbe wie:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a></a>Baumart = 'Lärche' AND (Vorrat &gt; 110 OR Bodentyp = 'Podzol')</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a aria-label="1"></a>Baumart = 'Lärche' AND (Vorrat &gt; 110 OR Bodentyp = 'Podzol')</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p>Ohne Klammern entscheidet die Operatorpriorität. Mit Klammern entscheiden Sie bewusst.</p>
 </div>
@@ -358,10 +361,10 @@ Welche Objekte stehen in einer bestimmten Lagebeziehung?</p>
 <h2>Geometrische Abfragen</h2>
 <p>Geometrische Abfragen messen Eigenschaften oder Distanzen von Geometrien.</p>
 <p>Sie beantworten Fragen wie:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a></a>Wie weit ist Objekt A von Objekt B entfernt?</span>
-<span id="cb9-2"><a></a>Wie groß ist eine Fläche?</span>
-<span id="cb9-3"><a></a>Wie lang ist eine Linie?</span>
-<span id="cb9-4"><a></a>Welche Objekte liegen innerhalb eines Puffers?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a aria-label="1"></a>Wie weit ist Objekt A von Objekt B entfernt?</span>
+<span id="cb9-2"><a aria-label="2"></a>Wie groß ist eine Fläche?</span>
+<span id="cb9-3"><a aria-label="3"></a>Wie lang ist eine Linie?</span>
+<span id="cb9-4"><a aria-label="4"></a>Welche Objekte liegen innerhalb eines Puffers?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="geometrische-abfragen-in-qgis" class="slide level2">
 <h2>Geometrische Abfragen in QGIS</h2>
@@ -385,7 +388,7 @@ Welche Objekte stehen in einer bestimmten Lagebeziehung?</p>
 <section id="puffer-und-distanzzonen" class="slide level2">
 <h2>Puffer und Distanzzonen</h2>
 <p>Puffer übersetzen Nähe in eine Fläche.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a></a>Objekt → Abstandswert → Distanzzone</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a aria-label="1"></a>Objekt → Abstandswert → Distanzzone</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Im Vektormodell entsteht eine Puffergeometrie.<br>
 Im Rastermodell entsteht meist ein Distanzwert pro Zelle.</p>
 </section>
@@ -397,19 +400,19 @@ Im Rastermodell entsteht meist ein Distanzwert pro Zelle.</p>
 <h2>Geometrische Abfragen prüfen</h2>
 <p>Geometrische Ergebnisse wirken oft eindeutig, sind aber abhängig von Parametern.</p>
 <p>Zu prüfen sind insbesondere:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a></a>Welches Koordinatensystem?</span>
-<span id="cb11-2"><a></a>Welche Einheit?</span>
-<span id="cb11-3"><a></a>Welche Zellgröße?</span>
-<span id="cb11-4"><a></a>Welche Pufferdistanz?</span>
-<span id="cb11-5"><a></a>Einseitig oder beidseitig?</span>
-<span id="cb11-6"><a></a>Vektor- oder Rasterlogik?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a aria-label="1"></a>Welches Koordinatensystem?</span>
+<span id="cb11-2"><a aria-label="2"></a>Welche Einheit?</span>
+<span id="cb11-3"><a aria-label="3"></a>Welche Zellgröße?</span>
+<span id="cb11-4"><a aria-label="4"></a>Welche Pufferdistanz?</span>
+<span id="cb11-5"><a aria-label="5"></a>Einseitig oder beidseitig?</span>
+<span id="cb11-6"><a aria-label="6"></a>Vektor- oder Rasterlogik?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="topologische-abfragen" class="slide level2">
 <h2>Topologische Abfragen</h2>
 <p>Topologische Abfragen prüfen Lagebeziehungen zwischen Geometrien.</p>
 <p>Sie fragen nicht: „Wie weit?“<br>
 Sondern: „Wie liegt etwas zu etwas anderem?“</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a></a>innerhalb | berührt | schneidet | überlappt | enthält | getrennt</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a aria-label="1"></a>innerhalb | berührt | schneidet | überlappt | enthält | getrennt</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="grundmuster-topologischer-beziehungen" class="slide level2">
 <h2>Grundmuster topologischer Beziehungen</h2>
@@ -434,9 +437,9 @@ Sondern: „Wie liegt etwas zu etwas anderem?“</p>
 </div>
 <div class="fragment quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p>Dieselben Eingangsdaten können je nach Operator unterschiedliche Objekte auswählen.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a></a>vollständig im Wald</span>
-<span id="cb13-2"><a></a>schneidet den Waldrand</span>
-<span id="cb13-3"><a></a>Schwerpunkt im Wald</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a aria-label="1"></a>vollständig im Wald</span>
+<span id="cb13-2"><a aria-label="2"></a>schneidet den Waldrand</span>
+<span id="cb13-3"><a aria-label="3"></a>Schwerpunkt im Wald</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Das sind verschiedene fachliche Aussagen.</p>
 </div>
 </div>
@@ -445,7 +448,7 @@ Sondern: „Wie liegt etwas zu etwas anderem?“</p>
 <section id="operator-fachlich-wählen" class="slide level2">
 <h2>Operator fachlich wählen</h2>
 <p>Der häufigste Fehler ist, <code>intersects</code> als Allzwecklösung zu verwenden.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a></a>„liegt vollständig innerhalb“ ≠ „schneidet irgendwie“</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a aria-label="1"></a>„liegt vollständig innerhalb“ ≠ „schneidet irgendwie“</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Wer wissen will, ob Gebäude vollständig im Wald liegen, braucht einen strengeren Operator als für Gebäude, die den Waldrand schneiden.</p>
 </section>
 <section id="geometrisch-oder-topologisch" class="slide level2">
@@ -454,15 +457,15 @@ Sondern: „Wie liegt etwas zu etwas anderem?“</p>
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p><strong>Geometrisch</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1"><a></a>Wie weit liegt ein Gebäude vom Wald entfernt?</span>
-<span id="cb15-2"><a></a>Wie groß ist ein Flurstück?</span>
-<span id="cb15-3"><a></a>Wie lang ist ein Gewässerabschnitt?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1"><a aria-label="1"></a>Wie weit liegt ein Gebäude vom Wald entfernt?</span>
+<span id="cb15-2"><a aria-label="2"></a>Wie groß ist ein Flurstück?</span>
+<span id="cb15-3"><a aria-label="3"></a>Wie lang ist ein Gewässerabschnitt?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p><strong>Topologisch</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb16-1"><a></a>Liegt ein Gebäude im Wald?</span>
-<span id="cb16-2"><a></a>Berührt ein Flurstück eine Straße?</span>
-<span id="cb16-3"><a></a>Schneidet ein Gewässer ein Schutzgebiet?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb16-1"><a aria-label="1"></a>Liegt ein Gebäude im Wald?</span>
+<span id="cb16-2"><a aria-label="2"></a>Berührt ein Flurstück eine Straße?</span>
+<span id="cb16-3"><a aria-label="3"></a>Schneidet ein Gewässer ein Schutzgebiet?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -470,9 +473,9 @@ Sondern: „Wie liegt etwas zu etwas anderem?“</p>
 <section id="kombinierte-gis-abfragen" class="slide level2">
 <h2>Kombinierte GIS-Abfragen</h2>
 <p>Komplexe GIS-Fragen verbinden häufig mehrere Abfragetypen.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb17-1"><a></a>Attributbedingung</span>
-<span id="cb17-2"><a></a>+ Distanzbedingung</span>
-<span id="cb17-3"><a></a>+ topologische Lagebeziehung</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb17-1"><a aria-label="1"></a>Attributbedingung</span>
+<span id="cb17-2"><a aria-label="2"></a>+ Distanzbedingung</span>
+<span id="cb17-3"><a aria-label="3"></a>+ topologische Lagebeziehung</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Beispiel:</p>
 <blockquote>
 <p>Welche Waldflächen liegen innerhalb des Untersuchungsgebiets, sind größer als 2 ha und weniger als 200 m von einer Straße entfernt?</p>
@@ -506,9 +509,9 @@ Sondern: „Wie liegt etwas zu etwas anderem?“</p>
 <section id="kernpunkt" class="slide level2">
 <h2>Kernpunkt</h2>
 <p>GIS-Abfragen sind die Übersetzung fachlicher Fragen in Datenbedingungen.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb18-1"><a></a>Attributwert → thematische Abfrage</span>
-<span id="cb18-2"><a></a>Distanz / Fläche / Länge → geometrische Abfrage</span>
-<span id="cb18-3"><a></a>Lagebeziehung → topologische Abfrage</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb18-1"><a aria-label="1"></a>Attributwert → thematische Abfrage</span>
+<span id="cb18-2"><a aria-label="2"></a>Distanz / Fläche / Länge → geometrische Abfrage</span>
+<span id="cb18-3"><a aria-label="3"></a>Lagebeziehung → topologische Abfrage</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Eine korrekte Abfrage ist deshalb nicht nur syntaktisch gültig, sondern fachlich passend.</p>
 
 

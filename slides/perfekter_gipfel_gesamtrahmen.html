@@ -7,11 +7,11 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+  <meta name="generator" content="quarto-1.10.19">
 
   <meta name="author" content="Chris Reudenbach">
   <title>Grundlagenkurs GI-S (QGIS) – Der perfekte Gipfel</title>
@@ -24,10 +24,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -215,7 +218,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Chris Reudenbach 
+Chris Reudenbach
 </div>
 </div>
 </div>
@@ -295,21 +298,15 @@ Chris Reudenbach
 </section>
 <section id="worum-es-hier-geht" class="slide level2">
 <h2>Worum es hier geht</h2>
-<p>Der „perfekte Gipfel“ ist ein gutes Beispiel für ein kleines GIS-Projekt, weil die Frage zunächst unscharf ist.</p>
+<p>Der „perfekte Gipfel“ ist ein gutes Beispiel für ein GIS-Projekt, weil die Frage typisch qualitativ ist, jedoch quasi-naturwissenschaftlich begründet erscheint.</p>
 <div class="fragment process">
-<p>Aus einer Idee wird erst dann ein Projekt, wenn dokumentiert ist, wie sie in Kriterien, Daten, Operationen und Ergebnisgrenzen übersetzt wurde.</p>
-</div>
-<div class="fragment keyline">
-<p>Die Folien sind deshalb nicht als Programmierbeispiel gedacht, sondern als Beispiel für <strong>Problemklärung und Workflow-Dokumentation</strong>.</p>
+<p>Aus einer Fragestellung wird erst dann wissenschaftlich belastbare Studie, wenn dokumentiert ist, wie sie in Kriterien, Daten, Operationen und Ergebnisgrenzen übersetzt wurde.</p>
 </div>
 </section>
 <section id="dokumentationsrahmen" class="slide level2">
 <h2>Dokumentationsrahmen</h2>
-<p>Für jedes GIS-Projekt muss die gleiche Kette lesbar bleiben:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>Problem → Projektfrage → Kriterium → Datenbasis → Operation → Ergebnislayer → Aussagegrenze</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="fragment keyline">
-<p>Die Dokumentation beschreibt nicht jede Mausbewegung. Sie beschreibt die fachlich entscheidenden Übersetzungsschritte.</p>
-</div>
+<p>Für jedes (GI)-Projekt muss die gleiche Kette eingehalten werden:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a aria-label="1"></a>Problem → Projektfrage → Kriterium → Datenbasis → Operation → Ergebnislayer → Aussagegrenze</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="ausgangspunkt-was-ist-ein-perfekter-gipfel" class="slide level2">
 <h2>Ausgangspunkt: Was ist ein „perfekter Gipfel“?</h2>
@@ -317,14 +314,14 @@ Chris Reudenbach
 <p><a href="../assets/pdf/DAV_Panorama_2_2012.pdf"><img data-src="../assets/images/pp/agis-workflow1.png" class="tallfig"></a></p>
 </div>
 <div class="fragment overlay-note wide">
-<p>Dokumentationspunkt: Die Ausgangsidee ist ein Qualitätsurteil. Vor der GIS-Umsetzung muss geklärt werden, welche räumlichen Eigenschaften dieses Urteil tragen sollen.</p>
+<p>Die Ausgangsidee ist ein <em>Qualitätsurteil</em>. Vor der methodischen, technischen GIS-Umsetzung muss zwingend geklärt werden, welche fachlichen und räumlichen Eigenschaften dieses Urteil reproduzierbar bestimmen sollen.</p>
 </div>
 </section>
 <section id="von-der-idee-zur-projektfrage" class="slide level2">
 <h2>Von der Idee zur Projektfrage</h2>
-<p>Aus „perfekter Gipfel“ wird keine GIS-Analyse. Eine bearbeitbare Frage braucht eine messbare Zielrichtung.</p>
+<p>Was ist beim „perfekten Gipfel“ die zu bearbeitende Frage und was sind messbare Parameter.</p>
 <div class="fragment process">
-<p>Welche Gipfel sind nach Höhe, Dominanz, Prominenz und Eigenständigkeit besonders ausgeprägt?</p>
+<p>Extrahiere aus dem Artikel die Definitionen die benannt werden: Gipfel, Höhe, Dominanz, Prominenz, Eigenständigkeit…?</p>
 </div>
 <div class="fragment keyline">
 <p>Das ist der erste dokumentierbare Schritt: Die Alltagsformulierung wird in eine räumliche Analysefrage übersetzt.</p>
@@ -338,24 +335,26 @@ Chris Reudenbach
 <p><a href="../assets/images/pp/agis-concept1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="../assets/images/pp/agis-concept1.png" class="tallfig"></a></p>
 </div>
 <div class="framebox quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>Aus dem Begriff entstehen Kriterien:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>Höhe / Position</span>
-<span id="cb2-2"><a></a>Dominanz</span>
-<span id="cb2-3"><a></a>Prominenz / Schartenhöhe</span>
-<span id="cb2-4"><a></a>Eigenständigkeit</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Nicht alle Kriterien sind direkt im DGM gespeichert. Einige müssen abgeleitet werden.</p>
+<p>Aus der Analyse entstehen Kriterien:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a aria-label="1"></a>Höhe </span>
+<span id="cb2-2"><a aria-label="2"></a>Position</span>
+<span id="cb2-3"><a aria-label="3"></a>Dominanz</span>
+<span id="cb2-4"><a aria-label="4"></a>Prominenz </span>
+<span id="cb2-5"><a aria-label="5"></a>Schartenhöhe</span>
+<span id="cb2-6"><a aria-label="6"></a>Eigenständigkeit</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Nicht alle Kriterien sind direkt als Daten aus dem DGM Verfügbar. Einige müssen abgeleitet werden.</p>
 </div>
 </div>
 </div>
 <div class="fragment overlay-note wide">
-<p>Dokumentationspunkt: Für jedes Kriterium muss festgehalten werden, welche Datenbasis und welche Ableitungslogik verwendet wird.</p>
+<p>Für jedes Kriterium muss festgehalten werden, welche Datenbasis und welche Ableitungslogik verwendet wird.</p>
 </div>
 </section>
 <section id="formale-definition-als-entscheidung" class="slide level2">
 <h2>Formale Definition als Entscheidung</h2>
 <p><a href="../assets/images/pp/formel.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="../assets/images/pp/formel.png" class="fullfig"></a></p>
 <div class="fragment overlay-note right">
-<p>Eine Formel ist keine neutrale Wahrheit. Sie dokumentiert, welche Eigenschaften in die Bewertung eingehen und wie sie gewichtet bzw. verrechnet werden.</p>
+<p>Eine Formel dokumentiert, welche Eigenschaften in die Bewertung eingehen und wie sie gewichtet bzw. verrechnet werden. Formeln sind kritisierbar!</p>
 </div>
 </section>
 <section id="modellbildung-dokumentieren" class="slide level2">
@@ -366,12 +365,12 @@ Chris Reudenbach
 <p><a href="../assets/images/pp/agis-concept2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="../assets/images/pp/agis-concept2.png" class="fullfig"></a></p>
 </div>
 <div class="framebox quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>Für die Methodennotiz reicht die technische Formel nicht.</p>
+<p>Als Methodendokumentation genügt die (technische) Formel nicht.</p>
 <p>Dokumentiert werden muss:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>Objekte: Gipfelpunkte</span>
-<span id="cb3-2"><a></a>Fläche: Höhenmodell</span>
-<span id="cb3-3"><a></a>Beziehungen: Distanz, Trennung, Verbindung</span>
-<span id="cb3-4"><a></a>Produkt: Prominenz / Eigenständigkeit</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a aria-label="1"></a>Objekte: Gipfelpunkte</span>
+<span id="cb3-2"><a aria-label="2"></a>Fläche: Höhenmodell</span>
+<span id="cb3-3"><a aria-label="3"></a>Beziehungen: Distanz, Trennung, Verbindung</span>
+<span id="cb3-4"><a aria-label="4"></a>Produkt: Prominenz / Eigenständigkeit</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -380,7 +379,7 @@ Chris Reudenbach
 <h2>Problemlösung als Arbeitsprotokoll</h2>
 <p><a href="../assets/images/pp/slide1png.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img data-src="../assets/images/pp/slide1png.png" class="fullfig"></a></p>
 <div class="fragment overlay-note">
-<p>Diese Folie wird im Kurs als Dokumentationsfolie gelesen: Welche Teilprobleme entstehen, welche Entscheidungen werden getroffen, welche Zwischenergebnisse müssen gesichert werden?</p>
+<p>Welche Teilprobleme entstehen, welche Entscheidungen werden getroffen, welche Zwischenergebnisse müssen gesichert werden?</p>
 </div>
 </section>
 <section id="vom-problem-zu-arbeitspaketen" class="slide level2">
@@ -401,7 +400,7 @@ Chris Reudenbach
 <h2>Umsetzung dokumentieren: reproduzierbare Befehle</h2>
 <p><a href="../assets/images/pp/slide4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img data-src="../assets/images/pp/slide4.png" class="fullfig"></a></p>
 <div class="fragment overlay-note right">
-<p>Kommandozeilen oder kopierte Processing-Aufrufe sind hier kein Programmierziel. Sie sind ein Mittel, um Parameter und Dateipfade eindeutig zu sichern.</p>
+<p>Kommandozeilen oder kopierte Processing-Aufrufe sind kein Programmierziel. Sie sind ein Mittel, um Parameter und Dateipfade eindeutig zu sichern.</p>
 </div>
 </section>
 <section id="umsetzung-dokumentieren-ablauf-statt-code" class="slide level2">
@@ -472,26 +471,26 @@ Chris Reudenbach
 </section>
 <section id="beispiel-einer-methodennotiz" class="slide level2">
 <h2>Beispiel einer Methodennotiz</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>Fragestellung:</span>
-<span id="cb4-2"><a></a>Wie eigenständig ist ein Gipfel im Verhältnis zu benachbarten Gipfeln?</span>
-<span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a>Kriterium:</span>
-<span id="cb4-5"><a></a>Prominenz / Schartenhöhe.</span>
-<span id="cb4-6"><a></a></span>
-<span id="cb4-7"><a></a>Datenbasis:</span>
-<span id="cb4-8"><a></a>Digitales Höhenmodell und Gipfelpunkte.</span>
-<span id="cb4-9"><a></a></span>
-<span id="cb4-10"><a></a>Operationelle Idee:</span>
-<span id="cb4-11"><a></a>Flutniveau variieren und Verbindung der Gipfeleinheiten prüfen.</span>
-<span id="cb4-12"><a></a></span>
-<span id="cb4-13"><a></a>Suchstrategie:</span>
-<span id="cb4-14"><a></a>Höhenbereich durch binäre Suche eingrenzen.</span>
-<span id="cb4-15"><a></a></span>
-<span id="cb4-16"><a></a>Abbruchkriterium:</span>
-<span id="cb4-17"><a></a>Suche endet bei definierter Höhentoleranz.</span>
-<span id="cb4-18"><a></a></span>
-<span id="cb4-19"><a></a>Aussagegrenze:</span>
-<span id="cb4-20"><a></a>DEM-Auflösung, Gipfelerkennung und Toleranz beeinflussen den Wert.</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a aria-label="1"></a>Fragestellung:</span>
+<span id="cb4-2"><a aria-label="2"></a>Wie eigenständig ist ein Gipfel im Verhältnis zu benachbarten Gipfeln?</span>
+<span id="cb4-3"><a aria-label="3"></a></span>
+<span id="cb4-4"><a aria-label="4"></a>Kriterium:</span>
+<span id="cb4-5"><a aria-label="5"></a>Prominenz / Schartenhöhe.</span>
+<span id="cb4-6"><a aria-label="6"></a></span>
+<span id="cb4-7"><a aria-label="7"></a>Datenbasis:</span>
+<span id="cb4-8"><a aria-label="8"></a>Digitales Höhenmodell und Gipfelpunkte.</span>
+<span id="cb4-9"><a aria-label="9"></a></span>
+<span id="cb4-10"><a aria-label="10"></a>Operationelle Idee:</span>
+<span id="cb4-11"><a aria-label="11"></a>Flutniveau variieren und Verbindung der Gipfeleinheiten prüfen.</span>
+<span id="cb4-12"><a aria-label="12"></a></span>
+<span id="cb4-13"><a aria-label="13"></a>Suchstrategie:</span>
+<span id="cb4-14"><a aria-label="14"></a>Höhenbereich durch binäre Suche eingrenzen.</span>
+<span id="cb4-15"><a aria-label="15"></a></span>
+<span id="cb4-16"><a aria-label="16"></a>Abbruchkriterium:</span>
+<span id="cb4-17"><a aria-label="17"></a>Suche endet bei definierter Höhentoleranz.</span>
+<span id="cb4-18"><a aria-label="18"></a></span>
+<span id="cb4-19"><a aria-label="19"></a>Aussagegrenze:</span>
+<span id="cb4-20"><a aria-label="20"></a>DEM-Auflösung, Gipfelerkennung und Toleranz beeinflussen den Wert.</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="was-davon-ins-eigene-projekt-gehört" class="slide level2">
 <h2>Was davon ins eigene Projekt gehört</h2>
@@ -506,25 +505,25 @@ Chris Reudenbach
 <h2>Nicht dokumentieren: vollständige History</h2>
 <p>Eine Workflow-Dokumentation ist kein Mitschnitt jeder Bedienhandlung.</p>
 <p>Dokumentiert werden nur Hauptschritte, die das Ergebnis fachlich verändern.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>nicht: Layer verschoben, Stil getestet, Ansicht gezoomt</span>
-<span id="cb5-2"><a></a>sondern: Distanz berechnet, reklassifiziert, gewichtet, maskiert, kombiniert</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a aria-label="1"></a>nicht: Layer verschoben, Stil getestet, Ansicht gezoomt</span>
+<span id="cb5-2"><a aria-label="2"></a>sondern: Distanz berechnet, reklassifiziert, gewichtet, maskiert, kombiniert</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment keyline">
 <p>Die Leitfrage lautet: Könnte eine andere Person den methodischen Weg fachlich nachvollziehen?</p>
 </div>
 </section>
 <section id="übertrag-auf-einfache-gis-projekte" class="slide level2">
 <h2>Übertrag auf einfache GIS-Projekte</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a>Siedlungsferne</span>
-<span id="cb6-2"><a></a>→ Distanz zur Siedlung</span>
-<span id="cb6-3"><a></a>→ Reklassifikation</span>
-<span id="cb6-4"><a></a>→ Störungskriterium</span>
-<span id="cb6-5"><a></a>→ Beitrag zur Eignungskarte</span>
-<span id="cb6-6"><a></a></span>
-<span id="cb6-7"><a></a>Hangneigung</span>
-<span id="cb6-8"><a></a>→ DGM-Ableitung</span>
-<span id="cb6-9"><a></a>→ Klassenbildung</span>
-<span id="cb6-10"><a></a>→ Reliefkriterium</span>
-<span id="cb6-11"><a></a>→ Beitrag zur Eignungskarte</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a aria-label="1"></a>Siedlungsferne</span>
+<span id="cb6-2"><a aria-label="2"></a>→ Distanz zur Siedlung</span>
+<span id="cb6-3"><a aria-label="3"></a>→ Reklassifikation</span>
+<span id="cb6-4"><a aria-label="4"></a>→ Störungskriterium</span>
+<span id="cb6-5"><a aria-label="5"></a>→ Beitrag zur Eignungskarte</span>
+<span id="cb6-6"><a aria-label="6"></a></span>
+<span id="cb6-7"><a aria-label="7"></a>Hangneigung</span>
+<span id="cb6-8"><a aria-label="8"></a>→ DGM-Ableitung</span>
+<span id="cb6-9"><a aria-label="9"></a>→ Klassenbildung</span>
+<span id="cb6-10"><a aria-label="10"></a>→ Reliefkriterium</span>
+<span id="cb6-11"><a aria-label="11"></a>→ Beitrag zur Eignungskarte</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment keyline">
 <p>Auch einfache Projekte brauchen keine lange History, sondern eine begründete Kette zwischen Frage, Kriterium, Operation und Ergebnis.</p>
 </div>
@@ -532,12 +531,12 @@ Chris Reudenbach
 <section id="prüfregel-für-die-dokumentation" class="slide level2">
 <h2>Prüfregel für die Dokumentation</h2>
 <p>Für jeden Hauptschritt sollte eine fremde Person erkennen können:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a></a>Warum dieser Schritt?</span>
-<span id="cb7-2"><a></a>Welche Daten?</span>
-<span id="cb7-3"><a></a>Welche Operation?</span>
-<span id="cb7-4"><a></a>Welche Parameter?</span>
-<span id="cb7-5"><a></a>Welcher Ergebnislayer?</span>
-<span id="cb7-6"><a></a>Welche Aussagegrenze?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a aria-label="1"></a>Warum dieser Schritt?</span>
+<span id="cb7-2"><a aria-label="2"></a>Welche Daten?</span>
+<span id="cb7-3"><a aria-label="3"></a>Welche Operation?</span>
+<span id="cb7-4"><a aria-label="4"></a>Welche Parameter?</span>
+<span id="cb7-5"><a aria-label="5"></a>Welcher Ergebnislayer?</span>
+<span id="cb7-6"><a aria-label="6"></a>Welche Aussagegrenze?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment big keyline">
 <p>Das Ziel ist nicht Programmierung. Das Ziel ist nachvollziehbare GIS-Arbeit.</p>
 </div>

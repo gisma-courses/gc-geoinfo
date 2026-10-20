@@ -7,11 +7,11 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+  <meta name="generator" content="quarto-1.10.19">
 
   <meta name="author" content="Chris Reudenbach">
   <title>Grundlagenkurs GI-S (QGIS) – Raumkonzepte</title>
@@ -24,10 +24,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -215,7 +218,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Chris Reudenbach 
+Chris Reudenbach
 </div>
 </div>
 </div>
@@ -225,7 +228,7 @@ Chris Reudenbach
 <h2>Leitfrage der Sitzung</h2>
 <p>GIS bildet nicht einfach „die Welt“ ab.</p>
 <p>GIS übersetzt Ausschnitte der realen Welt in <strong>Modelle</strong>, <strong>Datenstrukturen</strong> und <strong>Koordinatenbezüge</strong>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>Realwelt → Abstraktion → Datenmodell → Koordinatenbezug → Analyse</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a aria-label="1"></a>Realwelt → Abstraktion → Datenmodell → Koordinatenbezug → Analyse</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Der Kern der Sitzung ist deshalb nicht ein einzelnes Werkzeug, sondern die Frage:</p>
 <blockquote>
 <p>Wie wird Raum so codiert, dass er digital gespeichert, kombiniert, gemessen und analysiert werden kann?</p>
@@ -246,10 +249,10 @@ Chris Reudenbach
 <h2>Abstraktion: von der Realwelt zum Modell</h2>
 <p>Wenn wir reale Welt in Karten oder GI-Systemen abbilden, müssen wir auswählen und vereinfachen.</p>
 <p>Ein Modell ist dabei keine Verfälschung, sondern eine <strong>zweckgebundene Repräsentation</strong>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>Was interessiert uns?</span>
-<span id="cb2-2"><a></a>Welche Eigenschaften brauchen wir?</span>
-<span id="cb2-3"><a></a>Welche Details dürfen wir weglassen?</span>
-<span id="cb2-4"><a></a>Welche Datenstruktur kann das abbilden?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a aria-label="1"></a>Was interessiert uns?</span>
+<span id="cb2-2"><a aria-label="2"></a>Welche Eigenschaften brauchen wir?</span>
+<span id="cb2-3"><a aria-label="3"></a>Welche Details dürfen wir weglassen?</span>
+<span id="cb2-4"><a aria-label="4"></a>Welche Datenstruktur kann das abbilden?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="modellierung-heißt-zielgerichtet-reduzieren" class="slide level2">
 <h2>Modellierung heißt: Zielgerichtet reduzieren</h2>
@@ -342,7 +345,7 @@ Chris Reudenbach
 <h2>Topologie: relative Lage statt exakter Form</h2>
 <p>Topologie beschreibt räumliche Beziehungen unabhängig von exakter metrischer Form.</p>
 <p>Beispiele:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>verbunden | benachbart | innerhalb | berührt | schneidet | getrennt</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a aria-label="1"></a>verbunden | benachbart | innerhalb | berührt | schneidet | getrennt</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row quarto-layout-valign-center">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -359,9 +362,9 @@ Chris Reudenbach
 <h2>Geometrie, Dimension und Topologie gehören zusammen</h2>
 <p>Eine Kreuzung in der Karte ist nicht automatisch eine Verbindung im Netzwerk.</p>
 <p>Eine Brücke kann geometrisch wie eine Kreuzung aussehen, topologisch aber keine Verbindung sein.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>Geometrie: Wo liegt etwas?</span>
-<span id="cb4-2"><a></a>Dimension: Welche räumliche Ordnung hat es?</span>
-<span id="cb4-3"><a></a>Topologie: Wie ist es mit anderen Objekten verbunden?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a aria-label="1"></a>Geometrie: Wo liegt etwas?</span>
+<span id="cb4-2"><a aria-label="2"></a>Dimension: Welche räumliche Ordnung hat es?</span>
+<span id="cb4-3"><a aria-label="3"></a>Topologie: Wie ist es mit anderen Objekten verbunden?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="datenmodelle-als-technische-raumkonzepte" class="slide level2">
 <h2>Datenmodelle als technische Raumkonzepte</h2>
@@ -420,11 +423,11 @@ Chris Reudenbach
 <section id="raum-zeit-kodierung" class="slide level2">
 <h2>Raum-Zeit-Kodierung</h2>
 <p>GIS-Daten verknüpfen mindestens drei Ebenen:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>Ort + Zeit + Attribut</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a aria-label="1"></a>Ort + Zeit + Attribut</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Beispiel:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a>Messstation A</span>
-<span id="cb6-2"><a></a>am 15.06.2026 um 14:00 Uhr</span>
-<span id="cb6-3"><a></a>Temperatur = 31,2 °C</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a aria-label="1"></a>Messstation A</span>
+<span id="cb6-2"><a aria-label="2"></a>am 15.06.2026 um 14:00 Uhr</span>
+<span id="cb6-3"><a aria-label="3"></a>Temperatur = 31,2 °C</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ohne Ort ist der Messwert nicht räumlich analysierbar. Ohne Zeit ist er nicht dynamisch interpretierbar. Ohne Attribut gibt es nichts zu analysieren.</p>
 </section>
 <section id="zeit-als-ordnungssystem" class="slide level2">
@@ -479,8 +482,8 @@ Chris Reudenbach
 </div>
 <div class="fragment quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p>Eine Position kann auch entlang einer Linie codiert werden:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a></a>Straße A7, Kilometer 213,4</span>
-<span id="cb7-2"><a></a>Fluss Lahn, Pegel bei km 124</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a aria-label="1"></a>Straße A7, Kilometer 213,4</span>
+<span id="cb7-2"><a aria-label="2"></a>Fluss Lahn, Pegel bei km 124</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Das ist für Verkehrs- und Leitungsnetze oft sinnvoller als reine x/y-Koordinaten.</p>
 </div>
 </div>
@@ -508,8 +511,8 @@ Chris Reudenbach
 <section id="geographische-koordinaten" class="slide level2">
 <h2>Geographische Koordinaten</h2>
 <p>Geographische Koordinaten beschreiben Positionen auf einer gekrümmten Bezugsfläche.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a></a>Breite = Winkel nördlich/südlich des Äquators</span>
-<span id="cb8-2"><a></a>Länge  = Winkel östlich/westlich des Nullmeridians</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a aria-label="1"></a>Breite = Winkel nördlich/südlich des Äquators</span>
+<span id="cb8-2"><a aria-label="2"></a>Länge  = Winkel östlich/westlich des Nullmeridians</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row quarto-layout-valign-center">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -559,7 +562,7 @@ Chris Reudenbach
 <h2>Projektionen: von der Erde zur Karte</h2>
 <p>Geographische Koordinaten liegen auf einer gekrümmten Bezugsfläche.</p>
 <p>Viele GIS-Analysen brauchen aber ebene x/y-Koordinaten.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a></a>Datum / Referenzsystem → Ellipsoid → Projektion → Rechtswert / Hochwert</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a aria-label="1"></a>Datum / Referenzsystem → Ellipsoid → Projektion → Rechtswert / Hochwert</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="kartenprojektionen-erzeugen-immer-verzerrungen" class="slide level2">
 <h2>Kartenprojektionen erzeugen immer Verzerrungen</h2>
@@ -579,11 +582,11 @@ Chris Reudenbach
 <h2>Warum das in QGIS wichtig ist</h2>
 <p>QGIS kann Layer mit unterschiedlichen Bezugssystemen oft gemeinsam anzeigen.</p>
 <p>Das heißt aber nicht automatisch, dass Messungen und Analysen korrekt sind.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a></a>WGS 84</span>
-<span id="cb10-2"><a></a>= Breite/Länge in Grad</span>
-<span id="cb10-3"><a></a></span>
-<span id="cb10-4"><a></a>ETRS89 / UTM Zone 32N</span>
-<span id="cb10-5"><a></a>= Rechtswert/Hochwert in Metern</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a aria-label="1"></a>WGS 84</span>
+<span id="cb10-2"><a aria-label="2"></a>= Breite/Länge in Grad</span>
+<span id="cb10-3"><a aria-label="3"></a></span>
+<span id="cb10-4"><a aria-label="4"></a>ETRS89 / UTM Zone 32N</span>
+<span id="cb10-5"><a aria-label="5"></a>= Rechtswert/Hochwert in Metern</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Für Distanzen, Flächen und Rasteranalysen sind metrische Projektionen meist notwendig.</p>
 </section>
 <section id="grad-oder-meter" class="slide level2">
@@ -592,15 +595,15 @@ Chris Reudenbach
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p><strong>Geographische Koordinaten</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a></a>50.81, 8.77</span>
-<span id="cb11-2"><a></a>Einheit: Grad</span>
-<span id="cb11-3"><a></a>typisch: GPS, Webdaten</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a aria-label="1"></a>50.81, 8.77</span>
+<span id="cb11-2"><a aria-label="2"></a>Einheit: Grad</span>
+<span id="cb11-3"><a aria-label="3"></a>typisch: GPS, Webdaten</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p><strong>Projizierte Koordinaten</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a></a>477000, 5630000</span>
-<span id="cb12-2"><a></a>Einheit: Meter</span>
-<span id="cb12-3"><a></a>typisch: lokale Analyse</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a aria-label="1"></a>477000, 5630000</span>
+<span id="cb12-2"><a aria-label="2"></a>Einheit: Meter</span>
+<span id="cb12-3"><a aria-label="3"></a>typisch: lokale Analyse</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -609,14 +612,14 @@ Chris Reudenbach
 <section id="abschluss-kontrollierte-raumcodierung" class="slide level2">
 <h2>Abschluss: kontrollierte Raumcodierung</h2>
 <p>GIS-Arbeit bedeutet kontrollierte Übersetzung:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a></a>Realwelt</span>
-<span id="cb13-2"><a></a>→ Modell</span>
-<span id="cb13-3"><a></a>→ Datenmodell</span>
-<span id="cb13-4"><a></a>→ Geometrie / Topologie / Dimension</span>
-<span id="cb13-5"><a></a>→ Koordinatenbezug</span>
-<span id="cb13-6"><a></a>→ Projektion</span>
-<span id="cb13-7"><a></a>→ Analyse</span>
-<span id="cb13-8"><a></a>→ Interpretation</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a aria-label="1"></a>Realwelt</span>
+<span id="cb13-2"><a aria-label="2"></a>→ Modell</span>
+<span id="cb13-3"><a aria-label="3"></a>→ Datenmodell</span>
+<span id="cb13-4"><a aria-label="4"></a>→ Geometrie / Topologie / Dimension</span>
+<span id="cb13-5"><a aria-label="5"></a>→ Koordinatenbezug</span>
+<span id="cb13-6"><a aria-label="6"></a>→ Projektion</span>
+<span id="cb13-7"><a aria-label="7"></a>→ Analyse</span>
+<span id="cb13-8"><a aria-label="8"></a>→ Interpretation</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Der zentrale Satz:</p>
 <blockquote>
 <p>Geodaten sind nicht einfach Daten über Raum. Sie sind technisch und fachlich codierte Raumrepräsentationen.</p>

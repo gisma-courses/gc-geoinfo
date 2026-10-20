@@ -7,11 +7,11 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+  <meta name="generator" content="quarto-1.10.19">
 
   <meta name="author" content="Chris Reudenbach">
   <title>Grundlagenkurs GI-S (QGIS) – Geographischer Raum</title>
@@ -24,10 +24,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -234,7 +237,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Chris Reudenbach 
+Chris Reudenbach
 </div>
 </div>
 </div>
@@ -244,7 +247,7 @@ Chris Reudenbach
 <h2>Leitfrage der Sitzung</h2>
 <p>GIS beginnt nicht mit Software.</p>
 <p>GIS beginnt mit der Frage, wie räumliche Wirklichkeit so <strong>abstrahiert</strong>, <strong>codiert</strong> und <strong>interpretiert</strong> wird, dass sie digital bearbeitbar wird.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>Wahrnehmung → Abstraktion → Geodatensatz → Analyse → Interpretation</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a aria-label="1"></a>Wahrnehmung → Abstraktion → Geodatensatz → Analyse → Interpretation</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Der Kern der Sitzung ist deshalb:</p>
 <blockquote>
 <p>Wie wird aus räumlicher Erfahrung eine formale Geoinformation?</p>
@@ -299,11 +302,11 @@ Chris Reudenbach
 <h2>Geographische Kompetenz</h2>
 <p>Viele räumliche Probleme lösen wir intuitiv.</p>
 <p>GIS zwingt dazu, diese Intuition explizit zu machen:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>Was ist der relevante Raum?</span>
-<span id="cb2-2"><a></a>Welche Objekte oder Felder interessieren?</span>
-<span id="cb2-3"><a></a>Welche Eigenschaften werden gespeichert?</span>
-<span id="cb2-4"><a></a>Welche Beziehungen sind wichtig?</span>
-<span id="cb2-5"><a></a>Welche Vereinfachungen sind zulässig?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a aria-label="1"></a>Was ist der relevante Raum?</span>
+<span id="cb2-2"><a aria-label="2"></a>Welche Objekte oder Felder interessieren?</span>
+<span id="cb2-3"><a aria-label="3"></a>Welche Eigenschaften werden gespeichert?</span>
+<span id="cb2-4"><a aria-label="4"></a>Welche Beziehungen sind wichtig?</span>
+<span id="cb2-5"><a aria-label="5"></a>Welche Vereinfachungen sind zulässig?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Geographische Kompetenz bedeutet hier: räumliche Fragen in überprüfbare Daten- und Analysekonzepte zu übersetzen.</p>
 </section>
 <section id="karte-bild-oder-modell" class="slide level2">
@@ -331,7 +334,7 @@ Chris Reudenbach
 <h2>Kartographie als Abstraktion</h2>
 <p>Nach klassischer Definition ist eine Karte ein orientiertes, verkleinertes und geebnetes Grundrissbild eines Ausschnitts der Erdoberfläche.</p>
 <p>Die wichtige Einschränkung ist: Sie zeigt nicht alles, sondern das als wesentlich Ausgewählte.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>Ausschnitt → Auswahl → Vereinfachung → Symbolisierung → Interpretation</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a aria-label="1"></a>Ausschnitt → Auswahl → Vereinfachung → Symbolisierung → Interpretation</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Karten müssen deshalb gelesen werden wie Modelle: mit Blick auf Zweck, Auswahl, Maßstab und Darstellungsregeln.</p>
 </section>
 <section id="intention-und-verzerrung" class="slide level2">
@@ -363,9 +366,9 @@ Chris Reudenbach
 <h2>Daten brauchen Interpretationsregeln</h2>
 <p>Daten sind noch keine Information.</p>
 <p>Information entsteht erst, wenn Daten mit Bedeutung, Kontext und Interpretationsregeln verbunden werden.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>Daten + Kontext + Regeln → Information</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a aria-label="1"></a>Daten + Kontext + Regeln → Information</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Für GIS heißt das:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>Koordinate + Zeit + Attribut + Bedeutung → Geoinformation</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a aria-label="1"></a>Koordinate + Zeit + Attribut + Bedeutung → Geoinformation</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="tobler-und-räumliche-nähe" class="slide level2">
 <h2>Tobler und räumliche Nähe</h2>
@@ -435,25 +438,25 @@ Chris Reudenbach
 <p>Ein Höhenfeld wird zum Raster.</p>
 <p>Eine Landnutzung wird zu Polygonen.</p>
 <p>Ein unscharfer Landschaftsraum wird durch Grenzen oder Klassifikationen operationalisiert.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a>kontinuierliche Wirklichkeit → diskrete Repräsentation → digitale Analyse</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a aria-label="1"></a>kontinuierliche Wirklichkeit → diskrete Repräsentation → digitale Analyse</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="maßstab-und-zweck-entscheiden" class="slide level2">
 <h2>Maßstab und Zweck entscheiden</h2>
 <p>Ob etwas als Objekt oder Feld modelliert wird, hängt von Fragestellung und Maßstab ab.</p>
 <p>Ein Wald kann sein:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a></a>Polygon im Landnutzungsdatensatz</span>
-<span id="cb7-2"><a></a>Rasterklasse in einem Satellitenbild</span>
-<span id="cb7-3"><a></a>Habitatfläche in einem Modell</span>
-<span id="cb7-4"><a></a>Verwaltungseinheit im Forstkataster</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a aria-label="1"></a>Polygon im Landnutzungsdatensatz</span>
+<span id="cb7-2"><a aria-label="2"></a>Rasterklasse in einem Satellitenbild</span>
+<span id="cb7-3"><a aria-label="3"></a>Habitatfläche in einem Modell</span>
+<span id="cb7-4"><a aria-label="4"></a>Verwaltungseinheit im Forstkataster</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Die Repräsentation ist nicht „wahr“ oder „falsch“, sondern mehr oder weniger passend zum Zweck.</p>
 </section>
 <section id="was-sind-geodaten" class="slide level2">
 <h2>Was sind Geodaten?</h2>
 <p>Geodaten sind maschinenlesbare, räumlich referenzierte Repräsentationen.</p>
 <p>Sie verbinden mindestens:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a></a>Ort + Attribut</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a aria-label="1"></a>Ort + Attribut</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>häufig zusätzlich:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a></a>Ort + Zeit + Attribut + Bedeutung</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a aria-label="1"></a>Ort + Zeit + Attribut + Bedeutung</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ein Geodatensatz ist deshalb nie nur eine Zahlentabelle. Er trägt immer einen räumlichen Bezug und eine Interpretationsregel.</p>
 </section>
 <section id="beispiel-wetterangabe-als-geodatum" class="slide level2">
@@ -463,24 +466,24 @@ Chris Reudenbach
 <p>Die Temperatur am Flughafen Havanna betrug am 17.09.2009 um 08:00 Uhr Ortszeit 23,0 °C.</p>
 </blockquote>
 <p>Als Geodatum codiert:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a></a>22° 59′ 21″ N</span>
-<span id="cb10-2"><a></a>82° 24′ 33″ W</span>
-<span id="cb10-3"><a></a>64 m ü. NN</span>
-<span id="cb10-4"><a></a>17.09.2009, 08:00 Uhr LT</span>
-<span id="cb10-5"><a></a>Havanna Airport</span>
-<span id="cb10-6"><a></a>Temperatur = 23,0 °C</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a aria-label="1"></a>22° 59′ 21″ N</span>
+<span id="cb10-2"><a aria-label="2"></a>82° 24′ 33″ W</span>
+<span id="cb10-3"><a aria-label="3"></a>64 m ü. NN</span>
+<span id="cb10-4"><a aria-label="4"></a>17.09.2009, 08:00 Uhr LT</span>
+<span id="cb10-5"><a aria-label="5"></a>Havanna Airport</span>
+<span id="cb10-6"><a aria-label="6"></a>Temperatur = 23,0 °C</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Erst die Verbindung aus Ort, Zeit und Attribut macht die Angabe geographisch auswertbar.</p>
 </section>
 <section id="namen-sind-auch-kodierungen" class="slide level2">
 <h2>Namen sind auch Kodierungen</h2>
 <p>Auch scheinbar nicht-geographische Aussagen können geographisch werden.</p>
 <p>Beispiel:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a></a>K2</span>
-<span id="cb11-2"><a></a>= Name eines Berges</span>
-<span id="cb11-3"><a></a>= Verweis auf einen Gipfel</span>
-<span id="cb11-4"><a></a>= Koordinate</span>
-<span id="cb11-5"><a></a>= Höhe</span>
-<span id="cb11-6"><a></a>= kulturell und alpinistisch codierte Bedeutung</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a aria-label="1"></a>K2</span>
+<span id="cb11-2"><a aria-label="2"></a>= Name eines Berges</span>
+<span id="cb11-3"><a aria-label="3"></a>= Verweis auf einen Gipfel</span>
+<span id="cb11-4"><a aria-label="4"></a>= Koordinate</span>
+<span id="cb11-5"><a aria-label="5"></a>= Höhe</span>
+<span id="cb11-6"><a aria-label="6"></a>= kulturell und alpinistisch codierte Bedeutung</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Geodaten entstehen also nicht nur durch Koordinaten, sondern auch durch Namens-, Objekt- und Bedeutungsregeln.</p>
 </section>
 <section id="geoobjekt-raum-zeit-und-inhalt" class="slide level2">
@@ -506,7 +509,7 @@ Chris Reudenbach
 <section id="eigenschaften-von-geoobjekten" class="slide level2">
 <h2>Eigenschaften von Geoobjekten</h2>
 <p>Attribute können sehr unterschiedlich sein:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a></a>Name | Höhe | Temperatur | Eigentum | Nutzung | Kategorie | Zeitstempel | Zustand</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a aria-label="1"></a>Name | Höhe | Temperatur | Eigentum | Nutzung | Kategorie | Zeitstempel | Zustand</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Sie können nominal, ordinal, metrisch oder zeitlich strukturiert sein.</p>
 <p>Entscheidend ist: Attribute werden nicht einfach gesammelt, sondern für eine Fragestellung ausgewählt.</p>
 </section>
@@ -515,10 +518,10 @@ Chris Reudenbach
 <p>Die Welt ist beliebig komplex.</p>
 <p>Computer speichern aber nur formal definierte Merkmale.</p>
 <p>Deshalb muss jede geographische Repräsentation reduzieren:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a></a>Was wird aufgenommen?</span>
-<span id="cb13-2"><a></a>Was wird weggelassen?</span>
-<span id="cb13-3"><a></a>Welche Skala gilt?</span>
-<span id="cb13-4"><a></a>Für welchen Zweck reicht die Vereinfachung?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a aria-label="1"></a>Was wird aufgenommen?</span>
+<span id="cb13-2"><a aria-label="2"></a>Was wird weggelassen?</span>
+<span id="cb13-3"><a aria-label="3"></a>Welche Skala gilt?</span>
+<span id="cb13-4"><a aria-label="4"></a>Für welchen Zweck reicht die Vereinfachung?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Abstraktion ist damit kein Fehler, sondern Voraussetzung für Analyse.</p>
 </section>
 <section id="daten-sind-abstrahierte-wirklichkeit" class="slide level2">
@@ -534,23 +537,23 @@ Chris Reudenbach
 <h2>Von GI zu GIS</h2>
 <p>Geoinformation entsteht aus räumlich strukturierter Abstraktion.</p>
 <p>Geographische Informationssysteme stellen dafür technische Werkzeuge bereit:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a></a>Daten erfassen</span>
-<span id="cb14-2"><a></a>Daten strukturieren</span>
-<span id="cb14-3"><a></a>Daten analysieren</span>
-<span id="cb14-4"><a></a>Daten visualisieren</span>
-<span id="cb14-5"><a></a>Daten interpretieren</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a aria-label="1"></a>Daten erfassen</span>
+<span id="cb14-2"><a aria-label="2"></a>Daten strukturieren</span>
+<span id="cb14-3"><a aria-label="3"></a>Daten analysieren</span>
+<span id="cb14-4"><a aria-label="4"></a>Daten visualisieren</span>
+<span id="cb14-5"><a aria-label="5"></a>Daten interpretieren</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>GIS ist damit nicht nur Auskunftssystem, sondern ein Werkzeug zur kontrollierten Konstruktion räumlicher Information.</p>
 </section>
 <section id="abschluss-kontrollierte-abstraktion" class="slide level2">
 <h2>Abschluss: kontrollierte Abstraktion</h2>
 <p>GIS-Arbeit heißt, räumliche Wirklichkeit bewusst zu übersetzen.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1"><a></a>Realwelt</span>
-<span id="cb15-2"><a></a>→ Wahrnehmung</span>
-<span id="cb15-3"><a></a>→ Auswahl</span>
-<span id="cb15-4"><a></a>→ Modell</span>
-<span id="cb15-5"><a></a>→ Geodaten</span>
-<span id="cb15-6"><a></a>→ Analyse</span>
-<span id="cb15-7"><a></a>→ Interpretation</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1"><a aria-label="1"></a>Realwelt</span>
+<span id="cb15-2"><a aria-label="2"></a>→ Wahrnehmung</span>
+<span id="cb15-3"><a aria-label="3"></a>→ Auswahl</span>
+<span id="cb15-4"><a aria-label="4"></a>→ Modell</span>
+<span id="cb15-5"><a aria-label="5"></a>→ Geodaten</span>
+<span id="cb15-6"><a aria-label="6"></a>→ Analyse</span>
+<span id="cb15-7"><a aria-label="7"></a>→ Interpretation</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Der zentrale Punkt:</p>
 <blockquote>
 <p>Jede GIS-Analyse steht und fällt mit der Qualität ihrer Abstraktion.</p>

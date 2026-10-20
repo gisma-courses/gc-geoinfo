@@ -7,8 +7,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.19">
 
   <title>Grundlagenkurs GI-S (QGIS) – Lärmausbreitung</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -20,10 +20,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -286,7 +289,7 @@ LK = Q + D + R
 </tbody>
 </table>
 <p>Merksatz:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>Lärm-Konflikt = Quelle + Distanz + Nutzung</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a aria-label="1"></a>Lärm-Konflikt = Quelle + Distanz + Nutzung</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section id="konzept" class="title-slide slide level1 center">
@@ -368,9 +371,9 @@ LK = Q + D + R
 <li><strong>Vektor → QuickOSM → QuickOSM</strong></li>
 </ul>
 <p>Abfrage:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>Key: highway</span>
-<span id="cb2-2"><a></a>Value: *</span>
-<span id="cb2-3"><a></a>In: Canvas extent</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a aria-label="1"></a>Key: highway</span>
+<span id="cb2-2"><a aria-label="2"></a>Value: *</span>
+<span id="cb2-3"><a aria-label="3"></a>In: Canvas extent</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Nur Linien behalten.</p>
 <p>Danach:</p>
 <ul>
@@ -399,13 +402,13 @@ LK = Q + D + R
 </ul>
 <p>Eingabelayer: OSM-<code>highway</code>-Linien</p>
 <p>Ausdruck:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>"highway" IN (</span>
-<span id="cb3-2"><a></a>  'trunk',</span>
-<span id="cb3-3"><a></a>  'primary',</span>
-<span id="cb3-4"><a></a>  'secondary',</span>
-<span id="cb3-5"><a></a>  'tertiary',</span>
-<span id="cb3-6"><a></a>  'residential'</span>
-<span id="cb3-7"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a aria-label="1"></a>"highway" IN (</span>
+<span id="cb3-2"><a aria-label="2"></a>  'trunk',</span>
+<span id="cb3-3"><a aria-label="3"></a>  'primary',</span>
+<span id="cb3-4"><a aria-label="4"></a>  'secondary',</span>
+<span id="cb3-5"><a aria-label="5"></a>  'tertiary',</span>
+<span id="cb3-6"><a aria-label="6"></a>  'residential'</span>
+<span id="cb3-7"><a aria-label="7"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Danach:</p>
 <ul>
 <li><strong>Verarbeitung → Werkzeugkiste → Zuschneiden</strong></li>
@@ -448,14 +451,14 @@ LK = Q + D + R
 <li>Neues Feld anlegen</li>
 </ul>
 <p>Feld:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>Name: Q</span>
-<span id="cb4-2"><a></a>Typ: Ganzzahl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a aria-label="1"></a>Name: Q</span>
+<span id="cb4-2"><a aria-label="2"></a>Typ: Ganzzahl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ausdruck:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>CASE</span>
-<span id="cb5-2"><a></a>WHEN "highway" IN ('trunk','primary') THEN 2</span>
-<span id="cb5-3"><a></a>WHEN "highway" IN ('secondary','tertiary') THEN 1</span>
-<span id="cb5-4"><a></a>ELSE 0</span>
-<span id="cb5-5"><a></a>END</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a aria-label="1"></a>CASE</span>
+<span id="cb5-2"><a aria-label="2"></a>WHEN "highway" IN ('trunk','primary') THEN 2</span>
+<span id="cb5-3"><a aria-label="3"></a>WHEN "highway" IN ('secondary','tertiary') THEN 1</span>
+<span id="cb5-4"><a aria-label="4"></a>ELSE 0</span>
+<span id="cb5-5"><a aria-label="5"></a>END</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section id="schritt-3-distanz-zur-quelle" class="title-slide slide level1 center">
@@ -547,14 +550,14 @@ LK = Q + D + R
 <li>Neues Feld anlegen</li>
 </ul>
 <p>Feld:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a>Name: D</span>
-<span id="cb6-2"><a></a>Typ: Ganzzahl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a aria-label="1"></a>Name: D</span>
+<span id="cb6-2"><a aria-label="2"></a>Typ: Ganzzahl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ausdruck:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a></a>CASE</span>
-<span id="cb7-2"><a></a>WHEN "road_dist" &lt;= 50 THEN 2</span>
-<span id="cb7-3"><a></a>WHEN "road_dist" &lt;= 150 THEN 1</span>
-<span id="cb7-4"><a></a>ELSE 0</span>
-<span id="cb7-5"><a></a>END</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a aria-label="1"></a>CASE</span>
+<span id="cb7-2"><a aria-label="2"></a>WHEN "road_dist" &lt;= 50 THEN 2</span>
+<span id="cb7-3"><a aria-label="3"></a>WHEN "road_dist" &lt;= 150 THEN 1</span>
+<span id="cb7-4"><a aria-label="4"></a>ELSE 0</span>
+<span id="cb7-5"><a aria-label="5"></a>END</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section id="schritt-5-relevanz-über-nutzung" class="title-slide slide level1 center">
@@ -641,14 +644,14 @@ LK = Q + D + R
 <li>Neues Feld anlegen</li>
 </ul>
 <p>Feld:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a></a>Name: R</span>
-<span id="cb8-2"><a></a>Typ: Ganzzahl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a aria-label="1"></a>Name: R</span>
+<span id="cb8-2"><a aria-label="2"></a>Typ: Ganzzahl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ausdruck:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a></a>CASE</span>
-<span id="cb9-2"><a></a>WHEN "R_count" = 0 THEN 0</span>
-<span id="cb9-3"><a></a>WHEN "R_count" &lt;= 3 THEN 1</span>
-<span id="cb9-4"><a></a>ELSE 2</span>
-<span id="cb9-5"><a></a>END</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a aria-label="1"></a>CASE</span>
+<span id="cb9-2"><a aria-label="2"></a>WHEN "R_count" = 0 THEN 0</span>
+<span id="cb9-3"><a aria-label="3"></a>WHEN "R_count" &lt;= 3 THEN 1</span>
+<span id="cb9-4"><a aria-label="4"></a>ELSE 2</span>
+<span id="cb9-5"><a aria-label="5"></a>END</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section id="schritt-7-index-lk" class="title-slide slide level1 center">
@@ -669,10 +672,10 @@ LK = Q + D + R
 <li>Neues Feld anlegen</li>
 </ul>
 <p>Feld:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a></a>Name: LK</span>
-<span id="cb10-2"><a></a>Typ: Ganzzahl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a aria-label="1"></a>Name: LK</span>
+<span id="cb10-2"><a aria-label="2"></a>Typ: Ganzzahl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ausdruck:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a></a>coalesce("Q",0) + coalesce("D",0) + coalesce("R",0)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a aria-label="1"></a>coalesce("Q",0) + coalesce("D",0) + coalesce("R",0)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>coalesce()</code> verhindert leere Werte im Index.</p>
 </section></section>
 <section>

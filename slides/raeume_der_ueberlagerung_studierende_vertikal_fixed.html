@@ -7,8 +7,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.19">
 
   <title>Grundlagenkurs GI-S (QGIS) – Räume der Überlagerung</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -20,10 +20,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -338,13 +341,13 @@ K = B + G + N
 <section id="technik-osm-layer-herstellen" class="slide level2 smaller">
 <h2>Technik: OSM-Layer herstellen</h2>
 <p>QuickOSM-Abfragen:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>building = *</span>
-<span id="cb1-2"><a></a>leisure = park</span>
-<span id="cb1-3"><a></a>landuse = grass</span>
-<span id="cb1-4"><a></a>natural = wood</span>
-<span id="cb1-5"><a></a>amenity = *</span>
-<span id="cb1-6"><a></a>shop = *</span>
-<span id="cb1-7"><a></a>highway = bus_stop</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a aria-label="1"></a>building = *</span>
+<span id="cb1-2"><a aria-label="2"></a>leisure = park</span>
+<span id="cb1-3"><a aria-label="3"></a>landuse = grass</span>
+<span id="cb1-4"><a aria-label="4"></a>natural = wood</span>
+<span id="cb1-5"><a aria-label="5"></a>amenity = *</span>
+<span id="cb1-6"><a aria-label="6"></a>shop = *</span>
+<span id="cb1-7"><a aria-label="7"></a>highway = bus_stop</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Gebäude und Grünflächen: Polygone behalten.</p>
 <p>Nutzungsorte: Punkte behalten; Flächen bei Bedarf zu Zentroiden umwandeln.</p>
 </section></section>
@@ -437,20 +440,20 @@ K = B + G + N
 <h2>Technik: Score-Felder anlegen</h2>
 <p>Feldrechner öffnen.</p>
 <p>Neue Ganzzahlfelder: <code>B</code>, <code>G</code>, <code>N</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>B:</span>
-<span id="cb2-2"><a></a>CASE WHEN "B_count" &lt;= 5 THEN 0</span>
-<span id="cb2-3"><a></a>WHEN "B_count" &lt;= 20 THEN 1</span>
-<span id="cb2-4"><a></a>ELSE 2 END</span>
-<span id="cb2-5"><a></a></span>
-<span id="cb2-6"><a></a>G:</span>
-<span id="cb2-7"><a></a>CASE WHEN "G_dist" &lt;= 100 THEN 0</span>
-<span id="cb2-8"><a></a>WHEN "G_dist" &lt;= 250 THEN 1</span>
-<span id="cb2-9"><a></a>ELSE 2 END</span>
-<span id="cb2-10"><a></a></span>
-<span id="cb2-11"><a></a>N:</span>
-<span id="cb2-12"><a></a>CASE WHEN "N_count" = 0 THEN 0</span>
-<span id="cb2-13"><a></a>WHEN "N_count" &lt;= 3 THEN 1</span>
-<span id="cb2-14"><a></a>ELSE 2 END</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a aria-label="1"></a>B:</span>
+<span id="cb2-2"><a aria-label="2"></a>CASE WHEN "B_count" &lt;= 5 THEN 0</span>
+<span id="cb2-3"><a aria-label="3"></a>WHEN "B_count" &lt;= 20 THEN 1</span>
+<span id="cb2-4"><a aria-label="4"></a>ELSE 2 END</span>
+<span id="cb2-5"><a aria-label="5"></a></span>
+<span id="cb2-6"><a aria-label="6"></a>G:</span>
+<span id="cb2-7"><a aria-label="7"></a>CASE WHEN "G_dist" &lt;= 100 THEN 0</span>
+<span id="cb2-8"><a aria-label="8"></a>WHEN "G_dist" &lt;= 250 THEN 1</span>
+<span id="cb2-9"><a aria-label="9"></a>ELSE 2 END</span>
+<span id="cb2-10"><a aria-label="10"></a></span>
+<span id="cb2-11"><a aria-label="11"></a>N:</span>
+<span id="cb2-12"><a aria-label="12"></a>CASE WHEN "N_count" = 0 THEN 0</span>
+<span id="cb2-13"><a aria-label="13"></a>WHEN "N_count" &lt;= 3 THEN 1</span>
+<span id="cb2-14"><a aria-label="14"></a>ELSE 2 END</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section id="schritt-5-index" class="title-slide slide level1 center">
@@ -466,7 +469,7 @@ K = B + G + N
 <h2>Technik: Feld <code>K</code> berechnen</h2>
 <p>Feldrechner öffnen.</p>
 <p>Neues Ganzzahlfeld: <code>K</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>"B" + "G" + "N"</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a aria-label="1"></a>"B" + "G" + "N"</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ergebnis speichern.</p>
 </section></section>
 <section>

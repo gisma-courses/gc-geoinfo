@@ -7,8 +7,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.19">
 
   <title>Grundlagenkurs GI-S (QGIS) – Lärmausbreitung</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -20,10 +20,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -293,7 +296,7 @@ LK = Q + D + R
 <h2>Technik: Grundmodell</h2>
 <p>Die Übung berechnet keine dB-Werte.</p>
 <p>Modelliert wird ein <strong>Verdachtsraum</strong>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>Straßentyp + Nähe + Nutzungsorte</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a aria-label="1"></a>Straßentyp + Nähe + Nutzungsorte</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Gebäude, Verkehrsmengen, Topographie und Wind bleiben Kontrollfragen.</p>
 </section></section>
 <section>
@@ -348,13 +351,13 @@ LK = Q + D + R
 <section id="technik-noise_roads-herstellen" class="slide level2 smaller">
 <h2>Technik: <code>noise_roads</code> herstellen</h2>
 <p>QuickOSM-Abfragen oder Filter auf OSM-Linien:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>highway IN (</span>
-<span id="cb2-2"><a></a>  'trunk',</span>
-<span id="cb2-3"><a></a>  'primary',</span>
-<span id="cb2-4"><a></a>  'secondary',</span>
-<span id="cb2-5"><a></a>  'tertiary',</span>
-<span id="cb2-6"><a></a>  'residential'</span>
-<span id="cb2-7"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a aria-label="1"></a>highway IN (</span>
+<span id="cb2-2"><a aria-label="2"></a>  'trunk',</span>
+<span id="cb2-3"><a aria-label="3"></a>  'primary',</span>
+<span id="cb2-4"><a aria-label="4"></a>  'secondary',</span>
+<span id="cb2-5"><a aria-label="5"></a>  'tertiary',</span>
+<span id="cb2-6"><a aria-label="6"></a>  'residential'</span>
+<span id="cb2-7"><a aria-label="7"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Nur Linien behalten.</p>
 <p>Mit <code>study_area</code> clippen.</p>
 </section></section>
@@ -389,11 +392,11 @@ LK = Q + D + R
 <h2>Technik: Feld <code>Q</code> anlegen</h2>
 <p>Feldrechner in <code>noise_roads</code>.</p>
 <p>Neues Ganzzahlfeld: <code>Q</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>CASE</span>
-<span id="cb3-2"><a></a>WHEN "highway" IN ('trunk','primary') THEN 2</span>
-<span id="cb3-3"><a></a>WHEN "highway" IN ('secondary','tertiary') THEN 1</span>
-<span id="cb3-4"><a></a>ELSE 0</span>
-<span id="cb3-5"><a></a>END</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a aria-label="1"></a>CASE</span>
+<span id="cb3-2"><a aria-label="2"></a>WHEN "highway" IN ('trunk','primary') THEN 2</span>
+<span id="cb3-3"><a aria-label="3"></a>WHEN "highway" IN ('secondary','tertiary') THEN 1</span>
+<span id="cb3-4"><a aria-label="4"></a>ELSE 0</span>
+<span id="cb3-5"><a aria-label="5"></a>END</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Speichern.</p>
 </section></section>
 <section>
@@ -451,11 +454,11 @@ LK = Q + D + R
 <h2>Technik: Feld <code>D</code> anlegen</h2>
 <p>Feldrechner in <code>grid_road</code>.</p>
 <p>Neues Ganzzahlfeld: <code>D</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>CASE</span>
-<span id="cb4-2"><a></a>WHEN "road_dist" &lt;= 50 THEN 2</span>
-<span id="cb4-3"><a></a>WHEN "road_dist" &lt;= 150 THEN 1</span>
-<span id="cb4-4"><a></a>ELSE 0</span>
-<span id="cb4-5"><a></a>END</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a aria-label="1"></a>CASE</span>
+<span id="cb4-2"><a aria-label="2"></a>WHEN "road_dist" &lt;= 50 THEN 2</span>
+<span id="cb4-3"><a aria-label="3"></a>WHEN "road_dist" &lt;= 150 THEN 1</span>
+<span id="cb4-4"><a aria-label="4"></a>ELSE 0</span>
+<span id="cb4-5"><a aria-label="5"></a>END</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Schwellenwerte sind Modellentscheidungen.</p>
 </section></section>
 <section>
@@ -507,11 +510,11 @@ LK = Q + D + R
 <h2>Technik: Feld <code>R</code> anlegen</h2>
 <p>Feldrechner in <code>grid_noise</code>.</p>
 <p>Neues Ganzzahlfeld: <code>R</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>CASE</span>
-<span id="cb5-2"><a></a>WHEN "R_count" = 0 THEN 0</span>
-<span id="cb5-3"><a></a>WHEN "R_count" &lt;= 3 THEN 1</span>
-<span id="cb5-4"><a></a>ELSE 2</span>
-<span id="cb5-5"><a></a>END</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a aria-label="1"></a>CASE</span>
+<span id="cb5-2"><a aria-label="2"></a>WHEN "R_count" = 0 THEN 0</span>
+<span id="cb5-3"><a aria-label="3"></a>WHEN "R_count" &lt;= 3 THEN 1</span>
+<span id="cb5-4"><a aria-label="4"></a>ELSE 2</span>
+<span id="cb5-5"><a aria-label="5"></a>END</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section id="schritt-7-index" class="title-slide slide level1 center">
@@ -527,7 +530,7 @@ LK = Q + D + R
 <h2>Technik: Feld <code>LK</code> berechnen</h2>
 <p>Feldrechner öffnen.</p>
 <p>Neues Ganzzahlfeld: <code>LK</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a>coalesce("Q",0) + coalesce("D",0) + coalesce("R",0)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a aria-label="1"></a>coalesce("Q",0) + coalesce("D",0) + coalesce("R",0)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ergebnis speichern.</p>
 </section></section>
 <section>

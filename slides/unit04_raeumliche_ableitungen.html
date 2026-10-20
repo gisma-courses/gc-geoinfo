@@ -7,11 +7,11 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+  <meta name="generator" content="quarto-1.10.19">
 
   <meta name="author" content="Chris Reudenbach">
   <title>Grundlagenkurs GI-S (QGIS) – Räumliche Ableitungen aus Geodaten</title>
@@ -24,10 +24,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -234,7 +237,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Chris Reudenbach 
+Chris Reudenbach
 </div>
 </div>
 </div>
@@ -275,7 +278,7 @@ Chris Reudenbach
 <section id="leitfrage-der-sitzung" class="slide level2">
 <h2>Leitfrage der Sitzung</h2>
 <p>Räumliche Analyse beginnt dort, wo aus vorhandenen Daten <strong>neue räumliche Informationen</strong> abgeleitet werden.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>Daten → Annahmen → Operationen → neue räumliche Information → Interpretation</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a aria-label="1"></a>Daten → Annahmen → Operationen → neue räumliche Information → Interpretation</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Der Kern der Sitzung ist deshalb:</p>
 <blockquote>
 <p>Wie werden aus Punktmessungen, Höhenrastern und Modellannahmen nachvollziehbare räumliche Ableitungen?</p>
@@ -304,17 +307,17 @@ Chris Reudenbach
 <p>Welche neue räumliche Information kann aus vorhandenen Daten, Annahmen und Regeln erzeugt werden?</p>
 </blockquote>
 <div class="fragment">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>Auswahl → markiert vorhandene Daten</span>
-<span id="cb2-2"><a></a>Analyse → erzeugt neue Datenebenen oder Rasterwerte</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a aria-label="1"></a>Auswahl → markiert vorhandene Daten</span>
+<span id="cb2-2"><a aria-label="2"></a>Analyse → erzeugt neue Datenebenen oder Rasterwerte</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="räumliche-analyse-ist-begründete-transformation" class="slide level2">
 <h2>Räumliche Analyse ist begründete Transformation</h2>
 <p>Aus räumlichen Daten werden neue Informationen:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>Punktmessungen → Interpolationsfläche</span>
-<span id="cb3-2"><a></a>Höhenwerte → Neigung, Sichtfeld, Fließrichtung</span>
-<span id="cb3-3"><a></a>Distanzen → Nähezonen oder Kostenoberflächen</span>
-<span id="cb3-4"><a></a>Kriterien → Eignungs- oder Konfliktkarte</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a aria-label="1"></a>Punktmessungen → Interpolationsfläche</span>
+<span id="cb3-2"><a aria-label="2"></a>Höhenwerte → Neigung, Sichtfeld, Fließrichtung</span>
+<span id="cb3-3"><a aria-label="3"></a>Distanzen → Nähezonen oder Kostenoberflächen</span>
+<span id="cb3-4"><a aria-label="4"></a>Kriterien → Eignungs- oder Konfliktkarte</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment keyline">
 <p>Entscheidend ist nicht nur, welches Werkzeug verwendet wurde, sondern welche Annahme damit in die Analyse eingebaut wird.</p>
 </div>
@@ -357,7 +360,7 @@ Chris Reudenbach
 <h2>Rasterbasierte Ableitungen</h2>
 <p>Rasterdaten beschreiben den Raum als regelmäßiges Zellgitter.</p>
 <p>Jede Zelle enthält einen Wert:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>Höhe | Temperatur | Landbedeckung | Entfernung | Eignung</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a aria-label="1"></a>Höhe | Temperatur | Landbedeckung | Entfernung | Eignung</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p>Rasteranalyse verändert, kombiniert oder interpretiert diese Zellwerte und erzeugt daraus neue räumliche Informationen.</p>
 </div>
@@ -430,7 +433,7 @@ Chris Reudenbach
 <h2>Digitale Geländemodelle</h2>
 <p>Ein DGM speichert zunächst nur Höhe.</p>
 <p>Räumliche Analyse beginnt, wenn aus Höhenwerten neue Informationen abgeleitet werden:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>Höhe → Neigung → Exposition → Kurvatur → Profil → Falllinie → Einzugsgebiet</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a aria-label="1"></a>Höhe → Neigung → Exposition → Kurvatur → Profil → Falllinie → Einzugsgebiet</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p>Das DGM ist damit kein Endprodukt, sondern ein Ausgangspunkt für Geländeinterpretation.</p>
 </div>
@@ -491,7 +494,7 @@ Chris Reudenbach
 <h2>Sichtbarkeit als Ableitung</h2>
 <p>Sichtbarkeit ist keine Eigenschaft eines Punktes allein.</p>
 <p>Sie ist eine Beziehung zwischen:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a>Beobachtungspunkt + Zielpunkt + Gelände dazwischen</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a aria-label="1"></a>Beobachtungspunkt + Zielpunkt + Gelände dazwischen</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p>Ein Ziel ist sichtbar, wenn die Sichtlinie nicht durch Gelände blockiert wird.</p>
 </div>
@@ -535,7 +538,7 @@ Chris Reudenbach
 <h2>Sichtbarkeit ist nicht Wahrnehmung</h2>
 <p>Ein Sichtfeld zeigt berechnete geometrische Sichtbarkeit.</p>
 <p>Es zeigt nicht automatisch:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a></a>Erkennbarkeit | Aufmerksamkeit | Vegetationsdeckung | Funkabdeckung | atmosphärische Sicht</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a aria-label="1"></a>Erkennbarkeit | Aufmerksamkeit | Vegetationsdeckung | Funkabdeckung | atmosphärische Sicht</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment keyline">
 <p>Ein Sichtfeld ist eine berechnete Sichtbarkeitsannahme, keine direkte Beobachtung.</p>
 </div>
@@ -636,7 +639,7 @@ STI =
 <section id="gemeinsame-logik-der-einheit" class="slide level2">
 <h2>Gemeinsame Logik der Einheit</h2>
 <p>Alle Beispiele folgen derselben Grundstruktur:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a></a>Primärdaten → Modellannahme → Operation → neues räumliches Produkt → Interpretation</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a aria-label="1"></a>Primärdaten → Modellannahme → Operation → neues räumliches Produkt → Interpretation</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p>Voronoi: Punktlage → Näheannahme → Zuordnungsflächen<br>
 Interpolation: Punktwerte → Schätzmodell → Oberfläche<br>
@@ -648,12 +651,12 @@ Reliefhydrologie: Höhe → Gefälle → Prozessraster</p>
 <section id="prüfregel-für-räumliche-ableitungen" class="slide level2">
 <h2>Prüfregel für räumliche Ableitungen</h2>
 <p>Bei jeder räumlichen Ableitung muss gefragt werden:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a></a>Welche Ausgangsdaten?</span>
-<span id="cb9-2"><a></a>Welche Annahme?</span>
-<span id="cb9-3"><a></a>Welche Operation?</span>
-<span id="cb9-4"><a></a>Welche Parameter?</span>
-<span id="cb9-5"><a></a>Welches Ergebnisprodukt?</span>
-<span id="cb9-6"><a></a>Welche Aussagegrenze?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a aria-label="1"></a>Welche Ausgangsdaten?</span>
+<span id="cb9-2"><a aria-label="2"></a>Welche Annahme?</span>
+<span id="cb9-3"><a aria-label="3"></a>Welche Operation?</span>
+<span id="cb9-4"><a aria-label="4"></a>Welche Parameter?</span>
+<span id="cb9-5"><a aria-label="5"></a>Welches Ergebnisprodukt?</span>
+<span id="cb9-6"><a aria-label="6"></a>Welche Aussagegrenze?</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment keyline">
 <p>Eine GIS-Analyse ist erst fachlich belastbar, wenn genau diese Kette transparent bleibt.</p>
 </div>
@@ -661,7 +664,7 @@ Reliefhydrologie: Höhe → Gefälle → Prozessraster</p>
 <section id="übung-ableitungen-vergleichen" class="slide level2">
 <h2>Übung: Ableitungen vergleichen</h2>
 <p>Wählen Sie drei Beispiele aus der Einheit und vergleichen Sie:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a></a>Voronoi | Interpolation | DGM-Parameter | Sichtfeld | Flow Accumulation | TWI/SPI/STI</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a aria-label="1"></a>Voronoi | Interpolation | DGM-Parameter | Sichtfeld | Flow Accumulation | TWI/SPI/STI</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Beschreiben Sie jeweils:</p>
 <ul>
 <li>welche Ausgangsdaten verwendet werden,</li>

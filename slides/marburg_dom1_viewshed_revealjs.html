@@ -7,8 +7,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.19">
 
   <title>Grundlagenkurs GI-S (QGIS) – Sichtachsen und tote Winkel an der Lahnwiese - DOM1-basierte Viewshed-Analyse mit QGIS</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -20,10 +20,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -257,25 +260,25 @@
 </section>
 <section id="gesamtworkflow" class="slide level2">
 <h2>Gesamtworkflow</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>DOM1-ZIP herunterladen</span>
-<span id="cb1-2"><a></a>        ↓</span>
-<span id="cb1-3"><a></a>DOM1-Kacheln in QGIS laden</span>
-<span id="cb1-4"><a></a>        ↓</span>
-<span id="cb1-5"><a></a>CRS prüfen: EPSG:25832</span>
-<span id="cb1-6"><a></a>        ↓</span>
-<span id="cb1-7"><a></a>Kacheln mosaikieren</span>
-<span id="cb1-8"><a></a>        ↓</span>
-<span id="cb1-9"><a></a>auf Lahnwiese zuschneiden</span>
-<span id="cb1-10"><a></a>        ↓</span>
-<span id="cb1-11"><a></a>3 Beobachtungspunkte setzen</span>
-<span id="cb1-12"><a></a>        ↓</span>
-<span id="cb1-13"><a></a>r.viewshed je Punkt berechnen</span>
-<span id="cb1-14"><a></a>        ↓</span>
-<span id="cb1-15"><a></a>Sichtfelder addieren</span>
-<span id="cb1-16"><a></a>        ↓</span>
-<span id="cb1-17"><a></a>tote Winkel ableiten</span>
-<span id="cb1-18"><a></a>        ↓</span>
-<span id="cb1-19"><a></a>Karten + Methodenkritik</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a aria-label="1"></a>DOM1-ZIP herunterladen</span>
+<span id="cb1-2"><a aria-label="2"></a>        ↓</span>
+<span id="cb1-3"><a aria-label="3"></a>DOM1-Kacheln in QGIS laden</span>
+<span id="cb1-4"><a aria-label="4"></a>        ↓</span>
+<span id="cb1-5"><a aria-label="5"></a>CRS prüfen: EPSG:25832</span>
+<span id="cb1-6"><a aria-label="6"></a>        ↓</span>
+<span id="cb1-7"><a aria-label="7"></a>Kacheln mosaikieren</span>
+<span id="cb1-8"><a aria-label="8"></a>        ↓</span>
+<span id="cb1-9"><a aria-label="9"></a>auf Lahnwiese zuschneiden</span>
+<span id="cb1-10"><a aria-label="10"></a>        ↓</span>
+<span id="cb1-11"><a aria-label="11"></a>3 Beobachtungspunkte setzen</span>
+<span id="cb1-12"><a aria-label="12"></a>        ↓</span>
+<span id="cb1-13"><a aria-label="13"></a>r.viewshed je Punkt berechnen</span>
+<span id="cb1-14"><a aria-label="14"></a>        ↓</span>
+<span id="cb1-15"><a aria-label="15"></a>Sichtfelder addieren</span>
+<span id="cb1-16"><a aria-label="16"></a>        ↓</span>
+<span id="cb1-17"><a aria-label="17"></a>tote Winkel ableiten</span>
+<span id="cb1-18"><a aria-label="18"></a>        ↓</span>
+<span id="cb1-19"><a aria-label="19"></a>Karten + Methodenkritik</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="crs-prüfen" class="slide level2">
 <h2>CRS prüfen</h2>
@@ -416,7 +419,7 @@
 <p>Rasterrechner öffnen:</p>
 <p><strong>Raster → Rasterrechner</strong></p>
 <p>Ausdruck:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>viewshed_P01 + viewshed_P02 + viewshed_P03</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a aria-label="1"></a>viewshed_P01 + viewshed_P02 + viewshed_P03</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ausgabe:</p>
 <p><code>sichtbarkeit_summe.tif</code></p>
 </section>
@@ -429,7 +432,7 @@
 <li>3 = von drei Punkten sichtbar</li>
 </ul>
 <p>Tote Winkel:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>sichtbarkeit_summe = 0</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a aria-label="1"></a>sichtbarkeit_summe = 0</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ausgabe:</p>
 <p><code>tote_winkel_lahnwiese.tif</code></p>
 </section>
