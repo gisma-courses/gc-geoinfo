@@ -152,7 +152,11 @@ website:
             - href: slides/perfekter_gipfel_gesamtrahmen.qmd
               text: Der Perfekte Gipfel - Das Konzept
             - href: slides/perfekter_gipfel_analyse.qmd
-              text: Der Perfekte Gipfel - Die Analyse               
+              text: Der Perfekte Gipfel - Die Analyse    
+            - href: slides/modellierung_luftbild_lst.qmd
+              text: Sommer in der Stadt - Die Folien             
+            - href: slides/handreichung-lst-stadtklima-technisch.qmd
+              text: Sommer in der Stadt - Die Anleitung    
               
 
 
